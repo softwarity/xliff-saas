@@ -1,0 +1,29 @@
+name: Build
+on:
+  # Triggers the workflow on push
+  push:
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.PAT_TOKEN }} # Ceci est necessaire car l'utilisateur par default du workflow, ne DECLENCHE PAS les actions
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+      - run: npm install
+      - run: npm run build
+      - run: git config user.name "$GITHUB_ACTOR"
+      - run: git config user.email ""
+      - run: git checkout -b tmp
+      - run: rm -f .gitignore
+      - run: rm -rf dist
+      - run: git rm -r --cached .
+      - run: echo "xliff-translator.com" > dist/CNAME
+      - run: mv dist dist
+      - run: git add dist/
+      - run: git commit -m "Update gh_pages branch"
+      - run: git push origin tmp:gh_pages --force
