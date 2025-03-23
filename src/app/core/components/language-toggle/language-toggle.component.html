@@ -7,13 +7,13 @@
     </svg>
   </button>
   @if (isOpen()) {
-    <div class="absolute right-0 mt-1 py-2 w-48 bg-white dark:bg-dark-700 rounded-lg shadow-xl z-50" (click)="closeDropdown()">
+    <div class="absolute right-0 mt-1 py-2 w-32 bg-white dark:bg-dark-700 rounded-lg shadow-xl z-50" (click)="closeDropdown()">
       @for (lang of languages(); track lang.code) {
-        <a [href]="baseUrl() + '/' + lang.code + '/'"
-          class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-dark-600"
+        <button (click)="changeLanguage(lang.code)"
+          class="w-full text-left px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-dark-600"
           [class.font-semibold]="lang.code === currentLang()">
           {{ lang.name }}
-        </a>
+      </button>
       }
     </div>
   }

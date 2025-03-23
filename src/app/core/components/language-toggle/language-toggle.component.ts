@@ -27,8 +27,10 @@ export class LanguageToggleComponent {
         code: lang.code,
         name: new Intl.DisplayNames([lang.code], { type: 'language' }).of(lang.code) || lang.code
       })));
-      this.currentLang.set(this.getCurrentLanguage());
     });
+    const fragments = this.getFragments();
+    const lg = fragments.pop() || 'en';
+    this.currentLang.set(lg);
   }
   
 
@@ -47,19 +49,14 @@ export class LanguageToggleComponent {
     document.body.removeEventListener('click', this.closeDropdown);
   }
 
-  getCurrentLanguage(): string {
+  getFragments() {
     const baseObj = document.querySelector('base') || document.querySelector('#base');
     const base =  (baseObj?.href || '').replace(document.location.origin, '');
-    const fragment = base.split('/').filter(Boolean);
-    console.log(fragment);
-    
-    const lg = fragment.pop() || 'en';
-    console.log(fragment);
-    console.log(fragment.join('/'));
-    this.baseUrl.set('');
-    if (fragment.length > 0) {
-      this.baseUrl.set('/' +fragment.join('/'));
-    }
-    return lg;
+    return base.split('/').filter(Boolean);
+  }
+
+  changeLanguage(lang: string) {
+    localStorage.setItem('preferredLanguage', lang);
+    window.location.href = '/';
   }
 }
