@@ -25,3 +25,5 @@ testem.log
 
 # Secret files
 apikey.txt
+**/.env
+**/.env.bak
