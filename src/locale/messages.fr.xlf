@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" datatype="plaintext" original="ng2.template" target-language="fr">
+    <body>
+      <trans-unit id="HOW_IT_WORKS_TITLE" datatype="html">
+        <source>How It Works</source>
+        <target>Comment ça marche</target>
+      </trans-unit>
+      <trans-unit id="AUTOMATED_WORKFLOW_TITLE" datatype="html">
+        <source>Automated Workflow</source>
+        <target>Flux de travail automatisé</target>
+      </trans-unit>
+      <trans-unit id="AUTOMATED_WORKFLOW_DESCRIPTION" datatype="html">
+        <source>Our platform automates the entire translation process for your Angular applications. Simply connect your Git repository, and we'll handle the rest.</source>
+        <target>Notre plateforme automatise l'ensemble du processus de traduction pour vos applications Angular. Connectez simplement votre dépôt Git, et nous nous occupons du reste.</target>
+      </trans-unit>
+      <trans-unit id="STEP_1_DESCRIPTION" datatype="html">
+        <source>Automatic XLIFF file extraction from your Angular project</source>
+        <target>Extraction automatique des fichiers XLIFF de votre projet Angular</target>
+      </trans-unit>
+      <trans-unit id="STEP_2_DESCRIPTION" datatype="html">
+        <source>Smart translation with context awareness</source>
+        <target>Traduction intelligente avec prise en compte du contexte</target>
+      </trans-unit>
+      <trans-unit id="STEP_3_DESCRIPTION" datatype="html">
+        <source>Automated pull request creation with translated files</source>
+        <target>Création automatique de pull requests avec les fichiers traduits</target>
+      </trans-unit>
+      <trans-unit id="SUPPORTED_PROVIDERS_TITLE" datatype="html">
+        <source>Supported Git Providers</source>
+        <target>Fournisseurs Git supportés</target>
+      </trans-unit>
+      <trans-unit id="CONTEXT_AWARE_TITLE" datatype="html">
+        <source>Context-Aware Translation</source>
+        <target>Traduction contextuelle</target>
+      </trans-unit>
+      <trans-unit id="CONTEXT_AWARE_DESCRIPTION" datatype="html">
+        <source>Our AI-powered translation engine understands your application's context, ensuring accurate and meaningful translations that maintain the original intent of your content.</source>
+        <target>Notre moteur de traduction alimenté par l'IA comprend le contexte de votre application, garantissant des traductions précises et significatives qui préservent l'intention originale de votre contenu.</target>
+      </trans-unit>
+      <trans-unit id="FEATURE_CODE_ANALYSIS" datatype="html">
+        <source>Code Analysis</source>
+        <target>Analyse du code</target>
+      </trans-unit>
+      <trans-unit id="FEATURE_CODE_ANALYSIS_DESCRIPTION" datatype="html">
+        <source>Analyzes your code to understand the context of each string</source>
+        <target>Analyse votre code pour comprendre le contexte de chaque chaîne</target>
+      </trans-unit>
+      <trans-unit id="FEATURE_CONSISTENCY" datatype="html">
+        <source>Consistency Check</source>
+        <target>Vérification de cohérence</target>
+      </trans-unit>
+      <trans-unit id="FEATURE_CONSISTENCY_DESCRIPTION" datatype="html">
+        <source>Ensures consistent translations across your entire application</source>
+        <target>Assure des traductions cohérentes dans toute votre application</target>
+      </trans-unit>
+      <trans-unit id="FEATURE_QUALITY" datatype="html">
+        <source>Quality Assurance</source>
+        <target>Assurance qualité</target>
+      </trans-unit>
+      <trans-unit id="FEATURE_QUALITY_DESCRIPTION" datatype="html">
+        <source>Automated quality checks for translation accuracy</source>
+        <target>Vérifications automatiques de la qualité des traductions</target>
+      </trans-unit>
+      <trans-unit id="GET_STARTED_TITLE" datatype="html">
+        <source>Ready to Get Started?</source>
+        <target>Prêt à commencer ?</target>
+      </trans-unit>
+      <trans-unit id="GET_STARTED_DESCRIPTION" datatype="html">
+        <source>Start translating your Angular application in minutes.</source>
+        <target>Commencez à traduire votre application Angular en quelques minutes.</target>
+      </trans-unit>
+      <trans-unit id="CONNECT_GIT_PROVIDER" datatype="html">
+        <source>Connect Your Git Provider</source>
+        <target>Connectez votre fournisseur Git</target>
+      </trans-unit>
+      <trans-unit id="APP_TITLE" datatype="html">
+        <source>XLIFF Translator</source>
+        <target>XLIFF Translator</target>
+      </trans-unit>
+      <trans-unit id="DASHBOARD" datatype="html">
+        <source>Dashboard</source>
+        <target>Tableau de bord</target>
+      </trans-unit>
+      <trans-unit id="GIT_PROVIDERS" datatype="html">
+        <source>Git Providers</source>
+        <target>Fournisseurs Git</target>
+      </trans-unit>
+      <trans-unit id="SIGN_OUT" datatype="html">
+        <source>Sign Out</source>
+        <target>Déconnexion</target>
+      </trans-unit>
+      <trans-unit id="SIGN_IN" datatype="html">
+        <source>Sign In</source>
+        <target>Connexion</target>
+      </trans-unit>
+      <trans-unit id="PROVIDER_STATUS" datatype="html">
+        <source>Connected</source>
+        <target>Connecté</target>
+      </trans-unit>
+      <trans-unit id="TOKEN_SCOPES_INTRO" datatype="html">
+        <source>To connect, generate a Personal Access Token with the following scopes:</source>
+        <target>Pour vous connecter, générez un jeton d'accès personnel avec les portées suivantes :</target>
+      </trans-unit>
+      <trans-unit id="GET_TOKEN_HERE" datatype="html">
+        <source>Get your token here:</source>
+        <target>Obtenez votre jeton ici :</target>
+      </trans-unit>
+      <trans-unit id="TOKEN_INPUT_PLACEHOLDER" datatype="html">
+        <source>Enter your access token</source>
+        <target>Entrez votre jeton d'accès</target>
+      </trans-unit>
+      <trans-unit id="CONNECT_BUTTON" datatype="html">
+        <source>Connect</source>
+        <target>Connecter</target>
+      </trans-unit>
+      <trans-unit id="UPDATE_TOKEN_BUTTON" datatype="html">
+        <source>Update Token</source>
+        <target>Mettre à jour le jeton</target>
+      </trans-unit>
+      <trans-unit id="DISCONNECT_BUTTON" datatype="html">
+        <source>Disconnect</source>
+        <target>Déconnecter</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

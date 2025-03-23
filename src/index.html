@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <title>XLIFF Translator - Softwarity.io</title>
+    <meta charset="UTF-8" />
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      @keyframes fadeInUp {
+        0% {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        5% {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        10% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        90% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        95% {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        100% {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+      }
+      .loading-container {
+        position: fixed;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #fff;
+      }
+      .dark .loading-container {
+        background-color: #111827;
+      }
+      .translation-wrapper {
+        position: relative;
+        height: 60px;
+        width: 100%;
+        max-width: 600px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+      .word-pair {
+        position: absolute;
+        font-size: 1.5rem;
+        color: #2563eb;
+        white-space: nowrap;
+        opacity: 0;
+        transform: translateY(5px);
+      }
+      .dark .word-pair {
+        color: #60a5fa;
+      }
+      .word-pair:nth-child(1) { animation: fadeInUp 4s ease-in-out infinite; }
+      .word-pair:nth-child(2) { animation: fadeInUp 4s ease-in-out infinite 4s; }
+      .word-pair:nth-child(3) { animation: fadeInUp 4s ease-in-out infinite 8s; }
+      .word-pair:nth-child(4) { animation: fadeInUp 4s ease-in-out infinite 12s; }
+    </style>
+    <script>
+      // Check for saved theme preference, default to dark if not set
+      const theme = localStorage.getItem('theme');
+      if (theme === 'light') {
+        document.documentElement.classList.remove('dark');
+      }
+    </script>
+  </head>
+  <body>
+    <app-root>
+      <div class="loading-container">
+        <div class="translation-wrapper">
+          <div class="word-pair">Welcome → Bienvenue</div>
+          <div class="word-pair">Hello → Hola</div>
+          <div class="word-pair">Thank you → Danke</div>
+          <div class="word-pair">Good morning → Buongiorno</div>
+        </div>
+      </div>
+    </app-root>
+  </body>
+</html>

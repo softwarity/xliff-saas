@@ -1,0 +1,231 @@
+<div class="container mx-auto px-4 py-8">
+  <h1 class="text-3xl font-bold mb-8 dark:text-white">
+    <span i18n="@@DOCUMENTATION_TITLE">Angular i18n Setup Guide</span>
+    <a href="https://angular.dev/guide/i18n" target="_blank" class="text-sm text-primary dark:text-blue-400 ml-2" i18n="@@SEE_OFFICIAL_DOCS">
+      Official Documentation →
+    </a>
+  </h1>
+
+  <div class="space-y-8">
+    <!-- Initial Setup -->
+    <div class="bg-light-surface dark:bg-dark-700 rounded-lg shadow-lg p-8">
+      <h2 class="text-2xl font-semibold mb-6 text-primary dark:text-blue-400">
+        Initial Setup
+      </h2>
+      
+      <p class="text-gray-600 dark:text-gray-300 mb-4">
+        Start by adding Angular's localization package to your project:
+      </p>
+      
+      <pre class="bg-gray-800 text-gray-100 rounded-lg p-4 overflow-x-auto"><code>ng add &commat;angular/localize</code></pre>
+
+      <p class="text-gray-600 dark:text-gray-300 mt-4">
+        This command will make the following changes:
+      </p>
+      <ul class="list-disc list-inside text-gray-600 dark:text-gray-300 ml-4 space-y-2">
+        <li>Add the &commat;angular/localize package to your dependencies</li>
+        <li>Add "&commat;angular/localize/init" to the polyfills array in angular.json</li>
+        <li>Add the following reference to your main.ts:</li>
+      </ul>
+
+      <pre class="bg-gray-800 text-gray-100 rounded-lg p-4 mt-4 overflow-x-auto"><code>/// &lt;reference types="&commat;angular/localize" /&gt;</code></pre>
+
+      <p class="text-gray-600 dark:text-gray-300 mt-4">It will also add the extract-i18n configuration to angular.json:</p>
+
+      <pre class="bg-gray-800 text-gray-100 rounded-lg p-4 mt-4 overflow-x-auto"><code>"extract-i18n": &lcub;
+  "builder": "&commat;angular-devkit/build-angular:extract-i18n",
+  "options": &lcub;
+    "buildTarget": "your-app:build",
+    "format": "xlf",
+    "outputPath": "src/locale"
+  &rcub;
+&rcub;</code></pre>
+
+      <p class="text-gray-600 dark:text-gray-300 mt-2">
+        Note: We'll modify the outputPath later in the configuration to match our workflow.
+      </p>
+    </div>
+
+    <!-- Configuration Files -->
+    <div class="bg-light-surface dark:bg-dark-700 rounded-lg shadow-lg p-8">
+      <h2 class="text-2xl font-semibold mb-6 text-primary dark:text-blue-400">
+        Configuration Files
+      </h2>
+
+      <div class="mb-8">
+        <h3 class="text-xl font-semibold mb-4 dark:text-white">package.json</h3>
+        <pre class="bg-gray-800 text-gray-100 rounded-lg p-4 overflow-x-auto"><code>"scripts": &lcub;
+  ...
+  "extract-i18n": "ng extract-i18n --output-path dist/locale",
+  "merge-i18n": "xliffmerge --verbose --profile xliffmerge.json",
+  "build": "ng build --localize"
+  ...
+&rcub;</code></pre>
+      </div>
+
+      <div class="mb-8">
+        <h3 class="text-xl font-semibold mb-4 dark:text-white">angular.json</h3>
+        <pre class="bg-gray-800 text-gray-100 rounded-lg p-4 overflow-x-auto"><code>"i18n": &lcub;
+  "sourceLocale": "en",
+  "locales": &lcub;
+    "fr": &lcub;
+      "translation": "src/locale/messages.fr.xlf"
+    &rcub;
+  &rcub;
+&rcub;,
+"architect": &lcub;
+  "build": &lcub;
+    "configurations": &lcub;
+      "fr": &lcub;
+        "localize": ["fr"]
+      &rcub;
+    &rcub;
+  &rcub;
+&rcub;</code></pre>
+      </div>
+
+      <div>
+        <h3 class="text-xl font-semibold mb-4 dark:text-white">xliffmerge.json</h3>
+        <pre class="bg-gray-800 text-gray-100 rounded-lg p-4 overflow-x-auto"><code>&lcub;
+  "xliffmergeOptions": &lcub;
+    "srcDir": "dist/locale",
+    "genDir": "src/locale",
+    "defaultLanguage": "en",
+    "languages": ["fr"],
+    "removeUnusedIds": true,
+    "useSourceAsTarget": true,
+    "beautifyOutput": true
+  &rcub;
+&rcub;</code></pre>
+      </div>
+    </div>
+
+    <!-- Prepare Components for Translation -->
+    <div class="bg-light-surface dark:bg-dark-700 rounded-lg shadow-lg p-8">
+      <h2 class="text-2xl font-semibold mb-6 text-primary dark:text-blue-400">
+        <span>Prepare Components for Translation</span>
+      </h2>
+
+      <div class="flex justify-between items-center mb-6">
+        <p class="text-gray-600 dark:text-gray-300">
+          To make your components ready for translation, you need to mark the text that should be translated. Angular provides two ways to do this:
+        </p>
+        <a 
+          href="https://angular.dev/guide/i18n/prepare" 
+          target="_blank" 
+          class="text-primary dark:text-blue-400 hover:underline"
+          i18n="@@SEE_MORE_DOCUMENTATION">
+          See more →
+        </a>
+      </div>
+
+      <div class="space-y-8">
+        <!-- Template Translation -->
+        <div>
+          <h3 class="text-xl font-semibold mb-4 dark:text-white">Template Translation</h3>
+          <p class="text-gray-600 dark:text-gray-300 mb-4">
+            Use the i18n attribute in your templates to mark text for translation:
+          </p>
+
+          <pre class="bg-gray-800 text-gray-100 rounded-lg p-4 overflow-x-auto"><code>&lt;tag attribute="This is a sample attribute text that needs translation." 
+  i18n-attribute="&commat;&commat;ATTRIBUTE_TEXT"
+  i18n="&commat;&commat;TAG_TEXT"&gt;This is a sample text that needs translation.&lt;/tag&gt;
+<!-- EXAMPLE -->
+&lt;button title="Title button" i18n-title="&commat;&commat;TITLE_BUTTON"i18n="&commat;&commat;LABEL_BUTTON"&gt;label button&lt;/button&gt;</code></pre>
+
+          <p class="text-gray-600 dark:text-gray-300 mt-4">
+            The &commat;&commat;prefix defines a custom ID for the translation. Using SNAKE_CASE is recommended for consistency.
+          </p>
+        </div>
+
+        <!-- Component Translation -->
+        <div>
+          <h3 class="text-xl font-semibold mb-4 dark:text-white">Component Translation</h3>
+          <p class="text-gray-600 dark:text-gray-300 mb-4">
+            For text in your component code, use the $localize template tag:
+          </p>
+
+          <pre class="bg-gray-800 text-gray-100 rounded-lg p-4 overflow-x-auto"><code>import &lcub; Component &rcub; from '&commat;angular/core';
+
+&commat;Component(&lcub;
+  selector: 'app-example',
+  template: '...'
+&rcub;)
+export class ExampleComponent &lcub;
+  title = $localize`:&commat;&commat;PAGE_TITLE:Welcome to our application`;
+  errorMessage = $localize`:&commat;&commat;ERROR_MESSAGE:An error occurred while processing your request`;
+&rcub;</code></pre>
+        </div>
+      </div>
+    </div>
+
+    <!-- Translation Workflow -->
+    <div class="bg-light-surface dark:bg-dark-700 rounded-lg shadow-lg p-8">
+      <h2 class="text-2xl font-semibold mb-6 text-primary dark:text-blue-400">
+        Translation Workflow
+      </h2>
+
+      <div class="mb-8">
+        <h3 class="text-xl font-semibold mb-4 dark:text-white">Extract Translations</h3>
+        <p class="text-gray-600 dark:text-gray-300 mb-4">
+          Extract translatable strings to XLIFF files:
+        </p>
+        <pre class="bg-gray-800 text-gray-100 rounded-lg p-4 overflow-x-auto"><code>npm run extract-i18n</code></pre>
+        <p class="text-gray-600 dark:text-gray-300 mt-2">
+          This creates messages.xlf in your dist/locale directory.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="text-xl font-semibold mb-4 dark:text-white">Merge Translations</h3>
+        <p class="text-gray-600 dark:text-gray-300 mb-4">
+          Generate/update the translation files:
+        </p>
+        <pre class="bg-gray-800 text-gray-100 rounded-lg p-4 overflow-x-auto"><code>npm run merge-i18n</code></pre>
+        <p class="text-gray-600 dark:text-gray-300 mt-2">
+          This creates/updates the translation files in your src/locale directory.
+        </p>
+      </div>
+    </div>
+
+    <!-- Building and Serving -->
+    <div class="bg-light-surface dark:bg-dark-700 rounded-lg shadow-lg p-8">
+      <h2 class="text-2xl font-semibold mb-6 text-primary dark:text-blue-400">
+        Building and Serving
+      </h2>
+
+      <div class="mb-8">
+        <h3 class="text-xl font-semibold mb-4 dark:text-white">Build with Translations</h3>
+        <p class="text-gray-600 dark:text-gray-300 mb-4">
+          Build your application with all translations:
+        </p>
+        <pre class="bg-gray-800 text-gray-100 rounded-lg p-4 overflow-x-auto"><code>npm run build</code></pre>
+        
+        <p class="text-gray-600 dark:text-gray-300 mt-4">Or build for a specific language (using French as example):</p>
+        <pre class="bg-gray-800 text-gray-100 rounded-lg p-4 overflow-x-auto"><code>ng build --configuration=fr</code></pre>
+      </div>
+
+      <div>
+        <h3 class="text-xl font-semibold mb-4 dark:text-white">Development Server</h3>
+        <p class="text-gray-600 dark:text-gray-300 mb-4">
+          Serve your application with translations during development:
+        </p>
+        <pre class="bg-gray-800 text-gray-100 rounded-lg p-4 overflow-x-auto"><code>ng serve --configuration=fr</code></pre>
+      </div>
+    </div>
+
+    <!-- Important Note -->
+    <div class="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-6">
+      <h2 class="text-xl font-semibold mb-4 text-blue-700 dark:text-blue-300">
+        ⚠️ Important Note
+      </h2>
+      <p class="text-blue-700 dark:text-blue-300">
+        After adding new translatable content or modifying existing translations, you must always run both commands in sequence:
+      </p>
+      <ol class="list-decimal list-inside mt-4 text-blue-700 dark:text-blue-300 space-y-2">
+        <li><code>npm run extract-i18n</code> - to extract new translatable strings</li>
+        <li><code>npm run merge-i18n</code> - to update your translation files</li>
+      </ol>
+    </div>
+  </div>
+</div>

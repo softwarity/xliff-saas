@@ -1,0 +1,48 @@
+{
+  "name": "xliff-saas",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "install:global": "npm install -g localtunnel",
+    "ng": "ng",
+    "start": "ng serve",
+    "dev": "ng serve",
+    "build": "ng build",
+    "extract-i18n": "ng extract-i18n --output-path dist/locale",
+    "merge-i18n": "xliffmerge --verbose --profile xliffmerge.json",
+    "start:fr": "ng serve --configuration=fr",
+    "build:fr": "ng build --configuration=fr",
+    "supabase": "npm run postinstall --prefix node_modules/supabase && npm link && supabase",
+    "wh:tunnel": "lt --port 54321 --print-requests"
+  },
+  "bin": {
+    "supabase": "node_modules/supabase/bin/supabase"
+  },
+  "dependencies": {
+    "@angular/animations": "^19.1.7",
+    "@angular/cdk": "^19.1.5",
+    "@angular/common": "^19.1.7",
+    "@angular/compiler": "^19.1.7",
+    "@angular/core": "^19.1.7",
+    "@angular/forms": "^19.1.7",
+    "@angular/platform-browser": "^19.1.7",
+    "@angular/platform-browser-dynamic": "^19.1.7",
+    "@angular/router": "^19.1.7",
+    "@angular/localize": "^19.1.7",
+    "@supabase/supabase-js": "^2.39.7",
+    "@stripe/stripe-js": "^3.0.7",
+    "rxjs": "^7.8.2",
+    "tslib": "^2.5.0",
+    "zone.js": "~0.15.0"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^19.1.7",
+    "@angular/cli": "^19.1.7",
+    "@angular/compiler-cli": "^19.1.7",
+    "autoprefixer": "^10.4.17",
+    "postcss": "^8.4.35",
+    "tailwindcss": "^3.4.1",
+    "typescript": "~5.7.3",
+    "supabase": "^2.19.7"
+  }
+}

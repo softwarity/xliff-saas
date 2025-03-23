@@ -1,0 +1,11 @@
+{
+    "xliffmergeOptions": {
+      "srcDir": "dist/locale",
+      "genDir": "src/locale",
+      "defaultLanguage": "en",
+      "languages": ["fr"],
+      "removeUnusedIds": true,
+      "useSourceAsTarget": true,
+      "beautifyOutput": true
+    }
+  }

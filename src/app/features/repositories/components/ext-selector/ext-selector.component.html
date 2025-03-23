@@ -1,0 +1,9 @@
+<select [formControl]="extSelectFC">
+  @for (ext of extensions; track ext) {
+    <option [value]="ext">{{ ext }}</option>
+  }
+</select>
+<input type="text" [formControl]="extUserFC" placeholder="Select xliff extension" class="w-full pr-30">
+<svg fill="currentColor"  stroke="currentColor"  viewBox="0 0 24 24">
+  <path d="M12 16L6 10H18L12 16Z"/>
+</svg>
