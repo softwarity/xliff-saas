@@ -58,18 +58,17 @@
 
       <div class="flex-1"></div>
 
-      @if (isAuthenticated() && !credit()?.balance) {
-        <button  class="flat-secondary" i18n="@@AUTH_SIGN_IN_BUTTON">
-          Purchase credits
-        </button>
-      } @else {
-        <button class="flat-primary">
-          {{ credit()?.balance }} credits
-        </button>
-      }
-
       <div class="flex items-center space-x-2 md:space-x-4">
         @if (isAuthenticated()) {
+          @if (!credit()?.balance) {
+            <button  class="flat-secondary" i18n="@@AUTH_SIGN_IN_BUTTON">
+              Purchase credits
+            </button>
+          } @else {
+            <button class="flat-primary">
+              {{ credit()?.balance }} credits
+            </button>
+          }
           <div class="relative">
             <button (click)="toggleUserMenu()" class="flex items-center space-x-2 flat-primary transition">
               @if (user(); as userData) {
@@ -111,6 +110,9 @@
                         Password
                       </label>
                       <input id="password" type="password" formControlName="password" i18n-placeholder="@@AUTH_PASSWORD_PLACEHOLDER" placeholder="Enter your password" class="w-full"/>
+                      @if (isCapsLockOn()) {
+                        <span class="flex justify-end text-red-500 text-sm">Caps Lock is on</span>
+                      }
                     </div>
                     <div>
                       <button type="submit" [disabled]="form.invalid" class="w-full flat-primary">

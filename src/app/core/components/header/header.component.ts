@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, CUSTOM_ELEMENTS_SCHEMA, inject, signal } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, HostListener, inject, signal } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { RouterLink, RouterLinkActive } from '@angular/router';
@@ -38,6 +38,7 @@ export class HeaderComponent {
   private subscriptions: Subscription = new Subscription();
   private fb = inject(FormBuilder);
   credit = signal<Credit | null>(null);
+  isCapsLockOn = signal(false);
 
   protected showAuthForm = signal(false);
   protected isRegistering = signal(false);
@@ -52,6 +53,15 @@ export class HeaderComponent {
     email: ['', [Validators.required, Validators.email]],
     password: ['', [Validators.required, Validators.minLength(6)]]
   });
+
+  @HostListener('document:keydown', ['$event'])
+  setCapslock(event: KeyboardEvent) {
+    if (event.code === 'CapsLock') {
+      this.isCapsLockOn.set(!event.getModifierState('CapsLock'));
+    } else {
+      this.isCapsLockOn.set(event.getModifierState('CapsLock'));
+    }
+  }
 
   constructor() {
     this.subscriptions.add(this.creditService.subscribeToCreditChanges().subscribe({

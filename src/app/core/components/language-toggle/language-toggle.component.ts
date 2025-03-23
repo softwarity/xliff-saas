@@ -22,7 +22,7 @@ export class LanguageToggleComponent {
   isOpen = signal(false);
 
   constructor(private http: HttpClient) {
-    this.http.get<Language[]>('/assets/locales.json').subscribe(data => {
+    this.http.get<Language[]>('assets/locales.json').subscribe(data => {
       this.languages.set(data.map(lang => ({
         code: lang.code,
         name: new Intl.DisplayNames([lang.code], { type: 'language' }).of(lang.code) || lang.code
