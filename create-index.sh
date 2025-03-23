@@ -9,8 +9,8 @@ if [ ! -d "$BROWSER_DIR" ]; then
     exit 1
 fi
 
-# Récupérer la liste des répertoires (locales)
-LOCALES=$(ls -d "$BROWSER_DIR"/*/ 2>/dev/null | xargs -n 1 basename | tr '\n' ' ')
+# Récupérer la liste des répertoires (locales) et les mettre en format string
+LOCALES=$(ls -d "$BROWSER_DIR"/*/ 2>/dev/null | xargs -n 1 basename | sed "s/^/'/;s/$/'/" | tr '\n' ',' | sed 's/,$//')
 
 # Créer le contenu de index.html avec la liste des locales
 cat > "$BROWSER_DIR/index.html" << EOF
@@ -19,7 +19,7 @@ cat > "$BROWSER_DIR/index.html" << EOF
 <script>
 const userLang = navigator.language || navigator.userLanguage;
 const lang = userLang.substring(0,2);
-const supportedLocales = [${LOCALES// /','}];
+const supportedLocales = [${LOCALES}];
 const targetLang = supportedLocales.includes(lang) ? lang : 'en';
 window.location.href = \`/\${targetLang}/\`;
 </script>
@@ -27,4 +27,3 @@ window.location.href = \`/\${targetLang}/\`;
 EOF
 
 echo "index.html créé avec succès dans: $BROWSER_DIR"
-echo "Locales supportées: $LOCALES"
