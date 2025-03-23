@@ -21,7 +21,7 @@ const userLang = navigator.language || navigator.userLanguage;
 const lang = userLang.substring(0,2);
 const supportedLocales = [${LOCALES}];
 const targetLang = supportedLocales.includes(lang) ? lang : 'en';
-window.location.href = \`\${targetLang}/\`;
+window.location.href = \`/xliff-saas/\${targetLang}/\`;
 </script>
 </head></html>
 EOF
