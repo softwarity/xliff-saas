@@ -20,7 +20,7 @@ export class LanguageToggleComponent {
   languages = signal<Language[]>([]);
   currentLang = signal<string>('en');
   isOpen = signal(false);
-
+  baseUrl = signal<string>('');
   constructor(private http: HttpClient) {
     this.http.get<Language[]>('assets/locales.json').subscribe(data => {
       this.languages.set(data.map(lang => ({
@@ -50,6 +50,16 @@ export class LanguageToggleComponent {
   getCurrentLanguage(): string {
     const baseObj = document.querySelector('base') || document.querySelector('#base');
     const base =  (baseObj?.href || '').replace(document.location.origin, '');
-    return base.split('/').filter(Boolean).pop() || 'en';
+    const fragment = base.split('/').filter(Boolean);
+    console.log(fragment);
+    
+    const lg = fragment.pop() || 'en';
+    console.log(fragment);
+    console.log(fragment.join('/'));
+    this.baseUrl.set('');
+    if (fragment.length > 0) {
+      this.baseUrl.set('/' +fragment.join('/'));
+    }
+    return lg;
   }
 }
