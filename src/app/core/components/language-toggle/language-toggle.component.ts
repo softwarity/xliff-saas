@@ -57,6 +57,12 @@ export class LanguageToggleComponent {
 
   changeLanguage(lang: string) {
     localStorage.setItem('preferredLanguage', lang);
-    window.location.href = '/';
+    const fragments = this.getFragments();
+    fragments.pop();
+    if (fragments.length > 0) {
+      window.location.href = '/' + fragments.join('/') + '/' + lang + '/';
+    } else {
+      window.location.href = '/' + lang + '/';
+    }
   }
 }
