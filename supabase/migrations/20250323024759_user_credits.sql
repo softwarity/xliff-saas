@@ -43,3 +43,6 @@ CREATE TRIGGER update_credits_on_transactions_change
   AFTER INSERT OR UPDATE OR DELETE ON user_transactions
   FOR EACH ROW
   EXECUTE FUNCTION update_user_credits();
+
+-- Add user_transactions to realtime publication
+alter publication supabase_realtime add table user_credits;

@@ -26,31 +26,29 @@ export class RepositoryCardComponent implements OnDestroy {
   repository = input.required<Repository>();
   isEstimateModalOpen = signal(false);
   repositoryService = inject(RepositoryService);
-  estimationService = inject(EstimationService);
   estimation = signal<Estimation | null | undefined>(null);
-  subscription: Subscription | undefined = undefined;
+  private estimationService = inject(EstimationService);
+  private subscriptions: Subscription = new Subscription();
 
   constructor() {
     effect(() => {
       const { namespace, name: repository, defaultBranch } = this.repository();
       this.branchFC.setValue(defaultBranch || null);
-      if (!this.subscription) {
-        this.subscription = this.estimationService.subscribeToEstimationChanges({ namespace, repository }).subscribe({
-          next: (estimation: Estimation | null) => {
-            console.log('Estimation in effect:', estimation, namespace, repository);
-            this.estimation.set(estimation);
-          },
-          error: (error) => {
-            this.estimation.set(null);
-            console.error('Error subscribing to estimation changes:', error);
-          }
-        });
-      }
+      this.subscriptions.add(this.estimationService.subscribeToEstimationChanges({ namespace, repository }).subscribe({
+        next: (estimation: Estimation | null) => {
+          console.log('Estimation in effect:', estimation, namespace, repository);
+          this.estimation.set(estimation);
+        },
+        error: (error) => {
+          this.estimation.set(null);
+          console.error('Error subscribing to estimation changes:', error);
+        }
+      }));
     });
   }
   
   ngOnDestroy(): void {
-    this.subscription?.unsubscribe();
+    this.subscriptions.unsubscribe();
   }
 
   onCloseEstimateModal($event: {branch: string, ext: string, transUnitState: string} | null ) {

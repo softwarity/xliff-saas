@@ -8,6 +8,9 @@ import { AuthService } from '../../services/auth.service';
 import { GitProviderService } from '../../services/git-provider.service';
 import { LanguageToggleComponent } from '../language-toggle/language-toggle.component';
 import '../../../web-components/theme-switcher';
+import { CreditService } from '../../../features/repositories/services/credit.service';
+import { Subscription } from 'rxjs';
+import { Credit } from '../../../shared/models/credit.model';
 
 @Component({
   selector: 'app-header',
@@ -20,13 +23,21 @@ import '../../../web-components/theme-switcher';
     CommonModule,
     ProviderLogoComponent
   ],
+  styles: [`
+    a.tab-button {
+      @apply flex items-center text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-blue-400 transition-colors p-2;
+    }
+  `],
   templateUrl: './header.component.html',
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class HeaderComponent {
   private auth = inject(AuthService);
   private gitProviderService = inject(GitProviderService);
+  private creditService = inject(CreditService);
+  private subscriptions: Subscription = new Subscription();
   private fb = inject(FormBuilder);
+  credit = signal<Credit | null>(null);
 
   protected showAuthForm = signal(false);
   protected isRegistering = signal(false);
@@ -41,6 +52,19 @@ export class HeaderComponent {
     email: ['', [Validators.required, Validators.email]],
     password: ['', [Validators.required, Validators.minLength(6)]]
   });
+
+  constructor() {
+    this.subscriptions.add(this.creditService.subscribeToCreditChanges().subscribe({
+      next: (credit: Credit | null) => {
+        console.log('Credit in effect:', credit);
+        this.credit.set(credit);
+      },
+      error: (error) => {
+        this.credit.set(null);
+        console.error('Error subscribing to credit changes:', error);
+      }
+    }));
+  }
 
   protected toggleAuthForm(): void {
     this.showAuthForm.update(v => !v);

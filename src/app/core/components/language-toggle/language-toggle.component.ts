@@ -1,6 +1,10 @@
-import { Component, inject } from '@angular/core';
-import { LanguageService } from '../../services/language.service';
+import { HttpClient } from '@angular/common/http';
+import { Component, effect, signal } from '@angular/core';
 
+interface Language {
+  code: string;
+  name: string;
+}
 @Component({
   selector: 'app-language-toggle',
   standalone: true,
@@ -13,21 +17,39 @@ import { LanguageService } from '../../services/language.service';
   `]
 })
 export class LanguageToggleComponent {
-  private languageService = inject(LanguageService);
+  languages = signal<Language[]>([]);
+  currentLang = signal<string>('en');
+  isOpen = signal(false);
+
+  constructor(private http: HttpClient) {
+    this.http.get<Language[]>('/assets/locales.json').subscribe(data => {
+      this.languages.set(data.map(lang => ({
+        code: lang.code,
+        name: new Intl.DisplayNames([lang.code], { type: 'language' }).of(lang.code) || lang.code
+      })));
+      this.currentLang.set(this.getCurrentLanguage());
+    });
+  }
   
-  protected isOpen = false;
-  protected currentLang = this.languageService.getCurrentLanguage();
-  protected languages = this.languageService.getAvailableLanguages();
 
-  protected toggleDropdown(): void {
-    this.isOpen = !this.isOpen;
+  protected toggleDropdown(event: Event): void {
+    event.stopPropagation();
+    if (!this.isOpen()) {
+      this.isOpen.set(true);
+      document.body.addEventListener('click', this.closeDropdown.bind(this));
+    } else {
+      this.closeDropdown();
+    }
   }
 
-  protected getCurrentLanguage(): string {
-    return this.currentLang.toUpperCase();
+  closeDropdown(): void {
+    this.isOpen.set(false);
+    document.body.removeEventListener('click', this.closeDropdown);
   }
 
-  protected getLanguageLabel(code: string): string {
-    return `${this.languageService.getLanguageName(code)}`;
+  getCurrentLanguage(): string {
+    const baseObj = document.querySelector('base') || document.querySelector('#base');
+    const base =  (baseObj?.href || '').replace(document.location.origin, '');
+    return base.split('/').filter(Boolean).pop() || 'en';
   }
 }

@@ -22,9 +22,6 @@ url=$(grep "your url is:" "$temp_file" | sed 's/your url is: //')
 # Update the .env file
 echo "Updating .env with URL: $url"
 if [ -f "supabase/functions/.env" ]; then
-    # Create backup of original file
-    cp supabase/functions/.env supabase/functions/.env.bak
-    
     # Replace or add HOST_WEBHOOK line
     if grep -q "^HOST_WEBHOOK=" "supabase/functions/.env"; then
         sed -i "s|^HOST_WEBHOOK=.*|HOST_WEBHOOK=\"$url\"|" supabase/functions/.env

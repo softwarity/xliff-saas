@@ -13,10 +13,13 @@ CREATE TABLE IF NOT EXISTS user_estimations (
   PRIMARY KEY (namespace, repository)
 );
 
-ALTER TABLE estimations ENABLE ROW LEVEL SECURITY;
+ALTER TABLE user_estimations ENABLE ROW LEVEL SECURITY;
 
 CREATE POLICY "Users can read own estimations"
-  ON estimations
+  ON user_estimations
   FOR SELECT
   TO authenticated
   USING (auth.uid() = "userId");
+
+-- Add user_estimations to realtime publication
+alter publication supabase_realtime add table user_estimations;
