@@ -20,9 +20,7 @@ jobs:
       - run: git config user.email ""
       - run: git checkout -b tmp
       - run: rm -f .gitignore
-      - run: rm -rf dist
       - run: git rm -r --cached .
-      - run: touch dist/CNAME
       - run: echo "xliff-translator.com" > dist/CNAME
       - run: git add dist/
       - run: git commit -m "Update gh_pages branch"
