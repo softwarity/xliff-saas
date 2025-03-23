@@ -33,6 +33,7 @@ jobs:
           node-version: '20'
       - run: npm install
       - run: npm run build
+      - run: echo "<!DOCTYPE html><html><head><script>const userLang = navigator.language || navigator.userLanguage;const lang = userLang.startsWith('fr') ? 'fr' : 'en';window.location.href = `/${lang}/`;</script></head></html>" > dist/xliff-translator/browser/index.html
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
