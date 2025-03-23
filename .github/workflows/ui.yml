@@ -21,7 +21,8 @@ jobs:
       - run: git checkout -b tmp
       - run: rm -f .gitignore
       - run: git rm -r --cached .
-      - run: echo "xliff-translator.com" > dist/CNAME
-      - run: git add dist/
+      - run: mv dist/xliff-translator/browser docs
+      - run: git add docs/
+      - run: echo "xliff-translator.com" > docs/CNAME
       - run: git commit -m "Update gh_pages branch"
       - run: git push origin tmp:gh_pages --force
