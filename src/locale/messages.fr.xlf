@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 https://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
   <file source-language="en" datatype="plaintext" original="ng2.template" target-language="fr">
     <body>
       <trans-unit id="APP_TITLE:" datatype="html">
         <source><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span class=&quot;text-2xl font-bold&quot;>"/>XLIFF<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span>"/><x id="START_TAG_SPAN_1" ctype="x-span_1" equiv-text="&lt;span class=&quot;text-lg -mt-1&quot;>"/>Translator<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span>"/></source>
-        <target state="new"><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span class=&quot;text-2xl font-bold&quot;>"/>XLIFF<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span>"/><x id="START_TAG_SPAN_1" ctype="x-span_1" equiv-text="&lt;span class=&quot;text-lg -mt-1&quot;>"/>Translator<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span>"/></target>
+        <target state="translated"><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span class=&quot;text-2xl font-bold&quot;>"/>XLIFF<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span>"/><x id="START_TAG_SPAN_1" ctype="x-span_1" equiv-text="&lt;span class=&quot;text-lg -mt-1&quot;>"/>Traducteur<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span>"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/header/header.component.html</context>
           <context context-type="linenumber">6,9</context>
         </context-group>
-        <note priority="1" from="description">:</note>
+        <note from="description" priority="1">:</note>
       </trans-unit>
       <trans-unit id="NAVIGATION_HOW_IT_WORKS" datatype="html">
         <source>How It Works</source>
-        <target state="new">How It Works</target>
+        <target state="translated">Comment ça marche</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/header/header.component.html</context>
           <context context-type="linenumber">21,25</context>
@@ -21,7 +21,7 @@
       </trans-unit>
       <trans-unit id="NAVIGATION_DOCUMENTATION" datatype="html">
         <source>Documentation</source>
-        <target state="new">Documentation</target>
+        <target state="translated">Documentation</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/header/header.component.html</context>
           <context context-type="linenumber">31,34</context>
@@ -29,7 +29,7 @@
       </trans-unit>
       <trans-unit id="NAVIGATION_DASHBOARD" datatype="html">
         <source>Dashboard</source>
-        <target state="new">Dashboard</target>
+        <target state="translated">Tableau de bord</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/header/header.component.html</context>
           <context context-type="linenumber">43,45</context>
@@ -37,7 +37,7 @@
       </trans-unit>
       <trans-unit id="NAVIGATION_GIT_PROVIDERS" datatype="html">
         <source>Git Providers</source>
-        <target state="new">Git Providers</target>
+        <target state="translated">Fournisseurs Git</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/header/header.component.html</context>
           <context context-type="linenumber">52,54</context>
@@ -45,7 +45,7 @@
       </trans-unit>
       <trans-unit id="USER_MENU_EMAIL" datatype="html">
         <source><x id="INTERPOLATION" equiv-text="{{ userData.email }}"/></source>
-        <target state="new"><x id="INTERPOLATION" equiv-text="{{ userData.email }}"/></target>
+        <target state="translated"><x id="INTERPOLATION" equiv-text="{{ userData.email }}"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/header/header.component.html</context>
           <context context-type="linenumber">87,88</context>
@@ -53,7 +53,7 @@
       </trans-unit>
       <trans-unit id="USER_MENU_SIGN_OUT" datatype="html">
         <source>Sign Out</source>
-        <target state="new">Sign Out</target>
+        <target state="translated">Se déconnecter</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/header/header.component.html</context>
           <context context-type="linenumber">97,98</context>
@@ -61,7 +61,7 @@
       </trans-unit>
       <trans-unit id="AUTH_SIGN_IN_BUTTON" datatype="html">
         <source> Sign In </source>
-        <target state="new"> Sign In </target>
+        <target state="translated">Se connecter</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/header/header.component.html</context>
           <context context-type="linenumber">105,106</context>
@@ -77,7 +77,7 @@
       </trans-unit>
       <trans-unit id="AUTH_EMAIL_LABEL" datatype="html">
         <source> Email </source>
-        <target state="new"> Email </target>
+        <target state="translated">Email</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/header/header.component.html</context>
           <context context-type="linenumber">113,114</context>
@@ -85,7 +85,7 @@
       </trans-unit>
       <trans-unit id="AUTH_EMAIL_PLACEHOLDER" datatype="html">
         <source>Enter your email</source>
-        <target state="new">Enter your email</target>
+        <target state="translated">Entrez votre email</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/header/header.component.html</context>
           <context context-type="linenumber">115,116</context>
@@ -93,7 +93,7 @@
       </trans-unit>
       <trans-unit id="AUTH_PASSWORD_LABEL" datatype="html">
         <source> Password </source>
-        <target state="new"> Password </target>
+        <target state="translated">Mot de passe</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/header/header.component.html</context>
           <context context-type="linenumber">119,120</context>
@@ -101,7 +101,7 @@
       </trans-unit>
       <trans-unit id="AUTH_PASSWORD_PLACEHOLDER" datatype="html">
         <source>Enter your password</source>
-        <target state="new">Enter your password</target>
+        <target state="translated">Entrez votre mot de passe</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/header/header.component.html</context>
           <context context-type="linenumber">121,122</context>
@@ -109,7 +109,7 @@
       </trans-unit>
       <trans-unit id="AUTH_SIGN_UP_BUTTON" datatype="html">
         <source>Sign Up</source>
-        <target state="new">Sign Up</target>
+        <target state="translated">S'inscrire</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/header/header.component.html</context>
           <context context-type="linenumber">126,127</context>
@@ -121,7 +121,7 @@
       </trans-unit>
       <trans-unit id="THEME_TOGGLE_TO_DARK" datatype="html">
         <source>Dark mode</source>
-        <target state="new">Dark mode</target>
+        <target state="translated">Mode sombre</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/header/header.component.html</context>
           <context context-type="linenumber">151</context>
@@ -129,7 +129,7 @@
       </trans-unit>
       <trans-unit id="THEME_TOGGLE_TO_LIGHT" datatype="html">
         <source>Light mode</source>
-        <target state="new">Light mode</target>
+        <target state="translated">Mode clair</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/header/header.component.html</context>
           <context context-type="linenumber">152</context>
@@ -137,7 +137,7 @@
       </trans-unit>
       <trans-unit id="THEME_TOGGLE_TO_SYSTEM" datatype="html">
         <source>System preference</source>
-        <target state="new">System preference</target>
+        <target state="translated">Préférence système</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/header/header.component.html</context>
           <context context-type="linenumber">153</context>
@@ -145,7 +145,7 @@
       </trans-unit>
       <trans-unit id="CHANGE_LANGUAGE" datatype="html">
         <source>Change language</source>
-        <target state="new">Change language</target>
+        <target state="translated">Changer de langue</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/language-toggle/language-toggle.component.html</context>
           <context context-type="linenumber">6</context>
@@ -153,7 +153,7 @@
       </trans-unit>
       <trans-unit id="DOCUMENTATION_TITLE" datatype="html">
         <source>Angular i18n Setup Guide</source>
-        <target state="new">Angular i18n Setup Guide</target>
+        <target state="translated">Guide de configuration d'Angular i18n</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">3,4</context>
@@ -161,7 +161,7 @@
       </trans-unit>
       <trans-unit id="SEE_OFFICIAL_DOCS" datatype="html">
         <source> Official Documentation → </source>
-        <target state="new"> Official Documentation → </target>
+        <target state="translated">Documentation officielle →</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">5,9</context>
@@ -169,7 +169,7 @@
       </trans-unit>
       <trans-unit id="SEE_MORE_DOCUMENTATION" datatype="html">
         <source> See more → </source>
-        <target state="new"> See more → </target>
+        <target state="translated">Voir plus →</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">118,122</context>
@@ -177,7 +177,7 @@
       </trans-unit>
       <trans-unit id="HOW_IT_WORKS_TITLE" datatype="html">
         <source> How It Works </source>
-        <target>Comment ça marche</target>
+        <target state="translated">Comment ça fonctionne</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/how-it-works/how-it-works.component.html</context>
           <context context-type="linenumber">3</context>
@@ -185,7 +185,7 @@
       </trans-unit>
       <trans-unit id="AUTOMATED_WORKFLOW_TITLE" datatype="html">
         <source> Automated Workflow </source>
-        <target>Flux de travail automatisé</target>
+        <target state="translated">Flux de travail automatisé</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/how-it-works/how-it-works.component.html</context>
           <context context-type="linenumber">9</context>
@@ -193,7 +193,7 @@
       </trans-unit>
       <trans-unit id="AUTOMATED_WORKFLOW_DESCRIPTION" datatype="html">
         <source> Simply connect your Git repository, start the translation, and we'll handle the rest. Our AI-powered platform takes care of everything automatically. </source>
-        <target>Notre plateforme automatise l'ensemble du processus de traduction pour vos applications Angular. Connectez simplement votre dépôt Git, et nous nous occupons du reste.</target>
+        <target state="translated">Connectez simplement votre dépôt Git, lancez la traduction et nous nous occuperons du reste. Notre plateforme alimentée par l'IA s'occupe de tout automatiquement.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/how-it-works/how-it-works.component.html</context>
           <context context-type="linenumber">12</context>
@@ -201,7 +201,7 @@
       </trans-unit>
       <trans-unit id="STEP_1_DESCRIPTION" datatype="html">
         <source>Smart analysis of your XLIFF files with context extraction</source>
-        <target>Extraction automatique des fichiers XLIFF de votre projet Angular</target>
+        <target state="translated">Analyse intelligente de vos fichiers XLIFF avec extraction de contexte</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/how-it-works/how-it-works.component.html</context>
           <context context-type="linenumber">19</context>
@@ -209,7 +209,7 @@
       </trans-unit>
       <trans-unit id="STEP_2_DESCRIPTION" datatype="html">
         <source>AI-powered translation with contextual understanding</source>
-        <target>Traduction intelligente avec prise en compte du contexte</target>
+        <target state="translated">Traduction alimentée par l'IA avec compréhension contextuelle</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/how-it-works/how-it-works.component.html</context>
           <context context-type="linenumber">25</context>
@@ -217,7 +217,7 @@
       </trans-unit>
       <trans-unit id="STEP_3_DESCRIPTION" datatype="html">
         <source>Automated pull request creation with translated XLIFF files</source>
-        <target>Création automatique de pull requests avec les fichiers traduits</target>
+        <target state="translated">Création automatique de pull requests avec des fichiers XLIFF traduits</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/how-it-works/how-it-works.component.html</context>
           <context context-type="linenumber">31</context>
@@ -225,7 +225,7 @@
       </trans-unit>
       <trans-unit id="SUPPORTED_PROVIDERS_TITLE" datatype="html">
         <source> Supported Git Providers </source>
-        <target>Fournisseurs Git supportés</target>
+        <target state="translated">Fournisseurs Git pris en charge</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/how-it-works/how-it-works.component.html</context>
           <context context-type="linenumber">37</context>
@@ -233,7 +233,7 @@
       </trans-unit>
       <trans-unit id="SUPPORTED_FORMATS_TITLE" datatype="html">
         <source> Supported Formats </source>
-        <target state="new"> Supported Formats </target>
+        <target state="translated">Formats pris en charge</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/how-it-works/how-it-works.component.html</context>
           <context context-type="linenumber">59,61</context>
@@ -241,7 +241,7 @@
       </trans-unit>
       <trans-unit id="SUPPORTED_FORMATS_DESCRIPTION" datatype="html">
         <source> Our platform supports the following XLIFF formats for maximum compatibility with Angular's internationalization system: </source>
-        <target state="new"> Our platform supports the following XLIFF formats for maximum compatibility with Angular's internationalization system: </target>
+        <target state="translated">Notre plateforme prend en charge les formats XLIFF suivants pour une compatibilité maximale avec le système d'internationalisation d'Angular : </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/how-it-works/how-it-works.component.html</context>
           <context context-type="linenumber">62,64</context>
@@ -249,7 +249,7 @@
       </trans-unit>
       <trans-unit id="CONTEXT_AWARE_TITLE" datatype="html">
         <source> Context-Aware Translation </source>
-        <target>Traduction contextuelle</target>
+        <target state="translated">Traduction contextuelle adaptée</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/how-it-works/how-it-works.component.html</context>
           <context context-type="linenumber">82</context>
@@ -257,7 +257,7 @@
       </trans-unit>
       <trans-unit id="CONTEXT_AWARE_DESCRIPTION" datatype="html">
         <source> Our AI-powered translation engine understands your application's context, ensuring accurate and meaningful translations that maintain the original intent of your content. </source>
-        <target>Notre moteur de traduction alimenté par l'IA comprend le contexte de votre application, garantissant des traductions précises et significatives qui préservent l'intention originale de votre contenu.</target>
+        <target state="translated">Notre moteur de traduction alimenté par l'IA comprend le contexte de votre application, garantissant des traductions précises et significatives qui conservent l'intention originale de votre contenu.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/how-it-works/how-it-works.component.html</context>
           <context context-type="linenumber">85</context>
@@ -265,7 +265,7 @@
       </trans-unit>
       <trans-unit id="FEATURE_CODE_ANALYSIS" datatype="html">
         <source>Code Analysis</source>
-        <target>Analyse du code</target>
+        <target state="translated">Analyse de code</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/how-it-works/how-it-works.component.html</context>
           <context context-type="linenumber">89</context>
@@ -273,7 +273,7 @@
       </trans-unit>
       <trans-unit id="FEATURE_CODE_ANALYSIS_DESCRIPTION" datatype="html">
         <source> Analyzes your code to understand the context of each string </source>
-        <target>Analyse votre code pour comprendre le contexte de chaque chaîne</target>
+        <target state="translated">Analyse votre code pour comprendre le contexte de chaque chaîne.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/how-it-works/how-it-works.component.html</context>
           <context context-type="linenumber">91</context>
@@ -281,7 +281,7 @@
       </trans-unit>
       <trans-unit id="FEATURE_CONSISTENCY" datatype="html">
         <source>Consistency Check</source>
-        <target>Vérification de cohérence</target>
+        <target state="translated">Vérification de la cohérence</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/how-it-works/how-it-works.component.html</context>
           <context context-type="linenumber">95</context>
@@ -289,7 +289,7 @@
       </trans-unit>
       <trans-unit id="FEATURE_CONSISTENCY_DESCRIPTION" datatype="html">
         <source> Ensures consistent translations across your entire application </source>
-        <target>Assure des traductions cohérentes dans toute votre application</target>
+        <target state="translated">Assure des traductions cohérentes dans l'ensemble de votre application.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/how-it-works/how-it-works.component.html</context>
           <context context-type="linenumber">97</context>
@@ -297,7 +297,7 @@
       </trans-unit>
       <trans-unit id="FEATURE_QUALITY" datatype="html">
         <source>Quality Assurance</source>
-        <target>Assurance qualité</target>
+        <target state="translated">Assurance Qualité</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/how-it-works/how-it-works.component.html</context>
           <context context-type="linenumber">101</context>
@@ -305,7 +305,7 @@
       </trans-unit>
       <trans-unit id="FEATURE_QUALITY_DESCRIPTION" datatype="html">
         <source> Automated quality checks for translation accuracy </source>
-        <target>Vérifications automatiques de la qualité des traductions</target>
+        <target state="translated">Contrôles de qualité automatisés pour la précision des traductions</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/how-it-works/how-it-works.component.html</context>
           <context context-type="linenumber">103</context>
@@ -313,7 +313,7 @@
       </trans-unit>
       <trans-unit id="GET_STARTED_TITLE" datatype="html">
         <source> Ready to Get Started? </source>
-        <target>Prêt à commencer ?</target>
+        <target state="translated">Prêt à commencer ?</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/how-it-works/how-it-works.component.html</context>
           <context context-type="linenumber">111</context>
@@ -321,7 +321,7 @@
       </trans-unit>
       <trans-unit id="GET_STARTED_DESCRIPTION" datatype="html">
         <source> Start translating your Angular application in minutes. </source>
-        <target>Commencez à traduire votre application Angular en quelques minutes.</target>
+        <target state="translated">Commencez à traduire votre application Angular en quelques minutes.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/how-it-works/how-it-works.component.html</context>
           <context context-type="linenumber">114</context>
@@ -329,7 +329,7 @@
       </trans-unit>
       <trans-unit id="CONNECT_GIT_PROVIDER" datatype="html">
         <source> Connect Your Git Provider </source>
-        <target>Connectez votre fournisseur Git</target>
+        <target state="translated">Connectez votre fournisseur Git</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/how-it-works/how-it-works.component.html</context>
           <context context-type="linenumber">120</context>
@@ -341,7 +341,7 @@
       </trans-unit>
       <trans-unit id="PROVIDER_STATUS" datatype="html">
         <source><x id="INTERPOLATION" equiv-text="{{ provider().connected ? 'Connected' : 'Not Connected' }}"/></source>
-        <target>Connecté</target>
+        <target state="translated"><x id="INTERPOLATION" equiv-text="{{ provider().connected ? 'Connecté' : 'Non connecté' }}"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/git-providers/components/provider-card/provider-card.component.html</context>
           <context context-type="linenumber">8</context>
@@ -349,7 +349,7 @@
       </trans-unit>
       <trans-unit id="TOKEN_SCOPES_INTRO" datatype="html">
         <source> To connect, generate a Personal Access Token with the following scopes: </source>
-        <target>Pour vous connecter, générez un jeton d'accès personnel avec les portées suivantes :</target>
+        <target state="translated">Pour vous connecter, générez un jeton d'accès personnel avec les autorisations suivantes :</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/git-providers/components/provider-card/provider-card.component.html</context>
           <context context-type="linenumber">15</context>
@@ -357,7 +357,7 @@
       </trans-unit>
       <trans-unit id="GET_TOKEN_HERE" datatype="html">
         <source>Get your token here:</source>
-        <target>Obtenez votre jeton ici :</target>
+        <target state="translated">Obtenez votre jeton ici :</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/git-providers/components/provider-card/provider-card.component.html</context>
           <context context-type="linenumber">23</context>
@@ -365,7 +365,7 @@
       </trans-unit>
       <trans-unit id="TOKEN_INPUT_PLACEHOLDER" datatype="html">
         <source>Enter your access token</source>
-        <target>Entrez votre jeton d'accès</target>
+        <target state="translated">Entrez votre jeton d'accès</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/git-providers/components/provider-card/provider-card.component.html</context>
           <context context-type="linenumber">50</context>
@@ -373,7 +373,7 @@
       </trans-unit>
       <trans-unit id="CONNECT_BUTTON" datatype="html">
         <source><x id="START_BLOCK_IF" equiv-text="@if (loading()) {"/><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span class=&quot;flex items-center justify-center&quot;>"/><x id="START_TAG__SVG_SVG" ctype="x-_svg_svg" equiv-text="&lt;svg class=&quot;animate-spin -ml-1 mr-3 h-5 w-5 text-white&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; fill=&quot;none&quot; viewBox=&quot;0 0 24 24&quot;>"/><x id="START_TAG__SVG_CIRCLE" ctype="x-_svg_circle" equiv-text="&lt;circle class=&quot;opacity-25&quot; cx=&quot;12&quot; cy=&quot;12&quot; r=&quot;10&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;4&quot;>"/><x id="CLOSE_TAG__SVG_CIRCLE" ctype="x-_svg_circle" equiv-text="&lt;/circle>"/><x id="START_TAG__SVG_PATH" ctype="x-_svg_path" equiv-text="&lt;path class=&quot;opacity-75&quot; fill=&quot;currentColor&quot; d=&quot;M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z&quot;>"/><x id="CLOSE_TAG__SVG_PATH" ctype="x-_svg_path" equiv-text="&lt;/path>"/><x id="CLOSE_TAG__SVG_SVG" ctype="x-_svg_svg" equiv-text="&lt;/svg>"/> Connecting... <x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span>"/><x id="CLOSE_BLOCK_IF" equiv-text="}"/><x id="START_BLOCK_ELSE" equiv-text="@else {"/> Connect <x id="CLOSE_BLOCK_ELSE" equiv-text="}"/></source>
-        <target>Connecter</target>
+        <target state="translated"><x id="START_BLOCK_IF" equiv-text="@if (loading()) {"/><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span class=&quot;flex items-center justify-center&quot;>"/><x id="START_TAG__SVG_SVG" ctype="x-_svg_svg" equiv-text="&lt;svg class=&quot;animate-spin -ml-1 mr-3 h-5 w-5 text-white&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; fill=&quot;none&quot; viewBox=&quot;0 0 24 24&quot;>"/><x id="START_TAG__SVG_CIRCLE" ctype="x-_svg_circle" equiv-text="&lt;circle class=&quot;opacity-25&quot; cx=&quot;12&quot; cy=&quot;12&quot; r=&quot;10&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;4&quot;>"/><x id="CLOSE_TAG__SVG_CIRCLE" ctype="x-_svg_circle" equiv-text="&lt;/circle>"/><x id="START_TAG__SVG_PATH" ctype="x-_svg_path" equiv-text="&lt;path class=&quot;opacity-75&quot; fill=&quot;currentColor&quot; d=&quot;M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z&quot;>"/><x id="CLOSE_TAG__SVG_PATH" ctype="x-_svg_path" equiv-text="&lt;/path>"/><x id="CLOSE_TAG__SVG_SVG" ctype="x-_svg_svg" equiv-text="&lt;/svg>"/> Connexion en cours... <x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span>"/><x id="CLOSE_BLOCK_IF" equiv-text="}"/><x id="START_BLOCK_ELSE" equiv-text="@else {"/> Connecter <x id="CLOSE_BLOCK_ELSE" equiv-text="}"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/git-providers/components/provider-card/provider-card.component.html</context>
           <context context-type="linenumber">64</context>
@@ -381,7 +381,7 @@
       </trans-unit>
       <trans-unit id="UPDATE_TOKEN_BUTTON" datatype="html">
         <source> Update Token </source>
-        <target>Mettre à jour le jeton</target>
+        <target state="translated">Mettre à jour le token</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/git-providers/components/provider-card/provider-card.component.html</context>
           <context context-type="linenumber">85</context>
@@ -389,7 +389,7 @@
       </trans-unit>
       <trans-unit id="DISCONNECTING" datatype="html">
         <source>Disconnecting...</source>
-        <target state="new">Disconnecting...</target>
+        <target state="translated">Déconnexion...</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/git-providers/components/provider-card/provider-card.component.html</context>
           <context context-type="linenumber">95,97</context>
@@ -397,7 +397,7 @@
       </trans-unit>
       <trans-unit id="DISCONNECT_BUTTON" datatype="html">
         <source>Disconnect</source>
-        <target>Déconnecter</target>
+        <target state="translated">Déconnecter</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/git-providers/components/provider-card/provider-card.component.html</context>
           <context context-type="linenumber">98</context>
@@ -405,7 +405,7 @@
       </trans-unit>
       <trans-unit id="gitProvidersTitle" datatype="html">
         <source> Git Providers </source>
-        <target state="new"> Git Providers </target>
+        <target state="translated">Fournisseurs Git</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/git-providers/git-providers.component.html</context>
           <context context-type="linenumber">3,5</context>
