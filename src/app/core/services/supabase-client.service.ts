@@ -9,22 +9,12 @@ export class SupabaseClientService {
   private supabase: SupabaseClient;
 
   constructor() {
-    this.supabase = createClient(
-      environment.supabase.url,
-      environment.supabase.anonKey,
-      {
-        auth: {
-          autoRefreshToken: true,
-          persistSession: true,
-          detectSessionInUrl: true
-        },
-        realtime: {
-          params: {
-            eventsPerSecond: 10
-          }
-        }
-      }
-    );
+    const options = {
+      auth: { autoRefreshToken: true, persistSession: true, detectSessionInUrl: true },
+      realtime: { params: { eventsPerSecond: 10 } }
+    };
+    const { url, anonKey } = environment.supabase;
+    this.supabase = createClient(url, anonKey, options);
   }
 
   get auth() {

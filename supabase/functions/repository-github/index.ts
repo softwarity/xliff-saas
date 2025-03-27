@@ -53,7 +53,10 @@ function getGitHubRepositories(token: string): Observable<Repository[]> {
             });
             return forkJoin([userRepos$, ...orgRepos$]);
         }),
-        map((results: any) => results.flat()),
+        map((results: Repository[][]) => results.flat()),
+        map((repositories: Repository[]) => {
+            return Array.from(new Map(repositories.map(repo => [`${repo.namespace}/${repo.name}`, repo])).values());
+        }),
         catchError((error: any) => {
             console.error('Error fetching GitHub repositories:', error);
             return userRepos$; // En cas d'erreur avec les orgs, retourner au moins les dépôts personnels

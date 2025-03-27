@@ -1,6 +1,6 @@
 CREATE TABLE IF NOT EXISTS user_transactions (
-  "userId" uuid NOT NULL REFERENCES auth.users(id),
   id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+  "userId" uuid NOT NULL REFERENCES auth.users(id),
   credits integer NOT NULL,
   status text CHECK (status IN ('pending', 'completed', 'failed', 'cancelled')) NOT NULL,
   message text,

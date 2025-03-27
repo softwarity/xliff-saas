@@ -6,7 +6,7 @@ import { RepositoryService } from './services/repository.service';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { Subscription } from 'rxjs';
 import { RepositoryCardComponent } from './components/repository-card/repository-card.component';
-import { EstimationService } from './services/estimation.service';
+import { JobService } from './services/job.service';
 
 @Component({
   selector: 'app-repositories',
@@ -18,7 +18,7 @@ export class RepositoriesComponent implements OnInit, OnDestroy {
   private route = inject(ActivatedRoute);
   private repoService = inject(RepositoryService);
   private routeSubscription?: Subscription;
-  private estimationService = inject(EstimationService);
+  private jobService = inject(JobService);
   protected loading = signal(true);
   protected error = signal<string | null>(null);
   protected searchTerm = signal('');
@@ -54,7 +54,7 @@ export class RepositoriesComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.routeSubscription?.unsubscribe();
-    this.estimationService.closeChannel();
+    this.jobService.closeChannel();
   }
 
   protected async loadRepositories() {

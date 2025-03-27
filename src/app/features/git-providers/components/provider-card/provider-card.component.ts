@@ -60,19 +60,14 @@ export class ProviderCardComponent implements OnInit {
     this.loading.set(true);
     this.error.set(null);
     
-    this.gitProviderService.validateAndStoreToken(this.provider().type, token).subscribe({
-      next: (success) => {
-        if (success) {
-          this.form.reset();
-          this.updateShowTokenInput(false);
-        } else {
-          this.error.set('Failed to validate credentials. Please check and try again.');
-        }
+    this.gitProviderService.validateAndStoreToken(this.provider(), token).subscribe({
+      next: () => {
+        this.form.reset();
+        this.updateShowTokenInput(false);
         this.loading.set(false);
       },
       error: (err) => {
-        console.error('Error validating token:', err);
-        this.error.set('An error occurred while validating the credentials. Please try again.');
+        this.error.set('Failed to validate credentials.'+err.message);
         this.loading.set(false);
       }
     });

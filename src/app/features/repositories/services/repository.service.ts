@@ -34,6 +34,14 @@ export class RepositoryService {
     );
   }
 
+  translateRepository(repository: Repository, {branch, ext, transUnitState, procedeedTransUnitState}: {branch: string, ext: string, transUnitState: string, procedeedTransUnitState: string}): Observable<string> {
+    const { namespace, name, provider } = repository;
+    const request = { namespace, name, branch, ext, transUnitState, procedeedTransUnitState };
+    return from(this.supabaseClientService.functions.invoke<{message: string}>(`translate/${provider}`, {method: 'POST', body: request})).pipe(
+      map(response => response.data?.message || 'Error translating repository')
+    );
+  }
+
   getEstimation(repository: Repository): Observable<any> {
     const handle = (payload: any) => {
       console.log('Change received!', payload)

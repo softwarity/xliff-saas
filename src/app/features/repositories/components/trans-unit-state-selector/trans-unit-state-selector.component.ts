@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, forwardRef } from '@angular/core';
+import { Component, effect, forwardRef, input, signal } from '@angular/core';
 import { FormControl, NG_VALUE_ACCESSOR, ReactiveFormsModule } from '@angular/forms';
 import { TypedControlValueAccessor } from '../../../../shared/typed-value-control-accessor';
 
@@ -37,8 +37,9 @@ import { TypedControlValueAccessor } from '../../../../shared/typed-value-contro
   ]
 })
 export class TransUnitStateSelectorComponent implements TypedControlValueAccessor<string | null> {
-  transUnitStates: string[] = ['all', 'new', 'translated', 'needs-adaptation', 'needs-l10n', 'needs-review-adaptation', 'needs-review-l10n', 'needs-review-translation', 'need-translation', 'signed-off', 'final'];
-
+  additionalTransUnitStates = input<string[]>([]);
+  baseStates: string[] = ['new', 'translated', 'needs-adaptation', 'needs-l10n', 'needs-review-adaptation', 'needs-review-l10n', 'needs-review-translation', 'need-translation', 'signed-off', 'final'];
+  transUnitStates = signal<string[]>([]);
 // - `new`: The segment is new and has not yet been processed for translation.
 // - `translated`: The segment has been translated but may still require review or adaptation. The translation is complete but not yet finalized.
 // - `needs-adaptation`: The translation requires adaptations to better fit the context or specific project needs.
@@ -50,20 +51,15 @@ export class TransUnitStateSelectorComponent implements TypedControlValueAccesso
 // - `signed-off`: The translation has been approved and signed off by a responsible party or reviewer, indicating it is finalized.
 // - `final`: The translation is complete and ready for use. No further changes are expected.
 
-  transUnitStateUserFC: FormControl<string | null> = new FormControl<string | null>('all');
   transUnitStateSelectFC: FormControl<string | null> = new FormControl<string | null>('all');
 
   constructor() {
-    this.transUnitStateUserFC.valueChanges.subscribe(value => {
-      this.transUnitStateSelectFC.setValue(value);
-    });
-    this.transUnitStateSelectFC.valueChanges.subscribe(value => {
-      this.transUnitStateUserFC.setValue(value, { emitEvent: false });
+    effect(() => {
+      this.transUnitStates.set([...this.additionalTransUnitStates(), ...this.baseStates]);
     });
   }
 
   writeValue(value: string): void {
-    this.transUnitStateUserFC.setValue(value);
     this.transUnitStateSelectFC.setValue(value);
   } 
 
@@ -77,10 +73,8 @@ export class TransUnitStateSelectorComponent implements TypedControlValueAccesso
 
   setDisabledState(isDisabled: boolean): void {
     if (isDisabled) {
-      this.transUnitStateUserFC.disable();
       this.transUnitStateSelectFC.disable();
     } else {
-      this.transUnitStateUserFC.enable();
       this.transUnitStateSelectFC.enable();
     }
   }

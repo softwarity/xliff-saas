@@ -1,5 +1,5 @@
 <select [formControl]="transUnitStateSelectFC">
-  @for (transUnitState of transUnitStates; track transUnitState) {
+  @for (transUnitState of transUnitStates(); track transUnitState) {
     <option [value]="transUnitState">{{ transUnitState }}</option>
   }
 </select>

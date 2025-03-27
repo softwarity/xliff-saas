@@ -1,14 +1,15 @@
 import "jsr:@supabase/functions-js/edge-runtime.d.ts"
 import { getGitToken } from '../lib/git-token.ts';
 import { getSupabaseClient } from '../lib/supabase-client.ts';
-import { EstimateDao } from '../lib/estimate-dao.ts';
+import { JobDao } from '../lib/job-dao.ts';
 import { UserService } from '../lib/user-service.ts';
 import { CORS_HEADERS } from '../const.ts';
-import { Estimation } from '../entities/estimation.ts';
+import { Job } from '../entities/job.ts';
+import { launchEstimateRunner } from '../lib/git-service.ts';
+import { GhEstimateInputs } from '../models/gh-action-inputs.ts';
+const request: 'estimation' | 'translation' = 'estimation';
+
 Deno.serve(async (req) => {
-    console.log('estimate');
-    
-    const workflowId = 'estimate.yml';
     if (req.method === 'OPTIONS') {
         return new Response('ok', { headers: CORS_HEADERS });
     }
@@ -20,53 +21,41 @@ Deno.serve(async (req) => {
     const pathname = url.pathname;
     const provider = pathname.split('/').pop() as 'github' | 'gitlab' | 'bitbucket';
     try {
-        const { namespace, name, branch, ext: EXT_XLIFF, transUnitState: STATE } = await req.json();
-        const WEBHOOK_URL = `${Deno.env.get('HOST_WEBHOOK')}/functions/v1/webhook/estimate/${provider}/${namespace}/${name}/${branch}`;
         const supabaseClient = getSupabaseClient();
-        const estimateDao = new EstimateDao(supabaseClient);
+        const jobDao = new JobDao(supabaseClient);
+        const userService = new UserService(supabaseClient);
+        const userId = await userService.getUserId(req);
 
-        if (await estimateDao.existsAndNotCompleted(namespace, name)) {
+
+        const { namespace, name, branch, ext: EXT_XLIFF, transUnitState: STATE } = await req.json();
+        const WEBHOOK_URL = `${Deno.env.get('HOST_WEBHOOK')}/functions/v1/webhook/${request}/${userId}/${provider}/${namespace}/${name}/${branch}`;
+
+        if (await jobDao.existsAndNotCompleted(request, userId, provider, namespace, name)) {
             console.log('Estimation already launch for this repository and is not completed');
             throw new Error('Estimation already launch for this repository and is not completed');
         }
-        console.log('Exists and completed, restart estimation');
-        const userService = new UserService(supabaseClient);
-        const userId = await userService.getUserId(req);
-        if (await estimateDao.exists(namespace, name)) {
-            await estimateDao.update(namespace, name, {branch, ext: EXT_XLIFF, transUnitState: STATE, status: 'pending', transUnitCount: 0, details: {}});
+        console.log('Estimation not exists or completed, start...');
+        const payload: Omit<Job, 'request' | 'userId' | 'provider' | 'namespace' | 'repository'> = {
+            branch, ext: EXT_XLIFF, transUnitState: STATE, status: 'estimation_pending', transUnitFound: 0, details: {}
+        };
+        if (await jobDao.exists(request, userId, provider, namespace, name)) {
+            await jobDao.update(request, userId, provider, namespace, name, payload);
         } else {
-            const estimate: Estimation = { userId, namespace, repository: name, branch, ext: EXT_XLIFF, transUnitState: STATE, status: 'pending', transUnitCount: 0, details: {} };
-            await estimateDao.insert(estimate);
+            const job: Job = { request, userId, provider, namespace, repository: name, ...payload };
+            await jobDao.insert(job);
         }
-        console.log('Estimation launched for this repository');
         
         const TOKEN = await getGitToken(req, provider);
-        const WEBHOOK_JWT = Deno.env.get('SUPABASE_ANON_KEY')
-        const body = {
-            ref: 'main',
-            inputs: {
-                TOKEN,
-                REPOSITORY_INFO: `${namespace}/${name}@${branch}`,
-                GIT_PROVIDER: provider,
-                EXT_XLIFF,
-                STATE,
-                WEBHOOK_URL,
-                WEBHOOK_JWT
-            }
-        }
-        const response = await fetch(`https://api.github.com/repos/softwarity/xliff-runner/actions/workflows/${workflowId}/dispatches`, {
-            method: 'POST',
-            headers: {
-                'Authorization': `Bearer ${Deno.env.get('GITHUB_TOKEN')}`,
-                'Accept': 'application/vnd.github.v3+json',
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(body),
-        });
-        if (!response.ok) {
-            const error = await response.json();
-            throw new Error(error.message);
-        }
+        const WEBHOOK_JWT = Deno.env.get('SUPABASE_ANON_KEY')!;
+        const REPOSITORY_INFO = `${namespace}/${name}@${branch}`;
+        const inputs: GhEstimateInputs = { 
+            TOKEN, REPOSITORY_INFO, 
+            GIT_PROVIDER: provider, EXT_XLIFF, 
+            STATE, 
+            WEBHOOK_URL, WEBHOOK_JWT 
+        };
+        await launchEstimateRunner(inputs);
+        console.log('Estimation launched for ', `${namespace}/${name}@${branch} by ${userId}`);
         return new Response(JSON.stringify({ message: 'Estimate triggered successfully!' }), { headers: {
             ...CORS_HEADERS,
             'Content-Type': 'application/json',

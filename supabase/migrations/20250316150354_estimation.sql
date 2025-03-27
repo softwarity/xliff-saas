@@ -2,15 +2,17 @@ CREATE TABLE IF NOT EXISTS user_estimations (
   "userId" uuid NOT NULL REFERENCES auth.users(id),
   status text NOT NULL,
   branch text NOT NULL,
+  provider text NOT NULL,
   namespace text NOT NULL,
   repository text NOT NULL,
   ext text NOT NULL,
+  "runId" text,
   "transUnitState" text NOT NULL,
   "transUnitCount" integer NOT NULL,
   details jsonb DEFAULT '{}'::jsonb,
   "createdAt" timestamptz DEFAULT now(),
   "updatedAt" timestamptz DEFAULT now(),
-  PRIMARY KEY (namespace, repository)
+  PRIMARY KEY ("userId", provider, namespace, repository)
 );
 
 ALTER TABLE user_estimations ENABLE ROW LEVEL SECURITY;

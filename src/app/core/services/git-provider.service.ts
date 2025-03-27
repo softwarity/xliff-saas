@@ -1,7 +1,7 @@
 import { Injectable, inject, signal } from '@angular/core';
 import { TokenService } from './token.service';
 import { toObservable } from '@angular/core/rxjs-interop';
-import { Observable, from, map, catchError, switchMap, of } from 'rxjs';
+import { Observable, from, map, catchError, switchMap, of, tap } from 'rxjs';
 import { AuthService } from './auth.service';
 import { ProviderType } from '../../shared/models/provider-type';
 
@@ -28,9 +28,10 @@ export class GitProviderService {
       tokenHint: 'Settings > Developer settings > Personal access tokens > Tokens (classic) > Generate new token',
       scopes: [
         'repo',              // Full control of private repositories
-        'read:user',         // Read user profile data
-        'workflow',          // Update GitHub Action workflows
-        'write:discussion'   // Create and update discussions (for PRs)
+        // 'read:user',         // Read user profile data
+        'read:org',         // Read organization profile data
+        // 'workflow',          // Update GitHub Action workflows
+        // 'write:discussion'   // Create and update discussions (for PRs)
       ]
     },
     { 
@@ -97,59 +98,86 @@ export class GitProviderService {
     });
   }
 
-  validateAndStoreToken(provider: ProviderType, token: string): Observable<boolean> {
-    return this.testToken(provider, token).pipe(
-      switchMap(isValid => {
-        if (!isValid) return of(false);
-        
-        return this.tokenService.storeToken(provider, token).pipe(
+  validateAndStoreToken(provider: GitProvider, token: string): Observable<void> {
+    let testToken$: Observable<void>;
+    if (provider.type === 'github') {
+       testToken$ = this.testGithubToken(provider, token);
+    } else if (provider.type === 'gitlab') {
+      testToken$ = this.testGitlabToken(provider, token);
+    } else {
+      testToken$ = this.testBitbucketToken(provider, token);
+    }
+    return testToken$.pipe(
+      switchMap(() => {
+        return this.tokenService.storeToken(provider.type, token).pipe(
           map(success => {
             if (success) {
               this.providersSignal.update(providers => 
-                providers.map(p => p.type === provider ? { ...p, connected: true } : p)
+                providers.map(p => p.type === provider.type ? { ...p, connected: true } : p)
               );
               this.updateConfiguredStatus();
+              return void 0;
             }
-            return success;
-          }),
-          catchError(() => of(false))
+            throw new Error('Failed to store token');
+          })
         );
       })
     );
   }
 
-  private testToken(provider: ProviderType, token: string): Observable<boolean> {
-    const endpoints = {
-      github: {
-        url: 'https://api.github.com/user',
-        headers: {
-          'Authorization': `token ${token}`,
-          'Accept': 'application/vnd.github.v3+json'
+  private testGithubToken(provider: GitProvider, token: string): Observable<void> {
+    const github = { 
+      url: 'https://api.github.com/user',
+      headers: {'Authorization': `token ${token}`, }
+    };
+    return from(fetch(github.url, { headers: github.headers })).pipe(
+      map((response: Response) => {
+        const scopes = response.headers.get('x-oauth-scopes')?.split(', ') || [];
+        if (response.ok && provider.scopes.every(scope => scopes.includes(scope))) {
+          return void 0;
         }
-      },
-      gitlab: {
-        url: 'https://gitlab.com/api/v4/user',
-        headers: {
-          'Authorization': `Bearer ${token}`
+        throw new Error('Invalid scopes. need at least: [' + provider.scopes.join(', ') + ']');
+      })
+    );
+  }
+
+  private testGitlabToken(provider: GitProvider, token: string): Observable<void> {
+    const gitlab = {
+      url: 'https://gitlab.com/api/v4/admin/token',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        'PRIVATE-TOKEN': `${token}`
+      }
+    };
+    return from(fetch(gitlab.url, { headers: gitlab.headers, method: 'POST', body: JSON.stringify({ token }) })).pipe(
+      map((response: Response) => {
+        console.log('gitlab response', response);
+        // const scopes = response.headers.get('x-oauth-scopes')?.split(', ') || [];
+        if (response.ok) {
+          return void 0;
         }
-      },
-      bitbucket: {
-        url: `https://api.bitbucket.org/2.0/user`,
-        headers: {
-          'Authorization': `Basic ${btoa(token)}`,
-          'Accept': 'application/json'
-        }
+        throw new Error('Invalid scopes. need at least: [' + provider.scopes.join(', ') + ']');
+      })
+    );
+  }
+
+  private testBitbucketToken(provider: GitProvider, token: string): Observable<void> {
+      let bitbucket = {
+      url: `https://api.bitbucket.org/2.0/user`,
+      headers: {
+        'Authorization': `Basic ${btoa(token)}`,
+        'Accept': 'application/json'
       }
     };
 
-    const config = endpoints[provider as keyof typeof endpoints];
-    
-    if (!config) return of(false);
-    return from(fetch(config.url, { headers: config.headers })).pipe(
-      map(response => response.ok),
-      catchError((error) => {
-        console.log(error);
-        return of(false);
+    return from(fetch(bitbucket.url, { headers: bitbucket.headers })).pipe(
+      map((response: Response) => {
+        // const scopes = response.headers.get('x-oauth-scopes')?.split(', ') || [];
+        if (response.ok) {
+          return void 0;
+        }
+        throw new Error('Invalid scopes. need at least: [' + provider.scopes.join(', ') + ']');
       })
     );
   }
