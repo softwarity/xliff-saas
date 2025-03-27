@@ -135,6 +135,7 @@ a.button.flat-primary,
 a.button.flat-warning,
 a.button.flat-secondary,
 a.button.flat-tertiary,
+a.button.stroke-primary,
 button.flat-primary,
 button.flat-warning,
 button.flat-secondary,
@@ -162,7 +163,7 @@ a.button.flat-tertiary,
 button.flat-tertiary {
   @apply bg-tertiary text-white hover:bg-tertiary-hover;
 }
-
+a.button.stroke-primary,
 button.stroke-primary {
   @apply border border-primary text-primary hover:bg-primary hover:text-white;
 }

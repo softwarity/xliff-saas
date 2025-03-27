@@ -1,6 +1,18 @@
 <div class="container mx-auto px-4 py-8">
   <h1 class="text-3xl font-bold mb-8">Dashboard</h1>
-  
+  <form [formGroup]="instructionForm" (ngSubmit)="onSubmit()" class="space-y-4">
+    <div>
+      <label for="instructions" i18n="@@GLOBAL_AI_INSTRUCTIONS_LABEL">
+        Global AI Instructions
+      </label>
+      <textarea
+        id="instructions"
+        formControlName="instructions"
+        i18n-placeholder="@@AI_INSTRUCTIONS_PLACEHOLDER"
+        placeholder="Enter your instructions for the AI..."
+      ></textarea>
+    </div>
+  </form>
   <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
     <!-- Translation Stats -->
     <div class="bg-white rounded-lg shadow p-6">

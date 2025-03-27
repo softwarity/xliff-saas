@@ -1,105 +1,146 @@
 <div class="container mx-auto px-4 py-8">
-  <h1 class="text-3xl font-bold mb-8 dark:text-white" i18n="@@HOW_IT_WORKS_TITLE">
+  <h1 class="text-3xl font-bold mb-8 dark:text-white text-gray-900" i18n="@@HOW_IT_WORKS_TITLE">
     How It Works
   </h1>
 
   <div class="grid md:grid-cols-2 gap-8 mb-12">
     <div class="space-y-6">
-      <h2 class="text-2xl font-semibold text-primary dark:text-blue-400" i18n="@@AUTOMATED_WORKFLOW_TITLE">
+      <h2 class="text-2xl font-semibold text-primary dark:text-blue-400 text-blue-600" i18n="@@AUTOMATED_WORKFLOW_TITLE">
         Automated Workflow
       </h2>
-      <p class="text-gray-600 dark:text-gray-300" i18n="@@AUTOMATED_WORKFLOW_DESCRIPTION">
+      <p class="text-gray-700 dark:text-gray-300" i18n="@@AUTOMATED_WORKFLOW_DESCRIPTION">
         Simply connect your Git repository, start the translation, and we'll handle the rest. Our AI-powered platform takes care of everything automatically.
       </p>
-      <ul class="space-y-4 text-gray-600 dark:text-gray-300">
+      <ul class="space-y-4 text-gray-700 dark:text-gray-300">
         <li class="flex items-start">
-          <svg class="w-6 h-6 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-          </svg>
+          <app-icon name="check" color="green" size="24" class="mr-2"></app-icon>
           <span i18n="@@STEP_1_DESCRIPTION">Smart analysis of your XLIFF files with context extraction</span>
         </li>
         <li class="flex items-start">
-          <svg class="w-6 h-6 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-          </svg>
+          <app-icon name="check" color="green" size="24" class="mr-2"></app-icon>
           <span i18n="@@STEP_2_DESCRIPTION">AI-powered translation with contextual understanding</span>
         </li>
         <li class="flex items-start">
-          <svg class="w-6 h-6 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-          </svg>
+          <app-icon name="check" color="green" size="24" class="mr-2"></app-icon>
           <span i18n="@@STEP_3_DESCRIPTION">Automated pull request creation with translated XLIFF files</span>
         </li>
       </ul>
     </div>
-    <div class="bg-light-surface dark:bg-dark-700 p-6 rounded-lg shadow-lg">
-      <h3 class="text-xl font-semibold mb-4 text-primary dark:text-blue-400" i18n="@@SUPPORTED_PROVIDERS_TITLE">
+    <div class="bg-white dark:bg-dark-700 p-6 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700">
+      <h3 class="text-xl font-semibold mb-4 text-blue-600 dark:text-blue-400" i18n="@@SUPPORTED_PROVIDERS_TITLE">
         Supported Git Providers
       </h3>
       <div class="space-y-4">
         <div class="flex items-center space-x-3">
           <app-provider-logo provider="github" class="w-8 h-8" />
-          <span class="text-gray-600 dark:text-gray-300">GitHub</span>
+          <span class="text-gray-700 dark:text-gray-300">GitHub</span>
         </div>
         <div class="flex items-center space-x-3">
           <app-provider-logo provider="gitlab" class="w-8 h-8" />
-          <span class="text-gray-600 dark:text-gray-300">GitLab</span>
+          <span class="text-gray-700 dark:text-gray-300">GitLab</span>
         </div>
         <div class="flex items-center space-x-3">
           <app-provider-logo provider="bitbucket" class="w-8 h-8" />
-          <span class="text-gray-600 dark:text-gray-300">Bitbucket</span>
+          <span class="text-gray-700 dark:text-gray-300">Bitbucket</span>
         </div>
       </div>
     </div>
   </div>
 
+  <!-- TransUnit Section -->
+  <div class="bg-white dark:bg-dark-700 rounded-lg shadow-lg p-8 mb-12 border border-gray-200 dark:border-gray-700">
+    <h2 class="text-2xl font-semibold mb-6 text-blue-600 dark:text-blue-400" i18n="@@TRANSUNIT_TITLE">
+      Understanding TransUnits
+    </h2>
+    <p class="text-gray-700 dark:text-gray-300 mb-6" i18n="@@TRANSUNIT_DESCRIPTION">
+      A TransUnit is the fundamental building block of XLIFF files. It represents a single piece of text that needs to be translated, along with its metadata and context.
+    </p>
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="p-4 bg-gray-50 dark:bg-dark-800 rounded-lg border border-gray-200 dark:border-gray-700">
+        <h3 class="font-semibold mb-2 text-gray-900 dark:text-white" i18n="@@TRANSUNIT_SOURCE">Source Text</h3>
+        <p class="text-sm text-gray-700 dark:text-gray-400" i18n="@@TRANSUNIT_SOURCE_DESCRIPTION">
+          The original text in your application's source language
+        </p>
+      </div>
+      <div class="p-4 bg-gray-50 dark:bg-dark-800 rounded-lg border border-gray-200 dark:border-gray-700">
+        <h3 class="font-semibold mb-2 text-gray-900 dark:text-white" i18n="@@TRANSUNIT_TARGET">Target Text</h3>
+        <p class="text-sm text-gray-700 dark:text-gray-400" i18n="@@TRANSUNIT_TARGET_DESCRIPTION">
+          The translated text in the target language
+        </p>
+      </div>
+      <div class="p-4 bg-gray-50 dark:bg-dark-800 rounded-lg border border-gray-200 dark:border-gray-700">
+        <h3 class="font-semibold mb-2 text-gray-900 dark:text-white" i18n="@@TRANSUNIT_CONTEXT">Context</h3>
+        <p class="text-sm text-gray-700 dark:text-gray-400" i18n="@@TRANSUNIT_CONTEXT_DESCRIPTION">
+          Information about where and how the text is used in your application
+        </p>
+      </div>
+      <div class="p-4 bg-gray-50 dark:bg-dark-800 rounded-lg border border-gray-200 dark:border-gray-700">
+        <h3 class="font-semibold mb-2 text-gray-900 dark:text-white" i18n="@@TRANSUNIT_STATE">State</h3>
+        <p class="text-sm text-gray-700 dark:text-gray-400" i18n="@@TRANSUNIT_STATE_DESCRIPTION">
+          The current status of the translation (initial, translated, reviewed, etc.)
+        </p>
+      </div>
+    </div>
+    <div class="mt-6 p-4 bg-gray-900 rounded-lg border border-gray-700">
+      <pre class="text-sm overflow-x-auto"><code><span class="text-blue-400">&lt;trans-unit</span> <span class="text-yellow-400">id="&#64;&#64;WELCOME_MESSAGE"</span><span class="text-blue-400">&gt;</span>
+  <span class="text-blue-400">&lt;source&gt;</span><span class="text-gray-100">Welcome to our application</span><span class="text-blue-400">&lt;/source&gt;</span>
+  <span class="text-blue-400">&lt;target</span> <span class="text-yellow-400">state="translated"</span><span class="text-blue-400">&gt;</span><span class="text-gray-100">Bienvenue dans notre application</span><span class="text-blue-400">&lt;/target&gt;</span>
+  <span class="text-blue-400">&lt;context&gt;</span>
+    <span class="text-blue-400">&lt;context-group</span> <span class="text-yellow-400">purpose="location"</span><span class="text-blue-400">&gt;</span>
+      <span class="text-blue-400">&lt;context&gt;</span><span class="text-gray-100">src/app/home/home.component.html:12</span><span class="text-blue-400">&lt;/context&gt;</span>
+    <span class="text-blue-400">&lt;/context-group&gt;</span>
+  <span class="text-blue-400">&lt;/context&gt;</span>
+<span class="text-blue-400">&lt;/trans-unit&gt;</span></code></pre>
+    </div>
+  </div>
+
   <!-- Supported Formats Section -->
-  <div class="bg-light-surface dark:bg-dark-700 rounded-lg shadow-lg p-8 mb-12">
-    <h2 class="text-2xl font-semibold mb-6 text-primary dark:text-blue-400" i18n="@@SUPPORTED_FORMATS_TITLE">
+  <div class="bg-white dark:bg-dark-700 rounded-lg shadow-lg p-8 mb-12 border border-gray-200 dark:border-gray-700">
+    <h2 class="text-2xl font-semibold mb-6 text-blue-600 dark:text-blue-400" i18n="@@SUPPORTED_FORMATS_TITLE">
       Supported Formats
     </h2>
-    <p class="text-gray-600 dark:text-gray-300 mb-6" i18n="@@SUPPORTED_FORMATS_DESCRIPTION">
+    <p class="text-gray-700 dark:text-gray-300 mb-6" i18n="@@SUPPORTED_FORMATS_DESCRIPTION">
       Our platform supports the following XLIFF formats for maximum compatibility with Angular's internationalization system:
     </p>
     <div class="grid md:grid-cols-2 gap-6">
-      <div class="p-4 bg-white dark:bg-dark-800 rounded-lg">
-        <h3 class="font-semibold mb-2 dark:text-white">XLIFF 1.2</h3>
-        <p class="text-sm text-gray-600 dark:text-gray-400">
+      <div class="p-4 bg-gray-50 dark:bg-dark-800 rounded-lg border border-gray-200 dark:border-gray-700">
+        <h3 class="font-semibold mb-2 text-gray-900 dark:text-white">XLIFF 1.2</h3>
+        <p class="text-sm text-gray-700 dark:text-gray-400">
           Full support for XLIFF 1.2 format, including all Angular i18n features and metadata
         </p>
       </div>
-      <div class="p-4 bg-white dark:bg-dark-800 rounded-lg">
-        <h3 class="font-semibold mb-2 dark:text-white">XLIFF 2.0</h3>
-        <p class="text-sm text-gray-600 dark:text-gray-400">
+      <div class="p-4 bg-gray-50 dark:bg-dark-800 rounded-lg border border-gray-200 dark:border-gray-700">
+        <h3 class="font-semibold mb-2 text-gray-900 dark:text-white">XLIFF 2.0</h3>
+        <p class="text-sm text-gray-700 dark:text-gray-400">
           Complete support for the latest XLIFF 2.0 specification with enhanced features
         </p>
       </div>
     </div>
   </div>
 
-  <div class="bg-light-surface dark:bg-dark-700 rounded-lg shadow-lg p-8 mb-12">
-    <h2 class="text-2xl font-semibold mb-6 text-primary dark:text-blue-400" i18n="@@CONTEXT_AWARE_TITLE">
+  <div class="bg-white dark:bg-dark-700 rounded-lg shadow-lg p-8 mb-12 border border-gray-200 dark:border-gray-700">
+    <h2 class="text-2xl font-semibold mb-6 text-blue-600 dark:text-blue-400" i18n="@@CONTEXT_AWARE_TITLE">
       Context-Aware Translation
     </h2>
-    <p class="text-gray-600 dark:text-gray-300 mb-6" i18n="@@CONTEXT_AWARE_DESCRIPTION">
+    <p class="text-gray-700 dark:text-gray-300 mb-6" i18n="@@CONTEXT_AWARE_DESCRIPTION">
       Our AI-powered translation engine understands your application's context, ensuring accurate and meaningful translations that maintain the original intent of your content.
     </p>
     <div class="grid md:grid-cols-3 gap-6">
-      <div class="p-4 bg-white dark:bg-dark-800 rounded-lg">
-        <h3 class="font-semibold mb-2 dark:text-white" i18n="@@FEATURE_CODE_ANALYSIS">Code Analysis</h3>
-        <p class="text-sm text-gray-600 dark:text-gray-400" i18n="@@FEATURE_CODE_ANALYSIS_DESCRIPTION">
+      <div class="p-4 bg-gray-50 dark:bg-dark-800 rounded-lg border border-gray-200 dark:border-gray-700">
+        <h3 class="font-semibold mb-2 text-gray-900 dark:text-white" i18n="@@FEATURE_CODE_ANALYSIS">Code Analysis</h3>
+        <p class="text-sm text-gray-700 dark:text-gray-400" i18n="@@FEATURE_CODE_ANALYSIS_DESCRIPTION">
           Analyzes your code to understand the context of each string
         </p>
       </div>
-      <div class="p-4 bg-white dark:bg-dark-800 rounded-lg">
-        <h3 class="font-semibold mb-2 dark:text-white" i18n="@@FEATURE_CONSISTENCY">Consistency Check</h3>
-        <p class="text-sm text-gray-600 dark:text-gray-400" i18n="@@FEATURE_CONSISTENCY_DESCRIPTION">
+      <div class="p-4 bg-gray-50 dark:bg-dark-800 rounded-lg border border-gray-200 dark:border-gray-700">
+        <h3 class="font-semibold mb-2 text-gray-900 dark:text-white" i18n="@@FEATURE_CONSISTENCY">Consistency Check</h3>
+        <p class="text-sm text-gray-700 dark:text-gray-400" i18n="@@FEATURE_CONSISTENCY_DESCRIPTION">
           Ensures consistent translations across your entire application
         </p>
       </div>
-      <div class="p-4 bg-white dark:bg-dark-800 rounded-lg">
-        <h3 class="font-semibold mb-2 dark:text-white" i18n="@@FEATURE_QUALITY">Quality Assurance</h3>
-        <p class="text-sm text-gray-600 dark:text-gray-400" i18n="@@FEATURE_QUALITY_DESCRIPTION">
+      <div class="p-4 bg-gray-50 dark:bg-dark-800 rounded-lg border border-gray-200 dark:border-gray-700">
+        <h3 class="font-semibold mb-2 text-gray-900 dark:text-white" i18n="@@FEATURE_QUALITY">Quality Assurance</h3>
+        <p class="text-sm text-gray-700 dark:text-gray-400" i18n="@@FEATURE_QUALITY_DESCRIPTION">
           Automated quality checks for translation accuracy
         </p>
       </div>
@@ -107,21 +148,15 @@
   </div>
 
   <div class="text-center">
-    <h2 class="text-2xl font-semibold mb-6 text-primary dark:text-blue-400" i18n="@@GET_STARTED_TITLE">
+    <h2 class="text-2xl font-semibold mb-6 text-blue-600 dark:text-blue-400" i18n="@@GET_STARTED_TITLE">
       Ready to Get Started?
     </h2>
-    <p class="text-gray-600 dark:text-gray-300 mb-6" i18n="@@GET_STARTED_DESCRIPTION">
+    <p class="text-gray-700 dark:text-gray-300 mb-6" i18n="@@GET_STARTED_DESCRIPTION">
       Start translating your Angular application in minutes.
     </p>
     <a 
       routerLink="/git-providers" 
-      class="!inline-block button flat-primary !px-8 !py-3 !rounded-lg !font-medium transition"
-      i18n="@@CONNECT_GIT_PROVIDER">
-      Connect Your Git Provider
-    </a>
-    <a 
-      routerLink="/git-providers" 
-      class="inline-block bg-primary text-white px-8 py-3 rounded-lg font-medium hover:bg-blue-700 transition"
+      class="button flat-primary !px-8 !py-3 !rounded-lg !font-medium"
       i18n="@@CONNECT_GIT_PROVIDER">
       Connect Your Git Provider
     </a>

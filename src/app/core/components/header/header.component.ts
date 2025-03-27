@@ -11,6 +11,7 @@ import '../../../web-components/theme-switcher';
 import { CreditService } from '../../../features/repositories/services/credit.service';
 import { Subscription } from 'rxjs';
 import { Credit } from '../../../shared/models/credit.model';
+import { AIInstructionsModalComponent } from '../../../shared/components/ai-instructions-modal/ai-instructions-modal.component';
 
 @Component({
   selector: 'app-header',
@@ -21,7 +22,8 @@ import { Credit } from '../../../shared/models/credit.model';
     LanguageToggleComponent,
     ReactiveFormsModule,
     CommonModule,
-    ProviderLogoComponent
+    ProviderLogoComponent,
+    AIInstructionsModalComponent
   ],
   styles: [`
     a.tab-button {
@@ -39,6 +41,7 @@ export class HeaderComponent {
   private fb = inject(FormBuilder);
   credit = signal<Credit | null>(null);
   isCapsLockOn = signal(false);
+  isCustomAIInstructionsModalOpen = signal(false);
 
   protected showAuthForm = signal(false);
   protected isRegistering = signal(false);

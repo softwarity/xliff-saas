@@ -84,6 +84,9 @@
 
             @if (showUserMenu()) {
               <div class="absolute right-0 mt-2 w-48 bg-white dark:bg-gray-700 rounded-lg shadow-lg py-1 z-50">
+                <button (click)="isCustomAIInstructionsModalOpen.set(true)" class="w-full text-left px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-600">
+                  <span i18n="@@USER_MENU_CUSTOM_AI_INSTRUCTIONS">Custom AI instructions</span>
+                </button>
                 <button (click)="signOut()" class="w-full text-left px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-600">
                   <span i18n="@@USER_MENU_SIGN_OUT">Sign Out</span>
                 </button>
@@ -151,3 +154,7 @@
     </div>
   </nav>
 </div>
+
+@if (isCustomAIInstructionsModalOpen()) {
+  <app-ai-instructions-modal (closeModal)="isCustomAIInstructionsModalOpen.set(false)" [data]="{scope: 'global', instructions: ''}"/>
+}

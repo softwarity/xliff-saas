@@ -9,12 +9,11 @@
         Translate your Angular applications with AI-powered context-aware translations
       </p>
       <div class="space-x-4">
-        <a routerLink="/dashboard" 
-           class="bg-primary text-white px-8 py-3 rounded-lg font-medium hover:bg-blue-700 transition">
+        <a routerLink="/documentation" class="button flat-primary !px-8 !py-3 rounded-lg font-medium">
           Get Started
         </a>
-        <a routerLink="/how-it-works" 
-           class="bg-white dark:bg-dark-700 text-primary dark:text-blue-400 px-8 py-3 rounded-lg font-medium border border-primary dark:border-blue-400 hover:bg-gray-50 dark:hover:bg-dark-600 transition">
+        <a routerLink="/how-it-works" class="button stroke-primary !px-8 !py-3 rounded-lg font-medium"
+        classs="bg-white dark:bg-dark-700 text-primary dark:text-blue-400 px-8 py-3 rounded-lg font-medium border border-primary dark:border-blue-400 hover:bg-gray-50 dark:hover:bg-dark-600 transition">
           Learn More
         </a>
       </div>
@@ -62,31 +61,30 @@
             Basic
           </div>
           <h3 class="text-xl font-semibold mb-2 text-primary dark:text-blue-400">Starter</h3>
+          <h4 class="text-sm mb-2 text-primary dark:text-blue-400">For a complex application with one language target</h4>
           <p class="text-4xl font-bold mb-4 text-light-text-primary dark:text-white">
-            $29<span class="text-lg text-light-text-secondary dark:text-gray-400">/mo</span>
+            $10<span class="text-lg text-light-text-secondary dark:text-gray-400"></span>
           </p>
           <ul class="space-y-3 mb-8 text-light-text-secondary dark:text-gray-300">
             <li class="flex items-center">
-              <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              1,000 phrases per month
+              <app-icon name="check" color="green" size="24" class="mr-2"></app-icon>
+              1,000 translation units
             </li>
             <li class="flex items-center">
-              <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              2 Git providers
+              <app-icon name="check" color="green" size="24" class="mr-2"></app-icon>
+              Unlimited git repositories
             </li>
             <li class="flex items-center">
-              <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-              </svg>
+              <app-icon name="check" color="green" size="24" class="mr-2"></app-icon>
+              Trans units up to 1K characters
+            </li>
+            <li class="flex items-center">
+              <app-icon name="check" color="green" size="24" class="mr-2"></app-icon>
               Basic support
             </li>
           </ul>
-          <button class="w-full bg-primary text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">
-            Choose Plan
+          <button class="flat-primary w-full px-6 py-3 rounded-lg" i18n="@@BUY_NOW">
+            Buy now
           </button>
         </div>
 
@@ -96,31 +94,63 @@
             Most Popular
           </div>
           <h3 class="text-xl font-semibold mb-2 text-primary dark:text-blue-400">Professional</h3>
+          <h4 class="text-sm mb-2 text-primary dark:text-blue-400">For complex applications with several language targets</h4>
           <p class="text-4xl font-bold mb-4 text-light-text-primary dark:text-white">
-            $99<span class="text-lg text-light-text-secondary dark:text-gray-400">/mo</span>
+            $50<span class="text-lg text-light-text-secondary dark:text-gray-400"></span>
           </p>
           <ul class="space-y-3 mb-8 text-light-text-secondary dark:text-gray-300">
             <li class="flex items-center">
-              <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              5,000 phrases per month
+              <app-icon name="check" color="green" size="24" class="mr-2"></app-icon>
+              The previous plan +
             </li>
             <li class="flex items-center">
-              <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              All Git providers
+              <app-icon name="check" color="green" size="24" class="mr-2"></app-icon>
+              8,000 translation units
             </li>
             <li class="flex items-center">
-              <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-              </svg>
+              <app-icon name="check" color="green" size="24" class="mr-2"></app-icon>
+              Trans units without size limit
+            </li>
+            <li class="flex items-center">
+              <app-icon name="check" color="green" size="24" class="mr-2"></app-icon>
+              Custom AI instructions globally
+            </li>
+            <li class="flex items-center">
+              <app-icon name="check" color="green" size="24" class="mr-2"></app-icon>
               Priority support
             </li>
           </ul>
-          <button class="w-full bg-primary text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">
-            Choose Plan
+          <button class="flat-primary w-full px-6 py-3 rounded-lg" i18n="@@BUY_NOW">
+            Buy now
+          </button>
+        </div>
+
+        <!-- Enterprise Plan -->
+        <div class="relative p-8 rounded-lg bg-light-surface dark:bg-dark-700 shadow-lg border border-light-border dark:border-dark-600 hover:shadow-xl transition-shadow">
+          <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-primary text-white px-4 py-1 rounded-full text-sm">
+            Enterprise
+          </div>
+          <h3 class="text-xl font-semibold mb-2 text-primary dark:text-blue-400">Enterprise</h3>
+          <h4 class="text-sm mb-2 text-primary dark:text-blue-400">For complex applications with different contexts and several language targets</h4>
+          <p class="text-4xl font-bold mb-4 text-light-text-primary dark:text-white">
+            $100<span class="text-lg text-light-text-secondary dark:text-gray-400"></span>
+          </p>
+          <ul class="space-y-3 mb-8 text-light-text-secondary dark:text-gray-300">
+            <li class="flex items-center">
+              <app-icon name="check" color="green" size="24" class="mr-2"></app-icon>
+              The previous plan +
+            </li>
+            <li class="flex items-center">
+              <app-icon name="check" color="green" size="24" class="mr-2"></app-icon>
+              20 000 translation units
+            </li>
+            <li class="flex items-center">
+              <app-icon name="check" color="green" size="24" class="mr-2"></app-icon>
+              Custom AI instructions by repository
+            </li>
+          </ul>
+          <button class="flat-primary w-full px-6 py-3 rounded-lg" i18n="@@BUY_NOW">
+            Buy now
           </button>
         </div>
 
@@ -133,25 +163,27 @@
           <p class="text-4xl font-bold mb-4 text-light-text-primary dark:text-white">Custom</p>
           <ul class="space-y-3 mb-8 text-light-text-secondary dark:text-gray-300">
             <li class="flex items-center">
-              <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              Unlimited phrases
+              <app-icon name="check" color="green" size="24" class="mr-2"></app-icon>
+              On-premise deployment
             </li>
             <li class="flex items-center">
-              <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              Custom integrations
+              <app-icon name="check" color="green" size="24" class="mr-2"></app-icon>
+              Use your own AI
             </li>
             <li class="flex items-center">
-              <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              24/7 support
+              <app-icon name="check" color="green" size="24" class="mr-2"></app-icon>
+              Unlimited translation units
+            </li>
+            <li class="flex items-center">
+              <app-icon name="check" color="green" size="24" class="mr-2"></app-icon>
+              Unlock all features
+            </li>
+            <li class="flex items-center">
+              <app-icon name="check" color="green" size="24" class="mr-2"></app-icon>
+              Priority support
             </li>
           </ul>
-          <button class="w-full bg-primary text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">
+          <button class="flat-primary w-full px-6 py-3 rounded-lg" i18n="@@CONTACT_US">
             Contact Us
           </button>
         </div>
