@@ -1,51 +1,79 @@
 <div class="container mx-auto px-4 py-8">
-  <h1 class="text-3xl font-bold mb-8">Dashboard</h1>
-  <form [formGroup]="instructionForm" (ngSubmit)="onSubmit()" class="space-y-4">
-    <div>
-      <label for="instructions" i18n="@@GLOBAL_AI_INSTRUCTIONS_LABEL">
-        Global AI Instructions
-      </label>
-      <textarea
-        id="instructions"
-        formControlName="instructions"
-        i18n-placeholder="@@AI_INSTRUCTIONS_PLACEHOLDER"
-        placeholder="Enter your instructions for the AI..."
-      ></textarea>
-    </div>
-  </form>
-  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+  <h1 class="text-3xl font-bold mb-8 dark:text-white text-gray-900" i18n="@@DASHBOARD_TITLE">
+    Dashboard
+  </h1>
+
+  <!-- AI Instructions Form -->
+  <div class="bg-white dark:bg-dark-700 rounded-lg shadow-lg p-8 border border-gray-200 dark:border-gray-700 mb-8">
+    <h2 class="text-2xl font-semibold mb-6 text-blue-600 dark:text-blue-400" i18n="@@AI_INSTRUCTIONS_TITLE">
+      AI Instructions
+    </h2>
+    <form [formGroup]="instructionForm" (ngSubmit)="onSubmit()" class="space-y-4">
+      <div>
+        <label for="instructions" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2" i18n="@@GLOBAL_AI_INSTRUCTIONS_LABEL">
+          Global AI Instructions
+        </label>
+        <textarea
+          id="instructions"
+          formControlName="instructions"
+          class="w-full border rounded-lg px-4 py-2 bg-white border-gray-300 dark:bg-dark-800 dark:border-gray-600 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary min-h-[150px]"
+          i18n-placeholder="@@AI_INSTRUCTIONS_PLACEHOLDER"
+          placeholder="Enter your instructions for the AI..."
+        ></textarea>
+      </div>
+    </form>
+  </div>
+
+  <!-- Stats Grid -->
+  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
     <!-- Translation Stats -->
-    <div class="bg-white rounded-lg shadow p-6">
-      <h2 class="text-xl font-semibold mb-4">Translation Stats</h2>
-      <div class="space-y-4">
+    <div class="bg-white dark:bg-dark-700 rounded-lg shadow-lg p-8 border border-gray-200 dark:border-gray-700">
+      <h2 class="text-xl font-semibold mb-6 text-gray-900 dark:text-white" i18n="@@TRANSLATION_STATS_TITLE">
+        Translation Stats
+      </h2>
+      <div class="space-y-6">
         <div>
-          <p class="text-gray-600">Remaining Translations</p>
-          <p class="text-2xl font-bold">1,000</p>
+          <p class="text-gray-600 dark:text-gray-400" i18n="@@REMAINING_TRANSLATIONS_LABEL">
+            Remaining Translations
+          </p>
+          <p class="text-2xl font-bold text-gray-900 dark:text-white">1,000</p>
         </div>
         <div>
-          <p class="text-gray-600">Translations This Month</p>
-          <p class="text-2xl font-bold">250</p>
+          <p class="text-gray-600 dark:text-gray-400" i18n="@@TRANSLATIONS_THIS_MONTH_LABEL">
+            Translations This Month
+          </p>
+          <p class="text-2xl font-bold text-gray-900 dark:text-white">250</p>
         </div>
       </div>
     </div>
 
     <!-- Active Processes -->
-    <div class="bg-white rounded-lg shadow p-6">
-      <h2 class="text-xl font-semibold mb-4">Active Processes</h2>
-      <div class="space-y-4">
-        <p class="text-gray-600">No active translation processes</p>
+    <div class="bg-white dark:bg-dark-700 rounded-lg shadow-lg p-8 border border-gray-200 dark:border-gray-700">
+      <h2 class="text-xl font-semibold mb-6 text-gray-900 dark:text-white" i18n="@@ACTIVE_PROCESSES_TITLE">
+        Active Processes
+      </h2>
+      <div class="space-y-6">
+        <p class="text-gray-600 dark:text-gray-400" i18n="@@NO_ACTIVE_PROCESSES">
+          No active translation processes
+        </p>
       </div>
     </div>
 
     <!-- Subscription Info -->
-    <div class="bg-white rounded-lg shadow p-6">
-      <h2 class="text-xl font-semibold mb-4">Subscription</h2>
-      <div class="space-y-4">
+    <div class="bg-white dark:bg-dark-700 rounded-lg shadow-lg p-8 border border-gray-200 dark:border-gray-700">
+      <h2 class="text-xl font-semibold mb-6 text-gray-900 dark:text-white" i18n="@@SUBSCRIPTION_TITLE">
+        Subscription
+      </h2>
+      <div class="space-y-6">
         <div>
-          <p class="text-gray-600">Current Plan</p>
-          <p class="text-2xl font-bold">Professional</p>
+          <p class="text-gray-600 dark:text-gray-400" i18n="@@CURRENT_PLAN_LABEL">
+            Current Plan
+          </p>
+          <p class="text-2xl font-bold text-gray-900 dark:text-white" i18n="@@PROFESSIONAL_PLAN">
+            Professional
+          </p>
         </div>
-        <button class="flat-primary">
+        <button class="flat-primary" i18n="@@MANAGE_SUBSCRIPTION">
           Manage Subscription
         </button>
       </div>
@@ -53,12 +81,96 @@
   </div>
 
   <!-- Recent Activity -->
-  <div class="mt-8">
-    <h2 class="text-2xl font-semibold mb-4">Recent Activity</h2>
-    <div class="bg-white rounded-lg shadow overflow-hidden">
-      <div class="p-6">
-        <p class="text-gray-600">No recent activity</p>
-      </div>
+  <div class="bg-white dark:bg-dark-700 rounded-lg shadow-lg p-8 border border-gray-200 dark:border-gray-700">
+    <h2 class="text-2xl font-semibold mb-6 text-blue-600 dark:text-blue-400" i18n="@@RECENT_ACTIVITY_TITLE">
+      Recent Activity
+    </h2>
+    <div class="space-y-4">
+      @for (job of jobs(); track job.runId || job.transactionId) {
+        <div class="bg-gray-50 dark:bg-dark-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700">
+          <!-- First Line: Repository and Branch -->
+          <div class="flex items-center justify-between mb-3">
+            <div class="flex items-center gap-2 flex-shrink-0">
+              <app-provider-logo [provider]="job.provider" class="w-5 h-5 text-gray-700 dark:text-gray-300"/>
+              <span class="text-sm font-medium text-gray-900 dark:text-white truncate">
+                {{ job.namespace }}/{{ job.repository }}
+              </span>
+            </div>
+            <div class="flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400">
+              <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
+              </svg>
+              <span class="truncate">{{ job.branch }}</span>
+            </div>
+          </div>
+
+          <!-- Second Line: Details and Status -->
+          <div class="flex items-start justify-between gap-4">
+            <div class="flex-1 min-w-0">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-xs px-2 py-1 rounded-full
+                  {{ job.status === 'completed' ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200' :
+                    job.status.includes('running') ? 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200' :
+                    job.status === 'failed' ? 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200' :
+                    'bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-200' }}">
+                  {{ job.status | titlecase }}
+                </span>
+              </div>
+
+              <!-- Job Details -->
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-gray-600 dark:text-gray-400">
+                <div class="flex items-center gap-2">
+                  <svg class="w-4 h-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                  </svg>
+                  <span class="truncate">{{ job.ext }}</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <svg class="w-4 h-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                  </svg>
+                  <span class="truncate">{{ job.request | titlecase }}</span>
+                </div>
+              </div>
+
+              <!-- Progress -->
+              @if (job.transUnitFound) {
+                <div class="mt-3 text-sm text-gray-600 dark:text-gray-400">
+                  <span class="text-gray-500 dark:text-gray-500">
+                    {{ job.transUnitDone || 0 }}/{{ job.transUnitFound }} units
+                  </span>
+                  @if (job.transUnitAllowed) {
+                    <span class="text-gray-500 dark:text-gray-500 ml-2">
+                      ({{ job.transUnitAllowed }} allowed)
+                    </span>
+                  }
+                </div>
+              }
+            </div>
+
+            <!-- Date and Status -->
+            <div class="flex flex-col items-end gap-2">
+              <p class="text-xs text-gray-500 dark:text-gray-400 whitespace-nowrap">
+                {{ job.createdAt | date:'short' }}
+              </p>
+              @if (job.status.includes('running')) {
+                <div class="animate-pulse text-xs text-blue-600 dark:text-blue-400 whitespace-nowrap">
+                  In progress...
+                </div>
+              }
+            </div>
+          </div>
+        </div>
+      } @empty {
+        <div class="text-center py-8">
+          <svg class="mx-auto h-12 w-12 text-gray-400 dark:text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+          </svg>
+          <p class="mt-2 text-gray-600 dark:text-gray-400" i18n="@@NO_RECENT_ACTIVITY">
+            No recent activity
+          </p>
+        </div>
+      }
     </div>
   </div>
 </div>

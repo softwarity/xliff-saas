@@ -3,12 +3,39 @@ import { CommonModule } from '@angular/common';
 import { AuthService } from '../../core/services/auth.service';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { DatePipe, TitleCasePipe } from '@angular/common';
+import { JobService } from '../../core/services/job.service';
+import { ProviderLogoComponent } from '../../shared/components/provider-logo/provider-logo.component';
+
+interface Job {
+  userId: string;
+  provider: 'github' | 'gitlab' | 'bitbucket';
+  namespace: string;
+  repository: string;
+  branch: string;
+  ext: string;
+  transUnitState: string;
+  request: 'estimation' | 'translation';
+  status: 'completed' | 'failed' | 'cancelled' | 'estimation_pending' | 'estimation_running' | 'translation_pending' | 'translation_running';
+  transUnitFound?: number;
+  transUnitDone?: number;
+  transUnitAllowed?: number;
+  transactionId?: string;
+  runId?: string;
+  details: any;
+  createdAt?: Date;
+  updatedAt?: Date;
+}
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
   imports: [
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CommonModule,
+    DatePipe,
+    TitleCasePipe,
+    ProviderLogoComponent
   ],
   styles: [
     `
@@ -29,11 +56,14 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 })
 export class DashboardComponent {
   private auth = inject(AuthService);
+  private jobService = inject(JobService);
   user = toSignal(this.auth.user$);
 
   instructionForm = new FormGroup({
     instructions: new FormControl('', [Validators.required])
   });
+
+  jobs = toSignal(this.jobService.getJobs());
 
   onSubmit() {
     console.log(this.instructionForm.value);

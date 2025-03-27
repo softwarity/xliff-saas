@@ -1,8 +1,8 @@
 import { inject, Injectable } from '@angular/core';
 import { RealtimeChannel, RealtimePostgresChangesPayload, RealtimePostgresDeletePayload, RealtimePostgresInsertPayload, RealtimePostgresUpdatePayload } from '@supabase/supabase-js';
-import { filter, from, map, Observable, share, Subscriber } from 'rxjs';
-import { SupabaseClientService } from '../../../core/services/supabase-client.service';
-import { Job } from '../../../shared/models/job.model';
+import { filter, from, map, Observable, of, share, Subscriber, switchMap } from 'rxjs';
+import { SupabaseClientService } from './supabase-client.service';
+import { Job } from '../../shared/models/job.model';
 
 
 
@@ -76,5 +76,18 @@ export class JobService {
   closeChannel() {
     console.log('Closing channel');
     this.channel?.unsubscribe();
+  }
+
+  getJobs(): Observable<Job[]> {
+    return from(this.supabaseClientService.from('user_jobs').select<'*', Job>('*').limit(100)).pipe(
+      switchMap(({ data, error }: { data: Job[] | null, error: any }) => {
+        if (error) {
+          console.error('Error fetching jobs:', error);
+          return of([]);
+        } else {
+          return of(data || []);
+        }
+      })
+    );
   }
 }

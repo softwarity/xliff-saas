@@ -9,31 +9,33 @@
   <div class="space-y-8">
     <!-- Initial Setup -->
     <div class="bg-white dark:bg-dark-700 rounded-lg shadow-lg p-8 border border-gray-200 dark:border-gray-700">
-      <h2 class="text-2xl font-semibold mb-6 text-blue-600 dark:text-blue-400">
+      <h2 class="text-2xl font-semibold mb-6 text-blue-600 dark:text-blue-400" i18n="@@INITIAL_SETUP_TITLE">
         Initial Setup
       </h2>
       
-      <p class="text-gray-700 dark:text-gray-300 mb-4">
+      <p class="text-gray-700 dark:text-gray-300 mb-4" i18n="@@INITIAL_SETUP_DESCRIPTION">
         Start by adding Angular's localization package to your project:
       </p>
       
       <pre class="bg-gray-900 rounded-lg p-4 overflow-x-auto border border-gray-700"><code><span class="text-blue-400">ng add</span> <span class="text-yellow-400">&#64;angular/localize</span></code></pre>
 
-      <p class="text-gray-700 dark:text-gray-300 mt-4">
+      <p class="text-gray-700 dark:text-gray-300 mt-4" i18n="@@INITIAL_SETUP_CHANGES">
         This command will make the following changes:
       </p>
       <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 ml-4 space-y-2">
-        <li>Add the &#64;angular/localize package to your dependencies</li>
-        <li>Add "&#64;angular/localize/init" to the polyfills array in angular.json</li>
-        <li>Add the following reference to your main.ts:</li>
+        <li i18n="@@INITIAL_SETUP_CHANGE_1">Add the &#64;angular/localize package to your dependencies</li>
+        <li i18n="@@INITIAL_SETUP_CHANGE_2">Add "&#64;angular/localize/init" to the polyfills array in angular.json</li>
+        <li i18n="@@INITIAL_SETUP_CHANGE_3">Add the following reference to your main.ts:</li>
       </ul>
 
-      <pre class="bg-gray-900 rounded-lg p-4 mt-4 overflow-x-auto border border-gray-700"><code><span class="text-gray-400">///</span> <span class="text-blue-400">&lt;reference</span> <span class="text-yellow-400">types="&commat;angular/localize"</span> <span class="text-blue-400">/&gt;</span></code></pre>
+      <pre class="bg-gray-900 rounded-lg p-4 mt-4 overflow-x-auto border border-gray-700"><code><span class="text-gray-400">///</span> <span class="text-blue-400">&lt;reference</span> <span class="text-yellow-400">types="&#64;angular/localize"</span> <span class="text-blue-400">/&gt;</span></code></pre>
 
-      <p class="text-gray-700 dark:text-gray-300 mt-4">It will also add the extract-i18n configuration to angular.json:</p>
+      <p class="text-gray-700 dark:text-gray-300 mt-4" i18n="@@INITIAL_SETUP_CONFIG">
+        It will also add the extract-i18n configuration to angular.json:
+      </p>
 
       <pre class="bg-gray-900 rounded-lg p-4 mt-4 overflow-x-auto border border-gray-700"><code><span class="text-yellow-400">"extract-i18n"</span>: <span class="text-blue-400">&#123;</span>
-  <span class="text-yellow-400">"builder"</span>: <span class="text-green-400">"&commat;angular-devkit/build-angular:extract-i18n"</span>,
+  <span class="text-yellow-400">"builder"</span>: <span class="text-green-400">"&#64;angular-devkit/build-angular:extract-i18n"</span>,
   <span class="text-yellow-400">"options"</span>: <span class="text-blue-400">&#123;</span>
     <span class="text-yellow-400">"buildTarget"</span>: <span class="text-green-400">"your-app:build"</span>,
     <span class="text-yellow-400">"format"</span>: <span class="text-green-400">"xlf"</span>,
@@ -41,14 +43,14 @@
   <span class="text-blue-400">&#125;</span>
 <span class="text-blue-400">&#125;</span></code></pre>
 
-      <p class="text-gray-700 dark:text-gray-300 mt-2">
+      <p class="text-gray-700 dark:text-gray-300 mt-2" i18n="@@INITIAL_SETUP_NOTE">
         Note: We'll modify the outputPath later in the configuration to match our workflow.
       </p>
     </div>
 
     <!-- Configuration Files -->
     <div class="bg-white dark:bg-dark-700 rounded-lg shadow-lg p-8 border border-gray-200 dark:border-gray-700">
-      <h2 class="text-2xl font-semibold mb-6 text-blue-600 dark:text-blue-400">
+      <h2 class="text-2xl font-semibold mb-6 text-blue-600 dark:text-blue-400" i18n="@@CONFIG_FILES_TITLE">
         Configuration Files
       </h2>
 
@@ -102,12 +104,12 @@
 
     <!-- Prepare Components for Translation -->
     <div class="bg-white dark:bg-dark-700 rounded-lg shadow-lg p-8 border border-gray-200 dark:border-gray-700">
-      <h2 class="text-2xl font-semibold mb-6 text-blue-600 dark:text-blue-400">
-        <span>Prepare Components for Translation</span>
+      <h2 class="text-2xl font-semibold mb-6 text-blue-600 dark:text-blue-400" i18n="@@PREPARE_COMPONENTS_TITLE">
+        Prepare Components for Translation
       </h2>
 
       <div class="flex justify-between items-center mb-6">
-        <p class="text-gray-700 dark:text-gray-300">
+        <p class="text-gray-700 dark:text-gray-300" i18n="@@PREPARE_COMPONENTS_DESCRIPTION">
           To make your components ready for translation, you need to mark the text that should be translated. Angular provides two ways to do this:
         </p>
         <a 
@@ -122,8 +124,8 @@
       <div class="space-y-8">
         <!-- Template Translation -->
         <div>
-          <h3 class="text-xl font-semibold mb-4 text-gray-900 dark:text-white">Template Translation</h3>
-          <p class="text-gray-700 dark:text-gray-300 mb-4">
+          <h3 class="text-xl font-semibold mb-4 text-gray-900 dark:text-white" i18n="@@TEMPLATE_TRANSLATION_TITLE">Template Translation</h3>
+          <p class="text-gray-700 dark:text-gray-300 mb-4" i18n="@@TEMPLATE_TRANSLATION_DESCRIPTION">
             Use the i18n attribute in your templates to mark text for translation:
           </p>
 
@@ -133,21 +135,21 @@
 <span class="text-gray-400">// EXAMPLE</span>
 <span class="text-blue-400">&lt;button</span> <span class="text-yellow-400">title="Title button"</span> <span class="text-yellow-400">i18n-title="&commat;&commat;TITLE_BUTTON"</span><span class="text-yellow-400">i18n="&commat;&commat;LABEL_BUTTON"</span><span class="text-blue-400">&gt;</span><span class="text-gray-100">label button</span><span class="text-blue-400">&lt;/button&gt;</span></code></pre>
 
-          <p class="text-gray-700 dark:text-gray-300 mt-4">
+          <p class="text-gray-700 dark:text-gray-300 mt-4" i18n="@@TEMPLATE_TRANSLATION_NOTE">
             The &commat;&commat;prefix defines a custom ID for the translation. Using SNAKE_CASE is recommended for consistency.
           </p>
         </div>
 
         <!-- Component Translation -->
         <div>
-          <h3 class="text-xl font-semibold mb-4 text-gray-900 dark:text-white">Component Translation</h3>
-          <p class="text-gray-700 dark:text-gray-300 mb-4">
+          <h3 class="text-xl font-semibold mb-4 text-gray-900 dark:text-white" i18n="@@COMPONENT_TRANSLATION_TITLE">Component Translation</h3>
+          <p class="text-gray-700 dark:text-gray-300 mb-4" i18n="@@COMPONENT_TRANSLATION_DESCRIPTION">
             For text in your component code, use the $localize template tag:
           </p>
 
-          <pre class="bg-gray-900 rounded-lg p-4 overflow-x-auto border border-gray-700"><code><span class="text-blue-400">import</span> <span class="text-blue-400">&#123;</span> <span class="text-yellow-400">Component</span> <span class="text-blue-400">&#125;</span> <span class="text-blue-400">from</span> <span class="text-green-400">'&commat;angular/core'</span>;
+          <pre class="bg-gray-900 rounded-lg p-4 overflow-x-auto border border-gray-700"><code><span class="text-blue-400">import</span> <span class="text-blue-400">&#123;</span> <span class="text-yellow-400">Component</span> <span class="text-blue-400">&#125;</span> <span class="text-blue-400">from</span> <span class="text-green-400">'&#64;angular/core'</span>;
 
-<span class="text-blue-400">&commat;Component</span>(<span class="text-blue-400">&#123;</span>
+<span class="text-blue-400">&#64;Component</span>(<span class="text-blue-400">&#123;</span>
   <span class="text-yellow-400">selector</span>: <span class="text-green-400">'app-example'</span>,
   <span class="text-yellow-400">template</span>: <span class="text-green-400">'...'</span>
 <span class="text-blue-400">&#125;</span>)
@@ -161,28 +163,28 @@
 
     <!-- Translation Workflow -->
     <div class="bg-white dark:bg-dark-700 rounded-lg shadow-lg p-8 border border-gray-200 dark:border-gray-700">
-      <h2 class="text-2xl font-semibold mb-6 text-blue-600 dark:text-blue-400">
+      <h2 class="text-2xl font-semibold mb-6 text-blue-600 dark:text-blue-400" i18n="@@TRANSLATION_WORKFLOW_TITLE">
         Translation Workflow
       </h2>
 
       <div class="mb-8">
-        <h3 class="text-xl font-semibold mb-4 text-gray-900 dark:text-white">Extract Translations</h3>
-        <p class="text-gray-700 dark:text-gray-300 mb-4">
+        <h3 class="text-xl font-semibold mb-4 text-gray-900 dark:text-white" i18n="@@EXTRACT_TRANSLATIONS_TITLE">Extract Translations</h3>
+        <p class="text-gray-700 dark:text-gray-300 mb-4" i18n="@@EXTRACT_TRANSLATIONS_DESCRIPTION">
           Extract translatable strings to XLIFF files:
         </p>
         <pre class="bg-gray-900 rounded-lg p-4 overflow-x-auto border border-gray-700"><code><span class="text-blue-400">npm run</span> <span class="text-yellow-400">extract-i18n</span></code></pre>
-        <p class="text-gray-700 dark:text-gray-300 mt-2">
+        <p class="text-gray-700 dark:text-gray-300 mt-2" i18n="@@EXTRACT_TRANSLATIONS_NOTE">
           This creates messages.xlf in your dist/locale directory.
         </p>
       </div>
 
       <div>
-        <h3 class="text-xl font-semibold mb-4 text-gray-900 dark:text-white">Merge Translations</h3>
-        <p class="text-gray-700 dark:text-gray-300 mb-4">
+        <h3 class="text-xl font-semibold mb-4 text-gray-900 dark:text-white" i18n="@@MERGE_TRANSLATIONS_TITLE">Merge Translations</h3>
+        <p class="text-gray-700 dark:text-gray-300 mb-4" i18n="@@MERGE_TRANSLATIONS_DESCRIPTION">
           Generate/update the translation files:
         </p>
         <pre class="bg-gray-900 rounded-lg p-4 overflow-x-auto border border-gray-700"><code><span class="text-blue-400">npm run</span> <span class="text-yellow-400">merge-i18n</span></code></pre>
-        <p class="text-gray-700 dark:text-gray-300 mt-2">
+        <p class="text-gray-700 dark:text-gray-300 mt-2" i18n="@@MERGE_TRANSLATIONS_NOTE">
           This creates/updates the translation files in your src/locale directory.
         </p>
       </div>
@@ -190,24 +192,24 @@
 
     <!-- Building and Serving -->
     <div class="bg-white dark:bg-dark-700 rounded-lg shadow-lg p-8 border border-gray-200 dark:border-gray-700">
-      <h2 class="text-2xl font-semibold mb-6 text-blue-600 dark:text-blue-400">
+      <h2 class="text-2xl font-semibold mb-6 text-blue-600 dark:text-blue-400" i18n="@@BUILDING_SERVING_TITLE">
         Building and Serving
       </h2>
 
       <div class="mb-8">
-        <h3 class="text-xl font-semibold mb-4 text-gray-900 dark:text-white">Build with Translations</h3>
-        <p class="text-gray-700 dark:text-gray-300 mb-4">
+        <h3 class="text-xl font-semibold mb-4 text-gray-900 dark:text-white" i18n="@@BUILD_TRANSLATIONS_TITLE">Build with Translations</h3>
+        <p class="text-gray-700 dark:text-gray-300 mb-4" i18n="@@BUILD_TRANSLATIONS_DESCRIPTION">
           Build your application with all translations:
         </p>
         <pre class="bg-gray-900 rounded-lg p-4 overflow-x-auto border border-gray-700"><code><span class="text-blue-400">npm run</span> <span class="text-yellow-400">build</span></code></pre>
         
-        <p class="text-gray-700 dark:text-gray-300 mt-4">Or build for a specific language (using French as example):</p>
+        <p class="text-gray-700 dark:text-gray-300 mt-4" i18n="@@BUILD_SPECIFIC_LANGUAGE_DESCRIPTION">Or build for a specific language (using French as example):</p>
         <pre class="bg-gray-900 rounded-lg p-4 overflow-x-auto border border-gray-700"><code><span class="text-blue-400">ng build</span> <span class="text-yellow-400">--configuration=fr</span></code></pre>
       </div>
 
       <div>
-        <h3 class="text-xl font-semibold mb-4 text-gray-900 dark:text-white">Development Server</h3>
-        <p class="text-gray-700 dark:text-gray-300 mb-4">
+        <h3 class="text-xl font-semibold mb-4 text-gray-900 dark:text-white" i18n="@@DEV_SERVER_TITLE">Development Server</h3>
+        <p class="text-gray-700 dark:text-gray-300 mb-4" i18n="@@DEV_SERVER_DESCRIPTION">
           Serve your application with translations during development:
         </p>
         <pre class="bg-gray-900 rounded-lg p-4 overflow-x-auto border border-gray-700"><code><span class="text-blue-400">ng serve</span> <span class="text-yellow-400">--configuration=fr</span></code></pre>
@@ -216,15 +218,15 @@
 
     <!-- Important Note -->
     <div class="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-6">
-      <h2 class="text-xl font-semibold mb-4 text-blue-700 dark:text-blue-300">
+      <h2 class="text-xl font-semibold mb-4 text-blue-700 dark:text-blue-300" i18n="@@IMPORTANT_NOTE_TITLE">
         ⚠️ Important Note
       </h2>
-      <p class="text-blue-700 dark:text-blue-300">
+      <p class="text-blue-700 dark:text-blue-300" i18n="@@IMPORTANT_NOTE_DESCRIPTION">
         After adding new translatable content or modifying existing translations, you must always run both commands in sequence:
       </p>
       <ol class="list-decimal list-inside mt-4 text-blue-700 dark:text-blue-300 space-y-2">
-        <li><code class="bg-blue-100 dark:bg-blue-900/40 px-2 py-1 rounded">npm run extract-i18n</code> - to extract new translatable strings</li>
-        <li><code class="bg-blue-100 dark:bg-blue-900/40 px-2 py-1 rounded">npm run merge-i18n</code> - to update your translation files</li>
+        <li><code class="bg-blue-100 dark:bg-blue-900/40 px-2 py-1 rounded">npm run extract-i18n</code> - <span i18n="@@IMPORTANT_NOTE_COMMAND_1">to extract new translatable strings</span></li>
+        <li><code class="bg-blue-100 dark:bg-blue-900/40 px-2 py-1 rounded">npm run merge-i18n</code> - <span i18n="@@IMPORTANT_NOTE_COMMAND_2">to update your translation files</span></li>
       </ol>
     </div>
   </div>

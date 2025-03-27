@@ -5,7 +5,7 @@ import { Subscription } from 'rxjs';
 import { ProviderLogoComponent } from '../../../../shared/components/provider-logo/provider-logo.component';
 import { Job } from '../../../../shared/models/job.model';
 import { Repository } from '../../../../shared/models/repository.model';
-import { JobService } from '../../services/job.service';
+import { JobService } from '../../../../core/services/job.service';
 import { RepositoryService } from '../../services/repository.service';
 import { RepositoryEstimateModalComponent } from '../repository-estimate-modal/repository-estimate-modal.component';
 import { RepositoryTranslateModalComponent } from '../repository-translate-modal/repository-translate-modal.component';

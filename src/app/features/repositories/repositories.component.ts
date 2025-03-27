@@ -6,7 +6,7 @@ import { RepositoryService } from './services/repository.service';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { Subscription } from 'rxjs';
 import { RepositoryCardComponent } from './components/repository-card/repository-card.component';
-import { JobService } from './services/job.service';
+import { JobService } from '../../core/services/job.service';
 
 @Component({
   selector: 'app-repositories',
