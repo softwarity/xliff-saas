@@ -3,15 +3,15 @@ import { Component, CUSTOM_ELEMENTS_SCHEMA, HostListener, inject, signal } from 
 import { toSignal } from '@angular/core/rxjs-interop';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-import { ProviderLogoComponent } from '../../../shared/components/provider-logo/provider-logo.component';
+import { Subscription } from 'rxjs';
+import { CreditService } from '../../../features/repositories/services/credit.service';
+import { AIInstructionsModalComponent } from '../../../shared/components/ai-instructions-modal/ai-instructions-modal.component';
+import { Credit } from '../../../shared/models/credit.model';
+import '../../../web-components/theme-switcher';
+import '../../../web-components/icon';
 import { AuthService } from '../../services/auth.service';
 import { GitProviderService } from '../../services/git-provider.service';
 import { LanguageToggleComponent } from '../language-toggle/language-toggle.component';
-import '../../../web-components/theme-switcher';
-import { CreditService } from '../../../features/repositories/services/credit.service';
-import { Subscription } from 'rxjs';
-import { Credit } from '../../../shared/models/credit.model';
-import { AIInstructionsModalComponent } from '../../../shared/components/ai-instructions-modal/ai-instructions-modal.component';
 
 @Component({
   selector: 'app-header',
@@ -22,7 +22,6 @@ import { AIInstructionsModalComponent } from '../../../shared/components/ai-inst
     LanguageToggleComponent,
     ReactiveFormsModule,
     CommonModule,
-    ProviderLogoComponent,
     AIInstructionsModalComponent
   ],
   styles: [`

@@ -1,15 +1,15 @@
-import { Component, input, inject, OnInit } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, input, inject, OnInit } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { GitProvider, GitProviderService } from '../../../../core/services/git-provider.service';
 import { signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ProviderLogoComponent } from '../../../../shared/components/provider-logo/provider-logo.component';
-
+import '../../../../web-components/icon';
 @Component({
   selector: 'app-provider-card',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule, ProviderLogoComponent],
-  templateUrl: './provider-card.component.html'
+  imports: [ReactiveFormsModule, CommonModule],
+  templateUrl: './provider-card.component.html',
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class ProviderCardComponent implements OnInit {
   provider = input.required<GitProvider>();

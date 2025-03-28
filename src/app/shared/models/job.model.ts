@@ -18,4 +18,5 @@ export interface Job {
   details: any;
   createdAt?: Date;
   updatedAt?: Date;
+  duration?: number; // duration of the job in ms
 }

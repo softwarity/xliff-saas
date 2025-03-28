@@ -1,13 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component, CUSTOM_ELEMENTS_SCHEMA, inject, input, output, signal } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { ProviderLogoComponent } from '../../../../../shared/components/provider-logo/provider-logo.component';
 import { Repository } from '../../../../../shared/models/repository.model';
 import { BranchSelectorComponent } from '../../branch-selector/branch-selector.component';
 import { ExtSelectorComponent } from '../../ext-selector/ext-selector.component';
 import { TransUnitStateSelectorComponent } from '../../trans-unit-state-selector/trans-unit-state-selector.component';
-
 import { RepositoryService } from '../../../services/repository.service';
+import '../../../../../web-components/icon';
 
 @Component({
   selector: 'app-translate-modal',
@@ -18,8 +17,7 @@ import { RepositoryService } from '../../../services/repository.service';
     ReactiveFormsModule,
     BranchSelectorComponent,
     ExtSelectorComponent,
-    TransUnitStateSelectorComponent,
-    ProviderLogoComponent
+    TransUnitStateSelectorComponent
   ],
   styles: [
     `

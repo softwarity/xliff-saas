@@ -1,10 +1,14 @@
 import { inject, Injectable } from '@angular/core';
-import { RealtimeChannel, RealtimePostgresChangesPayload, RealtimePostgresDeletePayload, RealtimePostgresInsertPayload, RealtimePostgresUpdatePayload } from '@supabase/supabase-js';
+import { PostgrestResponse, RealtimeChannel, RealtimePostgresChangesPayload, RealtimePostgresDeletePayload, RealtimePostgresInsertPayload, RealtimePostgresUpdatePayload } from '@supabase/supabase-js';
 import { filter, from, map, Observable, of, share, Subscriber, switchMap } from 'rxjs';
 import { SupabaseClientService } from './supabase-client.service';
 import { Job } from '../../shared/models/job.model';
 
-
+interface PaginatedResponse<T> {
+  data: T[];
+  count: number;
+  error: any;
+}
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +17,7 @@ export class JobService {
   private supabaseClientService = inject(SupabaseClientService);
   private observable$: Observable<{jobId: string, key: string, value: Job | null}>;
   private channel: RealtimeChannel | undefined = undefined;
+
   constructor() {
     this.observable$ = new Observable<RealtimePostgresChangesPayload<Job>>((observer: Subscriber<RealtimePostgresChangesPayload<Job>>) => {
       from(this.supabaseClientService.from('latest_user_jobs').select<'*', Job>('*').limit(100)).subscribe({
@@ -63,8 +68,8 @@ export class JobService {
       }),
       share()
     );
-
   }
+
   subscribeToJobChanges(criteria: { provider: string, namespace: string, repository: string, request: 'estimation' | 'translation'}): Observable<Job | null>;
   subscribeToJobChanges(criteria: { jobId: string }): Observable<Job | null>;
   subscribeToJobChanges(criteria: { provider: string, namespace: string, repository: string, request: 'estimation' | 'translation'} | { jobId: string }): Observable<Job | null> {
@@ -88,15 +93,29 @@ export class JobService {
     this.channel?.unsubscribe();
   }
 
-  getJobs(status?: string[]): Observable<Job[]> {
-    return from(this.supabaseClientService.from('user_jobs').select<'*', Job>('*').in('status', status || []).limit(100)).pipe(
-      switchMap(({ data, error }: { data: Job[] | null, error: any }) => {
+  getJobs(status?: string[], page: number = 1, pageSize: number = 10): Observable<PaginatedResponse<Job>> {
+    let query = this.supabaseClientService.from('user_jobs').select('*', { count: 'exact', head: false });
+    
+    if (status && status.length > 0) {
+      query = query.in('status', status);
+    }
+
+    return from(query
+      .range((page - 1) * pageSize, page * pageSize - 1)
+      .order('createdAt', { ascending: false })
+    ).pipe(
+      map(({data, count, error}: PostgrestResponse<Job>) => {
         if (error) {
           console.error('Error fetching jobs:', error);
-          return of([]);
-        } else {
-          return of(data || []);
+          return { data: [], count: 0, error };
         }
+        const res = { 
+          data: data || [], 
+          count: count || 0, 
+          error: null 
+        };
+        console.log('Total count:', count);
+        return res;
       })
     );
   }

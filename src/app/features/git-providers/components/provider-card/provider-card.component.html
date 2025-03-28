@@ -1,7 +1,13 @@
 <div class="bg-white dark:bg-dark-700 rounded-lg shadow p-6">
   <div class="flex items-center justify-between mb-4">
     <div class="flex items-center space-x-3">
-      <app-provider-logo [provider]="provider().type" class="text-gray-700 dark:text-gray-300" />
+      @if (provider().type === 'github') {
+        <app-icon name="github" [size]="24" [color]="'gray'"/>
+      } @else if (provider().type === 'gitlab') {
+        <app-icon name="gitlab" [size]="24" [color]="'gray'"/>
+      } @else if (provider().type === 'bitbucket') {
+        <app-icon name="bitbucket" [size]="24" [color]="'gray'"/>
+      }
       <h2 class="text-xl font-semibold dark:text-white">{{ provider().name }}</h2>
     </div>
     <span [class]="provider().connected ? 'text-green-500' : 'text-red-500'">

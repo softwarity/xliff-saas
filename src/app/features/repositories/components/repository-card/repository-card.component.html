@@ -1,10 +1,13 @@
 <div class="bg-white dark:bg-dark-700 rounded-lg shadow-lg p-6 flex flex-col min-h-[250px]">
   <div class="flex items-center">
     <div class="flex-shrink-0 flex items-center self-start h-12">
-      <app-provider-logo [provider]="repository().provider" [title]="repository().visibility" 
-      [class]="repository().visibility === 'private' ? 
-        'h-6 w-6  text-red-700 dark:text-red-300' : 
-        'h-6 w-6  text-gray-700 dark:text-gray-300'"/>
+      @if (repository().provider === 'github') {
+        <app-icon name="github" [size]="24" [fill]="'gray'" class="w-6 h-6" />
+      } @else if (repository().provider === 'gitlab') {
+        <app-icon name="gitlab" [size]="24" [fill]="'gray'" class="w-6 h-6" />
+      } @else if (repository().provider === 'bitbucket') {
+        <app-icon name="bitbucket" [size]="24" [fill]="'gray'" class="w-6 h-6" />
+      }
     </div>
     <div class="flex-grow min-w-0 ml-3">
       <div class="flex flex-col">

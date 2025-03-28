@@ -21,6 +21,15 @@
           placeholder="Enter your instructions for the AI..."
         ></textarea>
       </div>
+      <div class="flex justify-end">
+        <button 
+          type="submit" 
+          [disabled]="!instructionForm.valid"
+          class="flat-primary disabled:opacity-50 disabled:cursor-not-allowed"
+          i18n="@@SAVE_INSTRUCTIONS">
+          Save Instructions
+        </button>
+      </div>
     </form>
   </div>
 
@@ -82,9 +91,18 @@
 
   <!-- Recent Activity -->
   <div class="bg-white dark:bg-dark-700 rounded-lg shadow-lg p-8 border border-gray-200 dark:border-gray-700">
-    <h2 class="text-2xl font-semibold mb-6 text-blue-600 dark:text-blue-400" i18n="@@RECENT_ACTIVITY_TITLE">
-      Recent Activity
-    </h2>
+    <div class="flex justify-between items-center mb-6">
+      <h2 class="text-2xl font-semibold text-blue-600 dark:text-blue-400" i18n="@@RECENT_ACTIVITY_TITLE">
+        Recent Activity
+      </h2>
+      <button 
+        (click)="loadJobs()"
+        class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-dark-800 transition-colors flex items-center justify-center"
+        [class.animate-spin]="isRefreshing" title="Refresh"
+        i18n-title="@@REFRESH_JOBS">
+        <app-icon name="refresh" fill="none" stroke="currentColor" class="w-5 h-5 text-gray-600 dark:text-gray-400"/>
+      </button>
+    </div>
     <div class="flex flex-col gap-4">
       @for (job of jobs(); track job.runId || job.transactionId) {
         <app-job-card [job]="job" />
@@ -99,5 +117,30 @@
         </div>
       }
     </div>
+    @if (totalJobs() > pageSize) {
+      <div class="mt-6 flex justify-center">
+        <nav class="flex items-center gap-2">
+          @if (currentPage() > 1) {
+            <button 
+              (click)="onPageChange(currentPage() - 1)"
+              class="px-3 py-1 rounded-md bg-white dark:bg-dark-800 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-dark-700"
+              i18n="@@PREVIOUS_PAGE">
+              Previous
+            </button>
+          }
+          <span class="px-3 py-1 text-gray-700 dark:text-gray-300" i18n="@@PAGE_INFO">
+            Page {{ currentPage() }} of {{ Math.ceil(totalJobs() / pageSize) }}
+          </span>
+          @if (currentPage() < Math.ceil(totalJobs() / pageSize)) {
+            <button 
+              (click)="onPageChange(currentPage() + 1)"
+              class="px-3 py-1 rounded-md bg-white dark:bg-dark-800 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-dark-700"
+              i18n="@@NEXT_PAGE">
+              Next
+            </button>
+          }
+        </nav>
+      </div>
+    }
   </div>
 </div>

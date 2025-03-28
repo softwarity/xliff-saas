@@ -1,9 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { Component, CUSTOM_ELEMENTS_SCHEMA, input, output } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { ProviderLogoComponent } from '../provider-logo/provider-logo.component';
 import { Repository } from '../../../shared/models/repository.model';
 import { ProviderType } from '../../models/provider-type';
+import '../../../web-components/icon';
 
 export type AIScope = 'global' | 'provider' | 'repository';
 
@@ -19,8 +19,7 @@ export interface AIInstructionsModalData {
   standalone: true,
   imports: [
     CommonModule,
-    ReactiveFormsModule,
-    ProviderLogoComponent
+    ReactiveFormsModule
   ],
   styles: [
     `

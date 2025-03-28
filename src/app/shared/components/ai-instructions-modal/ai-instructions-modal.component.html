@@ -9,13 +9,25 @@
       <div class="mb-4">
         <div class="flex items-center gap-3">
           @if (data().scope === 'repository' && data().repository) {
-            <app-provider-logo [provider]="data().repository!.provider" class="h-6 w-6 text-gray-700 dark:text-gray-300"/>
+            @if (data().repository!.provider === 'github') {
+              <app-icon name="github" [size]="24" [fill]="'gray'" class="h-6 w-6" />
+            } @else if (data().repository!.provider === 'gitlab') {
+              <app-icon name="gitlab" [size]="24" [fill]="'gray'" class="h-6 w-6" />
+            } @else if (data().repository!.provider === 'bitbucket') {
+              <app-icon name="bitbucket" [size]="24" [fill]="'gray'" class="h-6 w-6" />
+            }
             <div>
               <p class="text-sm text-gray-500 dark:text-gray-400">{{data().repository!.namespace}}</p>
               <h3 class="text-lg font-semibold dark:text-white">{{data().repository!.name}}</h3>
             </div>
           } @else if (data().scope === 'provider') {
-            <app-provider-logo [provider]="data().provider!" class="h-6 w-6 text-gray-700 dark:text-gray-300"/>
+            @if (data().provider === 'github') {
+              <app-icon name="github" [size]="24" [fill]="'gray'" class="h-6 w-6" />
+            } @else if (data().provider === 'gitlab') {
+              <app-icon name="gitlab" [size]="24" [fill]="'gray'" class="h-6 w-6" />
+            } @else if (data().provider === 'bitbucket') {
+              <app-icon name="bitbucket" [size]="24" [fill]="'gray'" class="h-6 w-6" />
+            }
             <h3 class="text-lg font-semibold dark:text-white">{{data().provider}}</h3>
           }
         </div>
