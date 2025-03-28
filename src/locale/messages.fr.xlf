@@ -329,7 +329,7 @@
       </trans-unit>
       <trans-unit id="PAGE_INFO" datatype="html">
         <source> Page <x id="INTERPOLATION" equiv-text="{{ currentPage() }}"/> of <x id="INTERPOLATION_1" equiv-text="{{ Math.ceil(totalJobs() / pageSize) }}"/> </source>
-        <target state="translated">Page <x id="INTERPOLATION" equiv-text="{{ currentPage() }}"/> sur <x id="INTERPOLATION_1" equiv-text="{{ Math.ceil(totalJobs() / pageSize) }}/></target>
+        <target state="translated">Page <x id="INTERPOLATION" equiv-text="{{ currentPage() }}"/> sur <x id="INTERPOLATION_1" equiv-text="{{ Math.ceil(totalJobs() / pageSize) }}"/> </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/dashboard/dashboard.component.html</context>
           <context context-type="linenumber">130,132</context>
@@ -493,8 +493,7 @@
       </trans-unit>
       <trans-unit id="INITIAL_SETUP_CHANGE_3" datatype="html">
         <source>Add the following reference to your main.ts:</source>
-        <target state="translated">Ajoutez la référence suivante à votre main.ts :  
-<pre class="bg-gray-900 rounded-lg p-4 overflow-x-auto border border-gray-700"><code><span class="text-gray-400">///</span> <span class="text-blue-400">&lt;reference</span> <span class="text-yellow-400">types="&#64;angular/localize"</span> <span class="text-blue-400">/&gt;</span></code></pre></target>
+        <target state="translated">Ajoutez la référence suivante à votre main.ts :</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">28,31</context>
@@ -550,9 +549,7 @@
       </trans-unit>
       <trans-unit id="TEMPLATE_TRANSLATION_TITLE" datatype="html">
         <source>Template Translation</source>
-        <target state="translated">Traduction du texte : 
-
-Traduction de Template</target>
+        <target state="translated">Traduction de Template</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">127,128</context>
@@ -568,7 +565,7 @@ Traduction de Template</target>
       </trans-unit>
       <trans-unit id="TEMPLATE_TRANSLATION_NOTE" datatype="html">
         <source> The @@prefix defines a custom ID for the translation. Using SNAKE_CASE is recommended for consistency. </source>
-        <target state="translated">Le &commat;&commat;prefix définit un identifiant personnalisé pour la traduction. L'utilisation de SNAKE_CASE est recommandée pour assurer la cohérence.</target>
+        <target state="translated">Le @@prefix définit un identifiant personnalisé pour la traduction. L'utilisation de SNAKE_CASE est recommandée pour assurer la cohérence.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">139,140</context>

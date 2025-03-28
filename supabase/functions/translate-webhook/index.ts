@@ -1,6 +1,7 @@
 import "jsr:@supabase/functions-js/edge-runtime.d.ts";
 import { getSupabaseClient } from '../lib/supabase-client.ts';
 import { JobDao } from '../lib/job-dao.ts';
+import { TransactionDao } from '../lib/transaction-dao.ts';
 import { Job } from "../entities/job.ts";
 
 Deno.serve(async (req: Request) => {
@@ -14,23 +15,24 @@ Deno.serve(async (req: Request) => {
     const body = await req.json(); 
     const supabaseClient = getSupabaseClient();
     const jobDao = new JobDao(supabaseClient);
+    const transactionDao = new TransactionDao(supabaseClient);
     const {request, userId, provider, namespace, repository, branch}: Job = await jobDao.getById(jobId);
     console.log('Received translate-webhook', request, userId, provider, namespace, repository, branch, runId, body);
     if (body.type === 'start') {
-      await jobDao.updateById(jobId, {status: 'estimating', details: [], transUnitFound: 0, runId});
+      await jobDao.updateById(jobId, {status: 'estimating', details: {}, transUnitFound: 0, runId});
     } else if (body.type === 'estimation-done') {
-      // create transaction
-      const transactionId = undefined;
+      const {id: transactionId} = await transactionDao.insert({userId, credits: -body.total, status: 'pending', message: '', details: {}});
       await jobDao.updateById(jobId, {status: 'translating', transactionId, transUnitDone:0, transUnitFound: body.total});
     } else if (body.type === 'progress') {
       const transUnitDone: number = body.completed + body.error;
       await jobDao.updateById(jobId, {status: 'translating', transUnitDone, transUnitFound: body.total, transUnitFailed: body.error});
     } else if (body.type === 'error') {
       const transUnitDone: number = body.completed + body.error;
-      await jobDao.updateById(jobId, {status: 'failed', transUnitDone});
+      const {transactionId} = await jobDao.updateById(jobId, {status: 'failed', transUnitDone});
+      await transactionDao.updateById(transactionId!, {status: 'failed', message: body.error});
     } else if (body.type === 'done') {
-      // apply transaction
-      await jobDao.updateById(jobId, {status: 'completed'});
+      const {transactionId} = await jobDao.updateById(jobId, {status: 'completed'});
+      await transactionDao.updateById(transactionId!, {status: 'completed', message: 'Translation completed', details: {}});
     }
     return new Response(null, {status: 200});
   } catch (error) {

@@ -15,7 +15,7 @@ export interface Job {
   transUnitAllowed?: number; // only for translation
   transactionId?: string; // only for translation
   runId?: string;
-  details: unknown;
+  details: Record<string, unknown>;
   createdAt?: Date;
   updatedAt?: Date;
   duration?: number;

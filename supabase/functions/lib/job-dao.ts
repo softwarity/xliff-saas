@@ -24,12 +24,12 @@ export class JobDao {
     return data[0];
   }
 
-  async updateById(id: string, toUpdate: Partial<Job>): Promise<void> {
-    const {error} = await this.supabaseClient.from('user_jobs').update(toUpdate)
-    .eq('id', id);
+  async updateById(id: string, toUpdate: Partial<Job>): Promise<Job> {
+    const {error, data} = await this.supabaseClient.from('user_jobs').update(toUpdate).eq('id', id).select();
     if (error) {
       throw new Error(error.message);
     }
+    return data[0];
   }
 
   async getById(id: string): Promise<Job> {

@@ -66,5 +66,5 @@ Deno.serve(async (req) => {
 });
 
 
-const DRY_RUN = 'true';
+const DRY_RUN = 'false';
 const CREDITS = 1000;
