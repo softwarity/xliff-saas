@@ -17,7 +17,7 @@ Deno.serve(async (req: Request) => {
     const {request, userId, provider, namespace, repository, branch}: Job = await jobDao.getById(jobId);
     console.log('Received estimate-webhook', request, userId, provider, namespace, repository, branch, runId, body);
     if (body.type === 'start') {
-      await jobDao.updateById(jobId, {status: 'estimation_running', details: [], transUnitFound: 0, runId});
+      await jobDao.updateById(jobId, {status: 'estimating', details: [], transUnitFound: 0, runId});
     } else if (body.type === 'estimation-done') {
       await jobDao.updateById(jobId, {status: 'completed', details: body.inputFiles, transUnitFound: body.transUnits});
     } else if (body.type === 'done') {

@@ -55,13 +55,13 @@ export class AIInstructionsModalComponent {
     const { scope, provider, repository } = this.data();
     switch (scope) {
       case 'global':
-        return 'Global AI Instructions';
+        return $localize`:@@GLOBAL_AI_INSTRUCTIONS_TITLE:Global AI Instructions`;
       case 'provider':
-        return `AI Instructions for ${provider}`;
+        return $localize`:@@PROVIDER_AI_INSTRUCTIONS_TITLE:AI Instructions for ${provider}`;
       case 'repository':
-        return `AI Instructions for ${repository?.name}`;
+        return $localize`:@@REPOSITORY_AI_INSTRUCTIONS_TITLE:AI Instructions for ${repository?.name}`;
       default:
-        return 'AI Instructions';
+        return $localize`:@@AI_INSTRUCTIONS_TITLE:AI Instructions`;
     }
   }
 

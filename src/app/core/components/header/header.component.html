@@ -67,7 +67,7 @@
       <div class="flex items-center space-x-2 md:space-x-4">
         @if (isAuthenticated()) {
           @if (!credit()?.balance) {
-            <button  class="flat-secondary" i18n="@@AUTH_SIGN_IN_BUTTON">
+            <button  class="flat-secondary" i18n="@@PURCHASE_CREDITS_BUTTON">
               Purchase credits
             </button>
           } @else {
@@ -101,9 +101,7 @@
           </div>
         } @else {
           <div class="relative">
-            <button  (click)="toggleAuthForm()" class="flat-primary" i18n="@@AUTH_SIGN_IN_BUTTON">
-              Sign In
-            </button>
+            <button  (click)="toggleAuthForm()" class="flat-primary" i18n="@@AUTH_SIGN_IN_BUTTON">Sign In</button>
             @if (showAuthForm()) {
               <div class="absolute right-0 mt-2 w-80 bg-white dark:bg-gray-700 rounded-lg shadow-lg p-4 z-50">
                 <form [formGroup]="form" (ngSubmit)="onSubmit()" autocomplete="off">
@@ -135,9 +133,9 @@
                     <div class="text-center">
                       <button type="button" (click)="toggleRegister()" class="text-sm text-primary dark:text-blue-400 hover:underline">
                         @if (isRegistering()) { 
-                          <span i18n="@@AUTH_SIGN_IN_BUTTON">Already have an account? Sign In</span>
+                          <span i18n="@@AUTH_ALREADY_HAVE_ACCOUNT_SIGN_IN_BUTTON">Already have an account? Sign In</span>
                         } @else {
-                          <span i18n="@@AUTH_SIGN_UP_BUTTON">No account? Sign Up</span>
+                          <span i18n="@@AUTH_NO_ACCOUNT_SIGN_UP_BUTTON">No account? Sign Up</span>
                         }
                       </button>
                     </div>

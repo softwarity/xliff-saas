@@ -8,7 +8,7 @@ CREATE TABLE IF NOT EXISTS user_jobs (
   ext text NOT NULL,
   "transUnitState" text NOT NULL,
   request text CHECK (request IN ('estimation', 'translation')) NOT NULL,
-  status text CHECK (status IN ('failed', 'cancelled', 'completed', 'pending', 'estimation_running', 'translation_running')) NOT NULL,
+  status text CHECK (status IN ('failed', 'cancelled', 'completed', 'pending', 'estimating', 'translating', 'cancelling')) NOT NULL,
   "transUnitFound" integer, -- number of trans-units found in the repository
   "transUnitDone" integer, -- number of trans-units translated
   "transUnitFailed" integer, -- number of trans-units failed to translate

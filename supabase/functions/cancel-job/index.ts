@@ -1,62 +1,46 @@
-import "jsr:@supabase/functions-js/edge-runtime.d.ts"
-import { getGitToken } from '../lib/git-token.ts';
-import { getSupabaseClient } from '../lib/supabase-client.ts';
-import { JobDao } from '../lib/job-dao.ts';
-import { UserService } from '../lib/user-service.ts';
+import "jsr:@supabase/functions-js/edge-runtime.d.ts";
 import { CORS_HEADERS } from '../const.ts';
 import { Job } from '../entities/job.ts';
-import { launchEstimateRunner } from '../lib/git-service.ts';
-import { GhEstimateInputs } from '../models/gh-action-inputs.ts';
-const request: 'estimation' | 'translation' = 'estimation';
+import { cancelRun } from '../lib/git-service.ts';
+import { JobDao } from '../lib/job-dao.ts';
+import { getSupabaseClient } from '../lib/supabase-client.ts';
+import { UserService } from '../lib/user-service.ts';
 
 Deno.serve(async (req) => {
     if (req.method === 'OPTIONS') {
         return new Response('ok', { headers: CORS_HEADERS });
     }
-    if (req.method !== 'POST') {
+    if (req.method !== 'GET') {
         return new Response(null, { headers: CORS_HEADERS, status: 405 });
     }
+
     
     const url = new URL(req.url);
     const pathname = url.pathname;
-    const provider = pathname.split('/').pop() as 'github' | 'gitlab' | 'bitbucket';
+    const jobId = pathname.split('/').pop() as string;
+    console.log('Cancelling job', jobId);
     try {
         const supabaseClient = getSupabaseClient();
         const jobDao = new JobDao(supabaseClient);
         const userService = new UserService(supabaseClient);
         const user = await userService.getUser(req);
-        const userId = user.id;
 
-        const { namespace, name, branch, ext: EXT_XLIFF, transUnitState: STATE } = await req.json();
-        
-        if (await jobDao.existsAndNotCompleted(request, userId, provider, namespace, name)) {
-            console.log('Estimation already launch for this repository and is not completed');
-            throw new Error('Estimation already launch for this repository and is not completed');
+        const job: Job = await jobDao.getById(jobId);
+        if (!job) {
+            console.log(`Job not found: ${jobId}`);
+            return new Response(JSON.stringify({ error: `Job not found: ${jobId}` }), { headers: CORS_HEADERS, status: 404 });
         }
-        console.log('Estimation not exists or completed, start new estimation...');
-        const payload: Omit<Job, 'request' | 'userId' | 'provider' | 'namespace' | 'repository' | 'id'> = {
-            branch, ext: EXT_XLIFF, transUnitState: STATE, status: 'pending', transUnitFound: 0, details: {}
-        };
-        const toInsert: Omit<Job, 'id'> = { request, userId, provider, namespace, repository: name, ...payload };
-        const job = await jobDao.insert(toInsert);
-        
-        const TOKEN = await getGitToken(req, provider);
-        const WEBHOOK_URL = `${Deno.env.get('HOST_WEBHOOK')}/functions/v1/estimate-webhook/${job.id}`;
-        const WEBHOOK_JWT = Deno.env.get('SUPABASE_ANON_KEY')!;
-        const REPOSITORY_INFO = `${namespace}/${name}@${branch}`;
-        const inputs: GhEstimateInputs = { 
-            TOKEN, REPOSITORY_INFO, 
-            GIT_PROVIDER: provider, EXT_XLIFF, 
-            STATE, 
-            WEBHOOK_URL, WEBHOOK_JWT 
-        };
-        await launchEstimateRunner(inputs);
-        console.log('Estimation launched for ', `${namespace}/${name}@${branch} by ${user.email}. JobId: ${job.id}`);
-        return new Response(JSON.stringify({ message: 'Estimate triggered successfully!', job }), { headers: {
+        console.log('Cancelling run', job.runId);
+        await jobDao.updateById(jobId, { status: 'cancelling' });
+        await cancelRun(job.runId!);
+        await jobDao.updateById(jobId, { status: 'cancelled' });
+        console.log('Job cancelled for ', `${job.namespace}/${job.repository}@${job.branch}. JobId: ${job.id} by ${user.email}`);
+        return new Response(JSON.stringify({ message: 'Job cancelled successfully!', job }), { headers: {
             ...CORS_HEADERS,
             'Content-Type': 'application/json',
         }, status: 200 });
     } catch(error: any) {
+        console.log('Error cancelling job', error);
         return new Response(JSON.stringify({ error: error.message }), { headers: {
             ...CORS_HEADERS,
             'Content-Type': 'application/json'

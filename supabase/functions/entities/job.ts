@@ -8,7 +8,7 @@ export interface Job {
   ext: string;
   transUnitState: string;
   request: 'estimation' | 'translation';
-  status: 'completed' | 'failed' | 'cancelled' | 'pending' | 'estimation_running' | 'translation_running';
+  status: 'completed' | 'failed' | 'cancelled' | 'pending' | 'estimating' | 'translating' | 'cancelling';
   transUnitFound?: number;
   transUnitDone?: number; // only for translation
   transUnitFailed?: number; // only for translation

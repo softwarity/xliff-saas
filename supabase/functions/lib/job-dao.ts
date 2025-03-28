@@ -6,7 +6,7 @@ export class JobDao {
 
   async existsAndNotCompleted(request: 'estimation' | 'translation', userId: string, provider: string, namespace: string, repository: string): Promise<boolean> {
     const {data, error} = await this.supabaseClient.from('user_jobs').select('status')
-    .eq('userId', userId).eq('provider', provider).eq('namespace', namespace).eq('repository', repository).eq('request', request).neq('status', 'completed');
+    .eq('userId', userId).eq('provider', provider).eq('namespace', namespace).eq('repository', repository).eq('request', request).in('status', ['pending', 'estimating', 'translating', 'cancelling']);
     if (error) {
       throw new Error(error.message);
     }

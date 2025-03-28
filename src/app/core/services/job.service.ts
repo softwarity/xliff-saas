@@ -119,4 +119,10 @@ export class JobService {
       })
     );
   }
+
+  cancelJob(jobId: string): Observable<void> {
+    return from(this.supabaseClientService.functions.invoke<void>(`cancel-job/${jobId}`, {method: 'GET'})).pipe(
+      map(response => response.data || void 0)
+    );
+  }
 }

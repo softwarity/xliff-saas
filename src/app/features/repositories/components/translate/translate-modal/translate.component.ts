@@ -18,23 +18,31 @@ import { TranslateModalComponent } from './translate-modal.component';
 <div class="flex items-center justify-between gap-2">
     @if (translation()) {
       @if (translation()?.status === 'pending') {
-        <span class="text-sm text-gray-500 dark:text-gray-400">
+        <span class="text-sm text-gray-500 dark:text-gray-400" i18n="@@PENDING">
           Pending...
         </span>
-      } @else if (translation()?.status === 'estimation_running') {
-        <span class="text-sm text-gray-500 dark:text-gray-400">
+      } @else if (translation()?.status === 'estimating') {
+        <span class="text-sm text-gray-500 dark:text-gray-400" i18n="@@ESTIMATING">
           Estimating...
         </span>
-      } @else if (translation()?.status === 'translation_running') {
-        <span class="text-sm text-gray-500 dark:text-gray-400">
+      } @else if (translation()?.status === 'translating') {
+        <span class="text-sm text-gray-500 dark:text-gray-400" i18n="@@TRANSLATING_PROGRESS">
           Translation: {{ translation()?.transUnitDone }}/{{ translation()?.transUnitFound }}
         </span>
       } @else if (translation()?.status === 'completed') {
-        <span class="text-sm text-green-500 dark:text-green-400">
+        <span class="text-sm text-green-500 dark:text-green-400" i18n="@@TRANSLATION_COMPLETED">
           Translation: {{ translation()?.transUnitDone }}/{{ translation()?.transUnitFound }}
         </span>
+      } @else if (translation()?.status === 'cancelling') {
+        <span class="text-sm text-gray-500 dark:text-gray-400" i18n="@@CANCELING">
+          Cancelling...
+        </span>
+      } @else if (translation()?.status === 'cancelled') {
+        <span class="text-sm text-red-500 dark:text-red-400" i18n="@@CANCELLED">
+          Cancelled
+        </span>
       } @else {
-        <span class="text-sm text-gray-500 dark:text-gray-400">
+        <span class="text-sm text-red-500 dark:text-red-400">
           {{ translation()?.status }}
         </span>
       }
@@ -43,7 +51,7 @@ import { TranslateModalComponent } from './translate-modal.component';
         No translation available...
       </span>
     }
-    @if(translation()?.status === 'estimation_running' || translation()?.status === 'translation_running') {
+    @if(translation()?.status === 'estimating' || translation()?.status === 'translating') {
       <button (click)="isModalOpen.set(true)" class="flat-warning" i18n="@@CANCEL">
         Cancel
       </button>
@@ -78,13 +86,13 @@ export class TranslateComponent implements OnDestroy {
     this.subscription?.unsubscribe();
   }
 
-  onCloseModal($event: {branch: string, ext: string, transUnitState: string} | null ) {
+  onCloseModal($event: {branch: string, ext: string, transUnitState: string, procedeedTransUnitState: string} | null ) {
     this.isModalOpen.set(false);
     if (!$event) {
       return;
     }
     this.subscription?.unsubscribe();
-    this.subscription = this.repositoryService.estimateRepository(this.repository(), $event).pipe(
+    this.subscription = this.repositoryService.translateRepository(this.repository(), $event).pipe(
       tap((job) => {
         this.translation.set(job);
       }),

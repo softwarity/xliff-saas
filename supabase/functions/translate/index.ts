@@ -7,7 +7,6 @@ import { CORS_HEADERS } from '../const.ts';
 import { Job } from '../entities/job.ts';
 import { launchTranslateRunner } from '../lib/git-service.ts';
 import { GhTranslateInputs } from '../models/gh-action-inputs.ts';
-const request: 'estimation' | 'translation' = 'translation';
 
 Deno.serve(async (req) => {
     if (req.method === 'OPTIONS') {
@@ -29,7 +28,7 @@ Deno.serve(async (req) => {
 
         const { namespace, name, branch, ext: EXT_XLIFF, transUnitState: STATE, procedeedTransUnitState: PROCEEDED_STATE } = await req.json();
         
-        if (await jobDao.existsAndNotCompleted(request, userId, provider, namespace, name)) {
+        if (await jobDao.existsAndNotCompleted('translation', userId, provider, namespace, name)) {
             console.log('Translation already launch for this repository and is not completed');
             throw new Error('Translation already launch for this repository and is not completed');
         }
@@ -37,7 +36,7 @@ Deno.serve(async (req) => {
         const payload: Omit<Job, 'request' | 'userId' | 'provider' | 'namespace' | 'repository' | 'id'> = {
             branch, ext: EXT_XLIFF, transUnitState: STATE, status: 'pending', transUnitFound: 0, details: {}
         };
-        const toInsert: Omit<Job, 'id'> = { request, userId, provider, namespace, repository: name, ...payload };
+        const toInsert: Omit<Job, 'id'> = { request: 'translation', userId, provider, namespace, repository: name, ...payload };
         const job = await jobDao.insert(toInsert);
         
         const TOKEN = await getGitToken(req, provider);

@@ -18,32 +18,48 @@ import { EstimateModalComponent } from './estimate-modal/estimate-modal.componen
     <div class="flex items-center justify-between gap-2">
     @if (estimation()) {
       @if (estimation()?.status === 'pending') {
-        <span class="text-sm text-gray-500 dark:text-gray-400">
+        <span class="text-sm text-gray-500 dark:text-gray-400" i18n="@@PENDING">
           Pending...
         </span>
-      } @else if (estimation()?.status === 'estimation_running') {
-        <span class="text-sm text-gray-500 dark:text-gray-400">
+      } @else if (estimation()?.status === 'estimating') {
+        <span class="text-sm text-gray-500 dark:text-gray-400" i18n="@@ESTIMATING">
           Estimating...
         </span>
+      } @else if (estimation()?.status === 'translating') {
+        <span class="text-sm text-gray-500 dark:text-gray-400" i18n="@@TRANSLATING">
+          Translating...
+        </span>
+      } @else if (estimation()?.status === 'cancelling') {
+        <span class="text-sm text-gray-500 dark:text-gray-400" i18n="@@CANCELING">
+          Cancelling...
+        </span>
+      } @else if (estimation()?.status === 'cancelled') {
+        <span class="text-sm text-red-500 dark:text-red-400" i18n="@@CANCELLED">
+          Cancelled
+        </span>
       } @else if (estimation()?.status === 'completed') {
-        <span class="text-sm text-green-500 dark:text-green-400">
+        <span class="text-sm text-green-500 dark:text-green-400" i18n="@@TRANSLATION_UNITS_DETECTED">
           {{ estimation()?.transUnitFound }} translation units detected
+        </span>
+      } @else {
+        <span class="text-sm text-red-500 dark:text-red-400">
+          {{ estimation()?.status }}
         </span>
       }
     } @else {
-      <span class="text-sm text-red-500 dark:text-red-400">
+      <span class="text-sm text-red-500 dark:text-red-400" i18n="@@NO_ESTIMATION_AVAILABLE">
         No estimation available...
       </span>
     }
-    @if(estimation()?.status === 'estimation_running') {
-      <button (click)="isModalOpen.set(true)" class="flat-warning" i18n="@@CANCEL">
+    @if(estimation()?.status === 'estimating') {
+      <button class="flat-warning" i18n="@@CANCEL" (click)="onCancel()" [disabled]="estimation() && estimation()?.status === 'cancelling'">
         Cancel
       </button>
     } @else {
-      <button (click)="isModalOpen.set(true)" class="flat-primary" [disabled]="estimation() && estimation()?.status !== 'completed'" i18n="@@ESTIMATE">
+      <button (click)="isModalOpen.set(true)" class="flat-primary" [disabled]="estimation() && (estimation()?.status !== 'completed' && estimation()?.status !== 'cancelled')" i18n="@@ESTIMATE">
         Estimate
-      </button>
-    }
+        </button>
+      }
   </div>
   @if (isModalOpen()) {
   <app-estimate-modal [repository]="repository()" (closeModal)="onCloseModal($event)" />
@@ -98,4 +114,11 @@ export class EstimateComponent implements OnDestroy {
       console.error('Error subscribing to job changes:', error);
     }
   };
+
+  onCancel() {
+    const id = this.estimation()?.id;
+    if (!!id) {
+      this.jobService.cancelJob(id).subscribe();
+    }
+  }
 }

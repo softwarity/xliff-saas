@@ -17,14 +17,14 @@ Deno.serve(async (req: Request) => {
     const {request, userId, provider, namespace, repository, branch}: Job = await jobDao.getById(jobId);
     console.log('Received translate-webhook', request, userId, provider, namespace, repository, branch, runId, body);
     if (body.type === 'start') {
-      await jobDao.updateById(jobId, {status: 'estimation_running', details: [], transUnitFound: 0, runId});
+      await jobDao.updateById(jobId, {status: 'estimating', details: [], transUnitFound: 0, runId});
     } else if (body.type === 'estimation-done') {
       // create transaction
       const transactionId = undefined;
-      await jobDao.updateById(jobId, {status: 'translation_running', transactionId, transUnitDone:0, transUnitFound: body.total});
+      await jobDao.updateById(jobId, {status: 'translating', transactionId, transUnitDone:0, transUnitFound: body.total});
     } else if (body.type === 'progress') {
       const transUnitDone: number = body.completed + body.error;
-      await jobDao.updateById(jobId, {status: 'translation_running', transUnitDone, transUnitFound: body.total, transUnitFailed: body.error});
+      await jobDao.updateById(jobId, {status: 'translating', transUnitDone, transUnitFound: body.total, transUnitFailed: body.error});
     } else if (body.type === 'error') {
       const transUnitDone: number = body.completed + body.error;
       await jobDao.updateById(jobId, {status: 'failed', transUnitDone});
