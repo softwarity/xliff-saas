@@ -11,11 +11,11 @@ import { Job } from '../../shared/models/job.model';
 })
 export class JobService {
   private supabaseClientService = inject(SupabaseClientService);
-  private observable$: Observable<{key: string, request: 'estimation' | 'translation', value: Job | null}>;
+  private observable$: Observable<{jobId: string, key: string, value: Job | null}>;
   private channel: RealtimeChannel | undefined = undefined;
   constructor() {
     this.observable$ = new Observable<RealtimePostgresChangesPayload<Job>>((observer: Subscriber<RealtimePostgresChangesPayload<Job>>) => {
-      from(this.supabaseClientService.from('user_jobs').select<'*', Job>('*').limit(100)).subscribe({
+      from(this.supabaseClientService.from('latest_user_jobs').select<'*', Job>('*').limit(100)).subscribe({
         next: ({ data, error }: { data: Job[] | null, error: any }) => {
           if (error) {
             console.error('Error fetching jobs:', error);
@@ -46,31 +46,41 @@ export class JobService {
     }).pipe(
       map((payload: RealtimePostgresChangesPayload<Job>) => {
         let key;
+        let jobId;
         let value = null;
-        let request: 'estimation' | 'translation';
         if (payload.eventType === 'UPDATE' || payload.eventType === 'INSERT') {
-          const { provider, namespace, repository } = payload.new;
-          request = payload.new.request!;
-          key = `${provider}/${namespace}/${repository}`;
+          const { request, provider, namespace, repository, id } = payload.new;
+          key = `${request}/${provider}/${namespace}/${repository}`;
+          jobId = id!;
           value = payload.new;
         } else {
-          const { provider, namespace, repository } = payload.old;
-          request = payload.old.request!;
-          key = `${provider}/${namespace}/${repository}`;
+          const { request, provider, namespace, repository, id } = payload.old;
+          key = `${request}/${provider}/${namespace}/${repository}`;
+          jobId = id!;
           value = null;
         }
-        return {key, request, value};
+        return {jobId, key, value};
       }),
       share()
     );
 
   }
-  subscribeToJobChanges({ provider, namespace, repository }: { provider: string, namespace: string, repository: string }): Observable<{request: string, value: Job | null}> {
-    const lookupKey = `${provider}/${namespace}/${repository}`;
-    return this.observable$.pipe(
-      filter(({key}) => key === lookupKey),
-      map(({request, value}) => ({request, value}))
-    )
+  subscribeToJobChanges(criteria: { provider: string, namespace: string, repository: string, request: 'estimation' | 'translation'}): Observable<Job | null>;
+  subscribeToJobChanges(criteria: { jobId: string }): Observable<Job | null>;
+  subscribeToJobChanges(criteria: { provider: string, namespace: string, repository: string, request: 'estimation' | 'translation'} | { jobId: string }): Observable<Job | null> {
+    if ('jobId' in criteria) {
+      return this.observable$.pipe(
+        filter(({jobId}) => jobId === criteria.jobId),
+        map(({value}) => value)
+      )
+    } else {
+      const {request, provider, namespace, repository} = criteria;
+      const lookupKey = `${request}/${provider}/${namespace}/${repository}`;
+      return this.observable$.pipe(
+        filter(({key}) => key === lookupKey),
+        map(({value}) => value)
+      )
+    }
   }
 
   closeChannel() {
@@ -78,8 +88,8 @@ export class JobService {
     this.channel?.unsubscribe();
   }
 
-  getJobs(): Observable<Job[]> {
-    return from(this.supabaseClientService.from('user_jobs').select<'*', Job>('*').limit(100)).pipe(
+  getJobs(status?: string[]): Observable<Job[]> {
+    return from(this.supabaseClientService.from('user_jobs').select<'*', Job>('*').in('status', status || []).limit(100)).pipe(
       switchMap(({ data, error }: { data: Job[] | null, error: any }) => {
         if (error) {
           console.error('Error fetching jobs:', error);

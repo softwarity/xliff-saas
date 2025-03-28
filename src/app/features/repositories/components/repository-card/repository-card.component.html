@@ -40,76 +40,11 @@
       <p class="text-gray-600 dark:text-gray-400 text-sm line-clamp-2">{{ repository().description }}</p>
     }
   </div>
-  
   <div class="flex items-center justify-between text-sm text-gray-500 dark:text-gray-400 mt-4">
     <span>Updated {{ repository().updated_at | date }}</span>
   </div>
   <div class="mt-2 pb-2 border-t border-gray-100 dark:border-dark-600"></div>
-  <div class="flex items-center justify-between gap-2">
-    @if (estimation()) {
-      @if (estimation()?.status === 'estimation_pending') {
-        <span class="text-sm text-gray-500 dark:text-gray-400">
-          Pending...
-        </span>
-      } @else if (estimation()?.status === 'estimation_running') {
-        <span class="text-sm text-gray-500 dark:text-gray-400">
-          Estimating...
-        </span>
-      } @else if (estimation()?.status === 'completed') {
-        <span class="text-sm text-green-500 dark:text-green-400">
-          {{ estimation()?.transUnitFound }} translation units detected
-        </span>
-      }
-    } @else {
-      <span class="text-sm text-red-500 dark:text-red-400">
-        No estimation available...
-      </span>
-    }
-    <button (click)="isEstimateModalOpen.set(true)" class="flat-primary" [disabled]="estimation() && estimation()?.status !== 'completed'">
-      Estimate
-    </button>
-  </div>
+  <app-estimate [repository]="repository()" />
   <div class="mt-2 pb-2 border-t border-gray-100 dark:border-dark-600"></div>
-  <div class="flex items-center justify-between gap-2">
-    @if (translation()) {
-      @if (translation()?.status === 'estimation_pending') {
-        <span class="text-sm text-gray-500 dark:text-gray-400">
-          Pending...
-        </span>
-      } @else if (translation()?.status === 'estimation_running') {
-        <span class="text-sm text-gray-500 dark:text-gray-400">
-          Estimating...
-        </span>
-      } @else if (translation()?.status === 'translation_pending') {
-        <span class="text-sm text-gray-500 dark:text-gray-400">
-          Pending...
-        </span>
-      } @else if (translation()?.status === 'translation_running') {
-        <span class="text-sm text-gray-500 dark:text-gray-400">
-          Translation: {{ translation()?.transUnitDone }}/{{ translation()?.transUnitFound }}
-        </span>
-      } @else if (translation()?.status === 'completed') {
-        <span class="text-sm text-green-500 dark:text-green-400">
-          Translation: {{ translation()?.transUnitDone }}/{{ translation()?.transUnitFound }}
-        </span>
-      } @else {
-        <span class="text-sm text-gray-500 dark:text-gray-400">
-          {{ translation()?.status }}
-        </span>
-      }
-    } @else {
-      <span class="text-sm text-red-500 dark:text-red-400">
-        No translation available...
-      </span>
-    }
-    <button (click)="isTranslateModalOpen.set(true)" class="flat-primary" [disabled]="translation() && translation()?.status !== 'completed'">
-      Translate
-    </button>
-  </div>
+  <app-translate [repository]="repository()" />
 </div>
-@if (isEstimateModalOpen()) {
-  <app-repository-estimate-modal [repository]="repository()" (closeModal)="onCloseEstimateModal($event)" />
-}
-@if (isTranslateModalOpen()) {
-  <app-repository-translate-modal [repository]="repository()" (closeModal)="onCloseTranslateModal($event)" />
-}

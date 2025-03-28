@@ -1,41 +1,19 @@
-import { Component, computed, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AuthService } from '../../core/services/auth.service';
+import { ChangeDetectionStrategy, Component, CUSTOM_ELEMENTS_SCHEMA, inject, signal } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
-import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { DatePipe, TitleCasePipe } from '@angular/common';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { AuthService } from '../../core/services/auth.service';
 import { JobService } from '../../core/services/job.service';
-import { ProviderLogoComponent } from '../../shared/components/provider-logo/provider-logo.component';
-
-interface Job {
-  userId: string;
-  provider: 'github' | 'gitlab' | 'bitbucket';
-  namespace: string;
-  repository: string;
-  branch: string;
-  ext: string;
-  transUnitState: string;
-  request: 'estimation' | 'translation';
-  status: 'completed' | 'failed' | 'cancelled' | 'estimation_pending' | 'estimation_running' | 'translation_pending' | 'translation_running';
-  transUnitFound?: number;
-  transUnitDone?: number;
-  transUnitAllowed?: number;
-  transactionId?: string;
-  runId?: string;
-  details: any;
-  createdAt?: Date;
-  updatedAt?: Date;
-}
+import { Job } from '../../shared/models/job.model';
+import { JobCardComponent } from './job-card.component';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
   imports: [
-    ReactiveFormsModule,
     CommonModule,
-    DatePipe,
-    TitleCasePipe,
-    ProviderLogoComponent
+    ReactiveFormsModule,
+    JobCardComponent
   ],
   styles: [
     `
@@ -52,20 +30,31 @@ interface Job {
     }
     `
   ],
-  templateUrl: './dashboard.component.html'
+  templateUrl: './dashboard.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DashboardComponent {
   private auth = inject(AuthService);
   private jobService = inject(JobService);
+  private fb = inject(FormBuilder);
   user = toSignal(this.auth.user$);
 
-  instructionForm = new FormGroup({
-    instructions: new FormControl('', [Validators.required])
-  });
+  jobs = signal<Job[]>([]);
+  instructionForm: FormGroup;
 
-  jobs = toSignal(this.jobService.getJobs());
+  constructor() {
+    this.instructionForm = this.fb.group({
+      instructions: ['', Validators.required]
+    });
+
+    this.jobService.getJobs(['completed', 'failed', 'cancelled']).subscribe((jobs: Job[]) => {
+      this.jobs.set(jobs);
+    });
+  }
 
   onSubmit() {
-    console.log(this.instructionForm.value);
+    if (this.instructionForm.valid) {
+      console.log('AI Instructions:', this.instructionForm.value);
+    }
   }
 }

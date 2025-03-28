@@ -9,9 +9,6 @@ import { launchTranslateRunner } from '../lib/git-service.ts';
 import { GhTranslateInputs } from '../models/gh-action-inputs.ts';
 const request: 'estimation' | 'translation' = 'translation';
 
-const DRY_RUN = 'true';
-const CREDITS = 1000;
-
 Deno.serve(async (req) => {
     if (req.method === 'OPTIONS') {
         return new Response('ok', { headers: CORS_HEADERS });
@@ -27,28 +24,24 @@ Deno.serve(async (req) => {
         const supabaseClient = getSupabaseClient();
         const jobDao = new JobDao(supabaseClient);
         const userService = new UserService(supabaseClient);
-        const userId = await userService.getUserId(req);
-
+        const user = await userService.getUser(req);
+        const userId = user.id;
 
         const { namespace, name, branch, ext: EXT_XLIFF, transUnitState: STATE, procedeedTransUnitState: PROCEEDED_STATE } = await req.json();
-        const WEBHOOK_URL = `${Deno.env.get('HOST_WEBHOOK')}/functions/v1/webhook/${request}/${userId}/${provider}/${namespace}/${name}/${branch}`;
-
+        
         if (await jobDao.existsAndNotCompleted(request, userId, provider, namespace, name)) {
             console.log('Translation already launch for this repository and is not completed');
             throw new Error('Translation already launch for this repository and is not completed');
         }
         console.log('Translation not exists or completed, start...');
-        const payload: Omit<Job, 'request' | 'userId' | 'provider' | 'namespace' | 'repository'> = {
-            branch, ext: EXT_XLIFF, transUnitState: STATE, status: 'estimation_pending', transUnitFound: 0, details: {}
+        const payload: Omit<Job, 'request' | 'userId' | 'provider' | 'namespace' | 'repository' | 'id'> = {
+            branch, ext: EXT_XLIFF, transUnitState: STATE, status: 'pending', transUnitFound: 0, details: {}
         };
-        if (await jobDao.exists(request, userId, provider, namespace, name)) {
-            await jobDao.update(request, userId, provider, namespace, name, payload);
-        } else {
-            const job: Job = { request, userId, provider, namespace, repository: name, ...payload };
-            await jobDao.insert(job);
-        }
+        const toInsert: Omit<Job, 'id'> = { request, userId, provider, namespace, repository: name, ...payload };
+        const job = await jobDao.insert(toInsert);
         
         const TOKEN = await getGitToken(req, provider);
+        const WEBHOOK_URL = `${Deno.env.get('HOST_WEBHOOK')}/functions/v1/translate-webhook/${job.id}`;
         const WEBHOOK_JWT = Deno.env.get('SUPABASE_ANON_KEY')!;
         const REPOSITORY_INFO = `${namespace}/${name}@${branch}`;
         const inputs: GhTranslateInputs = { 
@@ -60,8 +53,8 @@ Deno.serve(async (req) => {
             DRY_RUN
         };
         await launchTranslateRunner(inputs);
-        console.log('Translation launched for ', `${namespace}/${name}@${branch} by ${userId}`);
-        return new Response(JSON.stringify({ message: 'Translation triggered successfully!' }), { headers: {
+        console.log('Translation launched for ', `${namespace}/${name}@${branch} by ${user.email}. JobId: ${job.id}`);
+        return new Response(JSON.stringify({ message: 'Translation triggered successfully!', job }), { headers: {
             ...CORS_HEADERS,
             'Content-Type': 'application/json',
         }, status: 200 });
@@ -72,3 +65,7 @@ Deno.serve(async (req) => {
         }, status: 500 });
     }
 });
+
+
+const DRY_RUN = 'true';
+const CREDITS = 1000;

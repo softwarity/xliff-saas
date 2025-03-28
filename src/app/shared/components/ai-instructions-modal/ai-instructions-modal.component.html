@@ -45,12 +45,10 @@
 
         <!-- Actions -->
         <div class="mt-5 flex justify-end gap-3">
-          <button type="button" (click)="onCancel()" class="stroke-primary flex items-center gap-2 transition-colors duration-200" i18n="@@CANCEL">
-            <app-icon name="close" size="16"></app-icon>
+          <button type="button" (click)="onCancel()" class="stroke-primary" i18n="@@CANCEL">
             Cancel
           </button>
-          <button type="submit" [disabled]="!form.valid" class="flat-primary flex items-center gap-2 transition-colors duration-200" i18n="@@APPLY">
-            <app-icon name="check" size="16"></app-icon>
+          <button type="submit" [disabled]="!form.valid" class="flat-primary" i18n="@@APPLY">
             Apply
           </button>
         </div>

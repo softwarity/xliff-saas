@@ -4,6 +4,7 @@ import { SupabaseClientService } from '../../../core/services/supabase-client.se
 import { ProviderType } from '../../../shared/models/provider-type';
 import { Repository } from '../../../shared/models/repository.model';
 import { RealtimeChannel } from '@supabase/supabase-js';
+import { Job } from '../../../shared/models/job.model';
 
 
 
@@ -26,32 +27,31 @@ export class RepositoryService {
     );
   }
 
-  estimateRepository(repository: Repository, {branch, ext, transUnitState}: {branch: string, ext: string, transUnitState: string}): Observable<string> {
+  estimateRepository(repository: Repository, {branch, ext, transUnitState}: {branch: string, ext: string, transUnitState: string}): Observable<Job> {
     const { namespace, name, provider } = repository;
     const request = { namespace, name, branch, ext, transUnitState };
-    return from(this.supabaseClientService.functions.invoke<{message: string}>(`estimate/${provider}`, {method: 'POST', body: request})).pipe(
-      map(response => response.data?.message || 'Error estimating repository')
+    return from(this.supabaseClientService.functions.invoke<{message: string, job: Job}>(`estimate/${provider}`, {method: 'POST', body: request})).pipe(
+      map(response => response.data),
+      map(data => {
+        if(data?.job) {
+          return data.job;
+        }
+        throw new Error('Error estimating repository');
+      })
     );
   }
 
   translateRepository(repository: Repository, {branch, ext, transUnitState, procedeedTransUnitState}: {branch: string, ext: string, transUnitState: string, procedeedTransUnitState: string}): Observable<string> {
     const { namespace, name, provider } = repository;
     const request = { namespace, name, branch, ext, transUnitState, procedeedTransUnitState };
-    return from(this.supabaseClientService.functions.invoke<{message: string}>(`translate/${provider}`, {method: 'POST', body: request})).pipe(
-      map(response => response.data?.message || 'Error translating repository')
+    return from(this.supabaseClientService.functions.invoke<{message: string, jobId: string}>(`translate/${provider}`, {method: 'POST', body: request})).pipe(
+      map(response => response.data),
+      map(data => {
+        if(data?.jobId) {
+          return data.jobId;
+        }
+        throw new Error('Error estimating repository');
+      })
     );
-  }
-
-  getEstimation(repository: Repository): Observable<any> {
-    const handle = (payload: any) => {
-      console.log('Change received!', payload)
-    }
-    // Listen to inserts
-    const channel: RealtimeChannel = this.supabaseClientService.realtime.channel('user_estimations')
-    .on('postgres_changes', { event: 'INSERT', schema: 'public', table: 'user_estimations' }, handle)
-    .on('postgres_changes', { event: 'UPDATE', schema: 'public', table: 'user_estimations' }, handle)
-    .on('postgres_changes', { event: 'DELETE', schema: 'public', table: 'user_estimations' }, handle);
-    channel.subscribe();
-    return of(void 0);
   }
 }
