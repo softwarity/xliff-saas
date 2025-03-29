@@ -6,6 +6,7 @@ import { Job } from '../../../../shared/models/job.model';
 import { Repository } from '../../../../shared/models/repository.model';
 import { RepositoryService } from '../../services/repository.service';
 import { EstimateModalComponent } from './estimate-modal/estimate-modal.component';
+import { CancelConfirmComponent } from '../../../../shared/components/cancel-confirm.component';
 
 @Component({
   selector: 'app-estimate',
@@ -13,6 +14,7 @@ import { EstimateModalComponent } from './estimate-modal/estimate-modal.componen
   imports: [
     CommonModule, 
     EstimateModalComponent,
+    CancelConfirmComponent
   ],
   template: `
     <div class="flex items-center justify-between gap-2">
@@ -51,15 +53,13 @@ import { EstimateModalComponent } from './estimate-modal/estimate-modal.componen
         No estimation available...
       </span>
     }
-    @if(estimation()?.status === 'estimating') {
-      <button class="flat-warning" i18n="@@CANCEL" (click)="onCancel()" [disabled]="estimation() && estimation()?.status === 'cancelling'">
-        Cancel
-      </button>
+    @if(estimation()?.status === 'pending' || estimation()?.status === 'estimating') {
+      <app-cancel-confirm (confirm)="onCancel()" />
     } @else {
-      <button (click)="isModalOpen.set(true)" class="flat-primary" [disabled]="estimation() && (estimation()?.status !== 'completed' && estimation()?.status !== 'cancelled')" i18n="@@ESTIMATE">
-        Estimate
-        </button>
-      }
+      <button (click)="isModalOpen.set(true)" class="flat-primary" i18n="@@TRANSLATE">
+      Estimate
+    </button>
+    }
   </div>
   @if (isModalOpen()) {
   <app-estimate-modal [repository]="repository()" (closeModal)="onCloseModal($event)" />

@@ -47,7 +47,7 @@
   } @else {
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
       @for (repo of repositories(); track repo.id) {
-        <app-repository-card [repository]="repo" />
+        <app-repository-card [repository]="repo" [balance]="balance()" />
       }
     </div>
   }

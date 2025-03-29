@@ -6,9 +6,6 @@ import { appConfig } from './app/app.config';
 console.log('Starting application bootstrap...');
 
 bootstrapApplication(AppComponent, appConfig)
-  .then(() => {
-    console.log('Application successfully bootstrapped');
-  })
   .catch(err => {
     console.error('Detailed bootstrap error:', err);
     // Log the full error stack

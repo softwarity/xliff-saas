@@ -13,8 +13,7 @@ Deno.serve(async (req) => {
     if (req.method !== 'GET') {
         return new Response(null, { headers: CORS_HEADERS, status: 405 });
     }
-
-    
+   
     const url = new URL(req.url);
     const pathname = url.pathname;
     const jobId = pathname.split('/').pop() as string;
@@ -33,13 +32,15 @@ Deno.serve(async (req) => {
             console.log(`Job not found: ${jobId}`);
             return new Response(JSON.stringify({ error: `Job not found: ${jobId}` }), { headers: CORS_HEADERS, status: 404 });
         }
-        console.log('Cancelling run', job.runId);
+        const {provider, namespace, repository, branch, runId} = job;
+        console.log('Cancelling job', jobId);
         await jobDao.updateById(jobId, { status: 'cancelling' });
-        if (job.runId) {
-            await cancelRun(job.runId!);
+        if (runId) {
+            console.log('Cancelling run', runId);
+            await cancelRun(runId!);
             await jobDao.updateById(jobId, { status: 'cancelled' });
         }
-        console.log('Job cancelled for ', `${job.namespace}/${job.repository}@${job.branch}. JobId: ${job.id} by ${user.email}`);
+        console.log('Job cancelled for ', `${provider}/${namespace}/${repository}@${branch}. JobId: ${jobId} by ${user.email}`);
         return new Response(JSON.stringify({ message: 'Job cancelled successfully!', job }), { headers: {
             ...CORS_HEADERS,
             'Content-Type': 'application/json',

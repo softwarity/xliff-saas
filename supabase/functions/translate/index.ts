@@ -24,7 +24,10 @@ Deno.serve(async (req) => {
         const userService = new UserService(supabaseClient);
         const user = await userService.getUser(req);
         const userId = user.id;
-        const credits = await userService.getCredit(userId);
+        const balance = await userService.getBalance(userId);
+        if (balance <= 0) {
+            throw new Error('Not enough credits');
+        }
         const { namespace, name, branch, ext: EXT_XLIFF, transUnitState: STATE, procedeedTransUnitState: PROCEEDED_STATE } = await req.json();
         
         if (await jobDao.existsAndNotCompleted('translation', userId, provider, namespace, name)) {
@@ -47,7 +50,7 @@ Deno.serve(async (req) => {
             GIT_PROVIDER: provider, EXT_XLIFF, 
             STATE, PROCEEDED_STATE, 
             WEBHOOK_URL, WEBHOOK_JWT, 
-            CREDITS: `${credits}`,
+            CREDITS: `${balance}`,
             DRY_RUN
         };
         await launchTranslateRunner(inputs);

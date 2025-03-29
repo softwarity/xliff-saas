@@ -2,7 +2,6 @@
 CREATE TABLE IF NOT EXISTS user_credits (
   "userId" uuid PRIMARY KEY REFERENCES auth.users(id),
   balance integer NOT NULL DEFAULT 0,
-  pending integer NOT NULL DEFAULT 0,
   "updatedAt" timestamptz DEFAULT now()
 );
 
@@ -20,31 +19,58 @@ CREATE OR REPLACE FUNCTION update_user_credits()
 RETURNS TRIGGER AS $$
 BEGIN
   -- Insert or update the user's credit balance
-  INSERT INTO user_credits ("userId", balance)
-  VALUES (
-    COALESCE(NEW."userId", OLD."userId"),
-    (
-      SELECT COALESCE(SUM(credits), 0)
-      FROM user_transactions
-      WHERE "userId" = COALESCE(NEW."userId", OLD."userId")
-      AND status = 'completed'
-    ),
-    (
-      SELECT COALESCE(SUM(credits), 0)
-      FROM user_transactions
-      WHERE "userId" = COALESCE(NEW."userId", OLD."userId")
-      AND status = 'pending'
-    )
-  )
+  INSERT INTO user_credits ("userId", balance, pending)
+  VALUES (NEW."userId", 0,  0) -- values initial
   ON CONFLICT ("userId") DO UPDATE
   SET 
-    balance = EXCLUDED.balance,
-    pending = EXCLUDED.pending,
+    balance = CASE 
+      WHEN TG_OP = 'INSERT' THEN
+        CASE 
+          WHEN NEW.status IN ('completed', 'pending') THEN user_credits.balance + NEW.credits
+          ELSE user_credits.balance
+        END
+      WHEN TG_OP = 'UPDATE' THEN
+        CASE 
+          WHEN NEW.status IN ('failed', 'cancelled') THEN user_credits.balance - NEW.credits
+          ELSE user_credits.balance
+        END
+    END,
     "updatedAt" = now();
-  
   RETURN NEW;
 END;
 $$ LANGUAGE plpgsql SECURITY DEFINER;
+
+
+-- old function, recompute the balance and pending
+-- CREATE OR REPLACE FUNCTION update_user_credits()
+-- RETURNS TRIGGER AS $$
+-- BEGIN
+--   -- Insert or update the user's credit balance
+--   INSERT INTO user_credits ("userId", balance)
+--   VALUES (
+--     COALESCE(NEW."userId", OLD."userId"),
+--     (
+--       SELECT COALESCE(SUM(credits), 0)
+--       FROM user_transactions
+--       WHERE "userId" = COALESCE(NEW."userId", OLD."userId")
+--       AND status = 'completed'
+--     ),
+--     (
+--       SELECT COALESCE(SUM(credits), 0)
+--       FROM user_transactions
+--       WHERE "userId" = COALESCE(NEW."userId", OLD."userId")
+--       AND status = 'pending'
+--     )
+--   )
+--   ON CONFLICT ("userId") DO UPDATE
+--   SET 
+--     balance = EXCLUDED.balance,
+--     pending = EXCLUDED.pending,
+--     "updatedAt" = now();
+  
+--   RETURN NEW;
+-- END;
+-- $$ LANGUAGE plpgsql SECURITY DEFINER;
 
 -- Create trigger
 CREATE TRIGGER update_credits_on_transactions_change

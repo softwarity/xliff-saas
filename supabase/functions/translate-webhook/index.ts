@@ -16,18 +16,17 @@ Deno.serve(async (req: Request) => {
     const body = await req.json(); 
     const supabaseClient = getSupabaseClient();
     const jobDao = new JobDao(supabaseClient);
-    const transactionDao = new TransactionDao(supabaseClient);
-    const {request, userId, provider, namespace, repository, branch}: Job = await jobDao.getById(jobId);
+    const {request, userId, provider, namespace, repository, branch, status}: Job = await jobDao.getById(jobId);
     console.log('Received translate-webhook', request, userId, provider, namespace, repository, branch, runId, body);
-    const job = await jobDao.getById(jobId);
-    if (job.status === 'cancelling') {
+    if (status === 'cancelling') {
       await cancelRun(runId);
       await jobDao.updateById(jobId, {status: 'cancelled'});
       return new Response(null, {status: 200});
     }
-    if (job.status === 'cancelled') {
+    if (status === 'cancelled') {
       return new Response(null, {status: 200});
     }
+    const transactionDao = new TransactionDao(supabaseClient);
     if (body.type === 'start') {
       await jobDao.updateById(jobId, {status: 'estimating', details: {}, transUnitFound: 0, runId});
     } else if (body.type === 'estimation-done') {

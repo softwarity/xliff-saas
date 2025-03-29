@@ -1,12 +1,13 @@
-import { Component, inject, signal, computed, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Component, computed, inject, OnDestroy, OnInit, signal } from '@angular/core';
+import { toSignal } from '@angular/core/rxjs-interop';
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
-import { RepositoryService } from './services/repository.service';
-import { toSignal } from '@angular/core/rxjs-interop';
 import { Subscription } from 'rxjs';
-import { RepositoryCardComponent } from './components/repository-card/repository-card.component';
+import { BalanceService } from '../../core/services/balance.service';
 import { JobService } from '../../core/services/job.service';
+import { RepositoryCardComponent } from './components/repository-card/repository-card.component';
+import { RepositoryService } from './services/repository.service';
 
 @Component({
   selector: 'app-repositories',
@@ -17,12 +18,13 @@ import { JobService } from '../../core/services/job.service';
 export class RepositoriesComponent implements OnInit, OnDestroy {
   private route = inject(ActivatedRoute);
   private repoService = inject(RepositoryService);
-  private routeSubscription?: Subscription;
+  private balanceService = inject(BalanceService);
+  private subscriptions: Subscription = new Subscription();
   private jobService = inject(JobService);
   protected loading = signal(true);
   protected error = signal<string | null>(null);
   protected searchTerm = signal('');
-  
+  protected balance = signal<number>(0);
   protected provider = toSignal(this.route.params, { initialValue: { provider: '' } });
   protected allRepositories = signal<any[]>([]);
   
@@ -43,17 +45,30 @@ export class RepositoriesComponent implements OnInit, OnDestroy {
     });
   });
 
+  constructor() {
+    this.subscriptions.add(this.balanceService.subscribeToBalanceChanges().subscribe({
+      next: (balance: number) => {
+        console.log('RepositoriesComponent Balance:', balance);
+        this.balance.set(balance);
+      },
+      error: (error) => {
+        this.balance.set(0);
+        console.error('Error subscribing to credit changes:', error);
+      }
+    }));
+  }
+
   ngOnInit() {
-    this.routeSubscription = this.route.params.subscribe(params => {
+    this.subscriptions.add(this.route.params.subscribe(params => {
       if (params['provider']) {
         this.allRepositories.set([]);
         this.loadRepositories();
       }
-    });
+    }));
   }
 
   ngOnDestroy() {
-    this.routeSubscription?.unsubscribe();
+    this.subscriptions.unsubscribe();
     this.jobService.closeChannel();
   }
 

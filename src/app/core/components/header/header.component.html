@@ -66,13 +66,13 @@
 
       <div class="flex items-center space-x-2 md:space-x-4">
         @if (isAuthenticated()) {
-          @if (!credit()?.balance) {
+          @if (balance() === 0) {
             <button  class="flat-secondary" i18n="@@PURCHASE_CREDITS_BUTTON">
               Purchase credits
             </button>
           } @else {
             <button class="flat-primary">
-              {{ credit()?.balance }} credits
+              {{ balance() }} credits
             </button>
           }
           <div class="relative">

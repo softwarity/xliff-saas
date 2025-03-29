@@ -53,15 +53,18 @@ import { TranslateModalComponent } from './translate-modal/translate-modal.compo
         No translation available...
       </span>
     }
-    @if(translation()?.status === 'pending' || translation()?.status === 'estimating' || translation()?.status === 'translating') {
-      <app-cancel-confirm (confirm)="onCancel()" (cancel)="onCancel()" />
-      <!-- <button (click)="isModalOpen.set(true)" class="flat-warning" i18n="@@CANCEL">
-        Cancel
-      </button> -->
-    } @else {
-      <button (click)="isModalOpen.set(true)" class="flat-primary" i18n="@@TRANSLATE">
-        Translate
+    @if (balance() <= 0) {
+      <button  class="flat-secondary" i18n="@@PURCHASE_CREDITS_BUTTON">
+          Purchase credits
       </button>
+    } @else {
+      @if(translation()?.status === 'pending' || translation()?.status === 'estimating' || translation()?.status === 'translating') {
+        <app-cancel-confirm (confirm)="onCancel()" />
+      } @else {
+        <button (click)="isModalOpen.set(true)" class="flat-primary" i18n="@@TRANSLATE">
+          Translate
+        </button>
+      }
     }
   </div>
   @if (isModalOpen()) {
@@ -72,6 +75,7 @@ import { TranslateModalComponent } from './translate-modal/translate-modal.compo
 })
 export class TranslateComponent implements OnDestroy {
   repository = input.required<Repository>();
+  balance = input.required<number>();
   isModalOpen = signal(false);
   repositoryService = inject(RepositoryService);
   translation = signal<Job | null | undefined>(null);

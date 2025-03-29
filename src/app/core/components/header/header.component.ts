@@ -4,7 +4,7 @@ import { toSignal } from '@angular/core/rxjs-interop';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { CreditService } from '../../../features/repositories/services/credit.service';
+import { BalanceService } from '../../services/balance.service';
 import { AIInstructionsModalComponent } from '../../../shared/components/ai-instructions-modal/ai-instructions-modal.component';
 import { Credit } from '../../../shared/models/credit.model';
 import '../../../web-components/theme-switcher';
@@ -35,10 +35,10 @@ import { LanguageToggleComponent } from '../language-toggle/language-toggle.comp
 export class HeaderComponent {
   private auth = inject(AuthService);
   private gitProviderService = inject(GitProviderService);
-  private creditService = inject(CreditService);
+  private balanceService = inject(BalanceService);
   private subscriptions: Subscription = new Subscription();
   private fb = inject(FormBuilder);
-  credit = signal<Credit | null>(null);
+  balance = signal<number>(0);
   isCapsLockOn = signal(false);
   isCustomAIInstructionsModalOpen = signal(false);
 
@@ -66,13 +66,13 @@ export class HeaderComponent {
   }
 
   constructor() {
-    this.subscriptions.add(this.creditService.subscribeToCreditChanges().subscribe({
-      next: (credit: Credit | null) => {
-        console.log('Credit in effect:', credit);
-        this.credit.set(credit);
+    this.subscriptions.add(this.balanceService.subscribeToBalanceChanges().subscribe({
+      next: (balance: number) => {
+        console.log('Balance in effect:', balance);
+        this.balance.set(balance);
       },
       error: (error) => {
-        this.credit.set(null);
+        this.balance.set(0);
         console.error('Error subscribing to credit changes:', error);
       }
     }));
