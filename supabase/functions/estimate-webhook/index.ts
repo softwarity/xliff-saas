@@ -8,13 +8,13 @@ Deno.serve(async (req: Request) => {
   if (req.method !== 'POST') {
     return new Response(null, {status: 405});
   }
+  const url = new URL(req.url);
+  const pathname = url.pathname;
+  const [,,jobId, runId] = pathname.split('/');
+  const supabaseClient = getSupabaseClient();
+  const jobDao = new JobDao(supabaseClient);
   try {
-    const url = new URL(req.url);
-    const pathname = url.pathname;
-    const [,,jobId, runId] = pathname.split('/');
     const body = await req.json(); 
-    const supabaseClient = getSupabaseClient();
-    const jobDao = new JobDao(supabaseClient);
     const {request, userId, provider, namespace, repository, branch, status}: Job = await jobDao.getById(jobId);
     console.log('Received estimate-webhook', request, userId, provider, namespace, repository, branch, runId, body);
     if (status === 'cancelling') {
@@ -23,6 +23,9 @@ Deno.serve(async (req: Request) => {
       return new Response(null, {status: 200});
     }
     if (status === 'cancelled') {
+      return new Response(null, {status: 200});
+    }
+    if (status === 'failed') {
       return new Response(null, {status: 200});
     }
     if (body.type === 'start') {
@@ -34,6 +37,15 @@ Deno.serve(async (req: Request) => {
     }
     return new Response(null, {status: 200});
   } catch (error) {
+    if (jobId) {
+      let e: Record<string, unknown> | undefined;
+      if (typeof error === 'string') {
+        e = {message: error};
+      } else {
+        e = error as Record<string, unknown>;
+      }
+      await jobDao.updateById(jobId, {status: 'failed', details: e});
+    }
     console.error('Error processing estimate-webhook:', error);
     return new Response(null, {status: 400});
   }

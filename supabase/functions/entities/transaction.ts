@@ -3,8 +3,8 @@ export interface Transaction {
   userId: string;
   credits: number;
   status: 'pending' | 'completed' | 'failed' | 'cancelled';
-  message: string;
-  details: Record<string, unknown>;
+  message: string | null;
+  details: Record<string, unknown> | null;
   createdAt?: Date;
   updatedAt?: Date;
 }

@@ -19,8 +19,8 @@ CREATE OR REPLACE FUNCTION update_user_credits()
 RETURNS TRIGGER AS $$
 BEGIN
   -- Insert or update the user's credit balance
-  INSERT INTO user_credits ("userId", balance, pending)
-  VALUES (NEW."userId", 0,  0) -- values initial
+  INSERT INTO user_credits ("userId", balance)
+  VALUES (NEW."userId", 0) -- values initial
   ON CONFLICT ("userId") DO UPDATE
   SET 
     balance = CASE 

@@ -1,4 +1,4 @@
-import { SupabaseClient } from "jsr:@supabase/supabase-js";
+import { PostgrestError, SupabaseClient } from "jsr:@supabase/supabase-js";
 import { Job } from "../entities/job.ts";
 
 export class JobDao {
@@ -39,6 +39,14 @@ export class JobDao {
       throw new Error(error.message);
     }
     return data;
+  }
+
+  async isFailed(id: string): Promise<boolean> {
+    const {data, error} = await this.supabaseClient.from('user_jobs').select('status').eq('id', id).single();
+    if (error) {
+      throw new Error(error.message);
+    }
+    return data.status === 'failed';
   }
 }
 

@@ -5,7 +5,7 @@
   "scripts": {
     "install:global": "npm install -g localtunnel",
     "ng": "ng",
-    "start": "ng serve --host 0.0.0.0 --port 4200 --disable-host-check --serve-path /en/",
+    "start": "ng serve --host 0.0.0.0 --port 4200 --serve-path /en/",
     "dev": "ng serve --help",
     "extract-i18n": "ng extract-i18n --output-path dist/locale",
     "merge-i18n": "xliffmerge --verbose --profile xliffmerge.json",
