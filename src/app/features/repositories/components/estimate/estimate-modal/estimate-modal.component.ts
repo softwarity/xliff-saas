@@ -7,7 +7,7 @@ import { BranchSelectorComponent } from '../../branch-selector/branch-selector.c
 import { ExtSelectorComponent } from '../../ext-selector/ext-selector.component';
 import { TransUnitStateSelectorComponent } from '../../trans-unit-state-selector/trans-unit-state-selector.component';
 
-import { RepositoryService } from '../../../services/repository.service';
+import { RepositoryService } from '../../../../../core/services/repository.service';
 
 @Component({
   selector: 'app-estimate-modal',

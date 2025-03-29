@@ -4,7 +4,7 @@ import { FormControl, NG_VALUE_ACCESSOR, ReactiveFormsModule } from '@angular/fo
 import { Observable, of, tap } from 'rxjs';
 import { Repository } from '../../../../shared/models/repository.model';
 import { TypedControlValueAccessor } from '../../../../shared/typed-value-control-accessor';
-import { RepositoryService } from '../../services/repository.service';
+import { RepositoryService } from '../../../../core/services/repository.service';
 
 @Component({
   selector: 'app-branch-selector',

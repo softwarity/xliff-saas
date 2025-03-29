@@ -37,33 +37,29 @@
       <form [formGroup]="actionForm" (ngSubmit)="onSubmit()" class="space-y-4">
         <!-- Branch selector -->
         <div>
-          <label for="branch">Select Branch</label>
+          <label for="branch" i18n="@@SELECT_BRANCH_LABEL">Select Branch</label>
           <app-branch-selector [repository]="repository()" formControlName="branch"></app-branch-selector>
         </div>
         <!-- Xliff extension selector -->
         <div>
-          <label for="ext">Xliff Extension</label>
+          <label for="ext" i18n="@@XLIFF_EXTENSION_LABEL">Xliff Extension</label>
           <app-ext-selector formControlName="ext" class="w-full"></app-ext-selector>
         </div>
         <!-- TransUnit state input -->
         <div>
-          <label for="transUnitState">TransUnit State</label>
+          <label for="transUnitState" i18n="@@TRANSUNIT_STATE_LABEL">TransUnit State</label>
           <app-trans-unit-state-selector formControlName="transUnitState" class="w-full" [additionalTransUnitStates]="['all']"></app-trans-unit-state-selector>
         </div>
         <!-- TransUnit state input -->
         <div>
-          <label for="procedeedTransUnitState">Procedeed TransUnit State</label>
+          <label for="procedeedTransUnitState" i18n="@@PROCEDEED_TRANSUNIT_STATE_LABEL">Procedeed TransUnit State</label>
           <app-trans-unit-state-selector formControlName="procedeedTransUnitState" class="w-full"></app-trans-unit-state-selector>
         </div>
 
         <!-- Actions -->
         <div class="mt-5 flex justify-end gap-3">
-          <button type="button" (click)="closeModal.emit(null)" class="stroke-primary">
-            Cancel
-          </button>
-          <button type="submit" [disabled]="!actionForm.valid" class="flat-primary" >
-            Translate
-          </button>
+          <button type="button" (click)="closeModal.emit(null)" class="stroke-primary" i18n="@@CANCEL_BUTTON">Cancel</button>
+          <button type="submit" [disabled]="!actionForm.valid" class="flat-primary" i18n="@@TRANSLATE_BUTTON">Translate</button>
         </div>
       </form>
     </div>

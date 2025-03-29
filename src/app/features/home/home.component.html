@@ -2,46 +2,32 @@
   <!-- Hero Section -->
   <section class="container mx-auto px-4 py-20">
     <div class="text-center">
-      <h1 class="text-5xl font-bold text-gray-900 dark:text-white mb-6">
-        Automated XLIFF Translation for Angular Applications
-      </h1>
-      <p class="text-xl text-gray-600 dark:text-gray-300 mb-8">
-        Translate your Angular applications with AI-powered context-aware translations
-      </p>
+      <h1 class="text-5xl font-bold text-gray-900 dark:text-white mb-6" i18n="@@HOME_TITLE">Automated XLIFF Translation for Angular Applications</h1>
+      <p class="text-xl text-gray-600 dark:text-gray-300 mb-8" i18n="@@HOME_DESCRIPTION">Translate your Angular applications with AI-powered context-aware translations</p>
       <div class="space-x-4">
-        <a routerLink="/documentation" class="button flat-primary !px-8 !py-3 rounded-lg font-medium">
-          Get Started
-        </a>
-        <a routerLink="/how-it-works" class="button stroke-primary !px-8 !py-3 rounded-lg font-medium"
-        classs="bg-white dark:bg-dark-700 text-primary dark:text-blue-400 px-8 py-3 rounded-lg font-medium border border-primary dark:border-blue-400 hover:bg-gray-50 dark:hover:bg-dark-600 transition">
-          Learn More
-        </a>
+        <a routerLink="/documentation" class="button flat-primary !px-8 !py-3 rounded-lg font-medium" i18n="@@GET_STARTED">Get Started</a>
+        <a routerLink="/how-it-works" class="button stroke-primary !px-8 !py-3 rounded-lg font-medium" i18n="@@LEARN_MORE">Learn More</a>
       </div>
+
     </div>
   </section>
 
   <!-- Features Section -->
   <section id="features" class="py-20 bg-light-background dark:bg-dark-800">
     <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-12 dark:text-white">Key Features</h2>
+      <h2 class="text-3xl font-bold text-center mb-12 dark:text-white" i18n="@@FEATURES_TITLE">Key Features</h2>
       <div class="grid md:grid-cols-3 gap-8">
         <div class="p-6 rounded-lg bg-white dark:bg-dark-700 shadow-lg border border-light-border dark:border-dark-600">
-          <h3 class="text-xl font-semibold mb-4 text-primary dark:text-blue-400">Git Integration</h3>
-          <p class="text-gray-600 dark:text-gray-300">
-            Connect with GitHub, GitLab, and Bitbucket repositories seamlessly
-          </p>
+          <h3 class="text-xl font-semibold mb-4 text-primary dark:text-blue-400" i18n="@@GIT_INTEGRATION_TITLE">Git Integration</h3>
+          <p class="text-gray-600 dark:text-gray-300" i18n="@@GIT_INTEGRATION_DESCRIPTION">Connect with GitHub, GitLab, and Bitbucket repositories seamlessly</p>
         </div>
         <div class="p-6 rounded-lg bg-white dark:bg-dark-700 shadow-lg border border-light-border dark:border-dark-600">
-          <h3 class="text-xl font-semibold mb-4 text-primary dark:text-blue-400">Context-Aware AI</h3>
-          <p class="text-gray-600 dark:text-gray-300">
-            Intelligent translations based on your application's context and business domain
-          </p>
+          <h3 class="text-xl font-semibold mb-4 text-primary dark:text-blue-400" i18n="@@CONTEXT_AWARE_AI_TITLE">Context-Aware AI</h3>
+          <p class="text-gray-600 dark:text-gray-300" i18n="@@CONTEXT_AWARE_AI_DESCRIPTION">Intelligent translations based on your application's context and business domain</p>
         </div>
         <div class="p-6 rounded-lg bg-white dark:bg-dark-700 shadow-lg border border-light-border dark:border-dark-600">
-          <h3 class="text-xl font-semibold mb-4 text-primary dark:text-blue-400">Automated Workflow</h3>
-          <p class="text-gray-600 dark:text-gray-300">
-            Automatic branch creation and pull requests for your translations
-          </p>
+          <h3 class="text-xl font-semibold mb-4 text-primary dark:text-blue-400" i18n="@@AUTOMATED_WORKFLOW_TITLE">Automated Workflow</h3>
+          <p class="text-gray-600 dark:text-gray-300" i18n="@@AUTOMATED_WORKFLOW_DESCRIPTION">Automatic branch creation and pull requests for your translations</p>
         </div>
       </div>
     </div>
@@ -53,131 +39,128 @@
   <!-- Pricing Section -->
   <section class="py-20 bg-light-background dark:bg-dark-900">
     <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-12 text-light-text-primary dark:text-white">Simple Pricing</h2>
+      <h2 class="text-3xl font-bold text-center mb-12 text-light-text-primary dark:text-white" i18n="@@PRICING_TITLE">Simple Pricing</h2>
       <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
         <!-- Starter Plan -->
         <div class="relative p-8 rounded-lg bg-light-surface dark:bg-dark-700 shadow-lg border border-light-border dark:border-dark-600 hover:shadow-xl transition-shadow">
-          <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-primary text-white px-4 py-1 rounded-full text-sm">
-            Basic
-          </div>
-          <h3 class="text-xl font-semibold mb-2 text-primary dark:text-blue-400">Starter</h3>
-          <h4 class="text-sm mb-2 text-primary dark:text-blue-400">For a complex application with one language target</h4>
+          <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-primary text-white px-4 py-1 rounded-full text-sm" i18n="@@BASIC_PLAN_TITLE">Basic</div>
+          <h3 class="text-xl font-semibold mb-2 text-primary dark:text-blue-400" i18n="@@STARTER_PLAN_TITLE">Starter</h3>
+          <h4 class="text-sm mb-2 text-primary dark:text-blue-400" i18n="@@STARTER_PLAN_DESCRIPTION">For a complex application</h4>
           <p class="text-4xl font-bold mb-4 text-light-text-primary dark:text-white">
             $10<span class="text-lg text-light-text-secondary dark:text-gray-400"></span>
           </p>
           <ul class="space-y-3 mb-8 text-light-text-secondary dark:text-gray-300">
             <li class="flex items-center">
-              <app-icon name="check" stroke="green" fill="none" size="24" class="mr-2"></app-icon>
-              1,000 translation units
+              <span i18n="@@STARTER_PLAN_TRANSLATION_UNIT_PRICE">0,01 € per translation unit</span>
             </li>
             <li class="flex items-center">
               <app-icon name="check" stroke="green" fill="none" size="24" class="mr-2"></app-icon>
-              Unlimited git repositories
+              <span i18n="@@STARTER_PLAN_TRANSLATION_UNITS">1,000 translation units</span>
             </li>
             <li class="flex items-center">
               <app-icon name="check" stroke="green" fill="none" size="24" class="mr-2"></app-icon>
-              Basic support
+              <span i18n="@@STARTER_PLAN_UNLIMITED_GIT_REPOSITORIES">Unlimited git repositories</span>
+            </li>
+            <li class="flex items-center">
+              <app-icon name="check" stroke="green" fill="none" size="24" class="mr-2"></app-icon>
+              <span i18n="@@STARTER_PLAN_BASIC_SUPPORT">Basic support</span>
             </li>
           </ul>
-          <button class="flat-primary w-full px-6 py-3 rounded-lg" i18n="@@BUY_NOW">
-            Buy now
-          </button>
+          <button class="flat-primary w-full px-6 py-3 rounded-lg" i18n="@@BUY_NOW">Buy now</button>
         </div>
 
         <!-- Professional Plan -->
         <div class="relative p-8 rounded-lg bg-light-surface dark:bg-dark-700 shadow-xl border-2 border-primary dark:border-blue-500 transform scale-105 hover:shadow-2xl transition-shadow">
-          <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-primary text-white px-4 py-1 rounded-full text-sm">
-            Most Popular
-          </div>
-          <h3 class="text-xl font-semibold mb-2 text-primary dark:text-blue-400">Professional</h3>
-          <h4 class="text-sm mb-2 text-primary dark:text-blue-400">For complex applications with several language targets</h4>
+          <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-primary text-white px-4 py-1 rounded-full text-sm" i18n="@@MOST_POPULAR_PLAN_TITLE">Most Popular</div>
+          <h3 class="text-xl font-semibold mb-2 text-primary dark:text-blue-400" i18n="@@PROFESSIONAL_PLAN_TITLE">Professional</h3>
+          <h4 class="text-sm mb-2 text-primary dark:text-blue-400" i18n="@@PROFESSIONAL_PLAN_DESCRIPTION">For complex applications</h4>
           <p class="text-4xl font-bold mb-4 text-light-text-primary dark:text-white">
             $50<span class="text-lg text-light-text-secondary dark:text-gray-400"></span>
           </p>
           <ul class="space-y-3 mb-8 text-light-text-secondary dark:text-gray-300">
             <li class="flex items-center">
-              <app-icon name="check" stroke="green" fill="none" size="24" class="mr-2"></app-icon>
-              The previous plan +
+              <span i18n="@@PROFESSIONAL_PLAN_TRANSLATION_UNIT_PRICE">0,0055 € per translation unit</span>
             </li>
             <li class="flex items-center">
               <app-icon name="check" stroke="green" fill="none" size="24" class="mr-2"></app-icon>
-              8,000 translation units
+              <span i18n="@@PROFESSIONAL_PLAN_PREVIOUS_PLAN">The previous plan +</span>
             </li>
             <li class="flex items-center">
               <app-icon name="check" stroke="green" fill="none" size="24" class="mr-2"></app-icon>
-              Custom AI instructions
+              <span i18n="@@PROFESSIONAL_PLAN_TRANSLATION_UNITS">8,000 translation units</span>
             </li>
             <li class="flex items-center">
               <app-icon name="check" stroke="green" fill="none" size="24" class="mr-2"></app-icon>
-              Priority support
+              <span i18n="@@PROFESSIONAL_PLAN_CUSTOM_AI_INSTRUCTIONS">Custom AI instructions</span>
+            </li>
+            <li class="flex items-center">
+              <app-icon name="check" stroke="green" fill="none" size="24" class="mr-2"></app-icon>
+              <span i18n="@@PROFESSIONAL_PLAN_PRIORITY_SUPPORT">Priority support</span>
             </li>
           </ul>
-          <button class="flat-primary w-full px-6 py-3 rounded-lg" i18n="@@BUY_NOW">
-            Buy now
-          </button>
+          <button class="flat-primary w-full px-6 py-3 rounded-lg" i18n="@@BUY_NOW">Buy now</button>
         </div>
 
         <!-- Enterprise Plan -->
         <div class="relative p-8 rounded-lg bg-light-surface dark:bg-dark-700 shadow-lg border border-light-border dark:border-dark-600 hover:shadow-xl transition-shadow">
-          <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-primary text-white px-4 py-1 rounded-full text-sm">
-            Enterprise
-          </div>
-          <h3 class="text-xl font-semibold mb-2 text-primary dark:text-blue-400">Enterprise</h3>
-          <h4 class="text-sm mb-2 text-primary dark:text-blue-400">For complex applications with different contexts and several language targets</h4>
+          <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-primary text-white px-4 py-1 rounded-full text-sm" i18n="@@ENTERPRISE_PLAN_TITLE">Enterprise</div>
+          <h3 class="text-xl font-semibold mb-2 text-primary dark:text-blue-400" i18n="@@ENTERPRISE_PLAN_TITLE">Enterprise</h3>
+          <h4 class="text-sm mb-2 text-primary dark:text-blue-400" i18n="@@ENTERPRISE_PLAN_DESCRIPTION">For complex applications with different contexts</h4>
           <p class="text-4xl font-bold mb-4 text-light-text-primary dark:text-white">
             $100<span class="text-lg text-light-text-secondary dark:text-gray-400"></span>
           </p>
           <ul class="space-y-3 mb-8 text-light-text-secondary dark:text-gray-300">
             <li class="flex items-center">
-              <app-icon name="check" stroke="green" fill="none" size="24" class="mr-2"></app-icon>
-              The previous plan +
+              <span i18n="@@ENTERPRISE_PLAN_TRANSLATION_UNIT_PRICE">0,0035 € per translation unit</span>
             </li>
             <li class="flex items-center">
               <app-icon name="check" stroke="green" fill="none" size="24" class="mr-2"></app-icon>
-              20 000 translation units
+              <span i18n="@@ENTERPRISE_PLAN_PREVIOUS_PLAN">The previous plan +</span>
             </li>
             <li class="flex items-center">
               <app-icon name="check" stroke="green" fill="none" size="24" class="mr-2"></app-icon>
-              Custom AI instructions by repository
+              <span i18n="@@ENTERPRISE_PLAN_TRANSLATION_UNITS">20 000 translation units</span>
+            </li>
+            <li class="flex items-center">
+              <app-icon name="check" stroke="green" fill="none" size="24" class="mr-2"></app-icon>
+              <span i18n="@@ENTERPRISE_PLAN_CHOOSE_YOUR_AI_MODEL">Choose your AI model</span>
+            </li>
+            <li class="flex items-center">
+              <app-icon name="check" stroke="green" fill="none" size="24" class="mr-2"></app-icon>
+              <span i18n="@@ENTERPRISE_PLAN_CUSTOM_AI_INSTRUCTIONS">Custom AI instructions by repositories</span>
             </li>
           </ul>
-          <button class="flat-primary w-full px-6 py-3 rounded-lg" i18n="@@BUY_NOW">
-            Buy now
-          </button>
+          <button class="flat-primary w-full px-6 py-3 rounded-lg" i18n="@@BUY_NOW">Buy now</button>
         </div>
 
         <!-- Enterprise Plan -->
         <div class="relative p-8 rounded-lg bg-light-surface dark:bg-dark-700 shadow-lg border border-light-border dark:border-dark-600 hover:shadow-xl transition-shadow">
-          <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-primary text-white px-4 py-1 rounded-full text-sm">
-            Custom
-          </div>
-          <h3 class="text-xl font-semibold mb-2 text-primary dark:text-blue-400">Enterprise</h3>
-          <p class="text-4xl font-bold mb-4 text-light-text-primary dark:text-white">Custom</p>
+          <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-primary text-white px-4 py-1 rounded-full text-sm" i18n="@@CUSTOM_PLAN_TITLE">Custom</div>
+          <h3 class="text-xl font-semibold mb-2 text-primary dark:text-blue-400" i18n="@@CUSTOM_PLAN_TITLE">Custom</h3>
+          <p class="text-4xl font-bold mb-4 text-light-text-primary dark:text-white" i18n="@@CUSTOM_PLAN_TITLE">Custom</p>
           <ul class="space-y-3 mb-8 text-light-text-secondary dark:text-gray-300">
             <li class="flex items-center">
               <app-icon name="check" stroke="green" fill="none" size="24" class="mr-2"></app-icon>
-              On-premise deployment
+              <span i18n="@@CUSTOM_PLAN_ON_PREMISE_DEPLOYMENT">On-premise deployment</span>
             </li>
             <li class="flex items-center">
               <app-icon name="check" stroke="green" fill="none" size="24" class="mr-2"></app-icon>
-              Use your own AI
+              <span i18n="@@CUSTOM_PLAN_USE_YOUR_OWN_AI">Use your own AI</span>
             </li>
             <li class="flex items-center">
               <app-icon name="check" stroke="green" fill="none" size="24" class="mr-2"></app-icon>
-              Unlimited translation units
+              <span i18n="@@CUSTOM_PLAN_UNLIMITED_TRANSLATION_UNITS">Unlimited translation units</span>
             </li>
             <li class="flex items-center">
               <app-icon name="check" stroke="green" fill="none" size="24" class="mr-2"></app-icon>
-              Unlock all features
+              <span i18n="@@CUSTOM_PLAN_UNLOCK_ALL_FEATURES">Unlock all features</span>
             </li>
             <li class="flex items-center">
               <app-icon name="check" stroke="green" fill="none" size="24" class="mr-2"></app-icon>
-              Priority support
+              <span i18n="@@CUSTOM_PLAN_PRIORITY_SUPPORT">Priority support</span>
             </li>
           </ul>
-          <button class="flat-primary w-full px-6 py-3 rounded-lg" i18n="@@CONTACT_US">
-            Contact Us
-          </button>
+          <button class="flat-primary w-full px-6 py-3 rounded-lg" i18n="@@CONTACT_US">Contact Us</button>
         </div>
       </div>
     </div>
@@ -189,19 +172,15 @@
   <!-- Testimonials Section -->
   <section class="py-20 bg-white dark:bg-dark-800">
     <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-12 dark:text-white">What Our Clients Say</h2>
+      <h2 class="text-3xl font-bold text-center mb-12 dark:text-white" i18n="@@TESTIMONIALS_TITLE">What Our Clients Say</h2>
       <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
         <div class="p-6 rounded-lg bg-light-surface dark:bg-dark-700 border border-light-border dark:border-dark-600">
-          <p class="text-gray-600 dark:text-gray-300 mb-4">
-            "XLIFF Translator has revolutionized our localization workflow. The context-aware translations are incredibly accurate."
-          </p>
-          <p class="font-semibold dark:text-white">John Doe - Tech Lead at GlobalTech</p>
+          <p class="text-gray-600 dark:text-gray-300 mb-4" i18n="@@TESTIMONIAL_1">XLIFF Translator has revolutionized our localization workflow. The context-aware translations are incredibly accurate.</p>
+          <p class="font-semibold dark:text-white" i18n="@@TESTIMONIAL_1_AUTHOR">John Doe - Tech Lead at GlobalTech</p>
         </div>
         <div class="p-6 rounded-lg bg-light-surface dark:bg-dark-700 border border-light-border dark:border-dark-600">
-          <p class="text-gray-600 dark:text-gray-300 mb-4">
-            "The automated Git integration saved us countless hours of manual work. Highly recommended!"
-          </p>
-          <p class="font-semibold dark:text-white">Jane Smith - CTO at WebScale</p>
+          <p class="text-gray-600 dark:text-gray-300 mb-4" i18n="@@TESTIMONIAL_2">The automated Git integration saved us countless hours of manual work. Highly recommended!</p>
+          <p class="font-semibold dark:text-white" i18n="@@TESTIMONIAL_2_AUTHOR">Jane Smith - CTO at WebScale</p>
         </div>
       </div>
     </div>

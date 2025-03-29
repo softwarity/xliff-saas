@@ -5,7 +5,7 @@ import { JobService } from '../../../../core/services/job.service';
 import { CancelConfirmComponent } from '../../../../shared/components/cancel-confirm.component';
 import { Job } from '../../../../shared/models/job.model';
 import { Repository } from '../../../../shared/models/repository.model';
-import { RepositoryService } from '../../services/repository.service';
+import { RepositoryService } from '../../../../core/services/repository.service';
 import { TranslateModalComponent } from './translate-modal/translate-modal.component';
 
 @Component({
@@ -20,50 +20,30 @@ import { TranslateModalComponent } from './translate-modal/translate-modal.compo
 <div class="flex items-center justify-between gap-2">
     @if (translation()) {
       @if (translation()?.status === 'pending') {
-        <span class="text-sm text-gray-500 dark:text-gray-400" i18n="@@PENDING">
-          Pending...
-        </span>
+        <span class="text-sm text-gray-500 dark:text-gray-400" i18n="@@PENDING">Pending...</span>
       } @else if (translation()?.status === 'estimating') {
-        <span class="text-sm text-gray-500 dark:text-gray-400" i18n="@@ESTIMATING">
-          Estimating...
-        </span>
+        <span class="text-sm text-gray-500 dark:text-gray-400" i18n="@@ESTIMATING">Estimating...</span>
       } @else if (translation()?.status === 'translating') {
-        <span class="text-sm text-gray-500 dark:text-gray-400" i18n="@@TRANSLATING_PROGRESS">
-          Translation: {{ translation()?.transUnitDone }}/{{ translation()?.transUnitFound }}
-        </span>
+        <span class="text-sm text-gray-500 dark:text-gray-400" i18n="@@TRANSLATING_PROGRESS">Translation: {{ translation()?.transUnitDone }}/{{ translation()?.transUnitFound }}</span>
       } @else if (translation()?.status === 'completed') {
-        <span class="text-sm text-green-500 dark:text-green-400" i18n="@@TRANSLATION_COMPLETED">
-          Translation: {{ translation()?.transUnitDone }}/{{ translation()?.transUnitFound }}
-        </span>
+        <span class="text-sm text-green-500 dark:text-green-400" i18n="@@TRANSLATION_COMPLETED">Translation: {{ translation()?.transUnitDone }}/{{ translation()?.transUnitFound }}</span>
       } @else if (translation()?.status === 'cancelling') {
-        <span class="text-sm text-gray-500 dark:text-gray-400" i18n="@@CANCELING">
-          Cancelling...
-        </span>
+        <span class="text-sm text-gray-500 dark:text-gray-400" i18n="@@CANCELING">Cancelling...</span>
       } @else if (translation()?.status === 'cancelled') {
-        <span class="text-sm text-red-500 dark:text-red-400" i18n="@@CANCELLED">
-          Cancelled
-        </span>
+        <span class="text-sm text-red-500 dark:text-red-400" i18n="@@CANCELLED">Cancelled</span>
       } @else {
-        <span class="text-sm text-red-500 dark:text-red-400">
-          {{ translation()?.status }}
-        </span>
+        <span class="text-sm text-red-500 dark:text-red-400">{{ translation()?.status }}</span>
       }
     } @else {
-      <span class="text-sm text-red-500 dark:text-red-400">
-        No translation available...
-      </span>
+      <span class="text-sm text-red-500 dark:text-red-400" i18n="@@NO_TRANSLATION_AVAILABLE">No translation available...</span>
     }
     @if (balance() <= 0) {
-      <button  class="flat-secondary" i18n="@@PURCHASE_CREDITS_BUTTON">
-          Purchase credits
-      </button>
+      <button  class="flat-secondary" i18n="@@PURCHASE_CREDITS_BUTTON">Purchase credits</button>
     } @else {
       @if(translation()?.status === 'pending' || translation()?.status === 'estimating' || translation()?.status === 'translating') {
         <app-cancel-confirm (confirm)="onCancel()" />
       } @else {
-        <button (click)="isModalOpen.set(true)" class="flat-primary" i18n="@@TRANSLATE">
-          Translate
-        </button>
+        <button (click)="isModalOpen.set(true)" class="flat-primary" i18n="@@TRANSLATE">Translate</button>
       }
     }
   </div>

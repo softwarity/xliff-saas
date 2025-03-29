@@ -15,9 +15,7 @@ import '../../web-components/icon';
           <!-- First Line: Logo and Repository Name -->
           <div class="flex items-center gap-2">
             <app-icon name="github" size="24" fill="currentColor"/>
-            <span class="text-sm font-medium text-gray-900 dark:text-white truncate">
-              {{ job().namespace }}/{{ job().repository }}
-            </span>
+            <span class="text-sm font-medium text-gray-900 dark:text-white truncate">{{ job().namespace }}/{{ job().repository }}</span>
           </div>
           <!-- Second Line: Request Info and Branch -->
           <div class="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
@@ -28,8 +26,8 @@ import '../../web-components/icon';
               <span i18n="@@JOB_REQUEST_TRANSLATION">Translation</span>
             }
             <app-icon name="branch" size="24" fill="currentColor" stroke="none"></app-icon>
-            <span i18n="@@JOB_BRANCH">{{ job().branch }}</span>
-            <span class="text-gray-500 dark:text-gray-500" i18n="@@JOB_EXT">({{ job().ext }})</span>
+            <span>{{ job().branch }}</span>
+            <span class="text-gray-500 dark:text-gray-500">({{ job().ext }})</span>
           </div>
         </div>
 
@@ -49,28 +47,20 @@ import '../../web-components/icon';
             </div>
           }
           @if (job().duration) {
-            <div class="text-xs text-gray-500 dark:text-gray-400" i18n="@@JOB_DURATION">
-              Duration: {{ humanizeDuration(job().duration!) }}
-            </div>
+            <div class="text-xs text-gray-500 dark:text-gray-400" i18n="@@JOB_DURATION">Duration: {{ humanizeDuration(job().duration!) }}</div>
           }
         </div>
 
         <!-- Right Column: Status and Date -->
         <div class="flex flex-col items-end gap-2">
           @if (job().status === 'completed') {
-            <span class="text-xs px-2 py-1 rounded-full bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200" i18n="@@JOB_STATUS_COMPLETED">
-              Completed
-            </span>
+            <span class="text-xs px-2 py-1 rounded-full bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200" i18n="@@JOB_STATUS_COMPLETED">Completed</span>
           } @else if (job().status === 'failed') {
-            <span class="text-xs px-2 py-1 rounded-full bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200" i18n="@@JOB_STATUS_FAILED">
-              Failed
-            </span>
+            <span class="text-xs px-2 py-1 rounded-full bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200" i18n="@@JOB_STATUS_FAILED">Failed</span>
           } @else if (job().status === 'cancelled') {
-            <span class="text-xs px-2 py-1 rounded-full bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-200" i18n="@@JOB_STATUS_CANCELLED">
-              Cancelled
-            </span>
+            <span class="text-xs px-2 py-1 rounded-full bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-200" i18n="@@JOB_STATUS_CANCELLED">Cancelled</span>
           }
-          <p class="text-xs text-gray-500 dark:text-gray-400" i18n="@@JOB_CREATED_AT">
+          <p class="text-xs text-gray-500 dark:text-gray-400">
             {{ job().createdAt | date:'short' }}
           </p>
         </div>

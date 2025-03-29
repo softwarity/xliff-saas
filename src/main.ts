@@ -1,12 +1,19 @@
 /// <reference types="@angular/localize" />
 
+import { provideHttpClient } from '@angular/common/http';
 import { bootstrapApplication } from '@angular/platform-browser';
+import { provideAnimations } from '@angular/platform-browser/animations';
+import { provideRouter } from '@angular/router';
 import { AppComponent } from './app/app.component';
-import { appConfig } from './app/app.config';
-console.log('Starting application bootstrap...');
+import { routes } from './app/app.routes';
 
-bootstrapApplication(AppComponent, appConfig)
-  .catch(err => {
+bootstrapApplication(AppComponent, {
+  providers: [
+    provideRouter(routes),
+    provideHttpClient(),
+    provideAnimations()
+  ]
+}).catch(err => {
     console.error('Detailed bootstrap error:', err);
     // Log the full error stack
     if (err.stack) {

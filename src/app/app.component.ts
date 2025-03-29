@@ -1,24 +1,19 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './core/components/header/header.component';
-import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, HeaderComponent],
-  templateUrl: './app.component.html'
+  imports: [RouterOutlet, HeaderComponent],
+  template: `
+  <div class="min-h-screen bg-white dark:bg-dark-900">
+    <app-header />
+    <main>
+      <router-outlet />
+    </main>
+  </div>
+  `
 })
 export class AppComponent {
-  constructor() {
-    console.log('AppComponent constructed');
-  }
-
-  ngOnInit() {
-    console.log('AppComponent initialized');
-  }
-
-  ngAfterViewInit() {
-    console.log('AppComponent view initialized');
-  }
 }

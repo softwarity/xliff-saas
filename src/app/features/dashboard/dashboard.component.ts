@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, CUSTOM_ELEMENTS_SCHEMA, inject, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, CUSTOM_ELEMENTS_SCHEMA, inject, signal } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AuthService } from '../../core/services/auth.service';
@@ -50,6 +50,7 @@ export class DashboardComponent {
   jobs = signal<Job[]>([]);
   totalJobs = signal<number>(0);
   currentPage = signal<number>(1);
+  totalPages = computed(() => Math.ceil(this.totalJobs() / this.pageSize));
   pageSize = 10;
   instructionForm: FormGroup;
   protected Math = Math;

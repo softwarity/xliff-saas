@@ -1,10 +1,9 @@
 import { Injectable, inject } from '@angular/core';
-import { Observable, from, map, of } from 'rxjs';
-import { SupabaseClientService } from '../../../core/services/supabase-client.service';
-import { ProviderType } from '../../../shared/models/provider-type';
-import { Repository } from '../../../shared/models/repository.model';
-import { RealtimeChannel } from '@supabase/supabase-js';
-import { Job } from '../../../shared/models/job.model';
+import { Observable, from, map } from 'rxjs';
+import { SupabaseClientService } from './supabase-client.service';
+import { Job } from '../../shared/models/job.model';
+import { ProviderType } from '../../shared/models/provider-type';
+import { Repository } from '../../shared/models/repository.model';
 
 
 

@@ -1,21 +1,17 @@
 <div class="container mx-auto px-4 py-8">
   <div class="flex justify-between items-center mb-8">
     <div>
-      <h1 class="text-3xl font-bold dark:text-white">
-        {{ provider().provider | titlecase }} Repositories
-      </h1>
+      <h1 class="text-3xl font-bold dark:text-white" i18n="@@REPOSITORIES_TITLE">{{ provider().provider | titlecase }} Repositories</h1>
       <p class="text-gray-600 dark:text-gray-400 mt-2">
         @if (searchTerm() && allRepositories().length !== repositories().length) {
-          Showing {{ repositories().length }} of {{ allRepositories().length }} repositories
+          <span i18n="@@SHOWING_REPOSITORIES">Showing {{ repositories().length }} of {{ allRepositories().length }} repositories</span>
         } @else {
-          Total repositories: {{ allRepositories().length }}
+          <span i18n="@@TOTAL_REPOSITORIES">Total repositories: {{ allRepositories().length }}</span>
         }
       </p>
     </div>
     <div class="flex space-x-4">
-      <button (click)="loadRepositories()" class="flat-primary">
-        Refresh
-      </button>
+      <button (click)="loadRepositories()" class="flat-primary" i18n="@@REFRESH_BUTTON">Refresh</button>
     </div>
   </div>
 
@@ -39,9 +35,9 @@
   } @else if (repositories().length === 0) {
     <div class="text-center py-12">
       @if (searchTerm() && allRepositories().length > 0) {
-        <p class="text-gray-600 dark:text-gray-400 text-lg">No repositories match your search</p>
+        <p class="text-gray-600 dark:text-gray-400 text-lg" i18n="@@NO_REPOSITORIES_MATCH_SEARCH">No repositories match your search</p>
       } @else {
-        <p class="text-gray-600 dark:text-gray-400 text-lg">No repositories found</p>
+        <p class="text-gray-600 dark:text-gray-400 text-lg" i18n="@@NO_REPOSITORIES_FOUND">No repositories found</p>
       }
     </div>
   } @else {

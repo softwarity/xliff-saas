@@ -5,7 +5,7 @@ import { Repository } from '../../../../../shared/models/repository.model';
 import { BranchSelectorComponent } from '../../branch-selector/branch-selector.component';
 import { ExtSelectorComponent } from '../../ext-selector/ext-selector.component';
 import { TransUnitStateSelectorComponent } from '../../trans-unit-state-selector/trans-unit-state-selector.component';
-import { RepositoryService } from '../../../services/repository.service';
+import { RepositoryService } from '../../../../../core/services/repository.service';
 import '../../../../../web-components/icon';
 
 @Component({

@@ -4,7 +4,7 @@ import { Observer, Subscription, switchMap, tap } from 'rxjs';
 import { JobService } from '../../../../core/services/job.service';
 import { Job } from '../../../../shared/models/job.model';
 import { Repository } from '../../../../shared/models/repository.model';
-import { RepositoryService } from '../../services/repository.service';
+import { RepositoryService } from '../../../../core/services/repository.service';
 import { EstimateModalComponent } from './estimate-modal/estimate-modal.component';
 import { CancelConfirmComponent } from '../../../../shared/components/cancel-confirm.component';
 
@@ -20,45 +20,27 @@ import { CancelConfirmComponent } from '../../../../shared/components/cancel-con
     <div class="flex items-center justify-between gap-2">
     @if (estimation()) {
       @if (estimation()?.status === 'pending') {
-        <span class="text-sm text-gray-500 dark:text-gray-400" i18n="@@PENDING">
-          Pending...
-        </span>
+        <span class="text-sm text-gray-500 dark:text-gray-400" i18n="@@PENDING">Pending...</span>
       } @else if (estimation()?.status === 'estimating') {
-        <span class="text-sm text-gray-500 dark:text-gray-400" i18n="@@ESTIMATING">
-          Estimating...
-        </span>
+        <span class="text-sm text-gray-500 dark:text-gray-400" i18n="@@ESTIMATING">Estimating...</span>
       } @else if (estimation()?.status === 'translating') {
-        <span class="text-sm text-gray-500 dark:text-gray-400" i18n="@@TRANSLATING">
-          Translating...
-        </span>
+        <span class="text-sm text-gray-500 dark:text-gray-400" i18n="@@TRANSLATING">Translating...</span>
       } @else if (estimation()?.status === 'cancelling') {
-        <span class="text-sm text-gray-500 dark:text-gray-400" i18n="@@CANCELING">
-          Cancelling...
-        </span>
+        <span class="text-sm text-gray-500 dark:text-gray-400" i18n="@@CANCELING">Cancelling...</span>
       } @else if (estimation()?.status === 'cancelled') {
-        <span class="text-sm text-red-500 dark:text-red-400" i18n="@@CANCELLED">
-          Cancelled
-        </span>
+        <span class="text-sm text-red-500 dark:text-red-400" i18n="@@CANCELLED">Cancelled</span>
       } @else if (estimation()?.status === 'completed') {
-        <span class="text-sm text-green-500 dark:text-green-400" i18n="@@TRANSLATION_UNITS_DETECTED">
-          {{ estimation()?.transUnitFound }} translation units detected
-        </span>
+        <span class="text-sm text-green-500 dark:text-green-400" i18n="@@TRANSLATION_UNITS_DETECTED">{{ estimation()?.transUnitFound }} translation units detected</span>
       } @else {
-        <span class="text-sm text-red-500 dark:text-red-400">
-          {{ estimation()?.status }}
-        </span>
+        <span class="text-sm text-red-500 dark:text-red-400">{{ estimation()?.status }}</span>
       }
     } @else {
-      <span class="text-sm text-red-500 dark:text-red-400" i18n="@@NO_ESTIMATION_AVAILABLE">
-        No estimation available...
-      </span>
+      <span class="text-sm text-red-500 dark:text-red-400" i18n="@@NO_ESTIMATION_AVAILABLE">No estimation available...</span>
     }
     @if(estimation()?.status === 'pending' || estimation()?.status === 'estimating') {
       <app-cancel-confirm (confirm)="onCancel()" />
     } @else {
-      <button (click)="isModalOpen.set(true)" class="flat-primary" i18n="@@TRANSLATE">
-      Estimate
-    </button>
+      <button (click)="isModalOpen.set(true)" class="flat-primary" i18n="@@ESTIMATE">Estimate</button>
     }
   </div>
   @if (isModalOpen()) {

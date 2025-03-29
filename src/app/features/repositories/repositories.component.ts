@@ -7,7 +7,7 @@ import { Subscription } from 'rxjs';
 import { BalanceService } from '../../core/services/balance.service';
 import { JobService } from '../../core/services/job.service';
 import { RepositoryCardComponent } from './components/repository-card/repository-card.component';
-import { RepositoryService } from './services/repository.service';
+import { RepositoryService } from '../../core/services/repository.service';
 
 @Component({
   selector: 'app-repositories',
@@ -87,11 +87,11 @@ export class RepositoriesComponent implements OnInit, OnDestroy {
         this.allRepositories.set(repos);
         this.searchTerm.set('');
       } else {
-        this.error.set('No repositories found. Please check your token permissions.');
+        this.error.set($localize`:@@NO_REPOSITORIES_FOUND_PLEASE_CHECK:No repositories found. Please check your token permissions.`);
       }
     } catch (err) {
       console.error('Error loading repositories:', err);
-      this.error.set('Failed to load repositories. Please check your token permissions and try again.');
+      this.error.set($localize`:@@FAILED_TO_LOAD_REPOSITORIES:Failed to load repositories. Please check your token permissions and try again.`);
     } finally {
       this.loading.set(false);
     }
