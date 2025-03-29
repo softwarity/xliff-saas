@@ -48,7 +48,6 @@ export class RepositoriesComponent implements OnInit, OnDestroy {
   constructor() {
     this.subscriptions.add(this.balanceService.subscribeToBalanceChanges().subscribe({
       next: (balance: number) => {
-        console.log('RepositoriesComponent Balance:', balance);
         this.balance.set(balance);
       },
       error: (error) => {

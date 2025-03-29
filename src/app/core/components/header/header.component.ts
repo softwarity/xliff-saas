@@ -68,7 +68,6 @@ export class HeaderComponent {
   constructor() {
     this.subscriptions.add(this.balanceService.subscribeToBalanceChanges().subscribe({
       next: (balance: number) => {
-        console.log('Balance in effect:', balance);
         this.balance.set(balance);
       },
       error: (error) => {
@@ -102,7 +101,6 @@ export class HeaderComponent {
     if (!email || !password) return;
 
     try {
-      console.log('Soumission du formulaire:', this.isRegistering() ? 'Inscription' : 'Connexion');
       const success = this.isRegistering() 
         ? await this.auth.signUp(email, password)
         : await this.auth.signIn(email, password);

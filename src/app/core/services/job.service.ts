@@ -27,7 +27,6 @@ export class JobService {
           } else {
             if (data) {
               data.forEach((job) => {
-                console.log('Job fetched in observable:', job);
                 observer.next({eventType: 'UPDATE', new: job, old: {}, schema: 'public', table: 'user_jobs', commit_timestamp: '', errors: []});
               });
             }
@@ -36,15 +35,12 @@ export class JobService {
       });
       this.channel = this.supabaseClientService.realtime.channel('user_jobs')
       .on('postgres_changes', { event: 'INSERT', schema: 'public', table: 'user_jobs' }, (payload: RealtimePostgresInsertPayload<Job>) => {
-        console.log('Job inserted in channel:', payload);
         observer.next(payload);
       })
       .on('postgres_changes', { event: 'UPDATE', schema: 'public', table: 'user_jobs' }, (payload: RealtimePostgresUpdatePayload<Job>) => {
-        console.log('Job updated in channel:', payload);
         observer.next(payload);
       })
       .on('postgres_changes', { event: 'DELETE', schema: 'public', table: 'user_jobs' }, (payload: RealtimePostgresDeletePayload<Job>) => {
-        console.log('Job deleted in channel:', payload);
         observer.next(payload);
       });
       this.channel.subscribe();
@@ -89,7 +85,6 @@ export class JobService {
   }
 
   closeChannel() {
-    console.log('Closing channel');
     this.channel?.unsubscribe();
   }
 
@@ -100,10 +95,7 @@ export class JobService {
       query = query.in('status', status);
     }
 
-    return from(query
-      .range((page - 1) * pageSize, page * pageSize - 1)
-      .order('createdAt', { ascending: false })
-    ).pipe(
+    return from(query.range((page - 1) * pageSize, page * pageSize - 1).order('createdAt', { ascending: false })).pipe(
       map(({data, count, error}: PostgrestResponse<Job>) => {
         if (error) {
           console.error('Error fetching jobs:', error);
@@ -114,7 +106,6 @@ export class JobService {
           count: count || 0, 
           error: null 
         };
-        console.log('Total count:', count);
         return res;
       })
     );

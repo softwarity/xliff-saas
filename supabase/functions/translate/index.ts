@@ -51,7 +51,7 @@ Deno.serve(async (req) => {
             STATE, PROCEEDED_STATE, 
             WEBHOOK_URL, WEBHOOK_JWT, 
             CREDITS: `${balance}`,
-            DRY_RUN
+            DRY_RUN: Deno.env.get('DRY_RUN') === 'true' ? 'true' : 'false'
         };
         await launchTranslateRunner(inputs);
         console.log('Translation launched for ', `${namespace}/${name}@${branch} by ${user.email}. JobId: ${job.id}`);
@@ -66,6 +66,3 @@ Deno.serve(async (req) => {
         }, status: 500 });
     }
 });
-
-
-const DRY_RUN = 'true';

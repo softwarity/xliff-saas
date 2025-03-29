@@ -1,4 +1,4 @@
-import { PostgrestError, SupabaseClient } from "jsr:@supabase/supabase-js";
+import { SupabaseClient } from "jsr:@supabase/supabase-js";
 import { Job } from "../entities/job.ts";
 
 export class JobDao {
