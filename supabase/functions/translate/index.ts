@@ -1,11 +1,10 @@
-import "jsr:@supabase/functions-js/edge-runtime.d.ts"
-import { getGitToken } from '../lib/git-token.ts';
-import { getSupabaseClient } from '../lib/supabase-client.ts';
-import { JobDao } from '../lib/job-dao.ts';
-import { UserService } from '../lib/user-service.ts';
+import "jsr:@supabase/functions-js/edge-runtime.d.ts";
 import { CORS_HEADERS } from '../const.ts';
 import { Job } from '../entities/job.ts';
 import { launchTranslateRunner } from '../lib/git-service.ts';
+import { JobDao } from '../lib/job-dao.ts';
+import { getSupabaseClient } from '../lib/supabase-client.ts';
+import { UserService } from '../lib/user-service.ts';
 import { GhTranslateInputs } from '../models/gh-action-inputs.ts';
 
 Deno.serve(async (req) => {
@@ -25,7 +24,7 @@ Deno.serve(async (req) => {
         const userService = new UserService(supabaseClient);
         const user = await userService.getUser(req);
         const userId = user.id;
-
+        const credits = await userService.getCredit(userId);
         const { namespace, name, branch, ext: EXT_XLIFF, transUnitState: STATE, procedeedTransUnitState: PROCEEDED_STATE } = await req.json();
         
         if (await jobDao.existsAndNotCompleted('translation', userId, provider, namespace, name)) {
@@ -39,7 +38,7 @@ Deno.serve(async (req) => {
         const toInsert: Omit<Job, 'id'> = { request: 'translation', userId, provider, namespace, repository: name, ...payload };
         const job = await jobDao.insert(toInsert);
         
-        const TOKEN = await getGitToken(req, provider);
+        const TOKEN = await userService.getGitToken(userId, provider);
         const WEBHOOK_URL = `${Deno.env.get('HOST_WEBHOOK')}/functions/v1/translate-webhook/${job.id}`;
         const WEBHOOK_JWT = Deno.env.get('SUPABASE_ANON_KEY')!;
         const REPOSITORY_INFO = `${namespace}/${name}@${branch}`;
@@ -48,7 +47,7 @@ Deno.serve(async (req) => {
             GIT_PROVIDER: provider, EXT_XLIFF, 
             STATE, PROCEEDED_STATE, 
             WEBHOOK_URL, WEBHOOK_JWT, 
-            CREDITS: ''+CREDITS,
+            CREDITS: `${credits}`,
             DRY_RUN
         };
         await launchTranslateRunner(inputs);
@@ -66,5 +65,4 @@ Deno.serve(async (req) => {
 });
 
 
-const DRY_RUN = 'false';
-const CREDITS = 1000;
+const DRY_RUN = 'true';

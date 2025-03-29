@@ -1,6 +1,7 @@
 import { firstValueFrom, from, map, Observable, switchMap } from 'https://esm.sh/rxjs@7.5.7';
 import "jsr:@supabase/functions-js/edge-runtime.d.ts";
-import { getGitToken } from '../lib/git-token.ts';
+import { getSupabaseClient } from '../lib/supabase-client.ts';
+import { UserService } from '../lib/user-service.ts';
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -24,7 +25,10 @@ Deno.serve(async (req: Request) => {
   }
   const baseUrl = decodeURIComponent(encodedUrl);
   try {
-    const token = await getGitToken(req, 'bitbucket');
+    const supabaseClient = getSupabaseClient();
+    const userService = new UserService(supabaseClient);
+    const userId = await userService.getUserId(req);
+    const token = await userService.getGitToken(userId, 'bitbucket');
     const branches: string[] = await firstValueFrom(getBitbucketBranches(token, baseUrl));
     return new Response(JSON.stringify(branches), {
       headers: {

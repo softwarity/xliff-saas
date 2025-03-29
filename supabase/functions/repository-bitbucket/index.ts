@@ -1,8 +1,9 @@
 import "jsr:@supabase/functions-js/edge-runtime.d.ts";
 import { catchError, firstValueFrom, forkJoin, from, map, Observable, of, switchMap } from 'https://esm.sh/rxjs@7.5.7';
-import { getGitToken } from '../lib/git-token.ts';
 import { Repository } from '../models/repository.ts';
 import { CORS_HEADERS } from '../const.ts';
+import { getSupabaseClient } from '../lib/supabase-client.ts';
+import { UserService } from '../lib/user-service.ts';
 
 Deno.serve(async (req: Request) => {
     if (req.method === 'OPTIONS') {
@@ -12,7 +13,10 @@ Deno.serve(async (req: Request) => {
         return new Response('Method not allowed', {headers: CORS_HEADERS, status: 405});
     }
     try {
-        const token = await getGitToken(req, 'bitbucket');
+        const supabaseClient = getSupabaseClient();
+        const userService = new UserService(supabaseClient);
+        const userId = await userService.getUserId(req);
+        const token = await userService.getGitToken(userId, 'bitbucket');
         const repositories: Repository[] = await firstValueFrom(getBitbucketRepositories(token));
         return new Response(JSON.stringify(repositories), {
             headers: { 

@@ -1,11 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, effect, inject, input, OnDestroy, signal } from '@angular/core';
 import { Observer, Subscription, switchMap, tap } from 'rxjs';
-import { JobService } from '../../../../../core/services/job.service';
-import { Job } from '../../../../../shared/models/job.model';
-import { Repository } from '../../../../../shared/models/repository.model';
-import { RepositoryService } from '../../../services/repository.service';
-import { TranslateModalComponent } from './translate-modal.component';
+import { JobService } from '../../../../core/services/job.service';
+import { CancelConfirmComponent } from '../../../../shared/components/cancel-confirm.component';
+import { Job } from '../../../../shared/models/job.model';
+import { Repository } from '../../../../shared/models/repository.model';
+import { RepositoryService } from '../../services/repository.service';
+import { TranslateModalComponent } from './translate-modal/translate-modal.component';
 
 @Component({
   selector: 'app-translate',
@@ -13,6 +14,7 @@ import { TranslateModalComponent } from './translate-modal.component';
   imports: [
     CommonModule, 
     TranslateModalComponent,
+    CancelConfirmComponent,
   ],
   template: `
 <div class="flex items-center justify-between gap-2">
@@ -51,12 +53,13 @@ import { TranslateModalComponent } from './translate-modal.component';
         No translation available...
       </span>
     }
-    @if(translation()?.status === 'estimating' || translation()?.status === 'translating') {
-      <button (click)="isModalOpen.set(true)" class="flat-warning" i18n="@@CANCEL">
+    @if(translation()?.status === 'pending' || translation()?.status === 'estimating' || translation()?.status === 'translating') {
+      <app-cancel-confirm (confirm)="onCancel()" (cancel)="onCancel()" />
+      <!-- <button (click)="isModalOpen.set(true)" class="flat-warning" i18n="@@CANCEL">
         Cancel
-      </button>
+      </button> -->
     } @else {
-      <button (click)="isModalOpen.set(true)" class="flat-primary" [disabled]="translation() && translation()?.status !== 'completed'" i18n="@@TRANSLATE">
+      <button (click)="isModalOpen.set(true)" class="flat-primary" i18n="@@TRANSLATE">
         Translate
       </button>
     }
@@ -113,4 +116,12 @@ export class TranslateComponent implements OnDestroy {
       console.error('Error subscribing to job changes:', error);
     }
   };
+
+  onCancel() {
+    const id = this.translation()?.id;
+    console.log('on confirm Cancel');
+    if (!!id) {
+      this.jobService.cancelJob(id).subscribe();
+    }
+  }
 }

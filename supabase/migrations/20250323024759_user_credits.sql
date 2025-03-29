@@ -2,6 +2,7 @@
 CREATE TABLE IF NOT EXISTS user_credits (
   "userId" uuid PRIMARY KEY REFERENCES auth.users(id),
   balance integer NOT NULL DEFAULT 0,
+  pending integer NOT NULL DEFAULT 0,
   "updatedAt" timestamptz DEFAULT now()
 );
 
@@ -27,11 +28,18 @@ BEGIN
       FROM user_transactions
       WHERE "userId" = COALESCE(NEW."userId", OLD."userId")
       AND status = 'completed'
+    ),
+    (
+      SELECT COALESCE(SUM(credits), 0)
+      FROM user_transactions
+      WHERE "userId" = COALESCE(NEW."userId", OLD."userId")
+      AND status = 'pending'
     )
   )
   ON CONFLICT ("userId") DO UPDATE
   SET 
     balance = EXCLUDED.balance,
+    pending = EXCLUDED.pending,
     "updatedAt" = now();
   
   RETURN NEW;

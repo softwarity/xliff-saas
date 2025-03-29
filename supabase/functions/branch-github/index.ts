@@ -1,6 +1,7 @@
 import { firstValueFrom, from, map, Observable, switchMap } from 'https://esm.sh/rxjs@7.5.7';
 import "jsr:@supabase/functions-js/edge-runtime.d.ts";
-import { getGitToken } from '../lib/git-token.ts';
+import { getSupabaseClient } from '../lib/supabase-client.ts';
+import { UserService } from '../lib/user-service.ts';
 import { CORS_HEADERS } from '../const.ts';
 
 Deno.serve(async (req: Request) => {
@@ -20,7 +21,10 @@ Deno.serve(async (req: Request) => {
   }
   const baseUrl = decodeURIComponent(encodedUrl);
   try {
-    const token = await getGitToken(req, 'github');
+    const supabaseClient = getSupabaseClient();
+    const userService = new UserService(supabaseClient);
+    const userId = await userService.getUserId(req);
+    const token = await userService.getGitToken(userId, 'github');
     const branches: string[] = await firstValueFrom(getGitHubBranches(token, baseUrl));
     return new Response(JSON.stringify(branches), {
       headers: {

@@ -30,4 +30,22 @@ export class UserService {
     }
     return user as User;
   }
+
+  async getCredit(userId: string): Promise<number> {
+    const {data, error} = await this.supabaseClient.from('user_credits').select('*').eq('user_id', userId);
+    if (error) {
+        throw new Error(error.message);
+    }
+    const [{balance, pending}] = data as unknown as [{balance: number, pending: number}];
+    return balance + pending;
+  }
+
+  async getGitToken(userId: string, provider: 'bitbucket' | 'github' | 'gitlab'): Promise<string> {
+    const {data, error} = await this.supabaseClient.from('user_metadata').select('*').eq('user_id', userId);
+    if (error) {
+        throw new Error(error.message);
+    }
+    const [{git_tokens: {[provider]: token}}] = data as unknown as [{git_tokens: {github: string, gitlab: string, bitbucket: string}}];
+    return token;
+  }
 }

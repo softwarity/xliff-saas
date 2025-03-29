@@ -19,6 +19,9 @@ Deno.serve(async (req) => {
     const pathname = url.pathname;
     const jobId = pathname.split('/').pop() as string;
     console.log('Cancelling job', jobId);
+    if (!jobId) {
+        return new Response(JSON.stringify({ error: 'Job ID is required' }), { headers: CORS_HEADERS, status: 400 });
+    }
     try {
         const supabaseClient = getSupabaseClient();
         const jobDao = new JobDao(supabaseClient);
@@ -32,8 +35,10 @@ Deno.serve(async (req) => {
         }
         console.log('Cancelling run', job.runId);
         await jobDao.updateById(jobId, { status: 'cancelling' });
-        await cancelRun(job.runId!);
-        await jobDao.updateById(jobId, { status: 'cancelled' });
+        if (job.runId) {
+            await cancelRun(job.runId!);
+            await jobDao.updateById(jobId, { status: 'cancelled' });
+        }
         console.log('Job cancelled for ', `${job.namespace}/${job.repository}@${job.branch}. JobId: ${job.id} by ${user.email}`);
         return new Response(JSON.stringify({ message: 'Job cancelled successfully!', job }), { headers: {
             ...CORS_HEADERS,

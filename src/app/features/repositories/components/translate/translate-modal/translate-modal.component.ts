@@ -39,7 +39,7 @@ export class TranslateModalComponent {
   constructor(private fb: FormBuilder) {
     this.actionForm = this.fb.group({
       branch: ['', Validators.required],
-      transUnitState: ['all', Validators.required],
+      transUnitState: ['new', Validators.required],
       procedeedTransUnitState: ['translated', Validators.required],
       ext: ['xlf', Validators.required]
     });

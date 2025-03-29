@@ -1,11 +1,10 @@
-import "jsr:@supabase/functions-js/edge-runtime.d.ts"
-import { getGitToken } from '../lib/git-token.ts';
-import { getSupabaseClient } from '../lib/supabase-client.ts';
-import { JobDao } from '../lib/job-dao.ts';
-import { UserService } from '../lib/user-service.ts';
+import "jsr:@supabase/functions-js/edge-runtime.d.ts";
 import { CORS_HEADERS } from '../const.ts';
 import { Job } from '../entities/job.ts';
 import { launchEstimateRunner } from '../lib/git-service.ts';
+import { JobDao } from '../lib/job-dao.ts';
+import { getSupabaseClient } from '../lib/supabase-client.ts';
+import { UserService } from '../lib/user-service.ts';
 import { GhEstimateInputs } from '../models/gh-action-inputs.ts';
 
 Deno.serve(async (req) => {
@@ -39,7 +38,7 @@ Deno.serve(async (req) => {
         const toInsert: Omit<Job, 'id'> = { request: 'estimation', userId, provider, namespace, repository: name, ...payload };
         const job = await jobDao.insert(toInsert);
         
-        const TOKEN = await getGitToken(req, provider);
+        const TOKEN = await userService.getGitToken(userId, provider);
         const WEBHOOK_URL = `${Deno.env.get('HOST_WEBHOOK')}/functions/v1/estimate-webhook/${job.id}`;
         const WEBHOOK_JWT = Deno.env.get('SUPABASE_ANON_KEY')!;
         const REPOSITORY_INFO = `${namespace}/${name}@${branch}`;

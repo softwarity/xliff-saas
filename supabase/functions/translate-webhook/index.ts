@@ -3,6 +3,7 @@ import { getSupabaseClient } from '../lib/supabase-client.ts';
 import { JobDao } from '../lib/job-dao.ts';
 import { TransactionDao } from '../lib/transaction-dao.ts';
 import { Job } from "../entities/job.ts";
+import { cancelRun } from '../lib/git-service.ts';
 
 Deno.serve(async (req: Request) => {
   if (req.method !== 'POST') {
@@ -18,10 +19,19 @@ Deno.serve(async (req: Request) => {
     const transactionDao = new TransactionDao(supabaseClient);
     const {request, userId, provider, namespace, repository, branch}: Job = await jobDao.getById(jobId);
     console.log('Received translate-webhook', request, userId, provider, namespace, repository, branch, runId, body);
+    const job = await jobDao.getById(jobId);
+    if (job.status === 'cancelling') {
+      await cancelRun(runId);
+      await jobDao.updateById(jobId, {status: 'cancelled'});
+      return new Response(null, {status: 200});
+    }
+    if (job.status === 'cancelled') {
+      return new Response(null, {status: 200});
+    }
     if (body.type === 'start') {
       await jobDao.updateById(jobId, {status: 'estimating', details: {}, transUnitFound: 0, runId});
     } else if (body.type === 'estimation-done') {
-      const {id: transactionId} = await transactionDao.insert({userId, credits: -body.total, status: 'pending', message: '', details: {}});
+      const {id: transactionId} = await transactionDao.insert({userId, credits: -body.transUnits, status: 'pending', message: '', details: {}});
       await jobDao.updateById(jobId, {status: 'translating', transactionId, transUnitDone:0, transUnitFound: body.total});
     } else if (body.type === 'progress') {
       const transUnitDone: number = body.completed + body.error;

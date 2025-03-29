@@ -34,11 +34,11 @@ CREATE POLICY "Users can read own jobs"
 alter publication supabase_realtime add table user_jobs;
 
 -- 
-
+DROP VIEW IF EXISTS latest_user_jobs;
 CREATE VIEW latest_user_jobs AS
 SELECT *
 FROM (
     SELECT *, ROW_NUMBER() OVER (PARTITION BY request, provider, namespace, repository ORDER BY "createdAt" DESC) AS row_num
-    FROM user_jobs
+    FROM user_jobs WHERE status NOT IN ('cancelled', 'failed')
 ) sub
 WHERE row_num = 1;
