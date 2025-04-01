@@ -1,4 +1,6 @@
-[32m -  Softwarity ai translator: estimation ./src/locale/messages.fr.xlf (en -> fr) completed in 12ms. Found 72 transUnits.
-[0m -  Process translation from en to fr: New trans-units found: 72/214
-[32m -  Softwarity ai translator: translation ./src/locale/messages.fr.xlf (en -> fr) completed in 896225ms. Processed 72 transUnits, 0 error.
+[32m -  Softwarity ai translator: estimation ./src/locale/messages.fr.xlf (en -> fr) completed in 16ms. Found 0 transUnits.
+[0m[32m -  Softwarity ai translator: estimation ./src/locale/messages.vi.xlf (en -> vi) completed in 13ms. Found 214 transUnits.
+[0m -  Process translation from en to fr: New trans-units found: 0/214
+ -  Process translation from en to vi: New trans-units found: 214/214
+[32m -  Softwarity ai translator: translation ./src/locale/messages.fr.xlf (en -> fr) completed in 1178ms. Processed 0 transUnits, 0 error.
 [0m
