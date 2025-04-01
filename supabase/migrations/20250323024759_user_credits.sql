@@ -20,20 +20,18 @@ RETURNS TRIGGER AS $$
 BEGIN
   -- Insert or update the user's credit balance
   INSERT INTO user_credits ("userId", balance)
-  VALUES (NEW."userId", 0) -- values initial
+  VALUES (NEW."userId", 0)  -- Nouvelle entrée commence toujours à 0
   ON CONFLICT ("userId") DO UPDATE
   SET 
-    balance = CASE 
-      WHEN TG_OP = 'INSERT' THEN
-        CASE 
-          WHEN NEW.status IN ('completed', 'pending') THEN user_credits.balance + NEW.credits
-          ELSE user_credits.balance
-        END
-      WHEN TG_OP = 'UPDATE' THEN
-        CASE 
-          WHEN NEW.status IN ('failed', 'cancelled') THEN user_credits.balance - NEW.credits
-          ELSE user_credits.balance
-        END
+    balance = CASE
+      -- Pour un INSERT, on ajoute les crédits si completed ou pending
+      WHEN TG_OP = 'INSERT' AND NEW.status IN ('completed', 'pending') THEN 
+        user_credits.balance + NEW.credits
+      -- Pour un UPDATE vers failed/cancelled, on retire les crédits
+      WHEN TG_OP = 'UPDATE' AND NEW.status IN ('failed', 'cancelled') THEN 
+        user_credits.balance - NEW.credits
+      -- Dans tous les autres cas on ne change rien
+      ELSE user_credits.balance
     END,
     "updatedAt" = now();
   RETURN NEW;
