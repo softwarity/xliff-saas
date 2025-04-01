@@ -3,7 +3,7 @@
       "srcDir": "dist/locale",
       "genDir": "src/locale",
       "defaultLanguage": "en",
-      "languages": ["fr"],
+      "languages": ["fr", "vi"],
       "removeUnusedIds": true,
       "useSourceAsTarget": true,
       "beautifyOutput": true

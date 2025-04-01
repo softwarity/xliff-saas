@@ -26,6 +26,10 @@
           "fr": {
             "translation": "src/locale/messages.fr.xlf",
             "baseHref": "/xliff-saas/fr/"
+          },
+          "vi": {
+            "translation": "src/locale/messages.vi.xlf",
+            "baseHref": "/xliff-saas/vi/"
           }
         }
       },
@@ -51,6 +55,7 @@
           "configurations": {
             "en": {"localize": ["en"]},
             "fr": {"localize": ["fr"], "deleteOutputPath": false},
+            "vi": {"localize": ["vi"], "deleteOutputPath": false},
             "production": {
               "budgets": [
                 {
