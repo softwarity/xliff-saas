@@ -44,11 +44,11 @@ supabase functions deploy hello-world --project-ref jfrdmhsrklrvtaatdvbt
 supabase functions serve
 # test local
 curl --request POST 'http://localhost:54321/functions/v1/xliffrunner' \
---header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS1kZW1vIiwicm9sZSI6ImFub24iLCJleHAiOjE5ODM4MTI5OTZ9.CRXP1A7WOeoJeXxjNni43kdQwgnWNReilDMblYTn_I0' \
+--header 'Authorization: Bearer $ANON_KEY' \
 --header 'Content-Type: application/json'
 # test remote
 curl -L -X POST 'https://jfrdmhsrklrvtaatdvbt.supabase.co/functions/v1/xliffrunner' \
--H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpmcmRtaHNya2xydnRhYXRkdmJ0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDE2NjU5ODMsImV4cCI6MjA1NzI0MTk4M30.1pMgwZcAKuPC1dDOi4MA64ncu2KsIx2mnEGK30obzBk' \
+-H 'Authorization: Bearer $ANON_KEY' \
 --data '{"name":"Francois"}'
 ```
 
@@ -57,12 +57,12 @@ curl -L -X POST 'https://jfrdmhsrklrvtaatdvbt.supabase.co/functions/v1/xliffrunn
 ```bash
 #local
 curl --request POST 'http://localhost:54321/functions/v1/webhook-runner' \
---header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS1kZW1vIiwicm9sZSI6ImFub24iLCJleHAiOjE5ODM4MTI5OTZ9.CRXP1A7WOeoJeXxjNni43kdQwgnWNReilDMblYTn_I0' \
+--header 'Authorization: Bearer $ANON_KEY' \
 --header 'Content-Type: application/json' \
 --data '{ "name":"Francois" }'
 # avec serveo
 curl --request POST 'http://serveo.net:54321/functions/v1/webhook-runner' \
---header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS1kZW1vIiwicm9sZSI6ImFub24iLCJleHAiOjE5ODM4MTI5OTZ9.CRXP1A7WOeoJeXxjNni43kdQwgnWNReilDMblYTn_I0' \
+--header 'Authorization: Bearer $ANON_KEY' \
 --header 'Content-Type: application/json' \
 --data '{ "name":"Francois" }'
 ```
@@ -78,7 +78,7 @@ supabase db push
 
 ```bash
 curl --request POST 'http://localhost:54321/functions/v1/xliffrunner' \
--H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS1kZW1vIiwicm9sZSI6ImFub24iLCJleHAiOjE5ODM4MTI5OTZ9.CRXP1A7WOeoJeXxjNni43kdQwgnWNReilDMblYTn_I0' \
+-H 'Authorization: Bearer $ANON_KEY' \
 --H 'Content-Type: application/json' \
 --data '{ "GITHUB_TOKEN": ""}'
 ```
@@ -89,7 +89,7 @@ curl --request POST 'http://localhost:54321/functions/v1/xliffrunner' \
 # local
 curl -X POST 'http://localhost:54321/auth/v1/signup' \
 -H 'Content-Type: application/json' \
--H 'apikey: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS1kZW1vIiwicm9sZSI6ImFub24iLCJleHAiOjE5ODM4MTI5OTZ9.CRXP1A7WOeoJeXxjNni43kdQwgnWNReilDMblYTn_I0' \
+-H 'apikey: $ANON_KEY' \
 -d '{
   "email": "newuser@example.com",
   "password": "yourpassword"
