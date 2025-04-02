@@ -18,21 +18,26 @@ import { TranslateModalComponent } from './translate-modal/translate-modal.compo
   ],
   template: `
 <div class="flex items-center justify-between gap-2">
-    @if (translation()) {
-      @if (translation()?.status === 'pending') {
-        <span class="text-sm text-gray-500 dark:text-gray-400" i18n="@@PENDING">Pending...</span>
-      } @else if (translation()?.status === 'estimating') {
-        <span class="text-sm text-gray-500 dark:text-gray-400" i18n="@@ESTIMATING">Estimating...</span>
-      } @else if (translation()?.status === 'translating') {
-        <span class="text-sm text-gray-500 dark:text-gray-400" i18n="@@TRANSLATING_PROGRESS">Translation: {{ translation()?.transUnitDone }}/{{ translation()?.transUnitFound }}</span>
-      } @else if (translation()?.status === 'completed') {
-        <span class="text-sm text-green-500 dark:text-green-400" i18n="@@TRANSLATION_COMPLETED">Translation: {{ translation()?.transUnitDone }}/{{ translation()?.transUnitFound }}</span>
-      } @else if (translation()?.status === 'cancelling') {
-        <span class="text-sm text-gray-500 dark:text-gray-400" i18n="@@CANCELING">Cancelling...</span>
-      } @else if (translation()?.status === 'cancelled') {
-        <span class="text-sm text-red-500 dark:text-red-400" i18n="@@CANCELLED">Cancelled</span>
-      } @else {
-        <span class="text-sm text-red-500 dark:text-red-400">{{ translation()?.status }}</span>
+    @if (translation(); as translation) {
+      @switch (translation.status) {
+        @case ('pending') {
+          <span class="text-sm text-gray-500 dark:text-gray-400" i18n="@@PENDING">Pending...</span>
+        }
+        @case ('estimating') {
+          <span class="text-sm text-gray-500 dark:text-gray-400" i18n="@@ESTIMATING">Estimating...</span>
+        }
+        @case ('translating') {
+          <span class="text-sm text-gray-500 dark:text-gray-400" i18n="@@TRANSLATING_PROGRESS">Translation: {{ translation.transUnitDone }}/{{ translation.transUnitFound }}</span>
+        }
+        @case ('completed') {
+          <span class="text-sm text-green-500 dark:text-green-400" i18n="@@TRANSLATION_COMPLETED">Translation: {{ translation.transUnitDone }}/{{ translation.transUnitFound }}</span>
+        }
+        @case ('cancelling') {
+          <span class="text-sm text-gray-500 dark:text-gray-400" i18n="@@CANCELING">Cancelling...</span>
+        }
+        @case ('cancelled') {
+          <span class="text-sm text-red-500 dark:text-red-400" i18n="@@CANCELLED">Cancelled</span>
+        }
       }
     } @else {
       <span class="text-sm text-red-500 dark:text-red-400" i18n="@@NO_TRANSLATION_AVAILABLE">No translation available...</span>
@@ -43,7 +48,7 @@ import { TranslateModalComponent } from './translate-modal/translate-modal.compo
       @if(translation()?.status === 'pending' || translation()?.status === 'estimating' || translation()?.status === 'translating') {
         <app-cancel-confirm (confirm)="onCancel()" />
       } @else {
-        <button (click)="isModalOpen.set(true)" class="flat-primary" i18n="@@TRANSLATE">Translate</button>
+        <button (click)="isModalOpen.set(true)" class="flat-primary" i18n="@@TRANSLATE" [disabled]="translation()?.status === 'cancelling'">Translate</button>
       }
     }
   </div>
