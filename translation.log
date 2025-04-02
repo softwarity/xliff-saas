@@ -1,4 +1,18 @@
-[32m -  Softwarity ai translator: estimation ./src/locale/messages.fr.xlf (en -> fr) completed in 12ms. Found 72 transUnits.
-[0m -  Process translation from en to fr: New trans-units found: 72/214
-[32m -  Softwarity ai translator: translation ./src/locale/messages.fr.xlf (en -> fr) completed in 896225ms. Processed 72 transUnits, 0 error.
+[32m -  Softwarity ai translator: estimation ./src/locale/messages.fr.xlf (en -> fr) completed in 11ms. Found 2 transUnits.
+[0m[32m -  Softwarity ai translator: estimation ./src/locale/messages.xlf (unknown -> unknown) completed in 9ms. Found 0 transUnits.
+[0m[32m -  Softwarity ai translator: estimation ./src/locale/messages.vi.xlf (en -> vi) completed in 5ms. Found 214 transUnits.
+[0m -  Process translation from en to fr: New trans-units found: 2/214
+[32m -  Softwarity ai translator: translation ./src/locale/messages.fr.xlf (en -> fr) completed in 23231ms. Processed 2 transUnits, 0 error.
+[0m -  Process translation from unknown to unknown: New trans-units found: 0/214
+[32m -  Softwarity ai translator: translation ./src/locale/messages.xlf (unknown -> unknown) completed in 1241ms. Processed 0 transUnits, 0 error.
+[0m -  Process translation from en to vi: New trans-units found: 214/214
+[31m -  Error: Error: source: Current Plan
+Error: 400 Vector store size limit reached.
+Stack: Error: 400 Vector store size limit reached.
+    at APIError.generate (/node_modules/openai/error.js:45:20)
+    at OpenAI.makeStatusError (/node_modules/openai/core.js:300:33)
+    at OpenAI.makeRequest (/node_modules/openai/core.js:344:30)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+
+[0m[31m -  Softwarity ai translator: translation ./src/locale/messages.vi.xlf (en -> vi) completed in 1538272ms. Processed 136 transUnits, 1 errors.
 [0m
