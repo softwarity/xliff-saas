@@ -80,7 +80,7 @@ supabase db push
 curl --request POST 'http://localhost:54321/functions/v1/xliffrunner' \
 -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS1kZW1vIiwicm9sZSI6ImFub24iLCJleHAiOjE5ODM4MTI5OTZ9.CRXP1A7WOeoJeXxjNni43kdQwgnWNReilDMblYTn_I0' \
 --H 'Content-Type: application/json' \
---data '{ "GITHUB_TOKEN": "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"}'
+--data '{ "GITHUB_TOKEN": ""}'
 ```
 
 ## Create user
@@ -99,12 +99,12 @@ curl -X POST 'http://localhost:54321/auth/v1/signup' \
 ## SET SECRET
 ```bash
 # local
-export GITHUB_TOKEN=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
+export GITHUB_TOKEN=....
 
 # set secret
 supabase secrets set --env-file supabase/.env
-supabase secrets set GITHUB_TOKEN=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
-supabase functions set-env GITHUB_TOKEN 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
+supabase secrets set GITHUB_TOKEN=...
+supabase functions set-env GITHUB_TOKEN ...
 # remove secret
 supabase secrets unset GITHUB_TOKEN
 # list secrets
