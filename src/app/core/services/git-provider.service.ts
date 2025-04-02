@@ -143,14 +143,14 @@ export class GitProviderService {
 
   private testGitlabToken(provider: GitProvider, token: string): Observable<void> {
     const gitlab = {
-      url: 'https://gitlab.com/api/v4/admin/token',
+      url: 'https://gitlab.com/api/v4/user',
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
-        'PRIVATE-TOKEN': `${token}`
-      }
+        'Authorization': `Bearer ${token}`
+       }
     };
-    return from(fetch(gitlab.url, { headers: gitlab.headers, method: 'POST', body: JSON.stringify({ token }) })).pipe(
+    return from(fetch(gitlab.url, { headers: gitlab.headers})).pipe(
       map((response: Response) => {
         console.log('gitlab response', response);
         // const scopes = response.headers.get('x-oauth-scopes')?.split(', ') || [];
