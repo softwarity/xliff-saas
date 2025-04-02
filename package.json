@@ -7,8 +7,7 @@
     "ng": "ng",
     "start": "ng serve --host 0.0.0.0 --port 4200 --serve-path /en/",
     "dev": "ng serve --help",
-    "extract-i18n": "ng extract-i18n --output-path dist/locale",
-    "merge-i18n": "xliffmerge --verbose --profile xliffmerge.json",
+    "extract-i18n": "ng extract-i18n",
     "start:fr": "ng serve --configuration=fr",
     "build:fr": "ng build --configuration=fr",
     "build": "ng build --localize",
@@ -20,7 +19,7 @@
   },
   "dependencies": {
     "@angular/animations": "^19.2.4",
-    "@angular/cdk": "^19.2.4",
+    "@angular/cdk": "^19.2.7",
     "@angular/common": "^19.2.4",
     "@angular/compiler": "^19.2.4",
     "@angular/core": "^19.2.4",
@@ -29,21 +28,21 @@
     "@angular/platform-browser": "^19.2.4",
     "@angular/platform-browser-dynamic": "^19.2.4",
     "@angular/router": "^19.2.4",
-    "@stripe/stripe-js": "^3.0.7",
+    "@stripe/stripe-js": "^7.0.0",
     "@supabase/supabase-js": "^2.49.4",
     "rxjs": "^7.8.2",
-    "tslib": "^2.5.0",
+    "tslib": "^2.8.1",
     "zone.js": "~0.15.0"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^19.2.4",
-    "@angular/cli": "^19.2.4",
+    "@angular-devkit/build-angular": "^19.2.5",
+    "@angular/cli": "^19.2.5",
     "@angular/compiler-cli": "^19.2.4",
-    "autoprefixer": "^10.4.17",
-    "ngx-i18nsupport": "^0.17.1",
-    "postcss": "^8.4.35",
+    "autoprefixer": "^10.4.21",
+    "ng-extract-i18n-merge": "^2.14.3",
+    "postcss": "^8.5.3",
     "supabase": "^2.20.5",
     "tailwindcss": "^3.4.1",
-    "typescript": "~5.7.3"
+    "typescript": "~5.8.2"
   }
 }

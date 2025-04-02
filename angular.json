@@ -37,6 +37,9 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
+            "allowedCommonJsDependencies": [
+              "@supabase/supabase-js"
+            ],
             "outputPath": "dist/xliff-translator",
             "index": "src/index.html",
             "browser": "src/main.ts",
@@ -103,11 +106,17 @@
           "defaultConfiguration": "development"
         },
         "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "builder": "ng-extract-i18n-merge:ng-extract-i18n-merge",
           "options": {
             "buildTarget": "xliff-translator:build",
             "format": "xlf",
-            "outputPath": "src/locale"
+            "outputPath": "src/locale",
+            "includeContext": true,
+            "resetTranslationState": true,
+            "targetFiles": [
+              "messages.fr.xlf",
+              "messages.vi.xlf"
+            ]
           }
         }
       }
