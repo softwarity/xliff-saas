@@ -1,4 +1,2 @@
-[32m -  Softwarity ai translator: estimation ./src/locale/messages.fr.xlf (en -> fr) completed in 12ms. Found 72 transUnits.
-[0m -  Process translation from en to fr: New trans-units found: 72/214
-[32m -  Softwarity ai translator: translation ./src/locale/messages.fr.xlf (en -> fr) completed in 896225ms. Processed 72 transUnits, 0 error.
-[0m
+[32m -  Softwarity ai translator: estimation ./src/locale/messages.vi.xlf (en -> vi) completed in 10ms. Found 213 transUnits.
+[0m -  Process translation from en to vi: New trans-units found: 213/213
