@@ -1,19 +1,12 @@
-import { CommonModule } from '@angular/common';
-import { Component, CUSTOM_ELEMENTS_SCHEMA, HostListener, inject, signal } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, inject } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
-import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-import { Subscription } from 'rxjs';
-import { BalanceService } from '../../services/balance.service';
-import { AIInstructionsModalComponent } from '../../../shared/components/ai-instructions-modal/ai-instructions-modal.component';
-import { Credit } from '../../../shared/models/credit.model';
-import '../../../web-components/theme-switcher';
 import '../../../web-components/icon';
+import '../../../web-components/theme-switcher';
 import { AuthService } from '../../services/auth.service';
-import { GitProviderService } from '../../services/git-provider.service';
 import { LanguageToggleComponent } from '../language-toggle/language-toggle.component';
-import { UserButtonComponent } from '../user-button/user-button.component';
-
+import { UnloggedButtonComponent } from '../user-button/unlogged-button.component';
+import { LoggedNavComponent } from './logged-nav.component';
 @Component({
   selector: 'app-header',
   standalone: true,
@@ -21,101 +14,63 @@ import { UserButtonComponent } from '../user-button/user-button.component';
     RouterLink,
     RouterLinkActive,
     LanguageToggleComponent,
-    ReactiveFormsModule,
-    CommonModule,
-    AIInstructionsModalComponent,
-    UserButtonComponent
+    UnloggedButtonComponent,
+    LoggedNavComponent
   ],
   styles: [`
     a.tab-button {
       @apply flex items-center text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-blue-400 transition-colors p-2;
     }
   `],
-  templateUrl: './header.component.html',
+  template: `
+  <div class="w-full bg-white dark:bg-gray-800 shadow-sm">
+    <nav class="w-full px-4 py-4">
+      <div class="flex items-center space-x-4">
+        <a routerLink="/" class="text-primary dark:text-blue-400 shrink-0">
+          <span class="hidden md:flex md:flex-col">
+            <span class="text-2xl font-bold">XLIFF</span>
+            <span class="text-lg -mt-1">Translator</span>
+          </span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 md:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+          </svg>
+        </a>
+
+        <a routerLink="/how-it-works" routerLinkActive="!text-primary dark:!text-blue-400" class="tab-button">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 xl:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <span class="hidden xl:inline" i18n="@@NAVIGATION_HOW_IT_WORKS">How It Works</span>
+        </a>
+
+        <a routerLink="/documentation" routerLinkActive="!text-primary dark:!text-blue-400"
+          class="tab-button">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 xl:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+          </svg>
+          <span class="hidden xl:inline" i18n="@@NAVIGATION_DOCUMENTATION">Documentation</span>
+        </a>
+
+        @if (isAuthenticated()) {
+          <app-logged-nav class="flex-1"></app-logged-nav>
+        } @else {
+          <div class="flex-1"></div>
+          <app-unlogged-button></app-unlogged-button>
+        }
+        <app-language-toggle></app-language-toggle>
+        <theme-switcher attribute="class"
+          title-dark="Dark mode" i18n-title-dark="@@THEME_TOGGLE_TO_DARK"
+          title-light="Light mode" i18n-title-light="@@THEME_TOGGLE_TO_LIGHT"
+          title-system="System preference" i18n-title-system="@@THEME_TOGGLE_TO_SYSTEM"
+        ></theme-switcher>
+      </div>
+    </nav>
+  </div>
+  `,
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class HeaderComponent {
   private auth = inject(AuthService);
-  private gitProviderService = inject(GitProviderService);
-  private balanceService = inject(BalanceService);
-  private subscriptions: Subscription = new Subscription();
-  private fb = inject(FormBuilder);
-  balance = signal<number>(0);
-  isCapsLockOn = signal(false);
-  isCustomAIInstructionsModalOpen = signal(false);
-
-  protected showAuthForm = signal(false);
-  protected isRegistering = signal(false);
-  randomId = signal(Math.random().toString(36).substring(2, 15));
-
   protected isAuthenticated = toSignal(this.auth.isAuthenticated$, { initialValue: false });
   protected user = toSignal(this.auth.user$);
-  protected providers = toSignal(this.gitProviderService.providers$, { initialValue: [] });
-
-  protected form = this.fb.group({
-    email: ['', [Validators.required, Validators.email]],
-    password: ['', [Validators.required, Validators.minLength(6)]]
-  });
-
-  @HostListener('document:keydown', ['$event'])
-  setCapslock(event: KeyboardEvent) {
-    if (event.code === 'CapsLock') {
-      this.isCapsLockOn.set(!event.getModifierState('CapsLock'));
-    } else {
-      this.isCapsLockOn.set(event.getModifierState('CapsLock'));
-    }
-  }
-
-  constructor() {
-    this.subscriptions.add(this.balanceService.subscribeToBalanceChanges().subscribe({
-      next: (balance: number) => {
-        this.balance.set(balance);
-      },
-      error: (error) => {
-        this.balance.set(0);
-        console.error('Error subscribing to credit changes:', error);
-      }
-    }));
-  }
-
-  protected toggleAuthForm(): void {
-    this.showAuthForm.update(v => !v);
-    if (!this.showAuthForm()) {
-      this.form.reset();
-      this.isRegistering.set(false);
-    }
-  }
-
-  protected toggleRegister(): void {
-    this.isRegistering.update(v => !v);
-    this.form.reset();
-  }
-
-  protected async onSubmit(): Promise<void> {
-    if (this.form.invalid) return;
-
-    const { email, password } = this.form.getRawValue();
-    if (!email || !password) return;
-
-    try {
-      const success = this.isRegistering() 
-        ? await this.auth.signUp(email, password)
-        : await this.auth.signIn(email, password);
-
-      if (success) {
-        console.log('Authentification réussie');
-        this.form.reset();
-        this.showAuthForm.set(false);
-        this.isRegistering.set(false);
-      } else {
-        console.log('Échec de l\'authentification');
-      }
-    } catch (error) {
-      console.error('Erreur d\'authentification:', error);
-    }
-  }
-
-  protected getConnectedProviders() {
-    return this.providers().filter(p => p.connected);
-  }
 }
