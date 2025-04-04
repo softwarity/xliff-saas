@@ -12,6 +12,7 @@ import '../../../web-components/icon';
 import { AuthService } from '../../services/auth.service';
 import { GitProviderService } from '../../services/git-provider.service';
 import { LanguageToggleComponent } from '../language-toggle/language-toggle.component';
+import { UserButtonComponent } from '../user-button/user-button.component';
 
 @Component({
   selector: 'app-header',
@@ -22,7 +23,8 @@ import { LanguageToggleComponent } from '../language-toggle/language-toggle.comp
     LanguageToggleComponent,
     ReactiveFormsModule,
     CommonModule,
-    AIInstructionsModalComponent
+    AIInstructionsModalComponent,
+    UserButtonComponent
   ],
   styles: [`
     a.tab-button {
@@ -44,7 +46,6 @@ export class HeaderComponent {
 
   protected showAuthForm = signal(false);
   protected isRegistering = signal(false);
-  protected showUserMenu = signal(false);
   randomId = signal(Math.random().toString(36).substring(2, 15));
 
   protected isAuthenticated = toSignal(this.auth.isAuthenticated$, { initialValue: false });
@@ -90,10 +91,6 @@ export class HeaderComponent {
     this.form.reset();
   }
 
-  protected toggleUserMenu(): void {
-    this.showUserMenu.update(v => !v);
-  }
-
   protected async onSubmit(): Promise<void> {
     if (this.form.invalid) return;
 
@@ -115,15 +112,6 @@ export class HeaderComponent {
       }
     } catch (error) {
       console.error('Erreur d\'authentification:', error);
-    }
-  }
-
-  protected async signOut(): Promise<void> {
-    try {
-      await this.auth.signOut();
-      this.showUserMenu.set(false);
-    } catch (error) {
-      console.error('Erreur de déconnexion:', error);
     }
   }
 

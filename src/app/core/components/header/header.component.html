@@ -71,30 +71,7 @@
           } @else {
             <button class="flat-primary" i18n="@@BALANCE_BUTTON">{{ balance() }} credits</button>
           }
-          <div class="relative">
-            <button (click)="toggleUserMenu()" class="flex items-center space-x-2 flat-primary transition">
-              @if (user(); as userData) {
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 md:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                </svg>
-                <span class="text-sm hidden md:inline">{{ userData.email }}</span>
-                <svg class="w-4 h-4 hidden md:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
-                </svg>
-              }
-            </button>
-
-            @if (showUserMenu()) {
-              <div class="absolute right-0 mt-2 w-48 bg-white dark:bg-gray-700 rounded-lg shadow-lg py-1 z-50">
-                <button (click)="isCustomAIInstructionsModalOpen.set(true)" class="w-full text-left px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-600">
-                  <span i18n="@@USER_MENU_CUSTOM_AI_INSTRUCTIONS">Custom AI instructions</span>
-                </button>
-                <button (click)="signOut()" class="w-full text-left px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-600">
-                  <span i18n="@@USER_MENU_SIGN_OUT">Sign Out</span>
-                </button>
-              </div>
-            }
-          </div>
+          <app-user-button></app-user-button>
         } @else {
           <div class="relative">
             <button  (click)="toggleAuthForm()" class="flat-primary" i18n="@@AUTH_SIGN_IN_BUTTON">Sign In</button>

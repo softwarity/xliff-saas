@@ -1,16 +1,17 @@
 import { Injectable, inject } from '@angular/core';
 import { Router } from '@angular/router';
-import { createClient, SupabaseClient, User } from '@supabase/supabase-js';
+import { User } from '@supabase/supabase-js';
+import { BehaviorSubject, Observable, catchError, from, map, of, switchMap, throwError } from 'rxjs';
 import { environment } from '../../../environments/environment';
-import { BehaviorSubject, Observable, from, map, switchMap, of, catchError, throwError } from 'rxjs';
-import { UserMetadata, SupabaseResponse } from '../../shared/models/user-metadata.model';
 import { ProviderType } from '../../shared/models/provider-type';
+import { SupabaseResponse, UserMetadata } from '../../shared/models/user-metadata.model';
+import { SupabaseClientService } from './supabase-client.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  private supabase: SupabaseClient;
+  private supabase = inject(SupabaseClientService);
   private router = inject(Router);
   
   private userSubject = new BehaviorSubject<User | null>(null);
@@ -21,9 +22,6 @@ export class AuthService {
 
   constructor() {
     console.log('AuthService: Initializing...');
-    const { url, anonKey } = environment.supabase;
-    this.supabase = createClient(url, anonKey);
-    console.log('AuthService: Supabase client created');
 
     this.supabase.auth.getSession().then(({ data: { session } }) => {
       console.log('AuthService: Initial session check:', { hasSession: !!session });
@@ -37,7 +35,7 @@ export class AuthService {
   }
 
   private updateAuthState(user: User | null): void {
-    console.log('AuthService: Updating auth state:', { hasUser: !!user });
+    console.log('AuthService: Updating auth state:', { hasUser: !!user }); 
     this.userSubject.next(user);
     this.isAuthenticatedSubject.next(!!user);
   }

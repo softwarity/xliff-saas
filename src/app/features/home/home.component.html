@@ -43,6 +43,29 @@
       <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
         <!-- Starter Plan -->
         <div class="relative p-8 rounded-lg bg-light-surface dark:bg-dark-700 shadow-lg border border-light-border dark:border-dark-600 hover:shadow-xl transition-shadow">
+          <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-primary text-white px-4 py-1 rounded-full text-sm" i18n="@@FREE_PLAN_TITLE">Free</div>
+          <h3 class="text-xl font-semibold mb-2 text-primary dark:text-blue-400" i18n="@@FREE_PLAN_TITLE">Register</h3>
+          <h4 class="text-sm mb-2 text-primary dark:text-blue-400" i18n="@@FREE_PLAN_DESCRIPTION">For trying the software</h4>
+          <p class="text-4xl font-bold mb-4 text-light-text-primary dark:text-white">
+            Just register<span class="text-lg text-light-text-secondary dark:text-gray-400"></span>
+          </p>
+          <ul class="space-y-3 mb-8 text-light-text-secondary dark:text-gray-300">
+            <li class="flex items-center">
+              <span i18n="@@STARTER_PLAN_TRANSLATION_UNIT_PRICE">$0 per translation unit</span>
+            </li>
+            <li class="flex items-center">
+              <app-icon name="check" stroke="green" fill="none" size="24" class="mr-2"></app-icon>
+              <span i18n="@@STARTER_PLAN_TRANSLATION_UNITS">100 translation units</span>
+            </li>
+            <li class="flex items-center">
+              <app-icon name="check" stroke="green" fill="none" size="24" class="mr-2"></app-icon>
+              <span i18n="@@STARTER_PLAN_UNLIMITED_GIT_REPOSITORIES">Unlimited git repositories</span>
+            </li>
+          </ul>
+          <button class="flat-primary w-full px-6 py-3 rounded-lg" i18n="@@REGISTER_NOW">Register</button>
+        </div>
+
+        <div class="relative p-8 rounded-lg bg-light-surface dark:bg-dark-700 shadow-lg border border-light-border dark:border-dark-600 hover:shadow-xl transition-shadow">
           <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-primary text-white px-4 py-1 rounded-full text-sm" i18n="@@BASIC_PLAN_TITLE">Basic</div>
           <h3 class="text-xl font-semibold mb-2 text-primary dark:text-blue-400" i18n="@@STARTER_PLAN_TITLE">Starter</h3>
           <h4 class="text-sm mb-2 text-primary dark:text-blue-400" i18n="@@STARTER_PLAN_DESCRIPTION">For a complex application</h4>
@@ -51,15 +74,15 @@
           </p>
           <ul class="space-y-3 mb-8 text-light-text-secondary dark:text-gray-300">
             <li class="flex items-center">
-              <span i18n="@@STARTER_PLAN_TRANSLATION_UNIT_PRICE">0,01 € per translation unit</span>
+              <span i18n="@@STARTER_PLAN_TRANSLATION_UNIT_PRICE">$0,01 per translation unit</span>
+            </li>
+            <li class="flex items-center">
+              <app-icon name="check" stroke="green" fill="none" size="24" class="mr-2"></app-icon>
+              <span i18n="@@PROFESSIONAL_PLAN_PREVIOUS_PLAN">The previous plan +</span>
             </li>
             <li class="flex items-center">
               <app-icon name="check" stroke="green" fill="none" size="24" class="mr-2"></app-icon>
               <span i18n="@@STARTER_PLAN_TRANSLATION_UNITS">1,000 translation units</span>
-            </li>
-            <li class="flex items-center">
-              <app-icon name="check" stroke="green" fill="none" size="24" class="mr-2"></app-icon>
-              <span i18n="@@STARTER_PLAN_UNLIMITED_GIT_REPOSITORIES">Unlimited git repositories</span>
             </li>
             <li class="flex items-center">
               <app-icon name="check" stroke="green" fill="none" size="24" class="mr-2"></app-icon>

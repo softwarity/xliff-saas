@@ -21,6 +21,8 @@ export class LanguageToggleComponent {
   currentLang = signal<string>('en');
   isOpen = signal(false);
   baseUrl = signal<string>('');
+  private boundCloseMenu: (() => void) | null = null;
+
   constructor(private http: HttpClient) {
     this.http.get<Language[]>('assets/locales.json').subscribe(data => {
       this.languages.set(data.map(lang => ({
@@ -35,10 +37,13 @@ export class LanguageToggleComponent {
   
 
   protected toggleDropdown(event: Event): void {
-    event.stopPropagation();
+    // event.stopPropagation();
     if (!this.isOpen()) {
       this.isOpen.set(true);
-      document.body.addEventListener('click', this.closeDropdown.bind(this));
+      this.boundCloseMenu = this.closeDropdown.bind(this);
+      setTimeout((obj: any) => {
+        document.body.addEventListener('click', obj.boundCloseMenu);
+      }, 100, this);
     } else {
       this.closeDropdown();
     }
@@ -46,7 +51,10 @@ export class LanguageToggleComponent {
 
   closeDropdown(): void {
     this.isOpen.set(false);
-    document.body.removeEventListener('click', this.closeDropdown);
+    if (this.boundCloseMenu) {
+      document.body.removeEventListener('click', this.boundCloseMenu);
+      this.boundCloseMenu = null;
+    }
   }
 
   getFragments() {

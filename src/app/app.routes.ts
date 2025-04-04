@@ -20,6 +20,11 @@ export const routes: Routes = [
     loadComponent: () => import('./features/dashboard/dashboard.component').then(m => m.DashboardComponent)
   },
   {
+    path: 'profile',
+    canActivate: [AuthGuard],
+    loadComponent: () => import('./features/profile/profile.component').then(m => m.ProfileComponent)
+  },
+  {
     path: 'git-providers',
     canActivate: [AuthGuard],
     loadComponent: () => import('./features/git-providers/git-providers.component').then(m => m.GitProvidersComponent)
