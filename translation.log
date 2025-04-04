@@ -1,3 +1,0 @@
-[SUCCESS]  -  Softwarity ai translator: estimation ./src/locale/messages.fr.xlf (en -> fr) completed in 11ms. Found 2 transUnits.
-[INFO]  -  Process translation from en to fr: New trans-units found: 2/213
-[SUCCESS]  -  Softwarity ai translator: translation ./src/locale/messages.fr.xlf (en -> fr) completed in 27791ms. Processed 2 transUnits, 0 error.
