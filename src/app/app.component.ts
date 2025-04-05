@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { Router, RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './core/components/header/header.component';
 
 @Component({
@@ -15,5 +15,14 @@ import { HeaderComponent } from './core/components/header/header.component';
   </div>
   `
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+  constructor(private router: Router) {}
+
+  ngOnInit() {
+    const redirect = localStorage.getItem('gh-redirect');
+    if (redirect) {
+      localStorage.removeItem('gh-redirect');
+      this.router.navigateByUrl(redirect);
+    }
+  }
 }
