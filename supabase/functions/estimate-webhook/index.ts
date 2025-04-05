@@ -3,6 +3,7 @@ import { getSupabaseClient } from '../lib/supabase-client.ts';
 import { JobDao } from '../lib/job-dao.ts';
 import { Job } from "../entities/job.ts";
 import { cancelRun } from '../lib/git-service.ts';
+import { EstimationDoneMessage } from '../models/webhook-message.ts';
 
 Deno.serve(async (req: Request) => {
   if (req.method !== 'POST') {
@@ -28,11 +29,13 @@ Deno.serve(async (req: Request) => {
     if (status === 'failed') {
       return new Response(null, {status: 200});
     }
-    if (body.type === 'start') {
+    const {type} = body;
+    if (type === 'start') {
       await jobDao.updateById(jobId, {status: 'estimating', details: {}, transUnitFound: 0, runId});
-    } else if (body.type === 'estimation-done') {
-      await jobDao.updateById(jobId, {status: 'completed', details: body.inputFiles, transUnitFound: body.transUnits});
-    } else if (body.type === 'done') {
+    } else if (type === 'estimation-done') {
+      const {toTranslate, inputFiles}: EstimationDoneMessage = body;
+      await jobDao.updateById(jobId, {status: 'completed', details: {...inputFiles}, transUnitFound: toTranslate});
+    } else if (type === 'done') {
       // await jobDao.updateById(jobId, {status: 'completed'});
     }
     return new Response(null, {status: 200});

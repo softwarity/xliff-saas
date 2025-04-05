@@ -4,7 +4,7 @@ import { JobDao } from '../lib/job-dao.ts';
 import { TransactionDao } from '../lib/transaction-dao.ts';
 import { Job } from "../entities/job.ts";
 import { cancelRun } from '../lib/git-service.ts';
-
+import { EstimationDoneMessage, ProgressMessage, ErrorMessage } from '../models/webhook-message.ts';
 Deno.serve(async (req: Request) => {
   if (req.method !== 'POST') {
     return new Response(null, {status: 405});
@@ -33,21 +33,23 @@ Deno.serve(async (req: Request) => {
     if (status === 'failed') {
       return new Response(null, {status: 200});
     }
-    if (body.type === 'start') {
+    const {type} = body;
+    if (type === 'start') {
       await jobDao.updateById(jobId, {status: 'estimating', details: {}, transUnitFound: 0, runId});
-    } else if (body.type === 'estimation-done') {
-      const {id: transactionId} = await transactionDao.insert({"userId": userId, credits: -body.transUnits, status: 'pending', message: '', details: {}});
-      await jobDao.updateById(jobId, {status: 'translating', transactionId, transUnitDone:0, transUnitFound: body.total});
-    } else if (body.type === 'progress') {
-      const transUnitDone: number = body.completed + body.error;
-      await jobDao.updateById(jobId, {status: 'translating', transUnitDone, transUnitFound: body.total, transUnitFailed: body.error});
-    } else if (body.type === 'error') {
-      const transUnitDone: number = body.completed + body.error;
-      const {transactionId} = await jobDao.updateById(jobId, {status: 'failed', transUnitDone});
+    } else if (type === 'estimation-done') {
+      const {toTranslate}: EstimationDoneMessage = body;
+      const {id: transactionId} = await transactionDao.insert({"userId": userId, credits: -toTranslate, status: 'pending', message: '', details: {}});
+      await jobDao.updateById(jobId, {status: 'translating', transactionId, transUnitDone:0, transUnitFound: toTranslate});
+    } else if (type === 'progress') {
+      const {toTranslate, completed, errors}: ProgressMessage = body;
+      await jobDao.updateById(jobId, {status: 'translating', transUnitDone: completed, transUnitFound: toTranslate, transUnitFailed: errors});
+    } else if (type === 'error') {
+      const {toTranslate, completed, errors, errorCause}: ErrorMessage = body;
+      const {transactionId} = await jobDao.updateById(jobId, {status: 'failed', transUnitDone: completed, transUnitFound: toTranslate, transUnitFailed: errors});
       if (transactionId) {
-        await transactionDao.updateById(transactionId, {status: 'failed', message: body.error});
+        await transactionDao.updateById(transactionId, {status: 'failed', message: errorCause});
       }
-    } else if (body.type === 'done') {
+    } else if (type === 'done') {
       const {transactionId} = await jobDao.updateById(jobId, {status: 'completed'});
       if (transactionId) {
         await transactionDao.updateById(transactionId, {status: 'completed', message: 'Translation completed', details: {}});
