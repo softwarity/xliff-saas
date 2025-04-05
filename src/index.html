@@ -9,7 +9,9 @@
       const redirect = localStorage.getItem('gh-redirect');
       if (redirect) {
         localStorage.removeItem('gh-redirect');
-        window.location.href = redirect;
+        if (redirect !== window.location.pathname) {
+          window.location.replace(redirect);
+        }
       }
     </script>
   </head>
