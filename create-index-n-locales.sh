@@ -64,3 +64,17 @@ window.location.href = \`/xliff-saas/\${getPreferredLanguage()}/\`;
 EOF
 
 echo "index.html créé avec succès dans: $BROWSER_DIR"
+
+# Créer le contenu de 404.html avec redirection vers index.html
+cat > "$BROWSER_DIR/404.html" << EOF
+<!DOCTYPE html>
+<html><head>
+<script>
+    const path = window.location.pathname;
+    localStorage.setItem('gh-redirect', path);
+    window.location.href = \`/xliff-saas/\`;
+</script>
+</head></html>
+EOF
+
+echo "404.html créé avec succès dans: $BROWSER_DIR"

@@ -5,6 +5,13 @@
     <meta charset="UTF-8" />
     <base href="/">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+      const redirect = localStorage.getItem('gh-redirect');
+      if (redirect) {
+        localStorage.removeItem('gh-redirect');
+        window.location.href = redirect;
+      }
+    </script>
   </head>
   <body>
     <app-root></app-root>
