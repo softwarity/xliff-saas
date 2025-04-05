@@ -38,5 +38,9 @@ export const routes: Routes = [
     path: 'stripe-test',
     canActivate: [AuthGuard],
     loadComponent: () => import('./features/stripe-test/stripe-test.component').then(m => m.StripeTestComponent)
+  },
+  {
+    path: '**',
+    loadComponent: () => import('./features/not-found/not-found.component').then(m => m.NotFoundComponent)
   }
 ];
