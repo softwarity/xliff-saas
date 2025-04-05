@@ -19,6 +19,8 @@ export interface ErrorMessage extends Partial<Omit<ProgressMessage, 'type'>> {
 
 export interface ProcessingContext {
   inputFiles: InputFileContext[];
+  state: string;
+  stateProcessed: string;
   toTranslate: number;
   translated: number;
   completed: number;
