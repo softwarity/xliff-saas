@@ -21,6 +21,7 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     const redirect = localStorage.getItem('gh-redirect');
     if (redirect) {
+      console.log('redirect', redirect);
       localStorage.removeItem('gh-redirect');
       this.router.navigateByUrl(redirect);
     }
