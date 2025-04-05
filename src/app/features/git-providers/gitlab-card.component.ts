@@ -1,13 +1,17 @@
-<div class="bg-white dark:bg-dark-700 rounded-lg shadow p-6">
+import { Component, CUSTOM_ELEMENTS_SCHEMA, input, inject, OnInit } from '@angular/core';
+import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import { GitProvider, GitProviderService } from '../../core/services/git-provider.service';
+import { signal } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import '../../web-components/icon';
+@Component({
+  selector: 'app-gitlab-card',
+  standalone: true,
+  imports: [ReactiveFormsModule, CommonModule],
+  template: `<div class="bg-white dark:bg-dark-700 rounded-lg shadow p-6">
   <div class="flex items-center justify-between mb-4">
     <div class="flex items-center space-x-3">
-      @if (provider().type === 'github') {
-        <app-icon name="github" [size]="24" [color]="'gray'"/>
-      } @else if (provider().type === 'gitlab') {
-        <app-icon name="gitlab" [size]="24" [color]="'gray'"/>
-      } @else if (provider().type === 'bitbucket') {
-        <app-icon name="bitbucket" [size]="24" [color]="'gray'"/>
-      }
+      <app-icon name="gitlab" [size]="24" [color]="'gray'"/>
       <h2 class="text-xl font-semibold dark:text-white">{{ provider().name }}</h2>
     </div>
     <span [class]="provider().connected ? 'text-green-500' : 'text-red-500'">
@@ -98,3 +102,65 @@
     </div>
   </form>
 </div>
+`,
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+})
+export class GitlabCardComponent {
+  provider = input.required<GitProvider>();
+
+  private gitProviderService = inject(GitProviderService);
+  private fb = inject(FormBuilder);
+
+  protected showTokenInput = signal<boolean>(false);
+  protected loading = signal<boolean>(false);
+  protected error = signal<string | null>(null);
+
+  protected form = this.fb.nonNullable.group({
+    token: ['', [Validators.required]],
+  });
+
+  protected isFormValid(): boolean {
+    return !!this.form.controls.token.value;
+  }
+
+  protected onSubmit(): void {
+    if (!this.isFormValid()) return;
+
+    const token: string = this.form.controls.token.value;
+
+    this.loading.set(true);
+    this.error.set(null);
+    
+    this.gitProviderService.validateAndStoreToken(this.provider(), token).subscribe({
+      next: () => {
+        this.form.reset();
+        this.updateShowTokenInput(false);
+        this.loading.set(false);
+      },
+      error: (err) => {
+        this.error.set('Failed to validate credentials.'+err.message);
+        this.loading.set(false);
+      }
+    });
+  }
+
+  protected updateShowTokenInput(value: boolean): void {
+    this.showTokenInput.set(value);
+    if (!value) {
+      this.form.reset();
+      this.error.set(null);
+    }
+  }
+
+  protected disconnectProvider(): void {
+    this.loading.set(true);
+    this.error.set(null);
+    
+    this.gitProviderService.disconnectProvider(this.provider().type);
+    
+    setTimeout(() => {
+      this.loading.set(false);
+      this.form.reset();
+    }, 500);
+  }
+}

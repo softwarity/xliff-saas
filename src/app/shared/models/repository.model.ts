@@ -6,7 +6,7 @@ export interface Repository {
   name: string;
   description: string | null;
   defaultBranch: string;
-  language: string | null;
+  language?: string;
   visibility: 'public' | 'private';
   stars?: number;
   forks?: number;

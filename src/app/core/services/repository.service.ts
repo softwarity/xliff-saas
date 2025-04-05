@@ -1,9 +1,8 @@
 import { Injectable, inject } from '@angular/core';
 import { Observable, from, map } from 'rxjs';
-import { SupabaseClientService } from './supabase-client.service';
 import { Job } from '../../shared/models/job.model';
-import { ProviderType } from '../../shared/models/provider-type';
 import { Repository } from '../../shared/models/repository.model';
+import { SupabaseClientService } from './supabase-client.service';
 
 
 
@@ -12,19 +11,6 @@ import { Repository } from '../../shared/models/repository.model';
 })
 export class RepositoryService {
   private supabaseClientService = inject(SupabaseClientService);
-
-  getRepositories(provider: ProviderType): Observable<Repository[]> {
-    return from(this.supabaseClientService.functions.invoke<Repository[]>(`repository-${provider}`, {method: 'GET'})).pipe(
-      map(response => response.data || [])
-    );
-  }
-
-  getBranches(repository: Repository): Observable<string[]> {
-    const { provider, url } = repository;
-    return from(this.supabaseClientService.functions.invoke<string[]>(`branch-${provider}?url=${encodeURIComponent(url)}`, {method: 'GET'})).pipe(
-      map(response => response.data || [])
-    );
-  }
 
   estimateRepository(repository: Repository, {branch, ext, transUnitState}: {branch: string, ext: string, transUnitState: string}): Observable<Job> {
     const { namespace, name, provider } = repository;

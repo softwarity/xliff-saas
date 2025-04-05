@@ -30,9 +30,19 @@ export const routes: Routes = [
     loadComponent: () => import('./features/git-providers/git-providers.component').then(m => m.GitProvidersComponent)
   },
   {
-    path: 'repositories/:provider',
+    path: 'repositories/github',
     canActivate: [AuthGuard],
-    loadComponent: () => import('./features/repositories/repositories.component').then(m => m.RepositoriesComponent)
+    loadComponent: () => import('./features/repositories/github-repositories.component').then(m => m.GithubRepositoriesComponent)
+  },
+  {
+    path: 'repositories/gitlab',
+    canActivate: [AuthGuard],
+    loadComponent: () => import('./features/repositories/gitlab-repositories.component').then(m => m.GitlabRepositoriesComponent)
+  },
+  {
+    path: 'repositories/bitbucket',
+    canActivate: [AuthGuard],
+    loadComponent: () => import('./features/repositories/bitbucket-repositories.component').then(m => m.BitbucketRepositoriesComponent)
   },
   {
     path: 'stripe-test',

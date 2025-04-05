@@ -2,11 +2,14 @@ import { Component, CUSTOM_ELEMENTS_SCHEMA, inject } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { GitProviderService } from '../../core/services/git-provider.service';
 import '../../web-components/icon';
-import { ProviderCardComponent } from './components/provider-card/provider-card.component';
+import { BitbucketCardComponent } from './bitbucket-card.component';
+import { GithubCardComponent } from './github-card.component';
+import { GitlabCardComponent } from './gitlab-card.component';
+
 @Component({
   selector: 'app-git-providers',
   standalone: true,
-  imports: [ProviderCardComponent],
+  imports: [GithubCardComponent, GitlabCardComponent, BitbucketCardComponent],
   template: `
   <div class="container mx-auto px-4 py-8">
     <h1 class="text-3xl font-bold mb-8 dark:text-white">
@@ -19,7 +22,13 @@ import { ProviderCardComponent } from './components/provider-card/provider-card.
     </h1>
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
       @for (provider of providers(); track provider.type) {
-        <app-provider-card [provider]="provider"></app-provider-card>
+        @if (provider.type === 'github') {
+          <app-github-card [provider]="provider"></app-github-card>
+        } @else if (provider.type === 'gitlab') {
+          <app-gitlab-card [provider]="provider"></app-gitlab-card>
+        } @else if (provider.type === 'bitbucket') {
+          <app-bitbucket-card [provider]="provider"></app-bitbucket-card>
+        }
       }
     </div>
   </div>

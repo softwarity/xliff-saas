@@ -1,23 +1,14 @@
-import { CommonModule } from '@angular/common';
 import { Component, computed, inject, OnDestroy, OnInit, signal } from '@angular/core';
-import { toSignal } from '@angular/core/rxjs-interop';
-import { FormsModule } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
-import { Subscription } from 'rxjs';
+import { firstValueFrom, Observable, Subscription } from 'rxjs';
 import { BalanceService } from '../../core/services/balance.service';
 import { JobService } from '../../core/services/job.service';
-import { RepositoryCardComponent } from './components/repository-card/repository-card.component';
-import { RepositoryService } from '../../core/services/repository.service';
+import { Repository } from '../../shared/models/repository.model';
 
 @Component({
-  selector: 'app-repositories',
   standalone: true,
-  imports: [CommonModule, FormsModule, RepositoryCardComponent],
-  templateUrl: './repositories.component.html'
+  template: ``
 })
-export class RepositoriesComponent implements OnInit, OnDestroy {
-  private route = inject(ActivatedRoute);
-  private repoService = inject(RepositoryService);
+export abstract class RepositoriesComponent implements OnInit, OnDestroy {
   private balanceService = inject(BalanceService);
   private subscriptions: Subscription = new Subscription();
   private jobService = inject(JobService);
@@ -25,8 +16,7 @@ export class RepositoriesComponent implements OnInit, OnDestroy {
   protected error = signal<string | null>(null);
   protected searchTerm = signal('');
   protected balance = signal<number>(0);
-  protected provider = toSignal(this.route.params, { initialValue: { provider: '' } });
-  protected allRepositories = signal<any[]>([]);
+  protected allRepositories = signal<Repository[]>([]);
   
   protected repositories = computed(() => {
     const term = this.searchTerm().toLowerCase();
@@ -34,14 +24,14 @@ export class RepositoriesComponent implements OnInit, OnDestroy {
 
     return this.allRepositories().filter(repo => {
       const searchableFields = [
+        repo.namespace,
         repo.name,
         repo.description,
         repo.language,
-        repo.visibility,
-        repo.id?.toString()
-      ].filter(Boolean).map(field => field.toLowerCase());
+        repo.visibility
+      ].filter(Boolean).map(field => field?.toLowerCase());
 
-      return searchableFields.some(field => field.includes(term));
+      return searchableFields.some(field => field?.includes(term));
     });
   });
 
@@ -58,12 +48,8 @@ export class RepositoriesComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.subscriptions.add(this.route.params.subscribe(params => {
-      if (params['provider']) {
-        this.allRepositories.set([]);
-        this.loadRepositories();
-      }
-    }));
+    this.allRepositories.set([]);
+    this.loadRepositories();
   }
 
   ngOnDestroy() {
@@ -71,17 +57,15 @@ export class RepositoriesComponent implements OnInit, OnDestroy {
     this.jobService.closeChannel();
   }
 
+  abstract getRepositories(): Observable<Repository[]>;
+  abstract getProvider(): string;
+
   protected async loadRepositories() {
     this.loading.set(true);
     this.error.set(null);
     
     try {
-      const provider = this.provider().provider;
-      console.log('Loading repositories for provider:', provider);
-      
-      const repos = await this.repoService.getRepositories(provider).toPromise();
-      console.log('Repositories loaded:', repos?.length || 0);
-      
+      const repos = await firstValueFrom(this.getRepositories());
       if (repos && repos.length > 0) {
         this.allRepositories.set(repos);
         this.searchTerm.set('');

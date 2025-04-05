@@ -85,11 +85,11 @@
       <div class="mt-6 flex justify-center">
         <nav class="flex items-center gap-2">
           @if (currentPage() > 1) {
-            <button class="stroke-secondary" (click)="onPageChange(currentPage() - 1)" i18n="@@PREVIOUS_PAGE">Previous</button>
+            <button class="flat-primary" (click)="onPageChange(currentPage() - 1)" i18n="@@PREVIOUS_PAGE">Previous</button>
           }
           <span class="px-3 py-1 text-gray-700 dark:text-gray-300" i18n="@@PAGE_INFO">Page {{ currentPage() }} of {{ totalPages() }}</span>
           @if (currentPage() < totalPages()) {
-            <button class="stroke-secondary" (click)="onPageChange(currentPage() + 1)" i18n="@@NEXT_PAGE">Next</button>
+            <button class="flat-primary" (click)="onPageChange(currentPage() + 1)" i18n="@@NEXT_PAGE">Next</button>
           }
         </nav>
       </div>

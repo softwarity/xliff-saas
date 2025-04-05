@@ -2,9 +2,11 @@ import { CommonModule } from '@angular/common';
 import { Component, effect, forwardRef, inject, input } from '@angular/core';
 import { FormControl, NG_VALUE_ACCESSOR, ReactiveFormsModule } from '@angular/forms';
 import { Observable, of, tap } from 'rxjs';
+import { BitbucketService } from '../../../../core/services/bitbucket.service';
+import { GithubService } from '../../../../core/services/github.service';
+import { GitlabService } from '../../../../core/services/gitlab.service';
 import { Repository } from '../../../../shared/models/repository.model';
 import { TypedControlValueAccessor } from '../../../../shared/typed-value-control-accessor';
-import { RepositoryService } from '../../../../core/services/repository.service';
 
 @Component({
   selector: 'app-branch-selector',
@@ -37,7 +39,9 @@ import { RepositoryService } from '../../../../core/services/repository.service'
 export class BranchSelectorComponent implements TypedControlValueAccessor<string | null> {
 
   repository = input.required<Repository>();
-  private repositoryService = inject(RepositoryService);
+  private bitbucketService = inject(BitbucketService);
+  private githubService = inject(GithubService);
+  private gitlabService = inject(GitlabService);
   
   branches$: Observable<string[]> = of([]);
   branchFC: FormControl<string | null> = new FormControl<string | null>(null);
@@ -45,7 +49,15 @@ export class BranchSelectorComponent implements TypedControlValueAccessor<string
   constructor() {
     effect(() => {
       this.branchFC.disable();
-      this.branches$ = this.repositoryService.getBranches(this.repository()).pipe(
+      let branches$;
+      if (this.repository().provider === 'bitbucket') {
+        branches$ = this.bitbucketService.getBranches(this.repository());
+      } else if (this.repository().provider === 'github') {
+        branches$ = this.githubService.getBranches(this.repository());
+      } else  {
+        branches$ = this.gitlabService.getBranches(this.repository());
+      }
+      this.branches$ = branches$.pipe(
         tap(() => this.branchFC.enable()),
         tap((branches) => {
           if (branches.length > 0 && (!this.branchFC.value || !branches.includes(this.branchFC.value))) {
