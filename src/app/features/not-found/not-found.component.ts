@@ -12,8 +12,8 @@ import { CommonModule } from '@angular/common';
         <h1>404</h1>
         <div class="glitch-text" i18n="@@NOT_FOUND_PAGE_NOT_FOUND">Page Not Found</div>
         <p i18n="@@NOT_FOUND_PAGE_NOT_FOUND">Oops! The page you're looking for seems to have vanished into the void...</p>
-        <button routerLink="/" class="flat-primary">
-          Retour à l'accueil
+        <button routerLink="/" class="flat-primary" i18n="@@NOT_FOUND_BACK_HOME">
+          Back to Home
         </button>
       </div>
     </div>
@@ -37,9 +37,8 @@ import { CommonModule } from '@angular/common';
     h1 {
       font-size: 8rem;
       margin: 0;
-      background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      color: var(--primary-color);
+      text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
       animation: pulse 2s infinite;
     }
 
@@ -94,24 +93,6 @@ import { CommonModule } from '@angular/common';
       60% { transform: translate(2px, 2px); }
       80% { transform: translate(2px, -2px); }
       100% { transform: translate(0); }
-    }
-
-    @media (prefers-color-scheme: dark) {
-      :host {
-        --background-color: #1a1a1a;
-        --text-color: #ffffff;
-        --primary-color: #7c3aed;
-        --accent-color: #3b82f6;
-      }
-    }
-
-    @media (prefers-color-scheme: light) {
-      :host {
-        --background-color: #ffffff;
-        --text-color: #1a1a1a;
-        --primary-color: #6d28d9;
-        --accent-color: #2563eb;
-      }
     }
   `]
 })
