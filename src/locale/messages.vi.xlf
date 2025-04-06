@@ -1,45 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 https://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
-  <file source-language="en" datatype="plaintext" original="ng2.template" target-language="vi">
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" target-language="vi" datatype="plaintext" original="ng2.template">
     <body>
       <trans-unit id="NAVIGATION_HOW_IT_WORKS" datatype="html">
         <source>How It Works</source>
         <target state="translated">Cách thức hoạt động</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/components/header/header.component.html</context>
-          <context context-type="linenumber">18</context>
+          <context context-type="sourcefile">src/app/core/components/header/header.component.ts</context>
+          <context context-type="linenumber">43</context>
         </context-group>
       </trans-unit>
       <trans-unit id="NAVIGATION_DOCUMENTATION" datatype="html">
         <source>Documentation</source>
         <target state="translated">Tài liệu</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/components/header/header.component.html</context>
-          <context context-type="linenumber">26</context>
+          <context context-type="sourcefile">src/app/core/components/header/header.component.ts</context>
+          <context context-type="linenumber">51</context>
         </context-group>
       </trans-unit>
       <trans-unit id="NAVIGATION_DASHBOARD" datatype="html">
         <source>Dashboard</source>
         <target state="translated">Bảng điều khiển</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/components/header/header.component.html</context>
-          <context context-type="linenumber">35</context>
+          <context context-type="sourcefile">src/app/core/components/header/logged-nav.component.ts</context>
+          <context context-type="linenumber">36</context>
         </context-group>
       </trans-unit>
       <trans-unit id="NAVIGATION_GIT_PROVIDERS" datatype="html">
         <source>Git Providers</source>
         <target state="translated">Nhà cung cấp Git</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/components/header/header.component.html</context>
-          <context context-type="linenumber">41</context>
+          <context context-type="sourcefile">src/app/core/components/header/logged-nav.component.ts</context>
+          <context context-type="linenumber">42</context>
         </context-group>
       </trans-unit>
       <trans-unit id="PURCHASE_CREDITS_BUTTON" datatype="html">
         <source>Purchase credits</source>
         <target state="translated">Mua tín dụng</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/components/header/header.component.html</context>
-          <context context-type="linenumber">70</context>
+          <context context-type="sourcefile">src/app/core/components/header/logged-nav.component.ts</context>
+          <context context-type="linenumber">58</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/repositories/components/translate/translate.component.ts</context>
@@ -50,124 +50,108 @@
         <source><x id="INTERPOLATION" equiv-text="{{ balance() }}"/> credits</source>
         <target state="translated"><x id="INTERPOLATION" equiv-text="{{ balance() }}"/> tín dụng</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/components/header/header.component.html</context>
-          <context context-type="linenumber">72</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="USER_MENU_CUSTOM_AI_INSTRUCTIONS" datatype="html">
-        <source>Custom AI instructions</source>
-        <target state="translated">Custom AI instructions</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/components/header/header.component.html</context>
-          <context context-type="linenumber">90</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="USER_MENU_SIGN_OUT" datatype="html">
-        <source>Sign Out</source>
-        <target state="translated">Đăng xuất</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/components/header/header.component.html</context>
-          <context context-type="linenumber">93</context>
+          <context context-type="sourcefile">src/app/core/components/header/logged-nav.component.ts</context>
+          <context context-type="linenumber">60</context>
         </context-group>
       </trans-unit>
       <trans-unit id="AUTH_SIGN_IN_BUTTON" datatype="html">
         <source>Sign In</source>
         <target state="translated">Đăng nhập</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/components/header/header.component.html</context>
-          <context context-type="linenumber">100</context>
+          <context context-type="sourcefile">src/app/core/components/user-button/unlogged-button.component.ts</context>
+          <context context-type="linenumber">17</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/components/header/header.component.html</context>
-          <context context-type="linenumber">125</context>
+          <context context-type="sourcefile">src/app/core/components/user-button/unlogged-button.component.ts</context>
+          <context context-type="linenumber">42</context>
         </context-group>
       </trans-unit>
       <trans-unit id="AUTH_EMAIL_LABEL" datatype="html">
         <source> Email </source>
         <target state="translated">Email</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/components/header/header.component.html</context>
-          <context context-type="linenumber">107</context>
+          <context context-type="sourcefile">src/app/core/components/user-button/unlogged-button.component.ts</context>
+          <context context-type="linenumber">24</context>
         </context-group>
       </trans-unit>
       <trans-unit id="AUTH_EMAIL_PLACEHOLDER" datatype="html">
         <source>Enter your email</source>
         <target state="translated">Nhập email của bạn</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/components/header/header.component.html</context>
-          <context context-type="linenumber">109</context>
+          <context context-type="sourcefile">src/app/core/components/user-button/unlogged-button.component.ts</context>
+          <context context-type="linenumber">26</context>
         </context-group>
       </trans-unit>
       <trans-unit id="AUTH_PASSWORD_LABEL" datatype="html">
         <source> Password </source>
         <target state="translated">Mặc khẩu nhập</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/components/header/header.component.html</context>
-          <context context-type="linenumber">113</context>
+          <context context-type="sourcefile">src/app/core/components/user-button/unlogged-button.component.ts</context>
+          <context context-type="linenumber">30</context>
         </context-group>
       </trans-unit>
       <trans-unit id="AUTH_PASSWORD_PLACEHOLDER" datatype="html">
         <source>Enter your password</source>
         <target state="translated">Nhập mật khẩu của bạn</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/components/header/header.component.html</context>
-          <context context-type="linenumber">115</context>
+          <context context-type="sourcefile">src/app/core/components/user-button/unlogged-button.component.ts</context>
+          <context context-type="linenumber">32</context>
         </context-group>
       </trans-unit>
       <trans-unit id="AUTH_CAPS_LOCK_ON" datatype="html">
         <source>Caps Lock is on</source>
         <target state="translated">Caps Lock đang bật</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/components/header/header.component.html</context>
-          <context context-type="linenumber">117</context>
+          <context context-type="sourcefile">src/app/core/components/user-button/unlogged-button.component.ts</context>
+          <context context-type="linenumber">34</context>
         </context-group>
       </trans-unit>
       <trans-unit id="AUTH_SIGN_UP_BUTTON" datatype="html">
         <source>Sign Up</source>
         <target state="translated">Đăng ký</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/components/header/header.component.html</context>
-          <context context-type="linenumber">123</context>
+          <context context-type="sourcefile">src/app/core/components/user-button/unlogged-button.component.ts</context>
+          <context context-type="linenumber">40</context>
         </context-group>
       </trans-unit>
       <trans-unit id="AUTH_ALREADY_HAVE_ACCOUNT_SIGN_IN_BUTTON" datatype="html">
         <source>Already have an account? Sign In</source>
         <target state="translated">Đã có tài khoản? Đăng nhập</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/components/header/header.component.html</context>
-          <context context-type="linenumber">132</context>
+          <context context-type="sourcefile">src/app/core/components/user-button/unlogged-button.component.ts</context>
+          <context context-type="linenumber">49</context>
         </context-group>
       </trans-unit>
       <trans-unit id="AUTH_NO_ACCOUNT_SIGN_UP_BUTTON" datatype="html">
         <source>No account? Sign Up</source>
         <target state="translated">Không có tài khoản? Đăng ký</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/components/header/header.component.html</context>
-          <context context-type="linenumber">134</context>
+          <context context-type="sourcefile">src/app/core/components/user-button/unlogged-button.component.ts</context>
+          <context context-type="linenumber">51</context>
         </context-group>
       </trans-unit>
       <trans-unit id="THEME_TOGGLE_TO_DARK" datatype="html">
         <source>Dark mode</source>
         <target state="translated">Chế độ tối</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/components/header/header.component.html</context>
-          <context context-type="linenumber">148</context>
+          <context context-type="sourcefile">src/app/core/components/header/header.component.ts</context>
+          <context context-type="linenumber">62</context>
         </context-group>
       </trans-unit>
       <trans-unit id="THEME_TOGGLE_TO_LIGHT" datatype="html">
         <source>Light mode</source>
         <target state="translated">Chế độ sáng</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/components/header/header.component.html</context>
-          <context context-type="linenumber">149</context>
+          <context context-type="sourcefile">src/app/core/components/header/header.component.ts</context>
+          <context context-type="linenumber">63</context>
         </context-group>
       </trans-unit>
       <trans-unit id="THEME_TOGGLE_TO_SYSTEM" datatype="html">
         <source>System preference</source>
         <target state="translated">Hệ thống tùy chọn</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/components/header/header.component.html</context>
-          <context context-type="linenumber">150</context>
+          <context context-type="sourcefile">src/app/core/components/header/header.component.ts</context>
+          <context context-type="linenumber">64</context>
         </context-group>
       </trans-unit>
       <trans-unit id="CHANGE_LANGUAGE" datatype="html">
@@ -193,10 +177,6 @@
           <context context-type="sourcefile">src/app/features/dashboard/dashboard.component.html</context>
           <context context-type="linenumber">8</context>
         </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/shared/components/ai-instructions-modal/ai-instructions-modal.component.ts</context>
-          <context context-type="linenumber">64</context>
-        </context-group>
       </trans-unit>
       <trans-unit id="GLOBAL_AI_INSTRUCTIONS_LABEL" datatype="html">
         <source>Global AI Instructions</source>
@@ -212,10 +192,6 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/dashboard/dashboard.component.html</context>
           <context context-type="linenumber">14</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/shared/components/ai-instructions-modal/ai-instructions-modal.component.html</context>
-          <context context-type="linenumber">43</context>
         </context-group>
       </trans-unit>
       <trans-unit id="SAVE_INSTRUCTIONS" datatype="html">
@@ -439,7 +415,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="INITIAL_SETUP_DESCRIPTION" datatype="html">
-        <source>Start by adding Angular's localization package to your project:</source>
+        <source>Start by adding Angular&apos;s localization package to your project:</source>
         <target state="translated">Bắt đầu bằng cách thêm gói định vị Angular vào dự án của bạn:</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
@@ -456,15 +432,15 @@
       </trans-unit>
       <trans-unit id="INITIAL_SETUP_CHANGE_1" datatype="html">
         <source>Add the @angular/localize package to your dependencies</source>
-        <target state="translated">Thêm gói &#64;angular/localize vào các phụ thuộc của bạn</target>
+        <target state="translated">Thêm gói @angular/localize vào các phụ thuộc của bạn</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">18</context>
         </context-group>
       </trans-unit>
       <trans-unit id="INITIAL_SETUP_CHANGE_2" datatype="html">
-        <source>Add "@angular/localize/init" to the polyfills array in angular.json</source>
-        <target state="translated">Thêm "@angular/localize/init" vào mảng polyfills trong angular.json</target>
+        <source>Add &quot;@angular/localize/init&quot; to the polyfills array in angular.json</source>
+        <target state="translated">Thêm &quot;@angular/localize/init&quot; vào mảng polyfills trong angular.json</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">19</context>
@@ -487,7 +463,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="INITIAL_SETUP_NOTE" datatype="html">
-        <source>Note: We'll modify the outputPath later in the configuration to match our workflow.</source>
+        <source>Note: We&apos;ll modify the outputPath later in the configuration to match our workflow.</source>
         <target state="translated">Lưu ý: Chúng tôi sẽ điều chỉnh outputPath sau trong cấu hình để phù hợp với quy trình làm việc của chúng tôi.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
@@ -706,96 +682,192 @@
         <source>Connected</source>
         <target state="translated">Kết nối</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/features/git-providers/components/provider-card/provider-card.component.html</context>
-          <context context-type="linenumber">15</context>
+          <context context-type="sourcefile">src/app/features/git-providers/bitbucket-card.component.ts</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/git-providers/github-card.component.ts</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/git-providers/gitlab-card.component.ts</context>
+          <context context-type="linenumber">19</context>
         </context-group>
       </trans-unit>
       <trans-unit id="PROVIDER_NOT_CONNECTED" datatype="html">
         <source>Not Connected</source>
         <target state="translated">Không kết nối</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/features/git-providers/components/provider-card/provider-card.component.html</context>
-          <context context-type="linenumber">17</context>
+          <context context-type="sourcefile">src/app/features/git-providers/bitbucket-card.component.ts</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/git-providers/github-card.component.ts</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/git-providers/gitlab-card.component.ts</context>
+          <context context-type="linenumber">21</context>
         </context-group>
       </trans-unit>
       <trans-unit id="TOKEN_SCOPES_INTRO" datatype="html">
         <source>To connect, generate a Personal Access Token with the following scopes:</source>
         <target state="translated">Để kết nối, hãy tạo một Mã truy cập cá nhân với các phạm vi sau:</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/features/git-providers/components/provider-card/provider-card.component.html</context>
-          <context context-type="linenumber">24</context>
+          <context context-type="sourcefile">src/app/features/git-providers/bitbucket-card.component.ts</context>
+          <context context-type="linenumber">28</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/git-providers/github-card.component.ts</context>
+          <context context-type="linenumber">28</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/git-providers/gitlab-card.component.ts</context>
+          <context context-type="linenumber">28</context>
         </context-group>
       </trans-unit>
       <trans-unit id="GET_TOKEN_HERE" datatype="html">
         <source>Get your token here:</source>
         <target state="translated">Nhận mã của bạn tại đây:</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/features/git-providers/components/provider-card/provider-card.component.html</context>
-          <context context-type="linenumber">31</context>
+          <context context-type="sourcefile">src/app/features/git-providers/bitbucket-card.component.ts</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/git-providers/github-card.component.ts</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/git-providers/gitlab-card.component.ts</context>
+          <context context-type="linenumber">35</context>
         </context-group>
       </trans-unit>
       <trans-unit id="USERNAME_PLACEHOLDER" datatype="html">
         <source>Enter your Bitbucket username</source>
         <target state="translated">Nhập tên người dùng Bitbucket của bạn</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/features/git-providers/components/provider-card/provider-card.component.html</context>
-          <context context-type="linenumber">42</context>
+          <context context-type="sourcefile">src/app/features/git-providers/bitbucket-card.component.ts</context>
+          <context context-type="linenumber">46</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/git-providers/github-card.component.ts</context>
+          <context context-type="linenumber">46</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/git-providers/gitlab-card.component.ts</context>
+          <context context-type="linenumber">46</context>
         </context-group>
       </trans-unit>
       <trans-unit id="APP_PASSWORD_PLACEHOLDER" datatype="html">
         <source>Enter your app password</source>
         <target state="translated">Nhập mật khẩu ứng dụng của bạn</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/features/git-providers/components/provider-card/provider-card.component.html</context>
-          <context context-type="linenumber">47</context>
+          <context context-type="sourcefile">src/app/features/git-providers/bitbucket-card.component.ts</context>
+          <context context-type="linenumber">51</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/git-providers/github-card.component.ts</context>
+          <context context-type="linenumber">51</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/git-providers/gitlab-card.component.ts</context>
+          <context context-type="linenumber">51</context>
         </context-group>
       </trans-unit>
       <trans-unit id="TOKEN_INPUT_PLACEHOLDER" datatype="html">
         <source>Enter your access token</source>
         <target state="translated">Nhập mã truy cập của bạn</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/features/git-providers/components/provider-card/provider-card.component.html</context>
-          <context context-type="linenumber">54</context>
+          <context context-type="sourcefile">src/app/features/git-providers/bitbucket-card.component.ts</context>
+          <context context-type="linenumber">58</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/git-providers/github-card.component.ts</context>
+          <context context-type="linenumber">58</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/git-providers/gitlab-card.component.ts</context>
+          <context context-type="linenumber">58</context>
         </context-group>
       </trans-unit>
       <trans-unit id="CONNECTING" datatype="html">
         <source>Connecting...</source>
         <target state="translated">Kết nối...</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/features/git-providers/components/provider-card/provider-card.component.html</context>
-          <context context-type="linenumber">74</context>
+          <context context-type="sourcefile">src/app/features/git-providers/bitbucket-card.component.ts</context>
+          <context context-type="linenumber">78</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/git-providers/github-card.component.ts</context>
+          <context context-type="linenumber">78</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/git-providers/gitlab-card.component.ts</context>
+          <context context-type="linenumber">78</context>
         </context-group>
       </trans-unit>
       <trans-unit id="CONNECT_BUTTON" datatype="html">
         <source>Connect</source>
         <target state="translated">Kết nối</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/features/git-providers/components/provider-card/provider-card.component.html</context>
-          <context context-type="linenumber">77</context>
+          <context context-type="sourcefile">src/app/features/git-providers/bitbucket-card.component.ts</context>
+          <context context-type="linenumber">81</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/git-providers/github-card.component.ts</context>
+          <context context-type="linenumber">81</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/git-providers/gitlab-card.component.ts</context>
+          <context context-type="linenumber">81</context>
         </context-group>
       </trans-unit>
       <trans-unit id="UPDATE_TOKEN_BUTTON" datatype="html">
         <source>Update Token</source>
         <target state="translated">Cập nhật Token</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/features/git-providers/components/provider-card/provider-card.component.html</context>
-          <context context-type="linenumber">83</context>
+          <context context-type="sourcefile">src/app/features/git-providers/bitbucket-card.component.ts</context>
+          <context context-type="linenumber">87</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/git-providers/github-card.component.ts</context>
+          <context context-type="linenumber">87</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/git-providers/gitlab-card.component.ts</context>
+          <context context-type="linenumber">87</context>
         </context-group>
       </trans-unit>
       <trans-unit id="DISCONNECTING" datatype="html">
         <source>Disconnecting...</source>
         <target state="translated">Ngắt kết nối...</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/features/git-providers/components/provider-card/provider-card.component.html</context>
-          <context context-type="linenumber">91</context>
+          <context context-type="sourcefile">src/app/features/git-providers/bitbucket-card.component.ts</context>
+          <context context-type="linenumber">95</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/git-providers/github-card.component.ts</context>
+          <context context-type="linenumber">95</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/git-providers/gitlab-card.component.ts</context>
+          <context context-type="linenumber">95</context>
         </context-group>
       </trans-unit>
       <trans-unit id="DISCONNECT_BUTTON" datatype="html">
         <source>Disconnect</source>
         <target state="translated">Deconnexion</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/features/git-providers/components/provider-card/provider-card.component.html</context>
-          <context context-type="linenumber">94</context>
+          <context context-type="sourcefile">src/app/features/git-providers/bitbucket-card.component.ts</context>
+          <context context-type="linenumber">98</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/git-providers/github-card.component.ts</context>
+          <context context-type="linenumber">98</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/git-providers/gitlab-card.component.ts</context>
+          <context context-type="linenumber">98</context>
         </context-group>
       </trans-unit>
       <trans-unit id="GIT_PROVIDERS_TITLE" datatype="html">
@@ -803,7 +875,7 @@
         <target state="translated">Các nhà cung cấp Git</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/git-providers/git-providers.component.ts</context>
-          <context context-type="linenumber">17</context>
+          <context context-type="linenumber">20</context>
         </context-group>
       </trans-unit>
       <trans-unit id="HOME_TITLE" datatype="html">
@@ -871,7 +943,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="CONTEXT_AWARE_AI_DESCRIPTION" datatype="html">
-        <source>Intelligent translations based on your application's context and business domain</source>
+        <source>Intelligent translations based on your application&apos;s context and business domain</source>
         <target state="translated">Dịch thuật thông minh dựa trên ngữ cảnh của ứng dụng và lĩnh vực kinh doanh của bạn</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
@@ -911,7 +983,7 @@
         <target state="translated">Căn bản</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
-          <context context-type="linenumber">46</context>
+          <context context-type="linenumber">69</context>
         </context-group>
       </trans-unit>
       <trans-unit id="STARTER_PLAN_TITLE" datatype="html">
@@ -919,7 +991,7 @@
         <target state="translated">Người khởi đầu</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
-          <context context-type="linenumber">47</context>
+          <context context-type="linenumber">70</context>
         </context-group>
       </trans-unit>
       <trans-unit id="STARTER_PLAN_DESCRIPTION" datatype="html">
@@ -927,23 +999,31 @@
         <target state="translated">Để một ứng dụng phức tạp</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
-          <context context-type="linenumber">48</context>
+          <context context-type="linenumber">71</context>
         </context-group>
       </trans-unit>
       <trans-unit id="STARTER_PLAN_TRANSLATION_UNIT_PRICE" datatype="html">
-        <source>0,01 € per translation unit</source>
-        <target state="translated">0,01 € cho mỗi đơn vị dịch thuật</target>
+        <source>$0 per translation unit</source>
+        <target state="new">0,01 € cho mỗi đơn vị dịch thuật</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
           <context context-type="linenumber">54</context>
         </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/home/home.component.html</context>
+          <context context-type="linenumber">77</context>
+        </context-group>
       </trans-unit>
       <trans-unit id="STARTER_PLAN_TRANSLATION_UNITS" datatype="html">
-        <source>1,000 translation units</source>
-        <target state="translated">1.000 đơn vị dịch</target>
+        <source>100 translation units</source>
+        <target state="new">1.000 đơn vị dịch</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
           <context context-type="linenumber">58</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/home/home.component.html</context>
+          <context context-type="linenumber">85</context>
         </context-group>
       </trans-unit>
       <trans-unit id="STARTER_PLAN_UNLIMITED_GIT_REPOSITORIES" datatype="html">
@@ -959,7 +1039,7 @@
         <target state="translated">Hỗ trợ cơ bản</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
-          <context context-type="linenumber">66</context>
+          <context context-type="linenumber">89</context>
         </context-group>
       </trans-unit>
       <trans-unit id="BUY_NOW" datatype="html">
@@ -967,15 +1047,15 @@
         <target state="translated">Mua ngay</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
-          <context context-type="linenumber">69</context>
+          <context context-type="linenumber">92</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
-          <context context-type="linenumber">101</context>
+          <context context-type="linenumber">124</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
-          <context context-type="linenumber">133</context>
+          <context context-type="linenumber">156</context>
         </context-group>
       </trans-unit>
       <trans-unit id="MOST_POPULAR_PLAN_TITLE" datatype="html">
@@ -983,7 +1063,7 @@
         <target state="translated">Phổ biến nhất</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
-          <context context-type="linenumber">74</context>
+          <context context-type="linenumber">97</context>
         </context-group>
       </trans-unit>
       <trans-unit id="PROFESSIONAL_PLAN_TITLE" datatype="html">
@@ -991,7 +1071,7 @@
         <target state="translated">Chuyên nghiệp</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
-          <context context-type="linenumber">75</context>
+          <context context-type="linenumber">98</context>
         </context-group>
       </trans-unit>
       <trans-unit id="PROFESSIONAL_PLAN_DESCRIPTION" datatype="html">
@@ -999,7 +1079,7 @@
         <target state="translated">Đối với các ứng dụng phức tạp</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
-          <context context-type="linenumber">76</context>
+          <context context-type="linenumber">99</context>
         </context-group>
       </trans-unit>
       <trans-unit id="PROFESSIONAL_PLAN_TRANSLATION_UNIT_PRICE" datatype="html">
@@ -1007,7 +1087,7 @@
         <target state="translated">0,0055 € mỗi đơn vị dịch</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
-          <context context-type="linenumber">82</context>
+          <context context-type="linenumber">105</context>
         </context-group>
       </trans-unit>
       <trans-unit id="PROFESSIONAL_PLAN_PREVIOUS_PLAN" datatype="html">
@@ -1015,7 +1095,11 @@
         <target state="translated">Kế hoạch trước đó +</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
-          <context context-type="linenumber">86</context>
+          <context context-type="linenumber">81</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/home/home.component.html</context>
+          <context context-type="linenumber">109</context>
         </context-group>
       </trans-unit>
       <trans-unit id="PROFESSIONAL_PLAN_TRANSLATION_UNITS" datatype="html">
@@ -1023,7 +1107,7 @@
         <target state="translated">8.000 đơn vị dịch thuật</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
-          <context context-type="linenumber">90</context>
+          <context context-type="linenumber">113</context>
         </context-group>
       </trans-unit>
       <trans-unit id="PROFESSIONAL_PLAN_CUSTOM_AI_INSTRUCTIONS" datatype="html">
@@ -1031,7 +1115,7 @@
         <target state="translated">Hướng dẫn AI tùy chỉnh</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
-          <context context-type="linenumber">94</context>
+          <context context-type="linenumber">117</context>
         </context-group>
       </trans-unit>
       <trans-unit id="PROFESSIONAL_PLAN_PRIORITY_SUPPORT" datatype="html">
@@ -1039,7 +1123,7 @@
         <target state="translated">Hỗ trợ ưu tiên</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
-          <context context-type="linenumber">98</context>
+          <context context-type="linenumber">121</context>
         </context-group>
       </trans-unit>
       <trans-unit id="ENTERPRISE_PLAN_TITLE" datatype="html">
@@ -1047,11 +1131,11 @@
         <target state="translated">Doanh nghiệp</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
-          <context context-type="linenumber">106</context>
+          <context context-type="linenumber">129</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
-          <context context-type="linenumber">107</context>
+          <context context-type="linenumber">130</context>
         </context-group>
       </trans-unit>
       <trans-unit id="ENTERPRISE_PLAN_DESCRIPTION" datatype="html">
@@ -1059,7 +1143,7 @@
         <target state="translated">Đối với các ứng dụng phức tạp với các ngữ cảnh khác nhau</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
-          <context context-type="linenumber">108</context>
+          <context context-type="linenumber">131</context>
         </context-group>
       </trans-unit>
       <trans-unit id="ENTERPRISE_PLAN_TRANSLATION_UNIT_PRICE" datatype="html">
@@ -1067,7 +1151,7 @@
         <target state="translated">0,0035 € mỗi đơn vị dịch</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
-          <context context-type="linenumber">114</context>
+          <context context-type="linenumber">137</context>
         </context-group>
       </trans-unit>
       <trans-unit id="ENTERPRISE_PLAN_PREVIOUS_PLAN" datatype="html">
@@ -1075,7 +1159,7 @@
         <target state="translated">Kế hoạch trước đó +</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
-          <context context-type="linenumber">118</context>
+          <context context-type="linenumber">141</context>
         </context-group>
       </trans-unit>
       <trans-unit id="ENTERPRISE_PLAN_TRANSLATION_UNITS" datatype="html">
@@ -1083,7 +1167,7 @@
         <target state="translated">20 000 đơn vị dịch</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
-          <context context-type="linenumber">122</context>
+          <context context-type="linenumber">145</context>
         </context-group>
       </trans-unit>
       <trans-unit id="ENTERPRISE_PLAN_CHOOSE_YOUR_AI_MODEL" datatype="html">
@@ -1091,7 +1175,7 @@
         <target state="translated">Chọn mô hình AI của bạn</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
-          <context context-type="linenumber">126</context>
+          <context context-type="linenumber">149</context>
         </context-group>
       </trans-unit>
       <trans-unit id="ENTERPRISE_PLAN_CUSTOM_AI_INSTRUCTIONS" datatype="html">
@@ -1099,7 +1183,7 @@
         <target state="translated">Hướng dẫn AI tùy chỉnh từ các kho lưu trữ</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
-          <context context-type="linenumber">130</context>
+          <context context-type="linenumber">153</context>
         </context-group>
       </trans-unit>
       <trans-unit id="CUSTOM_PLAN_TITLE" datatype="html">
@@ -1107,15 +1191,15 @@
         <target state="translated">Tùy chỉnh</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
-          <context context-type="linenumber">138</context>
+          <context context-type="linenumber">161</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
-          <context context-type="linenumber">139</context>
+          <context context-type="linenumber">162</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
-          <context context-type="linenumber">140</context>
+          <context context-type="linenumber">163</context>
         </context-group>
       </trans-unit>
       <trans-unit id="CUSTOM_PLAN_ON_PREMISE_DEPLOYMENT" datatype="html">
@@ -1123,7 +1207,7 @@
         <target state="translated">Triển khai tại chỗ</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
-          <context context-type="linenumber">144</context>
+          <context context-type="linenumber">167</context>
         </context-group>
       </trans-unit>
       <trans-unit id="CUSTOM_PLAN_USE_YOUR_OWN_AI" datatype="html">
@@ -1131,7 +1215,7 @@
         <target state="translated">Sử dụng AI của riêng bạn</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
-          <context context-type="linenumber">148</context>
+          <context context-type="linenumber">171</context>
         </context-group>
       </trans-unit>
       <trans-unit id="CUSTOM_PLAN_UNLIMITED_TRANSLATION_UNITS" datatype="html">
@@ -1139,7 +1223,7 @@
         <target state="translated">Các đơn vị dịch không giới hạn</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
-          <context context-type="linenumber">152</context>
+          <context context-type="linenumber">175</context>
         </context-group>
       </trans-unit>
       <trans-unit id="CUSTOM_PLAN_UNLOCK_ALL_FEATURES" datatype="html">
@@ -1147,7 +1231,7 @@
         <target state="translated">Mở khóa tất cả các tính năng</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
-          <context context-type="linenumber">156</context>
+          <context context-type="linenumber">179</context>
         </context-group>
       </trans-unit>
       <trans-unit id="CUSTOM_PLAN_PRIORITY_SUPPORT" datatype="html">
@@ -1155,7 +1239,7 @@
         <target state="translated">Hỗ trợ ưu tiên</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
-          <context context-type="linenumber">160</context>
+          <context context-type="linenumber">183</context>
         </context-group>
       </trans-unit>
       <trans-unit id="CONTACT_US" datatype="html">
@@ -1163,7 +1247,7 @@
         <target state="translated">Liên hệ với chúng tôi</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
-          <context context-type="linenumber">163</context>
+          <context context-type="linenumber">186</context>
         </context-group>
       </trans-unit>
       <trans-unit id="TESTIMONIALS_TITLE" datatype="html">
@@ -1171,7 +1255,7 @@
         <target state="translated">Những gì Khách Hàng Nói</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
-          <context context-type="linenumber">175</context>
+          <context context-type="linenumber">198</context>
         </context-group>
       </trans-unit>
       <trans-unit id="TESTIMONIAL_1" datatype="html">
@@ -1179,7 +1263,7 @@
         <target state="translated">XLIFF Translator đã cách mạng hóa quy trình địa phương hóa của chúng tôi. Các bản dịch chú ý đến ngữ cảnh là cực kỳ chính xác.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
-          <context context-type="linenumber">178</context>
+          <context context-type="linenumber">201</context>
         </context-group>
       </trans-unit>
       <trans-unit id="TESTIMONIAL_1_AUTHOR" datatype="html">
@@ -1187,7 +1271,7 @@
         <target state="translated">John Doe - Trưởng bộ phận công nghệ tại GlobalTech</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
-          <context context-type="linenumber">179</context>
+          <context context-type="linenumber">202</context>
         </context-group>
       </trans-unit>
       <trans-unit id="TESTIMONIAL_2" datatype="html">
@@ -1195,7 +1279,7 @@
         <target state="translated">Tích hợp Git tự động đã giúp chúng tôi tiết kiệm vô số giờ làm việc thủ công. Cực kỳ đáng được khuyên dùng!</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
-          <context context-type="linenumber">182</context>
+          <context context-type="linenumber">205</context>
         </context-group>
       </trans-unit>
       <trans-unit id="TESTIMONIAL_2_AUTHOR" datatype="html">
@@ -1203,7 +1287,7 @@
         <target state="translated">Jane Smith - CTO tại WebScale</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
-          <context context-type="linenumber">183</context>
+          <context context-type="linenumber">206</context>
         </context-group>
       </trans-unit>
       <trans-unit id="HOW_IT_WORKS_TITLE" datatype="html">
@@ -1215,7 +1299,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="AUTOMATED_WORKFLOW_ABSTRACT" datatype="html">
-        <source>Simply connect your Git repository, start the translation, and we'll handle the rest. Our AI-powered platform takes care of everything automatically.</source>
+        <source>Simply connect your Git repository, start the translation, and we&apos;ll handle the rest. Our AI-powered platform takes care of everything automatically.</source>
         <target state="translated">Đơn giản chỉ cần kết nối kho mã Git của bạn, bắt đầu dịch và chúng tôi sẽ lo liệu phần còn lại. Nền tảng của chúng tôi được hỗ trợ bởi AI sẽ tự động xử lý mọi thứ.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/how-it-works/how-it-works.component.html</context>
@@ -1279,7 +1363,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="TRANSUNIT_SOURCE_DESCRIPTION" datatype="html">
-        <source>The original text in your application's source language</source>
+        <source>The original text in your application&apos;s source language</source>
         <target state="translated">Văn bản gốc trong ngôn ngữ nguồn của ứng dụng của bạn</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/how-it-works/how-it-works.component.html</context>
@@ -1343,7 +1427,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="SUPPORTED_FORMATS_DESCRIPTION" datatype="html">
-        <source>Our platform supports the following XLIFF formats for maximum compatibility with Angular's internationalization system:</source>
+        <source>Our platform supports the following XLIFF formats for maximum compatibility with Angular&apos;s internationalization system:</source>
         <target state="translated">Nền tảng của chúng tôi hỗ trợ các định dạng XLIFF sau đây để tối đa hóa khả năng tương thích với hệ thống quốc tế hóa của Angular:</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/how-it-works/how-it-works.component.html</context>
@@ -1359,7 +1443,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="CONTEXT_AWARE_DESCRIPTION" datatype="html">
-        <source>Our AI-powered translation engine understands your application's context, ensuring accurate and meaningful translations that maintain the original intent of your content.</source>
+        <source>Our AI-powered translation engine understands your application&apos;s context, ensuring accurate and meaningful translations that maintain the original intent of your content.</source>
         <target state="translated">Công nghệ dịch thuật được trang bị trí tuệ nhân tạo của chúng tôi hiểu ngữ cảnh của ứng dụng của bạn, đảm bảo các bản dịch chính xác và có ý nghĩa, mà vẫn giữ nguyên ý định gốc của nội dung bạn.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/how-it-works/how-it-works.component.html</context>
@@ -1655,8 +1739,16 @@
         </context-group>
       </trans-unit>
       <trans-unit id="REPOSITORIES_TITLE" datatype="html">
-        <source><x id="INTERPOLATION" equiv-text="{{ provider().provider | titlecase }}"/> Repositories</source>
-        <target state="translated"><x id="INTERPOLATION" equiv-text="{{ provider().provider | titlecase }}"/> Kho lưu trữ</target>
+        <source>Repositories</source>
+        <target state="new"><x id="INTERPOLATION" equiv-text="{{ provider().provider | titlecase }}"/> Kho lưu trữ</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/repositories/repositories.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/repositories/repositories.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/repositories/repositories.component.html</context>
           <context context-type="linenumber">4</context>
@@ -1669,10 +1761,26 @@
           <context context-type="sourcefile">src/app/features/repositories/repositories.component.html</context>
           <context context-type="linenumber">7</context>
         </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/repositories/repositories.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/repositories/repositories.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
       </trans-unit>
       <trans-unit id="TOTAL_REPOSITORIES" datatype="html">
         <source>Total repositories: <x id="INTERPOLATION" equiv-text="{{ allRepositories().length }}"/></source>
         <target state="translated">Tổng số kho: <x id="INTERPOLATION" equiv-text="{{ allRepositories().length }}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/repositories/repositories.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/repositories/repositories.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/repositories/repositories.component.html</context>
           <context context-type="linenumber">9</context>
@@ -1685,10 +1793,26 @@
           <context context-type="sourcefile">src/app/features/repositories/repositories.component.html</context>
           <context context-type="linenumber">14</context>
         </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/repositories/repositories.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/repositories/repositories.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
       </trans-unit>
       <trans-unit id="NO_REPOSITORIES_MATCH_SEARCH" datatype="html">
         <source>No repositories match your search</source>
         <target state="translated">Không có kho lưu trữ nào phù hợp với tìm kiếm của bạn</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/repositories/repositories.component.html</context>
+          <context context-type="linenumber">38</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/repositories/repositories.component.html</context>
+          <context context-type="linenumber">38</context>
+        </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/repositories/repositories.component.html</context>
           <context context-type="linenumber">38</context>
@@ -1701,13 +1825,21 @@
           <context context-type="sourcefile">src/app/features/repositories/repositories.component.html</context>
           <context context-type="linenumber">40</context>
         </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/repositories/repositories.component.html</context>
+          <context context-type="linenumber">40</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/repositories/repositories.component.html</context>
+          <context context-type="linenumber">40</context>
+        </context-group>
       </trans-unit>
       <trans-unit id="NO_REPOSITORIES_FOUND_PLEASE_CHECK" datatype="html">
         <source>No repositories found. Please check your token permissions.</source>
         <target state="translated">Không tìm thấy kho lưu trữ nào. Vui lòng kiểm tra quyền truy cập của bạn trên token.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/repositories/repositories.component.ts</context>
-          <context context-type="linenumber">89</context>
+          <context context-type="linenumber">73</context>
         </context-group>
       </trans-unit>
       <trans-unit id="FAILED_TO_LOAD_REPOSITORIES" datatype="html">
@@ -1715,32 +1847,12 @@
         <target state="translated">Không tải được kho lưu trữ. Vui lòng kiểm tra quyền truy cập của bạn và thử lại.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/repositories/repositories.component.ts</context>
-          <context context-type="linenumber">93</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="AI_INSTRUCTIONS_LABEL" datatype="html">
-        <source>Instructions</source>
-        <target state="translated">Hướng dẫn</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/shared/components/ai-instructions-modal/ai-instructions-modal.component.html</context>
-          <context context-type="linenumber">42</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="AI_INSTRUCTIONS_REQUIRED" datatype="html">
-        <source>Instructions are required</source>
-        <target state="translated">Hướng dẫn là bắt buộc</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/shared/components/ai-instructions-modal/ai-instructions-modal.component.html</context>
-          <context context-type="linenumber">45</context>
+          <context context-type="linenumber">77</context>
         </context-group>
       </trans-unit>
       <trans-unit id="CANCEL" datatype="html">
         <source>Cancel</source>
         <target state="translated">Hủy bỏ</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/shared/components/ai-instructions-modal/ai-instructions-modal.component.html</context>
-          <context context-type="linenumber">51</context>
-        </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/components/cancel-confirm.component.ts</context>
           <context context-type="linenumber">18</context>
@@ -1750,44 +1862,140 @@
           <context context-type="linenumber">78</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="APPLY" datatype="html">
-        <source>Apply</source>
-        <target state="translated">Áp dụng</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/shared/components/ai-instructions-modal/ai-instructions-modal.component.html</context>
-          <context context-type="linenumber">52</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="GLOBAL_AI_INSTRUCTIONS_TITLE" datatype="html">
-        <source>Global AI Instructions</source>
-        <target state="translated">Hướng dẫn AI toàn cầu</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/shared/components/ai-instructions-modal/ai-instructions-modal.component.ts</context>
-          <context context-type="linenumber">58</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="PROVIDER_AI_INSTRUCTIONS_TITLE" datatype="html">
-        <source>AI Instructions for <x id="PH" equiv-text="provider"/></source>
-        <target state="translated">Hướng dẫn AI cho <x id="PH" equiv-text="provider"/></target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/shared/components/ai-instructions-modal/ai-instructions-modal.component.ts</context>
-          <context context-type="linenumber">60</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="REPOSITORY_AI_INSTRUCTIONS_TITLE" datatype="html">
-        <source>AI Instructions for <x id="PH" equiv-text="repository?.name"/></source>
-        <target state="translated">Hướng dẫn AI cho <x id="PH" equiv-text="repository?.name"/></target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/shared/components/ai-instructions-modal/ai-instructions-modal.component.ts</context>
-          <context context-type="linenumber">62</context>
-        </context-group>
-      </trans-unit>
       <trans-unit id="CONFIRM" datatype="html">
         <source>Confirm</source>
         <target state="translated">Xác nhận</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/components/cancel-confirm.component.ts</context>
           <context context-type="linenumber">80</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="YOUR_PROFILE" datatype="html">
+        <source>Your profile</source>
+        <target state="new">Your profile</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/components/user-button/logged-button.component.ts</context>
+          <context context-type="linenumber">54</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="STRIPE_TEST" datatype="html">
+        <source>Stripe Test</source>
+        <target state="new">Stripe Test</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/components/user-button/logged-button.component.ts</context>
+          <context context-type="linenumber">58</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="PROFILE_MENU_LOGOUT" datatype="html">
+        <source>Logout</source>
+        <target state="new">Logout</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/components/user-button/logged-button.component.ts</context>
+          <context context-type="linenumber">62</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="FREE_PLAN_TITLE" datatype="html">
+        <source>Free</source>
+        <target state="new">Free</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/home/home.component.html</context>
+          <context context-type="linenumber">46</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/home/home.component.html</context>
+          <context context-type="linenumber">47</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="FREE_PLAN_DESCRIPTION" datatype="html">
+        <source>For trying the software</source>
+        <target state="new">For trying the software</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/home/home.component.html</context>
+          <context context-type="linenumber">48</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="REGISTER_NOW" datatype="html">
+        <source>Register</source>
+        <target state="new">Register</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/home/home.component.html</context>
+          <context context-type="linenumber">65</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="NOT_FOUND_PAGE_NOT_FOUND" datatype="html">
+        <source>Page Not Found</source>
+        <target state="new">Page Not Found</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/not-found/not-found.component.ts</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/not-found/not-found.component.ts</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="NOT_FOUND_BACK_HOME" datatype="html">
+        <source> Back to Home </source>
+        <target state="new"> Back to Home </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/not-found/not-found.component.ts</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="PROFILE_MEMBER_SINCE" datatype="html">
+        <source>Member since <x id="INTERPOLATION" equiv-text="{{ (user$ | async)?.created_at | date }}"/></source>
+        <target state="new">Member since <x id="INTERPOLATION" equiv-text="{{ (user$ | async)?.created_at | date }}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/profile/profile.component.ts</context>
+          <context context-type="linenumber">37</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="PROFILE_ACCOUNT_INFO" datatype="html">
+        <source>Account Information</source>
+        <target state="new">Account Information</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/profile/profile.component.ts</context>
+          <context context-type="linenumber">43</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="PROFILE_EMAIL_LABEL" datatype="html">
+        <source>Email</source>
+        <target state="new">Email</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/profile/profile.component.ts</context>
+          <context context-type="linenumber">46</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="PROFILE_ROLE_LABEL" datatype="html">
+        <source>Role</source>
+        <target state="new">Role</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/profile/profile.component.ts</context>
+          <context context-type="linenumber">50</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="PROFILE_ACTIONS" datatype="html">
+        <source>Actions</source>
+        <target state="new">Actions</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/profile/profile.component.ts</context>
+          <context context-type="linenumber">57</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="PROFILE_UPDATE_BUTTON" datatype="html">
+        <source>Update Profile</source>
+        <target state="new">Update Profile</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/profile/profile.component.ts</context>
+          <context context-type="linenumber">60</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="PROFILE_CHANGE_PASSWORD_BUTTON" datatype="html">
+        <source>Change Password</source>
+        <target state="new">Change Password</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/profile/profile.component.ts</context>
+          <context context-type="linenumber">61</context>
         </context-group>
       </trans-unit>
     </body>
