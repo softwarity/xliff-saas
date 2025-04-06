@@ -51,13 +51,18 @@ Deno.serve(async (req) => {
         }
 
         console.log('Deleting user avatar from storage...');
-        const filename: string | null = user.user_metadata.avatar_url;
-        if (filename) {
-            const { error: deleteError } = await supabaseClient.storage.from('avatars').remove([`avatars/${filename}`]);
-            // List all files in the avatars bucket that start with the user's ID
-            if (deleteError) {
-                console.error('Error deleting files:', deleteError);
-                throw deleteError;
+        const avatar_url: string | null = user.user_metadata.avatar_url;
+        const regex = new RegExp(`${user.id}/[^/]*`);
+        if (avatar_url && regex.test(avatar_url)) {
+            const [filename] = regex.exec(avatar_url) || [];
+            console.log('Deleting avatar from storage...', filename);
+            if (filename) {
+                const { error: deleteError } = await supabaseClient.storage.from('avatars').remove([filename]);
+                // List all files in the avatars bucket that start with the user's ID
+                if (deleteError) {
+                    console.error('Error deleting files:', deleteError);
+                    throw deleteError;
+                }
             }
         }
         
