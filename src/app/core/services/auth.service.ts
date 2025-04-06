@@ -2,7 +2,6 @@ import { Injectable, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from '@supabase/supabase-js';
 import { BehaviorSubject, Observable, catchError, from, map, of, switchMap, throwError } from 'rxjs';
-import { environment } from '../../../environments/environment';
 import { ProviderType } from '../../shared/models/provider-type';
 import { SupabaseResponse, UserMetadata } from '../../shared/models/user-metadata.model';
 import { SupabaseClientService } from './supabase-client.service';
@@ -155,5 +154,14 @@ export class AuthService {
         return of(false);
       })
     );
+  }
+
+  signInWithGoogle() {
+    return from(this.supabase.auth.signInWithOAuth({
+      provider: 'google',
+      options: {
+        redirectTo: `${window.location.origin}/auth/callback`
+      }
+    }));
   }
 }
