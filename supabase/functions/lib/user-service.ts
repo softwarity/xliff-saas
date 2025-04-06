@@ -41,7 +41,7 @@ export class UserService {
   }
 
   async getGitToken(userId: string, provider: 'bitbucket' | 'github' | 'gitlab'): Promise<string> {
-    const {data, error} = await this.supabaseClient.from('user_metadata').select('*').eq('user_id', userId);
+    const {data, error} = await this.supabaseClient.from('user_metadata').select('*').eq('userId', userId);
     if (error) {
         throw new Error(error.message);
     }

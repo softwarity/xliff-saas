@@ -42,6 +42,68 @@ body {
   @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
 }
 
+/* Modal styles */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 50;
+  backdrop-filter: blur(4px);
+}
+
+.modal {
+  @apply bg-light-surface dark:bg-dark-800;
+  @apply border border-light-border dark:border-dark-600;
+  @apply rounded-lg shadow-lg;
+  padding: 1.5rem;
+  width: 100%;
+  max-width: 32rem;
+  transform: scale(0.95);
+  opacity: 0;
+  animation: modal-enter 0.2s ease-out forwards;
+}
+
+.modal-header {
+  margin-bottom: 1.5rem;
+}
+
+.modal-title {
+  @apply text-light-text-primary dark:text-dark-primary;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.modal-description {
+  @apply text-light-text-secondary dark:text-dark-secondary;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.modal-container {
+  @apply mb-6;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+}
+
+@keyframes modal-enter {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
 /* Light mode styles */
 .bg-white {
   @apply bg-light-surface;

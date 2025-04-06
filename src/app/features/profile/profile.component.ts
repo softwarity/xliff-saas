@@ -1,20 +1,23 @@
 import { AsyncPipe, DatePipe } from '@angular/common';
 import { Component, ElementRef, ViewChild, effect, inject, signal } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
-import { firstValueFrom } from 'rxjs';
+import { firstValueFrom, from } from 'rxjs';
 import { AuthService } from '../../core/services/auth.service';
 import { AvatarService } from '../../core/services/avatar.service';
+import { PromptModalComponent } from '../../shared/components/prompt-modal.component';
+import { take, filter, concatMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-profile',
   standalone: true,
-  imports: [AsyncPipe, DatePipe],
+  imports: [AsyncPipe, DatePipe, PromptModalComponent],
   template: `
     <div class="container mx-auto px-4 py-8">
       <div class="max-w-2xl mx-auto bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
         <div class="flex items-center space-x-4 mb-6">
           <div 
-            #avatarContainer class="w-20 h-20 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center cursor-pointer relative overflow-hidden" (click)="triggerFileInput()">
+            #avatarContainer class="w-20 h-20 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center cursor-pointer relative overflow-hidden" 
+            (click)="fileInput.click()">
             @if (!showDefaultAvatar() && avatarUrl()) {
               <img [src]="avatarUrl()" class="w-full h-full object-cover"  alt="Profile avatar" (error)="showDefaultAvatar.set(true)">
             } @else {
@@ -62,10 +65,28 @@ import { AvatarService } from '../../core/services/avatar.service';
               </div>
             </div>
           </div>
+
+          <div class="border-t border-gray-200 dark:border-gray-700 pt-6">
+            <h2 class="text-lg font-semibold text-gray-900 dark:text-white mb-4" i18n="@@PROFILE_DANGER_ZONE">Danger Zone</h2>
+            <div class="space-y-4">
+              <div class="flex justify-end">
+                <button (click)="showDeleteModal = true"  class="flat-warning" i18n="@@PROFILE_DELETE_ACCOUNT_BUTTON">Delete Account</button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  `
+
+    @if (showDeleteModal) {
+      <app-prompt-modal 
+        title="Delete Account" i18n-title="@@PROFILE_DELETE_ACCOUNT_TITLE"
+        description="Please enter your email to confirm account deletion. This action cannot be undone." i18n-description="@@PROFILE_DELETE_ACCOUNT_DESCRIPTION"
+        placeholder="Enter your email" i18n-placeholder="@@PROFILE_DELETE_ACCOUNT_PLACEHOLDER"
+        (closed)="onDeleteModalClosed($event)"
+      />
+    }
+  `,
 })
 export class ProfileComponent {
   private auth = inject(AuthService);
@@ -73,9 +94,8 @@ export class ProfileComponent {
   protected user$ = this.auth.user$;
   protected avatarUrl = toSignal(this.avatarService.avatar$);
   protected showDefaultAvatar = signal(false);
+  showDeleteModal = false;
   
-  @ViewChild('fileInput') fileInput!: ElementRef<HTMLInputElement>;
-
   constructor() {
     effect(() => {
       if (this.avatarUrl()) {
@@ -84,30 +104,44 @@ export class ProfileComponent {
     });
   }
 
-  triggerFileInput() {
-    this.fileInput.nativeElement.click();
-  }
-
-  async onFileSelected(event: Event) {
+  onFileSelected(event: Event) {
     const file = (event.target as HTMLInputElement).files?.[0];
     if (!file) return;
-
     // Check file type
     if (!file.type.startsWith('image/')) {
       console.error('File must be an image');
       return;
     }
-
     // Check file size (max 2MB)
     if (file.size > 2 * 1024 * 1024) {
       console.error('File size must be less than 2MB');
       return;
     }
+    // Upload avatar
+    this.avatarService.updateAvatar(file).subscribe({
+      error: (error) => {
+        console.error('Error uploading avatar:', error);
+      }
+    });
+  }
 
-    try {
-      await firstValueFrom(this.avatarService.updateAvatar(file));
-    } catch (error) {
-      console.error('Error uploading avatar:', error);
+  onDeleteModalClosed(email: string | null) {
+    this.showDeleteModal = false;
+    
+    if (email) {
+      this.user$.pipe(
+        take(1),
+        filter(user => user?.email === email),
+        concatMap(() => this.auth.deleteAccount())
+      ).subscribe({
+        next: () => {
+          console.log('Account deleted', email);
+          // Redirection ou autre action après suppression
+        },
+        error: (error) => {
+          console.error('Error deleting account:', error);
+        }
+      });
     }
   }
 } 

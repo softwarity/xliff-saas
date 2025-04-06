@@ -70,6 +70,7 @@ curl --request POST 'http://serveo.net:54321/functions/v1/webhook-runner' \
 ## Migrations
 
 ```bash
+supabase db reset --local
 #local
 supabase db push --local
 #remote

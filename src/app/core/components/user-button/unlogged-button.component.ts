@@ -38,15 +38,11 @@ import { AuthService } from '../../services/auth.service';
         <form [formGroup]="form" (ngSubmit)="onSubmit()" autocomplete="off">
           <div class="space-y-4">
             <div>
-              <label for="email" i18n="@@AUTH_EMAIL_LABEL">
-                Email
-              </label>
+              <label for="email" i18n="@@AUTH_EMAIL_LABEL">Email</label>
               <input id="email" type="email" formControlName="email" i18n-placeholder="@@AUTH_EMAIL_PLACEHOLDER" placeholder="Enter your email" class="w-full"/>
             </div>
             <div>
-              <label for="password" i18n="@@AUTH_PASSWORD_LABEL">
-                Password
-              </label>
+              <label for="password" i18n="@@AUTH_PASSWORD_LABEL">Password</label>
               <input id="password" type="password" formControlName="password" i18n-placeholder="@@AUTH_PASSWORD_PLACEHOLDER" placeholder="Enter your password" class="w-full"/>
               @if (isCapsLockOn()) {
                 <span class="flex justify-end text-red-500 text-sm" i18n="@@AUTH_CAPS_LOCK_ON">Caps Lock is on</span>

@@ -1,7 +1,7 @@
 import { Injectable, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from '@supabase/supabase-js';
-import { BehaviorSubject, Observable, catchError, from, map, of, switchMap, throwError } from 'rxjs';
+import { BehaviorSubject, Observable, catchError, from, map, of, switchMap, tap, throwError } from 'rxjs';
 import { ProviderType } from '../../shared/models/provider-type';
 import { SupabaseResponse, UserMetadata } from '../../shared/models/user-metadata.model';
 import { SupabaseClientService } from './supabase-client.service';
@@ -77,20 +77,29 @@ export class AuthService {
     }
   }
 
+  deleteAccount(): Observable<void> {
+    return from(this.supabase.functions.invoke<void>(`delete-account`, {method: 'POST'})).pipe(
+      map(({ error }) => {
+        if (error) throw error;
+      }),
+      switchMap(() => this.signOut()),
+    );
+  }
+
   getGitToken(provider: ProviderType): Observable<string | null> {
     const user = this.userSubject.value;
     if (!user) {
       console.log('No user found, returning null token');
       return of(null);
     }
-    return from(this.supabase.from('user_metadata').select('git_tokens').eq('user_id', user.id).single()).pipe(
-      map((response: SupabaseResponse<Pick<UserMetadata, 'git_tokens'>>) => {
-        if (response.error) {
-          console.error('Error fetching token:', response.error);
+    return from(this.supabase.from('user_metadata').select(`${provider}Token`).eq('userId', user.id).single()).pipe(
+      map(({error, data}) => {
+        if (error) {
+          console.error('Error fetching token:', error);
           return null;
         }
-        const tokens: Record<ProviderType, string> = response.data?.git_tokens || {} as Record<ProviderType, string>;
-        return tokens[provider] || null;
+        const tokenName = `${provider}Token` as keyof typeof data;
+        return data?.[tokenName] as string | null;
       }),
       catchError(error => {
         console.error('Error in getGitToken:', error);
@@ -103,20 +112,10 @@ export class AuthService {
     const user = this.userSubject.value;
     if (!user) return of(false);
 
-    return from(this.supabase.from('user_metadata').select('git_tokens').eq('user_id', user.id).single()).pipe(
-      switchMap((response: SupabaseResponse<Pick<UserMetadata, 'git_tokens'>>) => {
-        const currentTokens = response.data?.git_tokens || {};
-        const updatedTokens = { ...currentTokens, [provider]: token };
-
-        if (response.data) {
-          return from(this.supabase.from('user_metadata').update({ git_tokens: updatedTokens }).eq('user_id', user.id));
-        } else {
-          return from(this.supabase.from('user_metadata').insert([{ user_id: user.id, git_tokens: updatedTokens }]));
-        }
-      }),
-      map((response: SupabaseResponse<unknown>) => {
-        if (response.error) {
-          console.error('Error saving token:', response.error);
+    return from(this.supabase.from('user_metadata').upsert({ [`${provider}Token`]: token }).eq('userId', user.id)).pipe(
+      map(({error}) => {
+        if (error) {
+          console.error('Error saving token:', error);
           return false;
         }
         return true;
@@ -132,19 +131,10 @@ export class AuthService {
     const user = this.userSubject.value;
     if (!user) return of(false);
 
-    return from(this.supabase.from('user_metadata').select('git_tokens').eq('user_id', user.id).single()).pipe(
-      switchMap((response: SupabaseResponse<Pick<UserMetadata, 'git_tokens'>>) => {
-        if (response.error) {
-          return throwError(() => new Error(response.error?.message || 'Error fetching git tokens'));
-        }
-        const currentTokens: Record<ProviderType, string> = response.data?.git_tokens || {} as Record<ProviderType, string>;
-        const { [provider]: _, ...remainingTokens } = currentTokens;
-        
-        return from(this.supabase.from('user_metadata').update({ git_tokens: remainingTokens }).eq('user_id', user.id));
-      }),
-      map((response: SupabaseResponse<unknown>) => {
-        if (response.error) {
-          console.error('Error removing token:', response.error);
+    return from(this.supabase.from('user_metadata').update({ [`${provider}Token`]: null }).eq('userId', user.id)).pipe(
+      map(({error}) => {
+        if (error) {
+          console.error('Error removing token:', error);
           return false;
         }
         return true;
