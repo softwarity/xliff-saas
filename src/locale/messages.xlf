@@ -1,9 +1,10 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-  <file source-language="en" datatype="plaintext" original="ng2.template">
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 https://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
+  <file source-language="unknown" datatype="plaintext" original="ng2.template" target-language="unknown">
     <body>
       <trans-unit id="ACTIVE_PROCESSES_TITLE" datatype="html">
         <source>Active Processes</source>
+        <target>Active Processes</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/dashboard/dashboard.component.html</context>
           <context context-type="linenumber">41</context>
@@ -11,6 +12,7 @@
       </trans-unit>
       <trans-unit id="AI_INSTRUCTIONS_LABEL" datatype="html">
         <source>Instructions</source>
+        <target>Instructions</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/components/ai-instructions-modal/ai-instructions-modal.component.html</context>
           <context context-type="linenumber">42</context>
@@ -18,6 +20,7 @@
       </trans-unit>
       <trans-unit id="AI_INSTRUCTIONS_PLACEHOLDER" datatype="html">
         <source>Enter your instructions for the AI...</source>
+        <target>Enter your instructions for the AI...</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/dashboard/dashboard.component.html</context>
           <context context-type="linenumber">14</context>
@@ -29,6 +32,7 @@
       </trans-unit>
       <trans-unit id="AI_INSTRUCTIONS_REQUIRED" datatype="html">
         <source>Instructions are required</source>
+        <target>Instructions are required</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/components/ai-instructions-modal/ai-instructions-modal.component.html</context>
           <context context-type="linenumber">45</context>
@@ -36,6 +40,7 @@
       </trans-unit>
       <trans-unit id="AI_INSTRUCTIONS_TITLE" datatype="html">
         <source>AI Instructions</source>
+        <target>AI Instructions</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/dashboard/dashboard.component.html</context>
           <context context-type="linenumber">8</context>
@@ -47,6 +52,7 @@
       </trans-unit>
       <trans-unit id="APP_PASSWORD_PLACEHOLDER" datatype="html">
         <source>Enter your app password</source>
+        <target>Enter your app password</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/git-providers/components/provider-card/provider-card.component.html</context>
           <context context-type="linenumber">47</context>
@@ -54,6 +60,7 @@
       </trans-unit>
       <trans-unit id="APPLY" datatype="html">
         <source>Apply</source>
+        <target>Apply</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/components/ai-instructions-modal/ai-instructions-modal.component.html</context>
           <context context-type="linenumber">52</context>
@@ -61,6 +68,7 @@
       </trans-unit>
       <trans-unit id="AUTH_ALREADY_HAVE_ACCOUNT_SIGN_IN_BUTTON" datatype="html">
         <source>Already have an account? Sign In</source>
+        <target>Already have an account? Sign In</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/header/header.component.html</context>
           <context context-type="linenumber">132</context>
@@ -68,6 +76,7 @@
       </trans-unit>
       <trans-unit id="AUTH_CAPS_LOCK_ON" datatype="html">
         <source>Caps Lock is on</source>
+        <target>Caps Lock is on</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/header/header.component.html</context>
           <context context-type="linenumber">117</context>
@@ -75,6 +84,7 @@
       </trans-unit>
       <trans-unit id="AUTH_EMAIL_LABEL" datatype="html">
         <source> Email </source>
+        <target> Email </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/header/header.component.html</context>
           <context context-type="linenumber">107</context>
@@ -82,6 +92,7 @@
       </trans-unit>
       <trans-unit id="AUTH_EMAIL_PLACEHOLDER" datatype="html">
         <source>Enter your email</source>
+        <target>Enter your email</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/header/header.component.html</context>
           <context context-type="linenumber">109</context>
@@ -89,6 +100,7 @@
       </trans-unit>
       <trans-unit id="AUTH_NO_ACCOUNT_SIGN_UP_BUTTON" datatype="html">
         <source>No account? Sign Up</source>
+        <target>No account? Sign Up</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/header/header.component.html</context>
           <context context-type="linenumber">134</context>
@@ -96,6 +108,7 @@
       </trans-unit>
       <trans-unit id="AUTH_PASSWORD_LABEL" datatype="html">
         <source> Password </source>
+        <target> Password </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/header/header.component.html</context>
           <context context-type="linenumber">113</context>
@@ -103,6 +116,7 @@
       </trans-unit>
       <trans-unit id="AUTH_PASSWORD_PLACEHOLDER" datatype="html">
         <source>Enter your password</source>
+        <target>Enter your password</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/header/header.component.html</context>
           <context context-type="linenumber">115</context>
@@ -110,6 +124,7 @@
       </trans-unit>
       <trans-unit id="AUTH_SIGN_IN_BUTTON" datatype="html">
         <source>Sign In</source>
+        <target>Sign In</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/header/header.component.html</context>
           <context context-type="linenumber">100</context>
@@ -121,13 +136,15 @@
       </trans-unit>
       <trans-unit id="AUTH_SIGN_UP_BUTTON" datatype="html">
         <source>Sign Up</source>
+        <target>Sign Up</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/header/header.component.html</context>
           <context context-type="linenumber">123</context>
         </context-group>
       </trans-unit>
       <trans-unit id="AUTOMATED_WORKFLOW_ABSTRACT" datatype="html">
-        <source>Simply connect your Git repository, start the translation, and we&apos;ll handle the rest. Our AI-powered platform takes care of everything automatically.</source>
+        <source>Simply connect your Git repository, start the translation, and we'll handle the rest. Our AI-powered platform takes care of everything automatically.</source>
+        <target>Simply connect your Git repository, start the translation, and we'll handle the rest. Our AI-powered platform takes care of everything automatically.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/how-it-works/how-it-works.component.html</context>
           <context context-type="linenumber">7</context>
@@ -135,6 +152,7 @@
       </trans-unit>
       <trans-unit id="AUTOMATED_WORKFLOW_DESCRIPTION" datatype="html">
         <source>Automatic branch creation and pull requests for your translations</source>
+        <target>Automatic branch creation and pull requests for your translations</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
           <context context-type="linenumber">30</context>
@@ -142,6 +160,7 @@
       </trans-unit>
       <trans-unit id="AUTOMATED_WORKFLOW_TITLE" datatype="html">
         <source>Automated Workflow</source>
+        <target>Automated Workflow</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
           <context context-type="linenumber">29</context>
@@ -153,6 +172,7 @@
       </trans-unit>
       <trans-unit id="BALANCE_BUTTON" datatype="html">
         <source><x id="INTERPOLATION" equiv-text="{{ balance() }}"/> credits</source>
+        <target><x id="INTERPOLATION" equiv-text="{{ balance() }}"/> credits</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/header/header.component.html</context>
           <context context-type="linenumber">72</context>
@@ -160,6 +180,7 @@
       </trans-unit>
       <trans-unit id="BASIC_PLAN_TITLE" datatype="html">
         <source>Basic</source>
+        <target>Basic</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
           <context context-type="linenumber">46</context>
@@ -167,6 +188,7 @@
       </trans-unit>
       <trans-unit id="BUILD_SPECIFIC_LANGUAGE_DESCRIPTION" datatype="html">
         <source>Or build for a specific language (using French as example):</source>
+        <target>Or build for a specific language (using French as example):</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">162</context>
@@ -174,6 +196,7 @@
       </trans-unit>
       <trans-unit id="BUILD_TRANSLATIONS_DESCRIPTION" datatype="html">
         <source>Build your application with all translations:</source>
+        <target>Build your application with all translations:</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">159</context>
@@ -181,6 +204,7 @@
       </trans-unit>
       <trans-unit id="BUILD_TRANSLATIONS_TITLE" datatype="html">
         <source>Build with Translations</source>
+        <target>Build with Translations</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">158</context>
@@ -188,6 +212,7 @@
       </trans-unit>
       <trans-unit id="BUILDING_SERVING_TITLE" datatype="html">
         <source>Building and Serving</source>
+        <target>Building and Serving</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">155</context>
@@ -195,6 +220,7 @@
       </trans-unit>
       <trans-unit id="BUY_NOW" datatype="html">
         <source>Buy now</source>
+        <target>Buy now</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
           <context context-type="linenumber">69</context>
@@ -210,6 +236,7 @@
       </trans-unit>
       <trans-unit id="CANCEL" datatype="html">
         <source>Cancel</source>
+        <target>Cancel</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/components/ai-instructions-modal/ai-instructions-modal.component.html</context>
           <context context-type="linenumber">51</context>
@@ -225,6 +252,7 @@
       </trans-unit>
       <trans-unit id="CANCEL_BUTTON" datatype="html">
         <source>Cancel</source>
+        <target>Cancel</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/repositories/components/estimate/estimate-modal/estimate-modal.component.html</context>
           <context context-type="linenumber">51</context>
@@ -236,6 +264,7 @@
       </trans-unit>
       <trans-unit id="CANCELING" datatype="html">
         <source>Cancelling...</source>
+        <target>Cancelling...</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/repositories/components/estimate/estimate.component.ts</context>
           <context context-type="linenumber">29</context>
@@ -247,6 +276,7 @@
       </trans-unit>
       <trans-unit id="CANCELLED" datatype="html">
         <source>Cancelled</source>
+        <target>Cancelled</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/repositories/components/estimate/estimate.component.ts</context>
           <context context-type="linenumber">31</context>
@@ -258,6 +288,7 @@
       </trans-unit>
       <trans-unit id="CHANGE_LANGUAGE" datatype="html">
         <source>Change language</source>
+        <target>Change language</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/language-toggle/language-toggle.component.html</context>
           <context context-type="linenumber">3</context>
@@ -265,6 +296,7 @@
       </trans-unit>
       <trans-unit id="COMPONENT_TRANSLATION_DESCRIPTION" datatype="html">
         <source>For text in your component code, use the $localize template tag:</source>
+        <target>For text in your component code, use the $localize template tag:</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">118</context>
@@ -272,6 +304,7 @@
       </trans-unit>
       <trans-unit id="COMPONENT_TRANSLATION_TITLE" datatype="html">
         <source>Component Translation</source>
+        <target>Component Translation</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">117</context>
@@ -279,6 +312,7 @@
       </trans-unit>
       <trans-unit id="CONFIG_FILES_TITLE" datatype="html">
         <source>Configuration Files</source>
+        <target>Configuration Files</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">41</context>
@@ -286,6 +320,7 @@
       </trans-unit>
       <trans-unit id="CONFIRM" datatype="html">
         <source>Confirm</source>
+        <target>Confirm</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/components/cancel-confirm.component.ts</context>
           <context context-type="linenumber">80</context>
@@ -293,6 +328,7 @@
       </trans-unit>
       <trans-unit id="CONNECT_BUTTON" datatype="html">
         <source>Connect</source>
+        <target>Connect</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/git-providers/components/provider-card/provider-card.component.html</context>
           <context context-type="linenumber">77</context>
@@ -300,6 +336,7 @@
       </trans-unit>
       <trans-unit id="CONNECT_GIT_PROVIDER" datatype="html">
         <source>Connect Your Git Provider</source>
+        <target>Connect Your Git Provider</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/how-it-works/how-it-works.component.html</context>
           <context context-type="linenumber">115</context>
@@ -307,6 +344,7 @@
       </trans-unit>
       <trans-unit id="CONNECTING" datatype="html">
         <source>Connecting...</source>
+        <target>Connecting...</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/git-providers/components/provider-card/provider-card.component.html</context>
           <context context-type="linenumber">74</context>
@@ -314,13 +352,15 @@
       </trans-unit>
       <trans-unit id="CONTACT_US" datatype="html">
         <source>Contact Us</source>
+        <target>Contact Us</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
           <context context-type="linenumber">163</context>
         </context-group>
       </trans-unit>
       <trans-unit id="CONTEXT_AWARE_AI_DESCRIPTION" datatype="html">
-        <source>Intelligent translations based on your application&apos;s context and business domain</source>
+        <source>Intelligent translations based on your application's context and business domain</source>
+        <target>Intelligent translations based on your application's context and business domain</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
           <context context-type="linenumber">26</context>
@@ -328,13 +368,15 @@
       </trans-unit>
       <trans-unit id="CONTEXT_AWARE_AI_TITLE" datatype="html">
         <source>Context-Aware AI</source>
+        <target>Context-Aware AI</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
           <context context-type="linenumber">25</context>
         </context-group>
       </trans-unit>
       <trans-unit id="CONTEXT_AWARE_DESCRIPTION" datatype="html">
-        <source>Our AI-powered translation engine understands your application&apos;s context, ensuring accurate and meaningful translations that maintain the original intent of your content.</source>
+        <source>Our AI-powered translation engine understands your application's context, ensuring accurate and meaningful translations that maintain the original intent of your content.</source>
+        <target>Our AI-powered translation engine understands your application's context, ensuring accurate and meaningful translations that maintain the original intent of your content.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/how-it-works/how-it-works.component.html</context>
           <context context-type="linenumber">95</context>
@@ -342,6 +384,7 @@
       </trans-unit>
       <trans-unit id="CONTEXT_AWARE_TITLE" datatype="html">
         <source>Context-Aware Translation</source>
+        <target>Context-Aware Translation</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/how-it-works/how-it-works.component.html</context>
           <context context-type="linenumber">94</context>
@@ -349,6 +392,7 @@
       </trans-unit>
       <trans-unit id="CURRENT_PLAN_LABEL" datatype="html">
         <source>Current Plan</source>
+        <target>Current Plan</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/dashboard/dashboard.component.html</context>
           <context context-type="linenumber">52</context>
@@ -356,6 +400,7 @@
       </trans-unit>
       <trans-unit id="CUSTOM_PLAN_ON_PREMISE_DEPLOYMENT" datatype="html">
         <source>On-premise deployment</source>
+        <target>On-premise deployment</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
           <context context-type="linenumber">144</context>
@@ -363,6 +408,7 @@
       </trans-unit>
       <trans-unit id="CUSTOM_PLAN_PRIORITY_SUPPORT" datatype="html">
         <source>Priority support</source>
+        <target>Priority support</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
           <context context-type="linenumber">160</context>
@@ -370,6 +416,7 @@
       </trans-unit>
       <trans-unit id="CUSTOM_PLAN_TITLE" datatype="html">
         <source>Custom</source>
+        <target>Custom</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
           <context context-type="linenumber">138</context>
@@ -385,6 +432,7 @@
       </trans-unit>
       <trans-unit id="CUSTOM_PLAN_UNLIMITED_TRANSLATION_UNITS" datatype="html">
         <source>Unlimited translation units</source>
+        <target>Unlimited translation units</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
           <context context-type="linenumber">152</context>
@@ -392,6 +440,7 @@
       </trans-unit>
       <trans-unit id="CUSTOM_PLAN_UNLOCK_ALL_FEATURES" datatype="html">
         <source>Unlock all features</source>
+        <target>Unlock all features</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
           <context context-type="linenumber">156</context>
@@ -399,6 +448,7 @@
       </trans-unit>
       <trans-unit id="CUSTOM_PLAN_USE_YOUR_OWN_AI" datatype="html">
         <source>Use your own AI</source>
+        <target>Use your own AI</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
           <context context-type="linenumber">148</context>
@@ -406,6 +456,7 @@
       </trans-unit>
       <trans-unit id="DASHBOARD_TITLE" datatype="html">
         <source> Dashboard </source>
+        <target> Dashboard </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/dashboard/dashboard.component.html</context>
           <context context-type="linenumber">3</context>
@@ -413,6 +464,7 @@
       </trans-unit>
       <trans-unit id="DEV_SERVER_DESCRIPTION" datatype="html">
         <source>Serve your application with translations during development:</source>
+        <target>Serve your application with translations during development:</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">168</context>
@@ -420,6 +472,7 @@
       </trans-unit>
       <trans-unit id="DEV_SERVER_TITLE" datatype="html">
         <source>Development Server</source>
+        <target>Development Server</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">167</context>
@@ -427,6 +480,7 @@
       </trans-unit>
       <trans-unit id="DISCONNECT_BUTTON" datatype="html">
         <source>Disconnect</source>
+        <target>Disconnect</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/git-providers/components/provider-card/provider-card.component.html</context>
           <context context-type="linenumber">94</context>
@@ -434,6 +488,7 @@
       </trans-unit>
       <trans-unit id="DISCONNECTING" datatype="html">
         <source>Disconnecting...</source>
+        <target>Disconnecting...</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/git-providers/components/provider-card/provider-card.component.html</context>
           <context context-type="linenumber">91</context>
@@ -441,6 +496,7 @@
       </trans-unit>
       <trans-unit id="DOCUMENTATION_TITLE" datatype="html">
         <source>Angular i18n Setup Guide</source>
+        <target>Angular i18n Setup Guide</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">3</context>
@@ -448,6 +504,7 @@
       </trans-unit>
       <trans-unit id="ENTERPRISE_PLAN_CHOOSE_YOUR_AI_MODEL" datatype="html">
         <source>Choose your AI model</source>
+        <target>Choose your AI model</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
           <context context-type="linenumber">126</context>
@@ -455,6 +512,7 @@
       </trans-unit>
       <trans-unit id="ENTERPRISE_PLAN_CUSTOM_AI_INSTRUCTIONS" datatype="html">
         <source>Custom AI instructions by repositories</source>
+        <target>Custom AI instructions by repositories</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
           <context context-type="linenumber">130</context>
@@ -462,6 +520,7 @@
       </trans-unit>
       <trans-unit id="ENTERPRISE_PLAN_DESCRIPTION" datatype="html">
         <source>For complex applications with different contexts</source>
+        <target>For complex applications with different contexts</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
           <context context-type="linenumber">108</context>
@@ -469,6 +528,7 @@
       </trans-unit>
       <trans-unit id="ENTERPRISE_PLAN_PREVIOUS_PLAN" datatype="html">
         <source>The previous plan +</source>
+        <target>The previous plan +</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
           <context context-type="linenumber">118</context>
@@ -476,6 +536,7 @@
       </trans-unit>
       <trans-unit id="ENTERPRISE_PLAN_TITLE" datatype="html">
         <source>Enterprise</source>
+        <target>Enterprise</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
           <context context-type="linenumber">106</context>
@@ -487,6 +548,7 @@
       </trans-unit>
       <trans-unit id="ENTERPRISE_PLAN_TRANSLATION_UNIT_PRICE" datatype="html">
         <source>0,0035 € per translation unit</source>
+        <target>0,0035 € per translation unit</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
           <context context-type="linenumber">114</context>
@@ -494,6 +556,7 @@
       </trans-unit>
       <trans-unit id="ENTERPRISE_PLAN_TRANSLATION_UNITS" datatype="html">
         <source>20 000 translation units</source>
+        <target>20 000 translation units</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
           <context context-type="linenumber">122</context>
@@ -501,6 +564,7 @@
       </trans-unit>
       <trans-unit id="ESTIMATE" datatype="html">
         <source>Estimate</source>
+        <target>Estimate</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/repositories/components/estimate/estimate.component.ts</context>
           <context context-type="linenumber">43</context>
@@ -508,6 +572,7 @@
       </trans-unit>
       <trans-unit id="ESTIMATE_BUTTON" datatype="html">
         <source>Estimate</source>
+        <target>Estimate</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/repositories/components/estimate/estimate-modal/estimate-modal.component.html</context>
           <context context-type="linenumber">52</context>
@@ -515,6 +580,7 @@
       </trans-unit>
       <trans-unit id="ESTIMATING" datatype="html">
         <source>Estimating...</source>
+        <target>Estimating...</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/repositories/components/estimate/estimate.component.ts</context>
           <context context-type="linenumber">25</context>
@@ -526,6 +592,7 @@
       </trans-unit>
       <trans-unit id="ESTIMATION_UNITS" datatype="html">
         <source><x id="INTERPOLATION" equiv-text="{{ job().transUnitFound }}"/> translation units</source>
+        <target><x id="INTERPOLATION" equiv-text="{{ job().transUnitFound }}"/> translation units</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/dashboard/job-card.component.ts</context>
           <context context-type="linenumber">38</context>
@@ -533,6 +600,7 @@
       </trans-unit>
       <trans-unit id="EXTRACT_TRANSLATIONS_DESCRIPTION" datatype="html">
         <source>Extract translatable strings to XLIFF files:</source>
+        <target>Extract translatable strings to XLIFF files:</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">140</context>
@@ -540,6 +608,7 @@
       </trans-unit>
       <trans-unit id="EXTRACT_TRANSLATIONS_NOTE" datatype="html">
         <source>This creates messages.xlf in your dist/locale directory.</source>
+        <target>This creates messages.xlf in your dist/locale directory.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">142</context>
@@ -547,6 +616,7 @@
       </trans-unit>
       <trans-unit id="EXTRACT_TRANSLATIONS_TITLE" datatype="html">
         <source>Extract Translations</source>
+        <target>Extract Translations</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">139</context>
@@ -554,6 +624,7 @@
       </trans-unit>
       <trans-unit id="FAILED_TO_LOAD_REPOSITORIES" datatype="html">
         <source>Failed to load repositories. Please check your token permissions and try again.</source>
+        <target>Failed to load repositories. Please check your token permissions and try again.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/repositories/repositories.component.ts</context>
           <context context-type="linenumber">93</context>
@@ -561,6 +632,7 @@
       </trans-unit>
       <trans-unit id="FEATURE_CODE_ANALYSIS" datatype="html">
         <source>Code Analysis</source>
+        <target>Code Analysis</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/how-it-works/how-it-works.component.html</context>
           <context context-type="linenumber">98</context>
@@ -568,6 +640,7 @@
       </trans-unit>
       <trans-unit id="FEATURE_CODE_ANALYSIS_DESCRIPTION" datatype="html">
         <source>Analyzes your code to understand the context of each string</source>
+        <target>Analyzes your code to understand the context of each string</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/how-it-works/how-it-works.component.html</context>
           <context context-type="linenumber">99</context>
@@ -575,6 +648,7 @@
       </trans-unit>
       <trans-unit id="FEATURE_CONSISTENCY" datatype="html">
         <source>Consistency Check</source>
+        <target>Consistency Check</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/how-it-works/how-it-works.component.html</context>
           <context context-type="linenumber">102</context>
@@ -582,6 +656,7 @@
       </trans-unit>
       <trans-unit id="FEATURE_CONSISTENCY_DESCRIPTION" datatype="html">
         <source>Ensures consistent translations across your entire application</source>
+        <target>Ensures consistent translations across your entire application</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/how-it-works/how-it-works.component.html</context>
           <context context-type="linenumber">103</context>
@@ -589,6 +664,7 @@
       </trans-unit>
       <trans-unit id="FEATURE_QUALITY" datatype="html">
         <source>Quality Assurance</source>
+        <target>Quality Assurance</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/how-it-works/how-it-works.component.html</context>
           <context context-type="linenumber">106</context>
@@ -596,6 +672,7 @@
       </trans-unit>
       <trans-unit id="FEATURE_QUALITY_DESCRIPTION" datatype="html">
         <source>Automated quality checks for translation accuracy</source>
+        <target>Automated quality checks for translation accuracy</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/how-it-works/how-it-works.component.html</context>
           <context context-type="linenumber">107</context>
@@ -603,6 +680,7 @@
       </trans-unit>
       <trans-unit id="FEATURES_TITLE" datatype="html">
         <source>Key Features</source>
+        <target>Key Features</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
           <context context-type="linenumber">18</context>
@@ -610,6 +688,7 @@
       </trans-unit>
       <trans-unit id="GET_STARTED" datatype="html">
         <source>Get Started</source>
+        <target>Get Started</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
           <context context-type="linenumber">8</context>
@@ -617,6 +696,7 @@
       </trans-unit>
       <trans-unit id="GET_STARTED_DESCRIPTION" datatype="html">
         <source>Start translating your Angular application in minutes.</source>
+        <target>Start translating your Angular application in minutes.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/how-it-works/how-it-works.component.html</context>
           <context context-type="linenumber">114</context>
@@ -624,6 +704,7 @@
       </trans-unit>
       <trans-unit id="GET_STARTED_TITLE" datatype="html">
         <source>Ready to Get Started?</source>
+        <target>Ready to Get Started?</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/how-it-works/how-it-works.component.html</context>
           <context context-type="linenumber">113</context>
@@ -631,6 +712,7 @@
       </trans-unit>
       <trans-unit id="GET_TOKEN_HERE" datatype="html">
         <source>Get your token here:</source>
+        <target>Get your token here:</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/git-providers/components/provider-card/provider-card.component.html</context>
           <context context-type="linenumber">31</context>
@@ -638,6 +720,7 @@
       </trans-unit>
       <trans-unit id="GIT_INTEGRATION_DESCRIPTION" datatype="html">
         <source>Connect with GitHub, GitLab, and Bitbucket repositories seamlessly</source>
+        <target>Connect with GitHub, GitLab, and Bitbucket repositories seamlessly</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
           <context context-type="linenumber">22</context>
@@ -645,6 +728,7 @@
       </trans-unit>
       <trans-unit id="GIT_INTEGRATION_TITLE" datatype="html">
         <source>Git Integration</source>
+        <target>Git Integration</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
           <context context-type="linenumber">21</context>
@@ -652,6 +736,7 @@
       </trans-unit>
       <trans-unit id="GIT_PROVIDERS_TITLE" datatype="html">
         <source>Git Providers</source>
+        <target>Git Providers</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/git-providers/git-providers.component.ts</context>
           <context context-type="linenumber">17</context>
@@ -659,6 +744,7 @@
       </trans-unit>
       <trans-unit id="GLOBAL_AI_INSTRUCTIONS_LABEL" datatype="html">
         <source>Global AI Instructions</source>
+        <target>Global AI Instructions</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/dashboard/dashboard.component.html</context>
           <context context-type="linenumber">11</context>
@@ -666,6 +752,7 @@
       </trans-unit>
       <trans-unit id="GLOBAL_AI_INSTRUCTIONS_TITLE" datatype="html">
         <source>Global AI Instructions</source>
+        <target>Global AI Instructions</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/components/ai-instructions-modal/ai-instructions-modal.component.ts</context>
           <context context-type="linenumber">58</context>
@@ -673,6 +760,7 @@
       </trans-unit>
       <trans-unit id="HOME_DESCRIPTION" datatype="html">
         <source>Translate your Angular applications with AI-powered context-aware translations</source>
+        <target>Translate your Angular applications with AI-powered context-aware translations</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
           <context context-type="linenumber">6</context>
@@ -680,6 +768,7 @@
       </trans-unit>
       <trans-unit id="HOME_TITLE" datatype="html">
         <source>Automated XLIFF Translation for Angular Applications</source>
+        <target>Automated XLIFF Translation for Angular Applications</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
           <context context-type="linenumber">5</context>
@@ -687,6 +776,7 @@
       </trans-unit>
       <trans-unit id="HOW_IT_WORKS_TITLE" datatype="html">
         <source>How It Works</source>
+        <target>How It Works</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/how-it-works/how-it-works.component.html</context>
           <context context-type="linenumber">2</context>
@@ -694,6 +784,7 @@
       </trans-unit>
       <trans-unit id="IMPORTANT_NOTE_COMMAND_1" datatype="html">
         <source>to extract new translatable strings</source>
+        <target>to extract new translatable strings</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">178</context>
@@ -701,6 +792,7 @@
       </trans-unit>
       <trans-unit id="IMPORTANT_NOTE_COMMAND_2" datatype="html">
         <source>to update your translation files</source>
+        <target>to update your translation files</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">179</context>
@@ -708,6 +800,7 @@
       </trans-unit>
       <trans-unit id="IMPORTANT_NOTE_DESCRIPTION" datatype="html">
         <source>After adding new translatable content or modifying existing translations, you must always run both commands in sequence:</source>
+        <target>After adding new translatable content or modifying existing translations, you must always run both commands in sequence:</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">176</context>
@@ -715,6 +808,7 @@
       </trans-unit>
       <trans-unit id="IMPORTANT_NOTE_TITLE" datatype="html">
         <source>⚠️ Important Note</source>
+        <target>⚠️ Important Note</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">175</context>
@@ -722,13 +816,15 @@
       </trans-unit>
       <trans-unit id="INITIAL_SETUP_CHANGE_1" datatype="html">
         <source>Add the @angular/localize package to your dependencies</source>
+        <target>Add the @angular/localize package to your dependencies</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">18</context>
         </context-group>
       </trans-unit>
       <trans-unit id="INITIAL_SETUP_CHANGE_2" datatype="html">
-        <source>Add &quot;@angular/localize/init&quot; to the polyfills array in angular.json</source>
+        <source>Add "@angular/localize/init" to the polyfills array in angular.json</source>
+        <target>Add "@angular/localize/init" to the polyfills array in angular.json</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">19</context>
@@ -736,6 +832,7 @@
       </trans-unit>
       <trans-unit id="INITIAL_SETUP_CHANGE_3" datatype="html">
         <source>Add the following reference to your main.ts:</source>
+        <target>Add the following reference to your main.ts:</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">20</context>
@@ -743,6 +840,7 @@
       </trans-unit>
       <trans-unit id="INITIAL_SETUP_CHANGES" datatype="html">
         <source>This command will make the following changes:</source>
+        <target>This command will make the following changes:</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">16</context>
@@ -750,20 +848,23 @@
       </trans-unit>
       <trans-unit id="INITIAL_SETUP_CONFIG" datatype="html">
         <source>It will also add the extract-i18n configuration to angular.json:</source>
+        <target>It will also add the extract-i18n configuration to angular.json:</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">25</context>
         </context-group>
       </trans-unit>
       <trans-unit id="INITIAL_SETUP_DESCRIPTION" datatype="html">
-        <source>Start by adding Angular&apos;s localization package to your project:</source>
+        <source>Start by adding Angular's localization package to your project:</source>
+        <target>Start by adding Angular's localization package to your project:</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">12</context>
         </context-group>
       </trans-unit>
       <trans-unit id="INITIAL_SETUP_NOTE" datatype="html">
-        <source>Note: We&apos;ll modify the outputPath later in the configuration to match our workflow.</source>
+        <source>Note: We'll modify the outputPath later in the configuration to match our workflow.</source>
+        <target>Note: We'll modify the outputPath later in the configuration to match our workflow.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">36</context>
@@ -771,6 +872,7 @@
       </trans-unit>
       <trans-unit id="INITIAL_SETUP_TITLE" datatype="html">
         <source>Initial Setup</source>
+        <target>Initial Setup</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">10</context>
@@ -778,6 +880,7 @@
       </trans-unit>
       <trans-unit id="JOB_DURATION" datatype="html">
         <source>Duration: <x id="INTERPOLATION" equiv-text="{{ humanizeDuration(job().duration!) }}"/></source>
+        <target>Duration: <x id="INTERPOLATION" equiv-text="{{ humanizeDuration(job().duration!) }}"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/dashboard/job-card.component.ts</context>
           <context context-type="linenumber">50</context>
@@ -785,6 +888,7 @@
       </trans-unit>
       <trans-unit id="JOB_REQUEST_ESTIMATION" datatype="html">
         <source>Estimation</source>
+        <target>Estimation</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/dashboard/job-card.component.ts</context>
           <context context-type="linenumber">24</context>
@@ -792,6 +896,7 @@
       </trans-unit>
       <trans-unit id="JOB_REQUEST_TRANSLATION" datatype="html">
         <source>Translation</source>
+        <target>Translation</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/dashboard/job-card.component.ts</context>
           <context context-type="linenumber">26</context>
@@ -799,6 +904,7 @@
       </trans-unit>
       <trans-unit id="JOB_STATUS_CANCELLED" datatype="html">
         <source>Cancelled</source>
+        <target>Cancelled</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/dashboard/job-card.component.ts</context>
           <context context-type="linenumber">61</context>
@@ -806,6 +912,7 @@
       </trans-unit>
       <trans-unit id="JOB_STATUS_COMPLETED" datatype="html">
         <source>Completed</source>
+        <target>Completed</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/dashboard/job-card.component.ts</context>
           <context context-type="linenumber">57</context>
@@ -813,6 +920,7 @@
       </trans-unit>
       <trans-unit id="JOB_STATUS_FAILED" datatype="html">
         <source>Failed</source>
+        <target>Failed</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/dashboard/job-card.component.ts</context>
           <context context-type="linenumber">59</context>
@@ -820,6 +928,7 @@
       </trans-unit>
       <trans-unit id="LEARN_MORE" datatype="html">
         <source>Learn More</source>
+        <target>Learn More</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
           <context context-type="linenumber">9</context>
@@ -827,6 +936,7 @@
       </trans-unit>
       <trans-unit id="MANAGE_SUBSCRIPTION" datatype="html">
         <source>Manage Subscription</source>
+        <target>Manage Subscription</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/dashboard/dashboard.component.html</context>
           <context context-type="linenumber">55</context>
@@ -834,6 +944,7 @@
       </trans-unit>
       <trans-unit id="MERGE_TRANSLATIONS_DESCRIPTION" datatype="html">
         <source>Generate/update the translation files:</source>
+        <target>Generate/update the translation files:</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">147</context>
@@ -841,6 +952,7 @@
       </trans-unit>
       <trans-unit id="MERGE_TRANSLATIONS_NOTE" datatype="html">
         <source>This creates/updates the translation files in your src/locale directory.</source>
+        <target>This creates/updates the translation files in your src/locale directory.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">149</context>
@@ -848,6 +960,7 @@
       </trans-unit>
       <trans-unit id="MERGE_TRANSLATIONS_TITLE" datatype="html">
         <source>Merge Translations</source>
+        <target>Merge Translations</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">146</context>
@@ -855,6 +968,7 @@
       </trans-unit>
       <trans-unit id="MOST_POPULAR_PLAN_TITLE" datatype="html">
         <source>Most Popular</source>
+        <target>Most Popular</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
           <context context-type="linenumber">74</context>
@@ -862,6 +976,7 @@
       </trans-unit>
       <trans-unit id="NAVIGATION_DASHBOARD" datatype="html">
         <source>Dashboard</source>
+        <target>Dashboard</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/header/header.component.html</context>
           <context context-type="linenumber">35</context>
@@ -869,6 +984,7 @@
       </trans-unit>
       <trans-unit id="NAVIGATION_DOCUMENTATION" datatype="html">
         <source>Documentation</source>
+        <target>Documentation</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/header/header.component.html</context>
           <context context-type="linenumber">26</context>
@@ -876,6 +992,7 @@
       </trans-unit>
       <trans-unit id="NAVIGATION_GIT_PROVIDERS" datatype="html">
         <source>Git Providers</source>
+        <target>Git Providers</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/header/header.component.html</context>
           <context context-type="linenumber">41</context>
@@ -883,6 +1000,7 @@
       </trans-unit>
       <trans-unit id="NAVIGATION_HOW_IT_WORKS" datatype="html">
         <source>How It Works</source>
+        <target>How It Works</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/header/header.component.html</context>
           <context context-type="linenumber">18</context>
@@ -890,6 +1008,7 @@
       </trans-unit>
       <trans-unit id="NEXT_PAGE" datatype="html">
         <source>Next</source>
+        <target>Next</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/dashboard/dashboard.component.html</context>
           <context context-type="linenumber">92</context>
@@ -897,6 +1016,7 @@
       </trans-unit>
       <trans-unit id="NO_ACTIVE_PROCESSES" datatype="html">
         <source>No active translation processes</source>
+        <target>No active translation processes</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/dashboard/dashboard.component.html</context>
           <context context-type="linenumber">43</context>
@@ -904,6 +1024,7 @@
       </trans-unit>
       <trans-unit id="NO_BRANCHES_AVAILABLE" datatype="html">
         <source>No branches available</source>
+        <target>No branches available</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/repositories/components/branch-selector/branch-selector.component.html</context>
           <context context-type="linenumber">6</context>
@@ -911,6 +1032,7 @@
       </trans-unit>
       <trans-unit id="NO_ESTIMATION_AVAILABLE" datatype="html">
         <source>No estimation available...</source>
+        <target>No estimation available...</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/repositories/components/estimate/estimate.component.ts</context>
           <context context-type="linenumber">38</context>
@@ -918,6 +1040,7 @@
       </trans-unit>
       <trans-unit id="NO_RECENT_ACTIVITY" datatype="html">
         <source>No recent activity</source>
+        <target>No recent activity</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/dashboard/dashboard.component.html</context>
           <context context-type="linenumber">80</context>
@@ -925,6 +1048,7 @@
       </trans-unit>
       <trans-unit id="NO_REPOSITORIES_FOUND" datatype="html">
         <source>No repositories found</source>
+        <target>No repositories found</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/repositories/repositories.component.html</context>
           <context context-type="linenumber">40</context>
@@ -932,6 +1056,7 @@
       </trans-unit>
       <trans-unit id="NO_REPOSITORIES_FOUND_PLEASE_CHECK" datatype="html">
         <source>No repositories found. Please check your token permissions.</source>
+        <target>No repositories found. Please check your token permissions.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/repositories/repositories.component.ts</context>
           <context context-type="linenumber">89</context>
@@ -939,6 +1064,7 @@
       </trans-unit>
       <trans-unit id="NO_REPOSITORIES_MATCH_SEARCH" datatype="html">
         <source>No repositories match your search</source>
+        <target>No repositories match your search</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/repositories/repositories.component.html</context>
           <context context-type="linenumber">38</context>
@@ -946,6 +1072,7 @@
       </trans-unit>
       <trans-unit id="NO_TRANSLATION_AVAILABLE" datatype="html">
         <source>No translation available...</source>
+        <target>No translation available...</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/repositories/components/translate/translate.component.ts</context>
           <context context-type="linenumber">43</context>
@@ -953,6 +1080,7 @@
       </trans-unit>
       <trans-unit id="PAGE_INFO" datatype="html">
         <source>Page <x id="INTERPOLATION" equiv-text="{{ currentPage() }}"/> of <x id="INTERPOLATION_1" equiv-text="{{ totalPages() }}"/></source>
+        <target>Page <x id="INTERPOLATION" equiv-text="{{ currentPage() }}"/> of <x id="INTERPOLATION_1" equiv-text="{{ totalPages() }}"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/dashboard/dashboard.component.html</context>
           <context context-type="linenumber">90</context>
@@ -960,6 +1088,7 @@
       </trans-unit>
       <trans-unit id="PENDING" datatype="html">
         <source>Pending...</source>
+        <target>Pending...</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/repositories/components/estimate/estimate.component.ts</context>
           <context context-type="linenumber">23</context>
@@ -971,6 +1100,7 @@
       </trans-unit>
       <trans-unit id="PREPARE_COMPONENTS_DESCRIPTION" datatype="html">
         <source>To make your components ready for translation, you need to mark the text that should be translated. Angular provides two ways to do this:</source>
+        <target>To make your components ready for translation, you need to mark the text that should be translated. Angular provides two ways to do this:</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">96</context>
@@ -978,6 +1108,7 @@
       </trans-unit>
       <trans-unit id="PREPARE_COMPONENTS_TITLE" datatype="html">
         <source>Prepare Components for Translation</source>
+        <target>Prepare Components for Translation</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">93</context>
@@ -985,6 +1116,7 @@
       </trans-unit>
       <trans-unit id="PREVIOUS_PAGE" datatype="html">
         <source>Previous</source>
+        <target>Previous</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/dashboard/dashboard.component.html</context>
           <context context-type="linenumber">88</context>
@@ -992,6 +1124,7 @@
       </trans-unit>
       <trans-unit id="PRICING_TITLE" datatype="html">
         <source>Simple Pricing</source>
+        <target>Simple Pricing</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
           <context context-type="linenumber">42</context>
@@ -999,6 +1132,7 @@
       </trans-unit>
       <trans-unit id="PRIVATE_REPOSITORY" datatype="html">
         <source>Private</source>
+        <target>Private</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/repositories/components/estimate/estimate-modal/estimate-modal.component.html</context>
           <context context-type="linenumber">24</context>
@@ -1006,6 +1140,7 @@
       </trans-unit>
       <trans-unit id="PROCEDEED_TRANSUNIT_STATE_LABEL" datatype="html">
         <source>Procedeed TransUnit State</source>
+        <target>Procedeed TransUnit State</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/repositories/components/translate/translate-modal/translate-modal.component.html</context>
           <context context-type="linenumber">55</context>
@@ -1013,6 +1148,7 @@
       </trans-unit>
       <trans-unit id="PROFESSIONAL_PLAN" datatype="html">
         <source>Professional</source>
+        <target>Professional</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/dashboard/dashboard.component.html</context>
           <context context-type="linenumber">53</context>
@@ -1020,6 +1156,7 @@
       </trans-unit>
       <trans-unit id="PROFESSIONAL_PLAN_CUSTOM_AI_INSTRUCTIONS" datatype="html">
         <source>Custom AI instructions</source>
+        <target>Custom AI instructions</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
           <context context-type="linenumber">94</context>
@@ -1027,6 +1164,7 @@
       </trans-unit>
       <trans-unit id="PROFESSIONAL_PLAN_DESCRIPTION" datatype="html">
         <source>For complex applications</source>
+        <target>For complex applications</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
           <context context-type="linenumber">76</context>
@@ -1034,6 +1172,7 @@
       </trans-unit>
       <trans-unit id="PROFESSIONAL_PLAN_PREVIOUS_PLAN" datatype="html">
         <source>The previous plan +</source>
+        <target>The previous plan +</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
           <context context-type="linenumber">86</context>
@@ -1041,6 +1180,7 @@
       </trans-unit>
       <trans-unit id="PROFESSIONAL_PLAN_PRIORITY_SUPPORT" datatype="html">
         <source>Priority support</source>
+        <target>Priority support</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
           <context context-type="linenumber">98</context>
@@ -1048,6 +1188,7 @@
       </trans-unit>
       <trans-unit id="PROFESSIONAL_PLAN_TITLE" datatype="html">
         <source>Professional</source>
+        <target>Professional</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
           <context context-type="linenumber">75</context>
@@ -1055,6 +1196,7 @@
       </trans-unit>
       <trans-unit id="PROFESSIONAL_PLAN_TRANSLATION_UNIT_PRICE" datatype="html">
         <source>0,0055 € per translation unit</source>
+        <target>0,0055 € per translation unit</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
           <context context-type="linenumber">82</context>
@@ -1062,6 +1204,7 @@
       </trans-unit>
       <trans-unit id="PROFESSIONAL_PLAN_TRANSLATION_UNITS" datatype="html">
         <source>8,000 translation units</source>
+        <target>8,000 translation units</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
           <context context-type="linenumber">90</context>
@@ -1069,6 +1212,7 @@
       </trans-unit>
       <trans-unit id="PROVIDER_AI_INSTRUCTIONS_TITLE" datatype="html">
         <source>AI Instructions for <x id="PH" equiv-text="provider"/></source>
+        <target>AI Instructions for <x id="PH" equiv-text="provider"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/components/ai-instructions-modal/ai-instructions-modal.component.ts</context>
           <context context-type="linenumber">60</context>
@@ -1076,6 +1220,7 @@
       </trans-unit>
       <trans-unit id="PROVIDER_CONNECTED" datatype="html">
         <source>Connected</source>
+        <target>Connected</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/git-providers/components/provider-card/provider-card.component.html</context>
           <context context-type="linenumber">15</context>
@@ -1083,6 +1228,7 @@
       </trans-unit>
       <trans-unit id="PROVIDER_NOT_CONNECTED" datatype="html">
         <source>Not Connected</source>
+        <target>Not Connected</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/git-providers/components/provider-card/provider-card.component.html</context>
           <context context-type="linenumber">17</context>
@@ -1090,6 +1236,7 @@
       </trans-unit>
       <trans-unit id="PUBLIC_REPOSITORY" datatype="html">
         <source>Public</source>
+        <target>Public</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/repositories/components/estimate/estimate-modal/estimate-modal.component.html</context>
           <context context-type="linenumber">26</context>
@@ -1097,6 +1244,7 @@
       </trans-unit>
       <trans-unit id="PURCHASE_CREDITS_BUTTON" datatype="html">
         <source>Purchase credits</source>
+        <target>Purchase credits</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/header/header.component.html</context>
           <context context-type="linenumber">70</context>
@@ -1108,6 +1256,7 @@
       </trans-unit>
       <trans-unit id="RECENT_ACTIVITY_TITLE" datatype="html">
         <source>Recent Activity</source>
+        <target>Recent Activity</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/dashboard/dashboard.component.html</context>
           <context context-type="linenumber">63</context>
@@ -1115,6 +1264,7 @@
       </trans-unit>
       <trans-unit id="REFRESH_BUTTON" datatype="html">
         <source>Refresh</source>
+        <target>Refresh</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/repositories/repositories.component.html</context>
           <context context-type="linenumber">14</context>
@@ -1122,6 +1272,7 @@
       </trans-unit>
       <trans-unit id="REFRESH_JOBS" datatype="html">
         <source>Refresh</source>
+        <target>Refresh</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/dashboard/dashboard.component.html</context>
           <context context-type="linenumber">68</context>
@@ -1129,6 +1280,7 @@
       </trans-unit>
       <trans-unit id="REMAINING_TRANSLATIONS_LABEL" datatype="html">
         <source>Remaining Translations</source>
+        <target>Remaining Translations</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/dashboard/dashboard.component.html</context>
           <context context-type="linenumber">29</context>
@@ -1136,6 +1288,7 @@
       </trans-unit>
       <trans-unit id="REPOSITORIES_TITLE" datatype="html">
         <source><x id="INTERPOLATION" equiv-text="{{ provider().provider | titlecase }}"/> Repositories</source>
+        <target><x id="INTERPOLATION" equiv-text="{{ provider().provider | titlecase }}"/> Repositories</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/repositories/repositories.component.html</context>
           <context context-type="linenumber">4</context>
@@ -1143,6 +1296,7 @@
       </trans-unit>
       <trans-unit id="REPOSITORY_AI_INSTRUCTIONS_TITLE" datatype="html">
         <source>AI Instructions for <x id="PH" equiv-text="repository?.name"/></source>
+        <target>AI Instructions for <x id="PH" equiv-text="repository?.name"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/components/ai-instructions-modal/ai-instructions-modal.component.ts</context>
           <context context-type="linenumber">62</context>
@@ -1150,6 +1304,7 @@
       </trans-unit>
       <trans-unit id="SAVE_INSTRUCTIONS" datatype="html">
         <source>Save Instructions</source>
+        <target>Save Instructions</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/dashboard/dashboard.component.html</context>
           <context context-type="linenumber">17</context>
@@ -1157,6 +1312,7 @@
       </trans-unit>
       <trans-unit id="SEE_MORE_DOCUMENTATION" datatype="html">
         <source>See more →</source>
+        <target>See more →</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">97</context>
@@ -1164,6 +1320,7 @@
       </trans-unit>
       <trans-unit id="SEE_OFFICIAL_DOCS" datatype="html">
         <source>Official Documentation →</source>
+        <target>Official Documentation →</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">4</context>
@@ -1171,6 +1328,7 @@
       </trans-unit>
       <trans-unit id="SELECT_BRANCH_LABEL" datatype="html">
         <source>Select Branch</source>
+        <target>Select Branch</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/repositories/components/estimate/estimate-modal/estimate-modal.component.html</context>
           <context context-type="linenumber">35</context>
@@ -1182,6 +1340,7 @@
       </trans-unit>
       <trans-unit id="SHOWING_REPOSITORIES" datatype="html">
         <source>Showing <x id="INTERPOLATION" equiv-text="{{ repositories().length }}"/> of <x id="INTERPOLATION_1" equiv-text="{{ allRepositories().length }}"/> repositories</source>
+        <target>Showing <x id="INTERPOLATION" equiv-text="{{ repositories().length }}"/> of <x id="INTERPOLATION_1" equiv-text="{{ allRepositories().length }}"/> repositories</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/repositories/repositories.component.html</context>
           <context context-type="linenumber">7</context>
@@ -1189,6 +1348,7 @@
       </trans-unit>
       <trans-unit id="STARTER_PLAN_BASIC_SUPPORT" datatype="html">
         <source>Basic support</source>
+        <target>Basic support</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
           <context context-type="linenumber">66</context>
@@ -1196,6 +1356,7 @@
       </trans-unit>
       <trans-unit id="STARTER_PLAN_DESCRIPTION" datatype="html">
         <source>For a complex application</source>
+        <target>For a complex application</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
           <context context-type="linenumber">48</context>
@@ -1203,6 +1364,7 @@
       </trans-unit>
       <trans-unit id="STARTER_PLAN_TITLE" datatype="html">
         <source>Starter</source>
+        <target>Starter</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
           <context context-type="linenumber">47</context>
@@ -1210,6 +1372,7 @@
       </trans-unit>
       <trans-unit id="STARTER_PLAN_TRANSLATION_UNIT_PRICE" datatype="html">
         <source>0,01 € per translation unit</source>
+        <target>0,01 € per translation unit</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
           <context context-type="linenumber">54</context>
@@ -1217,6 +1380,7 @@
       </trans-unit>
       <trans-unit id="STARTER_PLAN_TRANSLATION_UNITS" datatype="html">
         <source>1,000 translation units</source>
+        <target>1,000 translation units</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
           <context context-type="linenumber">58</context>
@@ -1224,6 +1388,7 @@
       </trans-unit>
       <trans-unit id="STARTER_PLAN_UNLIMITED_GIT_REPOSITORIES" datatype="html">
         <source>Unlimited git repositories</source>
+        <target>Unlimited git repositories</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
           <context context-type="linenumber">62</context>
@@ -1231,6 +1396,7 @@
       </trans-unit>
       <trans-unit id="STEP_1_DESCRIPTION" datatype="html">
         <source>Smart analysis of your XLIFF files with context extraction</source>
+        <target>Smart analysis of your XLIFF files with context extraction</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/how-it-works/how-it-works.component.html</context>
           <context context-type="linenumber">11</context>
@@ -1238,6 +1404,7 @@
       </trans-unit>
       <trans-unit id="STEP_2_DESCRIPTION" datatype="html">
         <source>AI-powered translation with contextual understanding</source>
+        <target>AI-powered translation with contextual understanding</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/how-it-works/how-it-works.component.html</context>
           <context context-type="linenumber">15</context>
@@ -1245,6 +1412,7 @@
       </trans-unit>
       <trans-unit id="STEP_3_DESCRIPTION" datatype="html">
         <source>Automated pull request creation with translated XLIFF files</source>
+        <target>Automated pull request creation with translated XLIFF files</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/how-it-works/how-it-works.component.html</context>
           <context context-type="linenumber">19</context>
@@ -1252,13 +1420,15 @@
       </trans-unit>
       <trans-unit id="SUBSCRIPTION_TITLE" datatype="html">
         <source>Subscription</source>
+        <target>Subscription</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/dashboard/dashboard.component.html</context>
           <context context-type="linenumber">49</context>
         </context-group>
       </trans-unit>
       <trans-unit id="SUPPORTED_FORMATS_DESCRIPTION" datatype="html">
-        <source>Our platform supports the following XLIFF formats for maximum compatibility with Angular&apos;s internationalization system:</source>
+        <source>Our platform supports the following XLIFF formats for maximum compatibility with Angular's internationalization system:</source>
+        <target>Our platform supports the following XLIFF formats for maximum compatibility with Angular's internationalization system:</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/how-it-works/how-it-works.component.html</context>
           <context context-type="linenumber">80</context>
@@ -1266,6 +1436,7 @@
       </trans-unit>
       <trans-unit id="SUPPORTED_FORMATS_TITLE" datatype="html">
         <source>Supported Formats</source>
+        <target>Supported Formats</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/how-it-works/how-it-works.component.html</context>
           <context context-type="linenumber">79</context>
@@ -1273,6 +1444,7 @@
       </trans-unit>
       <trans-unit id="SUPPORTED_PROVIDERS_TITLE" datatype="html">
         <source>Supported Git Providers</source>
+        <target>Supported Git Providers</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/how-it-works/how-it-works.component.html</context>
           <context context-type="linenumber">24</context>
@@ -1280,6 +1452,7 @@
       </trans-unit>
       <trans-unit id="TEMPLATE_TRANSLATION_DESCRIPTION" datatype="html">
         <source>Use the i18n attribute in your templates to mark text for translation:</source>
+        <target>Use the i18n attribute in your templates to mark text for translation:</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">104</context>
@@ -1287,6 +1460,7 @@
       </trans-unit>
       <trans-unit id="TEMPLATE_TRANSLATION_NOTE" datatype="html">
         <source>The @@prefix defines a custom ID for the translation. Using SNAKE_CASE is recommended for consistency.</source>
+        <target>The @@prefix defines a custom ID for the translation. Using SNAKE_CASE is recommended for consistency.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">112</context>
@@ -1294,6 +1468,7 @@
       </trans-unit>
       <trans-unit id="TEMPLATE_TRANSLATION_TITLE" datatype="html">
         <source>Template Translation</source>
+        <target>Template Translation</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">103</context>
@@ -1301,6 +1476,7 @@
       </trans-unit>
       <trans-unit id="TESTIMONIAL_1" datatype="html">
         <source>XLIFF Translator has revolutionized our localization workflow. The context-aware translations are incredibly accurate.</source>
+        <target>XLIFF Translator has revolutionized our localization workflow. The context-aware translations are incredibly accurate.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
           <context context-type="linenumber">178</context>
@@ -1308,6 +1484,7 @@
       </trans-unit>
       <trans-unit id="TESTIMONIAL_1_AUTHOR" datatype="html">
         <source>John Doe - Tech Lead at GlobalTech</source>
+        <target>John Doe - Tech Lead at GlobalTech</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
           <context context-type="linenumber">179</context>
@@ -1315,6 +1492,7 @@
       </trans-unit>
       <trans-unit id="TESTIMONIAL_2" datatype="html">
         <source>The automated Git integration saved us countless hours of manual work. Highly recommended!</source>
+        <target>The automated Git integration saved us countless hours of manual work. Highly recommended!</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
           <context context-type="linenumber">182</context>
@@ -1322,6 +1500,7 @@
       </trans-unit>
       <trans-unit id="TESTIMONIAL_2_AUTHOR" datatype="html">
         <source>Jane Smith - CTO at WebScale</source>
+        <target>Jane Smith - CTO at WebScale</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
           <context context-type="linenumber">183</context>
@@ -1329,6 +1508,7 @@
       </trans-unit>
       <trans-unit id="TESTIMONIALS_TITLE" datatype="html">
         <source>What Our Clients Say</source>
+        <target>What Our Clients Say</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
           <context context-type="linenumber">175</context>
@@ -1336,6 +1516,7 @@
       </trans-unit>
       <trans-unit id="THEME_TOGGLE_TO_DARK" datatype="html">
         <source>Dark mode</source>
+        <target>Dark mode</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/header/header.component.html</context>
           <context context-type="linenumber">148</context>
@@ -1343,6 +1524,7 @@
       </trans-unit>
       <trans-unit id="THEME_TOGGLE_TO_LIGHT" datatype="html">
         <source>Light mode</source>
+        <target>Light mode</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/header/header.component.html</context>
           <context context-type="linenumber">149</context>
@@ -1350,6 +1532,7 @@
       </trans-unit>
       <trans-unit id="THEME_TOGGLE_TO_SYSTEM" datatype="html">
         <source>System preference</source>
+        <target>System preference</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/header/header.component.html</context>
           <context context-type="linenumber">150</context>
@@ -1357,6 +1540,7 @@
       </trans-unit>
       <trans-unit id="TOKEN_INPUT_PLACEHOLDER" datatype="html">
         <source>Enter your access token</source>
+        <target>Enter your access token</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/git-providers/components/provider-card/provider-card.component.html</context>
           <context context-type="linenumber">54</context>
@@ -1364,6 +1548,7 @@
       </trans-unit>
       <trans-unit id="TOKEN_SCOPES_INTRO" datatype="html">
         <source>To connect, generate a Personal Access Token with the following scopes:</source>
+        <target>To connect, generate a Personal Access Token with the following scopes:</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/git-providers/components/provider-card/provider-card.component.html</context>
           <context context-type="linenumber">24</context>
@@ -1371,6 +1556,7 @@
       </trans-unit>
       <trans-unit id="TOTAL_REPOSITORIES" datatype="html">
         <source>Total repositories: <x id="INTERPOLATION" equiv-text="{{ allRepositories().length }}"/></source>
+        <target>Total repositories: <x id="INTERPOLATION" equiv-text="{{ allRepositories().length }}"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/repositories/repositories.component.html</context>
           <context context-type="linenumber">9</context>
@@ -1378,6 +1564,7 @@
       </trans-unit>
       <trans-unit id="TRANSLATE" datatype="html">
         <source>Translate</source>
+        <target>Translate</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/repositories/components/translate/translate.component.ts</context>
           <context context-type="linenumber">51</context>
@@ -1385,6 +1572,7 @@
       </trans-unit>
       <trans-unit id="TRANSLATE_BUTTON" datatype="html">
         <source>Translate</source>
+        <target>Translate</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/repositories/components/translate/translate-modal/translate-modal.component.html</context>
           <context context-type="linenumber">62</context>
@@ -1392,6 +1580,7 @@
       </trans-unit>
       <trans-unit id="TRANSLATING" datatype="html">
         <source>Translating...</source>
+        <target>Translating...</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/repositories/components/estimate/estimate.component.ts</context>
           <context context-type="linenumber">27</context>
@@ -1399,6 +1588,7 @@
       </trans-unit>
       <trans-unit id="TRANSLATING_PROGRESS" datatype="html">
         <source>Translation: <x id="INTERPOLATION" equiv-text="{{ translation.transUnitDone }}"/>/<x id="INTERPOLATION_1" equiv-text="{{ translation.transUnitFound }}"/></source>
+        <target>Translation: <x id="INTERPOLATION" equiv-text="{{ translation.transUnitDone }}"/>/<x id="INTERPOLATION_1" equiv-text="{{ translation.transUnitFound }}"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/repositories/components/translate/translate.component.ts</context>
           <context context-type="linenumber">30</context>
@@ -1406,6 +1596,7 @@
       </trans-unit>
       <trans-unit id="TRANSLATION_COMPLETED" datatype="html">
         <source>Translation: <x id="INTERPOLATION" equiv-text="{{ translation.transUnitDone }}"/>/<x id="INTERPOLATION_1" equiv-text="{{ translation.transUnitFound }}"/></source>
+        <target>Translation: <x id="INTERPOLATION" equiv-text="{{ translation.transUnitDone }}"/>/<x id="INTERPOLATION_1" equiv-text="{{ translation.transUnitFound }}"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/repositories/components/translate/translate.component.ts</context>
           <context context-type="linenumber">33</context>
@@ -1413,6 +1604,7 @@
       </trans-unit>
       <trans-unit id="TRANSLATION_STATS_TITLE" datatype="html">
         <source>Translation Stats</source>
+        <target>Translation Stats</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/dashboard/dashboard.component.html</context>
           <context context-type="linenumber">26</context>
@@ -1420,6 +1612,7 @@
       </trans-unit>
       <trans-unit id="TRANSLATION_UNITS" datatype="html">
         <source>translation units</source>
+        <target>translation units</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/dashboard/job-card.component.ts</context>
           <context context-type="linenumber">43</context>
@@ -1431,6 +1624,7 @@
       </trans-unit>
       <trans-unit id="TRANSLATION_UNITS_DETECTED" datatype="html">
         <source><x id="INTERPOLATION" equiv-text="{{ estimation()?.transUnitFound }}"/> translation units detected</source>
+        <target><x id="INTERPOLATION" equiv-text="{{ estimation()?.transUnitFound }}"/> translation units detected</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/repositories/components/estimate/estimate.component.ts</context>
           <context context-type="linenumber">33</context>
@@ -1438,6 +1632,7 @@
       </trans-unit>
       <trans-unit id="TRANSLATION_WORKFLOW_TITLE" datatype="html">
         <source>Translation Workflow</source>
+        <target>Translation Workflow</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">136</context>
@@ -1445,6 +1640,7 @@
       </trans-unit>
       <trans-unit id="TRANSLATIONS_THIS_MONTH_LABEL" datatype="html">
         <source>Translations This Month</source>
+        <target>Translations This Month</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/dashboard/dashboard.component.html</context>
           <context context-type="linenumber">33</context>
@@ -1452,6 +1648,7 @@
       </trans-unit>
       <trans-unit id="TRANSUNIT_CONTEXT" datatype="html">
         <source>Context</source>
+        <target>Context</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/how-it-works/how-it-works.component.html</context>
           <context context-type="linenumber">56</context>
@@ -1459,6 +1656,7 @@
       </trans-unit>
       <trans-unit id="TRANSUNIT_CONTEXT_DESCRIPTION" datatype="html">
         <source>Information about where and how the text is used in your application</source>
+        <target>Information about where and how the text is used in your application</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/how-it-works/how-it-works.component.html</context>
           <context context-type="linenumber">57</context>
@@ -1466,6 +1664,7 @@
       </trans-unit>
       <trans-unit id="TRANSUNIT_DESCRIPTION" datatype="html">
         <source>A TransUnit is the fundamental building block of XLIFF files. It represents a single piece of text that needs to be translated, along with its metadata and context.</source>
+        <target>A TransUnit is the fundamental building block of XLIFF files. It represents a single piece of text that needs to be translated, along with its metadata and context.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/how-it-works/how-it-works.component.html</context>
           <context context-type="linenumber">45</context>
@@ -1473,13 +1672,15 @@
       </trans-unit>
       <trans-unit id="TRANSUNIT_SOURCE" datatype="html">
         <source>Source Text</source>
+        <target>Source Text</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/how-it-works/how-it-works.component.html</context>
           <context context-type="linenumber">48</context>
         </context-group>
       </trans-unit>
       <trans-unit id="TRANSUNIT_SOURCE_DESCRIPTION" datatype="html">
-        <source>The original text in your application&apos;s source language</source>
+        <source>The original text in your application's source language</source>
+        <target>The original text in your application's source language</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/how-it-works/how-it-works.component.html</context>
           <context context-type="linenumber">49</context>
@@ -1487,6 +1688,7 @@
       </trans-unit>
       <trans-unit id="TRANSUNIT_STATE" datatype="html">
         <source>State</source>
+        <target>State</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/how-it-works/how-it-works.component.html</context>
           <context context-type="linenumber">60</context>
@@ -1494,6 +1696,7 @@
       </trans-unit>
       <trans-unit id="TRANSUNIT_STATE_DESCRIPTION" datatype="html">
         <source>The current status of the translation (initial, translated, reviewed, etc.)</source>
+        <target>The current status of the translation (initial, translated, reviewed, etc.)</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/how-it-works/how-it-works.component.html</context>
           <context context-type="linenumber">61</context>
@@ -1501,6 +1704,7 @@
       </trans-unit>
       <trans-unit id="TRANSUNIT_STATE_LABEL" datatype="html">
         <source>TransUnit State</source>
+        <target>TransUnit State</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/repositories/components/estimate/estimate-modal/estimate-modal.component.html</context>
           <context context-type="linenumber">45</context>
@@ -1512,6 +1716,7 @@
       </trans-unit>
       <trans-unit id="TRANSUNIT_TARGET" datatype="html">
         <source>Target Text</source>
+        <target>Target Text</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/how-it-works/how-it-works.component.html</context>
           <context context-type="linenumber">52</context>
@@ -1519,6 +1724,7 @@
       </trans-unit>
       <trans-unit id="TRANSUNIT_TARGET_DESCRIPTION" datatype="html">
         <source>The translated text in the target language</source>
+        <target>The translated text in the target language</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/how-it-works/how-it-works.component.html</context>
           <context context-type="linenumber">53</context>
@@ -1526,6 +1732,7 @@
       </trans-unit>
       <trans-unit id="TRANSUNIT_TITLE" datatype="html">
         <source>Understanding TransUnits</source>
+        <target>Understanding TransUnits</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/how-it-works/how-it-works.component.html</context>
           <context context-type="linenumber">44</context>
@@ -1533,6 +1740,7 @@
       </trans-unit>
       <trans-unit id="UPDATE_TOKEN_BUTTON" datatype="html">
         <source>Update Token</source>
+        <target>Update Token</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/git-providers/components/provider-card/provider-card.component.html</context>
           <context context-type="linenumber">83</context>
@@ -1540,6 +1748,7 @@
       </trans-unit>
       <trans-unit id="UPDATED_AT" datatype="html">
         <source>Updated <x id="INTERPOLATION" equiv-text="{{ repository().updated_at | date }}"/></source>
+        <target>Updated <x id="INTERPOLATION" equiv-text="{{ repository().updated_at | date }}"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/repositories/components/repository-card/repository-card.component.html</context>
           <context context-type="linenumber">47</context>
@@ -1547,6 +1756,7 @@
       </trans-unit>
       <trans-unit id="USER_MENU_CUSTOM_AI_INSTRUCTIONS" datatype="html">
         <source>Custom AI instructions</source>
+        <target>Custom AI instructions</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/header/header.component.html</context>
           <context context-type="linenumber">90</context>
@@ -1554,6 +1764,7 @@
       </trans-unit>
       <trans-unit id="USER_MENU_SIGN_OUT" datatype="html">
         <source>Sign Out</source>
+        <target>Sign Out</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/header/header.component.html</context>
           <context context-type="linenumber">93</context>
@@ -1561,6 +1772,7 @@
       </trans-unit>
       <trans-unit id="USERNAME_PLACEHOLDER" datatype="html">
         <source>Enter your Bitbucket username</source>
+        <target>Enter your Bitbucket username</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/git-providers/components/provider-card/provider-card.component.html</context>
           <context context-type="linenumber">42</context>
@@ -1568,6 +1780,7 @@
       </trans-unit>
       <trans-unit id="XLIFF_EXTENSION_LABEL" datatype="html">
         <source>Xliff Extension</source>
+        <target>Xliff Extension</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/repositories/components/estimate/estimate-modal/estimate-modal.component.html</context>
           <context context-type="linenumber">40</context>
