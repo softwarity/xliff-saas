@@ -12,7 +12,11 @@ export interface User {
     email: string,
     email_verified: boolean,
     phone_verified: boolean,
-    sub: string
+    sub: string,
+    avatar_url: string,
+    github: string,
+    bitbucket: string,
+    gitlab: string
   },
   identities: {
     identity_id: string,

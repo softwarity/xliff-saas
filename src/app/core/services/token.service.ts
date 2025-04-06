@@ -20,9 +20,11 @@ export class TokenService {
   }
 
   getToken(provider: ProviderType): Observable<string | null> {
-    return this.auth.user$.pipe(
-      filter(user => !!user),
-      map(user => user.user_metadata[provider])
+    return from(this.auth.getUser()).pipe(
+      map((user) => {
+        return user?.user_metadata[provider] || null}
+      ),
+      catchError(() => of(null))
     );
   }
 

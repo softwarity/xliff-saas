@@ -44,15 +44,16 @@ Deno.serve(async (req) => {
         }
         
         // Deleting metadata
-        const { data, error: metadataError }: { data: UserMetadata | null, error: Error | null } = await supabaseClient.from('user_metadata').delete().eq('userId', user.id).select('*').single();
+        const { error: metadataError }: { data: UserMetadata | null, error: Error | null } = await supabaseClient.from('user_metadata').delete().eq('userId', user.id);
         if (metadataError) {
             console.error('Error deleting metadata:', metadataError);
             throw metadataError;
         }
 
-        if (data) {
-            console.log('Deleting user avatar from storage...');
-            const { error: deleteError } = await supabaseClient.storage.from('avatars').remove([data.avatarUrl]);
+        console.log('Deleting user avatar from storage...');
+        const filename: string | null = user.user_metadata.avatar_url;
+        if (filename) {
+            const { error: deleteError } = await supabaseClient.storage.from('avatars').remove([`avatars/${filename}`]);
             // List all files in the avatars bucket that start with the user's ID
             if (deleteError) {
                 console.error('Error deleting files:', deleteError);

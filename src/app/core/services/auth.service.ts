@@ -1,6 +1,6 @@
 import { Injectable, inject } from '@angular/core';
 import { Router } from '@angular/router';
-import { User } from '@supabase/supabase-js';
+import { OAuthResponse, User } from '@supabase/supabase-js';
 import { BehaviorSubject, Observable, catchError, from, map, of, switchMap, tap, throwError } from 'rxjs';
 import { ProviderType } from '../../shared/models/provider-type';
 import { SupabaseResponse, UserMetadata } from '../../shared/models/user-metadata.model';
@@ -31,6 +31,15 @@ export class AuthService {
       console.log('AuthService: Auth state change:', { event, hasSession: !!session });
       this.updateAuthState(session?.user ?? null);
     });
+  }
+
+  getUser(): Observable<User | null> {
+    return from(this.supabase.auth.getSession()).pipe(
+      map(({data: {session}}) => {
+        return session?.user || null}
+      ),
+      catchError(() => of(null))
+    );
   }
 
   private updateAuthState(user: User | null): void {
@@ -86,67 +95,7 @@ export class AuthService {
     );
   }
 
-  getGitToken(provider: ProviderType): Observable<string | null> {
-    const user = this.userSubject.value;
-    if (!user) {
-      console.log('No user found, returning null token');
-      return of(null);
-    }
-    return from(this.supabase.from('user_metadata').select(`${provider}Token`).eq('userId', user.id).single()).pipe(
-      map(({error, data}) => {
-        if (error) {
-          console.error('Error fetching token:', error);
-          return null;
-        }
-        const tokenName = `${provider}Token` as keyof typeof data;
-        return data?.[tokenName] as string | null;
-      }),
-      catchError(error => {
-        console.error('Error in getGitToken:', error);
-        return of(null);
-      })
-    );
-  }
-
-  saveGitToken(provider: ProviderType, token: string): Observable<boolean> {
-    const user = this.userSubject.value;
-    if (!user) return of(false);
-
-    return from(this.supabase.from('user_metadata').upsert({ [`${provider}Token`]: token }).eq('userId', user.id)).pipe(
-      map(({error}) => {
-        if (error) {
-          console.error('Error saving token:', error);
-          return false;
-        }
-        return true;
-      }),
-      catchError(error => {
-        console.error('Error in saveGitToken:', error);
-        return of(false);
-      })
-    );
-  }
-
-  removeGitToken(provider: ProviderType): Observable<boolean> {
-    const user = this.userSubject.value;
-    if (!user) return of(false);
-
-    return from(this.supabase.from('user_metadata').update({ [`${provider}Token`]: null }).eq('userId', user.id)).pipe(
-      map(({error}) => {
-        if (error) {
-          console.error('Error removing token:', error);
-          return false;
-        }
-        return true;
-      }),
-      catchError(error => {
-        console.error('Error in removeGitToken:', error);
-        return of(false);
-      })
-    );
-  }
-
-  signInWithGoogle() {
+  signInWithGoogle(): Observable<OAuthResponse> {
     return from(this.supabase.auth.signInWithOAuth({
       provider: 'google',
       options: {
