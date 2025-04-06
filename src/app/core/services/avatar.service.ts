@@ -15,13 +15,11 @@ export class AvatarService {
   constructor() {
     this.auth.user$.pipe(
       filter(user => !!user),
-      mergeMap(user => this.supabase.from('user_metadata').select('avatarUrl').eq('userId', user.id).single()),
-      filter(response => !!response.data),
-      map(({data: {avatarUrl}}: {data: {avatarUrl: string}}) => {
+      map((user) => {
+        const avatarUrl = user.user_metadata['avatar_url'];
         if (!avatarUrl) return null;
-        const { data: { publicUrl } } = this.supabase.storage.from('avatars').getPublicUrl(avatarUrl);
-        this.avatarSubject.next(publicUrl);
-        return publicUrl;
+        this.avatarSubject.next(avatarUrl);
+        return avatarUrl;
       })
     ).subscribe();
   }
@@ -34,16 +32,18 @@ export class AvatarService {
         const fileName = `${user.id}/avatar.${fileExt}`;
         return from(this.supabase.storage.from('avatars').upload(fileName, file, { upsert: true })).pipe(
           mergeMap(({ error: uploadError, data }: { error: StorageError | null, data: { id: string; path: string; fullPath: string } | null}) => {
+            console.log(data);
             if (uploadError) throw uploadError;
-            return from(this.supabase.from('user_metadata').update({ avatarUrl: data!.path }).eq('userId', user.id)).pipe(
-              map(() => this.supabase.storage.from('avatars').getPublicUrl(fileName))
+            const {data: {publicUrl: avatar_url}} = this.supabase.storage.from('avatars').getPublicUrl(fileName);
+            return from(this.supabase.auth.updateUser({data: { avatar_url}})).pipe(
+              map(() => avatar_url)
             );
           })
         );
       }),
-      map(({data: {publicUrl}}: { data: { publicUrl: string } }) => {
-        this.avatarSubject.next(publicUrl);
-        return publicUrl;
+      map((avatar_url: string) => {
+        this.avatarSubject.next(avatar_url);
+        return avatar_url;
       })
     );
   }

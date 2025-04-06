@@ -2,10 +2,6 @@
 CREATE TABLE IF NOT EXISTS user_metadata (
   id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
   "userId" uuid NOT NULL REFERENCES auth.users(id) UNIQUE,
-  "githubToken" text DEFAULT NULL,
-  "gitlabToken" text DEFAULT NULL,
-  "bitbucketToken" text DEFAULT NULL,
-  "avatarUrl" text DEFAULT NULL,
   "roles" text[] DEFAULT '{}'::text[],
   "createdAt" timestamptz DEFAULT now(),
   "updatedAt" timestamptz DEFAULT now()

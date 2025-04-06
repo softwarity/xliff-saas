@@ -34,7 +34,7 @@ export class AuthService {
   }
 
   private updateAuthState(user: User | null): void {
-    console.log('AuthService: Updating auth state:', { hasUser: !!user }); 
+    console.log('AuthService: Updating auth state:', { hasUser: !!user }, user); 
     this.userSubject.next(user);
     this.isAuthenticatedSubject.next(!!user);
   }

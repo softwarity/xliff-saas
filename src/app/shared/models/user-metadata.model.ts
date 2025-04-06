@@ -6,7 +6,6 @@ export interface UserMetadata {
   githubToken: string;
   gitlabToken: string;
   bitbucketToken: string;
-  avatarUrl: string;
   roles: string[];
   createdAt: string;
   updatedAt: string;
@@ -21,3 +20,4 @@ export interface SupabaseResponse<T> {
     code: string;
   } | null;
 }
+
