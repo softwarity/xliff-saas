@@ -10,8 +10,8 @@ import { CommonModule } from '@angular/common';
     <div class="not-found-container">
       <div class="content">
         <h1>404</h1>
-        <div class="glitch-text" i18n="@@NOT_FOUND_PAGE_NOT_FOUND">Page Not Found</div>
-        <p i18n="@@NOT_FOUND_PAGE_NOT_FOUND">Oops! The page you're looking for seems to have vanished into the void...</p>
+        <div class="glitch-text" i18n="@@PAGE_NOT_FOUND">Page Not Found</div>
+        <p i18n="@@OOPS_PAGE_NOT_FOUND">Oops! The page you're looking for seems to have vanished into the void...</p>
         <button routerLink="/" class="flat-primary" i18n="@@NOT_FOUND_BACK_HOME">
           Back to Home
         </button>
