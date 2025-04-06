@@ -1560,7 +1560,7 @@
       </trans-unit>
       <trans-unit id="HOME_DESCRIPTION" datatype="html">
         <source>Translate your Angular applications with AI-powered context-aware translations</source>
-        <target state="translated">Translatez vos applications Angular avec des traductions contextuelles alimentées par l'IA</target>
+        <target state="translated">Traduisez vos applications Angular avec des traductions contextuelles alimentées par l'IA</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
           <context context-type="linenumber">6</context>
