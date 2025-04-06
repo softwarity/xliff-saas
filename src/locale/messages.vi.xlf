@@ -332,7 +332,7 @@
       </trans-unit>
       <trans-unit id="PAGE_INFO" datatype="html">
         <source>Page <x id="INTERPOLATION" equiv-text="{{ currentPage() }}"/> of <x id="INTERPOLATION_1" equiv-text="{{ totalPages() }}"/></source>
-        <target state="translated">Trang <x id="INTERPOLATION" equiv-text="{{ currentPage() }}"/> của <x id="INTERPOLATION_1" equiv-text="{{ totalPages() }}/></target>
+        <target state="translated">Trang <x id="INTERPOLATION" equiv-text="{{ currentPage() }}"/> của <x id="INTERPOLATION_1" equiv-text="{{ totalPages() }}"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/dashboard/dashboard.component.html</context>
           <context context-type="linenumber">90</context>
@@ -808,9 +808,7 @@
       </trans-unit>
       <trans-unit id="HOME_TITLE" datatype="html">
         <source>Automated XLIFF Translation for Angular Applications</source>
-        <target state="translated">Bản dịch của tiêu đề là: 
-
-"Phiên dịch XLIFF tự động cho các ứng dụng Angular"</target>
+        <target state="translated">Phiên dịch XLIFF tự động cho các ứng dụng Angular</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
           <context context-type="linenumber">5</context>
@@ -982,7 +980,7 @@
       </trans-unit>
       <trans-unit id="MOST_POPULAR_PLAN_TITLE" datatype="html">
         <source>Most Popular</source>
-        <target state="translated"><div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-primary text-white px-4 py-1 rounded-full text-sm" i18n="@@MOST_POPULAR_PLAN_TITLE">Phổ biến nhất</div></target>
+        <target state="translated">Phổ biến nhất</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
           <context context-type="linenumber">74</context>
@@ -1634,7 +1632,7 @@
       </trans-unit>
       <trans-unit id="TRANSLATION_COMPLETED" datatype="html">
         <source>Translation: <x id="INTERPOLATION" equiv-text="{{ translation.transUnitDone }}"/>/<x id="INTERPOLATION_1" equiv-text="{{ translation.transUnitFound }}"/></source>
-        <target state="translated">Dịch: <x id="INTERPOLATION" equiv-text="{{ translation.transUnitDone }}"/>/<x id="INTERPOLATION_1" equiv-text="{{ translation.transUnitFound }}/></target>
+        <target state="translated">Dịch: <x id="INTERPOLATION" equiv-text="{{ translation.transUnitDone }}"/>/<x id="INTERPOLATION_1" equiv-text="{{ translation.transUnitFound }}"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/repositories/components/translate/translate.component.ts</context>
           <context context-type="linenumber">33</context>
