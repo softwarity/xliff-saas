@@ -1,9 +1,7 @@
 import { Injectable, inject } from '@angular/core';
 import { Router } from '@angular/router';
-import { OAuthResponse, User } from '@supabase/supabase-js';
-import { BehaviorSubject, Observable, catchError, from, map, of, switchMap, tap, throwError } from 'rxjs';
-import { ProviderType } from '../../shared/models/provider-type';
-import { SupabaseResponse, UserMetadata } from '../../shared/models/user-metadata.model';
+import { User } from '@supabase/supabase-js';
+import { BehaviorSubject, Observable, catchError, from, map, of } from 'rxjs';
 import { SupabaseClientService } from './supabase-client.service';
 
 @Injectable({
@@ -48,59 +46,49 @@ export class AuthService {
     this.isAuthenticatedSubject.next(!!user);
   }
 
-  async signIn(email: string, password: string): Promise<boolean> {
-    try {
-      const { error } = await this.supabase.auth.signInWithPassword({ email, password });
-      if (error) {
-        console.error('Erreur de connexion:', error.message);
-        return false;
-      }
-      return true;
-    } catch (error) {
-      console.error('Erreur de connexion:', error);
-      return false;
-    }
-  }
-
-  async signUp(email: string, password: string): Promise<boolean> {
-    try {
-      const { error } = await this.supabase.auth.signUp({ email, password });
-      if (error) {
-        console.error('Erreur d\'inscription:', error.message);
-        return false;
-      }
-      return true;
-    } catch (error) {
-      console.error('Erreur d\'inscription:', error);
-      return false;
-    }
-  }
-
-  async signOut(): Promise<void> {
-    try {
-      await this.supabase.auth.signOut();
-      this.router.navigate(['/']);
-    } catch (error) {
-      console.error('Erreur de déconnexion:', error);
-      throw error;
-    }
-  }
-
-  deleteAccount(): Observable<void> {
-    return from(this.supabase.functions.invoke<void>(`delete-account`, {method: 'POST'})).pipe(
-      map(({ error }) => {
-        if (error) throw error;
-      }),
-      switchMap(() => this.signOut()),
+  signInWithEmail(email: string, password: string): Observable<void> {
+    return from(this.supabase.auth.signInWithPassword({ email, password })).pipe(
+      map(response => {
+        if (response.error) throw response.error;
+      })
     );
   }
 
-  signInWithGoogle(): Observable<OAuthResponse> {
+  signUp(email: string, password: string): Observable<void> {
+    return from(this.supabase.auth.signUp({ email, password })).pipe(
+      map(response => {
+        if (response.error) throw response.error;
+      })
+    );
+  }
+
+  signInWithGoogle(): Observable<void> {
     return from(this.supabase.auth.signInWithOAuth({
       provider: 'google',
       options: {
+        // redirectTo: `${window.location.origin}/auth/callback`
         redirectTo: `${window.location.href}`
       }
-    }));
+    })).pipe(
+      map(response => {
+        if (response.error) throw response.error;
+      })
+    );
+  }
+
+  signOut(): Observable<void> {
+    return from(this.supabase.auth.signOut()).pipe(
+      map(response => {
+        if (response.error) throw response.error;
+      })
+    );
+  }
+
+  deleteAccount(): Observable<void> {
+    return from(this.supabase.functions.invoke('delete-account')).pipe(
+      map(response => {
+        if (response.error) throw response.error;
+      })
+    );
   }
 }

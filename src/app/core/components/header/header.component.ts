@@ -5,7 +5,6 @@ import '../../../web-components/icon';
 import '../../../web-components/theme-switcher';
 import { AuthService } from '../../services/auth.service';
 import { LanguageToggleComponent } from '../language-toggle/language-toggle.component';
-import { UnloggedButtonComponent } from '../user-button/unlogged-button.component';
 import { LoggedNavComponent } from './logged-nav.component';
 @Component({
   selector: 'app-header',
@@ -14,7 +13,6 @@ import { LoggedNavComponent } from './logged-nav.component';
     RouterLink,
     RouterLinkActive,
     LanguageToggleComponent,
-    UnloggedButtonComponent,
     LoggedNavComponent
   ],
   styles: [`
@@ -55,7 +53,7 @@ import { LoggedNavComponent } from './logged-nav.component';
           <app-logged-nav class="flex-1"></app-logged-nav>
         } @else {
           <div class="flex-1"></div>
-          <app-unlogged-button></app-unlogged-button>
+          <a class="flat-primary" routerLink="/auth/login" i18n="@@AUTH_SIGN_IN_BUTTON">Sign In</a>
         }
         <app-language-toggle></app-language-toggle>
         <theme-switcher attribute="class"

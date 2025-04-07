@@ -9,7 +9,7 @@ import '../../../web-components/theme-switcher';
 import { AuthService } from '../../services/auth.service';
 import { BalanceService } from '../../services/balance.service';
 import { GitProviderService } from '../../services/git-provider.service';
-import { LoggedButtonComponent } from '../user-button/logged-button.component';
+import { LoggedButtonComponent } from './logged-button.component';
 @Component({
   selector: 'app-logged-nav',
   standalone: true,
