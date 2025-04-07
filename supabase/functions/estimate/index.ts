@@ -18,10 +18,11 @@ Deno.serve(async (req) => {
     const url = new URL(req.url);
     const pathname = url.pathname;
     const provider = pathname.split('/').pop() as 'github' | 'gitlab' | 'bitbucket';
+    let jobId: string | undefined;
+    const supabaseClient = getSupabaseClient();
+    const jobDao = new JobDao(supabaseClient);
+    const userService = new UserService(supabaseClient);
     try {
-        const supabaseClient = getSupabaseClient();
-        const jobDao = new JobDao(supabaseClient);
-        const userService = new UserService(supabaseClient);
         const user = await userService.getUser(req);
         const userId = user.id;
 
@@ -37,8 +38,9 @@ Deno.serve(async (req) => {
         };
         const toInsert: Omit<Job, 'id'> = { request: 'estimation', userId, provider, namespace, repository: name, ...payload };
         const job = await jobDao.insert(toInsert);
-        
-        const TOKEN = await userService.getGitToken(userId, provider);
+        jobId = job.id;
+        console.log('Job inserted', job.id);
+        const TOKEN = user.user_metadata[provider];
         const WEBHOOK_URL = `${Deno.env.get('HOST_WEBHOOK')}/functions/v1/estimate-webhook/${job.id}`;
         const WEBHOOK_JWT = Deno.env.get('SUPABASE_ANON_KEY')!;
         const REPOSITORY_INFO = `${namespace}/${name}@${branch}`;
@@ -48,6 +50,7 @@ Deno.serve(async (req) => {
             STATE, 
             WEBHOOK_URL, WEBHOOK_JWT 
         };
+        console.log('Estimation launching for ', `${namespace}/${name}@${branch} by ${user.email}. JobId: ${job.id}`);
         await launchEstimateRunner(inputs);
         console.log('Estimation launched for ', `${namespace}/${name}@${branch} by ${user.email}. JobId: ${job.id}`);
         return new Response(JSON.stringify({ message: 'Estimate triggered successfully!', job }), { headers: {
@@ -55,6 +58,10 @@ Deno.serve(async (req) => {
             'Content-Type': 'application/json',
         }, status: 200 });
     } catch(error: any) {
+        console.error('Error launching estimation', error);
+        if (jobId) {
+            await jobDao.updateById(jobId, { status: 'failed', details: { error: error.message } });
+        }
         return new Response(JSON.stringify({ error: error.message }), { headers: {
             ...CORS_HEADERS,
             'Content-Type': 'application/json'

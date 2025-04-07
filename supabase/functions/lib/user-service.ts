@@ -39,13 +39,4 @@ export class UserService {
     const [{balance}] = data as unknown as [{balance: number}];
     return balance;
   }
-
-  async getGitToken(userId: string, provider: 'bitbucket' | 'github' | 'gitlab'): Promise<string> {
-    const {data, error} = await this.supabaseClient.from('user_metadata').select('*').eq('userId', userId);
-    if (error) {
-        throw new Error(error.message);
-    }
-    const [{git_tokens: {[provider]: token}}] = data as unknown as [{git_tokens: {github: string, gitlab: string, bitbucket: string}}];
-    return token;
-  }
 }

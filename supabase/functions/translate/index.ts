@@ -41,7 +41,7 @@ Deno.serve(async (req) => {
         const toInsert: Omit<Job, 'id'> = { request: 'translation', userId, provider, namespace, repository: name, ...payload };
         const job = await jobDao.insert(toInsert);
         
-        const TOKEN = await userService.getGitToken(userId, provider);
+        const TOKEN = user.user_metadata[provider];
         const WEBHOOK_URL = `${Deno.env.get('HOST_WEBHOOK')}/functions/v1/translate-webhook/${job.id}`;
         const WEBHOOK_JWT = Deno.env.get('SUPABASE_ANON_KEY')!;
         const REPOSITORY_INFO = `${namespace}/${name}@${branch}`;
