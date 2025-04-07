@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-  <file source-language="en" target-language="vi" datatype="plaintext" original="ng2.template">
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 https://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
+  <file source-language="en" datatype="plaintext" original="ng2.template" target-language="vi">
     <body>
       <trans-unit id="NAVIGATION_HOW_IT_WORKS" datatype="html">
         <source>How It Works</source>
@@ -371,7 +371,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="INITIAL_SETUP_DESCRIPTION" datatype="html">
-        <source>Start by adding Angular&apos;s localization package to your project:</source>
+        <source>Start by adding Angular's localization package to your project:</source>
         <target state="translated">Bắt đầu bằng cách thêm gói định vị Angular vào dự án của bạn:</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
@@ -395,8 +395,8 @@
         </context-group>
       </trans-unit>
       <trans-unit id="INITIAL_SETUP_CHANGE_2" datatype="html">
-        <source>Add &quot;@angular/localize/init&quot; to the polyfills array in angular.json</source>
-        <target state="translated">Thêm &quot;@angular/localize/init&quot; vào mảng polyfills trong angular.json</target>
+        <source>Add "@angular/localize/init" to the polyfills array in angular.json</source>
+        <target state="translated">Thêm "@angular/localize/init" vào mảng polyfills trong angular.json</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">19</context>
@@ -419,7 +419,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="INITIAL_SETUP_NOTE" datatype="html">
-        <source>Note: We&apos;ll modify the outputPath later in the configuration to match our workflow.</source>
+        <source>Note: We'll modify the outputPath later in the configuration to match our workflow.</source>
         <target state="translated">Lưu ý: Chúng tôi sẽ điều chỉnh outputPath sau trong cấu hình để phù hợp với quy trình làm việc của chúng tôi.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
@@ -899,7 +899,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="CONTEXT_AWARE_AI_DESCRIPTION" datatype="html">
-        <source>Intelligent translations based on your application&apos;s context and business domain</source>
+        <source>Intelligent translations based on your application's context and business domain</source>
         <target state="translated">Dịch thuật thông minh dựa trên ngữ cảnh của ứng dụng và lĩnh vực kinh doanh của bạn</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
@@ -960,7 +960,7 @@
       </trans-unit>
       <trans-unit id="STARTER_PLAN_TRANSLATION_UNIT_PRICE" datatype="html">
         <source>$0,01 per translation unit</source>
-        <target state="new">$0 cho mỗi đơn vị dịch</target>
+        <target state="translated">0,01 € mỗi đơn vị dịch</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
           <context context-type="linenumber">77</context>
@@ -968,7 +968,7 @@
       </trans-unit>
       <trans-unit id="STARTER_PLAN_TRANSLATION_UNITS" datatype="html">
         <source>1,000 translation units</source>
-        <target state="new">100 đơn vị dịch</target>
+        <target state="translated">1.000 đơn vị dịch</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
           <context context-type="linenumber">85</context>
@@ -1239,7 +1239,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="AUTOMATED_WORKFLOW_ABSTRACT" datatype="html">
-        <source>Simply connect your Git repository, start the translation, and we&apos;ll handle the rest. Our AI-powered platform takes care of everything automatically.</source>
+        <source>Simply connect your Git repository, start the translation, and we'll handle the rest. Our AI-powered platform takes care of everything automatically.</source>
         <target state="translated">Đơn giản chỉ cần kết nối kho mã Git của bạn, bắt đầu dịch và chúng tôi sẽ lo liệu phần còn lại. Nền tảng của chúng tôi được hỗ trợ bởi AI sẽ tự động xử lý mọi thứ.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/how-it-works/how-it-works.component.html</context>
@@ -1303,7 +1303,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="TRANSUNIT_SOURCE_DESCRIPTION" datatype="html">
-        <source>The original text in your application&apos;s source language</source>
+        <source>The original text in your application's source language</source>
         <target state="translated">Văn bản gốc trong ngôn ngữ nguồn của ứng dụng của bạn</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/how-it-works/how-it-works.component.html</context>
@@ -1367,7 +1367,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="SUPPORTED_FORMATS_DESCRIPTION" datatype="html">
-        <source>Our platform supports the following XLIFF formats for maximum compatibility with Angular&apos;s internationalization system:</source>
+        <source>Our platform supports the following XLIFF formats for maximum compatibility with Angular's internationalization system:</source>
         <target state="translated">Nền tảng của chúng tôi hỗ trợ các định dạng XLIFF sau đây để tối đa hóa khả năng tương thích với hệ thống quốc tế hóa của Angular:</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/how-it-works/how-it-works.component.html</context>
@@ -1383,7 +1383,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="CONTEXT_AWARE_DESCRIPTION" datatype="html">
-        <source>Our AI-powered translation engine understands your application&apos;s context, ensuring accurate and meaningful translations that maintain the original intent of your content.</source>
+        <source>Our AI-powered translation engine understands your application's context, ensuring accurate and meaningful translations that maintain the original intent of your content.</source>
         <target state="translated">Công nghệ dịch thuật được trang bị trí tuệ nhân tạo của chúng tôi hiểu ngữ cảnh của ứng dụng của bạn, đảm bảo các bản dịch chính xác và có ý nghĩa, mà vẫn giữ nguyên ý định gốc của nội dung bạn.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/how-it-works/how-it-works.component.html</context>
@@ -1863,8 +1863,8 @@
         </context-group>
       </trans-unit>
       <trans-unit id="OOPS_PAGE_NOT_FOUND" datatype="html">
-        <source>Oops! The page you&apos;re looking for seems to have vanished into the void...</source>
-        <target state="new">Không tìm thấy trang</target>
+        <source>Oops! The page you're looking for seems to have vanished into the void...</source>
+        <target state="translated">Ôi không! Trang bạn đang tìm kiếm dường như đã biến mất vào khoảng không...</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/not-found/not-found.component.ts</context>
           <context context-type="linenumber">14</context>
@@ -1936,7 +1936,7 @@
       </trans-unit>
       <trans-unit id="AUTH_LOGIN_OR" datatype="html">
         <source>or</source>
-        <target state="new">or</target>
+        <target state="translated">hoặc</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/login.component.ts</context>
           <context context-type="linenumber">56</context>
@@ -1944,7 +1944,7 @@
       </trans-unit>
       <trans-unit id="PAGE_NOT_FOUND" datatype="html">
         <source>Page Not Found</source>
-        <target state="new">Page Not Found</target>
+        <target state="translated">Không tìm thấy trang</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/not-found/not-found.component.ts</context>
           <context context-type="linenumber">13</context>
@@ -1952,7 +1952,7 @@
       </trans-unit>
       <trans-unit id="FREE_PLAN_TRANSLATION_UNIT_PRICE" datatype="html">
         <source>$0 per translation unit</source>
-        <target state="new">$0 per translation unit</target>
+        <target state="translated">$0 cho mỗi đơn vị dịch</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
           <context context-type="linenumber">54</context>
@@ -1960,7 +1960,7 @@
       </trans-unit>
       <trans-unit id="FREE_PLAN_TRANSLATION_UNITS" datatype="html">
         <source>100 translation units</source>
-        <target state="new">100 translation units</target>
+        <target state="translated">100 đơn vị dịch</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
           <context context-type="linenumber">58</context>
@@ -1968,7 +1968,7 @@
       </trans-unit>
       <trans-unit id="PROFILE_DANGER_ZONE" datatype="html">
         <source>Danger Zone</source>
-        <target state="new">Danger Zone</target>
+        <target state="translated">Khu vực nguy hiểm</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/profile/profile.component.ts</context>
           <context context-type="linenumber">70</context>
@@ -1976,7 +1976,7 @@
       </trans-unit>
       <trans-unit id="PROFILE_DELETE_ACCOUNT_BUTTON" datatype="html">
         <source>Delete Account</source>
-        <target state="new">Delete Account</target>
+        <target state="translated">Xóa tài khoản</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/profile/profile.component.ts</context>
           <context context-type="linenumber">73</context>
@@ -1984,7 +1984,7 @@
       </trans-unit>
       <trans-unit id="PROFILE_DELETE_ACCOUNT_TITLE" datatype="html">
         <source>Delete Account</source>
-        <target state="new">Delete Account</target>
+        <target state="translated">Xóa tài khoản</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/profile/profile.component.ts</context>
           <context context-type="linenumber">83</context>
@@ -1992,7 +1992,7 @@
       </trans-unit>
       <trans-unit id="PROFILE_DELETE_ACCOUNT_DESCRIPTION" datatype="html">
         <source>Please enter your email to confirm account deletion. This action cannot be undone.</source>
-        <target state="new">Please enter your email to confirm account deletion. This action cannot be undone.</target>
+        <target state="translated">Vui lòng nhập email của bạn để xác nhận việc xóa tài khoản. Hành động này sẽ không thể hoàn tác.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/profile/profile.component.ts</context>
           <context context-type="linenumber">84</context>
@@ -2000,7 +2000,7 @@
       </trans-unit>
       <trans-unit id="PROFILE_DELETE_ACCOUNT_PLACEHOLDER" datatype="html">
         <source>Enter your email</source>
-        <target state="new">Enter your email</target>
+        <target state="translated">Nhập email của bạn</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/profile/profile.component.ts</context>
           <context context-type="linenumber">85</context>
@@ -2008,7 +2008,7 @@
       </trans-unit>
       <trans-unit id="MODAL_CANCEL" datatype="html">
         <source>Cancel</source>
-        <target state="new">Cancel</target>
+        <target state="translated">Hủy</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/components/prompt-modal.component.ts</context>
           <context context-type="linenumber">19</context>
@@ -2016,7 +2016,7 @@
       </trans-unit>
       <trans-unit id="MODAL_CONFIRM" datatype="html">
         <source>Confirm</source>
-        <target state="new">Confirm</target>
+        <target state="translated">Xác nhận</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/components/prompt-modal.component.ts</context>
           <context context-type="linenumber">20</context>
@@ -2024,7 +2024,7 @@
       </trans-unit>
       <trans-unit id="ENTER_TEXT_PROMPT" datatype="html">
         <source>Enter text...</source>
-        <target state="new">Enter text...</target>
+        <target state="translated">Nhập văn bản...</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/components/prompt-modal.component.ts</context>
           <context context-type="linenumber">29</context>
@@ -2032,7 +2032,7 @@
       </trans-unit>
       <trans-unit id="AUTH_LOGIN_TITLE" datatype="html">
         <source>Sign In</source>
-        <target state="new">Sign In</target>
+        <target state="translated">Đăng nhập</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/login.component.ts</context>
           <context context-type="linenumber">16</context>
@@ -2040,7 +2040,7 @@
       </trans-unit>
       <trans-unit id="AUTH_LOGIN_EMAIL_REQUIRED" datatype="html">
         <source>Email is required</source>
-        <target state="new">Email is required</target>
+        <target state="translated">Email là bắt buộc</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/login.component.ts</context>
           <context context-type="linenumber">25</context>
@@ -2048,7 +2048,7 @@
       </trans-unit>
       <trans-unit id="AUTH_LOGIN_EMAIL_INVALID" datatype="html">
         <source>Please enter a valid email</source>
-        <target state="new">Please enter a valid email</target>
+        <target state="translated">Vui lòng nhập một email hợp lệ</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/login.component.ts</context>
           <context context-type="linenumber">28</context>
@@ -2056,7 +2056,7 @@
       </trans-unit>
       <trans-unit id="AUTH_LOGIN_PASSWORD_REQUIRED" datatype="html">
         <source>Password is required</source>
-        <target state="new">Password is required</target>
+        <target state="translated">Mật khẩu là bắt buộc</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/login.component.ts</context>
           <context context-type="linenumber">40</context>
@@ -2064,7 +2064,7 @@
       </trans-unit>
       <trans-unit id="AUTH_LOGIN_SIGN_IN" datatype="html">
         <source>Sign In</source>
-        <target state="new">Sign In</target>
+        <target state="translated">Đăng nhập</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/login.component.ts</context>
           <context context-type="linenumber">48</context>
@@ -2072,7 +2072,7 @@
       </trans-unit>
       <trans-unit id="AUTH_LOGIN_SIGNING_IN" datatype="html">
         <source>Signing in...</source>
-        <target state="new">Signing in...</target>
+        <target state="translated">Đang đăng nhập...</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/login.component.ts</context>
           <context context-type="linenumber">50</context>
@@ -2080,15 +2080,15 @@
       </trans-unit>
       <trans-unit id="AUTH_LOGIN_SIGN_IN_WITH_GOOGLE" datatype="html">
         <source>Sign in with Google</source>
-        <target state="new">Sign in with Google</target>
+        <target state="translated">Đăng nhập bằng Google</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/login.component.ts</context>
           <context context-type="linenumber">60</context>
         </context-group>
       </trans-unit>
       <trans-unit id="AUTH_LOGIN_NO_ACCOUNT" datatype="html">
-        <source>Don&apos;t have an account?</source>
-        <target state="new">Don&apos;t have an account?</target>
+        <source>Don't have an account?</source>
+        <target state="translated">Bạn chưa có tài khoản?</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/login.component.ts</context>
           <context context-type="linenumber">64</context>
@@ -2096,7 +2096,7 @@
       </trans-unit>
       <trans-unit id="AUTH_SIGNUP_TITLE" datatype="html">
         <source>Sign Up</source>
-        <target state="new">Sign Up</target>
+        <target state="translated">Đăng Ký</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/signup.component.ts</context>
           <context context-type="linenumber">16</context>
@@ -2104,7 +2104,7 @@
       </trans-unit>
       <trans-unit id="AUTH_SIGNUP_EMAIL" datatype="html">
         <source>Email</source>
-        <target state="new">Email</target>
+        <target state="translated">Email</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/signup.component.ts</context>
           <context context-type="linenumber">20</context>
@@ -2112,7 +2112,7 @@
       </trans-unit>
       <trans-unit id="AUTH_SIGNUP_EMAIL_REQUIRED" datatype="html">
         <source>Email is required</source>
-        <target state="new">Email is required</target>
+        <target state="translated">Email là bắt buộc</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/signup.component.ts</context>
           <context context-type="linenumber">25</context>
@@ -2120,7 +2120,7 @@
       </trans-unit>
       <trans-unit id="AUTH_SIGNUP_EMAIL_INVALID" datatype="html">
         <source>Please enter a valid email</source>
-        <target state="new">Please enter a valid email</target>
+        <target state="translated">Vui lòng nhập một địa chỉ email hợp lệ</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/signup.component.ts</context>
           <context context-type="linenumber">28</context>
@@ -2128,7 +2128,7 @@
       </trans-unit>
       <trans-unit id="AUTH_SIGNUP_PASSWORD" datatype="html">
         <source>Password</source>
-        <target state="new">Password</target>
+        <target state="translated">Mật khẩu</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/signup.component.ts</context>
           <context context-type="linenumber">35</context>
@@ -2136,7 +2136,7 @@
       </trans-unit>
       <trans-unit id="AUTH_SIGNUP_PASSWORD_REQUIRED" datatype="html">
         <source>Password is required</source>
-        <target state="new">Password is required</target>
+        <target state="translated">Mật khẩu là bắt buộc</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/signup.component.ts</context>
           <context context-type="linenumber">40</context>
@@ -2144,7 +2144,7 @@
       </trans-unit>
       <trans-unit id="AUTH_SIGNUP_PASSWORD_MIN_LENGTH" datatype="html">
         <source>Password must be at least 6 characters</source>
-        <target state="new">Password must be at least 6 characters</target>
+        <target state="translated">Mật khẩu phải có ít nhất 6 ký tự</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/signup.component.ts</context>
           <context context-type="linenumber">43</context>
@@ -2152,7 +2152,7 @@
       </trans-unit>
       <trans-unit id="AUTH_SIGNUP_CONFIRM_PASSWORD" datatype="html">
         <source>Confirm Password</source>
-        <target state="new">Confirm Password</target>
+        <target state="translated">Xác nhận mật khẩu</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/signup.component.ts</context>
           <context context-type="linenumber">50</context>
@@ -2160,15 +2160,15 @@
       </trans-unit>
       <trans-unit id="AUTH_SIGNUP_CONFIRM_PASSWORD_REQUIRED" datatype="html">
         <source>Please confirm your password</source>
-        <target state="new">Please confirm your password</target>
+        <target state="translated">Xin hãy xác nhận mật khẩu của bạn</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/signup.component.ts</context>
           <context context-type="linenumber">55</context>
         </context-group>
       </trans-unit>
       <trans-unit id="AUTH_SIGNUP_PASSWORDS_DONT_MATCH" datatype="html">
-        <source>Passwords don&apos;t match</source>
-        <target state="new">Passwords don&apos;t match</target>
+        <source>Passwords don't match</source>
+        <target state="translated">Mật khẩu không khớp</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/signup.component.ts</context>
           <context context-type="linenumber">58</context>
@@ -2176,7 +2176,7 @@
       </trans-unit>
       <trans-unit id="AUTH_SIGNUP_CREATE_ACCOUNT" datatype="html">
         <source>Create Account</source>
-        <target state="new">Create Account</target>
+        <target state="translated">Tạo Tài Khoản</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/signup.component.ts</context>
           <context context-type="linenumber">66</context>
@@ -2184,7 +2184,7 @@
       </trans-unit>
       <trans-unit id="AUTH_SIGNUP_CREATING_ACCOUNT" datatype="html">
         <source>Creating account...</source>
-        <target state="new">Creating account...</target>
+        <target state="translated">Đang tạo tài khoản...</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/signup.component.ts</context>
           <context context-type="linenumber">68</context>
@@ -2192,7 +2192,7 @@
       </trans-unit>
       <trans-unit id="AUTH_SIGNUP_OR" datatype="html">
         <source>or</source>
-        <target state="new">or</target>
+        <target state="translated">hoặc</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/signup.component.ts</context>
           <context context-type="linenumber">74</context>
@@ -2200,7 +2200,7 @@
       </trans-unit>
       <trans-unit id="AUTH_SIGNUP_HAVE_ACCOUNT" datatype="html">
         <source>Already have an account?</source>
-        <target state="new">Already have an account?</target>
+        <target state="translated">Bạn đã có tài khoản?</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/signup.component.ts</context>
           <context context-type="linenumber">78</context>
@@ -2208,7 +2208,7 @@
       </trans-unit>
       <trans-unit id="AUTH_SIGNUP_SIGN_IN" datatype="html">
         <source>Sign In</source>
-        <target state="new">Sign In</target>
+        <target state="translated">Đăng Nhập</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/signup.component.ts</context>
           <context context-type="linenumber">79</context>
@@ -2216,7 +2216,7 @@
       </trans-unit>
       <trans-unit id="FOOTER_COPYRIGHT" datatype="html">
         <source>© 2025 Softwarity, Inc.</source>
-        <target state="new">© 2025 Softwarity, Inc.</target>
+        <target state="translated">© 2025 Softwarity, Inc.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/app.component.ts</context>
           <context context-type="linenumber">23</context>
@@ -2224,7 +2224,7 @@
       </trans-unit>
       <trans-unit id="FOOTER_TERMS" datatype="html">
         <source>Terms</source>
-        <target state="new">Terms</target>
+        <target state="translated">Điều khoản</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/app.component.ts</context>
           <context context-type="linenumber">24</context>
@@ -2232,7 +2232,7 @@
       </trans-unit>
       <trans-unit id="FOOTER_PRIVACY" datatype="html">
         <source>Privacy</source>
-        <target state="new">Privacy</target>
+        <target state="translated">Quyền riêng tư</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/app.component.ts</context>
           <context context-type="linenumber">25</context>
@@ -2240,7 +2240,7 @@
       </trans-unit>
       <trans-unit id="FOOTER_SECURITY" datatype="html">
         <source>Security</source>
-        <target state="new">Security</target>
+        <target state="translated">An ninh</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/app.component.ts</context>
           <context context-type="linenumber">26</context>
@@ -2248,7 +2248,7 @@
       </trans-unit>
       <trans-unit id="FOOTER_DOCS" datatype="html">
         <source>Docs</source>
-        <target state="new">Docs</target>
+        <target state="translated">Tài liệu</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/app.component.ts</context>
           <context context-type="linenumber">28</context>
@@ -2256,7 +2256,7 @@
       </trans-unit>
       <trans-unit id="FOOTER_CONTACT" datatype="html">
         <source>Contact</source>
-        <target state="new">Contact</target>
+        <target state="translated">Liên hệ</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/app.component.ts</context>
           <context context-type="linenumber">28</context>
@@ -2264,7 +2264,7 @@
       </trans-unit>
       <trans-unit id="FOOTER_COOKIES" datatype="html">
         <source>Manage cookies</source>
-        <target state="new">Manage cookies</target>
+        <target state="translated">Quản lý cookie</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/app.component.ts</context>
           <context context-type="linenumber">29</context>
@@ -2272,7 +2272,7 @@
       </trans-unit>
       <trans-unit id="ENTERPRISE_PLAN_USE_OUR_BEST_AI_MODEL" datatype="html">
         <source>Use our best AI model</source>
-        <target state="new">Use our best AI model</target>
+        <target state="translated">Sử dụng mô hình AI tốt nhất của chúng tôi</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
           <context context-type="linenumber">149</context>
