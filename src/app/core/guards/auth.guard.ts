@@ -1,20 +1,20 @@
 import { inject } from '@angular/core';
-import { CanActivateFn, Router } from '@angular/router';
+import { Router, type CanActivateFn } from '@angular/router';
 import { AuthService } from '../services/auth.service';
-import { map, take } from 'rxjs';
+import { map, take } from 'rxjs/operators';
 
-export const AuthGuard: CanActivateFn = () => {
-  const auth = inject(AuthService);
+export const authGuard: CanActivateFn = (route, state) => {
   const router = inject(Router);
+  const authService = inject(AuthService);
 
-  return auth.isAuthenticated$.pipe(
-    take(1),
-    map(isAuthenticated => {
-      if (!isAuthenticated) {
-        router.navigate(['/']);
-        return false;
+  return authService.getUser().pipe(
+    map(user => {
+      if (user) {
+        return true;
       }
-      return true;
+      // Stocker l'URL demandée pour redirection après login
+      localStorage.setItem('gh-redirect', state.url);
+      return router.createUrlTree(['/auth/login']);
     })
   );
 };

@@ -127,21 +127,4 @@ export class SignupComponent {
 
     signup$.subscribe();
   }
-
-  signUpWithGoogle(): void {
-    this.isLoading.set(true);
-    this.error.set(null);
-
-    const googleSignUp$ = from(this.authService.signInWithGoogle()).pipe(
-      tap({
-        next: () => this.router.navigate(['/']),
-        error: (err) => {
-          this.error.set(err.message);
-          this.isLoading.set(false);
-        }
-      })
-    );
-
-    googleSignUp$.subscribe();
-  }
 }

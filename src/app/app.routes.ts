@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { AuthGuard } from './core/guards/auth.guard';
+import { authGuard } from './core/guards/auth.guard';
 
 export const routes: Routes = [
   {
@@ -33,37 +33,37 @@ export const routes: Routes = [
   },
   {
     path: 'dashboard',
-    canActivate: [AuthGuard],
+    canActivate: [authGuard],
     loadComponent: () => import('./features/dashboard/dashboard.component').then(m => m.DashboardComponent)
   },
   {
     path: 'profile',
-    canActivate: [AuthGuard],
+    canActivate: [authGuard],
     loadComponent: () => import('./features/profile/profile.component').then(m => m.ProfileComponent)
   },
   {
     path: 'git-providers',
-    canActivate: [AuthGuard],
+    canActivate: [authGuard],
     loadComponent: () => import('./features/git-providers/git-providers.component').then(m => m.GitProvidersComponent)
   },
   {
     path: 'repositories/github',
-    canActivate: [AuthGuard],
+    canActivate: [authGuard],
     loadComponent: () => import('./features/repositories/github-repositories.component').then(m => m.GithubRepositoriesComponent)
   },
   {
     path: 'repositories/gitlab',
-    canActivate: [AuthGuard],
+    canActivate: [authGuard],
     loadComponent: () => import('./features/repositories/gitlab-repositories.component').then(m => m.GitlabRepositoriesComponent)
   },
   {
     path: 'repositories/bitbucket',
-    canActivate: [AuthGuard],
+    canActivate: [authGuard],
     loadComponent: () => import('./features/repositories/bitbucket-repositories.component').then(m => m.BitbucketRepositoriesComponent)
   },
   {
     path: 'stripe-test',
-    canActivate: [AuthGuard],
+    canActivate: [authGuard],
     loadComponent: () => import('./features/stripe-test/stripe-test.component').then(m => m.StripeTestComponent)
   },
   {

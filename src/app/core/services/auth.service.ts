@@ -80,6 +80,7 @@ export class AuthService {
     return from(this.supabase.auth.signOut()).pipe(
       map(response => {
         if (response.error) throw response.error;
+        this.router.navigate(['/']);
       })
     );
   }

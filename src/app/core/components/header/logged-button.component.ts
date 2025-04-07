@@ -104,6 +104,6 @@ export class LoggedButtonComponent {
   }
 
   signOut() {
-    this.auth.signOut();
+    this.auth.signOut().subscribe();
   }
 } 
