@@ -1,6 +1,8 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import '../../web-components/icon';
+import { toSignal } from '@angular/core/rxjs-interop';
+import { AuthService } from '../../core/services/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -10,5 +12,7 @@ import '../../web-components/icon';
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class HomeComponent {
+  private auth = inject(AuthService);
+  protected isAuthenticated = toSignal(this.auth.isAuthenticated$, { initialValue: false });
   constructor() {}
 }

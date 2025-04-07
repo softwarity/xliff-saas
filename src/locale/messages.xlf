@@ -38,71 +38,32 @@
           <context context-type="linenumber">51</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="AUTH_ALREADY_HAVE_ACCOUNT_SIGN_IN_BUTTON" datatype="html">
-        <source>Already have an account? Sign In</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/components/user-button/unlogged-button.component.ts</context>
-          <context context-type="linenumber">63</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="AUTH_CAPS_LOCK_ON" datatype="html">
-        <source>Caps Lock is on</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/components/user-button/unlogged-button.component.ts</context>
-          <context context-type="linenumber">48</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="AUTH_EMAIL_LABEL" datatype="html">
+      <trans-unit id="AUTH_LOGIN_EMAIL" datatype="html">
         <source>Email</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/components/user-button/unlogged-button.component.ts</context>
-          <context context-type="linenumber">41</context>
+          <context context-type="sourcefile">src/app/features/auth/login.component.ts</context>
+          <context context-type="linenumber">20</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="AUTH_EMAIL_PLACEHOLDER" datatype="html">
-        <source>Enter your email</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/components/user-button/unlogged-button.component.ts</context>
-          <context context-type="linenumber">42</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="AUTH_NO_ACCOUNT_SIGN_UP_BUTTON" datatype="html">
-        <source>No account? Sign Up</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/components/user-button/unlogged-button.component.ts</context>
-          <context context-type="linenumber">65</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="AUTH_PASSWORD_LABEL" datatype="html">
+      <trans-unit id="AUTH_LOGIN_PASSWORD" datatype="html">
         <source>Password</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/components/user-button/unlogged-button.component.ts</context>
-          <context context-type="linenumber">45</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="AUTH_PASSWORD_PLACEHOLDER" datatype="html">
-        <source>Enter your password</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/components/user-button/unlogged-button.component.ts</context>
-          <context context-type="linenumber">46</context>
+          <context context-type="sourcefile">src/app/features/auth/login.component.ts</context>
+          <context context-type="linenumber">35</context>
         </context-group>
       </trans-unit>
       <trans-unit id="AUTH_SIGN_IN_BUTTON" datatype="html">
         <source>Sign In</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/components/user-button/unlogged-button.component.ts</context>
-          <context context-type="linenumber">35</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/components/user-button/unlogged-button.component.ts</context>
+          <context context-type="sourcefile">src/app/core/components/header/header.component.ts</context>
           <context context-type="linenumber">56</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="AUTH_SIGN_UP_BUTTON" datatype="html">
+      <trans-unit id="AUTH_LOGIN_SIGN_UP" datatype="html">
         <source>Sign Up</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/components/user-button/unlogged-button.component.ts</context>
-          <context context-type="linenumber">54</context>
+          <context context-type="sourcefile">src/app/features/auth/login.component.ts</context>
+          <context context-type="linenumber">65</context>
         </context-group>
       </trans-unit>
       <trans-unit id="AUTOMATED_WORKFLOW_ABSTRACT" datatype="html">
@@ -879,7 +840,7 @@
         <source>Documentation</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/header/header.component.ts</context>
-          <context context-type="linenumber">51</context>
+          <context context-type="linenumber">49</context>
         </context-group>
       </trans-unit>
       <trans-unit id="NAVIGATION_GIT_PROVIDERS" datatype="html">
@@ -893,7 +854,7 @@
         <source>How It Works</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/header/header.component.ts</context>
-          <context context-type="linenumber">43</context>
+          <context context-type="linenumber">41</context>
         </context-group>
       </trans-unit>
       <trans-unit id="NEXT_PAGE" datatype="html">
@@ -1392,21 +1353,21 @@
         <source>Dark mode</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/header/header.component.ts</context>
-          <context context-type="linenumber">62</context>
+          <context context-type="linenumber">60</context>
         </context-group>
       </trans-unit>
       <trans-unit id="THEME_TOGGLE_TO_LIGHT" datatype="html">
         <source>Light mode</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/header/header.component.ts</context>
-          <context context-type="linenumber">63</context>
+          <context context-type="linenumber">61</context>
         </context-group>
       </trans-unit>
       <trans-unit id="THEME_TOGGLE_TO_SYSTEM" datatype="html">
         <source>System preference</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/header/header.component.ts</context>
-          <context context-type="linenumber">64</context>
+          <context context-type="linenumber">62</context>
         </context-group>
       </trans-unit>
       <trans-unit id="TOKEN_INPUT_PLACEHOLDER" datatype="html">
@@ -1670,10 +1631,6 @@
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
           <context context-type="linenumber">46</context>
         </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/features/home/home.component.html</context>
-          <context context-type="linenumber">47</context>
-        </context-group>
       </trans-unit>
       <trans-unit id="NOT_FOUND_BACK_HOME" datatype="html">
         <source> Back to Home </source>
@@ -1727,7 +1684,7 @@
       <trans-unit id="PROFILE_MENU_LOGOUT" datatype="html">
         <source>Logout</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/components/user-button/logged-button.component.ts</context>
+          <context context-type="sourcefile">src/app/core/components/header/logged-button.component.ts</context>
           <context context-type="linenumber">62</context>
         </context-group>
       </trans-unit>
@@ -1749,35 +1706,32 @@
         <source>Register</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
+          <context context-type="linenumber">47</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/home/home.component.html</context>
           <context context-type="linenumber">65</context>
         </context-group>
       </trans-unit>
       <trans-unit id="STRIPE_TEST" datatype="html">
         <source>Stripe Test</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/components/user-button/logged-button.component.ts</context>
+          <context context-type="sourcefile">src/app/core/components/header/logged-button.component.ts</context>
           <context context-type="linenumber">58</context>
         </context-group>
       </trans-unit>
       <trans-unit id="YOUR_PROFILE" datatype="html">
         <source>Your profile</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/components/user-button/logged-button.component.ts</context>
+          <context context-type="sourcefile">src/app/core/components/header/logged-button.component.ts</context>
           <context context-type="linenumber">54</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="AUTH_OR" datatype="html">
+      <trans-unit id="AUTH_LOGIN_OR" datatype="html">
         <source>or</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/components/user-button/unlogged-button.component.ts</context>
-          <context context-type="linenumber">76</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="AUTH_SIGN_IN_WITH_GOOGLE" datatype="html">
-        <source> Continue with Google </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/components/user-button/unlogged-button.component.ts</context>
-          <context context-type="linenumber">80</context>
+          <context context-type="sourcefile">src/app/features/auth/login.component.ts</context>
+          <context context-type="linenumber">56</context>
         </context-group>
       </trans-unit>
       <trans-unit id="PAGE_NOT_FOUND" datatype="html">
@@ -1855,6 +1809,216 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/profile/profile.component.ts</context>
           <context context-type="linenumber">83</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="AUTH_LOGIN_EMAIL_INVALID" datatype="html">
+        <source>Please enter a valid email</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/auth/login.component.ts</context>
+          <context context-type="linenumber">28</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="AUTH_LOGIN_EMAIL_REQUIRED" datatype="html">
+        <source>Email is required</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/auth/login.component.ts</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="AUTH_LOGIN_NO_ACCOUNT" datatype="html">
+        <source>Don&apos;t have an account?</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/auth/login.component.ts</context>
+          <context context-type="linenumber">64</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="AUTH_LOGIN_PASSWORD_REQUIRED" datatype="html">
+        <source>Password is required</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/auth/login.component.ts</context>
+          <context context-type="linenumber">40</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="AUTH_LOGIN_SIGN_IN" datatype="html">
+        <source>Sign In</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/auth/login.component.ts</context>
+          <context context-type="linenumber">48</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="AUTH_LOGIN_SIGN_IN_WITH_GOOGLE" datatype="html">
+        <source>Sign in with Google</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/auth/login.component.ts</context>
+          <context context-type="linenumber">60</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="AUTH_LOGIN_SIGNING_IN" datatype="html">
+        <source>Signing in...</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/auth/login.component.ts</context>
+          <context context-type="linenumber">50</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="AUTH_LOGIN_TITLE" datatype="html">
+        <source>Sign In</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/auth/login.component.ts</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="AUTH_SIGNUP_CONFIRM_PASSWORD" datatype="html">
+        <source>Confirm Password</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/auth/signup.component.ts</context>
+          <context context-type="linenumber">50</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="AUTH_SIGNUP_CONFIRM_PASSWORD_REQUIRED" datatype="html">
+        <source>Please confirm your password</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/auth/signup.component.ts</context>
+          <context context-type="linenumber">55</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="AUTH_SIGNUP_CREATE_ACCOUNT" datatype="html">
+        <source>Create Account</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/auth/signup.component.ts</context>
+          <context context-type="linenumber">66</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="AUTH_SIGNUP_CREATING_ACCOUNT" datatype="html">
+        <source>Creating account...</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/auth/signup.component.ts</context>
+          <context context-type="linenumber">68</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="AUTH_SIGNUP_EMAIL" datatype="html">
+        <source>Email</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/auth/signup.component.ts</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="AUTH_SIGNUP_EMAIL_INVALID" datatype="html">
+        <source>Please enter a valid email</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/auth/signup.component.ts</context>
+          <context context-type="linenumber">28</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="AUTH_SIGNUP_EMAIL_REQUIRED" datatype="html">
+        <source>Email is required</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/auth/signup.component.ts</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="AUTH_SIGNUP_HAVE_ACCOUNT" datatype="html">
+        <source>Already have an account?</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/auth/signup.component.ts</context>
+          <context context-type="linenumber">78</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="AUTH_SIGNUP_OR" datatype="html">
+        <source>or</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/auth/signup.component.ts</context>
+          <context context-type="linenumber">74</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="AUTH_SIGNUP_PASSWORD" datatype="html">
+        <source>Password</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/auth/signup.component.ts</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="AUTH_SIGNUP_PASSWORD_MIN_LENGTH" datatype="html">
+        <source>Password must be at least 6 characters</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/auth/signup.component.ts</context>
+          <context context-type="linenumber">43</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="AUTH_SIGNUP_PASSWORD_REQUIRED" datatype="html">
+        <source>Password is required</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/auth/signup.component.ts</context>
+          <context context-type="linenumber">40</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="AUTH_SIGNUP_PASSWORDS_DONT_MATCH" datatype="html">
+        <source>Passwords don&apos;t match</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/auth/signup.component.ts</context>
+          <context context-type="linenumber">58</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="AUTH_SIGNUP_SIGN_IN" datatype="html">
+        <source>Sign In</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/auth/signup.component.ts</context>
+          <context context-type="linenumber">79</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="AUTH_SIGNUP_TITLE" datatype="html">
+        <source>Sign Up</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/auth/signup.component.ts</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="FOOTER_CONTACT" datatype="html">
+        <source>Contact</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.ts</context>
+          <context context-type="linenumber">28</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="FOOTER_COOKIES" datatype="html">
+        <source>Manage cookies</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.ts</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="FOOTER_COPYRIGHT" datatype="html">
+        <source>© 2025 Softwarity, Inc.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.ts</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="FOOTER_DOCS" datatype="html">
+        <source>Docs</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.ts</context>
+          <context context-type="linenumber">28</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="FOOTER_PRIVACY" datatype="html">
+        <source>Privacy</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.ts</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="FOOTER_SECURITY" datatype="html">
+        <source>Security</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.ts</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="FOOTER_TERMS" datatype="html">
+        <source>Terms</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.ts</context>
+          <context context-type="linenumber">24</context>
         </context-group>
       </trans-unit>
     </body>

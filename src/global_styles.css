@@ -220,6 +220,9 @@ input, select, textarea {
 a.button {
   @apply text-center;
 }
+a.disabled {
+  @apply opacity-50 cursor-not-allowed pointer-events-none;
+}
 a.button.flat-primary,
 a.button.flat-warning,
 a.button.flat-secondary,
