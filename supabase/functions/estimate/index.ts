@@ -25,11 +25,11 @@ Deno.serve(async (req) => {
     try {
         const user = await userService.getUser(req);
         const userId = user.id;
-
+        
         const { namespace, name, branch, ext: EXT_XLIFF, transUnitState: STATE } = await req.json();
+        console.log('Estimation request received', namespace, name, branch, EXT_XLIFF, STATE);
         
         if (await jobDao.existsAndNotCompleted('estimation', userId, provider, namespace, name)) {
-            console.log('Estimation already launch for this repository and is not completed');
             throw new Error('Estimation already launch for this repository and is not completed');
         }
         console.log('Estimation not exists or completed, start new estimation...');
@@ -39,7 +39,6 @@ Deno.serve(async (req) => {
         const toInsert: Omit<Job, 'id'> = { request: 'estimation', userId, provider, namespace, repository: name, ...payload };
         const job = await jobDao.insert(toInsert);
         jobId = job.id;
-        console.log('Job inserted', job.id);
         const TOKEN = user.user_metadata[provider];
         const WEBHOOK_URL = `${Deno.env.get('HOST_WEBHOOK')}/functions/v1/estimate-webhook/${job.id}`;
         const WEBHOOK_JWT = Deno.env.get('SUPABASE_ANON_KEY')!;

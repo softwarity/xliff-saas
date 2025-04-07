@@ -25,7 +25,6 @@ export async function cancelRun(runId: string): Promise<void> {
 }
 
 export async function launchXliffRunner(workflowId: string, inputs: GhTranslateInputs | GhEstimateInputs): Promise<void> {
-  console.log('launchXliffRunner inputs', inputs);
   const response = await fetch(`https://api.github.com/repos/softwarity/xliff-runner/actions/workflows/${workflowId}/dispatches`, {
     method: 'POST',
     headers: {
@@ -35,7 +34,6 @@ export async function launchXliffRunner(workflowId: string, inputs: GhTranslateI
     },
     body: JSON.stringify({ ref: 'main', inputs }),
   });
-  console.log('launchXliffRunner response', response);
   if (!response.ok) {
       const error = await response.json();
       return Promise.reject(error);

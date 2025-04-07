@@ -18,10 +18,11 @@ Deno.serve(async (req) => {
     const url = new URL(req.url);
     const pathname = url.pathname;
     const provider = pathname.split('/').pop() as 'github' | 'gitlab' | 'bitbucket';
+    let jobId: string | undefined;
+    const supabaseClient = getSupabaseClient();
+    const jobDao = new JobDao(supabaseClient);
+    const userService = new UserService(supabaseClient);
     try {
-        const supabaseClient = getSupabaseClient();
-        const jobDao = new JobDao(supabaseClient);
-        const userService = new UserService(supabaseClient);
         const user = await userService.getUser(req);
         const userId = user.id;
         const balance = await userService.getBalance(userId);
@@ -29,12 +30,12 @@ Deno.serve(async (req) => {
             throw new Error('Not enough credits');
         }
         const { namespace, name, branch, ext: EXT_XLIFF, transUnitState: STATE, procedeedTransUnitState: PROCEEDED_STATE } = await req.json();
-        
+        console.log('Translation request received', namespace, name, branch, EXT_XLIFF, STATE, PROCEEDED_STATE);
+
         if (await jobDao.existsAndNotCompleted('translation', userId, provider, namespace, name)) {
-            console.log('Translation already launch for this repository and is not completed');
             throw new Error('Translation already launch for this repository and is not completed');
         }
-        console.log('Translation not exists or completed, start...');
+        console.log('Translation not exists or completed, start new translation...');
         const payload: Omit<Job, 'request' | 'userId' | 'provider' | 'namespace' | 'repository' | 'id'> = {
             branch, ext: EXT_XLIFF, transUnitState: STATE, status: 'pending', transUnitFound: 0, details: {}
         };
@@ -53,6 +54,7 @@ Deno.serve(async (req) => {
             CREDITS: `${balance}`,
             DRY_RUN: Deno.env.get('DRY_RUN') === 'true' ? 'true' : 'false'
         };
+        console.log('Translation launching for ', `${namespace}/${name}@${branch} by ${user.email}. JobId: ${job.id}`);
         await launchTranslateRunner(inputs);
         console.log('Translation launched for ', `${namespace}/${name}@${branch} by ${user.email}. JobId: ${job.id}`);
         return new Response(JSON.stringify({ message: 'Translation triggered successfully!', job }), { headers: {
@@ -60,6 +62,10 @@ Deno.serve(async (req) => {
             'Content-Type': 'application/json',
         }, status: 200 });
     } catch(error: any) {
+        console.error('Error launching translation', error);
+        if (jobId) {
+            await jobDao.updateById(jobId, { status: 'failed', details: { error: error.message } });
+        }
         return new Response(JSON.stringify({ error: error.message }), { headers: {
             ...CORS_HEADERS,
             'Content-Type': 'application/json'
