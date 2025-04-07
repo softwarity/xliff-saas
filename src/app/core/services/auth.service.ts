@@ -19,14 +19,11 @@ export class AuthService {
 
   constructor() {
     console.log('AuthService: Initializing...');
-
     this.supabase.auth.getSession().then(({ data: { session } }) => {
-      console.log('AuthService: Initial session check:', { hasSession: !!session });
       this.updateAuthState(session?.user ?? null);
     });
 
     this.supabase.auth.onAuthStateChange((event, session) => {
-      console.log('AuthService: Auth state change:', { event, hasSession: !!session });
       this.updateAuthState(session?.user ?? null);
     });
   }
@@ -41,7 +38,6 @@ export class AuthService {
   }
 
   private updateAuthState(user: User | null): void {
-    console.log('AuthService: Updating auth state:', { hasUser: !!user }, user); 
     this.userSubject.next(user);
     this.isAuthenticatedSubject.next(!!user);
   }
