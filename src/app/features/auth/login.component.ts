@@ -2,7 +2,6 @@ import { CommonModule } from '@angular/common';
 import { Component, inject, signal } from '@angular/core';
 import { FormBuilder, FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
-import { from, tap } from 'rxjs';
 import { AuthService } from '../../core/services/auth.service';
 
 @Component({
@@ -43,6 +42,17 @@ import { AuthService } from '../../core/services/auth.service';
             }
           </div>
 
+          @if (error()) {
+            <div class="error-message mb-4">
+              <span>{{ error() }}</span>
+              @if (isEmailNotConfirmed()) {
+                <div class="mt-2">
+                  <button type="button" (click)="resendConfirmation()" [disabled]="isResending()" class="text-primary hover:underline" i18n="@@AUTH_LOGIN_RESEND_CONFIRMATION">Resend confirmation email</button>
+                </div>
+              }
+            </div>
+          }
+
           <button type="submit" [disabled]="loginForm.invalid || isLoading()" class="flat-primary w-full">
             @if (!isLoading()) {
               <span i18n="@@AUTH_LOGIN_SIGN_IN">Sign In</span>
@@ -74,7 +84,9 @@ export class LoginComponent {
   private router = inject(Router);
 
   isLoading = signal(false);
+  isResending = signal(false);
   error = signal<string | null>(null);
+  isEmailNotConfirmed = signal(false);
 
   loginForm = this.fb.group({
     email: ['', [Validators.required, Validators.email]],
@@ -89,37 +101,54 @@ export class LoginComponent {
 
     this.isLoading.set(true);
     this.error.set(null);
+    this.isEmailNotConfirmed.set(false);
 
-    const login$ = from(this.authService.signInWithEmail(
-      this.email.value,
-      this.password.value
-    )).pipe(
-      tap({
-        next: () => this.router.navigate(['/']),
-        error: (err) => {
+    this.authService.signInWithEmail(this.email.value, this.password.value).subscribe({
+      next: () => this.router.navigate(['/']),
+      error: (err) => {
+        console.error('Login error:', err);
+        this.isLoading.set(false);
+        
+        // Détection spécifique d'email non confirmé
+        if (err.message.includes('Email not confirmed') || 
+            err.message.includes('Email link is invalid or has expired')) {
+          this.isEmailNotConfirmed.set(true);
+          this.error.set($localize `:@@AUTH_LOGIN_EMAIL_NOT_CONFIRMED:Your email has not been confirmed. Please check your inbox or request a new confirmation email.`);
+        } else {
           this.error.set(err.message);
-          this.isLoading.set(false);
         }
-      })
-    );
+      }
+    });
+  }
 
-    login$.subscribe();
+  resendConfirmation(): void {
+    if (!this.email.value) return;
+    
+    this.isResending.set(true);
+    localStorage.setItem('pendingConfirmationEmail', this.email.value);
+    
+    this.authService.resendConfirmationEmail(this.email.value).subscribe({
+      next: () => {
+        this.isResending.set(false);
+        this.router.navigate(['/auth/email-confirmation']);
+      },
+      error: (err) => {
+        this.isResending.set(false);
+        this.error.set($localize `:@@AUTH_LOGIN_RESEND_ERROR:Error sending confirmation email: ${err.message}`);
+      }
+    });
   }
 
   signInWithGoogle(): void {
     this.isLoading.set(true);
     this.error.set(null);
-
-    const googleSignIn$ = from(this.authService.signInWithGoogle()).pipe(
-      tap({
-        next: () => this.router.navigate(['/']),
-        error: (err) => {
-          this.error.set(err.message);
-          this.isLoading.set(false);
-        }
-      })
-    );
-
-    googleSignIn$.subscribe();
+    
+    this.authService.signInWithGoogle().subscribe({
+      next: () => this.router.navigate(['/']),
+      error: (err) => {
+        this.error.set(err.message);
+        this.isLoading.set(false);
+      }
+    });
   }
 }

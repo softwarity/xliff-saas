@@ -1,23 +1,11 @@
 import { Routes } from '@angular/router';
 import { authGuard } from './core/guards/auth.guard';
+import { emailConfirmedGuard } from './core/guards/email-confirmed.guard';
 
 export const routes: Routes = [
   {
     path: 'auth',
-    children: [
-      {
-        path: 'login',
-        loadComponent: () => import('./features/auth/login.component').then(m => m.LoginComponent)
-      },
-      {
-        path: 'signup',
-        loadComponent: () => import('./features/auth/signup.component').then(m => m.SignupComponent)
-      },
-      {
-        path: '**',
-        loadComponent: () => import('./features/not-found/not-found.component').then(m => m.NotFoundComponent)
-      }
-    ]
+    loadChildren: () => import('./features/auth/auth.routes').then(m => m.AUTH_ROUTES)
   },
   {
     path: '',
@@ -33,17 +21,17 @@ export const routes: Routes = [
   },
   {
     path: 'dashboard',
-    canActivate: [authGuard],
+    canActivate: [authGuard, emailConfirmedGuard],
     loadComponent: () => import('./features/dashboard/dashboard.component').then(m => m.DashboardComponent)
   },
   {
     path: 'profile',
-    canActivate: [authGuard],
+    canActivate: [authGuard, emailConfirmedGuard],
     loadComponent: () => import('./features/profile/profile.component').then(m => m.ProfileComponent)
   },
   {
     path: 'git-providers',
-    canActivate: [authGuard],
+    canActivate: [authGuard, emailConfirmedGuard],
     loadComponent: () => import('./features/git-providers/git-providers.component').then(m => m.GitProvidersComponent)
   },
   {

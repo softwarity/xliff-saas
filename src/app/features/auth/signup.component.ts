@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, inject, signal } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
-import { from, tap } from 'rxjs';
+import { from } from 'rxjs';
 import { AuthService } from '../../core/services/auth.service';
 
 @Component({
@@ -108,23 +108,24 @@ export class SignupComponent {
 
   onSubmit(): void {
     if (this.signupForm.invalid) return;
-
     this.isLoading.set(true);
     this.error.set(null);
-
-    const signup$ = from(this.authService.signUp(
+    localStorage.setItem('pendingConfirmationEmail', this.email.value);
+    from(this.authService.signUp(
       this.email.value,
       this.password.value
-    )).pipe(
-      tap({
-        next: () => this.router.navigate(['/']),
-        error: (err) => {
-          this.error.set(err.message);
-          this.isLoading.set(false);
-        }
-      })
-    );
-
-    signup$.subscribe();
+    )).subscribe({
+      next: () => {
+        this.authService.signOut().subscribe({
+          next: () => {
+            this.router.navigate(['/auth/email-confirmation']);
+          }
+        });
+      },
+      error: (err) => {
+        this.error.set(err.message);
+        this.isLoading.set(false);
+      }
+    });
   }
 }

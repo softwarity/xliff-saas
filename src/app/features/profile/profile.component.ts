@@ -132,7 +132,8 @@ export class ProfileComponent {
       this.user$.pipe(
         take(1),
         filter(user => user?.email === email),
-        concatMap(() => this.auth.deleteAccount())
+        concatMap(() => this.auth.deleteAccount()),
+        concatMap(() => this.auth.signOut())
       ).subscribe({
         next: () => {
           console.log('Account deleted', email);
