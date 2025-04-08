@@ -5,7 +5,7 @@ import { TransactionDao } from '../lib/transaction-dao.ts';
 import { Job } from "../entities/job.ts";
 import { cancelRun } from '../lib/git-service.ts';
 import { EstimationDoneMessage, ProgressMessage, ErrorMessage } from '../models/webhook-message.ts';
-import { UserService } from '../services/user-service.ts';
+import { UserService } from '../lib/user-service.ts';
 Deno.serve(async (req: Request) => {
   if (req.method !== 'POST') {
     return new Response(null, {status: 405});
