@@ -1,10 +1,22 @@
 <div class="container mx-auto px-4 py-8">
   <h1 class="text-3xl font-bold mb-8 dark:text-white text-gray-900">
     <span i18n="@@DOCUMENTATION_TITLE">Angular i18n Setup Guide</span>
-    <a href="https://angular.dev/guide/i18n" target="_blank" class="text-sm text-blue-600 dark:text-blue-400 ml-2" i18n="@@SEE_OFFICIAL_DOCS">Official Documentation →</a>
   </h1>
 
-  <div class="space-y-8">
+  <!-- Tabs Navigation -->
+  <div class="mb-8 border-b border-gray-200 dark:border-gray-700">
+    <ul class="flex flex-wrap -mb-px">
+      <li class="mr-2">
+        <button (click)="activeTab = 'setup'" [class.text-blue-600]="activeTab === 'setup'" [class.border-blue-600]="activeTab === 'setup'" [class.dark:text-blue-400]="activeTab === 'setup'" [class.dark:border-blue-400]="activeTab === 'setup'" class="inline-block p-4 border-b-2 rounded-t-lg" [class.border-transparent]="activeTab !== 'setup'" i18n="@@TAB_SETUP">Setup</button>
+      </li>
+      <li class="mr-2">
+        <button (click)="activeTab = 'usage'" [class.text-blue-600]="activeTab === 'usage'" [class.border-blue-600]="activeTab === 'usage'" [class.dark:text-blue-400]="activeTab === 'usage'" [class.dark:border-blue-400]="activeTab === 'usage'" class="inline-block p-4 border-b-2 rounded-t-lg" [class.border-transparent]="activeTab !== 'usage'" i18n="@@TAB_USAGE">Usage</button>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Setup Tab Content -->
+  <div class="space-y-8" *ngIf="activeTab === 'setup'">
     <!-- Initial Setup -->
     <div class="bg-white dark:bg-dark-700 rounded-lg shadow-lg p-8 border border-gray-200 dark:border-gray-700">
       <h2 class="text-2xl font-semibold mb-6 text-blue-600 dark:text-blue-400" i18n="@@INITIAL_SETUP_TITLE">Initial Setup</h2>
@@ -25,15 +37,38 @@
       <p class="text-gray-700 dark:text-gray-300 mt-4" i18n="@@INITIAL_SETUP_CONFIG">It will also add the extract-i18n configuration to angular.json:</p>
 
       <pre class="bg-gray-900 rounded-lg p-4 mt-4 overflow-x-auto border border-gray-700"><code><span class="text-yellow-400">"extract-i18n"</span>: <span class="text-blue-400">&#123;</span>
-  <span class="text-yellow-400">"builder"</span>: <span class="text-green-400">"&#64;angular-devkit/build-angular:extract-i18n"</span>,
+  <span class="text-yellow-400">"builder"</span>: <span class="text-green-400">"ng-extract-i18n-merge:ng-extract-i18n-merge"</span>,
   <span class="text-yellow-400">"options"</span>: <span class="text-blue-400">&#123;</span>
     <span class="text-yellow-400">"buildTarget"</span>: <span class="text-green-400">"your-app:build"</span>,
     <span class="text-yellow-400">"format"</span>: <span class="text-green-400">"xlf"</span>,
-    <span class="text-yellow-400">"outputPath"</span>: <span class="text-green-400">"src/locale"</span>
+    <span class="text-yellow-400">"outputPath"</span>: <span class="text-green-400">"src/locale"</span>,
+    <span class="text-yellow-400">"includeContext"</span>: <span class="text-green-400">true</span>,
+    <span class="text-yellow-400">"resetTranslationState"</span>: <span class="text-green-400">true</span>,
+    <span class="text-yellow-400">"targetFiles"</span>: <span class="text-blue-400">[</span>
+      <span class="text-green-400">"messages.fr.xlf"</span>,
+      <span class="text-green-400">"messages.vi.xlf"</span>
+    <span class="text-blue-400">]</span>
   <span class="text-blue-400">&#125;</span>
 <span class="text-blue-400">&#125;</span></code></pre>
 
       <p class="text-gray-700 dark:text-gray-300 mt-2" i18n="@@INITIAL_SETUP_NOTE">Note: We'll modify the outputPath later in the configuration to match our workflow.</p>
+    </div>
+
+    <!-- Install ng-extract-i18n-merge -->
+    <div class="bg-white dark:bg-dark-700 rounded-lg shadow-lg p-8 border border-gray-200 dark:border-gray-700">
+      <h2 class="text-2xl font-semibold mb-6 text-blue-600 dark:text-blue-400" i18n="@@EXTRACT_TOOL_TITLE">Install Translation Tool</h2>
+      
+      <p class="text-gray-700 dark:text-gray-300 mb-4" i18n="@@EXTRACT_TOOL_DESCRIPTION">For managing translation files, we'll use ng-extract-i18n-merge which simplifies the process of extracting and merging translations:</p>
+      
+      <pre class="bg-gray-900 rounded-lg p-4 overflow-x-auto border border-gray-700"><code><span class="text-blue-400">npm install</span> <span class="text-yellow-400">--save-dev ng-extract-i18n-merge</span></code></pre>
+
+      <p class="text-gray-700 dark:text-gray-300 mt-4" i18n="@@EXTRACT_TOOL_BENEFITS">This tool offers several advantages:</p>
+      <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 ml-4 space-y-2">
+        <li i18n="@@EXTRACT_TOOL_BENEFIT_1">Automatically extracts translatable strings from your application</li>
+        <li i18n="@@EXTRACT_TOOL_BENEFIT_2">Merges new translations with existing ones in a single step</li>
+        <li i18n="@@EXTRACT_TOOL_BENEFIT_3">Preserves existing translations during updates</li>
+        <li i18n="@@EXTRACT_TOOL_BENEFIT_4">Supports multiple target languages</li>
+      </ul>
     </div>
 
     <!-- Configuration Files -->
@@ -44,8 +79,7 @@
         <h3 class="text-xl font-semibold mb-4 text-gray-900 dark:text-white">package.json</h3>
         <pre class="bg-gray-900 rounded-lg p-4 overflow-x-auto border border-gray-700"><code><span class="text-yellow-400">"scripts"</span>: <span class="text-blue-400">&#123;</span>
   ...
-  <span class="text-yellow-400">"extract-i18n"</span>: <span class="text-green-400">"ng extract-i18n --output-path dist/locale"</span>,
-  <span class="text-yellow-400">"merge-i18n"</span>: <span class="text-green-400">"xliffmerge --verbose --profile xliffmerge.json"</span>,
+  <span class="text-yellow-400">"extract-i18n"</span>: <span class="text-green-400">"ng extract-i18n"</span>,
   <span class="text-yellow-400">"build"</span>: <span class="text-green-400">"ng build --localize"</span>
   ...
 <span class="text-blue-400">&#125;</span></code></pre>
@@ -53,36 +87,63 @@
 
       <div class="mb-8">
         <h3 class="text-xl font-semibold mb-4 text-gray-900 dark:text-white">angular.json</h3>
+        <p class="text-gray-700 dark:text-gray-300 mb-4" i18n="@@ANGULAR_JSON_DESCRIPTION">Update the i18n configuration in angular.json:</p>
+        
         <pre class="bg-gray-900 rounded-lg p-4 overflow-x-auto border border-gray-700"><code><span class="text-yellow-400">"i18n"</span>: <span class="text-blue-400">&#123;</span>
   <span class="text-yellow-400">"sourceLocale"</span>: <span class="text-green-400">"en"</span>,
   <span class="text-yellow-400">"locales"</span>: <span class="text-blue-400">&#123;</span>
     <span class="text-yellow-400">"fr"</span>: <span class="text-blue-400">&#123;</span>
       <span class="text-yellow-400">"translation"</span>: <span class="text-green-400">"src/locale/messages.fr.xlf"</span>
+    <span class="text-blue-400">&#125;</span>,
+    <span class="text-yellow-400">"vi"</span>: <span class="text-blue-400">&#123;</span>
+      <span class="text-yellow-400">"translation"</span>: <span class="text-green-400">"src/locale/messages.vi.xlf"</span>
     <span class="text-blue-400">&#125;</span>
   <span class="text-blue-400">&#125;</span>
-<span class="text-blue-400">&#125;</span>,
-<span class="text-yellow-400">"architect"</span>: <span class="text-blue-400">&#123;</span>
+<span class="text-blue-400">&#125;</span>,</code></pre>
+
+        <p class="text-gray-700 dark:text-gray-300 mt-6 mb-4" i18n="@@EXTRACT_I18N_CONFIG_TITLE">Then replace the standard extract-i18n configuration with ng-extract-i18n-merge:</p>
+
+        <pre class="bg-gray-900 rounded-lg p-4 overflow-x-auto border border-gray-700"><code><span class="text-yellow-400">"extract-i18n"</span>: <span class="text-blue-400">&#123;</span>
+  <span class="text-yellow-400">"builder"</span>: <span class="text-green-400">"ng-extract-i18n-merge:ng-extract-i18n-merge"</span>,
+  <span class="text-yellow-400">"options"</span>: <span class="text-blue-400">&#123;</span>
+    <span class="text-yellow-400">"buildTarget"</span>: <span class="text-green-400">"your-app:build"</span>,
+    <span class="text-yellow-400">"format"</span>: <span class="text-green-400">"xlf"</span>,
+    <span class="text-yellow-400">"outputPath"</span>: <span class="text-green-400">"src/locale"</span>,
+    <span class="text-yellow-400">"includeContext"</span>: <span class="text-green-400">true</span>,
+    <span class="text-yellow-400">"resetTranslationState"</span>: <span class="text-green-400">true</span>,
+    <span class="text-yellow-400">"targetFiles"</span>: <span class="text-blue-400">[</span>
+      <span class="text-green-400">"messages.fr.xlf"</span>,
+      <span class="text-green-400">"messages.vi.xlf"</span>
+    <span class="text-blue-400">]</span>
+  <span class="text-blue-400">&#125;</span>
+<span class="text-blue-400">&#125;</span></code></pre>
+
+        <div class="mt-6 bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800 rounded-lg p-4">
+          <h4 class="font-semibold text-yellow-800 dark:text-yellow-300 mb-2" i18n="@@EXTRACT_I18N_OPTIONS_TITLE">Important Configuration Options:</h4>
+          <ul class="list-disc list-inside text-yellow-700 dark:text-yellow-300 ml-4 space-y-2">
+            <li i18n="@@EXTRACT_I18N_OPTION_1"><strong>buildTarget</strong>: Your application's build target name</li>
+            <li i18n="@@EXTRACT_I18N_OPTION_2"><strong>outputPath</strong>: Directory where translation files will be stored</li>
+            <li i18n="@@EXTRACT_I18N_OPTION_3"><strong>includeContext</strong>: Includes source file information in the XLIFF files</li>
+            <li i18n="@@EXTRACT_I18N_OPTION_4"><strong>resetTranslationState</strong>: Marks all translations as needing review on changes</li>
+            <li i18n="@@EXTRACT_I18N_OPTION_5"><strong>targetFiles</strong>: List of translation files to generate/update</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mb-8">
+        <h3 class="text-xl font-semibold mb-4 text-gray-900 dark:text-white">Build configurations</h3>
+        <p class="text-gray-700 dark:text-gray-300 mb-4" i18n="@@BUILD_CONFIG_DESCRIPTION">Add configurations for each language in the build section:</p>
+        
+        <pre class="bg-gray-900 rounded-lg p-4 overflow-x-auto border border-gray-700"><code><span class="text-yellow-400">"architect"</span>: <span class="text-blue-400">&#123;</span>
   <span class="text-yellow-400">"build"</span>: <span class="text-blue-400">&#123;</span>
     <span class="text-yellow-400">"configurations"</span>: <span class="text-blue-400">&#123;</span>
       <span class="text-yellow-400">"fr"</span>: <span class="text-blue-400">&#123;</span>
         <span class="text-yellow-400">"localize"</span>: <span class="text-blue-400">[</span><span class="text-green-400">"fr"</span><span class="text-blue-400">]</span>
+      <span class="text-blue-400">&#125;</span>,
+      <span class="text-yellow-400">"vi"</span>: <span class="text-blue-400">&#123;</span>
+        <span class="text-yellow-400">"localize"</span>: <span class="text-blue-400">[</span><span class="text-green-400">"vi"</span><span class="text-blue-400">]</span>
       <span class="text-blue-400">&#125;</span>
     <span class="text-blue-400">&#125;</span>
-  <span class="text-blue-400">&#125;</span>
-<span class="text-blue-400">&#125;</span></code></pre>
-      </div>
-
-      <div>
-        <h3 class="text-xl font-semibold mb-4 text-gray-900 dark:text-white">xliffmerge.json</h3>
-        <pre class="bg-gray-900 rounded-lg p-4 overflow-x-auto border border-gray-700"><code><span class="text-blue-400">&#123;</span>
-  <span class="text-yellow-400">"xliffmergeOptions"</span>: <span class="text-blue-400">&#123;</span>
-    <span class="text-yellow-400">"srcDir"</span>: <span class="text-green-400">"dist/locale"</span>,
-    <span class="text-yellow-400">"genDir"</span>: <span class="text-green-400">"src/locale"</span>,
-    <span class="text-yellow-400">"defaultLanguage"</span>: <span class="text-green-400">"en"</span>,
-    <span class="text-yellow-400">"languages"</span>: <span class="text-blue-400">[</span><span class="text-green-400">"fr"</span><span class="text-blue-400">]</span>,
-    <span class="text-yellow-400">"removeUnusedIds"</span>: <span class="text-blue-400">true</span>,
-    <span class="text-yellow-400">"useSourceAsTarget"</span>: <span class="text-blue-400">true</span>,
-    <span class="text-yellow-400">"beautifyOutput"</span>: <span class="text-blue-400">true</span>
   <span class="text-blue-400">&#125;</span>
 <span class="text-blue-400">&#125;</span></code></pre>
       </div>
@@ -92,9 +153,20 @@
     <div class="bg-white dark:bg-dark-700 rounded-lg shadow-lg p-8 border border-gray-200 dark:border-gray-700">
       <h2 class="text-2xl font-semibold mb-6 text-blue-600 dark:text-blue-400" i18n="@@PREPARE_COMPONENTS_TITLE">Prepare Components for Translation</h2>
 
-      <div class="flex justify-between items-center mb-6">
-        <p class="text-gray-700 dark:text-gray-300" i18n="@@PREPARE_COMPONENTS_DESCRIPTION">To make your components ready for translation, you need to mark the text that should be translated. Angular provides two ways to do this:</p>
-        <a href="https://angular.dev/guide/i18n/prepare" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline" i18n="@@SEE_MORE_DOCUMENTATION">See more →</a>
+      <div class="mb-6">
+        <p class="text-gray-700 dark:text-gray-300 mb-4" i18n="@@PREPARE_COMPONENTS_DESCRIPTION">To make your components ready for translation, you need to mark the text that should be translated. Angular provides two ways to do this:</p>
+        
+        <a href="https://angular.dev/guide/i18n/prepare" class="flex items-start p-3 hover:bg-white dark:hover:bg-gray-700 rounded-lg transition-colors border border-gray-200 dark:border-gray-700 mt-2">
+          <div class="mr-4 text-blue-600 dark:text-blue-400">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-semibold text-gray-900 dark:text-white" i18n="@@SEE_MORE_DOCUMENTATION">Angular Documentation: Marking Text for Translation</h3>
+            <p class="text-gray-700 dark:text-gray-300 text-sm" i18n="@@SEE_MORE_DOCUMENTATION_DESC">Learn more about how to prepare your application for translation.</p>
+          </div>
+        </a>
       </div>
 
       <div class="space-y-8">
@@ -104,12 +176,12 @@
           <p class="text-gray-700 dark:text-gray-300 mb-4" i18n="@@TEMPLATE_TRANSLATION_DESCRIPTION">Use the i18n attribute in your templates to mark text for translation:</p>
 
           <pre class="bg-gray-900 rounded-lg p-4 overflow-x-auto border border-gray-700"><code><span class="text-blue-400">&lt;tag</span> <span class="text-yellow-400">attribute="This is a sample attribute text that needs translation."</span> 
-  <span class="text-yellow-400">i18n-attribute="&commat;&commat;ATTRIBUTE_TEXT"</span>
-  <span class="text-yellow-400">i18n="&commat;&commat;TAG_TEXT"</span><span class="text-blue-400">&gt;</span><span class="text-gray-100">This is a sample text that needs translation.</span><span class="text-blue-400">&lt;/tag&gt;</span>
+  <span class="text-yellow-400">i18n-attribute="&#64;&#64;ATTRIBUTE_TEXT"</span>
+  <span class="text-yellow-400">i18n="&#64;&#64;TAG_TEXT"</span><span class="text-blue-400">&gt;</span><span class="text-gray-100">This is a sample text that needs translation.</span><span class="text-blue-400">&lt;/tag&gt;</span>
 <span class="text-gray-400">// EXAMPLE</span>
-<span class="text-blue-400">&lt;button</span> <span class="text-yellow-400">title="Title button"</span> <span class="text-yellow-400">i18n-title="&commat;&commat;TITLE_BUTTON"</span><span class="text-yellow-400">i18n="&commat;&commat;LABEL_BUTTON"</span><span class="text-blue-400">&gt;</span><span class="text-gray-100">label button</span><span class="text-blue-400">&lt;/button&gt;</span></code></pre>
+<span class="text-blue-400">&lt;button</span> <span class="text-yellow-400">title="Title button"</span> <span class="text-yellow-400">i18n-title="&#64;&#64;TITLE_BUTTON"</span><span class="text-yellow-400">i18n="&#64;&#64;LABEL_BUTTON"</span><span class="text-blue-400">&gt;</span><span class="text-gray-100">label button</span><span class="text-blue-400">&lt;/button&gt;</span></code></pre>
 
-          <p class="text-gray-700 dark:text-gray-300 mt-4" i18n="@@TEMPLATE_TRANSLATION_NOTE">The &commat;&commat;prefix defines a custom ID for the translation. Using SNAKE_CASE is recommended for consistency.</p>
+          <p class="text-gray-700 dark:text-gray-300 mt-4" i18n="@@TEMPLATE_TRANSLATION_NOTE">The &#64;&#64;prefix defines a custom ID for the translation. Using SNAKE_CASE is recommended for consistency.</p>
         </div>
 
         <!-- Component Translation -->
@@ -124,29 +196,10 @@
   <span class="text-yellow-400">template</span>: <span class="text-green-400">'...'</span>
 <span class="text-blue-400">&#125;</span>)
 <span class="text-blue-400">export class</span> <span class="text-yellow-400">ExampleComponent</span> <span class="text-blue-400">&#123;</span>
-  <span class="text-yellow-400">title</span> = <span class="text-blue-400">$localize</span><span class="text-gray-400">`:&commat;&commat;PAGE_TITLE:Welcome to our application`</span>;
-  <span class="text-yellow-400">errorMessage</span> = <span class="text-blue-400">$localize</span><span class="text-gray-400">`:&commat;&commat;ERROR_MESSAGE:An error occurred while processing your request`</span>;
+  <span class="text-yellow-400">title</span> = <span class="text-blue-400">$localize</span><span class="text-gray-400">`:&#64;&#64;PAGE_TITLE:Welcome to our application`</span>;
+  <span class="text-yellow-400">errorMessage</span> = <span class="text-blue-400">$localize</span><span class="text-gray-400">`:&#64;&#64;ERROR_MESSAGE:An error occurred while processing your request`</span>;
 <span class="text-blue-400">&#125;</span></code></pre>
         </div>
-      </div>
-    </div>
-
-    <!-- Translation Workflow -->
-    <div class="bg-white dark:bg-dark-700 rounded-lg shadow-lg p-8 border border-gray-200 dark:border-gray-700">
-      <h2 class="text-2xl font-semibold mb-6 text-blue-600 dark:text-blue-400" i18n="@@TRANSLATION_WORKFLOW_TITLE">Translation Workflow</h2>
-
-      <div class="mb-8">
-        <h3 class="text-xl font-semibold mb-4 text-gray-900 dark:text-white" i18n="@@EXTRACT_TRANSLATIONS_TITLE">Extract Translations</h3>
-        <p class="text-gray-700 dark:text-gray-300 mb-4" i18n="@@EXTRACT_TRANSLATIONS_DESCRIPTION">Extract translatable strings to XLIFF files:</p>
-        <pre class="bg-gray-900 rounded-lg p-4 overflow-x-auto border border-gray-700"><code><span class="text-blue-400">npm run</span> <span class="text-yellow-400">extract-i18n</span></code></pre>
-        <p class="text-gray-700 dark:text-gray-300 mt-2" i18n="@@EXTRACT_TRANSLATIONS_NOTE">This creates messages.xlf in your dist/locale directory.</p>
-      </div>
-
-      <div>
-        <h3 class="text-xl font-semibold mb-4 text-gray-900 dark:text-white" i18n="@@MERGE_TRANSLATIONS_TITLE">Merge Translations</h3>
-        <p class="text-gray-700 dark:text-gray-300 mb-4" i18n="@@MERGE_TRANSLATIONS_DESCRIPTION">Generate/update the translation files:</p>
-        <pre class="bg-gray-900 rounded-lg p-4 overflow-x-auto border border-gray-700"><code><span class="text-blue-400">npm run</span> <span class="text-yellow-400">merge-i18n</span></code></pre>
-        <p class="text-gray-700 dark:text-gray-300 mt-2" i18n="@@MERGE_TRANSLATIONS_NOTE">This creates/updates the translation files in your src/locale directory.</p>
       </div>
     </div>
 
@@ -173,11 +226,313 @@
     <!-- Important Note -->
     <div class="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-6">
       <h2 class="text-xl font-semibold mb-4 text-blue-700 dark:text-blue-300" i18n="@@IMPORTANT_NOTE_TITLE">⚠️ Important Note</h2>
-      <p class="text-blue-700 dark:text-blue-300" i18n="@@IMPORTANT_NOTE_DESCRIPTION">After adding new translatable content or modifying existing translations, you must always run both commands in sequence:</p>
+      <p class="text-blue-700 dark:text-blue-300" i18n="@@IMPORTANT_NOTE_DESCRIPTION">After adding new translatable content or modifying existing translations:</p>
       <ol class="list-decimal list-inside mt-4 text-blue-700 dark:text-blue-300 space-y-2">
-        <li><code class="bg-blue-100 dark:bg-blue-900/40 px-2 py-1 rounded">npm run extract-i18n</code> - <span i18n="@@IMPORTANT_NOTE_COMMAND_1">to extract new translatable strings</span></li>
-        <li><code class="bg-blue-100 dark:bg-blue-900/40 px-2 py-1 rounded">npm run merge-i18n</code> - <span i18n="@@IMPORTANT_NOTE_COMMAND_2">to update your translation files</span></li>
+        <li><code class="bg-blue-100 dark:bg-blue-900/40 px-2 py-1 rounded">ng extract-i18n</code> - <span i18n="@@IMPORTANT_NOTE_COMMAND_1">to extract and update all translation files in one step</span></li>
       </ol>
+      <p class="text-blue-700 dark:text-blue-300 mt-4" i18n="@@WORKFLOW_BENEFITS">This simplified workflow ensures your translation files are always up-to-date with source content, making the internationalization process more efficient and error-free.</p>
+    </div>
+  </div>
+
+  <!-- Usage Tab Content -->
+  <div class="space-y-8" *ngIf="activeTab === 'usage'">
+    <!-- Getting Started with XLIFF Translator -->
+    <div class="bg-white dark:bg-dark-700 rounded-lg shadow-lg p-8 border border-gray-200 dark:border-gray-700">
+      <h2 class="text-2xl font-semibold mb-6 text-blue-600 dark:text-blue-400" i18n="@@GETTING_STARTED_TITLE">Getting Started with XLIFF Translator</h2>
+      
+      <div class="space-y-6">
+        <div>
+          <h3 class="text-xl font-semibold mb-4 text-gray-900 dark:text-white" i18n="@@CONNECT_PROVIDER_TITLE">Connect to Git Providers</h3>
+          <p class="text-gray-700 dark:text-gray-300 mb-4" i18n="@@CONNECT_PROVIDER_DESCRIPTION">XLIFF Translator supports multiple Git providers. To get started, you need to connect your Git account:</p>
+          
+          <ol class="list-decimal list-inside text-gray-700 dark:text-gray-300 ml-4 space-y-4">
+            <li i18n="@@CONNECT_STEP_1">
+              <strong>Select a provider</strong>: Choose from GitHub, GitLab, or Bitbucket
+            </li>
+            <li i18n="@@CONNECT_STEP_2">
+              <strong>Configure access</strong>: Create and provide the appropriate tokens:
+              <div class="mt-2 ml-6 space-y-4">
+                <div class="flex items-start p-3 hover:bg-white dark:hover:bg-gray-700 rounded-lg transition-colors border border-gray-200 dark:border-gray-700">
+                  <div class="mr-4 text-blue-600 dark:text-blue-400">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 class="font-semibold text-gray-900 dark:text-white">GitHub</h4>
+                    <p class="text-gray-700 dark:text-gray-300 text-sm">To connect, generate a Personal Access Token with the following scopes:</p>
+                    <ul class="list-disc list-inside mb-4 ml-2">
+                      <li>repo</li>
+                      <li>read:org</li>
+                    </ul>
+                    <p class="text-gray-700 dark:text-gray-300 text-sm">Get your token here: Settings > Developer settings > Personal access tokens > Tokens (classic) > Generate new token</p>
+                  </div>
+                </div>
+                
+                <div class="flex items-start p-3 hover:bg-white dark:hover:bg-gray-700 rounded-lg transition-colors border border-gray-200 dark:border-gray-700">
+                  <div class="mr-4 text-blue-600 dark:text-blue-400">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 class="font-semibold text-gray-900 dark:text-white">GitLab</h4>
+                    <p class="text-gray-700 dark:text-gray-300 text-sm">Create a Personal Access Token with <code>api</code>, <code>read_repository</code>, and <code>write_repository</code> scopes.</p>
+                  </div>
+                </div>
+                
+                <div class="flex items-start p-3 hover:bg-white dark:hover:bg-gray-700 rounded-lg transition-colors border border-gray-200 dark:border-gray-700">
+                  <div class="mr-4 text-blue-600 dark:text-blue-400">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 class="font-semibold text-gray-900 dark:text-white">Bitbucket</h4>
+                    <p class="text-gray-700 dark:text-gray-300 text-sm">Create an App Password with <code>repository:read</code> and <code>repository:write</code> permissions.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-4 ml-6 flex justify-center">
+                <div class="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden shadow-lg" style="max-width: 400px;">
+                  <div class="p-5 bg-gray-900 text-white">
+                    <div class="mb-4 flex items-start">
+                      <svg viewBox="0 0 16 16" version="1.1" width="30" height="30" aria-hidden="true" class="mr-2">
+                        <path fill="white" d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"></path>
+                      </svg>
+                      <span class="text-2xl font-semibold">GitHub</span>
+                      <span class="ml-auto text-red-500">Not Connected</span>
+                    </div>
+                    <p class="mb-4">To connect, generate a Personal Access Token with the following scopes:</p>
+                    <ul class="list-disc list-inside mb-4 ml-2">
+                      <li>repo</li>
+                      <li>read:org</li>
+                    </ul>
+                    <p class="mb-4">Get your token here: Settings > Developer settings > Personal access tokens > Tokens (classic) > Generate new token</p>
+                    <div class="mb-2">Token</div>
+                    <div class="mb-4">
+                      <div class="bg-gray-800 border border-gray-700 rounded p-2 mb-4">Enter your access token</div>
+                    </div>
+                    <button class="w-full flat-primary pointer-events-none">Connect</button>
+                  </div>
+                  <div class="p-2 text-sm text-gray-600 dark:text-gray-400 bg-gray-50 dark:bg-gray-800/50">
+                    GitHub provider configuration form
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li i18n="@@CONNECT_STEP_3">
+              <strong>Save your configuration</strong>: Enter your token and save the connection
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+    <!-- Repository Management -->
+    <div class="bg-white dark:bg-dark-700 rounded-lg shadow-lg p-8 border border-gray-200 dark:border-gray-700">
+      <h2 class="text-2xl font-semibold mb-6 text-blue-600 dark:text-blue-400" i18n="@@REPOSITORY_MANAGEMENT_TITLE">Repository Management</h2>
+      
+      <div class="mb-8">
+        <h3 class="text-xl font-semibold mb-4 text-gray-900 dark:text-white" i18n="@@REPOSITORY_SELECTION_TITLE">Selecting Repositories</h3>
+        <p class="text-gray-700 dark:text-gray-300 mb-4" i18n="@@REPOSITORY_SELECTION_DESCRIPTION">After connecting to a Git provider:</p>
+        
+        <ol class="list-decimal list-inside text-gray-700 dark:text-gray-300 ml-4 space-y-2">
+          <li i18n="@@REPOSITORY_STEP_1">Navigate to the provider's page where your repositories are listed</li>
+          <li i18n="@@REPOSITORY_STEP_2">Browse and select the repository containing your Angular project with XLIFF files</li>
+          <li i18n="@@REPOSITORY_STEP_3">Specify the branch to work with (default is usually the main branch)</li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- Reviewing and Finalizing -->
+    <div class="bg-white dark:bg-dark-700 rounded-lg shadow-lg p-8 border border-gray-200 dark:border-gray-700">
+      <h2 class="text-2xl font-semibold mb-6 text-blue-600 dark:text-blue-400" i18n="@@REVIEW_FINALIZE_TITLE">Reviewing and Finalizing</h2>
+      
+      <div>
+        <h3 class="text-xl font-semibold mb-4 text-gray-900 dark:text-white" i18n="@@REVIEW_PR_TITLE">Pull Request Review</h3>
+        <p class="text-gray-700 dark:text-gray-300 mb-4" i18n="@@REVIEW_PR_DESCRIPTION">After the translation process completes:</p>
+        
+        <ol class="list-decimal list-inside text-gray-700 dark:text-gray-300 ml-4 space-y-2">
+          <li i18n="@@REVIEW_STEP_1">Review the created pull request in your Git provider</li>
+          <li i18n="@@REVIEW_STEP_2">Check the translated content for accuracy</li>
+          <li i18n="@@REVIEW_STEP_3">Make any necessary adjustments directly in the XLIFF files</li>
+          <li i18n="@@REVIEW_STEP_4">Merge the pull request to update your main codebase with the translations</li>
+        </ol>
+        
+        <p class="text-gray-700 dark:text-gray-300 mt-4" i18n="@@REVIEW_BENEFITS">This workflow allows you to keep translations in your version control system and follow standard code review practices for translation updates.</p>
+      </div>
+    </div>
+
+    <!-- Tips and Best Practices -->
+    <div class="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-6">
+      <h2 class="text-xl font-semibold mb-4 text-blue-700 dark:text-blue-300" i18n="@@TIPS_TITLE">Tips for Effective Translation</h2>
+      
+      <ul class="list-disc list-inside mt-2 text-blue-700 dark:text-blue-300 space-y-2">
+        <li i18n="@@TIP_REGULAR">Run translations regularly as you develop to avoid large batches of untranslated content</li>
+        <li i18n="@@TIP_BRANCH">Create a dedicated branch for translations to keep them separate from feature development</li>
+        <li i18n="@@TIP_CONTEXT">Ensure your source code has clear context for translation units to improve AI translation quality</li>
+        <li i18n="@@TIP_REVIEW">Always review AI-generated translations, especially for critical user-facing content</li>
+        <li i18n="@@TIP_PATTERN">Use specific file patterns to target translations for one language at a time</li>
+      </ul>
+    </div>
+
+    <!-- Resources -->
+    <div class="bg-gray-50 dark:bg-gray-800/50 rounded-lg p-6 border border-gray-200 dark:border-gray-700">
+      <h2 class="text-2xl font-semibold mb-4 text-gray-900 dark:text-white" i18n="@@RESOURCES_TITLE">Additional Resources</h2>
+      
+      <ul class="space-y-4">
+        <li>
+          <a href="https://angular.dev/guide/i18n" class="flex items-start p-3 hover:bg-white dark:hover:bg-gray-700 rounded-lg transition-colors">
+            <div class="mr-4 text-blue-600 dark:text-blue-400">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-gray-900 dark:text-white" i18n="@@RESOURCE_ANGULAR_DOCS">Angular i18n Documentation</h3>
+              <p class="text-gray-700 dark:text-gray-300 text-sm" i18n="@@RESOURCE_ANGULAR_DOCS_DESC">Official Angular documentation for internationalization.</p>
+            </div>
+          </a>
+        </li>
+        
+        <li>
+          <a href="https://github.com/daniel-sc/ng-extract-i18n-merge" class="flex items-start p-3 hover:bg-white dark:hover:bg-gray-700 rounded-lg transition-colors">
+            <div class="mr-4 text-blue-600 dark:text-blue-400">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-gray-900 dark:text-white" i18n="@@RESOURCE_NG_EXTRACT_I18N_MERGE">ng-extract-i18n-merge</h3>
+              <p class="text-gray-700 dark:text-gray-300 text-sm" i18n="@@RESOURCE_NG_EXTRACT_I18N_MERGE_DESC">Official tool for extracting and merging i18n translations in a single step.</p>
+            </div>
+          </a>
+        </li>
+        
+        <li>
+          <a href="https://angular.dev/guide/i18n/manage-marked-text" class="flex items-start p-3 hover:bg-white dark:hover:bg-gray-700 rounded-lg transition-colors">
+            <div class="mr-4 text-blue-600 dark:text-blue-400">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-gray-900 dark:text-white" i18n="@@RESOURCE_MARKED_TEXT">Working with Marked Text</h3>
+              <p class="text-gray-700 dark:text-gray-300 text-sm" i18n="@@RESOURCE_MARKED_TEXT_DESC">Learn about advanced i18n features like pluralization and selection.</p>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Translation Workflow -->
+    <div class="bg-white dark:bg-dark-700 rounded-lg shadow-lg p-8 border border-gray-200 dark:border-gray-700">
+      <h2 class="text-2xl font-semibold mb-6 text-blue-600 dark:text-blue-400" i18n="@@TRANSLATION_WORKFLOW_APP_TITLE">Translation Workflow</h2>
+
+      <!-- Example widget for better visualization -->
+      <div class="mb-8 flex justify-center">
+        <div class="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden shadow-lg" style="max-width: 400px;">
+          <div class="p-5 bg-gray-900 text-white">
+            <div class="mb-4 flex items-start">
+              <svg class="h-8 w-8 mr-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" r="10" stroke="white" stroke-width="1.5"/>
+                <path d="M7 10C7 8.34315 8.34315 7 10 7H14C15.6569 7 17 8.34315 17 10V14C17 15.6569 15.6569 17 14 17H10C8.34315 17 7 15.6569 7 14V10Z" fill="white"/>
+              </svg>
+              <div>
+                <div class="text-sm text-gray-400">softwarity</div>
+                <div class="font-semibold">xliff-saas</div>
+              </div>
+            </div>
+            <div class="text-sm text-gray-400">
+              Updated Apr 8, 2025
+            </div>
+            <div class="mt-4 py-2 border-t border-gray-700">
+              <div class="flex justify-between items-center mb-2">
+                <div class="text-green-400">
+                  90 translation units detected
+                </div>
+                <button class="flat-primary pointer-events-none">Estimate</button>
+              </div>
+            </div>
+            <div class="py-2 border-t border-gray-700">
+              <div class="flex justify-between items-center">
+                <div class="text-red-400">
+                  No translation available...
+                </div>
+                <button class="flat-primary pointer-events-none">Translate</button>
+              </div>
+            </div>
+          </div>
+          <div class="p-2 text-sm text-gray-600 dark:text-gray-400 bg-gray-50 dark:bg-gray-800/50">
+            Translation widget showing detected units and available actions
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-8">
+        <h3 class="text-xl font-semibold mb-4 text-gray-900 dark:text-white" i18n="@@ESTIMATE_TITLE">Estimation</h3>
+        <p class="text-gray-700 dark:text-gray-300 mb-4" i18n="@@ESTIMATE_DESCRIPTION">Before running a translation, you can estimate the scope and complexity of the task:</p>
+        
+        <ol class="list-decimal list-inside text-gray-700 dark:text-gray-300 ml-4 space-y-2">
+          <li i18n="@@ESTIMATE_STEP_1">Select the repository you want to work with</li>
+          <li i18n="@@ESTIMATE_STEP_2">Click on "Estimate" to analyze your XLIFF files</li>
+          <li i18n="@@ESTIMATE_STEP_3">
+            <strong>Configure the estimate options:</strong>
+            <ul class="list-disc list-inside ml-6 mt-2 space-y-1">
+              <li><strong>Branch</strong>: Select the branch containing your XLIFF files</li>
+              <li><strong>File Pattern</strong>: By default "xlf" to search all XLIFF files. Use specific patterns like "ru.xlf" to target only Russian files</li>
+              <li><strong>Translation State</strong>: Choose which translation units to include (default is "new" to focus on untranslated content)</li>
+            </ul>
+          </li>
+          <li i18n="@@ESTIMATE_STEP_4">Review the estimate results showing the number of translation units to process</li>
+        </ol>
+
+        <div class="mt-6 p-4 bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800 rounded-lg">
+          <h4 class="font-semibold text-yellow-800 dark:text-yellow-300 mb-2" i18n="@@ESTIMATE_PURPOSE_TITLE">Why Estimate?</h4>
+          <p class="text-yellow-700 dark:text-yellow-300" i18n="@@ESTIMATE_PURPOSE_DESCRIPTION">The estimation process helps you understand:</p>
+          <ul class="list-disc list-inside mt-2 text-yellow-700 dark:text-yellow-300 space-y-2">
+            <li i18n="@@ESTIMATE_PURPOSE_1">The exact number of translation units that need processing</li>
+            <li i18n="@@ESTIMATE_PURPOSE_2">How many credits will be required (1 translation unit = 1 credit)</li>
+            <li i18n="@@ESTIMATE_PURPOSE_3">Approximate time required (each translation unit takes 10-20 seconds to process)</li>
+          </ul>
+          <p class="text-yellow-700 dark:text-yellow-300 mt-4 font-medium" i18n="@@ESTIMATE_PURPOSE_CREDIT_NOTE">Important: Large translation projects with hundreds of translation units can take significant time. Plan accordingly.</p>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="text-xl font-semibold mb-4 text-gray-900 dark:text-white" i18n="@@TRANSLATE_TITLE">Translation</h3>
+        <p class="text-gray-700 dark:text-gray-300 mb-4" i18n="@@TRANSLATE_DESCRIPTION">Running an AI-powered translation is a separate process from estimation:</p>
+        
+        <ol class="list-decimal list-inside text-gray-700 dark:text-gray-300 ml-4 space-y-4">
+          <li i18n="@@TRANSLATE_STEP_1">Select the repository containing your XLIFF files</li>
+          <li i18n="@@TRANSLATE_STEP_2">Click on "Translate" to begin the process</li>
+          <li i18n="@@TRANSLATE_STEP_3">
+            <strong>Configure the translation options:</strong>
+            <ul class="list-disc list-inside ml-6 mt-2 space-y-1">
+              <li><strong>Branch</strong>: Select the source branch</li>
+              <li><strong>File Pattern</strong>: Specify which XLIFF files to translate</li>
+              <li><strong>Translation State</strong>: Select which translation units to process (e.g., "new", "needs-translation")</li>
+              <li><strong>Target State</strong>: Define the state to set for translated units (e.g., "translated", "final")</li>
+            </ul>
+          </li>
+          <li i18n="@@TRANSLATE_STEP_4">Start the translation process</li>
+        </ol>
+
+        <div class="mt-6 p-4 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg">
+          <h4 class="font-semibold text-blue-700 dark:text-blue-300 mb-2" i18n="@@TRANSLATION_PROCESS_TITLE">Translation Process</h4>
+          <p class="text-blue-700 dark:text-blue-300" i18n="@@TRANSLATION_PROCESS_DESCRIPTION">During the translation process, XLIFF Translator:</p>
+          <ol class="list-decimal list-inside mt-2 text-blue-700 dark:text-blue-300 space-y-2">
+            <li i18n="@@PROCESS_STEP_1">Clones your project repository</li>
+            <li i18n="@@PROCESS_STEP_2">Identifies XLIFF files matching your pattern</li>
+            <li i18n="@@PROCESS_STEP_3">Analyzes each translation unit and its context in the source code</li>
+            <li i18n="@@PROCESS_STEP_4">Sends translation instructions to the AI engine with relevant context</li>
+            <li i18n="@@PROCESS_STEP_5">Updates the XLIFF files with the translations</li>
+            <li i18n="@@PROCESS_STEP_6">Creates a pull request with the changes (if configured)</li>
+          </ol>
+        </div>
+      </div>
     </div>
   </div>
 </div>
