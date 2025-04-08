@@ -5,6 +5,7 @@ import { TransactionDao } from '../lib/transaction-dao.ts';
 import { Job } from "../entities/job.ts";
 import { cancelRun } from '../lib/git-service.ts';
 import { EstimationDoneMessage, ProgressMessage, ErrorMessage } from '../models/webhook-message.ts';
+import { UserService } from '../services/user-service.ts';
 Deno.serve(async (req: Request) => {
   if (req.method !== 'POST') {
     return new Response(null, {status: 405});
@@ -18,6 +19,7 @@ Deno.serve(async (req: Request) => {
   const supabaseClient = getSupabaseClient();
   const jobDao = new JobDao(supabaseClient);
   const transactionDao = new TransactionDao(supabaseClient);
+  const userService = new UserService(supabaseClient);
   try {
     const body = await req.json(); 
     const {request, userId, provider, namespace, repository, branch, status}: Job = await jobDao.getById(jobId);
@@ -38,7 +40,9 @@ Deno.serve(async (req: Request) => {
       await jobDao.updateById(jobId, {status: 'estimating', details: {}, transUnitFound: 0, runId});
     } else if (type === 'estimation-done') {
       const {toTranslate}: EstimationDoneMessage = body;
-      const {id: transactionId} = await transactionDao.insert({"userId": userId, credits: -toTranslate, status: 'pending', message: '', details: {}});
+      const balance = await userService.getBalance(userId);
+      const credits = Math.max(balance - toTranslate, 0);
+      const {id: transactionId} = await transactionDao.insert({"userId": userId, credits, status: 'pending', message: '', details: {}});
       await jobDao.updateById(jobId, {status: 'translating', transactionId, transUnitDone:0, transUnitFound: toTranslate});
     } else if (type === 'progress') {
       const {toTranslate, completed, errors}: ProgressMessage = body;
