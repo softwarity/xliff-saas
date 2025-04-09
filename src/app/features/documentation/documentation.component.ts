@@ -8,5 +8,5 @@ import { CommonModule } from '@angular/common';
   templateUrl: './documentation.component.html'
 })
 export class DocumentationComponent {
-  activeTab: string = 'setup';
+  activeTab: string = 'usage';
 }

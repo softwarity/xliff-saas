@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, effect, forwardRef, inject, input } from '@angular/core';
 import { FormControl, NG_VALUE_ACCESSOR, ReactiveFormsModule } from '@angular/forms';
-import { Observable, of, tap } from 'rxjs';
+import { map, Observable, of, tap } from 'rxjs';
 import { BitbucketService } from '../../../../core/services/bitbucket.service';
 import { GithubService } from '../../../../core/services/github.service';
 import { GitlabService } from '../../../../core/services/gitlab.service';
@@ -58,10 +58,17 @@ export class BranchSelectorComponent implements TypedControlValueAccessor<string
         branches$ = this.gitlabService.getBranches(this.repository());
       }
       this.branches$ = branches$.pipe(
+        map((branches: string[]) => branches.sort((a, b) => a.length - b.length)),
         tap(() => this.branchFC.enable()),
         tap((branches) => {
           if (branches.length > 0 && (!this.branchFC.value || !branches.includes(this.branchFC.value))) {
-            this.branchFC.setValue(branches[0]);
+            if (branches.includes('main')) {
+              this.branchFC.setValue('main');
+            } else if (branches.includes('master')) {
+              this.branchFC.setValue('master');
+            } else {
+              this.branchFC.setValue(branches[0]);
+            }
           }
         })  
       );
