@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-  <file source-language="en" target-language="fr" datatype="plaintext" original="ng2.template">
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 https://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
+  <file source-language="en" datatype="plaintext" original="ng2.template" target-language="fr">
     <body>
       <trans-unit id="NAVIGATION_HOW_IT_WORKS" datatype="html">
         <source>How It Works</source>
@@ -80,7 +80,7 @@
       </trans-unit>
       <trans-unit id="AUTH_LOGIN_SIGN_UP" datatype="html">
         <source>Sign Up</source>
-        <target state="translated">S&apos;inscrire</target>
+        <target state="translated">S'inscrire</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/login.component.ts</context>
           <context context-type="linenumber">75</context>
@@ -144,7 +144,7 @@
       </trans-unit>
       <trans-unit id="AI_INSTRUCTIONS_PLACEHOLDER" datatype="html">
         <source>Enter your instructions for the AI...</source>
-        <target state="translated">Entrez vos instructions pour l&apos;IA...</target>
+        <target state="translated">Entrez vos instructions pour l'IA...</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/dashboard/dashboard.component.html</context>
           <context context-type="linenumber">14</context>
@@ -224,7 +224,7 @@
       </trans-unit>
       <trans-unit id="MANAGE_SUBSCRIPTION" datatype="html">
         <source>Manage Subscription</source>
-        <target state="translated">Gérer l&apos;abonnement</target>
+        <target state="translated">Gérer l'abonnement</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/dashboard/dashboard.component.html</context>
           <context context-type="linenumber">55</context>
@@ -348,7 +348,7 @@
       </trans-unit>
       <trans-unit id="DOCUMENTATION_TITLE" datatype="html">
         <source>Angular i18n Setup Guide</source>
-        <target state="translated">Guide de configuration d&apos;Angular i18n</target>
+        <target state="translated">Guide de configuration d'Angular i18n</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">3</context>
@@ -363,8 +363,8 @@
         </context-group>
       </trans-unit>
       <trans-unit id="INITIAL_SETUP_DESCRIPTION" datatype="html">
-        <source>Start by adding Angular&apos;s localization package to your project:</source>
-        <target state="translated">Commencez par ajouter le package de localisation d&apos;Angular à votre projet :</target>
+        <source>Start by adding Angular's localization package to your project:</source>
+        <target state="translated">Commencez par ajouter le package de localisation d'Angular à votre projet :</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">24</context>
@@ -387,8 +387,8 @@
         </context-group>
       </trans-unit>
       <trans-unit id="INITIAL_SETUP_CHANGE_2" datatype="html">
-        <source>Add &quot;@angular/localize/init&quot; to the polyfills array in angular.json</source>
-        <target state="translated">Ajoutez &quot;@angular/localize/init&quot; au tableau des polyfills dans angular.json</target>
+        <source>Add "@angular/localize/init" to the polyfills array in angular.json</source>
+        <target state="translated">Ajoutez "@angular/localize/init" au tableau des polyfills dans angular.json</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">31</context>
@@ -411,8 +411,8 @@
         </context-group>
       </trans-unit>
       <trans-unit id="INITIAL_SETUP_NOTE" datatype="html">
-        <source>Note: We&apos;ll modify the outputPath later in the configuration to match our workflow.</source>
-        <target state="translated">Note : Nous modifierons le outputPath plus tard dans la configuration pour l&apos;adapter à notre flux de travail.</target>
+        <source>Note: We'll modify the outputPath later in the configuration to match our workflow.</source>
+        <target state="translated">Note : Nous modifierons le outputPath plus tard dans la configuration pour l'adapter à notre flux de travail.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">54</context>
@@ -444,7 +444,7 @@
       </trans-unit>
       <trans-unit id="SEE_MORE_DOCUMENTATION" datatype="html">
         <source>Angular Documentation: Marking Text for Translation</source>
-        <target state="new">Voir plus →</target>
+        <target state="translated">Documentation Angular : Marquage de texte pour la traduction</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">166</context>
@@ -460,7 +460,7 @@
       </trans-unit>
       <trans-unit id="TEMPLATE_TRANSLATION_DESCRIPTION" datatype="html">
         <source>Use the i18n attribute in your templates to mark text for translation:</source>
-        <target state="translated">Utilisez l&apos;attribut i18n dans vos modèles pour marquer le texte à traduire :</target>
+        <target state="translated">Utilisez l'attribut i18n dans vos modèles pour marquer le texte à traduire :</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">176</context>
@@ -468,7 +468,7 @@
       </trans-unit>
       <trans-unit id="TEMPLATE_TRANSLATION_NOTE" datatype="html">
         <source>The @@prefix defines a custom ID for the translation. Using SNAKE_CASE is recommended for consistency.</source>
-        <target state="translated">Le @@prefix définit un identifiant personnalisé pour la traduction. L&apos;utilisation de SNAKE_CASE est recommandée pour assurer la cohérence.</target>
+        <target state="translated">Le @@prefix définit un identifiant personnalisé pour la traduction. L'utilisation de SNAKE_CASE est recommandée pour assurer la cohérence.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">184</context>
@@ -484,7 +484,7 @@
       </trans-unit>
       <trans-unit id="COMPONENT_TRANSLATION_DESCRIPTION" datatype="html">
         <source>For text in your component code, use the $localize template tag:</source>
-        <target state="translated">Pour le texte dans votre code de composant, utilisez l&apos;étiquette de modèle $localize :</target>
+        <target state="translated">Pour le texte dans votre code de composant, utilisez l'étiquette de modèle $localize :</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">190</context>
@@ -556,7 +556,7 @@
       </trans-unit>
       <trans-unit id="IMPORTANT_NOTE_DESCRIPTION" datatype="html">
         <source>After adding new translatable content or modifying existing translations:</source>
-        <target state="new">Après avoir ajouté un nouveau contenu traduisible ou modifié des traductions existantes, vous devez toujours exécuter les deux commandes dans l&apos;ordre :</target>
+        <target state="translated">Après avoir ajouté de nouveaux contenus traduisibles ou modifié des traductions existantes :</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">229</context>
@@ -564,7 +564,7 @@
       </trans-unit>
       <trans-unit id="IMPORTANT_NOTE_COMMAND_1" datatype="html">
         <source>to extract and update all translation files in one step</source>
-        <target state="new">pour extraire de nouvelles chaînes translatables</target>
+        <target state="translated">pour extraire et mettre à jour tous les fichiers de traduction en une seule étape</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">231</context>
@@ -611,8 +611,8 @@
         </context-group>
       </trans-unit>
       <trans-unit id="AUTOMATED_WORKFLOW_ABSTRACT" datatype="html">
-        <source>Simply connect your Git repository, start the translation, and we&apos;ll handle the rest. Our AI-powered platform takes care of everything automatically.</source>
-        <target state="translated">Il vous suffit de connecter votre référentiel Git, de commencer la traduction et nous nous occupons du reste. Notre plateforme alimentée par l&apos;IA s&apos;occupe de tout automatiquement.</target>
+        <source>Simply connect your Git repository, start the translation, and we'll handle the rest. Our AI-powered platform takes care of everything automatically.</source>
+        <target state="translated">Il vous suffit de connecter votre référentiel Git, de commencer la traduction et nous nous occupons du reste. Notre plateforme alimentée par l'IA s'occupe de tout automatiquement.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/how-it-works/how-it-works.component.html</context>
           <context context-type="linenumber">7</context>
@@ -632,7 +632,7 @@
       </trans-unit>
       <trans-unit id="AUTOMATED_WORKFLOW_DESCRIPTION" datatype="html">
         <source>Automatic branch creation and pull requests for your translations</source>
-        <target state="translated">Connectez simplement votre référentiel Git, commencez la traduction et nous nous occuperons du reste. Notre plateforme alimentée par l&apos;IA gère tout automatiquement.</target>
+        <target state="translated">Connectez simplement votre référentiel Git, commencez la traduction et nous nous occuperons du reste. Notre plateforme alimentée par l'IA gère tout automatiquement.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
           <context context-type="linenumber">30</context>
@@ -712,7 +712,7 @@
       </trans-unit>
       <trans-unit id="STEP_2_DESCRIPTION" datatype="html">
         <source>AI-powered translation with contextual understanding</source>
-        <target state="translated">Traduction alimentée par l&apos;IA avec compréhension contextuelle</target>
+        <target state="translated">Traduction alimentée par l'IA avec compréhension contextuelle</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/how-it-works/how-it-works.component.html</context>
           <context context-type="linenumber">15</context>
@@ -759,7 +759,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="TRANSUNIT_SOURCE_DESCRIPTION" datatype="html">
-        <source>The original text in your application&apos;s source language</source>
+        <source>The original text in your application's source language</source>
         <target state="translated">Le texte original dans la langue source de votre application</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/how-it-works/how-it-works.component.html</context>
@@ -792,7 +792,7 @@
       </trans-unit>
       <trans-unit id="TRANSUNIT_CONTEXT_DESCRIPTION" datatype="html">
         <source>Information about where and how the text is used in your application</source>
-        <target state="translated">Informations sur l&apos;endroit et la manière dont le texte est utilisé dans votre application</target>
+        <target state="translated">Informations sur l'endroit et la manière dont le texte est utilisé dans votre application</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/how-it-works/how-it-works.component.html</context>
           <context context-type="linenumber">57</context>
@@ -808,7 +808,7 @@
       </trans-unit>
       <trans-unit id="TRANSUNIT_STATE_DESCRIPTION" datatype="html">
         <source>The current status of the translation (initial, translated, reviewed, etc.)</source>
-        <target state="translated">L&apos;état actuel de la traduction (initial, traduit, revu, etc.)</target>
+        <target state="translated">L'état actuel de la traduction (initial, traduit, revu, etc.)</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/how-it-works/how-it-works.component.html</context>
           <context context-type="linenumber">61</context>
@@ -823,8 +823,8 @@
         </context-group>
       </trans-unit>
       <trans-unit id="SUPPORTED_FORMATS_DESCRIPTION" datatype="html">
-        <source>Our platform supports the following XLIFF formats for maximum compatibility with Angular&apos;s internationalization system:</source>
-        <target state="translated">Notre plateforme prend en charge les formats XLIFF suivants pour une compatibilité maximale avec le système d&apos;internationalisation d&apos;Angular :</target>
+        <source>Our platform supports the following XLIFF formats for maximum compatibility with Angular's internationalization system:</source>
+        <target state="translated">Notre plateforme prend en charge les formats XLIFF suivants pour une compatibilité maximale avec le système d'internationalisation d'Angular :</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/how-it-works/how-it-works.component.html</context>
           <context context-type="linenumber">80</context>
@@ -839,8 +839,8 @@
         </context-group>
       </trans-unit>
       <trans-unit id="CONTEXT_AWARE_DESCRIPTION" datatype="html">
-        <source>Our AI-powered translation engine understands your application&apos;s context, ensuring accurate and meaningful translations that maintain the original intent of your content.</source>
-        <target state="translated">Notre moteur de traduction alimenté par IA comprend le contexte de votre application, garantissant des traductions précises et significatives qui préservent l&apos;intention originale de votre contenu.</target>
+        <source>Our AI-powered translation engine understands your application's context, ensuring accurate and meaningful translations that maintain the original intent of your content.</source>
+        <target state="translated">Notre moteur de traduction alimenté par IA comprend le contexte de votre application, garantissant des traductions précises et significatives qui préservent l'intention originale de votre contenu.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/how-it-works/how-it-works.component.html</context>
           <context context-type="linenumber">95</context>
@@ -872,7 +872,7 @@
       </trans-unit>
       <trans-unit id="FEATURE_CONSISTENCY_DESCRIPTION" datatype="html">
         <source>Ensures consistent translations across your entire application</source>
-        <target state="translated">Assure des traductions cohérentes dans l&apos;ensemble de votre application</target>
+        <target state="translated">Assure des traductions cohérentes dans l'ensemble de votre application</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/how-it-works/how-it-works.component.html</context>
           <context context-type="linenumber">103</context>
@@ -888,7 +888,7 @@
       </trans-unit>
       <trans-unit id="FEATURE_QUALITY_DESCRIPTION" datatype="html">
         <source>Automated quality checks for translation accuracy</source>
-        <target state="translated">Contrôles de qualité automatisés pour l&apos;exactitude des traductions</target>
+        <target state="translated">Contrôles de qualité automatisés pour l'exactitude des traductions</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/how-it-works/how-it-works.component.html</context>
           <context context-type="linenumber">107</context>
@@ -1292,7 +1292,7 @@
       </trans-unit>
       <trans-unit id="TOKEN_SCOPES_INTRO" datatype="html">
         <source>To connect, generate a Personal Access Token with the following scopes:</source>
-        <target state="translated">Pour vous connecter, générez un jeton d&apos;accès personnel avec les scopes suivants :</target>
+        <target state="translated">Pour vous connecter, générez un jeton d'accès personnel avec les scopes suivants :</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/git-providers/bitbucket-card.component.ts</context>
           <context context-type="linenumber">28</context>
@@ -1324,7 +1324,7 @@
       </trans-unit>
       <trans-unit id="USERNAME_PLACEHOLDER" datatype="html">
         <source>Enter your Bitbucket username</source>
-        <target state="translated">Entrez votre nom d&apos;utilisateur Bitbucket</target>
+        <target state="translated">Entrez votre nom d'utilisateur Bitbucket</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/git-providers/bitbucket-card.component.ts</context>
           <context context-type="linenumber">46</context>
@@ -1340,7 +1340,7 @@
       </trans-unit>
       <trans-unit id="APP_PASSWORD_PLACEHOLDER" datatype="html">
         <source>Enter your app password</source>
-        <target state="translated">Entrez votre mot de passe d&apos;application</target>
+        <target state="translated">Entrez votre mot de passe d'application</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/git-providers/bitbucket-card.component.ts</context>
           <context context-type="linenumber">51</context>
@@ -1356,7 +1356,7 @@
       </trans-unit>
       <trans-unit id="TOKEN_INPUT_PLACEHOLDER" datatype="html">
         <source>Enter your access token</source>
-        <target state="translated">Entrez votre jeton d&apos;accès</target>
+        <target state="translated">Entrez votre jeton d'accès</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/git-providers/bitbucket-card.component.ts</context>
           <context context-type="linenumber">58</context>
@@ -1472,7 +1472,7 @@
       </trans-unit>
       <trans-unit id="HOME_DESCRIPTION" datatype="html">
         <source>Translate your Angular applications with AI-powered context-aware translations</source>
-        <target state="translated">Traduisez vos applications Angular avec des traductions contextuelles alimentées par l&apos;IA</target>
+        <target state="translated">Traduisez vos applications Angular avec des traductions contextuelles alimentées par l'IA</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
           <context context-type="linenumber">6</context>
@@ -1527,8 +1527,8 @@
         </context-group>
       </trans-unit>
       <trans-unit id="CONTEXT_AWARE_AI_DESCRIPTION" datatype="html">
-        <source>Intelligent translations based on your application&apos;s context and business domain</source>
-        <target state="translated">Des traductions intelligentes basées sur le contexte et le domaine d&apos;activité de votre application</target>
+        <source>Intelligent translations based on your application's context and business domain</source>
+        <target state="translated">Des traductions intelligentes basées sur le contexte et le domaine d'activité de votre application</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
           <context context-type="linenumber">26</context>
@@ -1604,7 +1604,7 @@
       </trans-unit>
       <trans-unit id="PROFESSIONAL_PLAN_CUSTOM_AI_INSTRUCTIONS" datatype="html">
         <source>Custom AI instructions</source>
-        <target state="translated">Instructions d&apos;IA personnalisées</target>
+        <target state="translated">Instructions d'IA personnalisées</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
           <context context-type="linenumber">117</context>
@@ -1760,7 +1760,7 @@
       </trans-unit>
       <trans-unit id="TESTIMONIAL_2" datatype="html">
         <source>The automated Git integration saved us countless hours of manual work. Highly recommended!</source>
-        <target state="translated">L&apos;intégration Git automatisée nous a fait gagner d&apos;innombrables heures de travail manuel. Hautement recommandé !</target>
+        <target state="translated">L'intégration Git automatisée nous a fait gagner d'innombrables heures de travail manuel. Hautement recommandé !</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
           <context context-type="linenumber">205</context>
@@ -1827,7 +1827,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="OOPS_PAGE_NOT_FOUND" datatype="html">
-        <source>Oops! The page you&apos;re looking for seems to have vanished into the void...</source>
+        <source>Oops! The page you're looking for seems to have vanished into the void...</source>
         <target state="translated">Oups ! La page que vous recherchez semble avoir disparu dans le vide...</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/not-found/not-found.component.ts</context>
@@ -1836,7 +1836,7 @@
       </trans-unit>
       <trans-unit id="NOT_FOUND_BACK_HOME" datatype="html">
         <source> Back to Home </source>
-        <target state="translated">Retour à l&apos;accueil</target>
+        <target state="translated">Retour à l'accueil</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/not-found/not-found.component.ts</context>
           <context context-type="linenumber">16</context>
@@ -1956,7 +1956,7 @@
       </trans-unit>
       <trans-unit id="PROFILE_DELETE_ACCOUNT_DESCRIPTION" datatype="html">
         <source>Are you sure you want to delete your account?</source>
-        <target state="new">Veuillez entrer votre adresse e-mail pour confirmer la suppression de votre compte. Cette action ne peut pas être annulée.</target>
+        <target state="translated">Êtes-vous sûr de vouloir supprimer votre compte ?</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/profile/profile.component.ts</context>
           <context context-type="linenumber">83</context>
@@ -2051,8 +2051,8 @@
         </context-group>
       </trans-unit>
       <trans-unit id="AUTH_LOGIN_NO_ACCOUNT" datatype="html">
-        <source>Don&apos;t have an account?</source>
-        <target state="translated">Vous n&apos;avez pas de compte ?</target>
+        <source>Don't have an account?</source>
+        <target state="translated">Vous n'avez pas de compte ?</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/login.component.ts</context>
           <context context-type="linenumber">74</context>
@@ -2060,7 +2060,7 @@
       </trans-unit>
       <trans-unit id="AUTH_SIGNUP_TITLE" datatype="html">
         <source>Sign Up</source>
-        <target state="translated">S&apos;inscrire</target>
+        <target state="translated">S'inscrire</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/signup.component.ts</context>
           <context context-type="linenumber">16</context>
@@ -2076,7 +2076,7 @@
       </trans-unit>
       <trans-unit id="AUTH_SIGNUP_EMAIL_REQUIRED" datatype="html">
         <source>Email is required</source>
-        <target state="translated">L&apos;email est requis</target>
+        <target state="translated">L'email est requis</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/signup.component.ts</context>
           <context context-type="linenumber">25</context>
@@ -2131,7 +2131,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="AUTH_SIGNUP_PASSWORDS_DONT_MATCH" datatype="html">
-        <source>Passwords don&apos;t match</source>
+        <source>Passwords don't match</source>
         <target state="translated">Les mots de passe ne correspondent pas</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/signup.component.ts</context>
@@ -2236,7 +2236,7 @@
       </trans-unit>
       <trans-unit id="ENTERPRISE_PLAN_USE_OUR_BEST_AI_MODEL" datatype="html">
         <source>Use our best AI model</source>
-        <target state="translated">Utilisez notre meilleur modèle d&apos;IA</target>
+        <target state="translated">Utilisez notre meilleur modèle d'IA</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/home/home.component.html</context>
           <context context-type="linenumber">149</context>
@@ -2244,7 +2244,7 @@
       </trans-unit>
       <trans-unit id="AUTH_SERVICE_NO_EMAIL" datatype="html">
         <source>No email address provided</source>
-        <target state="new">No email address provided</target>
+        <target state="translated">Aucune adresse e-mail fournie</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/services/auth.service.ts</context>
           <context context-type="linenumber">136</context>
@@ -2252,7 +2252,7 @@
       </trans-unit>
       <trans-unit id="AUTH_EMAIL_CONFIRMATION_TITLE" datatype="html">
         <source>Check your email</source>
-        <target state="new">Check your email</target>
+        <target state="translated">Vérifiez votre e-mail</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/email-confirmation.component.ts</context>
           <context context-type="linenumber">18</context>
@@ -2260,7 +2260,7 @@
       </trans-unit>
       <trans-unit id="AUTH_EMAIL_CONFIRMATION_SUBTITLE" datatype="html">
         <source>We sent you a confirmation link</source>
-        <target state="new">We sent you a confirmation link</target>
+        <target state="translated">Nous vous avons envoyé un lien de confirmation</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/email-confirmation.component.ts</context>
           <context context-type="linenumber">19</context>
@@ -2268,7 +2268,7 @@
       </trans-unit>
       <trans-unit id="AUTH_EMAIL_CONFIRMATION_MESSAGE" datatype="html">
         <source>We have sent you an email with a confirmation link. Please check your inbox and click on the link to verify your email address.</source>
-        <target state="new">We have sent you an email with a confirmation link. Please check your inbox and click on the link to verify your email address.</target>
+        <target state="translated">Nous vous avons envoyé un e-mail avec un lien de confirmation. Veuillez vérifier votre boîte de réception et cliquer sur le lien pour vérifier votre adresse e-mail.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/email-confirmation.component.ts</context>
           <context context-type="linenumber">23</context>
@@ -2276,7 +2276,7 @@
       </trans-unit>
       <trans-unit id="AUTH_EMAIL_CONFIRMATION_SENT_TO" datatype="html">
         <source>Email sent to: <x id="INTERPOLATION" equiv-text="{{ email() }}"/></source>
-        <target state="new">Email sent to: <x id="INTERPOLATION" equiv-text="{{ email() }}"/></target>
+        <target state="translated">Email envoyé à : <x id="INTERPOLATION" equiv-text="{{ email() }}"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/email-confirmation.component.ts</context>
           <context context-type="linenumber">25</context>
@@ -2284,7 +2284,7 @@
       </trans-unit>
       <trans-unit id="AUTH_EMAIL_CONFIRMATION_OR" datatype="html">
         <source>or</source>
-        <target state="new">or</target>
+        <target state="translated">ou</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/email-confirmation.component.ts</context>
           <context context-type="linenumber">33</context>
@@ -2292,7 +2292,7 @@
       </trans-unit>
       <trans-unit id="AUTH_EMAIL_CONFIRMATION_RESENDING" datatype="html">
         <source>Resending...</source>
-        <target state="new">Resending...</target>
+        <target state="translated">Renvoi en cours...</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/email-confirmation.component.ts</context>
           <context context-type="linenumber">37</context>
@@ -2300,7 +2300,7 @@
       </trans-unit>
       <trans-unit id="AUTH_EMAIL_CONFIRMATION_RESEND" datatype="html">
         <source>Resend confirmation email</source>
-        <target state="new">Resend confirmation email</target>
+        <target state="translated">Renvoyer l'e-mail de confirmation</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/email-confirmation.component.ts</context>
           <context context-type="linenumber">38</context>
@@ -2308,7 +2308,7 @@
       </trans-unit>
       <trans-unit id="AUTH_EMAIL_CONFIRMATION_BACK_TO_LOGIN" datatype="html">
         <source>Back to</source>
-        <target state="new">Back to</target>
+        <target state="translated">Retour à</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/email-confirmation.component.ts</context>
           <context context-type="linenumber">42</context>
@@ -2316,7 +2316,7 @@
       </trans-unit>
       <trans-unit id="AUTH_EMAIL_CONFIRMATION_LOGIN" datatype="html">
         <source>Login</source>
-        <target state="new">Login</target>
+        <target state="translated">Connexion</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/email-confirmation.component.ts</context>
           <context context-type="linenumber">43</context>
@@ -2324,7 +2324,7 @@
       </trans-unit>
       <trans-unit id="AUTH_LOGIN_RESEND_CONFIRMATION" datatype="html">
         <source>Resend confirmation email</source>
-        <target state="new">Resend confirmation email</target>
+        <target state="translated">Renvoyer l'email de confirmation</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/login.component.ts</context>
           <context context-type="linenumber">50</context>
@@ -2332,7 +2332,7 @@
       </trans-unit>
       <trans-unit id="AUTH_LOGIN_EMAIL_NOT_CONFIRMED" datatype="html">
         <source>Your email has not been confirmed. Please check your inbox or request a new confirmation email.</source>
-        <target state="new">Your email has not been confirmed. Please check your inbox or request a new confirmation email.</target>
+        <target state="translated">Votre email n'a pas été confirmé. Veuillez vérifier votre boîte de réception ou demander un nouvel email de confirmation.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/login.component.ts</context>
           <context context-type="linenumber">116</context>
@@ -2340,7 +2340,7 @@
       </trans-unit>
       <trans-unit id="AUTH_LOGIN_RESEND_ERROR" datatype="html">
         <source>Error sending confirmation email: <x id="PH" equiv-text="err.message"/></source>
-        <target state="new">Error sending confirmation email: <x id="PH" equiv-text="err.message"/></target>
+        <target state="translated">Erreur lors de l'envoi de l'e-mail de confirmation : <x id="PH" equiv-text="err.message"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/login.component.ts</context>
           <context context-type="linenumber">137</context>
@@ -2348,7 +2348,7 @@
       </trans-unit>
       <trans-unit id="AUTH_VERIFY_EMAIL_LOADING_TITLE" datatype="html">
         <source>Verification in progress...</source>
-        <target state="new">Verification in progress...</target>
+        <target state="translated">Vérification en cours...</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/verify-email.component.ts</context>
           <context context-type="linenumber">21</context>
@@ -2356,7 +2356,7 @@
       </trans-unit>
       <trans-unit id="AUTH_VERIFY_EMAIL_LOADING_SUBTITLE" datatype="html">
         <source>Please wait while we verify your email</source>
-        <target state="new">Please wait while we verify your email</target>
+        <target state="translated">Veuillez patienter pendant que nous vérifions votre e-mail</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/verify-email.component.ts</context>
           <context context-type="linenumber">22</context>
@@ -2364,7 +2364,7 @@
       </trans-unit>
       <trans-unit id="AUTH_VERIFY_EMAIL_ERROR_TITLE" datatype="html">
         <source>Verification Error</source>
-        <target state="new">Verification Error</target>
+        <target state="translated">Erreur de vérification</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/verify-email.component.ts</context>
           <context context-type="linenumber">28</context>
@@ -2374,9 +2374,7 @@
         <source>
           <x id="INTERPOLATION" equiv-text="{{ error }}"/>
         </source>
-        <target state="new">
-          <x id="INTERPOLATION" equiv-text="{{ error }}"/>
-        </target>
+        <target state="translated"><x id="INTERPOLATION" equiv-text="{{ error }}"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/verify-email.component.ts</context>
           <context context-type="linenumber">29</context>
@@ -2384,7 +2382,7 @@
       </trans-unit>
       <trans-unit id="AUTH_VERIFY_EMAIL_SUCCESS_TITLE" datatype="html">
         <source>Email successfully verified!</source>
-        <target state="new">Email successfully verified!</target>
+        <target state="translated">Email vérifié avec succès !</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/verify-email.component.ts</context>
           <context context-type="linenumber">35</context>
@@ -2392,7 +2390,7 @@
       </trans-unit>
       <trans-unit id="AUTH_VERIFY_EMAIL_SUCCESS_SUBTITLE" datatype="html">
         <source>Your email has been verified. You can now use all features of the application.</source>
-        <target state="new">Your email has been verified. You can now use all features of the application.</target>
+        <target state="translated">Votre e-mail a été vérifié. Vous pouvez désormais utiliser toutes les fonctionnalités de l'application.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/verify-email.component.ts</context>
           <context context-type="linenumber">36</context>
@@ -2400,7 +2398,7 @@
       </trans-unit>
       <trans-unit id="AUTH_VERIFY_EMAIL_RETURN_LOGIN" datatype="html">
         <source>Go to login page</source>
-        <target state="new">Go to login page</target>
+        <target state="translated">Allez à la page de connexion</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/verify-email.component.ts</context>
           <context context-type="linenumber">42</context>
@@ -2408,7 +2406,7 @@
       </trans-unit>
       <trans-unit id="AUTH_VERIFY_EMAIL_INVALID_LINK" datatype="html">
         <source>Invalid or expired verification link.</source>
-        <target state="new">Invalid or expired verification link.</target>
+        <target state="translated">Lien de vérification invalide ou expiré.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/verify-email.component.ts</context>
           <context context-type="linenumber">63</context>
@@ -2416,7 +2414,7 @@
       </trans-unit>
       <trans-unit id="AUTH_VERIFY_EMAIL_GENERIC_ERROR" datatype="html">
         <source>An error occurred while verifying your email.</source>
-        <target state="new">An error occurred while verifying your email.</target>
+        <target state="translated">Une erreur est survenue lors de la vérification de votre e-mail.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/verify-email.component.ts</context>
           <context context-type="linenumber">71</context>
@@ -2424,7 +2422,7 @@
       </trans-unit>
       <trans-unit id="TAB_SETUP" datatype="html">
         <source>Setup</source>
-        <target state="new">Setup</target>
+        <target state="translated">Configuration de l'onglet</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">13</context>
@@ -2432,7 +2430,7 @@
       </trans-unit>
       <trans-unit id="TAB_USAGE" datatype="html">
         <source>Usage</source>
-        <target state="new">Usage</target>
+        <target state="translated">Utilisation</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">10</context>
@@ -2440,15 +2438,15 @@
       </trans-unit>
       <trans-unit id="EXTRACT_TOOL_TITLE" datatype="html">
         <source>Install Translation Tool</source>
-        <target state="new">Install Translation Tool</target>
+        <target state="translated">Installer l'outil de traduction</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">59</context>
         </context-group>
       </trans-unit>
       <trans-unit id="EXTRACT_TOOL_DESCRIPTION" datatype="html">
-        <source>For managing translation files, we&apos;ll use ng-extract-i18n-merge which simplifies the process of extracting and merging translations:</source>
-        <target state="new">For managing translation files, we&apos;ll use ng-extract-i18n-merge which simplifies the process of extracting and merging translations:</target>
+        <source>For managing translation files, we'll use ng-extract-i18n-merge which simplifies the process of extracting and merging translations:</source>
+        <target state="translated">Pour gérer les fichiers de traduction, nous utiliserons ng-extract-i18n-merge qui simplifie le processus d'extraction et de fusion des traductions :</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">61</context>
@@ -2456,7 +2454,7 @@
       </trans-unit>
       <trans-unit id="EXTRACT_TOOL_BENEFITS" datatype="html">
         <source>This tool offers several advantages:</source>
-        <target state="new">This tool offers several advantages:</target>
+        <target state="translated">Cet outil offre plusieurs avantages :</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">65</context>
@@ -2464,7 +2462,7 @@
       </trans-unit>
       <trans-unit id="EXTRACT_TOOL_BENEFIT_1" datatype="html">
         <source>Automatically extracts translatable strings from your application</source>
-        <target state="new">Automatically extracts translatable strings from your application</target>
+        <target state="translated">Extrait automatiquement les chaînes traduisibles de votre application</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">67</context>
@@ -2472,7 +2470,7 @@
       </trans-unit>
       <trans-unit id="EXTRACT_TOOL_BENEFIT_2" datatype="html">
         <source>Merges new translations with existing ones in a single step</source>
-        <target state="new">Merges new translations with existing ones in a single step</target>
+        <target state="translated">Fusionne les nouvelles traductions avec celles existantes en une seule étape</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">68</context>
@@ -2480,7 +2478,7 @@
       </trans-unit>
       <trans-unit id="EXTRACT_TOOL_BENEFIT_3" datatype="html">
         <source>Preserves existing translations during updates</source>
-        <target state="new">Preserves existing translations during updates</target>
+        <target state="translated">Préserve les traductions existantes lors des mises à jour</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">69</context>
@@ -2488,7 +2486,7 @@
       </trans-unit>
       <trans-unit id="EXTRACT_TOOL_BENEFIT_4" datatype="html">
         <source>Supports multiple target languages</source>
-        <target state="new">Supports multiple target languages</target>
+        <target state="translated">Prend en charge plusieurs langues cibles</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">70</context>
@@ -2496,7 +2494,7 @@
       </trans-unit>
       <trans-unit id="ANGULAR_JSON_DESCRIPTION" datatype="html">
         <source>Update the i18n configuration in angular.json:</source>
-        <target state="new">Update the i18n configuration in angular.json:</target>
+        <target state="translated">Mettez à jour la configuration i18n dans angular.json :</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">90</context>
@@ -2504,7 +2502,7 @@
       </trans-unit>
       <trans-unit id="EXTRACT_I18N_CONFIG_TITLE" datatype="html">
         <source>Then replace the standard extract-i18n configuration with ng-extract-i18n-merge:</source>
-        <target state="new">Then replace the standard extract-i18n configuration with ng-extract-i18n-merge:</target>
+        <target state="translated">Remplacez la configuration standard de extract-i18n par ng-extract-i18n-merge :</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">104</context>
@@ -2512,47 +2510,47 @@
       </trans-unit>
       <trans-unit id="EXTRACT_I18N_OPTIONS_TITLE" datatype="html">
         <source>Important Configuration Options:</source>
-        <target state="new">Important Configuration Options:</target>
+        <target state="translated">Options de configuration importantes :</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">122</context>
         </context-group>
       </trans-unit>
       <trans-unit id="EXTRACT_I18N_OPTION_1" datatype="html">
-        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>buildTarget<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: Your application&apos;s build target name</source>
-        <target state="new"><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>buildTarget<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: Your application&apos;s build target name</target>
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>buildTarget<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: Your application's build target name</source>
+        <target state="translated"><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>nom de la cible de construction<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/> : Le nom de la cible de construction de votre application</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">124</context>
         </context-group>
       </trans-unit>
       <trans-unit id="EXTRACT_I18N_OPTION_2" datatype="html">
-        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>outputPath<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: Directory where translation files will be stored</source>
-        <target state="new"><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>outputPath<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: Directory where translation files will be stored</target>
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>outputPath<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: Directory where translation files will be stored</source>
+        <target state="translated"><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>cheminDeSortie<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: Répertoire où les fichiers de traduction seront stockés</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">125</context>
         </context-group>
       </trans-unit>
       <trans-unit id="EXTRACT_I18N_OPTION_3" datatype="html">
-        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>includeContext<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: Includes source file information in the XLIFF files</source>
-        <target state="new"><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>includeContext<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: Includes source file information in the XLIFF files</target>
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>includeContext<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: Includes source file information in the XLIFF files</source>
+        <target state="translated"><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>inclureContexte<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/> : Inclut les informations sur le fichier source dans les fichiers XLIFF</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">126</context>
         </context-group>
       </trans-unit>
       <trans-unit id="EXTRACT_I18N_OPTION_4" datatype="html">
-        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>resetTranslationState<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: Marks all translations as needing review on changes</source>
-        <target state="new"><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>resetTranslationState<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: Marks all translations as needing review on changes</target>
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>resetTranslationState<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: Marks all translations as needing review on changes</source>
+        <target state="translated"><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>réinitialiser l'état de traduction<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/> : Indique que toutes les traductions doivent être révisées lors des modifications</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">127</context>
         </context-group>
       </trans-unit>
       <trans-unit id="EXTRACT_I18N_OPTION_5" datatype="html">
-        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>targetFiles<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: List of translation files to generate/update</source>
-        <target state="new"><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>targetFiles<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: List of translation files to generate/update</target>
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>targetFiles<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: List of translation files to generate/update</source>
+        <target state="translated"><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>fichiers cibles<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: Liste des fichiers de traduction à générer/mettre à jour</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">128</context>
@@ -2560,7 +2558,7 @@
       </trans-unit>
       <trans-unit id="BUILD_CONFIG_DESCRIPTION" datatype="html">
         <source>Add configurations for each language in the build section:</source>
-        <target state="new">Add configurations for each language in the build section:</target>
+        <target state="translated">Ajoutez des configurations pour chaque langue dans la section de construction :</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">135</context>
@@ -2568,7 +2566,7 @@
       </trans-unit>
       <trans-unit id="SEE_MORE_DOCUMENTATION_DESC" datatype="html">
         <source>Learn more about how to prepare your application for translation.</source>
-        <target state="new">Learn more about how to prepare your application for translation.</target>
+        <target state="translated">En savoir plus sur la préparation de votre application pour la traduction.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">167</context>
@@ -2576,7 +2574,7 @@
       </trans-unit>
       <trans-unit id="WORKFLOW_BENEFITS" datatype="html">
         <source>This simplified workflow ensures your translation files are always up-to-date with source content, making the internationalization process more efficient and error-free.</source>
-        <target state="new">This simplified workflow ensures your translation files are always up-to-date with source content, making the internationalization process more efficient and error-free.</target>
+        <target state="translated">Ce workflow simplifié garantit que vos fichiers de traduction sont toujours à jour avec le contenu source, rendant le processus d'internationalisation plus efficace et sans erreurs.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">233</context>
@@ -2584,31 +2582,31 @@
       </trans-unit>
       <trans-unit id="GETTING_STARTED_TITLE" datatype="html">
         <source>Getting Started with XLIFF Translator</source>
-        <target state="new">Getting Started with XLIFF Translator</target>
+        <target state="translated">Commencer avec le traducteur XLIFF</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">254</context>
         </context-group>
       </trans-unit>
       <trans-unit id="CONNECT_STEP_1" datatype="html">
-        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Select a provider<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: Choose from GitHub, GitLab, or Bitbucket</source>
-        <target state="new"><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Select a provider<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: Choose from GitHub, GitLab, or Bitbucket</target>
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>Select a provider<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: Choose from GitHub, GitLab, or Bitbucket</source>
+        <target state="translated"><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>Sélectionnez un fournisseur<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/> : Choisissez parmi GitHub, GitLab ou Bitbucket</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">289</context>
         </context-group>
       </trans-unit>
       <trans-unit id="CONNECT_STEP_2" datatype="html">
-        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Configure access<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: Create and provide the appropriate tokens</source>
-        <target state="new"><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Configure access<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: Create and provide the appropriate tokens</target>
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>Configure access<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: Create and provide the appropriate tokens</source>
+        <target state="translated"><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>Configurer l'accès<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/> : Créez et fournissez les jetons appropriés</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">290</context>
         </context-group>
       </trans-unit>
       <trans-unit id="CONNECT_STEP_3" datatype="html">
-        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Save your configuration<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: Enter your token and save the connection</source>
-        <target state="new"><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Save your configuration<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: Enter your token and save the connection</target>
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>Save your configuration<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: Enter your token and save the connection</source>
+        <target state="translated"><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>Sauvegardez votre configuration<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: Entrez votre jeton et enregistrez la connexion</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">291</context>
@@ -2616,7 +2614,7 @@
       </trans-unit>
       <trans-unit id="REPOSITORY_MANAGEMENT_TITLE" datatype="html">
         <source>Repository Management</source>
-        <target state="new">Repository Management</target>
+        <target state="translated">Gestion des dépôts</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">325</context>
@@ -2624,7 +2622,7 @@
       </trans-unit>
       <trans-unit id="REPOSITORY_SELECTION_TITLE" datatype="html">
         <source>Selecting Repositories</source>
-        <target state="new">Selecting Repositories</target>
+        <target state="translated">Sélection des dépôts</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">258</context>
@@ -2636,7 +2634,7 @@
       </trans-unit>
       <trans-unit id="REPOSITORY_SELECTION_DESCRIPTION" datatype="html">
         <source>After connecting to a Git provider:</source>
-        <target state="new">After connecting to a Git provider:</target>
+        <target state="translated">Après vous être connecté à un fournisseur Git :</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">259</context>
@@ -2647,8 +2645,8 @@
         </context-group>
       </trans-unit>
       <trans-unit id="REPOSITORY_STEP_1" datatype="html">
-        <source>Navigate to the provider&apos;s page where your repositories are listed</source>
-        <target state="new">Navigate to the provider&apos;s page where your repositories are listed</target>
+        <source>Navigate to the provider's page where your repositories are listed</source>
+        <target state="translated">Naviguez vers la page du fournisseur où vos dépôts sont listés</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">364</context>
@@ -2656,7 +2654,7 @@
       </trans-unit>
       <trans-unit id="REPOSITORY_STEP_2" datatype="html">
         <source>Browse and select the repository containing your Angular project with XLIFF files</source>
-        <target state="new">Browse and select the repository containing your Angular project with XLIFF files</target>
+        <target state="translated">Parcourez et sélectionnez le dépôt contenant votre projet Angular avec des fichiers XLIFF</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">365</context>
@@ -2664,7 +2662,7 @@
       </trans-unit>
       <trans-unit id="REPOSITORY_STEP_3" datatype="html">
         <source>Specify the branch to work with (default is usually the main branch)</source>
-        <target state="new">Specify the branch to work with (default is usually the main branch)</target>
+        <target state="translated">Spécifiez la branche avec laquelle travailler (la valeur par défaut est généralement la branche principale)</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">366</context>
@@ -2672,7 +2670,7 @@
       </trans-unit>
       <trans-unit id="REVIEW_FINALIZE_TITLE" datatype="html">
         <source>Reviewing and Finalizing</source>
-        <target state="new">Reviewing and Finalizing</target>
+        <target state="translated">Révision et finalisation</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">427</context>
@@ -2680,7 +2678,7 @@
       </trans-unit>
       <trans-unit id="REVIEW_PR_TITLE" datatype="html">
         <source>Pull Request Review</source>
-        <target state="new">Pull Request Review</target>
+        <target state="translated">Revue de la demande de tirage</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">430</context>
@@ -2688,7 +2686,7 @@
       </trans-unit>
       <trans-unit id="REVIEW_PR_DESCRIPTION" datatype="html">
         <source>After the translation process completes:</source>
-        <target state="new">After the translation process completes:</target>
+        <target state="translated">Après la fin du processus de traduction :</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">431</context>
@@ -2696,7 +2694,7 @@
       </trans-unit>
       <trans-unit id="REVIEW_STEP_1" datatype="html">
         <source>Review the created pull request in your Git provider</source>
-        <target state="new">Review the created pull request in your Git provider</target>
+        <target state="translated">Examinez la demande de tirage créée dans votre fournisseur Git</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">434</context>
@@ -2704,7 +2702,7 @@
       </trans-unit>
       <trans-unit id="REVIEW_STEP_2" datatype="html">
         <source>Check the translated content for accuracy</source>
-        <target state="new">Check the translated content for accuracy</target>
+        <target state="translated">Vérifiez le contenu traduit pour son exactitude</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">435</context>
@@ -2712,7 +2710,7 @@
       </trans-unit>
       <trans-unit id="REVIEW_STEP_3" datatype="html">
         <source>Make any necessary adjustments directly in the XLIFF files</source>
-        <target state="new">Make any necessary adjustments directly in the XLIFF files</target>
+        <target state="translated">Apportez les ajustements nécessaires directement dans les fichiers XLIFF</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">436</context>
@@ -2720,7 +2718,7 @@
       </trans-unit>
       <trans-unit id="REVIEW_STEP_4" datatype="html">
         <source>Merge the pull request to update your main codebase with the translations</source>
-        <target state="new">Merge the pull request to update your main codebase with the translations</target>
+        <target state="translated">Fusionnez la demande de tirage pour mettre à jour votre code principal avec les traductions</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">437</context>
@@ -2728,7 +2726,7 @@
       </trans-unit>
       <trans-unit id="REVIEW_BENEFITS" datatype="html">
         <source>This workflow allows you to keep translations in your version control system and follow standard code review practices for translation updates.</source>
-        <target state="new">This workflow allows you to keep translations in your version control system and follow standard code review practices for translation updates.</target>
+        <target state="translated">Ce flux de travail vous permet de conserver les traductions dans votre système de contrôle de version et de suivre les pratiques standard d'examen de code pour les mises à jour de traduction.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">440</context>
@@ -2736,7 +2734,7 @@
       </trans-unit>
       <trans-unit id="TIPS_TITLE" datatype="html">
         <source>Tips for Effective Translation</source>
-        <target state="new">Tips for Effective Translation</target>
+        <target state="translated">Conseils pour une traduction efficace</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">446</context>
@@ -2744,7 +2742,7 @@
       </trans-unit>
       <trans-unit id="TIP_REGULAR" datatype="html">
         <source>Run translations regularly as you develop to avoid large batches of untranslated content</source>
-        <target state="new">Run translations regularly as you develop to avoid large batches of untranslated content</target>
+        <target state="translated">Effectuez des traductions régulièrement pendant votre développement pour éviter de grandes masses de contenu non traduit</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">449</context>
@@ -2752,7 +2750,7 @@
       </trans-unit>
       <trans-unit id="TIP_BRANCH" datatype="html">
         <source>Create a dedicated branch for translations to keep them separate from feature development</source>
-        <target state="new">Create a dedicated branch for translations to keep them separate from feature development</target>
+        <target state="translated">Créez une branche dédiée pour les traductions afin de les séparer du développement des fonctionnalités</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">450</context>
@@ -2760,7 +2758,7 @@
       </trans-unit>
       <trans-unit id="TIP_CONTEXT" datatype="html">
         <source>Ensure your source code has clear context for translation units to improve AI translation quality</source>
-        <target state="new">Ensure your source code has clear context for translation units to improve AI translation quality</target>
+        <target state="translated">Assurez-vous que votre code source dispose d'un contexte clair pour les unités de traduction afin d'améliorer la qualité de la traduction de l'IA</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">451</context>
@@ -2768,7 +2766,7 @@
       </trans-unit>
       <trans-unit id="TIP_REVIEW" datatype="html">
         <source>Always review AI-generated translations, especially for critical user-facing content</source>
-        <target state="new">Always review AI-generated translations, especially for critical user-facing content</target>
+        <target state="translated">Toujours revoir les traductions générées par l'IA, en particulier pour le contenu critique destiné aux utilisateurs</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">452</context>
@@ -2776,7 +2774,7 @@
       </trans-unit>
       <trans-unit id="TIP_PATTERN" datatype="html">
         <source>Use specific file patterns to target translations for one language at a time</source>
-        <target state="new">Use specific file patterns to target translations for one language at a time</target>
+        <target state="translated">Utilisez des modèles de fichiers spécifiques pour cibler les traductions d'une seule langue à la fois</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">453</context>
@@ -2784,7 +2782,7 @@
       </trans-unit>
       <trans-unit id="RESOURCES_TITLE" datatype="html">
         <source>Additional Resources</source>
-        <target state="new">Additional Resources</target>
+        <target state="translated">Ressources supplémentaires</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">459</context>
@@ -2792,7 +2790,7 @@
       </trans-unit>
       <trans-unit id="RESOURCE_ANGULAR_DOCS" datatype="html">
         <source>Angular i18n Documentation</source>
-        <target state="new">Angular i18n Documentation</target>
+        <target state="translated">Documentation i18n Angular</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">470</context>
@@ -2800,7 +2798,7 @@
       </trans-unit>
       <trans-unit id="RESOURCE_ANGULAR_DOCS_DESC" datatype="html">
         <source>Official Angular documentation for internationalization.</source>
-        <target state="new">Official Angular documentation for internationalization.</target>
+        <target state="translated">Documentation officielle d'Angular pour l'internationalisation.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">471</context>
@@ -2808,7 +2806,7 @@
       </trans-unit>
       <trans-unit id="RESOURCE_NG_EXTRACT_I18N_MERGE" datatype="html">
         <source>ng-extract-i18n-merge</source>
-        <target state="new">ng-extract-i18n-merge</target>
+        <target state="translated">ng-extract-i18n-merge</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">484</context>
@@ -2816,7 +2814,7 @@
       </trans-unit>
       <trans-unit id="RESOURCE_NG_EXTRACT_I18N_MERGE_DESC" datatype="html">
         <source>Official tool for extracting and merging i18n translations in a single step.</source>
-        <target state="new">Official tool for extracting and merging i18n translations in a single step.</target>
+        <target state="translated">Outil officiel pour extraire et fusionner les traductions i18n en une seule étape.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">485</context>
@@ -2824,7 +2822,7 @@
       </trans-unit>
       <trans-unit id="RESOURCE_MARKED_TEXT" datatype="html">
         <source>Working with Marked Text</source>
-        <target state="new">Working with Marked Text</target>
+        <target state="translated">Travailler avec du texte marqué</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">498</context>
@@ -2832,7 +2830,7 @@
       </trans-unit>
       <trans-unit id="RESOURCE_MARKED_TEXT_DESC" datatype="html">
         <source>Learn about advanced i18n features like pluralization and selection.</source>
-        <target state="new">Learn about advanced i18n features like pluralization and selection.</target>
+        <target state="translated">Découvrez les fonctionnalités avancées d'i18n telles que la pluralisation et la sélection.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">499</context>
@@ -2840,7 +2838,7 @@
       </trans-unit>
       <trans-unit id="ESTIMATE_TITLE" datatype="html">
         <source>Estimation</source>
-        <target state="new">Estimation</target>
+        <target state="translated">Estimation</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">516</context>
@@ -2848,7 +2846,7 @@
       </trans-unit>
       <trans-unit id="ESTIMATE_DESCRIPTION" datatype="html">
         <source>Before running a translation, you can estimate the scope and complexity of the task:</source>
-        <target state="new">Before running a translation, you can estimate the scope and complexity of the task:</target>
+        <target state="translated">Avant de lancer une traduction, vous pouvez évaluer l'ampleur et la complexité de la tâche :</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">518</context>
@@ -2856,23 +2854,23 @@
       </trans-unit>
       <trans-unit id="ESTIMATE_STEP_1" datatype="html">
         <source>Select the repository you want to work with</source>
-        <target state="new">Select the repository you want to work with</target>
+        <target state="translated">Sélectionnez le dépôt avec lequel vous souhaitez travailler</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">521</context>
         </context-group>
       </trans-unit>
       <trans-unit id="ESTIMATE_STEP_2" datatype="html">
-        <source>Click on &quot;Estimate&quot; to analyze your XLIFF files</source>
-        <target state="new">Click on &quot;Estimate&quot; to analyze your XLIFF files</target>
+        <source>Click on "Estimate" to analyze your XLIFF files</source>
+        <target state="translated">Cliquez sur "Estimer" pour analyser vos fichiers XLIFF</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">522</context>
         </context-group>
       </trans-unit>
       <trans-unit id="ESTIMATE_STEP_3" datatype="html">
-        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Configure the estimate options:<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/><x id="START_UNORDERED_LIST" ctype="x-ul" equiv-text="&lt;ul class=&quot;list-disc list-inside ml-6 mt-2 space-y-1&quot;&gt;"/><x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li&gt;"/><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Branch<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: Select the branch containing your XLIFF files<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li&gt;"/><x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li&gt;"/><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>File Pattern<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: By default &quot;xlf&quot; to search all XLIFF files. Use specific patterns like &quot;ru.xlf&quot; to target only Russian files<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li&gt;"/><x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li&gt;"/><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Translation State<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: Choose which translation units to include (default is &quot;new&quot; to focus on untranslated content)<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li&gt;"/><x id="CLOSE_UNORDERED_LIST" ctype="x-ul" equiv-text="&lt;/ul&gt;"/></source>
-        <target state="new"><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Configure the estimate options:<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/><x id="START_UNORDERED_LIST" ctype="x-ul" equiv-text="&lt;ul class=&quot;list-disc list-inside ml-6 mt-2 space-y-1&quot;&gt;"/><x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li&gt;"/><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Branch<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: Select the branch containing your XLIFF files<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li&gt;"/><x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li&gt;"/><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>File Pattern<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: By default &quot;xlf&quot; to search all XLIFF files. Use specific patterns like &quot;ru.xlf&quot; to target only Russian files<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li&gt;"/><x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li&gt;"/><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Translation State<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: Choose which translation units to include (default is &quot;new&quot; to focus on untranslated content)<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li&gt;"/><x id="CLOSE_UNORDERED_LIST" ctype="x-ul" equiv-text="&lt;/ul&gt;"/></target>
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>Configure the estimate options:<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/><x id="START_UNORDERED_LIST" ctype="x-ul" equiv-text="&lt;ul class=&quot;list-disc list-inside ml-6 mt-2 space-y-1&quot;>"/><x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>Branch<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: Select the branch containing your XLIFF files<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li>"/><x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>File Pattern<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: By default "xlf" to search all XLIFF files. Use specific patterns like "ru.xlf" to target only Russian files<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li>"/><x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>Translation State<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: Choose which translation units to include (default is "new" to focus on untranslated content)<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li>"/><x id="CLOSE_UNORDERED_LIST" ctype="x-ul" equiv-text="&lt;/ul>"/></source>
+        <target state="translated"><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>Configurer les options d'estimation :<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/><x id="START_UNORDERED_LIST" ctype="x-ul" equiv-text="&lt;ul class=&quot;list-disc list-inside ml-6 mt-2 space-y-1&quot;>"/><x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>Branche<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/> : Sélectionnez la branche contenant vos fichiers XLIFF<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li>"/><x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>Modèle de fichier<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/> : Par défaut "xlf" pour rechercher tous les fichiers XLIFF. Utilisez des motifs spécifiques comme "ru.xlf" pour cibler uniquement les fichiers russes<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li>"/><x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>État de traduction<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/> : Choisissez les unités de traduction à inclure (par défaut, c'est "nouveau" pour se concentrer sur le contenu non traduit)<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li>"/><x id="CLOSE_UNORDERED_LIST" ctype="x-ul" equiv-text="&lt;/ul>"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">524</context>
@@ -2880,7 +2878,7 @@
       </trans-unit>
       <trans-unit id="ESTIMATE_STEP_4" datatype="html">
         <source>Review the estimate results showing the number of translation units to process</source>
-        <target state="new">Review the estimate results showing the number of translation units to process</target>
+        <target state="translated">Examinez les résultats de l'estimation affichant le nombre d'unités de traduction à traiter</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">531</context>
@@ -2888,7 +2886,7 @@
       </trans-unit>
       <trans-unit id="ESTIMATE_PURPOSE_TITLE" datatype="html">
         <source>Why Estimate?</source>
-        <target state="new">Why Estimate?</target>
+        <target state="translated">Pourquoi estimer ?</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">535</context>
@@ -2896,7 +2894,7 @@
       </trans-unit>
       <trans-unit id="ESTIMATE_PURPOSE_DESCRIPTION" datatype="html">
         <source>The estimation process helps you understand:</source>
-        <target state="new">The estimation process helps you understand:</target>
+        <target state="translated">Le processus d'estimation vous aide à comprendre :</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">536</context>
@@ -2904,7 +2902,7 @@
       </trans-unit>
       <trans-unit id="ESTIMATE_PURPOSE_1" datatype="html">
         <source>The exact number of translation units that need processing</source>
-        <target state="new">The exact number of translation units that need processing</target>
+        <target state="translated">Le nombre exact d'unités de traduction qui doivent être traitées</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">538</context>
@@ -2912,7 +2910,7 @@
       </trans-unit>
       <trans-unit id="ESTIMATE_PURPOSE_2" datatype="html">
         <source>How many credits will be required (1 translation unit = 1 credit)</source>
-        <target state="new">How many credits will be required (1 translation unit = 1 credit)</target>
+        <target state="translated">Combien de crédits seront requis (1 unité de traduction = 1 crédit)</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">539</context>
@@ -2920,7 +2918,7 @@
       </trans-unit>
       <trans-unit id="ESTIMATE_PURPOSE_3" datatype="html">
         <source>Approximate time required (each translation unit takes 10-20 seconds to process)</source>
-        <target state="new">Approximate time required (each translation unit takes 10-20 seconds to process)</target>
+        <target state="translated">Temps approximatif requis (chaque unité de traduction prend 10 à 20 secondes à traiter)</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">540</context>
@@ -2928,7 +2926,7 @@
       </trans-unit>
       <trans-unit id="ESTIMATE_PURPOSE_CREDIT_NOTE" datatype="html">
         <source>Important: Large translation projects with hundreds of translation units can take significant time. Plan accordingly.</source>
-        <target state="new">Important: Large translation projects with hundreds of translation units can take significant time. Plan accordingly.</target>
+        <target state="translated">Important : Les grands projets de traduction comportant des centaines d'unités de traduction peuvent prendre un temps considérable. Planifiez en conséquence.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">542</context>
@@ -2936,7 +2934,7 @@
       </trans-unit>
       <trans-unit id="TRANSLATE_TITLE" datatype="html">
         <source>Translation</source>
-        <target state="new">Translation</target>
+        <target state="translated">Traduction</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">551</context>
@@ -2944,7 +2942,7 @@
       </trans-unit>
       <trans-unit id="TRANSLATE_DESCRIPTION" datatype="html">
         <source>Running an AI-powered translation is a separate process from estimation:</source>
-        <target state="new">Running an AI-powered translation is a separate process from estimation:</target>
+        <target state="translated">Exécuter une traduction alimentée par l'IA est un processus distinct de l'estimation :</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">553</context>
@@ -2952,23 +2950,24 @@
       </trans-unit>
       <trans-unit id="TRANSLATE_STEP_1" datatype="html">
         <source>Select the repository containing your XLIFF files</source>
-        <target state="new">Select the repository containing your XLIFF files</target>
+        <target state="translated">Sélectionnez le référentiel contenant vos fichiers XLIFF</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">556</context>
         </context-group>
       </trans-unit>
       <trans-unit id="TRANSLATE_STEP_2" datatype="html">
-        <source>Click on &quot;Translate&quot; to begin the process</source>
-        <target state="new">Click on &quot;Translate&quot; to begin the process</target>
+        <source>Click on "Translate" to begin the process</source>
+        <target state="new">Click on "Translate" to begin the process</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">557</context>
         </context-group>
+        <!-- The server had an error processing your request. Sorry about that! You can retry your request, or contact us through our help center at help.openai.com if you keep seeing this error. (Please include the request ID req_68cbe6d84d8f59ac19fc767c4f1c952d in your email.) -->
       </trans-unit>
       <trans-unit id="TRANSLATE_STEP_3" datatype="html">
         <source>Configure the translation options:</source>
-        <target state="new">Configure the translation options:</target>
+        <target state="translated">Configurer les options de traduction :</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">559</context>
@@ -2976,7 +2975,7 @@
       </trans-unit>
       <trans-unit id="TRANSLATE_STEP_4" datatype="html">
         <source>Start the translation process</source>
-        <target state="new">Start the translation process</target>
+        <target state="translated">Démarrez le processus de traduction</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">567</context>
@@ -2984,7 +2983,7 @@
       </trans-unit>
       <trans-unit id="TRANSLATION_PROCESS_TITLE" datatype="html">
         <source>Translation Process</source>
-        <target state="new">Translation Process</target>
+        <target state="translated">Processus de traduction</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">575</context>
@@ -2992,7 +2991,7 @@
       </trans-unit>
       <trans-unit id="TRANSLATION_PROCESS_DESCRIPTION" datatype="html">
         <source>During the translation process, XLIFF Translator:</source>
-        <target state="new">During the translation process, XLIFF Translator:</target>
+        <target state="translated">Lors du processus de traduction, le traducteur XLIFF :</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">576</context>
@@ -3000,7 +2999,7 @@
       </trans-unit>
       <trans-unit id="PROCESS_STEP_1" datatype="html">
         <source>Clones your project repository</source>
-        <target state="new">Clones your project repository</target>
+        <target state="translated">Clône votre dépôt de projet</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">578</context>
@@ -3008,7 +3007,7 @@
       </trans-unit>
       <trans-unit id="PROCESS_STEP_2" datatype="html">
         <source>Identifies XLIFF files matching your pattern</source>
-        <target state="new">Identifies XLIFF files matching your pattern</target>
+        <target state="translated">Identifie les fichiers XLIFF correspondant à votre motif</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">579</context>
@@ -3016,7 +3015,7 @@
       </trans-unit>
       <trans-unit id="PROCESS_STEP_3" datatype="html">
         <source>Analyzes each translation unit and its context in the source code</source>
-        <target state="new">Analyzes each translation unit and its context in the source code</target>
+        <target state="translated">Analyse chaque unité de traduction et son contexte dans le code source</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">580</context>
@@ -3024,7 +3023,7 @@
       </trans-unit>
       <trans-unit id="PROCESS_STEP_4" datatype="html">
         <source>Sends translation instructions to the AI engine with relevant context</source>
-        <target state="new">Sends translation instructions to the AI engine with relevant context</target>
+        <target state="translated">Envoie des instructions de traduction au moteur IA avec un contexte pertinent</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">581</context>
@@ -3032,7 +3031,7 @@
       </trans-unit>
       <trans-unit id="PROCESS_STEP_5" datatype="html">
         <source>Updates the XLIFF files with the translations</source>
-        <target state="new">Updates the XLIFF files with the translations</target>
+        <target state="translated">Met à jour les fichiers XLIFF avec les traductions</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">582</context>
@@ -3040,7 +3039,7 @@
       </trans-unit>
       <trans-unit id="PROCESS_STEP_6" datatype="html">
         <source>Creates a pull request with the changes (if configured)</source>
-        <target state="new">Creates a pull request with the changes (if configured)</target>
+        <target state="translated">Crée une demande de tirage avec les modifications (si configuré)</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">583</context>
@@ -3048,7 +3047,7 @@
       </trans-unit>
       <trans-unit id="SETUP_REMINDER_TITLE" datatype="html">
         <source>Initial Setup Required</source>
-        <target state="new">Initial Setup Required</target>
+        <target state="translated">Configuration initiale requise</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">243</context>
@@ -3056,7 +3055,7 @@
       </trans-unit>
       <trans-unit id="SETUP_REMINDER_DESCRIPTION" datatype="html">
         <source> Before using XLIFF Translator, you need to configure your Angular application for internationalization. </source>
-        <target state="new"> Before using XLIFF Translator, you need to configure your Angular application for internationalization. </target>
+        <target state="translated">Avant d'utiliser le traducteur XLIFF, vous devez configurer votre application Angular pour l'internationalisation.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">245</context>
@@ -3064,7 +3063,7 @@
       </trans-unit>
       <trans-unit id="GO_TO_SETUP" datatype="html">
         <source>Go to Setup</source>
-        <target state="new">Go to Setup</target>
+        <target state="translated">Allez à la configuration</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">248</context>
@@ -3072,7 +3071,7 @@
       </trans-unit>
       <trans-unit id="NOT_CONNECTED_STATUS" datatype="html">
         <source>Not Connected</source>
-        <target state="new">Not Connected</target>
+        <target state="translated">Non connecté</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">270</context>
@@ -3080,7 +3079,7 @@
       </trans-unit>
       <trans-unit id="GITHUB_TOKEN_INSTRUCTION" datatype="html">
         <source>To connect, generate a Personal Access Token with the following scopes:</source>
-        <target state="new">To connect, generate a Personal Access Token with the following scopes:</target>
+        <target state="translated">Pour vous connecter, générez un jeton d'accès personnel avec les portées suivantes :</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">272</context>
@@ -3088,7 +3087,7 @@
       </trans-unit>
       <trans-unit id="GITHUB_SCOPE_REPO" datatype="html">
         <source>repo</source>
-        <target state="new">repo</target>
+        <target state="translated">repo</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">274</context>
@@ -3096,15 +3095,15 @@
       </trans-unit>
       <trans-unit id="GITHUB_SCOPE_READ_ORG" datatype="html">
         <source>read:org</source>
-        <target state="new">read:org</target>
+        <target state="translated">lire:org</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">275</context>
         </context-group>
       </trans-unit>
       <trans-unit id="GITHUB_TOKEN_LOCATION" datatype="html">
-        <source>Get your token here: Settings &gt; Developer settings &gt; Personal access tokens &gt; Tokens (classic) &gt; Generate new token</source>
-        <target state="new">Get your token here: Settings &gt; Developer settings &gt; Personal access tokens &gt; Tokens (classic) &gt; Generate new token</target>
+        <source>Get your token here: Settings > Developer settings > Personal access tokens > Tokens (classic) > Generate new token</source>
+        <target state="translated">Obtenez votre jeton ici : Paramètres > Paramètres de développeur > Jetons d'accès personnel > Jetons (classiques) > Générer un nouveau jeton</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">277</context>
@@ -3112,7 +3111,7 @@
       </trans-unit>
       <trans-unit id="TOKEN_LABEL" datatype="html">
         <source>Token</source>
-        <target state="new">Token</target>
+        <target state="translated">Jeton</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">278</context>
@@ -3120,7 +3119,7 @@
       </trans-unit>
       <trans-unit id="TOKEN_PLACEHOLDER" datatype="html">
         <source>Enter your access token</source>
-        <target state="new">Enter your access token</target>
+        <target state="translated">Saisissez votre jeton d'accès</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">280</context>
@@ -3128,7 +3127,7 @@
       </trans-unit>
       <trans-unit id="GITHUB_WIDGET_CAPTION" datatype="html">
         <source>GitHub provider configuration form</source>
-        <target state="new">GitHub provider configuration form</target>
+        <target state="translated">Formulaire de configuration du fournisseur GitHub</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">284</context>
@@ -3136,15 +3135,15 @@
       </trans-unit>
       <trans-unit id="GITLAB_TITLE" datatype="html">
         <source>GitLab</source>
-        <target state="new">GitLab</target>
+        <target state="translated">GitLab</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">302</context>
         </context-group>
       </trans-unit>
       <trans-unit id="GITLAB_DESC" datatype="html">
-        <source>Create a Personal Access Token with <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code&gt;"/>api<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code&gt;"/>, <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code&gt;"/>read_repository<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code&gt;"/>, and <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code&gt;"/>write_repository<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code&gt;"/> scopes.</source>
-        <target state="new">Create a Personal Access Token with <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code&gt;"/>api<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code&gt;"/>, <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code&gt;"/>read_repository<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code&gt;"/>, and <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code&gt;"/>write_repository<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code&gt;"/> scopes.</target>
+        <source>Create a Personal Access Token with <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code>"/>api<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code>"/>, <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code>"/>read_repository<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code>"/>, and <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code>"/>write_repository<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code>"/> scopes.</source>
+        <target state="translated">Créez un jeton d'accès personnel avec <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code>"/>api<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code>"/>, <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code>"/>read_repository<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code>"/>, et <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code>"/>write_repository<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code>"/> portées.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">303</context>
@@ -3152,15 +3151,15 @@
       </trans-unit>
       <trans-unit id="BITBUCKET_TITLE" datatype="html">
         <source>Bitbucket</source>
-        <target state="new">Bitbucket</target>
+        <target state="translated">Bitbucket</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">314</context>
         </context-group>
       </trans-unit>
       <trans-unit id="BITBUCKET_DESC" datatype="html">
-        <source>Create an App Password with <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code&gt;"/>repository:read<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code&gt;"/> and <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code&gt;"/>repository:write<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code&gt;"/> permissions.</source>
-        <target state="new">Create an App Password with <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code&gt;"/>repository:read<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code&gt;"/> and <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code&gt;"/>repository:write<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code&gt;"/> permissions.</target>
+        <source>Create an App Password with <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code>"/>repository:read<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code>"/> and <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code>"/>repository:write<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code>"/> permissions.</source>
+        <target state="translated">Créez un mot de passe d'application avec <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code>"/>repository:read<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code>"/> et <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code>"/>repository:write<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code>"/> permissions.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">315</context>
@@ -3168,7 +3167,7 @@
       </trans-unit>
       <trans-unit id="SOFTWARITY_LABEL" datatype="html">
         <source>softwarity</source>
-        <target state="new">softwarity</target>
+        <target state="translated">softwarité</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">341</context>
@@ -3176,7 +3175,7 @@
       </trans-unit>
       <trans-unit id="XLIFF_SAAS_LABEL" datatype="html">
         <source>xliff-saas</source>
-        <target state="new">xliff-saas</target>
+        <target state="translated">xliff-saas</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">342</context>
@@ -3184,7 +3183,7 @@
       </trans-unit>
       <trans-unit id="UPDATED_DATE" datatype="html">
         <source>Updated Apr 8, 2025</source>
-        <target state="new">Updated Apr 8, 2025</target>
+        <target state="translated">Mis à jour le 8 avril 2025</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">345</context>
@@ -3192,7 +3191,7 @@
       </trans-unit>
       <trans-unit id="UNITS_DETECTED" datatype="html">
         <source>90 translation units detected</source>
-        <target state="new">90 translation units detected</target>
+        <target state="translated">90 unités de traduction détectées</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">348</context>
@@ -3200,7 +3199,7 @@
       </trans-unit>
       <trans-unit id="NO_TRANSLATION" datatype="html">
         <source>No translation available...</source>
-        <target state="new">No translation available...</target>
+        <target state="translated">Aucune traduction disponible...</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">354</context>
@@ -3208,7 +3207,7 @@
       </trans-unit>
       <trans-unit id="TRANSLATION_WIDGET_CAPTION" datatype="html">
         <source>Repository selection with translation options</source>
-        <target state="new">Repository selection with translation options</target>
+        <target state="translated">Sélection de référentiels avec options de traduction</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">359</context>
@@ -3216,7 +3215,7 @@
       </trans-unit>
       <trans-unit id="TRANSLATION_OPTIONS_TITLE" datatype="html">
         <source>Translation Options</source>
-        <target state="new">Translation Options</target>
+        <target state="translated">Options de traduction</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">374</context>
@@ -3224,7 +3223,7 @@
       </trans-unit>
       <trans-unit id="MAIN_BRANCH" datatype="html">
         <source>main</source>
-        <target state="new">main</target>
+        <target state="translated">principal</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">379</context>
@@ -3232,7 +3231,7 @@
       </trans-unit>
       <trans-unit id="XLF_EXTENSION" datatype="html">
         <source>xlf</source>
-        <target state="new">xlf</target>
+        <target state="translated">xlf</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">388</context>
@@ -3240,7 +3239,7 @@
       </trans-unit>
       <trans-unit id="NEW_STATE" datatype="html">
         <source>new</source>
-        <target state="new">new</target>
+        <target state="translated">nouveau</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">397</context>
@@ -3248,7 +3247,7 @@
       </trans-unit>
       <trans-unit id="PROCEEDED_STATE_LABEL" datatype="html">
         <source>Proceeded TransUnit State</source>
-        <target state="new">Proceeded TransUnit State</target>
+        <target state="translated">État de l'unité de traduction traitée</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">404</context>
@@ -3256,7 +3255,7 @@
       </trans-unit>
       <trans-unit id="TRANSLATED_STATE" datatype="html">
         <source>translated</source>
-        <target state="new">translated</target>
+        <target state="translated">traduit</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">406</context>
@@ -3264,7 +3263,7 @@
       </trans-unit>
       <trans-unit id="TRANSLATE_CONFIRM_BUTTON" datatype="html">
         <source>Translate</source>
-        <target state="new">Translate</target>
+        <target state="translated">Traduire</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">414</context>
@@ -3272,15 +3271,15 @@
       </trans-unit>
       <trans-unit id="TRANSLATION_OPTIONS_CAPTION" datatype="html">
         <source> Translation options configuration modal </source>
-        <target state="new"> Translation options configuration modal </target>
+        <target state="translated">Modal de configuration des options de traduction</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">418</context>
         </context-group>
       </trans-unit>
       <trans-unit id="TRANSLATION_OPTIONS_REF" datatype="html">
-        <source> You&apos;ll be prompted with the translation options modal as shown earlier in the &quot;Selecting Repositories&quot; section. </source>
-        <target state="new"> You&apos;ll be prompted with the translation options modal as shown earlier in the &quot;Selecting Repositories&quot; section. </target>
+        <source> You'll be prompted with the translation options modal as shown earlier in the "Selecting Repositories" section. </source>
+        <target state="translated">Vous serez invité à afficher la fenêtre contextuelle des options de traduction comme indiqué précédemment dans la section "Sélectionner des dépôts".</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">571</context>
@@ -3288,7 +3287,7 @@
       </trans-unit>
       <trans-unit id="TRANSLATE_STEP_3_BRANCH" datatype="html">
         <source>Select the source branch</source>
-        <target state="new">Select the source branch</target>
+        <target state="translated">Sélectionnez la branche source</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">561</context>
@@ -3296,23 +3295,23 @@
       </trans-unit>
       <trans-unit id="TRANSLATE_STEP_3_FILE_PATTERN" datatype="html">
         <source>Specify which XLIFF files to translate</source>
-        <target state="new">Specify which XLIFF files to translate</target>
+        <target state="translated">Spécifiez quels fichiers XLIFF traduire</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">562</context>
         </context-group>
       </trans-unit>
       <trans-unit id="TRANSLATE_STEP_3_TRANSLATION_STATE" datatype="html">
-        <source>Select which translation units to process (e.g., &quot;new&quot;, &quot;needs-translation&quot;)</source>
-        <target state="new">Select which translation units to process (e.g., &quot;new&quot;, &quot;needs-translation&quot;)</target>
+        <source>Select which translation units to process (e.g., "new", "needs-translation")</source>
+        <target state="translated">Sélectionnez les unités de traduction à traiter (par exemple, "new", "needs-translation")</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">563</context>
         </context-group>
       </trans-unit>
       <trans-unit id="TRANSLATE_STEP_3_TARGET_STATE" datatype="html">
-        <source>Define the state to set for translated units (e.g., &quot;translated&quot;, &quot;final&quot;)</source>
-        <target state="new">Define the state to set for translated units (e.g., &quot;translated&quot;, &quot;final&quot;)</target>
+        <source>Define the state to set for translated units (e.g., "translated", "final")</source>
+        <target state="translated">Définissez l'état à définir pour les unités traduites (par exemple, "traduit", "final").</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">564</context>
@@ -3320,7 +3319,7 @@
       </trans-unit>
       <trans-unit id="AUTH_SERVICE_EMAIL_EXISTS" datatype="html">
         <source>This email is already in use</source>
-        <target state="new">This email is already in use</target>
+        <target state="translated">Cet email est déjà utilisé</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/services/auth.service.ts</context>
           <context context-type="linenumber">104</context>
@@ -3328,7 +3327,7 @@
       </trans-unit>
       <trans-unit id="AUTH_SERVICE_PASSWORD_REQUIREMENTS" datatype="html">
         <source>Password does not meet security requirements</source>
-        <target state="new">Password does not meet security requirements</target>
+        <target state="translated">Le mot de passe ne respecte pas les exigences de sécurité</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/services/auth.service.ts</context>
           <context context-type="linenumber">106</context>
@@ -3336,7 +3335,7 @@
       </trans-unit>
       <trans-unit id="AUTH_SERVICE_GENERAL_ERROR" datatype="html">
         <source>An error occurred during account creation: <x id="PH" equiv-text="error.message"/></source>
-        <target state="new">An error occurred during account creation: <x id="PH" equiv-text="error.message"/></target>
+        <target state="translated">Une erreur s'est produite lors de la création du compte : <x id="PH" equiv-text="error.message"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/services/auth.service.ts</context>
           <context context-type="linenumber">108</context>
@@ -3344,7 +3343,7 @@
       </trans-unit>
       <trans-unit id="AUTH_SIGNUP_USER_EXISTS" datatype="html">
         <source>This email is already in use</source>
-        <target state="new">This email is already in use</target>
+        <target state="translated">Cet email est déjà utilisé</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/signup.component.ts</context>
           <context context-type="linenumber">150</context>
@@ -3352,7 +3351,7 @@
       </trans-unit>
       <trans-unit id="AUTH_SIGNUP_INVALID_CREDENTIALS" datatype="html">
         <source>Invalid credentials</source>
-        <target state="new">Invalid credentials</target>
+        <target state="translated">Identifiants non valides</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/signup.component.ts</context>
           <context context-type="linenumber">152</context>
@@ -3360,7 +3359,7 @@
       </trans-unit>
       <trans-unit id="AUTH_SIGNUP_PASSWORD_REQUIREMENTS" datatype="html">
         <source>Password does not meet security requirements</source>
-        <target state="new">Password does not meet security requirements</target>
+        <target state="translated">Le mot de passe ne répond pas aux exigences de sécurité</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/signup.component.ts</context>
           <context context-type="linenumber">154</context>
@@ -3368,7 +3367,7 @@
       </trans-unit>
       <trans-unit id="AUTH_SIGNUP_GENERAL_ERROR" datatype="html">
         <source>Error creating account: <x id="PH" equiv-text="err.message"/></source>
-        <target state="new">Error creating account: <x id="PH" equiv-text="err.message"/></target>
+        <target state="translated">Erreur lors de la création du compte : <x id="PH" equiv-text="err.message"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/signup.component.ts</context>
           <context context-type="linenumber">156</context>
@@ -3376,7 +3375,7 @@
       </trans-unit>
       <trans-unit id="PROFILE_DELETE_ACCOUNT_WARNING" datatype="html">
         <source>This action cannot be undone. All account data and credits will be permanently deleted.</source>
-        <target state="new">This action cannot be undone. All account data and credits will be permanently deleted.</target>
+        <target state="translated">Cette action ne peut pas être annulée. Toutes les données du compte et les crédits seront supprimés de manière permanente.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/profile/profile.component.ts</context>
           <context context-type="linenumber">84</context>
@@ -3384,7 +3383,7 @@
       </trans-unit>
       <trans-unit id="PROFILE_DELETE_ACCOUNT_INSTRUCTIONS" datatype="html">
         <source>Please enter your email address to confirm deletion.</source>
-        <target state="new">Please enter your email address to confirm deletion.</target>
+        <target state="translated">Veuillez entrer votre adresse e-mail pour confirmer la suppression.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/profile/profile.component.ts</context>
           <context context-type="linenumber">85</context>
