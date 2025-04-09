@@ -1,0 +1,47 @@
+name: Deploy Supabase Functions
+run-name: ${{ github.actor }} is deploying Supabase Functions
+
+on:
+  # Permet de déclencher manuellement depuis l'onglet Actions
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment to deploy to'
+        type: choice
+        required: true
+        default: 'dev'
+        options:
+          - dev
+          - staging
+          - production
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: ${{ github.event.inputs.environment }}
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: Install dependencies
+        run: npm ci
+      
+      - name: Install Supabase CLI
+        run: npm install -g supabase
+      
+      - name: Login to Supabase
+        run: supabase login --access-token ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+      
+      - name: Deploy function(s)
+        run: |
+          echo "Deploying all functions..."
+          supabase functions deploy --project-ref "jfrdmhsrklrvtaatdvbt"
+      
+      - name: Verify deployment
+        run: supabase functions list --project-ref "jfrdmhsrklrvtaatdvbt"

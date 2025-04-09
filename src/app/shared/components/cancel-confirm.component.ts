@@ -6,16 +6,18 @@ import { Component, ElementRef, OnInit, output, signal } from '@angular/core';
   standalone: true,
   imports: [],
   template: `
-    <div class="relative">
-      <button (click)="onClick()" class="w-full rounded-md relative overflow-hidden" [class]="isConfirming() ? 'btn-confirm' : 'btn-cancel'">
+    <div class="relative text-sm font-medium">
+      <button (click)="onClick()" 
+              class="w-full rounded-md relative overflow-hidden border border-warning rounded-md py-2 px-0 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed transition-colors h-[36px]" 
+              [class]="isConfirming() ? 'btn-confirm' : 'btn-cancel'">
         @if (isConfirming()) {
           <div class="absolute inset-0 bg-warning" [@emptyEffect]="'emptying'"></div>
           <span class="relative">
-            <span class="btn-label text-fill" [attr.data-text]="confirmText()" [style.width.px]="minWidth()">{{confirmText()}}</span>
+            <span class="mx-0 block text-fill" [attr.data-text]="confirmText()" [style.width.px]="minWidth()">{{confirmText()}}</span>
           </span>
         } @else {
           <span class="relative">
-            <span class="btn-label" [style.width.px]="minWidth()">\u00A0\u00A0\u00A0\u00A0<span i18n="@@CANCEL">Cancel</span>\u00A0\u00A0\u00A0\u00A0</span>
+            <span class="mx-0 block" [style.width.px]="minWidth()">\u00A0\u00A0\u00A0\u00A0<span i18n="@@CANCEL">Cancel</span>\u00A0\u00A0\u00A0\u00A0</span>
           </span>
         }
       </button>
@@ -30,17 +32,8 @@ import { Component, ElementRef, OnInit, output, signal } from '@angular/core';
     ])
   ],
   styles: [`
-    :host {
-      @apply text-sm font-medium;
-    }
-    button {
-      @apply border border-warning rounded-md py-2 px-0 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed transition-colors h-[36px];
-    }
     .btn-cancel {
       @apply text-warning hover:bg-warning hover:text-white hover:border-none;
-    }
-    .btn-label {
-      @apply mx-0 block;
     }
     .text-fill {
       @apply relative text-white;

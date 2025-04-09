@@ -6,16 +6,18 @@ import { Component, ElementRef, input, OnInit, output, signal } from '@angular/c
   standalone: true,
   imports: [],
   template: `
-    <div class="relative">
-      <button (click)="onClick()" class="w-full rounded-md relative overflow-hidden" [class]="isPlaned() ? 'btn-cancel' : 'btn-action'">
+    <div class="relative text-sm font-medium">
+      <button (click)="onClick()" 
+              class="w-full rounded-md relative overflow-hidden border border-primary rounded-md py-2 px-0 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed transition-colors h-[36px]" 
+              [class]="isPlaned() ? 'btn-cancel' : 'btn-action'">
         @if (isPlaned()) {
           <div class="absolute inset-0 bg-primary" [@emptyEffect]="'emptying'"></div>
           <span class="relative">
-            <span class="btn-label text-fill" [attr.data-text]="cancelText()" [style.width.px]="minWidth()">{{cancelText()}}</span>
+            <span class="block relative text-white text-fill" [attr.data-text]="cancelText()" [style.width.px]="minWidth()">{{cancelText()}}</span>
           </span>
         } @else {
           <span class="relative">
-            <span class="btn-label" [style.width.px]="minWidth()">\u00A0\u00A0\u00A0\u00A0{{actionText()}}\u00A0\u00A0\u00A0\u00A0</span>
+            <span class="block" [style.width.px]="minWidth()">\u00A0\u00A0\u00A0\u00A0{{actionText()}}\u00A0\u00A0\u00A0\u00A0</span>
           </span>
         }
       </button>
@@ -30,20 +32,8 @@ import { Component, ElementRef, input, OnInit, output, signal } from '@angular/c
     ])
   ],
   styles: [`
-    :host {
-      @apply text-sm font-medium;
-    }
-    button {
-      @apply border border-primary rounded-md py-2 px-0 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed transition-colors h-[36px];
-    }
     .btn-action {
       @apply text-primary hover:bg-primary hover:text-white hover:border-none;
-    }
-    .btn-label {
-      @apply block;
-    }
-    .text-fill {
-      @apply relative text-white;
     }
     .text-fill::before {
       content: attr(data-text);

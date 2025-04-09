@@ -15,12 +15,6 @@ import { RouterLink } from '@angular/router';
     :host {
       position: relative;
     }
-    .menu-item {
-      @apply w-full gap-2 px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-dark-600 inline-flex;
-    }
-    a.menu-item {
-      @apply cursor-pointer;
-    }
   `],
   template: `
     <button (click)="toggleMenu($event)" class="p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
@@ -38,7 +32,7 @@ import { RouterLink } from '@angular/router';
     </button>
     @if (isMenuOpen) {
       <div class="absolute right-0 mt-1 min-w-[12rem] bg-white dark:bg-dark-700 rounded-lg shadow-xl z-50 border border-gray-200 dark:border-gray-600">
-        <div class="menu-item">
+        <div class="w-full gap-2 px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-dark-600 inline-flex">
           {{ (user$ | async)?.email }}
         </div>
         <span class="flex border-b border-gray-200 dark:border-gray-600"></span>
@@ -50,15 +44,15 @@ import { RouterLink } from '@angular/router';
               title-system="System preference" i18n-title-system="@@THEME_TOGGLE_TO_SYSTEM"
             ></theme-switcher>
         </div> -->
-        <a routerLink="/profile" class="menu-item">
+        <a routerLink="/profile" class="w-full gap-2 px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-dark-600 inline-flex cursor-pointer">
           <span i18n="@@YOUR_PROFILE">Your profile</span>
         </a>
         <!-- Lien temporaire pour le test Stripe -->
-        <a routerLink="/stripe-test" class="menu-item">
+        <a routerLink="/stripe-test" class="w-full gap-2 px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-dark-600 inline-flex cursor-pointer">
           <span i18n="@@STRIPE_TEST">Stripe Test</span>
         </a>
         <span class="flex border-b border-gray-200 dark:border-gray-600"></span>
-        <button (click)="signOut()" class="menu-item">
+        <button (click)="signOut()" class="w-full gap-2 px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-dark-600 inline-flex">
           <span i18n="@@PROFILE_MENU_LOGOUT">Logout</span>
         </button>
       </div>

@@ -12,26 +12,23 @@ import { TypedControlValueAccessor } from '../../../../shared/typed-value-contro
   selector: 'app-branch-selector',
   standalone: true,
   imports: [CommonModule, ReactiveFormsModule],
-  templateUrl: './branch-selector.component.html',
-  styles: [
-    `
-      :host {
-        display: block;
-        position: relative;
-        @apply w-full;
+  template: `
+  <div class="relative w-full block">
+    <select [formControl]="branchFC" placeholder="Select a branch" 
+    class="w-full border rounded-lg px-4 py-2 appearance-none cursor-pointer bg-white border border-gray-300 disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-primary dark:bg-dark-800 dark:border-gray-600 dark:text-white">
+      @for (branch of branches$ | async; track branch) {
+        <option [value]="branch">{{ branch }}</option>
       }
-      select {
-        @apply w-full border rounded-lg px-4 py-2 appearance-none cursor-pointer;
-        @apply bg-white border border-gray-300;
-        @apply disabled:opacity-50 disabled:cursor-not-allowed;
-        @apply focus:outline-none focus:ring-2 focus:ring-primary;
-        @apply dark:bg-dark-800 dark:border-gray-600 dark:text-white;
+      @empty() {
+        <option value="" disabled i18n="@@NO_BRANCHES_AVAILABLE">No branches available</option>
       }
-      svg {
-        @apply absolute right-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400 cursor-pointer disabled:cursor-not-allowed disabled:opacity-50 pointer-events-none;
-      }
-      `
-  ],
+    </select>
+    <svg fill="currentColor"  stroke="currentColor"  viewBox="0 0 24 24"
+          class="absolute right-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400 cursor-pointer disabled:cursor-not-allowed disabled:opacity-50 pointer-events-none">
+      <path d="M12 16L6 10H18L12 16Z"/>
+    </svg>
+  </div>
+  `,
   providers: [
     { provide: NG_VALUE_ACCESSOR, useExisting: forwardRef(() => BranchSelectorComponent), multi: true }
   ]

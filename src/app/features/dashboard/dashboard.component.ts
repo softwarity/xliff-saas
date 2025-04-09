@@ -24,15 +24,7 @@ interface PaginatedJobs {
   ],
   styles: [
     `
-    label {
-      @apply block text-sm font-medium text-gray-700 dark:text-gray-300;
-    }
     textarea {
-      @apply w-full border rounded-lg px-4 py-2;
-      @apply bg-white border border-gray-300;
-      @apply disabled:opacity-50 disabled:cursor-not-allowed;
-      @apply focus:outline-none focus:ring-2 focus:ring-primary;
-      @apply dark:bg-dark-800 dark:border-gray-600 dark:text-white;
       min-height: 150px;
     }
     `
