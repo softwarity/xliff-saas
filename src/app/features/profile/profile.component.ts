@@ -1,11 +1,10 @@
 import { AsyncPipe, DatePipe } from '@angular/common';
-import { Component, ElementRef, ViewChild, effect, inject, signal } from '@angular/core';
+import { Component, effect, inject, signal } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
-import { firstValueFrom, from } from 'rxjs';
+import { concatMap, filter, take } from 'rxjs/operators';
 import { AuthService } from '../../core/services/auth.service';
 import { AvatarService } from '../../core/services/avatar.service';
 import { PromptModalComponent } from '../../shared/components/prompt-modal.component';
-import { take, filter, concatMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-profile',
@@ -81,7 +80,9 @@ import { take, filter, concatMap } from 'rxjs/operators';
     @if (showDeleteModal) {
       <app-prompt-modal 
         title="Delete Account" i18n-title="@@PROFILE_DELETE_ACCOUNT_TITLE"
-        description="Please enter your email to confirm account deletion. This action cannot be undone." i18n-description="@@PROFILE_DELETE_ACCOUNT_DESCRIPTION"
+        description="Are you sure you want to delete your account?" i18n-description="@@PROFILE_DELETE_ACCOUNT_DESCRIPTION"
+        warning="This action cannot be undone. All account data and credits will be permanently deleted." i18n-warning="@@PROFILE_DELETE_ACCOUNT_WARNING"
+        instructions="Please enter your email address to confirm deletion." i18n-instructions="@@PROFILE_DELETE_ACCOUNT_INSTRUCTIONS"
         placeholder="Enter your email" i18n-placeholder="@@PROFILE_DELETE_ACCOUNT_PLACEHOLDER"
         (closed)="onDeleteModalClosed($event)"
       />
