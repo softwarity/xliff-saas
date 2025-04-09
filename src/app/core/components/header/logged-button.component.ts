@@ -1,16 +1,15 @@
 import { AsyncPipe } from '@angular/common';
-import { Component, CUSTOM_ELEMENTS_SCHEMA, effect, inject, signal } from '@angular/core';
+import { Component, effect, inject, signal } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
+import { RouterLink } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { AvatarService } from '../../services/avatar.service';
-import '../../../web-components/icon';
-import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-logged-button',
   standalone: true,
   imports: [AsyncPipe, RouterLink],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  schemas: [],
   styles: [`
     :host {
       position: relative;

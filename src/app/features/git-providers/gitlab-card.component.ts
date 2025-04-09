@@ -1,9 +1,8 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA, input, inject, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, inject, input, signal } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { GitProvider, GitProviderService } from '../../core/services/git-provider.service';
-import { signal } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import '../../web-components/icon';
+
 @Component({
   selector: 'app-gitlab-card',
   standalone: true,
@@ -11,7 +10,9 @@ import '../../web-components/icon';
   template: `<div class="bg-white dark:bg-dark-700 rounded-lg shadow p-6">
   <div class="flex items-center justify-between mb-4">
     <div class="flex items-center space-x-3">
-      <app-icon name="gitlab" [size]="24" [color]="'gray'"/>
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-600" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M23.955 13.587l-1.342-4.135-2.664-8.189a.455.455 0 00-.867 0L16.418 9.45H7.582L4.918 1.263a.455.455 0 00-.867 0L1.386 9.45.044 13.587a.924.924 0 00.331 1.03L12 23.054l11.625-8.436a.92.92 0 00.33-1.031"/>
+      </svg>
       <h2 class="text-xl font-semibold dark:text-white">{{ provider().name }}</h2>
     </div>
     <span [class]="provider().connected ? 'text-green-500' : 'text-red-500'">
@@ -102,8 +103,7 @@ import '../../web-components/icon';
     </div>
   </form>
 </div>
-`,
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+`
 })
 export class GitlabCardComponent {
   provider = input.required<GitProvider>();

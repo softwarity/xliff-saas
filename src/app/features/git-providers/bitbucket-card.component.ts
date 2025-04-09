@@ -1,9 +1,8 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA, input, inject, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, inject, input, signal } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { GitProvider, GitProviderService } from '../../core/services/git-provider.service';
-import { signal } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import '../../web-components/icon';
+
 @Component({
   selector: 'app-bitbucket-card',
   standalone: true,
@@ -11,7 +10,9 @@ import '../../web-components/icon';
   template: `<div class="bg-white dark:bg-dark-700 rounded-lg shadow p-6">
   <div class="flex items-center justify-between mb-4">
     <div class="flex items-center space-x-3">
-      <app-icon name="bitbucket" [size]="24" [color]="'gray'"/>
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-600" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M.778 1.213a.768.768 0 00-.768.892l3.263 19.81c.084.5.515.868 1.022.873H19.95a.772.772 0 00.77-.646l3.27-20.03a.768.768 0 00-.768-.891L.778 1.213zM14.52 15.53H9.522L8.17 8.466h7.561l-1.211 7.064z"/>
+      </svg>
       <h2 class="text-xl font-semibold dark:text-white">{{ provider().name }}</h2>
     </div>
     <span [class]="provider().connected ? 'text-green-500' : 'text-red-500'">
@@ -102,8 +103,7 @@ import '../../web-components/icon';
     </div>
   </form>
 </div>
-`,
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+`
 })
 export class BitbucketCardComponent {
   provider = input.required<GitProvider>();

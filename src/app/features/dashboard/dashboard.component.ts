@@ -1,12 +1,11 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, computed, CUSTOM_ELEMENTS_SCHEMA, inject, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, inject, signal } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AuthService } from '../../core/services/auth.service';
 import { JobService } from '../../core/services/job.service';
 import { Job } from '../../shared/models/job.model';
 import { JobCardComponent } from './job-card.component';
-import '../../web-components/icon';
 
 interface PaginatedJobs {
   data: Job[];
@@ -30,8 +29,7 @@ interface PaginatedJobs {
     `
   ],
   templateUrl: './dashboard.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DashboardComponent {
   private auth = inject(AuthService);

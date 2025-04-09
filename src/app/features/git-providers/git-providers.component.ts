@@ -1,7 +1,6 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA, inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { GitProviderService } from '../../core/services/git-provider.service';
-import '../../web-components/icon';
 import { BitbucketCardComponent } from './bitbucket-card.component';
 import { GithubCardComponent } from './github-card.component';
 import { GitlabCardComponent } from './gitlab-card.component';
@@ -32,8 +31,7 @@ import { GitlabCardComponent } from './gitlab-card.component';
       }
     </div>
   </div>
-  `,
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  `
 })
 export class GitProvidersComponent {
   private gitProviderService = inject(GitProviderService);

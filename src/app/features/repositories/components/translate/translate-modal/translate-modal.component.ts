@@ -1,12 +1,11 @@
 import { CommonModule } from '@angular/common';
-import { Component, CUSTOM_ELEMENTS_SCHEMA, inject, input, output, signal } from '@angular/core';
+import { Component, inject, input, output, signal } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { RepositoryService } from '../../../../../core/services/repository.service';
 import { Repository } from '../../../../../shared/models/repository.model';
 import { BranchSelectorComponent } from '../../branch-selector/branch-selector.component';
 import { ExtSelectorComponent } from '../../ext-selector/ext-selector.component';
 import { TransUnitStateSelectorComponent } from '../../trans-unit-state-selector/trans-unit-state-selector.component';
-import { RepositoryService } from '../../../../../core/services/repository.service';
-import '../../../../../web-components/icon';
 
 @Component({
   selector: 'app-translate-modal',
@@ -25,8 +24,7 @@ import '../../../../../web-components/icon';
       @apply block text-sm font-medium text-gray-700 dark:text-gray-300;
     }
     `
-  ],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  ]
 })
 export class TranslateModalComponent {
   repository = input.required<Repository>();

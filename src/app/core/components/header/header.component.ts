@@ -1,7 +1,6 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA, inject } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-import '../../../web-components/icon';
 import '../../../web-components/theme-switcher';
 import { AuthService } from '../../services/auth.service';
 import { LanguageToggleComponent } from '../language-toggle/language-toggle.component';

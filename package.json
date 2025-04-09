@@ -11,6 +11,8 @@
     "start:fr": "ng serve --configuration=fr",
     "build:fr": "ng build --configuration=fr",
     "build": "ng build --localize",
+    "build:stats": "ng build --localize --stats-json",
+    "analyse:stats": "npx webpack-bundle-analyzer dist/xliff-translator/stats.json",
     "supabase": "npm run postinstall --prefix node_modules/supabase && npm link && supabase",
     "wh:tunnel": "lt --port 54321 --print-requests"
   },

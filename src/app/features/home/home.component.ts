@@ -1,15 +1,13 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA, inject } from '@angular/core';
-import { RouterLink } from '@angular/router';
-import '../../web-components/icon';
+import { Component, inject } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
+import { RouterLink } from '@angular/router';
 import { AuthService } from '../../core/services/auth.service';
 
 @Component({
   selector: 'app-home',
   standalone: true,
   imports: [RouterLink],
-  templateUrl: './home.component.html',
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  templateUrl: './home.component.html'
 })
 export class HomeComponent {
   private auth = inject(AuthService);

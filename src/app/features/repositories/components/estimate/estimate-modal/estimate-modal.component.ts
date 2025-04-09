@@ -1,8 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component, CUSTOM_ELEMENTS_SCHEMA, inject, input, output, signal } from '@angular/core';
+import { Component, inject, input, output, signal } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Repository } from '../../../../../shared/models/repository.model';
-import '../../../../../web-components/icon';
 import { BranchSelectorComponent } from '../../branch-selector/branch-selector.component';
 import { ExtSelectorComponent } from '../../ext-selector/ext-selector.component';
 import { TransUnitStateSelectorComponent } from '../../trans-unit-state-selector/trans-unit-state-selector.component';
@@ -26,8 +25,7 @@ import { RepositoryService } from '../../../../../core/services/repository.servi
       @apply block text-sm font-medium text-gray-700 dark:text-gray-300;
     }
     `
-  ],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  ]
 })
 export class EstimateModalComponent {
   repository = input.required<Repository>();

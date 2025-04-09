@@ -61,12 +61,11 @@
   <div class="bg-white dark:bg-dark-700 rounded-lg shadow-lg p-8 border border-gray-200 dark:border-gray-700">
     <div class="flex justify-between items-center mb-6">
       <h2 class="text-2xl font-semibold text-blue-600 dark:text-blue-400" i18n="@@RECENT_ACTIVITY_TITLE">Recent Activity</h2>
-      <button 
-        (click)="loadJobs()"
-        class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-dark-800 transition-colors flex items-center justify-center"
-        [class.animate-spin]="isRefreshing" title="Refresh"
-        i18n-title="@@REFRESH_JOBS">
-        <app-icon name="refresh" fill="none" stroke="currentColor" class="w-5 h-5 text-gray-600 dark:text-gray-400"/>
+      <button (click)="loadJobs()" class="flex items-center space-x-2 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+        </svg>
+        <span i18n="@@REFRESH_BUTTON">Refresh</span>
       </button>
     </div>
     <div class="flex flex-col gap-4">
