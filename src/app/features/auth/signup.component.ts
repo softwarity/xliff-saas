@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import { Component, inject, signal } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
@@ -8,19 +7,23 @@ import { AuthService } from '../../core/services/auth.service';
 @Component({
   selector: 'app-signup',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, RouterLink],
-  styleUrl: './auth.component.css',
+  styles: [`
+    input.error {
+      @apply border-red-500;
+    }
+  `],
+  imports: [ReactiveFormsModule, RouterLink],
   template: `
-    <div class="auth-container">
-      <div class="auth-card">
+    <div class="min-h-screen flex items-center justify-center p-4">
+      <div class="bg-light-surface dark:bg-dark-800 border border-light-border dark:border-dark-600 rounded-lg shadow-md p-8 w-full max-w-md">
         <h1 class="text-2xl font-bold text-center mb-6" i18n="@@AUTH_SIGNUP_TITLE">Sign Up</h1>
         
-        <form [formGroup]="signupForm" (ngSubmit)="onSubmit()" class="auth-form">
-          <div class="form-group">
-            <label for="email" i18n="@@AUTH_SIGNUP_EMAIL">Email</label>
-            <input type="email" id="email" formControlName="email" [class.error]="email.invalid && email.touched" autocomplete="email"/>
+        <form [formGroup]="signupForm" (ngSubmit)="onSubmit()" class="space-y-4">
+          <div class="space-y-2">
+            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300" for="email" i18n="@@AUTH_SIGNUP_EMAIL">Email</label>
+            <input class="w-full" type="email" id="email" formControlName="email" [class.error]="email.invalid && email.touched" autocomplete="email"/>
             @if (email.invalid && email.touched) {
-              <div class="error-message">
+              <div class="text-sm text-red-500">
                 @if (email.errors?.['required']) {
                   <span i18n="@@AUTH_SIGNUP_EMAIL_REQUIRED">Email is required</span>
                 }
@@ -31,11 +34,11 @@ import { AuthService } from '../../core/services/auth.service';
             }
           </div>
 
-          <div class="form-group">
-            <label for="password" i18n="@@AUTH_SIGNUP_PASSWORD">Password</label>
-            <input type="password" id="password" formControlName="password" [class.error]="password.invalid && password.touched"autocomplete="new-password"/>
+          <div class="space-y-2">
+            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300" for="password" i18n="@@AUTH_SIGNUP_PASSWORD">Password</label>
+            <input class="w-full" type="password" id="password" formControlName="password" [class.error]="password.invalid && password.touched"autocomplete="new-password"/>
             @if (password.invalid && password.touched) {
-              <div class="error-message">
+              <div class="text-sm text-red-500">
                 @if (password.errors?.['required']) {
                   <span i18n="@@AUTH_SIGNUP_PASSWORD_REQUIRED">Password is required</span>
                 }
@@ -46,11 +49,11 @@ import { AuthService } from '../../core/services/auth.service';
             }
           </div>
 
-          <div class="form-group">
-            <label for="confirmPassword" i18n="@@AUTH_SIGNUP_CONFIRM_PASSWORD">Confirm Password</label>
-            <input type="password" id="confirmPassword" formControlName="confirmPassword" [class.error]="confirmPassword.invalid && confirmPassword.touched"autocomplete="new-password"/>
+          <div class="space-y-2">
+            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300" for="confirmPassword" i18n="@@AUTH_SIGNUP_CONFIRM_PASSWORD">Confirm Password</label>
+            <input class="w-full" type="password" id="confirmPassword" formControlName="confirmPassword" [class.error]="confirmPassword.invalid && confirmPassword.touched"autocomplete="new-password"/>
             @if (confirmPassword.invalid && confirmPassword.touched) {
-              <div class="error-message">
+              <div class="text-sm text-red-500">
                 @if (confirmPassword.errors?.['required']) {
                   <span i18n="@@AUTH_SIGNUP_CONFIRM_PASSWORD_REQUIRED">Please confirm your password</span>
                 }
@@ -62,7 +65,7 @@ import { AuthService } from '../../core/services/auth.service';
           </div>
 
           @if (error()) {
-            <div class="error-message mb-4">
+            <div class="text-sm text-red-500 mb-4">
               <span>{{ error() }}</span>
             </div>
           }
@@ -80,9 +83,9 @@ import { AuthService } from '../../core/services/auth.service';
           <span i18n="@@AUTH_SIGNUP_OR">or</span>
         </div>
 
-        <div class="auth-footer">
+        <div class="mt-6 text-center text-sm text-gray-600 dark:text-gray-400 space-x-2">
           <span i18n="@@AUTH_SIGNUP_HAVE_ACCOUNT">Already have an account?</span>
-          <a routerLink="/auth/login" i18n="@@AUTH_SIGNUP_SIGN_IN">Sign In</a>
+          <a class="text-primary hover:text-primary-hover font-medium" routerLink="/auth/login" i18n="@@AUTH_SIGNUP_SIGN_IN">Sign In</a>
         </div>
       </div>
     </div>

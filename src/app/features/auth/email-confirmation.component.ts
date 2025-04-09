@@ -6,11 +6,10 @@ import { AuthService } from '../../core/services/auth.service';
 @Component({
   selector: 'app-email-confirmation',
   standalone: true,
-  imports: [CommonModule, RouterLink],
-  styleUrl: './auth.component.css',
+  imports: [RouterLink],
   template: `
-    <div class="auth-container">
-      <div class="auth-card">
+    <div class="min-h-screen flex items-center justify-center p-4">
+      <div class="bg-light-surface dark:bg-dark-800 border border-light-border dark:border-dark-600 rounded-lg shadow-md p-8 w-full max-w-md">
         <div class="text-center mb-6">
           <svg class="mx-auto h-12 w-12 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 19v-8.93a2 2 0 01.89-1.664l7-4.666a2 2 0 012.22 0l7 4.666A2 2 0 0121 10.07V19M3 19a2 2 0 002 2h14a2 2 0 002-2M3 19l6.75-4.5M21 19l-6.75-4.5M3 10l6.75 4.5M21 10l-6.75 4.5m0 0l-1.14.76a2 2 0 01-2.22 0l-1.14-.76" />
@@ -38,9 +37,9 @@ import { AuthService } from '../../core/services/auth.service';
           @else { <span i18n="@@AUTH_EMAIL_CONFIRMATION_RESEND">Resend confirmation email</span> }
         </button>
 
-        <div class="auth-footer">
+        <div class="mt-6 text-center text-sm text-gray-600 dark:text-gray-400 space-x-2">
           <span i18n="@@AUTH_EMAIL_CONFIRMATION_BACK_TO_LOGIN">Back to</span>
-          <a routerLink="/auth/login" i18n="@@AUTH_EMAIL_CONFIRMATION_LOGIN">Login</a>
+          <a class="text-primary hover:text-primary-hover font-medium" routerLink="/auth/login" i18n="@@AUTH_EMAIL_CONFIRMATION_LOGIN">Login</a>
         </div>
       </div>
     </div>

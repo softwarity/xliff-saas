@@ -1,17 +1,14 @@
-import { CommonModule } from '@angular/common';
 import { Component, OnInit, inject } from '@angular/core';
-import { ActivatedRoute, Router, RouterLink } from '@angular/router';
-import { catchError, from, of, switchMap, tap } from 'rxjs';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { AuthService } from '../../core/services/auth.service';
 
 @Component({
   selector: 'app-verify-email',
   standalone: true,
-  imports: [CommonModule, RouterLink],
-  styleUrl: './auth.component.css',
+  imports: [RouterLink],
   template: `
-    <div class="auth-container">
-      <div class="auth-card">
+    <div class="min-h-screen flex items-center justify-center p-4">
+      <div class="bg-light-surface dark:bg-dark-800 border border-light-border dark:border-dark-600 rounded-lg shadow-md p-8 w-full max-w-md">
         <div class="text-center mb-6">
           @if (isLoading) {
             <svg class="animate-spin mx-auto h-12 w-12 text-primary" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
@@ -37,7 +34,7 @@ import { AuthService } from '../../core/services/auth.service';
           }
         </div>
 
-        <div class="auth-footer">
+        <div class="mt-6 text-center text-sm text-gray-600 dark:text-gray-400 space-x-2">
           @if (error || !isLoading) {
             <a routerLink="/auth/login" class="flat-primary w-full block text-center" i18n="@@AUTH_VERIFY_EMAIL_RETURN_LOGIN">Go to login page</a>
           }
