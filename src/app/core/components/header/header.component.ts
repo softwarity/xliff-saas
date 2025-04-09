@@ -53,7 +53,7 @@ import { LoggedNavComponent } from './logged-nav.component';
           <app-logged-nav class="flex-1"></app-logged-nav>
         } @else {
           <div class="flex-1"></div>
-          <a class="flat-primary" routerLink="/auth/login" i18n="@@AUTH_SIGN_IN_BUTTON">Sign In</a>
+          <a class="button flat-primary" routerLink="/auth/login" i18n="@@AUTH_SIGN_IN_BUTTON">Sign In</a>
         }
         <app-language-toggle></app-language-toggle>
         <theme-switcher attribute="class"
