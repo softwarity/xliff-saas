@@ -1847,7 +1847,7 @@
         <target state="translated">Thành viên từ <x id="INTERPOLATION" equiv-text="{{ (user$ | async)?.created_at | date }}"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/profile/profile.component.ts</context>
-          <context context-type="linenumber">40</context>
+          <context context-type="linenumber">39</context>
         </context-group>
       </trans-unit>
       <trans-unit id="PROFILE_ACCOUNT_INFO" datatype="html">
@@ -1855,7 +1855,7 @@
         <target state="translated">Thông tin tài khoản</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/profile/profile.component.ts</context>
-          <context context-type="linenumber">46</context>
+          <context context-type="linenumber">45</context>
         </context-group>
       </trans-unit>
       <trans-unit id="PROFILE_EMAIL_LABEL" datatype="html">
@@ -1863,7 +1863,7 @@
         <target state="translated">Email</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/profile/profile.component.ts</context>
-          <context context-type="linenumber">49</context>
+          <context context-type="linenumber">48</context>
         </context-group>
       </trans-unit>
       <trans-unit id="PROFILE_ROLE_LABEL" datatype="html">
@@ -1871,7 +1871,7 @@
         <target state="translated">Vai trò</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/profile/profile.component.ts</context>
-          <context context-type="linenumber">53</context>
+          <context context-type="linenumber">52</context>
         </context-group>
       </trans-unit>
       <trans-unit id="PROFILE_ACTIONS" datatype="html">
@@ -1879,7 +1879,7 @@
         <target state="translated">Hành động</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/profile/profile.component.ts</context>
-          <context context-type="linenumber">60</context>
+          <context context-type="linenumber">59</context>
         </context-group>
       </trans-unit>
       <trans-unit id="PROFILE_UPDATE_BUTTON" datatype="html">
@@ -1887,7 +1887,7 @@
         <target state="translated">Cập nhật hồ sơ</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/profile/profile.component.ts</context>
-          <context context-type="linenumber">63</context>
+          <context context-type="linenumber">62</context>
         </context-group>
       </trans-unit>
       <trans-unit id="PROFILE_CHANGE_PASSWORD_BUTTON" datatype="html">
@@ -1895,7 +1895,7 @@
         <target state="translated">Đổi Mật Khẩu</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/profile/profile.component.ts</context>
-          <context context-type="linenumber">64</context>
+          <context context-type="linenumber">63</context>
         </context-group>
       </trans-unit>
       <trans-unit id="AUTH_LOGIN_OR" datatype="html">
@@ -1935,7 +1935,7 @@
         <target state="translated">Khu vực nguy hiểm</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/profile/profile.component.ts</context>
-          <context context-type="linenumber">70</context>
+          <context context-type="linenumber">69</context>
         </context-group>
       </trans-unit>
       <trans-unit id="PROFILE_DELETE_ACCOUNT_BUTTON" datatype="html">
@@ -1943,7 +1943,7 @@
         <target state="translated">Xóa tài khoản</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/profile/profile.component.ts</context>
-          <context context-type="linenumber">73</context>
+          <context context-type="linenumber">72</context>
         </context-group>
       </trans-unit>
       <trans-unit id="PROFILE_DELETE_ACCOUNT_TITLE" datatype="html">
@@ -1951,15 +1951,15 @@
         <target state="translated">Xóa tài khoản</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/profile/profile.component.ts</context>
-          <context context-type="linenumber">83</context>
+          <context context-type="linenumber">82</context>
         </context-group>
       </trans-unit>
       <trans-unit id="PROFILE_DELETE_ACCOUNT_DESCRIPTION" datatype="html">
-        <source>Please enter your email to confirm account deletion. This action cannot be undone.</source>
-        <target state="translated">Vui lòng nhập email của bạn để xác nhận việc xóa tài khoản. Hành động này sẽ không thể hoàn tác.</target>
+        <source>Are you sure you want to delete your account?</source>
+        <target state="new">Vui lòng nhập email của bạn để xác nhận việc xóa tài khoản. Hành động này sẽ không thể hoàn tác.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/profile/profile.component.ts</context>
-          <context context-type="linenumber">84</context>
+          <context context-type="linenumber">83</context>
         </context-group>
       </trans-unit>
       <trans-unit id="PROFILE_DELETE_ACCOUNT_PLACEHOLDER" datatype="html">
@@ -1967,7 +1967,7 @@
         <target state="translated">Nhập email của bạn</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/profile/profile.component.ts</context>
-          <context context-type="linenumber">85</context>
+          <context context-type="linenumber">86</context>
         </context-group>
       </trans-unit>
       <trans-unit id="MODAL_CANCEL" datatype="html">
@@ -1975,7 +1975,7 @@
         <target state="translated">Hủy</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/components/prompt-modal.component.ts</context>
-          <context context-type="linenumber">19</context>
+          <context context-type="linenumber">30</context>
         </context-group>
       </trans-unit>
       <trans-unit id="MODAL_CONFIRM" datatype="html">
@@ -1983,7 +1983,7 @@
         <target state="translated">Xác nhận</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/components/prompt-modal.component.ts</context>
-          <context context-type="linenumber">20</context>
+          <context context-type="linenumber">31</context>
         </context-group>
       </trans-unit>
       <trans-unit id="ENTER_TEXT_PROMPT" datatype="html">
@@ -1991,7 +1991,7 @@
         <target state="translated">Nhập văn bản...</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/components/prompt-modal.component.ts</context>
-          <context context-type="linenumber">29</context>
+          <context context-type="linenumber">81</context>
         </context-group>
       </trans-unit>
       <trans-unit id="AUTH_LOGIN_TITLE" datatype="html">
@@ -2143,7 +2143,7 @@
         <target state="translated">Tạo Tài Khoản</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/signup.component.ts</context>
-          <context context-type="linenumber">66</context>
+          <context context-type="linenumber">72</context>
         </context-group>
       </trans-unit>
       <trans-unit id="AUTH_SIGNUP_CREATING_ACCOUNT" datatype="html">
@@ -2151,7 +2151,7 @@
         <target state="translated">Đang tạo tài khoản...</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/signup.component.ts</context>
-          <context context-type="linenumber">68</context>
+          <context context-type="linenumber">74</context>
         </context-group>
       </trans-unit>
       <trans-unit id="AUTH_SIGNUP_OR" datatype="html">
@@ -2159,7 +2159,7 @@
         <target state="translated">hoặc</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/signup.component.ts</context>
-          <context context-type="linenumber">74</context>
+          <context context-type="linenumber">80</context>
         </context-group>
       </trans-unit>
       <trans-unit id="AUTH_SIGNUP_HAVE_ACCOUNT" datatype="html">
@@ -2167,7 +2167,7 @@
         <target state="translated">Bạn đã có tài khoản?</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/signup.component.ts</context>
-          <context context-type="linenumber">78</context>
+          <context context-type="linenumber">84</context>
         </context-group>
       </trans-unit>
       <trans-unit id="AUTH_SIGNUP_SIGN_IN" datatype="html">
@@ -2175,7 +2175,7 @@
         <target state="translated">Đăng Nhập</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/signup.component.ts</context>
-          <context context-type="linenumber">79</context>
+          <context context-type="linenumber">85</context>
         </context-group>
       </trans-unit>
       <trans-unit id="FOOTER_COPYRIGHT" datatype="html">
@@ -2247,7 +2247,7 @@
         <target state="new">No email address provided</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/services/auth.service.ts</context>
-          <context context-type="linenumber">109</context>
+          <context context-type="linenumber">136</context>
         </context-group>
       </trans-unit>
       <trans-unit id="AUTH_EMAIL_CONFIRMATION_TITLE" datatype="html">
@@ -3316,6 +3316,78 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/documentation/documentation.component.html</context>
           <context context-type="linenumber">564</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="AUTH_SERVICE_EMAIL_EXISTS" datatype="html">
+        <source>This email is already in use</source>
+        <target state="new">This email is already in use</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/services/auth.service.ts</context>
+          <context context-type="linenumber">104</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="AUTH_SERVICE_PASSWORD_REQUIREMENTS" datatype="html">
+        <source>Password does not meet security requirements</source>
+        <target state="new">Password does not meet security requirements</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/services/auth.service.ts</context>
+          <context context-type="linenumber">106</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="AUTH_SERVICE_GENERAL_ERROR" datatype="html">
+        <source>An error occurred during account creation: <x id="PH" equiv-text="error.message"/></source>
+        <target state="new">An error occurred during account creation: <x id="PH" equiv-text="error.message"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/services/auth.service.ts</context>
+          <context context-type="linenumber">108</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="AUTH_SIGNUP_USER_EXISTS" datatype="html">
+        <source>This email is already in use</source>
+        <target state="new">This email is already in use</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/auth/signup.component.ts</context>
+          <context context-type="linenumber">150</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="AUTH_SIGNUP_INVALID_CREDENTIALS" datatype="html">
+        <source>Invalid credentials</source>
+        <target state="new">Invalid credentials</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/auth/signup.component.ts</context>
+          <context context-type="linenumber">152</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="AUTH_SIGNUP_PASSWORD_REQUIREMENTS" datatype="html">
+        <source>Password does not meet security requirements</source>
+        <target state="new">Password does not meet security requirements</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/auth/signup.component.ts</context>
+          <context context-type="linenumber">154</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="AUTH_SIGNUP_GENERAL_ERROR" datatype="html">
+        <source>Error creating account: <x id="PH" equiv-text="err.message"/></source>
+        <target state="new">Error creating account: <x id="PH" equiv-text="err.message"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/auth/signup.component.ts</context>
+          <context context-type="linenumber">156</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="PROFILE_DELETE_ACCOUNT_WARNING" datatype="html">
+        <source>This action cannot be undone. All account data and credits will be permanently deleted.</source>
+        <target state="new">This action cannot be undone. All account data and credits will be permanently deleted.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/profile/profile.component.ts</context>
+          <context context-type="linenumber">84</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="PROFILE_DELETE_ACCOUNT_INSTRUCTIONS" datatype="html">
+        <source>Please enter your email address to confirm deletion.</source>
+        <target state="new">Please enter your email address to confirm deletion.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/profile/profile.component.ts</context>
+          <context context-type="linenumber">85</context>
         </context-group>
       </trans-unit>
     </body>
