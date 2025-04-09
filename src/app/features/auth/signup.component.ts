@@ -61,6 +61,12 @@ import { AuthService } from '../../core/services/auth.service';
             }
           </div>
 
+          @if (error()) {
+            <div class="error-message mb-4">
+              <span>{{ error() }}</span>
+            </div>
+          }
+
           <button type="submit" [disabled]="signupForm.invalid || isLoading()" class="flat-primary w-full">
             @if (!isLoading()) {
               <span i18n="@@AUTH_SIGNUP_CREATE_ACCOUNT">Create Account</span>
@@ -110,20 +116,47 @@ export class SignupComponent {
     if (this.signupForm.invalid) return;
     this.isLoading.set(true);
     this.error.set(null);
-    localStorage.setItem('pendingConfirmationEmail', this.email.value);
+    
+    const email = this.email.value;
+    const password = this.password.value;
+    
+    console.log('Attempting to sign up with email:', email);
+    localStorage.setItem('pendingConfirmationEmail', email);
+    
     from(this.authService.signUp(
-      this.email.value,
-      this.password.value
+      email,
+      password
     )).subscribe({
       next: () => {
+        console.log('Signup successful, redirecting to email confirmation');
         this.authService.signOut().subscribe({
           next: () => {
+            this.router.navigate(['/auth/email-confirmation']);
+          },
+          error: (err) => {
+            console.error('Error signing out after signup:', err);
+            // Even if signout fails, redirect to confirmation page
             this.router.navigate(['/auth/email-confirmation']);
           }
         });
       },
       error: (err) => {
-        this.error.set(err.message);
+        console.error('Signup error in component:', err);
+        // Use i18n for all error messages
+        let errorMessage: string;
+        
+        // User-friendly error messages
+        if (err.message.includes('User already registered')) {
+          errorMessage = $localize `:@@AUTH_SIGNUP_USER_EXISTS:This email is already in use`;
+        } else if (err.message.includes('invalid credentials')) {
+          errorMessage = $localize `:@@AUTH_SIGNUP_INVALID_CREDENTIALS:Invalid credentials`;
+        } else if (err.message.includes('password')) {
+          errorMessage = $localize `:@@AUTH_SIGNUP_PASSWORD_REQUIREMENTS:Password does not meet security requirements`;
+        } else {
+          errorMessage = $localize `:@@AUTH_SIGNUP_GENERAL_ERROR:Error creating account: ${err.message}`;
+        }
+        
+        this.error.set(errorMessage);
         this.isLoading.set(false);
       }
     });

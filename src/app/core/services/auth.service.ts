@@ -79,9 +79,36 @@ export class AuthService {
 
   signUp(email: string, password: string): Observable<void> {
     const emailRedirectTo: string = `${this.baseUrl}auth/verify`;
+    console.log('Starting signup process for email:', email);
+    console.log('Redirect URL:', emailRedirectTo);
+    
     return from(this.supabase.auth.signUp({  email, password, options: { emailRedirectTo } })).pipe(
       map(response => {
-        if (response.error) throw response.error;
+        console.log('Signup response:', response);
+        if (response.error) {
+          console.error('Signup error:', response.error);
+          throw response.error;
+        }
+        
+        // Check if user is created but not confirmed
+        if (response.data?.user && !response.data.user.email_confirmed_at) {
+          console.log('User created but email not confirmed');
+        }
+      }),
+      catchError(error => {
+        console.error('Caught signup error:', error);
+        let errorMessage = '';
+        
+        // Check for specific error cases
+        if (error.message?.includes('already')) {
+          errorMessage = $localize `:@@AUTH_SERVICE_EMAIL_EXISTS:This email is already in use`;
+        } else if (error.message?.includes('password')) {
+          errorMessage = $localize `:@@AUTH_SERVICE_PASSWORD_REQUIREMENTS:Password does not meet security requirements`;
+        } else {
+          errorMessage = $localize `:@@AUTH_SERVICE_GENERAL_ERROR:An error occurred during account creation: ${error.message}`;
+        }
+        
+        return throwError(() => new Error(errorMessage));
       })
     );
   }

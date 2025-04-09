@@ -19,6 +19,52 @@ Deno.serve(async (req) => {
         const userService = new UserService(supabaseClient);
         const user = await userService.getUser(req);
 
+        // Get user IP address from request headers
+        const ipAddress = req.headers.get('x-forwarded-for') || req.headers.get('cf-connecting-ip') || 'unknown';
+        
+        // Store hashed email in deleted_accounts table before deleting the account
+        console.log('Recording deleted account information...');
+        
+        // First normalize the email
+        const { data: normalizedEmail, error: normalizeError } = await supabaseClient.rpc('normalize_email', { email: user.email });
+        
+        if (normalizeError) {
+            console.error('Error normalizing email:', normalizeError);
+            throw normalizeError;
+        }
+        
+        // Then hash the normalized email using RPC function
+        const { data: emailHash, error: hashError } = await supabaseClient.rpc('hash_text', { text_to_hash: normalizedEmail });
+        
+        if (hashError) {
+            console.error('Error hashing email:', hashError);
+            throw hashError;
+        }
+        
+        // Get normalized domain only
+        const emailDomain = normalizedEmail.split('@')[1] || 'unknown';
+        
+        const deleted_account = {
+            emailHash,
+            emailDomain,
+            userId: user.id,
+            deletedAt: new Date().toISOString(),
+            ipAddress,
+            metadata: JSON.stringify({
+                lastSignInAt: user.last_sign_in_at,
+                createdAt: user.created_at,
+                appMetadata: user.app_metadata,
+                // Don't store user_metadata as it might contain identifiable information
+                accountAgeDays: Math.floor((Date.now() - new Date(user.created_at || Date.now()).getTime()) / (1000 * 60 * 60 * 24))
+            })
+        };
+        const { error: recordError } = await supabaseClient.from('deleted_accounts').upsert(deleted_account);
+        
+        if (recordError) {
+            console.error('Error recording deleted account:', recordError);
+            // We continue with deletion even if recording fails
+        }
+
         // Deleting user related data
         console.log('Deleting user related data...');
         
