@@ -40,9 +40,12 @@ Deno.serve(async (req: Request) => {
       await jobDao.updateById(jobId, {status: 'estimating', details: {}, transUnitFound: 0, runId});
     } else if (type === 'estimation-done') {
       const {toTranslate}: EstimationDoneMessage = body;
+      console.log('Received estimation-done', toTranslate);
       const balance = await userService.getBalance(userId);
-      const credits = Math.max(balance - toTranslate, 0);
-      const {id: transactionId} = await transactionDao.insert({"userId": userId, credits, status: 'pending', message: '', details: {}});
+      console.log('Balance', balance);
+      const credits = Math.min(balance, toTranslate);
+      console.log('Credits computed', credits);
+      const {id: transactionId} = await transactionDao.insert({"userId": userId, credits: -credits, status: 'pending', message: '', details: {}});
       await jobDao.updateById(jobId, {status: 'translating', transactionId, transUnitDone:0, transUnitFound: toTranslate});
     } else if (type === 'progress') {
       const {toTranslate, completed, errors}: ProgressMessage = body;
