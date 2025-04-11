@@ -121,7 +121,7 @@ export class AuthService {
     return from(this.supabase.auth.signInWithOAuth({ 
       provider: 'google', 
       options: { 
-        redirectTo,
+        // redirectTo,
         queryParams: {
           access_type: 'offline',
           prompt: 'consent'
