@@ -1,7 +1,7 @@
-import { Injectable, inject } from '@angular/core';
+import { Injectable } from '@angular/core';
+import { loadStripe, Stripe } from '@stripe/stripe-js';
 import { createClient } from '@supabase/supabase-js';
 import { environment } from '../../../environments/environment';
-import { loadStripe, Stripe } from '@stripe/stripe-js';
 
 export interface SubscriptionPlan {
   id: string;

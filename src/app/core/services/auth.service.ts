@@ -1,7 +1,7 @@
 import { Injectable, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from '@supabase/supabase-js';
-import { BehaviorSubject, Observable, catchError, from, map, of, pipe, throwError } from 'rxjs';
+import { BehaviorSubject, Observable, catchError, from, map, of, throwError } from 'rxjs';
 import { BASE_URL } from '../tokens/base-url.token';
 import { SupabaseClientService } from './supabase-client.service';
 

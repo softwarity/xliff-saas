@@ -1,5 +1,5 @@
 import { inject, Injectable } from '@angular/core';
-import { catchError, filter, from, map, Observable, of } from 'rxjs';
+import { catchError, from, map, Observable, of } from 'rxjs';
 import { ProviderType } from '../../shared/models/provider-type';
 import { AuthService } from './auth.service';
 import { SupabaseClientService } from './supabase-client.service';

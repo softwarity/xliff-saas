@@ -1,9 +1,9 @@
 import { Injectable, inject, signal } from '@angular/core';
-import { TokenService } from './token.service';
 import { toObservable } from '@angular/core/rxjs-interop';
-import { Observable, from, map, catchError, switchMap, of, tap } from 'rxjs';
-import { AuthService } from './auth.service';
+import { Observable, from, map, switchMap } from 'rxjs';
 import { ProviderType } from '../../shared/models/provider-type';
+import { AuthService } from './auth.service';
+import { TokenService } from './token.service';
 
 export interface GitProvider {
   name: string;

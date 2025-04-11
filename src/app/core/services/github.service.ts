@@ -1,6 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 import { inject, Injectable } from "@angular/core";
-import { catchError, forkJoin, from, map, Observable, of, switchMap } from "rxjs";
+import { catchError, forkJoin, map, Observable, of, switchMap } from "rxjs";
 import { Repository } from "../../shared/models/repository.model";
 import { TokenService } from "./token.service";
 

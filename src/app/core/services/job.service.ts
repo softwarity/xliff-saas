@@ -1,8 +1,8 @@
 import { inject, Injectable } from '@angular/core';
 import { PostgrestResponse, RealtimeChannel, RealtimePostgresChangesPayload, RealtimePostgresDeletePayload, RealtimePostgresInsertPayload, RealtimePostgresUpdatePayload } from '@supabase/supabase-js';
-import { filter, from, map, Observable, of, share, Subscriber, switchMap } from 'rxjs';
-import { SupabaseClientService } from './supabase-client.service';
+import { filter, from, map, Observable, share, Subscriber } from 'rxjs';
 import { Job } from '../../shared/models/job.model';
+import { SupabaseClientService } from './supabase-client.service';
 
 interface PaginatedResponse<T> {
   data: T[];
