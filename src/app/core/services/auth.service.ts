@@ -25,7 +25,10 @@ export class AuthService {
 
     // Surveiller les événements d'authentification
     this.supabase.auth.onAuthStateChange((event, session) => {
-      console.log('Auth state changed:', event, session);
+      console.log('Auth state changed - Event:', event);
+      console.log('Auth state changed - Session:', JSON.stringify(session, null, 2));
+      console.log('Auth state changed - User:', session?.user);
+      console.log('Auth state changed - Access Token:', session?.access_token);
       this.updateAuthState(session?.user || null);
     });
   }
@@ -40,7 +43,7 @@ export class AuthService {
   }
 
   private updateAuthState(user: User | null): void {
-    console.log('Updating auth state:', user);
+    console.log('Updating auth state - User:', JSON.stringify(user, null, 2));
     this.userSubject.next(user);
     this.isAuthenticatedSubject.next(!!user);
   }
@@ -116,9 +119,9 @@ export class AuthService {
   }
 
   signInWithGoogle(): Observable<void> {
-    const redirectTo = 'https://jfrdmhsrklrvtaatdvbt.supabase.co/auth/v1/callback';
-    // this.baseUrl;
-    console.log('Google OAuth redirect URL:', redirectTo);
+    const redirectTo = 'https://xliff.softwarity.io';
+    console.log('Starting Google OAuth flow...');
+    console.log('Redirect URL:', redirectTo);
     return from(this.supabase.auth.signInWithOAuth({ 
       provider: 'google', 
       options: { 
@@ -130,7 +133,11 @@ export class AuthService {
       } 
     })).pipe(
       map(response => {
-        if (response.error) throw response.error;
+        console.log('Supabase OAuth response:', response);
+        if (response.error) {
+          console.error('OAuth error:', response.error);
+          throw response.error;
+        }
       })
     );
   }
@@ -183,8 +190,12 @@ export class AuthService {
   private initializeUser(): void {
     console.log('Initializing user...');
     this.supabase.auth.getSession().then(({ data: { session } }) => {
-      console.log('Initial session:', session);
+      console.log('Initial session:', JSON.stringify(session, null, 2));
+      console.log('Initial user:', session?.user);
+      console.log('Initial access token:', session?.access_token);
       this.updateAuthState(session?.user ?? null);
+    }).catch(error => {
+      console.error('Error getting initial session:', error);
     });
   }
 }
