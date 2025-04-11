@@ -39,7 +39,9 @@ export class AppComponent implements OnInit {
     // Gérer les query parameters
     const urlParams = new URLSearchParams(window.location.search);
     const page = urlParams.get('page');
-    this.router.navigateByUrl(`/${page}`);
+    if (page) {
+      this.router.navigateByUrl(`/${page}`);
+    }
 
     // Gérer la redirection GitHub
     const redirect = localStorage.getItem('gh-redirect');
