@@ -33,11 +33,16 @@ cat > "$BROWSER_DIR/index.html" << EOF
 <!DOCTYPE html>
 <html><head>
 <script>
+// Redirection pour l'URL sans slash final
+if (!window.location.pathname.endsWith('/')) {
+    window.location.href = window.location.pathname + '/';
+}
+
 const supportedLocales = [$(for locale in $LOCALES; do echo -n "'$locale',"; done | sed 's/,$//')];
 // Function to get the language
 function getPreferredLanguage() {
     // 1. Check localStorage
-    const storedLang = localStorage.getItem('preferredLanguage').toLowerCase();
+    const storedLang = localStorage.getItem('preferredLanguage')?.toLowerCase();
     if (storedLang && supportedLocales.includes(storedLang)) {
         return storedLang;
     }
