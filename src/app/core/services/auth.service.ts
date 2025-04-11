@@ -120,13 +120,13 @@ export class AuthService {
     console.log('Google OAuth redirect URL:', redirectTo);
     return from(this.supabase.auth.signInWithOAuth({ 
       provider: 'google', 
-      // options: { 
-      //   redirectTo,
-      //   queryParams: {
-      //     access_type: 'offline',
-      //     prompt: 'consent'
-      //   }
-      // } 
+      options: { 
+        redirectTo,
+        queryParams: {
+          access_type: 'offline',
+          prompt: 'consent'
+        }
+      } 
     })).pipe(
       map(response => {
         if (response.error) throw response.error;
