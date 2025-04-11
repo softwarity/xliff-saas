@@ -119,7 +119,7 @@ export class AuthService {
   }
 
   signInWithGoogle(): Observable<void> {
-    const redirectTo = 'https://xliff.softwarity.io';
+    const redirectTo = 'https://xliff.softwarity.io/';
     console.log('Starting Google OAuth flow...');
     console.log('Redirect URL:', redirectTo);
     return from(this.supabase.auth.signInWithOAuth({ 
