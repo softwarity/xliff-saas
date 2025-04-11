@@ -25,6 +25,7 @@ export class AuthService {
 
     // Surveiller les événements d'authentification
     this.supabase.auth.onAuthStateChange((event, session) => {
+      console.log('Auth state changed:', event, session);
       this.updateAuthState(session?.user || null);
     });
   }
@@ -119,13 +120,13 @@ export class AuthService {
     console.log('Google OAuth redirect URL:', redirectTo);
     return from(this.supabase.auth.signInWithOAuth({ 
       provider: 'google', 
-      options: { 
-        redirectTo,
-        queryParams: {
-          access_type: 'offline',
-          prompt: 'consent'
-        }
-      } 
+      // options: { 
+      //   redirectTo,
+      //   queryParams: {
+      //     access_type: 'offline',
+      //     prompt: 'consent'
+      //   }
+      // } 
     })).pipe(
       map(response => {
         if (response.error) throw response.error;
@@ -179,8 +180,9 @@ export class AuthService {
   }
 
   private initializeUser(): void {
+    console.log('Initializing user...');
     this.supabase.auth.getSession().then(({ data: { session } }) => {
-      console.log('Session:', session);
+      console.log('Initial session:', session);
       this.updateAuthState(session?.user ?? null);
     });
   }
