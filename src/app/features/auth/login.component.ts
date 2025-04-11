@@ -108,19 +108,20 @@ export class LoginComponent {
     this.isEmailNotConfirmed.set(false);
 
     this.authService.signInWithEmail(this.email.value, this.password.value).subscribe({
-      next: () => this.router.navigate(['/']),
+      next: () => {
+        console.log('Sign in with email success');
+        this.router.navigate(['/']);
+      },
       error: (err) => {
         console.error('Login error:', err);
         this.isLoading.set(false);
-        
         // Détection spécifique d'email non confirmé
-        if (err.message.includes('Email not confirmed') || 
-            err.message.includes('Email link is invalid or has expired')) {
+        let message = err.message;
+        if (err.message.includes('Email not confirmed') || err.message.includes('Email link is invalid or has expired')) {
           this.isEmailNotConfirmed.set(true);
-          this.error.set($localize `:@@AUTH_LOGIN_EMAIL_NOT_CONFIRMED:Your email has not been confirmed. Please check your inbox or request a new confirmation email.`);
-        } else {
-          this.error.set(err.message);
+          message = $localize `:@@AUTH_LOGIN_EMAIL_NOT_CONFIRMED:Your email has not been confirmed. Please check your inbox or request a new confirmation email.`;
         }
+        this.error.set(message);
       }
     });
   }
@@ -148,10 +149,15 @@ export class LoginComponent {
     this.error.set(null);
     
     this.authService.signInWithGoogle().subscribe({
-      next: () => this.router.navigate(['/']),
+      next: () => {
+        console.log('Sign in with Google success');
+        this.router.navigate(['/']);
+      },
       error: (err) => {
-        this.error.set(err.message);
         this.isLoading.set(false);
+
+        console.error('Login error:', err);
+        this.error.set(err.message);
       }
     });
   }
