@@ -39,6 +39,7 @@ export class AuthService {
   }
 
   private updateAuthState(user: User | null): void {
+    console.log('Updating auth state:', user);
     this.userSubject.next(user);
     this.isAuthenticatedSubject.next(!!user);
   }
@@ -114,8 +115,18 @@ export class AuthService {
   }
 
   signInWithGoogle(): Observable<void> {
-    const redirectTo: string = this.baseUrl;
-    return from(this.supabase.auth.signInWithOAuth({ provider: 'google', options: { redirectTo: redirectTo } })).pipe(
+    const redirectTo = this.baseUrl;
+    console.log('Google OAuth redirect URL:', redirectTo);
+    return from(this.supabase.auth.signInWithOAuth({ 
+      provider: 'google', 
+      options: { 
+        redirectTo,
+        queryParams: {
+          access_type: 'offline',
+          prompt: 'consent'
+        }
+      } 
+    })).pipe(
       map(response => {
         if (response.error) throw response.error;
       })
@@ -169,6 +180,7 @@ export class AuthService {
 
   private initializeUser(): void {
     this.supabase.auth.getSession().then(({ data: { session } }) => {
+      console.log('Session:', session);
       this.updateAuthState(session?.user ?? null);
     });
   }
