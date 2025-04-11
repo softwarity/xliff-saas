@@ -78,3 +78,8 @@ cat > "$BROWSER_DIR/404.html" << EOF
 EOF
 
 echo "404.html créé avec succès dans: $BROWSER_DIR"
+
+# Créer CNAME
+echo "xliff.softwarity.io" > "$BROWSER_DIR/CNAME"
+
+echo "CNAME créé avec succès dans: $BROWSER_DIR"
