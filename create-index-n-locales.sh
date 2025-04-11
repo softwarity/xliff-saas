@@ -58,7 +58,7 @@ function getPreferredLanguage() {
     localStorage.setItem('preferredLanguage', 'en');
     return 'en';
 }
-window.location.href = \`/xliff-saas/\${getPreferredLanguage()}/\`;
+window.location.href = \`/\${getPreferredLanguage()}/\`;
 </script>
 </head></html>
 EOF
@@ -72,7 +72,7 @@ cat > "$BROWSER_DIR/404.html" << EOF
 <script>
     const path = window.location.pathname;
     localStorage.setItem('gh-redirect', path);
-    window.location.href = \`/xliff-saas/\`;
+    window.location.href = \`/\`;
 </script>
 </head></html>
 EOF
