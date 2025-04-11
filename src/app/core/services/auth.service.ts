@@ -116,12 +116,13 @@ export class AuthService {
   }
 
   signInWithGoogle(): Observable<void> {
-    const redirectTo = this.baseUrl;
+    const redirectTo = 'https://jfrdmhsrklrvtaatdvbt.supabase.co/auth/v1/callback';
+    // this.baseUrl;
     console.log('Google OAuth redirect URL:', redirectTo);
     return from(this.supabase.auth.signInWithOAuth({ 
       provider: 'google', 
       options: { 
-        // redirectTo,
+        redirectTo,
         queryParams: {
           access_type: 'offline',
           prompt: 'consent'
