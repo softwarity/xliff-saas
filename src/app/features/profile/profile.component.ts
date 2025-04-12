@@ -132,7 +132,7 @@ export class ProfileComponent {
 
   onDeleteModalClosed(email: string | null) {
     this.showDeleteModal = false;
-        const user = this.user();
+    const user = this.user();
     if (user && email && user.email === email) {
       from(this.auth.deleteAccount()).pipe(
         concatMap(() => this.auth.signOut())
