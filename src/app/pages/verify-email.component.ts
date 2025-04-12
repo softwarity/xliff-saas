@@ -17,7 +17,7 @@ import { RouterLink } from '@angular/router';
         </div>
 
         <div class="mt-6 text-center">
-          <a routerLink="/" class="flat-primary" i18n="@@VERIFY_EMAIL_GO_HOME">Go to home page</a>
+          <a routerLink="/" class="button flat-primary" i18n="@@VERIFY_EMAIL_GO_HOME">Go to home page</a>
         </div>
       </div>
     </div>
