@@ -26,7 +26,7 @@ import { PromptModalComponent } from '../../shared/components/prompt-modal.compo
                 </svg>
               </div>
             }
-            <input #fileInput type="file" class="hidden" accept="image/*" (change)="onFileSelected($event)">
+            <input #fileInput type="file" class="hidden" accept="image/*" (change)="onFileSelected($event)" [disabled]="!isAuthenticated()">
             <div class="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-20 transition-opacity duration-200 flex items-center justify-center">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white opacity-0 hover:opacity-100" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
@@ -59,8 +59,8 @@ import { PromptModalComponent } from '../../shared/components/prompt-modal.compo
             <h2 class="text-lg font-semibold text-gray-900 dark:text-white mb-4" i18n="@@PROFILE_ACTIONS">Actions</h2>
             <div class="space-y-4">
               <div class="flex justify-end space-x-4">
-                <button class="flat-secondary" i18n="@@PROFILE_UPDATE_BUTTON">Update Profile</button>
-                <button class="flat-primary" i18n="@@PROFILE_CHANGE_PASSWORD_BUTTON">Change Password</button>
+                <button class="flat-secondary" i18n="@@PROFILE_UPDATE_BUTTON" [disabled]="!isAuthenticated()">Update Profile</button>
+                <button class="flat-primary" i18n="@@PROFILE_CHANGE_PASSWORD_BUTTON" [disabled]="!isAuthenticated()">Change Password</button>
               </div>
             </div>
           </div>
@@ -69,7 +69,7 @@ import { PromptModalComponent } from '../../shared/components/prompt-modal.compo
             <h2 class="text-lg font-semibold text-gray-900 dark:text-white mb-4" i18n="@@PROFILE_DANGER_ZONE">Danger Zone</h2>
             <div class="space-y-4">
               <div class="flex justify-end">
-                <button (click)="showDeleteModal = true"  class="flat-warning" i18n="@@PROFILE_DELETE_ACCOUNT_BUTTON">Delete Account</button>
+                <button (click)="showDeleteModal = true"  class="flat-warning" i18n="@@PROFILE_DELETE_ACCOUNT_BUTTON" [disabled]="!isAuthenticated()">Delete Account</button>
               </div>
             </div>
           </div>
@@ -93,6 +93,8 @@ export class ProfileComponent {
   private auth = inject(AuthService);
   private avatarService = inject(AvatarService);
   protected user$ = this.auth.user$;
+  protected user = toSignal(this.auth.user$);
+  protected isAuthenticated = toSignal(this.auth.isAuthenticated$);
   protected avatarUrl = toSignal(this.avatarService.avatar$);
   protected showDefaultAvatar = signal(false);
   showDeleteModal = false;

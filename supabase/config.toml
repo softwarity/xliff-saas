@@ -107,7 +107,7 @@ enabled = true
 # in emails.
 site_url = "http://localhost:4200/"
 # A list of *exact* URLs that auth providers are permitted to redirect to post authentication.
-additional_redirect_urls = ["http://localhost:4200/en/verify-email", "http://localhost:4200/en/profile"]
+additional_redirect_urls = ["http://localhost:4200/en/verify-email", "http://localhost:4200/en/profile", "http://localhost:4200/en/"]
 # How long tokens are valid for, in seconds. Defaults to 3600 (1 hour), maximum 604,800 (1 week).
 jwt_expiry = 3600
 # If disabled, the refresh token will never expire.
@@ -244,7 +244,7 @@ max_frequency = "5s"
 enabled = true
 client_id = "944386023482-hq61rn7l9fcalq5l2a5ndc3quhi2qava.apps.googleusercontent.com"
 secret = "env(GOOGLE_SECRET)"
-redirect_uri = "https://jfrdmhsrklrvtaatdvbt.supabase.co/auth/v1/callback"
+redirect_uri = "http://localhost:54321/auth/v1/callback"
 [auth.external.apple]
 enabled = false
 client_id = ""

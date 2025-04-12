@@ -119,16 +119,15 @@ export class AuthService {
   }
 
   signInWithGoogle(): Observable<void> {
-    const redirectTo: string = `${window.location.origin}${this.baseUrl}profile`;
-    console.log('OAuth redirect URL:', redirectTo);
+    const redirectTo = `${window.location.origin}${this.baseUrl}profile`;
+    console.log('Starting Google OAuth - Redirect URL:', redirectTo);
     return from(this.supabase.auth.signInWithOAuth({ 
       provider: 'google',
       options: { redirectTo }
     })).pipe(
-      switchMap(() => from(this.supabase.auth.getSession())),
-      map(({data: {session}}) => {
-        if (!session) throw new Error('No session after OAuth');
-        this.updateAuthState(session.user);
+      map(response => {
+        console.log('OAuth response:', response);
+        if (response.error) throw response.error;
         return void 0;
       })
     );
