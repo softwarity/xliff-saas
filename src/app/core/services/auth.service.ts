@@ -125,9 +125,10 @@ export class AuthService {
       provider: 'google',
       options: { redirectTo }
     })).pipe(
-      map(response => {
-        console.log('OAuth response:', response);
-        if (response.error) throw response.error;
+      switchMap(() => from(this.supabase.auth.getSession())),
+      map(({data: {session}}) => {
+        if (!session) throw new Error('No session after OAuth');
+        this.updateAuthState(session.user);
         return void 0;
       })
     );
