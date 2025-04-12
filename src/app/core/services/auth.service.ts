@@ -119,15 +119,7 @@ export class AuthService {
   }
 
   signInWithGoogle(): Observable<void> {
-    return from(this.supabase.auth.signInWithOAuth({ 
-      provider: 'google', 
-      options: { 
-        queryParams: {
-          access_type: 'offline',
-          prompt: 'consent'
-        }
-      } 
-    })).pipe(
+    return from(this.supabase.auth.signInWithOAuth({ provider: 'google' })).pipe(
       switchMap(response => {
         if (response.error) {
           console.error('OAuth error:', response.error);
