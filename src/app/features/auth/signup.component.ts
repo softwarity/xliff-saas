@@ -123,11 +123,7 @@ export class SignupComponent {
     const email = this.email.value;
     const password = this.password.value;
     
-    console.log('Attempting to sign up with email:', email);
-    from(this.authService.signUp(
-      email,
-      password
-    )).subscribe({
+    from(this.authService.signUp( email, password )).subscribe({
       next: () => {
         console.log('Signup successful, redirecting to email confirmation');
         this.authService.signOut().subscribe({

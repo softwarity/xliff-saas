@@ -22,11 +22,10 @@ export class BalanceService {
     from(this.supabaseClientService.from('user_credits').select<'*', Credit>('*').limit(1)).subscribe({
       next: ({ data, error }: { data: Credit[] | null, error: any }) => {
         if (error) {
-          console.error('Error fetching estimations:', error);
+          console.error('Error fetching credits:', error);
         } else {
           if (data) {
             data.forEach((credit) => {
-              console.log('Credit fetched in observable:', credit);
               this.balanceSubject.next(credit.balance);
             });
           }
@@ -38,11 +37,9 @@ export class BalanceService {
   #listenToCreditsUpdates() {
     this.channel = this.supabaseClientService.realtime.channel('user_credits')
     .on('postgres_changes', { event: 'INSERT', schema: 'public', table: 'user_credits' }, (payload: RealtimePostgresInsertPayload<Credit>) => {
-      console.log('Credit inserted in channel:', payload);
       this.balanceSubject.next(payload.new.balance);
     })
     .on('postgres_changes', { event: 'UPDATE', schema: 'public', table: 'user_credits' }, (payload: RealtimePostgresUpdatePayload<Credit>) => {
-      console.log('Credit updated in channel:', payload);
       this.balanceSubject.next(payload.new.balance);
     })
     .on('postgres_changes', { event: 'DELETE', schema: 'public', table: 'user_credits' }, (payload: RealtimePostgresDeletePayload<Credit>) => {
@@ -56,7 +53,6 @@ export class BalanceService {
   }
 
   closeChannel() {
-    console.log('Closing channel');
     this.channel?.unsubscribe();
   }
 }

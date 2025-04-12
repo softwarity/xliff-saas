@@ -25,10 +25,6 @@ export class AuthService {
 
     // Surveiller les événements d'authentification
     this.supabase.auth.onAuthStateChange((event, session) => {
-      console.log('Auth state changed - Event:', event);
-      console.log('Auth state changed - Session:', JSON.stringify(session, null, 2));
-      console.log('Auth state changed - User:', session?.user);
-      console.log('Auth state changed - Access Token:', session?.access_token);
       this.updateAuthState(session?.user || null);
     });
   }
@@ -43,7 +39,6 @@ export class AuthService {
   }
 
   private updateAuthState(user: User | null): void {
-    console.log('Updating auth state - User:', JSON.stringify(user, null, 2));
     this.userSubject.next(user);
     this.isAuthenticatedSubject.next(!!user);
   }
@@ -84,17 +79,12 @@ export class AuthService {
 
   signUp(email: string, password: string): Observable<void> {
     const emailRedirectTo: string = `${window.location.origin}${this.baseUrl}verify-email`;
-    console.log('Starting signup process for email:', email);
-    console.log('Redirect URL:', emailRedirectTo);
-    
     return from(this.supabase.auth.signUp({  email, password, options: { emailRedirectTo } })).pipe(
       map(response => {
-        console.log('Signup response:', response);
         if (response.error) {
           console.error('Signup error:', response.error);
           throw response.error;
         }
-        
         // Check if user is created but not confirmed
         if (response.data?.user && !response.data.user.email_confirmed_at) {
           console.log('User created but email not confirmed');
@@ -120,7 +110,6 @@ export class AuthService {
 
   signInWithGoogle(): Observable<void> {
     const redirectTo = `${window.location.origin}${this.baseUrl}`;
-    console.log('Starting Google OAuth - Redirect URL:', redirectTo);
     return from(this.supabase.auth.signInWithOAuth({ 
       provider: 'google',
       options: { redirectTo }
@@ -150,7 +139,6 @@ export class AuthService {
     const emailRedirectTo: string = `${window.location.origin}${this.baseUrl}verify-email`;
     return from(this.supabase.auth.resend({ type: 'signup', email, options: { emailRedirectTo  } })).pipe(
       map(response => {
-        console.log('Resend API response:', response);
         if (response.error) {
           console.error('Resend API error:', response.error);
           throw response.error;

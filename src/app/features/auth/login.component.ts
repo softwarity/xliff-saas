@@ -147,13 +147,8 @@ export class LoginComponent {
     this.error.set(null);
     
     this.authService.signInWithGoogle().subscribe({
-      next: () => {
-        console.log('Sign in with Google success');
-        // this.router.navigate(['/']);
-      },
       error: (err) => {
         this.isLoading.set(false);
-
         console.error('Login error:', err);
         this.error.set(err.message);
       }

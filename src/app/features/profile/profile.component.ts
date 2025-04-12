@@ -5,6 +5,8 @@ import { concatMap, filter, take } from 'rxjs/operators';
 import { AuthService } from '../../core/services/auth.service';
 import { AvatarService } from '../../core/services/avatar.service';
 import { PromptModalComponent } from '../../shared/components/prompt-modal.component';
+import { Router } from '@angular/router';
+import { from } from 'rxjs';
 
 @Component({
   selector: 'app-profile',
@@ -35,8 +37,8 @@ import { PromptModalComponent } from '../../shared/components/prompt-modal.compo
             </div>
           </div>
           <div>
-            <h1 class="text-2xl font-bold text-gray-900 dark:text-white">{{ (user$ | async)?.email }}</h1>
-            <p class="text-gray-500 dark:text-gray-400" i18n="@@PROFILE_MEMBER_SINCE">Member since {{ (user$ | async)?.created_at | date }}</p>
+            <h1 class="text-2xl font-bold text-gray-900 dark:text-white">{{ user()?.email }}</h1>
+            <p class="text-gray-500 dark:text-gray-400" i18n="@@PROFILE_MEMBER_SINCE">Member since {{ user()?.created_at | date }}</p>
           </div>
         </div>
 
@@ -46,11 +48,11 @@ import { PromptModalComponent } from '../../shared/components/prompt-modal.compo
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
                 <label class="block text-sm font-medium text-gray-700 dark:text-gray-300" i18n="@@PROFILE_EMAIL_LABEL">Email</label>
-                <p class="mt-1 text-sm text-gray-900 dark:text-white">{{ (user$ | async)?.email }}</p>
+                <p class="mt-1 text-sm text-gray-900 dark:text-white">{{ user()?.email }}</p>
               </div>
               <div>
                 <label class="block text-sm font-medium text-gray-700 dark:text-gray-300" i18n="@@PROFILE_ROLE_LABEL">Role</label>
-                <p class="mt-1 text-sm text-gray-900 dark:text-white">{{ (user$ | async)?.role || 'User' }}</p>
+                <p class="mt-1 text-sm text-gray-900 dark:text-white">{{ user()?.role || 'User' }}</p>
               </div>
             </div>
           </div>
@@ -90,15 +92,15 @@ import { PromptModalComponent } from '../../shared/components/prompt-modal.compo
   `,
 })
 export class ProfileComponent {
+  private router = inject(Router);
   private auth = inject(AuthService);
   private avatarService = inject(AvatarService);
-  protected user$ = this.auth.user$;
+  // protected user$ = this.auth.user$;
   protected user = toSignal(this.auth.user$);
   protected isAuthenticated = toSignal(this.auth.isAuthenticated$);
   protected avatarUrl = toSignal(this.avatarService.avatar$);
   protected showDefaultAvatar = signal(false);
   showDeleteModal = false;
-  
   constructor() {
     effect(() => {
       if (this.avatarUrl()) {
@@ -130,17 +132,13 @@ export class ProfileComponent {
 
   onDeleteModalClosed(email: string | null) {
     this.showDeleteModal = false;
-    
-    if (email) {
-      this.user$.pipe(
-        take(1),
-        filter(user => user?.email === email),
-        concatMap(() => this.auth.deleteAccount()),
+        const user = this.user();
+    if (user && email && user.email === email) {
+      from(this.auth.deleteAccount()).pipe(
         concatMap(() => this.auth.signOut())
       ).subscribe({
         next: () => {
-          console.log('Account deleted', email);
-          // Redirection ou autre action après suppression
+          this.router.navigate(['/']);
         },
         error: (error) => {
           console.error('Error deleting account:', error);
