@@ -119,7 +119,6 @@ export class AuthService {
   }
 
   signInWithGoogle(): Observable<void> {
-    console.log('Starting Google OAuth flow...');
     return from(this.supabase.auth.signInWithOAuth({ 
       provider: 'google', 
       options: { 
@@ -129,12 +128,17 @@ export class AuthService {
         }
       } 
     })).pipe(
-      map(response => {
-        console.log('Supabase OAuth response:', response);
+      switchMap(response => {
         if (response.error) {
           console.error('OAuth error:', response.error);
           throw response.error;
         }
+        // Forcer la récupération de la session
+        return from(this.supabase.auth.getSession());
+      }),
+      map(sessionResponse => {
+        console.log('Session after OAuth:', sessionResponse.data?.session);
+        this.updateAuthState(sessionResponse.data?.session?.user || null);
         return void 0;
       })
     );
