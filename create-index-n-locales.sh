@@ -75,7 +75,11 @@ cat > "$BROWSER_DIR/404.html" << EOF
 <html><head>
 <script src="/preferred-language.js"></script>
 <script>
-window.location.href = \`/\${getPreferredLanguage()}/index.html?page=\${window.location.pathname}\`;
+const page = window.location.pathname;
+if (page.startsWith(\`/\${getPreferredLanguage()}/\`)) {
+    page = page.replace(\`/\${getPreferredLanguage()}/\`, '');
+}
+window.location.href = \`/\${getPreferredLanguage()}/index.html?page=\${page}\`;
 </script>
 </head></html>
 EOF
