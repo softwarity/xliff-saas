@@ -1,17 +1,19 @@
-import { AsyncPipe, DatePipe } from '@angular/common';
+import { DatePipe } from '@angular/common';
 import { Component, effect, inject, signal } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
-import { concatMap, filter, take } from 'rxjs/operators';
+import { Router } from '@angular/router';
+import { User } from '@supabase/supabase-js';
+import { from } from 'rxjs';
+import { concatMap } from 'rxjs/operators';
+import { environment } from '../../../environments/environment';
 import { AuthService } from '../../core/services/auth.service';
 import { AvatarService } from '../../core/services/avatar.service';
 import { PromptModalComponent } from '../../shared/components/prompt-modal.component';
-import { Router } from '@angular/router';
-import { from } from 'rxjs';
 
 @Component({
   selector: 'app-profile',
   standalone: true,
-  imports: [AsyncPipe, DatePipe, PromptModalComponent],
+  imports: [DatePipe,PromptModalComponent],
   template: `
     <div class="container mx-auto px-4 py-8">
       <div class="max-w-2xl mx-auto bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
@@ -20,7 +22,7 @@ import { from } from 'rxjs';
             #avatarContainer class="w-20 h-20 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center cursor-pointer relative overflow-hidden" 
             (click)="fileInput.click()">
             @if (!showDefaultAvatar() && avatarUrl()) {
-              <img [src]="avatarUrl()" class="w-full h-full object-cover"  alt="Profile avatar" (error)="showDefaultAvatar.set(true)">
+              <img [src]="avatarUrl()" class="w-full h-full object-cover" alt="Profile avatar" (error)="showDefaultAvatar.set(true)">
             } @else {
               <div class="w-full h-full flex items-center justify-center">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-gray-600 dark:text-gray-300" viewBox="0 0 20 20" fill="currentColor">
@@ -28,7 +30,7 @@ import { from } from 'rxjs';
                 </svg>
               </div>
             }
-            <input #fileInput type="file" class="hidden" accept="image/*" (change)="onFileSelected($event)" [disabled]="!isAuthenticated()">
+            <input #fileInput type="file" class="hidden" accept="image/*" (change)="onFileSelected($event)">
             <div class="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-20 transition-opacity duration-200 flex items-center justify-center">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white opacity-0 hover:opacity-100" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
@@ -41,6 +43,12 @@ import { from } from 'rxjs';
             <p class="text-gray-500 dark:text-gray-400" i18n="@@PROFILE_MEMBER_SINCE">Member since {{ user()?.created_at | date }}</p>
           </div>
         </div>
+
+        @if (error()) {
+          <div class="text-sm text-red-500 mb-4">
+            <span>{{ error() }}</span>
+          </div>
+        }
 
         <div class="space-y-6">
           <div class="border-t border-gray-200 dark:border-gray-700 pt-6">
@@ -61,17 +69,28 @@ import { from } from 'rxjs';
             <h2 class="text-lg font-semibold text-gray-900 dark:text-white mb-4" i18n="@@PROFILE_ACTIONS">Actions</h2>
             <div class="space-y-4">
               <div class="flex justify-end space-x-4">
-                <button class="flat-secondary" i18n="@@PROFILE_UPDATE_BUTTON" [disabled]="!isAuthenticated()">Update Profile</button>
-                <button class="flat-primary" i18n="@@PROFILE_CHANGE_PASSWORD_BUTTON" [disabled]="!isAuthenticated()">Change Password</button>
+                <button class="flat-secondary" i18n="@@PROFILE_UPDATE_BUTTON">Update Profile</button>
+                <button class="flat-primary" i18n="@@PROFILE_CHANGE_PASSWORD_BUTTON">Change Password</button>
               </div>
             </div>
           </div>
+
+          @if (!this.environment.production) {
+            <div class="border-t border-gray-200 dark:border-gray-700 pt-6">
+              <h2 class="text-lg font-semibold text-gray-900 dark:text-white mb-4" i18n="@@PROFILE_DEVELOPMENT">Development</h2>
+              <div class="space-y-4">
+                <div class="flex justify-end">
+                  <button (click)="testError()" class="flat-secondary" i18n="@@PROFILE_TEST_ERROR">Test Error Message</button>
+                </div>
+              </div>
+            </div>
+          }
 
           <div class="border-t border-gray-200 dark:border-gray-700 pt-6">
             <h2 class="text-lg font-semibold text-gray-900 dark:text-white mb-4" i18n="@@PROFILE_DANGER_ZONE">Danger Zone</h2>
             <div class="space-y-4">
               <div class="flex justify-end">
-                <button (click)="showDeleteModal = true"  class="flat-warning" i18n="@@PROFILE_DELETE_ACCOUNT_BUTTON" [disabled]="!isAuthenticated()">Delete Account</button>
+                <button (click)="showDeleteModal = true" class="flat-warning" i18n="@@PROFILE_DELETE_ACCOUNT_BUTTON">Delete Account</button>
               </div>
             </div>
           </div>
@@ -89,19 +108,30 @@ import { from } from 'rxjs';
         (closed)="onDeleteModalClosed($event)"
       />
     }
-  `,
+  `
 })
 export class ProfileComponent {
   private router = inject(Router);
   private auth = inject(AuthService);
   private avatarService = inject(AvatarService);
-  // protected user$ = this.auth.user$;
-  protected user = toSignal(this.auth.user$);
-  protected isAuthenticated = toSignal(this.auth.isAuthenticated$);
+  protected environment = environment;
+  
+  user = signal<User | null>(null);
+  isLoading = signal(false);
+  error = signal<string | null>(null);
   protected avatarUrl = toSignal(this.avatarService.avatar$);
   protected showDefaultAvatar = signal(false);
   showDeleteModal = false;
+
   constructor() {
+    this.auth.getUser().subscribe({
+      next: (user) => this.user.set(user),
+      error: (err) => {
+        console.error('Error getting user:', err);
+        this.error.set($localize `:@@PROFILE_ERROR_GETTING_USER:Error getting user profile: ${err.message}`);
+      }
+    });
+
     effect(() => {
       if (this.avatarUrl()) {
         this.showDefaultAvatar.set(false);
@@ -112,20 +142,24 @@ export class ProfileComponent {
   onFileSelected(event: Event) {
     const file = (event.target as HTMLInputElement).files?.[0];
     if (!file) return;
+    
     // Check file type
     if (!file.type.startsWith('image/')) {
-      console.error('File must be an image');
+      this.error.set($localize `:@@PROFILE_ERROR_INVALID_FILE_TYPE:File must be an image`);
       return;
     }
+    
     // Check file size (max 2MB)
     if (file.size > 2 * 1024 * 1024) {
-      console.error('File size must be less than 2MB');
+      this.error.set($localize `:@@PROFILE_ERROR_FILE_TOO_LARGE:File size must be less than 2MB`);
       return;
     }
+    
     // Upload avatar
     this.avatarService.updateAvatar(file).subscribe({
-      error: (error) => {
-        console.error('Error uploading avatar:', error);
+      error: (err: Error) => {
+        console.error('Error uploading avatar:', err);
+        this.error.set($localize `:@@PROFILE_ERROR_UPLOADING_AVATAR:Error uploading avatar: ${err.message}`);
       }
     });
   }
@@ -140,10 +174,14 @@ export class ProfileComponent {
         next: () => {
           this.router.navigate(['/']);
         },
-        error: (error) => {
-          console.error('Error deleting account:', error);
+        error: (err: Error) => {
+          this.error.set($localize `:@@PROFILE_ERROR_DELETING_ACCOUNT:Error deleting account: ${err.message}`);
         }
       });
     }
+  }
+
+  testError(): void {
+    this.error.set($localize `:@@PROFILE_TEST_ERROR_MESSAGE:This is a test error message`);
   }
 } 
