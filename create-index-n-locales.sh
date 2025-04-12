@@ -75,7 +75,7 @@ cat > "$BROWSER_DIR/404.html" << EOF
 <html><head>
 <script src="/preferred-language.js"></script>
 <script>
-const page = window.location.pathname;
+let page = window.location.pathname;
 if (page.startsWith(\`/\${getPreferredLanguage()}/\`)) {
     page = page.replace(\`/\${getPreferredLanguage()}/\`, '');
 }
