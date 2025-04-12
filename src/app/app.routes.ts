@@ -1,8 +1,6 @@
 import { Routes } from '@angular/router';
 import { authGuard } from './core/guards/auth.guard';
 import { emailConfirmedGuard } from './core/guards/email-confirmed.guard';
-import { TermsComponent } from './features/legal/terms.component';
-import { PrivacyComponent } from './features/legal/privacy.component';
 
 export const routes: Routes = [
   {

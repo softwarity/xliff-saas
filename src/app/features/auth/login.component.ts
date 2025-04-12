@@ -130,12 +130,10 @@ export class LoginComponent {
     if (!this.email.value) return;
     
     this.isResending.set(true);
-    localStorage.setItem('pendingConfirmationEmail', this.email.value);
-    
     this.authService.resendConfirmationEmail(this.email.value).subscribe({
       next: () => {
         this.isResending.set(false);
-        this.router.navigate(['/auth/email-confirmation']);
+        this.router.navigate(['/auth/email-confirmation'], { queryParams: { email: this.email.value } });
       },
       error: (err) => {
         this.isResending.set(false);

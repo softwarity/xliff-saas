@@ -83,7 +83,7 @@ export class AuthService {
   }
 
   signUp(email: string, password: string): Observable<void> {
-    const emailRedirectTo: string = `${this.baseUrl}auth/verify`;
+    const emailRedirectTo: string = `${window.location.origin}${this.baseUrl}verify-email`;
     console.log('Starting signup process for email:', email);
     console.log('Redirect URL:', emailRedirectTo);
     
@@ -150,7 +150,7 @@ export class AuthService {
       return throwError(() => new Error($localize `:@@AUTH_SERVICE_NO_EMAIL:No email address provided`));
     }
     console.log('Resending confirmation email to:', email);
-    const emailRedirectTo: string = `${this.baseUrl}auth/verify`;
+    const emailRedirectTo: string = `${window.location.origin}${this.baseUrl}verify-email`;
     return from(this.supabase.auth.resend({ type: 'signup', email, options: { emailRedirectTo  } })).pipe(
       map(response => {
         console.log('Resend API response:', response);
@@ -162,11 +162,8 @@ export class AuthService {
     );
   }
 
-  verifyEmail(token: string): Observable<void> {
-    return from(this.supabase.auth.verifyOtp({
-      token_hash: token,
-      type: 'signup'
-    })).pipe(
+  verifyEmail(email: string, token: string): Observable<void> {
+    return from(this.supabase.auth.verifyOtp({ email, token, type: 'signup' })).pipe(
       map(response => {
         if (response.error) throw response.error;
       })

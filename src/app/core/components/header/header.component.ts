@@ -5,6 +5,8 @@ import '../../../web-components/theme-switcher';
 import { AuthService } from '../../services/auth.service';
 import { LanguageToggleComponent } from '../language-toggle/language-toggle.component';
 import { LoggedNavComponent } from './logged-nav.component';
+import { NgClass } from '@angular/common';
+import { environment } from '../../../../environments/environment';
 @Component({
   selector: 'app-header',
   standalone: true,
@@ -12,10 +14,11 @@ import { LoggedNavComponent } from './logged-nav.component';
     RouterLink,
     RouterLinkActive,
     LanguageToggleComponent,
-    LoggedNavComponent
+    LoggedNavComponent,
+    NgClass
   ],
   template: `
-  <div class="w-full bg-white dark:bg-gray-800 shadow-sm">
+  <div class="w-full bg-white dark:bg-gray-800 shadow-sm" [ngClass]="{'!bg-tertiary': dev}">
     <nav class="w-full px-4 py-4">
       <div class="flex items-center space-x-4">
         <a routerLink="/" class="text-primary dark:text-blue-400 shrink-0">
@@ -61,6 +64,7 @@ import { LoggedNavComponent } from './logged-nav.component';
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class HeaderComponent {
+  dev = !environment.production;
   private auth = inject(AuthService);
   protected isAuthenticated = toSignal(this.auth.isAuthenticated$, { initialValue: false });
   protected user = toSignal(this.auth.user$);

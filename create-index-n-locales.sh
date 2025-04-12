@@ -28,18 +28,7 @@ for file in $FILES; do
     echo "locales.json créé avec succès dans: $file"
 done
 
-# Créer le contenu de index.html avec la liste des locales
-cat > "$BROWSER_DIR/index.html" << EOF
-<!DOCTYPE html>
-<html><head>
-<script>
-// Redirection pour l'URL sans slash final
-if (!window.location.pathname.endsWith('/')) {
-    window.location.href = window.location.pathname + '/';
-}
-
-const supportedLocales = [$(for locale in $LOCALES; do echo -n "'$locale',"; done | sed 's/,$//')];
-// Function to get the language
+cat > "$BROWSER_DIR/preferred-language.js" << EOF
 function getPreferredLanguage() {
     // 1. Check localStorage
     const storedLang = localStorage.getItem('preferredLanguage')?.toLowerCase();
@@ -63,6 +52,15 @@ function getPreferredLanguage() {
     localStorage.setItem('preferredLanguage', 'en');
     return 'en';
 }
+EOF
+
+
+# Créer le contenu de index.html avec la liste des locales
+cat > "$BROWSER_DIR/index.html" << EOF
+<!DOCTYPE html>
+<html><head>
+<script src="preferred-language.js"></script>
+<script>
 window.location.href = \`/\${getPreferredLanguage()}/\`;
 </script>
 </head></html>
@@ -74,10 +72,9 @@ echo "index.html créé avec succès dans: $BROWSER_DIR"
 cat > "$BROWSER_DIR/404.html" << EOF
 <!DOCTYPE html>
 <html><head>
+<script src="preferred-language.js"></script>
 <script>
-    const path = window.location.pathname;
-    localStorage.setItem('gh-redirect', path);
-    window.location.href = \`/\`;
+window.location.href = \`/\${getPreferredLanguage()}/index.html?page=\${window.location.pathname}\`;
 </script>
 </head></html>
 EOF

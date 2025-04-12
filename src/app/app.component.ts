@@ -42,12 +42,5 @@ export class AppComponent implements OnInit {
     if (page) {
       this.router.navigateByUrl(`/${page}`);
     }
-
-    // Gérer la redirection GitHub
-    const redirect = localStorage.getItem('gh-redirect');
-    if (redirect) {
-      localStorage.removeItem('gh-redirect');
-      this.router.navigateByUrl(redirect);
-    }
   }
 }

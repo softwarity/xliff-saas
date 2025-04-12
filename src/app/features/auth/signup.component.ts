@@ -124,8 +124,6 @@ export class SignupComponent {
     const password = this.password.value;
     
     console.log('Attempting to sign up with email:', email);
-    localStorage.setItem('pendingConfirmationEmail', email);
-    
     from(this.authService.signUp(
       email,
       password
@@ -134,12 +132,12 @@ export class SignupComponent {
         console.log('Signup successful, redirecting to email confirmation');
         this.authService.signOut().subscribe({
           next: () => {
-            this.router.navigate(['/auth/email-confirmation']);
+            this.router.navigate(['/auth/email-confirmation'], { queryParams: { email } });
           },
           error: (err) => {
             console.error('Error signing out after signup:', err);
             // Even if signout fails, redirect to confirmation page
-            this.router.navigate(['/auth/email-confirmation']);
+            this.router.navigate(['/auth/email-confirmation'], { queryParams: { email } });
           }
         });
       },

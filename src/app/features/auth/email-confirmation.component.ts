@@ -1,12 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit, inject, signal } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { AuthService } from '../../core/services/auth.service';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-email-confirmation',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink, ReactiveFormsModule],
   template: `
     <div class="min-h-screen flex items-center justify-center p-4">
       <div class="bg-light-surface dark:bg-dark-800 border border-light-border dark:border-dark-600 rounded-lg shadow-md p-8 w-full max-w-md">
@@ -32,6 +33,30 @@ import { AuthService } from '../../core/services/auth.service';
           <span i18n="@@AUTH_EMAIL_CONFIRMATION_OR">or</span>
         </div>
 
+        <form [formGroup]="verificationForm" (ngSubmit)="verifyCode()" class="space-y-4">
+          <div>
+            <label for="code" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1" i18n="@@AUTH_EMAIL_CONFIRMATION_CODE_LABEL">Verification Code</label>
+            <input id="code" type="text" formControlName="code"
+              class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary"
+              placeholder="Enter the code from your email" i18n-placeholder="@@AUTH_EMAIL_CONFIRMATION_CODE_PLACEHOLDER"/>
+            @if (verificationForm.get('code')?.invalid && verificationForm.get('code')?.touched) {
+              <p class="mt-1 text-sm text-red-500" i18n="@@AUTH_EMAIL_CONFIRMATION_CODE_REQUIRED">Verification code is required</p>
+            }
+          </div>
+
+          <button type="submit" [disabled]="verificationForm.invalid || isVerifying()" class="flat-primary w-full" >
+            @if (isVerifying()) {
+              <span i18n="@@AUTH_EMAIL_CONFIRMATION_VERIFYING">Verifying...</span>
+            } @else {
+              <span i18n="@@AUTH_EMAIL_CONFIRMATION_VERIFY">Verify Email</span>
+            }
+          </button>
+        </form>
+
+        <div class="separator">
+          <span i18n="@@AUTH_EMAIL_CONFIRMATION_OR">or</span>
+        </div>
+
         <button (click)="resendConfirmation()" [disabled]="isResending()" class="flat-primary w-full">
           @if (isResending()) { <span i18n="@@AUTH_EMAIL_CONFIRMATION_RESENDING">Resending...</span> } 
           @else { <span i18n="@@AUTH_EMAIL_CONFIRMATION_RESEND">Resend confirmation email</span> }
@@ -47,35 +72,60 @@ import { AuthService } from '../../core/services/auth.service';
 })
 export class EmailConfirmationComponent implements OnInit {
   private authService = inject(AuthService);
-
+  private route = inject(ActivatedRoute);
+  private router = inject(Router);
   isResending = signal(false);
+  isVerifying = signal(false);
   email = signal<string | null>(null);
   resendError = signal<string | null>(null);
+  verificationError = signal<string | null>(null);
+
+  verificationForm = new FormGroup({
+    code: new FormControl('', [Validators.required])
+  });
 
   ngOnInit(): void {
-    const storedEmail = localStorage.getItem('pendingConfirmationEmail');
-    this.email.set(storedEmail);
+    this.route.queryParams.subscribe(params => {
+      this.email.set(params['email']);
+    });
+  }
+
+  verifyCode(): void {
+    if (this.verificationForm.invalid) return;
+    const email = this.email();
+    const code = this.verificationForm.get('code')?.value;
+    if (!email || !code) return;
+
+    this.isVerifying.set(true);
+    this.verificationError.set(null);
+
+    this.authService.verifyEmail(email, code).subscribe({
+      next: () => {
+        this.isVerifying.set(false);
+        this.router.navigate(['/verify-email']);
+      },
+      error: (error) => {
+        console.error('Error verifying email:', error);
+        this.verificationError.set(error.message || $localize `:@@AUTH_EMAIL_CONFIRMATION_FAILED_TO_VERIFY_EMAIL:Failed to verify email`);
+        this.isVerifying.set(false);
+      }
+    });
   }
 
   resendConfirmation(): void {
-    console.log('Attempting to resend confirmation email');
-    this.resendError.set(null);
-    
     const emailValue = this.email();
     if (!emailValue) {
-      this.resendError.set('No email available for resending confirmation');
+      this.resendError.set($localize `:@@AUTH_EMAIL_CONFIRMATION_NO_EMAIL_AVAILABLE_FOR_RESENDING_CONFIRMATION:No email available for resending confirmation`);
       return;
     }
     
     this.isResending.set(true);
+    this.resendError.set(null);
+    
     this.authService.resendConfirmationEmail(emailValue).subscribe({
-      next: () => {
-        console.log('Email resent successfully');
-        this.isResending.set(false);
-      },
+      next: () => this.isResending.set(false),
       error: (error) => {
-        console.error('Error resending confirmation email:', error);
-        this.resendError.set(error.message || 'Failed to send confirmation email');
+        this.resendError.set(error.message || $localize `:@@AUTH_EMAIL_CONFIRMATION_FAILED_TO_SEND_CONFIRMATION_EMAIL:Failed to send confirmation email`);
         this.isResending.set(false);
       }
     });
