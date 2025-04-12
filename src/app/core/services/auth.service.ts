@@ -1,7 +1,7 @@
 import { Injectable, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from '@supabase/supabase-js';
-import { BehaviorSubject, Observable, catchError, from, map, of, throwError } from 'rxjs';
+import { BehaviorSubject, Observable, catchError, from, map, of, throwError, switchMap } from 'rxjs';
 import { BASE_URL } from '../tokens/base-url.token';
 import { SupabaseClientService } from './supabase-client.service';
 
@@ -119,13 +119,10 @@ export class AuthService {
   }
 
   signInWithGoogle(): Observable<void> {
-    const redirectTo = 'https://xliff.softwarity.io/';
     console.log('Starting Google OAuth flow...');
-    console.log('Redirect URL:', redirectTo);
     return from(this.supabase.auth.signInWithOAuth({ 
       provider: 'google', 
       options: { 
-        redirectTo,
         queryParams: {
           access_type: 'offline',
           prompt: 'consent'
@@ -138,6 +135,7 @@ export class AuthService {
           console.error('OAuth error:', response.error);
           throw response.error;
         }
+        return void 0;
       })
     );
   }
