@@ -1,9 +1,8 @@
 import { Routes } from '@angular/router';
+import { NotFoundComponent } from '../not-found/not-found.component';
+import { EmailConfirmationComponent } from './email-confirmation.component';
 import { LoginComponent } from './login.component';
 import { SignupComponent } from './signup.component';
-import { EmailConfirmationComponent } from './email-confirmation.component';
-import { VerifyEmailComponent } from './verify-email.component';
-import { NotFoundComponent } from '../not-found/not-found.component';
 
 export const AUTH_ROUTES: Routes = [
   {
@@ -17,10 +16,6 @@ export const AUTH_ROUTES: Routes = [
   {
     path: 'email-confirmation',
     component: EmailConfirmationComponent
-  },
-  {
-    path: 'verify',
-    component: VerifyEmailComponent
   },
   {
     path: '**',

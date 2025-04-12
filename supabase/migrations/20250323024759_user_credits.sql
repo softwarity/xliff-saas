@@ -19,17 +19,17 @@ CREATE OR REPLACE FUNCTION update_user_credits()
 RETURNS TRIGGER AS $$
 BEGIN
   -- Insert or update the user's credit balance
-  INSERT INTO user_credits ("userId", balance, "updatedAt") 
+  INSERT INTO public.user_credits ("userId", balance, "updatedAt") 
   VALUES (NEW."userId", NEW.credits, now()) 
   ON CONFLICT ("userId") DO UPDATE
   SET 
     balance = CASE
       -- Pour un INSERT, on ajoute les crédits si completed ou pending
-      WHEN TG_OP = 'INSERT' AND NEW.status IN ('completed', 'pending') THEN user_credits.balance + NEW.credits
+      WHEN TG_OP = 'INSERT' AND NEW.status IN ('completed', 'pending') THEN public.user_credits.balance + NEW.credits
       -- Pour un UPDATE vers failed/cancelled, on retire les crédits
-      WHEN TG_OP = 'UPDATE' AND NEW.status IN ('failed', 'cancelled') THEN user_credits.balance - NEW.credits
+      WHEN TG_OP = 'UPDATE' AND NEW.status IN ('failed', 'cancelled') THEN public.user_credits.balance - NEW.credits
       -- Dans tous les autres cas on ne change rien
-      ELSE user_credits.balance
+      ELSE public.user_credits.balance
     END,
     "updatedAt" = now();
   RETURN NEW;

@@ -3,7 +3,7 @@ import { CORS_HEADERS } from '../const.ts';
 import { getSupabaseClient } from '../lib/supabase-client.ts';
 import { UserService } from '../lib/user-service.ts';
 import { SupabaseClient, UserResponse } from "jsr:@supabase/supabase-js";
-import { UserMetadata } from '../models/user_metadata.ts';
+import { UserRoles } from '../models/user_roles.ts';
 
 Deno.serve(async (req) => {
     if (req.method === 'OPTIONS') {
@@ -44,7 +44,7 @@ Deno.serve(async (req) => {
         }
         
         // Deleting metadata
-        const { error: metadataError }: { data: UserMetadata | null, error: Error | null } = await supabaseClient.from('user_metadata').delete().eq('userId', user.id);
+        const { error: metadataError }: { data: UserRoles | null, error: Error | null } = await supabaseClient.from('user_roles').delete().eq('userId', user.id);
         if (metadataError) {
             console.error('Error deleting metadata:', metadataError);
             throw metadataError;

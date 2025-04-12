@@ -8,42 +8,42 @@ DECLARE
   emailHash TEXT;
 BEGIN
   -- Normalize the email only once
-  normalizedEmail := normalize_email(new.email);
+  normalizedEmail := public.normalize_email(new.email);
 
   -- Extract domain for statistics
   emailDomain := split_part(normalizedEmail, '@', 2);
 
   -- Then hash the already normalized email using our hash_text function
-  emailHash := hash_text(normalizedEmail);
+  emailHash := public.hash_text(normalizedEmail);
   
   -- Check if the hashed email exists in the account_created table
   SELECT EXISTS (
-    SELECT 1 FROM account_created 
+    SELECT 1 FROM private.account_created 
     WHERE "emailHash" = emailHash 
   ) INTO similarAccount;
 
   -- Insert initial credits transaction only if the email is not in the account_created table
   IF NOT similarAccount THEN
     -- Insert initial credits transaction
-    INSERT INTO user_transactions ("userId", credits, message, status) 
+    INSERT INTO public.user_transactions ("userId", credits, message, status) 
     VALUES (new.id, 100, 'Initial signup bonus', 'completed');
     
     -- Insert into account_created only for new accounts
-    INSERT INTO account_created ("emailHash", "emailDomain") 
+    INSERT INTO private.account_created ("emailHash", "emailDomain") 
     VALUES (emailHash, emailDomain);
   ELSE
     -- Create a transaction with 0 credits and a message explaining why
-    INSERT INTO user_transactions ("userId", credits, message, status) 
+    INSERT INTO public.user_transactions ("userId", credits, message, status) 
     VALUES (new.id, 0, 'No signup bonus - similar account detected', 'completed');
   END IF;
   
   -- Create user metadata entry
-  INSERT INTO user_metadata ("userId", "roles") 
+  INSERT INTO public.user_roles ("userId", "roles") 
   VALUES (new.id, '{}'::text[]);
   
   RETURN new;
 END;
-$$ LANGUAGE plpgsql SECURITY DEFINER SET search_path = public;
+$$ LANGUAGE plpgsql SECURITY DEFINER;
 
 -- Drop the trigger if it exists and recreate it
 DROP TRIGGER IF EXISTS on_auth_user_created ON auth.users;
