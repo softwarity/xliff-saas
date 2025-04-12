@@ -29,6 +29,7 @@ for file in $FILES; do
 done
 
 cat > "$BROWSER_DIR/preferred-language.js" << EOF
+const supportedLocales = [$(for locale in $LOCALES; do echo -n "'$locale',"; done | sed 's/,$//')];
 function getPreferredLanguage() {
     // 1. Check localStorage
     const storedLang = localStorage.getItem('preferredLanguage')?.toLowerCase();
