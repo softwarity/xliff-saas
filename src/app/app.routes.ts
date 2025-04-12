@@ -57,12 +57,16 @@ export const routes: Routes = [
     loadComponent: () => import('./features/stripe-test/stripe-test.component').then(m => m.StripeTestComponent)
   },
   {
+    path: 'verify-email',
+    loadComponent: () => import('./pages/verify-email.component').then(m => m.VerifyEmailComponent)
+  },
+  {
     path: 'terms',
-    component: TermsComponent
+    loadComponent: () => import('./pages/terms.component').then(m => m.TermsComponent)
   },
   {
     path: 'privacy',
-    component: PrivacyComponent
+    loadComponent: () => import('./pages/privacy.component').then(m => m.PrivacyComponent)
   },
   {
     path: '**',

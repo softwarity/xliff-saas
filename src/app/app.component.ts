@@ -21,8 +21,8 @@ import { HeaderComponent } from './core/components/header/header.component';
       <div class="container mx-auto px-4">
         <div class="flex flex-wrap justify-center gap-x-6 gap-y-2">
           <a href="https://softwarity.io" target="_blank"  i18n="@@FOOTER_COPYRIGHT">© 2025 Softwarity, Inc.</a>
-          <a href="./terms.html" i18n="@@FOOTER_TERMS">Terms of Service</a>
-          <a href="./privacy.html" i18n="@@FOOTER_PRIVACY">Privacy Policy</a>
+          <a routerLink="/terms" i18n="@@FOOTER_TERMS">Terms of Service</a>
+          <a routerLink="/privacy" i18n="@@FOOTER_PRIVACY">Privacy Policy</a>
           <a routerLink="/documentation" i18n="@@FOOTER_DOCS">Docs</a>
           <a href="#" i18n="@@FOOTER_CONTACT">Contact</a>
           <a href="#" i18n="@@FOOTER_COOKIES">Manage cookies</a>
