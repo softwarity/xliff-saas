@@ -119,7 +119,7 @@ export class AuthService {
   }
 
   signInWithGoogle(): Observable<void> {
-    const redirectTo = `${window.location.origin}${this.baseUrl}profile`;
+    const redirectTo = `${window.location.origin}${this.baseUrl}`;
     console.log('Starting Google OAuth - Redirect URL:', redirectTo);
     return from(this.supabase.auth.signInWithOAuth({ 
       provider: 'google',
