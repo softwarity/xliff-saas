@@ -60,7 +60,7 @@ EOF
 cat > "$BROWSER_DIR/index.html" << EOF
 <!DOCTYPE html>
 <html><head>
-<script src="preferred-language.js"></script>
+<script src="/preferred-language.js"></script>
 <script>
 window.location.href = \`/\${getPreferredLanguage()}/\`;
 </script>
@@ -73,7 +73,7 @@ echo "index.html créé avec succès dans: $BROWSER_DIR"
 cat > "$BROWSER_DIR/404.html" << EOF
 <!DOCTYPE html>
 <html><head>
-<script src="preferred-language.js"></script>
+<script src="/preferred-language.js"></script>
 <script>
 window.location.href = \`/\${getPreferredLanguage()}/index.html?page=\${window.location.pathname}\`;
 </script>
