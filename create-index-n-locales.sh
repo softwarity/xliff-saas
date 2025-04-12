@@ -3,6 +3,8 @@
 # Chemin vers le répertoire browser
 BROWSER_DIR="dist/xliff-translator/browser"
 
+cp src/favicon.ico "$BROWSER_DIR"
+
 # Vérifier si le répertoire existe
 if [ ! -d "$BROWSER_DIR" ]; then
     echo "Le répertoire browser n'existe pas: $BROWSER_DIR"
