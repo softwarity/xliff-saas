@@ -3,12 +3,13 @@ import { Component, effect, inject, signal } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { Router, RouterLink } from '@angular/router';
 import { User } from '@supabase/supabase-js';
-import { from } from 'rxjs';
-import { concatMap } from 'rxjs/operators';
+import { from, of } from 'rxjs';
+import { catchError, concatMap } from 'rxjs/operators';
 import { AuthService } from '../../core/services/auth.service';
 import { AvatarService } from '../../core/services/avatar.service';
 import { DevToolbarComponent } from '../../shared/components/dev-toolbar.component';
 import { PromptModalComponent } from '../../shared/components/prompt-modal.component';
+import { ToastService } from '../../core/services/toast.service';
 
 @Component({
   standalone: true,
@@ -103,6 +104,7 @@ export class ProfileComponent {
   private router = inject(Router);
   private auth = inject(AuthService);
   private avatarService = inject(AvatarService);
+  private toastService = inject(ToastService);
   
   user = signal<User | null>(null);
   isLoading = signal(false);
@@ -114,7 +116,13 @@ export class ProfileComponent {
   constructor(
     private authService: AuthService
   ) {
-    this.authService.getUser().subscribe(user => {
+    this.authService.getUser().pipe(
+      catchError((error) => {
+        console.error('Error getting user session:', error);
+        this.toastService.error($localize `:@@AUTH_SERVICE_ERROR_GETTING_SESSION:Error getting user session`);
+        return of(null);
+      })
+    ).subscribe(user => {
       if (user) {
         this.user.set(user);
       }

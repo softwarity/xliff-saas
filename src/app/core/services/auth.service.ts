@@ -35,12 +35,7 @@ export class AuthService {
     return from(this.supabase.auth.getSession()).pipe(
       map(({data: {session}}) => {
         return session?.user || null}
-      ),
-      catchError((error) => {
-        console.error('Error getting user session:', error);
-        this.toastService.error($localize `:@@AUTH_SERVICE_ERROR_GETTING_SESSION:Error getting user session`);
-        return of(null);
-      })
+      )
     );
   }
 
