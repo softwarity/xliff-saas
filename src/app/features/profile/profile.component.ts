@@ -7,13 +7,12 @@ import { from, of } from 'rxjs';
 import { catchError, concatMap } from 'rxjs/operators';
 import { AuthService } from '../../core/services/auth.service';
 import { AvatarService } from '../../core/services/avatar.service';
-import { DevToolbarComponent } from '../../shared/components/dev-toolbar.component';
 import { PromptModalComponent } from '../../shared/components/prompt-modal.component';
 import { ToastService } from '../../core/services/toast.service';
 
 @Component({
   standalone: true,
-  imports: [DatePipe,PromptModalComponent, DevToolbarComponent, RouterLink],
+  imports: [DatePipe,PromptModalComponent, RouterLink],
   template: `
     <div class="container mx-auto px-4 py-8">
       <div class="max-w-2xl mx-auto bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
@@ -43,12 +42,6 @@ import { ToastService } from '../../core/services/toast.service';
             <p class="text-gray-500 dark:text-gray-400" i18n="@@PROFILE_MEMBER_SINCE">Member since {{ user()?.created_at | date }}</p>
           </div>
         </div>
-
-        @if (error()) {
-          <div class="text-sm text-red-500 mb-4">
-            <span>{{ error() }}</span>
-          </div>
-        }
 
         <div class="space-y-6">
           <div class="border-t border-gray-200 dark:border-gray-700 pt-6">
@@ -97,7 +90,6 @@ import { ToastService } from '../../core/services/toast.service';
         (closed)="onDeleteModalClosed($event)"
       />
     }
-    <app-dev-toolbar (showError)="error.set($event)" />
   `
 })
 export class ProfileComponent {
@@ -108,7 +100,6 @@ export class ProfileComponent {
   
   user = signal<User | null>(null);
   isLoading = signal(false);
-  error = signal<string | null>(null);
   protected avatarUrl = toSignal(this.avatarService.avatar$);
   protected showDefaultAvatar = signal(false);
   showDeleteModal = false;
@@ -141,13 +132,13 @@ export class ProfileComponent {
     
     // Check file type
     if (!file.type.startsWith('image/')) {
-      this.error.set($localize `:@@PROFILE_ERROR_INVALID_FILE_TYPE:File must be an image`);
+      this.toastService.error($localize `:@@PROFILE_ERROR_INVALID_FILE_TYPE:File must be an image`);
       return;
     }
     
     // Check file size (max 2MB)
     if (file.size > 2 * 1024 * 1024) {
-      this.error.set($localize `:@@PROFILE_ERROR_FILE_TOO_LARGE:File size must be less than 2MB`);
+      this.toastService.error($localize `:@@PROFILE_ERROR_FILE_TOO_LARGE:File size must be less than 2MB`);
       return;
     }
     
@@ -164,15 +155,8 @@ export class ProfileComponent {
       ).subscribe({
         next: () => {
           this.router.navigate(['/']);
-        },
-        error: (err: Error) => {
-          this.error.set($localize `:@@PROFILE_ERROR_DELETING_ACCOUNT:Error deleting account: ${err.message}`);
         }
       });
     }
-  }
-
-  testError(): void {
-    this.error.set($localize `:@@PROFILE_TEST_ERROR_MESSAGE:This is a test error message`);
   }
 } 

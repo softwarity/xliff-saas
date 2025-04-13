@@ -9,15 +9,15 @@ export const routes: Routes = [
   },
   {
     path: '',
-    loadComponent: () => import('./features/home/home.component').then(m => m.HomeComponent)
+    loadComponent: () => import('./pages/home/home.component').then(m => m.HomeComponent)
   },
   {
     path: 'how-it-works',
-    loadComponent: () => import('./features/how-it-works/how-it-works.component').then(m => m.HowItWorksComponent)
+    loadComponent: () => import('./pages/how-it-works/how-it-works.component').then(m => m.HowItWorksComponent)
   },
   {
     path: 'documentation',
-    loadComponent: () => import('./features/documentation/documentation.component').then(m => m.DocumentationComponent)
+    loadComponent: () => import('./pages/documentation/documentation.component').then(m => m.DocumentationComponent)
   },
   {
     path: 'dashboard',
@@ -68,6 +68,6 @@ export const routes: Routes = [
   },
   {
     path: '**',
-    loadComponent: () => import('./features/not-found/not-found.component').then(m => m.NotFoundComponent)
+    loadComponent: () => import('./pages/not-found.component').then(m => m.NotFoundComponent)
   }
 ];

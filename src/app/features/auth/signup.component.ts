@@ -3,7 +3,6 @@ import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } 
 import { Router, RouterLink } from '@angular/router';
 import { from } from 'rxjs';
 import { AuthService } from '../../core/services/auth.service';
-import { DevToolbarComponent } from '../../shared/components/dev-toolbar.component';
 
 @Component({
   standalone: true,
@@ -12,7 +11,7 @@ import { DevToolbarComponent } from '../../shared/components/dev-toolbar.compone
       @apply border-red-500;
     }
   `],
-  imports: [ReactiveFormsModule, RouterLink, DevToolbarComponent],
+  imports: [ReactiveFormsModule, RouterLink],
   template: `
     <div class="min-h-screen flex items-center justify-center p-4">
       <div class="bg-light-surface dark:bg-dark-800 border border-light-border dark:border-dark-600 rounded-lg shadow-md p-8 w-full max-w-md">
@@ -64,12 +63,6 @@ import { DevToolbarComponent } from '../../shared/components/dev-toolbar.compone
             }
           </div>
 
-          @if (error()) {
-            <div class="text-sm text-red-500 mb-4">
-              <span>{{ error() }}</span>
-            </div>
-          }
-
           <button type="submit" [disabled]="signupForm.invalid || isLoading()" class="flat-primary w-full">
             @if (!isLoading()) {
               <span i18n="@@AUTH_SIGNUP_CREATE_ACCOUNT">Create Account</span>
@@ -89,7 +82,6 @@ import { DevToolbarComponent } from '../../shared/components/dev-toolbar.compone
         </div>
       </div>
     </div>
-    <app-dev-toolbar (showError)="error.set($event)" />
   `
 })
 export class SignupComponent {
@@ -98,7 +90,6 @@ export class SignupComponent {
   private router = inject(Router);
 
   isLoading = signal(false);
-  error = signal<string | null>(null);
 
   signupForm = this.fb.group({
     email: ['', [Validators.required, Validators.email]],
@@ -119,7 +110,6 @@ export class SignupComponent {
   onSubmit(): void {
     if (this.signupForm.invalid) return;
     this.isLoading.set(true);
-    this.error.set(null);
     
     const email = this.email.value;
     const password = this.password.value;
@@ -139,22 +129,6 @@ export class SignupComponent {
         });
       },
       error: (err) => {
-        console.error('Signup error in component:', err);
-        // Use i18n for all error messages
-        let errorMessage: string;
-        
-        // User-friendly error messages
-        if (err.message.includes('User already registered')) {
-          errorMessage = $localize `:@@AUTH_SIGNUP_USER_EXISTS:This email is already in use`;
-        } else if (err.message.includes('invalid credentials')) {
-          errorMessage = $localize `:@@AUTH_SIGNUP_INVALID_CREDENTIALS:Invalid credentials`;
-        } else if (err.message.includes('password')) {
-          errorMessage = $localize `:@@AUTH_SIGNUP_PASSWORD_REQUIREMENTS:Password does not meet security requirements`;
-        } else {
-          errorMessage = $localize `:@@AUTH_SIGNUP_GENERAL_ERROR:Error creating account: ${err.message}`;
-        }
-        
-        this.error.set(errorMessage);
         this.isLoading.set(false);
       }
     });

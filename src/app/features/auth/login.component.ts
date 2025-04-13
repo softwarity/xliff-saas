@@ -2,8 +2,7 @@ import { Component, inject, signal } from '@angular/core';
 import { FormBuilder, FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { AuthService } from '../../core/services/auth.service';
-import { DevToolbarComponent } from '../../shared/components/dev-toolbar.component';
-import { ToastAction, ToastService } from '../../core/services/toast.service';
+import { ToastService } from '../../core/services/toast.service';
 
 @Component({
   standalone: true,
@@ -12,7 +11,7 @@ import { ToastAction, ToastService } from '../../core/services/toast.service';
       @apply border-red-500;
     }
   `],
-  imports: [ReactiveFormsModule, RouterLink, DevToolbarComponent],
+  imports: [ReactiveFormsModule, RouterLink],
   template: `
     <div class="min-h-screen flex items-center justify-center p-4">
       <div class="bg-light-surface dark:bg-dark-800 border border-light-border dark:border-dark-600 rounded-lg shadow-md p-8 w-full max-w-md">
@@ -21,7 +20,7 @@ import { ToastAction, ToastService } from '../../core/services/toast.service';
         <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="space-y-4">
           <div class="space-y-2">
             <label class="block text-sm font-medium text-gray-700 dark:text-gray-300" for="email" i18n="@@AUTH_LOGIN_EMAIL">Email</label>
-            <input class="w-full" type="email" id="email" formControlName="email" [class.error]="password.invalid && password.touched" autocomplete="current-password"/>
+            <input class="w-full" type="email" id="email" formControlName="email" [class.error]="email.invalid && email.touched" autocomplete="current-password"/>
             @if (email.invalid && email.touched) {
               <div class="text-sm text-red-500">
                 @if (email.errors?.['required']) {
@@ -79,7 +78,6 @@ import { ToastAction, ToastService } from '../../core/services/toast.service';
         </div>
       </div>
     </div>
-    <app-dev-toolbar (showError)="toastService.error($event)" />
   `
 })
 export class LoginComponent {
@@ -106,38 +104,28 @@ export class LoginComponent {
     this.isEmailNotConfirmed.set(false);
     this.authService.signInWithEmail(this.email.value, this.password.value).subscribe({
       next: () => {
-        console.log('Sign in with email success');
         this.router.navigate(['/']);
       },
       error: (err) => {
-        console.error('Login error:', err);
         this.isLoading.set(false);
         // Détection spécifique d'email non confirmé
-        let message = err.message;
         if (err.message.includes('Email not confirmed') || err.message.includes('Email link is invalid or has expired')) {
           this.isEmailNotConfirmed.set(true);
-          message = $localize `:@@AUTH_LOGIN_EMAIL_NOT_CONFIRMED:Your email has not been confirmed. Please check your inbox or request a new confirmation email.`;
         }
-        this.toastService.secondary(message);
       }
     });
   }
 
   resendConfirmation(): void {
-    if (!this.email.value) {
-      this.toastService.secondary($localize `:@@AUTH_LOGIN_EMAIL_REQUIRED:Email is required`);
-      return;
-    }
-    this.toastService.secondary($localize `:@@AUTH_LOGIN_RESENDING_CONFIRMATION:Resending confirmation email...`);
+    if (!this.email.value) return;
     this.isResending.set(true);
     this.authService.resendConfirmationEmail(this.email.value).subscribe({
       next: () => {
         this.isResending.set(false);
         this.router.navigate(['/auth/email-confirmation'], { queryParams: { email: this.email.value } });
       },
-      error: (err) => {
+      error: () => {
         this.isResending.set(false);
-        this.toastService.error($localize `:@@AUTH_LOGIN_RESEND_ERROR:Error sending confirmation email: ${err.message}`);
       }
     });
   }
@@ -145,26 +133,26 @@ export class LoginComponent {
   signInWithGoogle(): void {
     this.isLoading.set(true);
     this.authService.signInWithGoogle().subscribe({
-      error: (err) => {
+      error: () => {
         this.isLoading.set(false);
       }
     });
   }
 
   resetPassword(): void {
-    if (!this.email.value) {
+    const email = this.email.value;
+    if (!email) {
       this.toastService.secondary($localize `:@@AUTH_LOGIN_EMAIL_REQUIRED:Email is required`);
       return;
     }
     this.isLoading.set(true);
-    this.authService.resetPassword(this.email.value).subscribe({
+    this.authService.resetPassword(email).subscribe({
       next: () => {
         this.isLoading.set(false);
-        this.router.navigate(['/auth/email-sent'], { queryParams: { email: this.email.value } });
+        this.router.navigate(['/auth/email-sent'], { queryParams: { email } });
       },
-      error: (err) => {
+      error: () => {
         this.isLoading.set(false);
-        this.toastService.error(err.message);
       }
     });
   }
