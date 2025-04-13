@@ -1,8 +1,9 @@
 import { HttpClient } from "@angular/common/http";
 import { inject, Injectable } from "@angular/core";
-import { TokenService } from "./token.service";
+import { catchError, map, Observable, of, switchMap } from "rxjs";
 import { Repository } from "../../shared/models/repository.model";
-import { map, Observable, of, switchMap } from "rxjs";
+import { TokenService } from "./token.service";
+import { ToastService } from "./toast.service";
 
 @Injectable({
   providedIn: 'root'
@@ -10,18 +11,24 @@ import { map, Observable, of, switchMap } from "rxjs";
 export class GitlabService {
   private http = inject(HttpClient);
   private tokenService = inject(TokenService);
+  private toastService = inject(ToastService);
 
   getBranches(repository: Repository): Observable<string[]> {
     return this.tokenService.getToken('gitlab').pipe(
       switchMap((token: string | null) => {
         if (!token) {
+          this.toastService.error($localize`:@@GITLAB_TOKEN_NOT_FOUND:GitLab token not found. Please connect your GitLab account.`);
           return of([]);
         }
         const headers = {
           'Authorization': `Bearer ${token}`
         }
         return this.http.get<GitlabBranch[]>(`${repository.url}/repository/branches`, { headers }).pipe(
-          map((data: GitlabBranch[]) => data.map((branch: GitlabBranch) => branch.name))
+          map((data: GitlabBranch[]) => data.map((branch: GitlabBranch) => branch.name)),
+          catchError((error: Error) => {
+            this.toastService.error($localize`:@@FAILED_TO_LOAD_BRANCHES:Failed to load branches. Please check your token permissions.`);
+            return of([]);
+          })
         );
       })
     );
@@ -31,13 +38,18 @@ export class GitlabService {
     return this.tokenService.getToken('gitlab').pipe(
       switchMap((token: string | null) => {
         if (!token) {
+          this.toastService.error($localize`:@@GITLAB_TOKEN_NOT_FOUND:GitLab token not found. Please connect your GitLab account.`);
           return of([]);
         }
         const headers = {
           'Authorization': `Bearer ${token}`
         }
         return this.http.get<GitlabRepository[]>('https://gitlab.com/api/v4/projects?owned=true&per_page=100&order_by=updated_at', { headers }).pipe(
-          map((repos: GitlabRepository[]) => this.transformGitlabRepos(repos))
+          map((repos: GitlabRepository[]) => this.transformGitlabRepos(repos)),
+          catchError((error: Error) => {
+            this.toastService.error($localize`:@@FAILED_TO_LOAD_REPOSITORIES:Failed to load repositories. Please check your token permissions.`);
+            return of([]);
+          })
         )
       })
     );
