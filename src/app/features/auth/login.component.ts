@@ -3,6 +3,7 @@ import { FormBuilder, FormControl, ReactiveFormsModule, Validators } from '@angu
 import { Router, RouterLink } from '@angular/router';
 import { AuthService } from '../../core/services/auth.service';
 import { NgClass } from '@angular/common';
+import { DevToolbarComponent } from '../../shared/components/dev-toolbar.component';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +13,7 @@ import { NgClass } from '@angular/common';
       @apply border-red-500;
     }
   `],
-  imports: [ReactiveFormsModule, RouterLink],
+  imports: [ReactiveFormsModule, RouterLink, DevToolbarComponent],
   template: `
     <div class="min-h-screen flex items-center justify-center p-4">
       <div class="bg-light-surface dark:bg-dark-800 border border-light-border dark:border-dark-600 rounded-lg shadow-md p-8 w-full max-w-md">
@@ -80,6 +81,7 @@ import { NgClass } from '@angular/common';
         </div>
       </div>
     </div>
+    <app-dev-toolbar (showError)="error.set($event)" />
   `
 })
 export class LoginComponent {

@@ -9,11 +9,12 @@ import { environment } from '../../../environments/environment';
 import { AuthService } from '../../core/services/auth.service';
 import { AvatarService } from '../../core/services/avatar.service';
 import { PromptModalComponent } from '../../shared/components/prompt-modal.component';
+import { DevToolbarComponent } from '../../shared/components/dev-toolbar.component';
 
 @Component({
   selector: 'app-profile',
   standalone: true,
-  imports: [DatePipe,PromptModalComponent],
+  imports: [DatePipe,PromptModalComponent, DevToolbarComponent],
   template: `
     <div class="container mx-auto px-4 py-8">
       <div class="max-w-2xl mx-auto bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
@@ -75,17 +76,6 @@ import { PromptModalComponent } from '../../shared/components/prompt-modal.compo
             </div>
           </div>
 
-          @if (!this.environment.production) {
-            <div class="border-t border-gray-200 dark:border-gray-700 pt-6">
-              <h2 class="text-lg font-semibold text-gray-900 dark:text-white mb-4" i18n="@@PROFILE_DEVELOPMENT">Development</h2>
-              <div class="space-y-4">
-                <div class="flex justify-end">
-                  <button (click)="testError()" class="flat-secondary" i18n="@@PROFILE_TEST_ERROR">Test Error Message</button>
-                </div>
-              </div>
-            </div>
-          }
-
           <div class="border-t border-gray-200 dark:border-gray-700 pt-6">
             <h2 class="text-lg font-semibold text-gray-900 dark:text-white mb-4" i18n="@@PROFILE_DANGER_ZONE">Danger Zone</h2>
             <div class="space-y-4">
@@ -108,6 +98,7 @@ import { PromptModalComponent } from '../../shared/components/prompt-modal.compo
         (closed)="onDeleteModalClosed($event)"
       />
     }
+    <app-dev-toolbar (showError)="error.set($event)" />
   `
 })
 export class ProfileComponent {
