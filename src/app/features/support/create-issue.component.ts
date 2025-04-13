@@ -20,19 +20,12 @@ import { finalize } from 'rxjs';
       </div>
 
       <div class="bg-white dark:bg-dark-800 rounded-lg shadow-md p-6">
-        <form [formGroup]="ticketForm" (ngSubmit)="onSubmit()">
+        <form [formGroup]="ticketForm" autocomplete="off">
           <div class="mb-6">
             <label for="title" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2" i18n="@@TICKET_TITLE_LABEL">
               Title
             </label>
-            <input
-              type="text"
-              id="title"
-              formControlName="title"
-              class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-primary focus:border-primary bg-white dark:bg-dark-900 text-gray-900 dark:text-white"
-              i18n-placeholder="@@TICKET_TITLE_PLACEHOLDER"
-              placeholder="Enter a descriptive title"
-            />
+            <input type="text" id="title" formControlName="title" class="w-full" i18n-placeholder="@@TICKET_TITLE_PLACEHOLDER" placeholder="Enter a descriptive title" />
             @if (ticketForm.get('title')?.invalid && (ticketForm.get('title')?.dirty || ticketForm.get('title')?.touched)) {
               <p class="mt-2 text-sm text-red-600 dark:text-red-400" i18n="@@TITLE_REQUIRED">
                 Title is required
@@ -41,50 +34,10 @@ import { finalize } from 'rxjs';
           </div>
 
           <div class="mb-6">
-            <span class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2" i18n="@@TICKET_TYPE_LABEL">
-              Ticket Type
-            </span>
-            <div class="flex gap-4">
-              <div class="flex items-center">
-                <input 
-                  type="radio" 
-                  id="type-bug" 
-                  value="Bug"
-                  formControlName="type"
-                  class="h-4 w-4 text-orange-600 focus:ring-orange-500 border-gray-300 dark:border-gray-600"
-                />
-                <label for="type-bug" class="ml-2 flex items-center">
-                  <span class="badge bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-300" i18n="@@TICKET_TYPE_BUG_LABEL">Bug</span>
-                </label>
-              </div>
-              
-              <div class="flex items-center">
-                <input 
-                  type="radio" 
-                  id="type-feature" 
-                  value="Feature"
-                  formControlName="type"
-                  class="h-4 w-4 text-primary focus:ring-primary border-gray-300 dark:border-gray-600"
-                />
-                <label for="type-feature" class="ml-2 flex items-center">
-                  <span class="badge bg-primary-100 text-primary-800 dark:bg-primary-900 dark:text-primary-300" i18n="@@TICKET_TYPE_FEATURE_LABEL">Feature</span>
-                </label>
-              </div>
-            </div>
-          </div>
-
-          <div class="mb-6">
             <label for="body" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2" i18n="@@TICKET_BODY_LABEL">
               Description (Markdown supported)
             </label>
-            <textarea
-              id="body"
-              formControlName="body"
-              rows="10"
-              class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-primary focus:border-primary bg-white dark:bg-dark-900 text-gray-900 dark:text-white font-mono"
-              i18n-placeholder="@@TICKET_BODY_PLACEHOLDER"
-              placeholder="Describe your issue in detail. You can use Markdown for formatting."
-            ></textarea>
+            <textarea id="body" formControlName="body" rows="10" class="w-full" i18n-placeholder="@@TICKET_BODY_PLACEHOLDER" placeholder="Describe your issue in detail. You can use Markdown for formatting." ></textarea>
             @if (ticketForm.get('body')?.invalid && (ticketForm.get('body')?.dirty || ticketForm.get('body')?.touched)) {
               <p class="mt-2 text-sm text-red-600 dark:text-red-400" i18n="@@BODY_REQUIRED">
                 Description is required
@@ -119,19 +72,23 @@ import { finalize } from 'rxjs';
             <button type="button" routerLink="/support" class="button stroke-primary mr-4" i18n="@@CANCEL_BUTTON">
               Cancel
             </button>
-            <button 
-              type="submit" 
-              [disabled]="ticketForm.invalid || isSubmitting()" 
-              class="button flat-primary min-w-[140px] flex items-center justify-center" 
-              i18n="@@SUBMIT_TICKET_BUTTON"
-            >
+            <button type="button" (click)="onSubmit('Bug')" [disabled]="ticketForm.invalid || isSubmitting()" class="button flat-warning mr-4 min-w-[140px] flex items-center justify-center" i18n="@@SUBMIT_TICKET_BUTTON">
               @if (isSubmitting()) {
                 <svg class="animate-spin mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                   <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                   <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                 </svg>
               }
-              <span>Submit Ticket</span>
+              <span>Submit Bug</span>
+            </button>
+            <button type="button" (click)="onSubmit('Feature')" [disabled]="ticketForm.invalid || isSubmitting()" class="button flat-primary min-w-[140px] flex items-center justify-center" i18n="@@SUBMIT_TICKET_BUTTON">
+              @if (isSubmitting()) {
+                <svg class="animate-spin mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                  <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                  <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+              }
+              <span>Submit Feature</span>
             </button>
           </div>
         </form>
@@ -140,20 +97,7 @@ import { finalize } from 'rxjs';
   `,
   standalone: true,
   imports: [CommonModule, RouterModule, ReactiveFormsModule],
-  providers: [SupportService],
-  styles: [`
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0.25rem 0.75rem;
-      font-size: 0.75rem;
-      font-weight: 500;
-      line-height: 1;
-      border-radius: 9999px;
-      text-transform: uppercase;
-    }
-  `]
+  providers: [SupportService]
 })
 export class CreateIssueComponent {
   private readonly fb = inject(FormBuilder);
@@ -166,22 +110,21 @@ export class CreateIssueComponent {
   constructor() {
     this.ticketForm = this.fb.group({
       title: ['', [Validators.required, Validators.maxLength(100)]],
-      type: ['Bug', [Validators.required]],  // Bug par défaut
       body: ['', [Validators.required]]
     });
   }
 
-  protected onSubmit(): void {
+  protected onSubmit(type: 'Bug' | 'Feature'): void {
     if (this.ticketForm.invalid) {
       return;
     }
 
     this.isSubmitting.set(true);
-    
+
     const issueData: CreateIssue = {
       title: this.ticketForm.value.title,
       body: this.ticketForm.value.body,
-      type: this.ticketForm.value.type
+      type
     };
 
     this.supportService.createIssue(issueData).pipe(
