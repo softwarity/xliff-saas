@@ -3,6 +3,7 @@ import { inject, Injectable } from "@angular/core";
 import { catchError, forkJoin, map, Observable, of, switchMap } from "rxjs";
 import { Repository } from "../../shared/models/repository.model";
 import { TokenService } from "./token.service";
+import { ToastService } from "./toast.service";
 
 @Injectable({
   providedIn: 'root'
@@ -10,11 +11,13 @@ import { TokenService } from "./token.service";
 export class GithubService {
   private http = inject(HttpClient);
   private tokenService = inject(TokenService);
+  private toastService = inject(ToastService);
 
   getBranches(repository: Repository): Observable<string[]> {
     return this.tokenService.getToken('github').pipe(
       switchMap((token: string | null) => {
         if (!token) {
+          this.toastService.error($localize`:@@GITHUB_TOKEN_NOT_FOUND:GitHub token not found. Please connect your GitHub account.`);
           return of([]);
         }
         const headers = {
@@ -22,7 +25,11 @@ export class GithubService {
           'Accept': 'application/vnd.github.v3+json'
         }
         return this.http.get<GithubBranch[]>(`${repository.url}/branches`, { headers }).pipe(
-          map((data: GithubBranch[]) => data.map((branch: GithubBranch) => branch.name))
+          map((data: GithubBranch[]) => data.map((branch: GithubBranch) => branch.name)),
+          catchError((error: Error) => {
+            this.toastService.error($localize`:@@FAILED_TO_LOAD_BRANCHES:Failed to load branches. Please check your token permissions.`);
+            return of([]);
+          })
         ); 
       })
     );
@@ -32,6 +39,7 @@ export class GithubService {
     return this.tokenService.getToken('github').pipe(
       switchMap((token: string | null) => {
         if (!token) {
+          this.toastService.error($localize`:@@GITHUB_TOKEN_NOT_FOUND:GitHub token not found. Please connect your GitHub account.`);
           return of([]);
         }
         const headers = {
@@ -39,13 +47,21 @@ export class GithubService {
           'Accept': 'application/vnd.github.v3+json'
         };
         const userRepos$: Observable<Repository[]> = this.http.get<GithubRepo[]>('https://api.github.com/user/repos?per_page=100&sort=updated&type=all', { headers }).pipe(
-          map((repos: GithubRepo[]) => this.transformGitHubRepos(repos))
+          map((repos: GithubRepo[]) => this.transformGitHubRepos(repos)),
+          catchError((error: Error) => {
+            this.toastService.error($localize`:@@FAILED_TO_LOAD_USER_REPOS:Failed to load user repositories. Please check your token permissions.`);
+            return of([]);
+          })
         );
         const orgs$ = this.http.get<GithubOrg[]>('https://api.github.com/user/orgs', { headers }).pipe(
           switchMap((orgs: GithubOrg[]) => {
             const orgRepos$: Observable<Repository[]>[] = orgs.map((org: GithubOrg) => {
               return this.http.get<GithubRepo[]>(`https://api.github.com/orgs/${org.login}/repos?per_page=100&sort=updated`, { headers }).pipe(
-                map((repos: GithubRepo[]) => this.transformGitHubRepos(repos))
+                map((repos: GithubRepo[]) => this.transformGitHubRepos(repos)),
+                catchError((error: Error) => {
+                  this.toastService.error($localize`:@@FAILED_TO_LOAD_ORG_REPOS:Failed to load repositories for organization ${org.login}. Please check your token permissions.`);
+                  return of([]);
+                })
               )
             });
             return forkJoin([userRepos$, ...orgRepos$]);
@@ -54,8 +70,8 @@ export class GithubService {
           map((repositories: Repository[]) => {
             return Array.from(new Map(repositories.map(repo => [`${repo.namespace}/${repo.name}`, repo])).values());
           }),
-          catchError((error: any) => {
-            console.error('Error fetching GitHub repositories:', error);
+          catchError((error: Error) => {
+            this.toastService.error($localize`:@@FAILED_TO_LOAD_ORGS:Failed to load organizations. Please check your token permissions.`);
             return userRepos$; // En cas d'erreur avec les orgs, retourner au moins les dépôts personnels
           })
         );
