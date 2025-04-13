@@ -46,6 +46,9 @@ import { AvatarService } from '../../services/avatar.service';
         <a routerLink="/profile" class="w-full gap-2 px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-dark-600 inline-flex cursor-pointer">
           <span i18n="@@YOUR_PROFILE">Your profile</span>
         </a>
+        <a routerLink="/support" class="w-full gap-2 px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-dark-600 inline-flex cursor-pointer">
+          <span i18n="@@SUPPORT">Support</span>
+        </a>
         <!-- Lien temporaire pour le test Stripe -->
         <a routerLink="/stripe-test" class="w-full gap-2 px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-dark-600 inline-flex cursor-pointer">
           <span i18n="@@STRIPE_TEST">Stripe Test</span>

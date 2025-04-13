@@ -32,6 +32,11 @@ export const routes: Routes = [
     loadComponent: () => import('./features/profile/profile.component').then(m => m.ProfileComponent)
   },
   {
+    path: 'support',
+    canActivate: [authGuard, emailConfirmedGuard],
+    loadComponent: () => import('./features/support/support.component').then(m => m.SupportComponent)
+  },
+  {
     path: 'git-providers',
     canActivate: [authGuard, emailConfirmedGuard],
     loadComponent: () => import('./features/git-providers/git-providers.component').then(m => m.GitProvidersComponent)

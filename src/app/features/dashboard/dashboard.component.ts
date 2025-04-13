@@ -7,12 +7,6 @@ import { JobService } from '../../core/services/job.service';
 import { Job } from '../../shared/models/job.model';
 import { JobCardComponent } from './job-card.component';
 
-interface PaginatedJobs {
-  data: Job[];
-  count: number;
-  error: any;
-}
-
 @Component({
   selector: 'app-dashboard',
   standalone: true,
@@ -57,7 +51,7 @@ export class DashboardComponent {
   loadJobs() {
     this.isRefreshing = true;
     this.jobService.getJobs(['completed', 'failed', 'cancelled'], this.currentPage(), this.pageSize).subscribe({
-      next: (response: PaginatedJobs) => {
+      next: (response: Paginated<Job>) => {
         this.jobs.set(response.data);
         this.totalJobs.set(response.count);
         this.isRefreshing = false;

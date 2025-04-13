@@ -5,12 +5,6 @@ import { Job } from '../../shared/models/job.model';
 import { SupabaseClientService } from './supabase-client.service';
 import { ToastService } from './toast.service';
 
-interface PaginatedResponse<T> {
-  data: T[];
-  count: number;
-  error: any;
-}
-
 @Injectable({
   providedIn: 'root'
 })
@@ -90,7 +84,7 @@ export class JobService {
     this.channel?.unsubscribe();
   }
 
-  getJobs(status?: string[], page: number = 1, pageSize: number = 10): Observable<PaginatedResponse<Job>> {
+  getJobs(status?: string[], page: number = 1, pageSize: number = 10): Observable<Paginated<Job>> {
     let query = this.supabaseClientService.from('user_jobs').select('*', { count: 'exact', head: false });
     
     if (status && status.length > 0) {
