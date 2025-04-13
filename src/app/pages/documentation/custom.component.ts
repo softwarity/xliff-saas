@@ -12,6 +12,11 @@ import { CommonModule } from '@angular/common';
         
         <div class="space-y-6">
           <div>
+            <div class="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-6 mb-6">
+              <h3 class="text-lg font-semibold text-blue-700 dark:text-blue-300 mb-2" i18n="@@CUSTOM_INSTRUCTIONS_FILENAME">File to Create</h3>
+              <p class="text-blue-700 dark:text-blue-300" i18n="@@CUSTOM_INSTRUCTIONS_FILENAME_DESC">Create a file named <code class="bg-blue-100 dark:bg-blue-900/50 px-2 py-1 rounded text-blue-900 dark:text-blue-100">xliff-instructions.md</code> at the root of your Git repository.</p>
+            </div>
+
             <h3 class="text-xl font-semibold mb-4 text-gray-900 dark:text-white" i18n="@@CUSTOM_INSTRUCTIONS_SUBTITLE">Adding Context to Translations</h3>
             <p class="text-gray-700 dark:text-gray-300 mb-4" i18n="@@CUSTOM_INSTRUCTIONS_DESCRIPTION">You can provide additional context for translations by creating a <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded text-gray-900 dark:text-gray-100">xliff-instructions.md</code> file at the root of your Git repository. This helps the translation assistant better understand your application's specific terminology and context.</p>
             
