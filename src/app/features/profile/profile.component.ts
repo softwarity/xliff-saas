@@ -144,12 +144,7 @@ export class ProfileComponent {
     }
     
     // Upload avatar
-    this.avatarService.updateAvatar(file).subscribe({
-      error: (err: Error) => {
-        console.error('Error uploading avatar:', err);
-        this.error.set($localize `:@@PROFILE_ERROR_UPLOADING_AVATAR:Error uploading avatar: ${err.message}`);
-      }
-    });
+    this.avatarService.updateAvatar(file).subscribe();
   }
 
   onDeleteModalClosed(email: string | null) {
