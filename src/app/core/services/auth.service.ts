@@ -4,6 +4,7 @@ import { User } from '@supabase/supabase-js';
 import { BehaviorSubject, Observable, catchError, from, map, of, throwError, switchMap } from 'rxjs';
 import { BASE_URL } from '../tokens/base-url.token';
 import { SupabaseClientService } from './supabase-client.service';
+import { ToastService } from './toast.service';
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +13,7 @@ export class AuthService {
   private supabase = inject(SupabaseClientService);
   private router = inject(Router);
   private baseUrl = inject(BASE_URL);
+  private toastService = inject(ToastService);
   
   private userSubject = new BehaviorSubject<User | null>(null);
   private isAuthenticatedSubject = new BehaviorSubject<boolean>(false);
@@ -34,7 +36,11 @@ export class AuthService {
       map(({data: {session}}) => {
         return session?.user || null}
       ),
-      catchError(() => of(null))
+      catchError((error) => {
+        console.error('Error getting user session:', error);
+        this.toastService.error($localize `:@@AUTH_SERVICE_ERROR_GETTING_SESSION:Error getting user session`);
+        return of(null);
+      })
     );
   }
 
@@ -73,6 +79,15 @@ export class AuthService {
     return from(this.supabase.auth.signInWithPassword({ email, password })).pipe(
       map(response => {
         if (response.error) throw response.error;
+      }),
+      catchError(error => {
+        console.error('Sign in error:', error);
+        if (error.message?.includes('Invalid login credentials')) {
+          this.toastService.error($localize `:@@AUTH_SERVICE_INVALID_CREDENTIALS:Invalid email or password`);
+        } else {
+          this.toastService.error($localize `:@@AUTH_SERVICE_SIGN_IN_ERROR:Error signing in`);
+        }
+        return throwError(() => error);
       })
     );
   }
@@ -92,18 +107,14 @@ export class AuthService {
       }),
       catchError(error => {
         console.error('Caught signup error:', error);
-        let errorMessage = '';
-        
-        // Check for specific error cases
         if (error.message?.includes('already')) {
-          errorMessage = $localize `:@@AUTH_SERVICE_EMAIL_EXISTS:This email is already in use`;
+          this.toastService.error($localize `:@@AUTH_SERVICE_EMAIL_EXISTS:This email is already in use`);
         } else if (error.message?.includes('password')) {
-          errorMessage = $localize `:@@AUTH_SERVICE_PASSWORD_REQUIREMENTS:Password does not meet security requirements`;
+          this.toastService.error($localize `:@@AUTH_SERVICE_PASSWORD_REQUIREMENTS:Password does not meet security requirements`);
         } else {
-          errorMessage = $localize `:@@AUTH_SERVICE_GENERAL_ERROR:An error occurred during account creation: ${error.message}`;
+          this.toastService.error($localize `:@@AUTH_SERVICE_GENERAL_ERROR:An error occurred during account creation: ${error.message}`);
         }
-        
-        return throwError(() => new Error(errorMessage));
+        return throwError(() => error);
       })
     );
   }
@@ -118,6 +129,11 @@ export class AuthService {
         console.log('OAuth response:', response);
         if (response.error) throw response.error;
         return void 0;
+      }),
+      catchError(error => {
+        console.error('Google sign in error:', error);
+        this.toastService.error($localize `:@@AUTH_SERVICE_GOOGLE_SIGN_IN_ERROR:Error signing in with Google`);
+        return throwError(() => error);
       })
     );
   }
@@ -127,6 +143,11 @@ export class AuthService {
       map(response => {
         if (response.error) throw response.error;
         this.router.navigate(['/']);
+      }),
+      catchError(error => {
+        console.error('Sign out error:', error);
+        this.toastService.error($localize `:@@AUTH_SERVICE_SIGN_OUT_ERROR:Error signing out`);
+        return throwError(() => error);
       })
     );
   }
@@ -143,6 +164,11 @@ export class AuthService {
           console.error('Resend API error:', response.error);
           throw response.error;
         }
+      }),
+      catchError(error => {
+        console.error('Resend confirmation email error:', error);
+        this.toastService.error($localize `:@@AUTH_SERVICE_RESEND_CONFIRMATION_ERROR:Error resending confirmation email`);
+        return throwError(() => error);
       })
     );
   }
@@ -151,6 +177,11 @@ export class AuthService {
     return from(this.supabase.auth.verifyOtp({ email, token, type: 'signup' })).pipe(
       map(response => {
         if (response.error) throw response.error;
+      }),
+      catchError(error => {
+        console.error('Verify email error:', error);
+        this.toastService.error($localize `:@@AUTH_SERVICE_VERIFY_EMAIL_ERROR:Error verifying email`);
+        return throwError(() => error);
       })
     );
   }
@@ -163,6 +194,11 @@ export class AuthService {
     return from(this.supabase.auth.resetPasswordForEmail(email, { redirectTo: emailRedirectTo })).pipe(
       map(response => {
         if (response.error) throw response.error;
+      }),
+      catchError(error => {
+        console.error('Reset password error:', error);
+        this.toastService.error($localize `:@@AUTH_SERVICE_RESET_PASSWORD_ERROR:Error resetting password`);
+        return throwError(() => error);
       })
     );
   }
@@ -171,6 +207,11 @@ export class AuthService {
     return from(this.supabase.functions.invoke('delete-account')).pipe(
       map(response => {
         if (response.error) throw response.error;
+      }),
+      catchError(error => {
+        console.error('Delete account error:', error);
+        this.toastService.error($localize `:@@AUTH_SERVICE_DELETE_ACCOUNT_ERROR:Error deleting account`);
+        return throwError(() => error);
       })
     );
   }
@@ -180,6 +221,11 @@ export class AuthService {
       map(({ error }) => {
         if (error) throw error;
         return void 0;
+      }),
+      catchError(error => {
+        console.error('Update password error:', error);
+        this.toastService.error($localize `:@@AUTH_SERVICE_UPDATE_PASSWORD_ERROR:Error updating password`);
+        return throwError(() => error);
       })
     );
   }
@@ -193,6 +239,7 @@ export class AuthService {
       this.updateAuthState(session?.user ?? null);
     }).catch(error => {
       console.error('Error getting initial session:', error);
+      this.toastService.error($localize `:@@AUTH_SERVICE_INITIALIZATION_ERROR:Error initializing user session`);
     });
   }
 }

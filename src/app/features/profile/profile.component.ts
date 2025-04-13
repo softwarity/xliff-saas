@@ -111,12 +111,12 @@ export class ProfileComponent {
   protected showDefaultAvatar = signal(false);
   showDeleteModal = false;
 
-  constructor() {
-    this.auth.getUser().subscribe({
-      next: (user) => this.user.set(user),
-      error: (err) => {
-        console.error('Error getting user:', err);
-        this.error.set($localize `:@@PROFILE_ERROR_GETTING_USER:Error getting user profile: ${err.message}`);
+  constructor(
+    private authService: AuthService
+  ) {
+    this.authService.getUser().subscribe(user => {
+      if (user) {
+        this.user.set(user);
       }
     });
 

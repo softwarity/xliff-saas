@@ -147,8 +147,6 @@ export class LoginComponent {
     this.authService.signInWithGoogle().subscribe({
       error: (err) => {
         this.isLoading.set(false);
-        console.error('Login error:', err);
-        this.toastService.error(err.message);
       }
     });
   }
