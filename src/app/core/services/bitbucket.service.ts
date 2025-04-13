@@ -3,6 +3,7 @@ import { inject, Injectable } from "@angular/core";
 import { catchError, forkJoin, map, Observable, of, switchMap } from "rxjs";
 import { Repository } from "../../shared/models/repository.model";
 import { TokenService } from "./token.service";
+import { ToastService } from "./toast.service";
 
 @Injectable({
   providedIn: 'root'
@@ -10,11 +11,13 @@ import { TokenService } from "./token.service";
 export class BitbucketService {
   private http = inject(HttpClient);
   private tokenService = inject(TokenService);
+  private toastService = inject(ToastService);
 
   getBranches(repository: Repository): Observable<string[]> {
     return this.tokenService.getToken('bitbucket').pipe(
       switchMap((token: string | null) => {
         if (!token) {
+          this.toastService.error($localize`:@@BITBUCKET_TOKEN_NOT_FOUND:Bitbucket token not found. Please connect your Bitbucket account.`);
           return of([]);
         }
         const headers = {
@@ -24,17 +27,21 @@ export class BitbucketService {
         return this.http.get<Page<BitbucketBranch>>(`${repository.url}/refs/branches`, { headers }).pipe(
           map((data: Page<BitbucketBranch>) => {
             return data.values.map((branch: BitbucketBranch) => branch.name);
+          }),
+          catchError((error: Error) => {
+            this.toastService.error($localize`:@@FAILED_TO_LOAD_BRANCHES:Failed to load branches. Please check your token permissions.`);
+            return of([]);
           })
         );
       })
     );
   }
 
-
   getRepositories(): Observable<Repository[]> {
     return this.tokenService.getToken('bitbucket').pipe(
       switchMap((token: string | null) => {
         if (!token) {
+          this.toastService.error($localize`:@@BITBUCKET_TOKEN_NOT_FOUND:Bitbucket token not found. Please connect your Bitbucket account.`);
           return of([]);
         }
         const headers = {
@@ -49,7 +56,7 @@ export class BitbucketService {
               return this.http.get<Page<BitbucketRepo>>(`https://api.bitbucket.org/2.0/repositories/${workspaceSlug}?pagelen=100&sort=-updated_on`, { headers }).pipe(
                 map((reposData: Page<BitbucketRepo>) => this.transformBitbucketRepos(reposData.values || [])),
                 catchError((error: Error) => {
-                  console.error(`Error fetching repositories for workspace ${workspaceSlug}:`, error);
+                  this.toastService.error($localize`:@@FAILED_TO_LOAD_WORKSPACE_REPOS:Failed to load repositories for workspace ${workspaceSlug}. Please check your token permissions.`);
                   return of([]);
                 })
               );
@@ -57,13 +64,13 @@ export class BitbucketService {
             return forkJoin(workspaceRequests).pipe(
               map((results: Repository[][]) => results.flat()),
               catchError((error: Error) => {
-                console.error('Error combining workspace results:', error);
+                this.toastService.error($localize`:@@FAILED_TO_LOAD_REPOSITORIES:Failed to load repositories. Please check your token permissions.`);
                 return of([]);
               })
             );
           }),
           catchError((error: Error) => {
-            console.error('Error fetching Bitbucket workspaces:', error);
+            this.toastService.error($localize`:@@FAILED_TO_LOAD_WORKSPACES:Failed to load Bitbucket workspaces. Please check your token permissions.`);
             return of([]);
           })
         );
