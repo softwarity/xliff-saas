@@ -5,7 +5,6 @@ import { Router } from '@angular/router';
 import { User } from '@supabase/supabase-js';
 import { from } from 'rxjs';
 import { concatMap } from 'rxjs/operators';
-import { environment } from '../../../environments/environment';
 import { AuthService } from '../../core/services/auth.service';
 import { AvatarService } from '../../core/services/avatar.service';
 import { PromptModalComponent } from '../../shared/components/prompt-modal.component';
@@ -105,7 +104,6 @@ export class ProfileComponent {
   private router = inject(Router);
   private auth = inject(AuthService);
   private avatarService = inject(AvatarService);
-  protected environment = environment;
   
   user = signal<User | null>(null);
   isLoading = signal(false);
