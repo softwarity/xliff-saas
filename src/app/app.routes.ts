@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import { authGuard } from './core/guards/auth.guard';
 import { emailConfirmedGuard } from './core/guards/email-confirmed.guard';
+import { DOCUMENTATION_ROUTES } from './pages/documentation/documentation.routes';
 
 export const routes: Routes = [
   {
@@ -17,7 +18,8 @@ export const routes: Routes = [
   },
   {
     path: 'documentation',
-    loadComponent: () => import('./pages/documentation/documentation.component').then(m => m.DocumentationComponent)
+    loadComponent: () => import('./pages/documentation/documentation.component').then(m => m.DocumentationComponent),
+    loadChildren: () => import('./pages/documentation/documentation.routes').then(m => DOCUMENTATION_ROUTES)
   },
   {
     path: 'dashboard',
