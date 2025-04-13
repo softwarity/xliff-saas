@@ -40,9 +40,8 @@ export abstract class RepositoriesComponent implements OnInit, OnDestroy {
       next: (balance: number) => {
         this.balance.set(balance);
       },
-      error: (error) => {
+      error: () => {
         this.balance.set(0);
-        console.error('Error subscribing to credit changes:', error);
       }
     }));
   }

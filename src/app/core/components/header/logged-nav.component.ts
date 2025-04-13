@@ -81,9 +81,8 @@ export class LoggedNavComponent {
       next: (balance: number) => {
         this.balance.set(balance);
       },
-      error: (error) => {
+      error: () => {
         this.balance.set(0);
-        console.error('Error subscribing to credit changes:', error);
       }
     }));
   }
