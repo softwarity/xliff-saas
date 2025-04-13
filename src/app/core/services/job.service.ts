@@ -3,6 +3,7 @@ import { PostgrestResponse, RealtimeChannel, RealtimePostgresChangesPayload, Rea
 import { filter, from, map, Observable, share, Subscriber } from 'rxjs';
 import { Job } from '../../shared/models/job.model';
 import { SupabaseClientService } from './supabase-client.service';
+import { ToastService } from './toast.service';
 
 interface PaginatedResponse<T> {
   data: T[];
@@ -15,6 +16,7 @@ interface PaginatedResponse<T> {
 })
 export class JobService {
   private supabaseClientService = inject(SupabaseClientService);
+  private toastService = inject(ToastService);
   private observable$: Observable<{jobId: string, key: string, value: Job | null}>;
   private channel: RealtimeChannel | undefined = undefined;
 
@@ -23,7 +25,7 @@ export class JobService {
       from(this.supabaseClientService.from('latest_user_jobs').select<'*', Job>('*').limit(100)).subscribe({
         next: ({ data, error }: { data: Job[] | null, error: any }) => {
           if (error) {
-            console.error('Error fetching jobs:', error);
+            this.toastService.error($localize`:@@FAILED_TO_FETCH_JOBS:Failed to fetch jobs. Please try again later.`);
           } else {
             if (data) {
               data.forEach((job) => {
@@ -98,7 +100,7 @@ export class JobService {
     return from(query.range((page - 1) * pageSize, page * pageSize - 1).order('createdAt', { ascending: false })).pipe(
       map(({data, count, error}: PostgrestResponse<Job>) => {
         if (error) {
-          console.error('Error fetching jobs:', error);
+          this.toastService.error($localize`:@@FAILED_TO_FETCH_JOBS:Failed to fetch jobs. Please try again later.`);
           return { data: [], count: 0, error };
         }
         const res = { 
@@ -113,7 +115,12 @@ export class JobService {
 
   cancelJob(jobId: string): Observable<void> {
     return from(this.supabaseClientService.functions.invoke<void>(`cancel-job/${jobId}`, {method: 'GET'})).pipe(
-      map(response => response.data || void 0)
+      map(response => {
+        if (response.error) {
+          this.toastService.error($localize`:@@FAILED_TO_CANCEL_JOB:Failed to cancel job. Please try again later.`);
+        }
+        return response.data || void 0;
+      })
     );
   }
 }
