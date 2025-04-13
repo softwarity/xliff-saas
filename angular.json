@@ -112,6 +112,7 @@
             "outputPath": "src/locale",
             "includeContext": true,
             "resetTranslationState": true,
+            "trim": true,
             "targetFiles": [
               "messages.fr.xlf",
               "messages.vi.xlf"

@@ -3,16 +3,16 @@ import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } 
 import { Router, RouterLink } from '@angular/router';
 import { from } from 'rxjs';
 import { AuthService } from '../../core/services/auth.service';
+import { DevToolbarComponent } from '../../shared/components/dev-toolbar.component';
 
 @Component({
-  selector: 'app-signup',
   standalone: true,
   styles: [`
     input.error {
       @apply border-red-500;
     }
   `],
-  imports: [ReactiveFormsModule, RouterLink],
+  imports: [ReactiveFormsModule, RouterLink, DevToolbarComponent],
   template: `
     <div class="min-h-screen flex items-center justify-center p-4">
       <div class="bg-light-surface dark:bg-dark-800 border border-light-border dark:border-dark-600 rounded-lg shadow-md p-8 w-full max-w-md">
@@ -89,6 +89,7 @@ import { AuthService } from '../../core/services/auth.service';
         </div>
       </div>
     </div>
+    <app-dev-toolbar (showError)="error.set($event)" />
   `
 })
 export class SignupComponent {

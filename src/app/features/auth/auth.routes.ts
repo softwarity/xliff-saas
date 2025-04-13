@@ -4,6 +4,8 @@ import { EmailConfirmationComponent } from './email-confirmation.component';
 import { LoginComponent } from './login.component';
 import { SignupComponent } from './signup.component';
 import { noAuthGuard } from '../../core/guards/no-auth.guard';
+import { EmailSentComponent } from './email-sent.component';
+import { UpdatePasswordComponent } from './update-password.component';
 
 export const AUTH_ROUTES: Routes = [
   {
@@ -19,6 +21,14 @@ export const AUTH_ROUTES: Routes = [
   {
     path: 'email-confirmation',
     component: EmailConfirmationComponent
+  },
+  {
+    path: 'email-sent',
+    component: EmailSentComponent
+  },
+  {
+    path: 'update-password',
+    component: UpdatePasswordComponent
   },
   {
     path: '**',

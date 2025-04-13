@@ -2,11 +2,9 @@ import { Component, inject, signal } from '@angular/core';
 import { FormBuilder, FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { AuthService } from '../../core/services/auth.service';
-import { NgClass } from '@angular/common';
 import { DevToolbarComponent } from '../../shared/components/dev-toolbar.component';
 
 @Component({
-  selector: 'app-login',
   standalone: true,
   styles: [`
     input.error {
@@ -45,6 +43,10 @@ import { DevToolbarComponent } from '../../shared/components/dev-toolbar.compone
                 }
               </div>
             }
+          </div>
+
+          <div class="text-right">
+            <button type="button" (click)="resetPassword()" class="text-sm text-primary hover:text-primary-hover" i18n="@@AUTH_LOGIN_FORGOT_PASSWORD">Forgot password?</button>
           </div>
 
           @if (error()) {
@@ -88,6 +90,7 @@ export class LoginComponent {
   private fb = inject(FormBuilder);
   private authService = inject(AuthService);
   private router = inject(Router);
+  
 
   isLoading = signal(false);
   isResending = signal(false);
@@ -152,6 +155,27 @@ export class LoginComponent {
       error: (err) => {
         this.isLoading.set(false);
         console.error('Login error:', err);
+        this.error.set(err.message);
+      }
+    });
+  }
+
+  resetPassword(): void {
+    if (!this.email.value) {
+      this.error.set($localize `:@@AUTH_LOGIN_EMAIL_REQUIRED:Email is required`);
+      return;
+    }
+    
+    this.isLoading.set(true);
+    this.error.set(null);
+    
+    this.authService.resetPassword(this.email.value).subscribe({
+      next: () => {
+        this.isLoading.set(false);
+        this.router.navigate(['/auth/email-sent'], { queryParams: { email: this.email.value } });
+      },
+      error: (err) => {
+        this.isLoading.set(false);
         this.error.set(err.message);
       }
     });

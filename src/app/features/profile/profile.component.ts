@@ -1,19 +1,18 @@
 import { DatePipe } from '@angular/common';
 import { Component, effect, inject, signal } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { User } from '@supabase/supabase-js';
 import { from } from 'rxjs';
 import { concatMap } from 'rxjs/operators';
 import { AuthService } from '../../core/services/auth.service';
 import { AvatarService } from '../../core/services/avatar.service';
-import { PromptModalComponent } from '../../shared/components/prompt-modal.component';
 import { DevToolbarComponent } from '../../shared/components/dev-toolbar.component';
+import { PromptModalComponent } from '../../shared/components/prompt-modal.component';
 
 @Component({
-  selector: 'app-profile',
   standalone: true,
-  imports: [DatePipe,PromptModalComponent, DevToolbarComponent],
+  imports: [DatePipe,PromptModalComponent, DevToolbarComponent, RouterLink],
   template: `
     <div class="container mx-auto px-4 py-8">
       <div class="max-w-2xl mx-auto bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
@@ -70,7 +69,7 @@ import { DevToolbarComponent } from '../../shared/components/dev-toolbar.compone
             <div class="space-y-4">
               <div class="flex justify-end space-x-4">
                 <button class="flat-secondary" i18n="@@PROFILE_UPDATE_BUTTON">Update Profile</button>
-                <button class="flat-primary" i18n="@@PROFILE_CHANGE_PASSWORD_BUTTON">Change Password</button>
+                <a class="button flat-primary" routerLink="/auth/update-password" i18n="@@PROFILE_CHANGE_PASSWORD_BUTTON">Change Password</a>
               </div>
             </div>
           </div>

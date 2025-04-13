@@ -155,10 +155,31 @@ export class AuthService {
     );
   }
 
+  resetPassword(email: string): Observable<void> {
+    if (!email) {
+      return throwError(() => new Error($localize `:@@AUTH_SERVICE_NO_EMAIL:No email address provided`));
+    }
+    const emailRedirectTo: string = `${window.location.origin}${this.baseUrl}auth/update-password`;
+    return from(this.supabase.auth.resetPasswordForEmail(email, { redirectTo: emailRedirectTo })).pipe(
+      map(response => {
+        if (response.error) throw response.error;
+      })
+    );
+  }
+
   deleteAccount(): Observable<void> {
     return from(this.supabase.functions.invoke('delete-account')).pipe(
       map(response => {
         if (response.error) throw response.error;
+      })
+    );
+  }
+
+  updatePassword(newPassword: string): Observable<void> {
+    return from(this.supabase.auth.updateUser({ password: newPassword })).pipe(
+      map(({ error }) => {
+        if (error) throw error;
+        return void 0;
       })
     );
   }
