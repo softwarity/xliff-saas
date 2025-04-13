@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, Subject } from 'rxjs';
 
-export type ToastLevel = 'primary' | 'warning' | 'error';
+export type ToastLevel = 'primary' | 'secondary' | 'tertiary' | 'warning';
 
 export interface ToastAction {
   label: string;
@@ -16,9 +16,6 @@ export namespace ToastAction {
   export const YES = {label: $localize `:@@TOAST_ACTION_YES:Yes`, value: 'yes'};
   export const NO = {label: $localize `:@@TOAST_ACTION_NO:No`, value: 'no'};
   export const OK = {label: $localize `:@@TOAST_ACTION_OK:OK`, value: 'ok'};
-  export const ERROR = {label: $localize `:@@TOAST_ACTION_ERROR:Error`, value: 'error'};
-  export const SUCCESS = {label: $localize `:@@TOAST_ACTION_SUCCESS:Success`, value: 'success'};
-  export const WARNING = {label: $localize `:@@TOAST_ACTION_WARNING:Warning`, value: 'warning'};
 }
 
 export interface ToastConfig {
@@ -47,12 +44,20 @@ export class ToastService {
   private actionSubjects = new Map<number, Subject<string>>();
 
   toasts$ = this.toasts.asObservable();
+  showInfo(message: string): ToastRef {
+    return this.show({ level: 'secondary', message});
+  }
+  showError(message: string): ToastRef {
+    return this.show({ level: 'warning', message, actions: [ToastAction.CLOSE] });
+  }
 
   show(config: ToastConfig): ToastRef {
     const id = this.nextId++;
     const actionSubject = new Subject<string>();
     this.actionSubjects.set(id, actionSubject);
-
+    if (config.level === 'warning' && (!config.actions || config.actions.length === 0)) {
+      config.actions = [ToastAction.CLOSE];
+    }
     const toast: Toast = {
       id,
       message: config.message,
@@ -76,7 +81,7 @@ export class ToastService {
   dismiss(id: number, value?: string): void {
     const subject = this.actionSubjects.get(id);
     if (subject) {
-      subject.next(value || ToastAction.DISMISS.value);
+      subject.next(value || 'dismiss');
       subject.complete();
       this.actionSubjects.delete(id);
     }

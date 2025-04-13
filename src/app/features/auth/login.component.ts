@@ -3,6 +3,7 @@ import { FormBuilder, FormControl, ReactiveFormsModule, Validators } from '@angu
 import { Router, RouterLink } from '@angular/router';
 import { AuthService } from '../../core/services/auth.service';
 import { DevToolbarComponent } from '../../shared/components/dev-toolbar.component';
+import { ToastAction, ToastService } from '../../core/services/toast.service';
 
 @Component({
   standalone: true,
@@ -49,14 +50,9 @@ import { DevToolbarComponent } from '../../shared/components/dev-toolbar.compone
             <button type="button" (click)="resetPassword()" class="text-sm text-primary hover:text-primary-hover" i18n="@@AUTH_LOGIN_FORGOT_PASSWORD">Forgot password?</button>
           </div>
 
-          @if (error()) {
+          @if (isEmailNotConfirmed()) {
             <div class="text-sm text-red-500 mb-4">
-              <span>{{ error() }}</span>
-              @if (isEmailNotConfirmed()) {
-                <div class="mt-2">
-                  <button type="button" (click)="resendConfirmation()" [disabled]="isResending()" class="text-primary hover:underline" i18n="@@AUTH_LOGIN_RESEND_CONFIRMATION">Resend confirmation email</button>
-                </div>
-              }
+              <button type="button" (click)="resendConfirmation()" [disabled]="isResending()" class="text-primary hover:underline" i18n="@@AUTH_LOGIN_RESEND_CONFIRMATION">Resend confirmation email</button>
             </div>
           }
 
@@ -83,18 +79,17 @@ import { DevToolbarComponent } from '../../shared/components/dev-toolbar.compone
         </div>
       </div>
     </div>
-    <app-dev-toolbar (showError)="error.set($event)" />
+    <app-dev-toolbar (showError)="toastService.showError($event)" />
   `
 })
 export class LoginComponent {
   private fb = inject(FormBuilder);
   private authService = inject(AuthService);
+  public toastService = inject(ToastService);
   private router = inject(Router);
-  
 
   isLoading = signal(false);
   isResending = signal(false);
-  error = signal<string | null>(null);
   isEmailNotConfirmed = signal(false);
 
   loginForm = this.fb.group({
@@ -107,11 +102,8 @@ export class LoginComponent {
 
   onSubmit(): void {
     if (this.loginForm.invalid) return;
-
     this.isLoading.set(true);
-    this.error.set(null);
     this.isEmailNotConfirmed.set(false);
-
     this.authService.signInWithEmail(this.email.value, this.password.value).subscribe({
       next: () => {
         console.log('Sign in with email success');
@@ -126,14 +118,17 @@ export class LoginComponent {
           this.isEmailNotConfirmed.set(true);
           message = $localize `:@@AUTH_LOGIN_EMAIL_NOT_CONFIRMED:Your email has not been confirmed. Please check your inbox or request a new confirmation email.`;
         }
-        this.error.set(message);
+        this.toastService.showError(message);
       }
     });
   }
 
   resendConfirmation(): void {
-    if (!this.email.value) return;
-    
+    if (!this.email.value) {
+      this.toastService.showInfo($localize `:@@AUTH_LOGIN_EMAIL_REQUIRED:Email is required`);
+      return;
+    }
+    this.toastService.showInfo($localize `:@@AUTH_LOGIN_RESENDING_CONFIRMATION:Resending confirmation email...`);
     this.isResending.set(true);
     this.authService.resendConfirmationEmail(this.email.value).subscribe({
       next: () => {
@@ -142,33 +137,28 @@ export class LoginComponent {
       },
       error: (err) => {
         this.isResending.set(false);
-        this.error.set($localize `:@@AUTH_LOGIN_RESEND_ERROR:Error sending confirmation email: ${err.message}`);
+        this.toastService.showError($localize `:@@AUTH_LOGIN_RESEND_ERROR:Error sending confirmation email: ${err.message}`);
       }
     });
   }
 
   signInWithGoogle(): void {
     this.isLoading.set(true);
-    this.error.set(null);
-    
     this.authService.signInWithGoogle().subscribe({
       error: (err) => {
         this.isLoading.set(false);
         console.error('Login error:', err);
-        this.error.set(err.message);
+        this.toastService.showError(err.message);
       }
     });
   }
 
   resetPassword(): void {
     if (!this.email.value) {
-      this.error.set($localize `:@@AUTH_LOGIN_EMAIL_REQUIRED:Email is required`);
+      this.toastService.showInfo($localize `:@@AUTH_LOGIN_EMAIL_REQUIRED:Email is required`);
       return;
     }
-    
     this.isLoading.set(true);
-    this.error.set(null);
-    
     this.authService.resetPassword(this.email.value).subscribe({
       next: () => {
         this.isLoading.set(false);
@@ -176,7 +166,7 @@ export class LoginComponent {
       },
       error: (err) => {
         this.isLoading.set(false);
-        this.error.set(err.message);
+        this.toastService.showError(err.message);
       }
     });
   }
