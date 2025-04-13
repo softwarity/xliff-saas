@@ -278,13 +278,20 @@ button.stroke-warning {
   @apply border border-warning text-warning hover:bg-warning hover:text-white;
 }
 
-span.badge {
+.badge {
   @apply px-2 py-1 bg-gray-100 dark:bg-dark-600 text-gray-700 dark:text-gray-300 text-sm rounded;
 }
 
-span.badge.warning {
-  @apply bg-red-50 dark:bg-red-900/20 text-red-700 dark:text-red-300
+.badge.warning {
+  @apply bg-red-50 dark:bg-red-900/20 text-red-700 dark:text-red-300;
 }
+
+.badge.primary {
+  @apply bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300;
+}
+
+
+
 
 label[for] {
   @apply block text-sm font-medium text-gray-700 dark:text-gray-300;

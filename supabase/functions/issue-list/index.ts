@@ -50,8 +50,9 @@ import { Issue } from '../models/issue.ts';
   }
   const count = parseInt(response.headers.get('X-Total-Count') || '0');
   const issues = await response.json();
-  return {data: issues.map((issue: Issue) => {
-    const {id, number, title, body, state, created_at, updated_at, closed_at, labels, assignee, assignees, milestone, comments, user} = issue;
-    return {id, number, title, body, state, created_at, updated_at, closed_at, comments};
+  return {data: issues.map((issue: any) => {
+    const {id, number, title, body, state, created_at, updated_at, closed_at, comments, type: {name: type}} = issue;
+    console.log(issue);
+    return {id, number, title, body, state, created_at, updated_at, closed_at, comments, type};
   }), count};
 }

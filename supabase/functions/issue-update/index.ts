@@ -20,7 +20,7 @@ import { SupabaseClient } from "jsr:@supabase/supabase-js";
         const user = await userService.getUser(req);
         const userId = user.id;
          const token = Deno.env.get('GITHUB_TOKEN');
-         const issue: Issue = await createIssue(token!, userId, title, body);
+         const issue: Issue = await updateIssue(token!, userId, title, body);
          return new Response(JSON.stringify(issue), {
              headers: { 
                  ...CORS_HEADERS,
@@ -38,21 +38,21 @@ import { SupabaseClient } from "jsr:@supabase/supabase-js";
      }
  });
   
- async function createIssue(token: string, userId: string, title: string, body: string): Promise<Issue> {
+ async function updateIssue(token: string, userId: string, title: string, body: string): Promise<Issue> {
   const headers = {
     'Accept': 'application/vnd.github.v3+json',
     'Authorization': `token ${token}`,
     'Content-Type': 'application/json'
   }
   const response = await fetch(`https://api.github.com/repos/softwarity/xliff-saas/issues`, { 
-    method: 'POST',
+    method: 'PATCH',
     headers,
     body: JSON.stringify({title, body, labels: [`user-${userId}`]})
   });
+  console.log(response);
   if (!response.ok) {
     throw new Error('Failed to create issue');
   }
   const issue: Issue = await response.json();
-  console.log(issue);
   return issue;
 }
