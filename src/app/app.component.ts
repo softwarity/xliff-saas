@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, RouterLink, RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './core/components/header/header.component';
+import { ToastComponent } from './shared/components/toast/toast.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, RouterLink, HeaderComponent],
+  imports: [RouterOutlet, RouterLink, HeaderComponent, ToastComponent],
   styles: [`
     a {
       @apply text-sm text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary;
@@ -29,6 +30,7 @@ import { HeaderComponent } from './core/components/header/header.component';
         </div>
       </div>
     </footer>
+    <app-toast />
   </div>
   `
 })
