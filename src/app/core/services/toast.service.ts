@@ -1,5 +1,8 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnDestroy } from '@angular/core';
 import { BehaviorSubject, Observable, Subject } from 'rxjs';
+import { Router, NavigationStart } from '@angular/router';
+import { takeUntil } from 'rxjs/operators';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 export type ToastLevel = 'primary' | 'secondary' | 'tertiary' | 'warning';
 
@@ -44,20 +47,69 @@ export class ToastService {
   private actionSubjects = new Map<number, Subject<string>>();
 
   toasts$ = this.toasts.asObservable();
-  showInfo(message: string): ToastRef {
-    return this.show({ level: 'secondary', message});
-  }
-  showError(message: string): ToastRef {
-    return this.show({ level: 'warning', message, actions: [ToastAction.CLOSE] });
+
+  constructor(private router: Router) {
+    this.router.events.pipe(takeUntilDestroyed()).subscribe(event => {
+      if (event instanceof NavigationStart) {
+        this.dismissAll();
+      }
+    });
   }
 
+  // Méthodes utilitaires pour les cas courants
+  success(message: string, duration: number = 5000): ToastRef {
+    return this.show({
+      message,
+      level: 'primary',
+      duration
+    });
+  }
+
+  warning(message: string, duration: number = 5000): ToastRef {
+    return this.show({
+      message,
+      level: 'warning',
+      duration
+    });
+  }
+
+  secondary(message: string, duration: number = 5000): ToastRef {
+    return this.show({
+      message,
+      level: 'secondary',
+      duration
+    });
+  }
+
+  tertiary(message: string, duration: number = 5000): ToastRef {
+    return this.show({
+      message,
+      level: 'tertiary',
+      duration
+    });
+  }
+
+  confirm(message: string): ToastRef {
+    return this.show({
+      message,
+      actions: [ToastAction.YES, ToastAction.NO]
+    });
+  }
+
+  error(message: string): ToastRef {
+    return this.show({
+      message,
+      level: 'warning',
+      actions: [ToastAction.CLOSE]
+    });
+  }
+
+  // Méthode principale
   show(config: ToastConfig): ToastRef {
     const id = this.nextId++;
     const actionSubject = new Subject<string>();
     this.actionSubjects.set(id, actionSubject);
-    if (config.level === 'warning' && (!config.actions || config.actions.length === 0)) {
-      config.actions = [ToastAction.CLOSE];
-    }
+
     const toast: Toast = {
       id,
       message: config.message,
@@ -81,7 +133,7 @@ export class ToastService {
   dismiss(id: number, value?: string): void {
     const subject = this.actionSubjects.get(id);
     if (subject) {
-      subject.next(value || 'dismiss');
+      subject.next(value || ToastAction.DISMISS.value);
       subject.complete();
       this.actionSubjects.delete(id);
     }

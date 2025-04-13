@@ -79,7 +79,7 @@ import { ToastAction, ToastService } from '../../core/services/toast.service';
         </div>
       </div>
     </div>
-    <app-dev-toolbar (showError)="toastService.showError($event)" />
+    <app-dev-toolbar (showError)="toastService.error($event)" />
   `
 })
 export class LoginComponent {
@@ -118,17 +118,17 @@ export class LoginComponent {
           this.isEmailNotConfirmed.set(true);
           message = $localize `:@@AUTH_LOGIN_EMAIL_NOT_CONFIRMED:Your email has not been confirmed. Please check your inbox or request a new confirmation email.`;
         }
-        this.toastService.showError(message);
+        this.toastService.secondary(message);
       }
     });
   }
 
   resendConfirmation(): void {
     if (!this.email.value) {
-      this.toastService.showInfo($localize `:@@AUTH_LOGIN_EMAIL_REQUIRED:Email is required`);
+      this.toastService.secondary($localize `:@@AUTH_LOGIN_EMAIL_REQUIRED:Email is required`);
       return;
     }
-    this.toastService.showInfo($localize `:@@AUTH_LOGIN_RESENDING_CONFIRMATION:Resending confirmation email...`);
+    this.toastService.secondary($localize `:@@AUTH_LOGIN_RESENDING_CONFIRMATION:Resending confirmation email...`);
     this.isResending.set(true);
     this.authService.resendConfirmationEmail(this.email.value).subscribe({
       next: () => {
@@ -137,7 +137,7 @@ export class LoginComponent {
       },
       error: (err) => {
         this.isResending.set(false);
-        this.toastService.showError($localize `:@@AUTH_LOGIN_RESEND_ERROR:Error sending confirmation email: ${err.message}`);
+        this.toastService.error($localize `:@@AUTH_LOGIN_RESEND_ERROR:Error sending confirmation email: ${err.message}`);
       }
     });
   }
@@ -148,14 +148,14 @@ export class LoginComponent {
       error: (err) => {
         this.isLoading.set(false);
         console.error('Login error:', err);
-        this.toastService.showError(err.message);
+        this.toastService.error(err.message);
       }
     });
   }
 
   resetPassword(): void {
     if (!this.email.value) {
-      this.toastService.showInfo($localize `:@@AUTH_LOGIN_EMAIL_REQUIRED:Email is required`);
+      this.toastService.secondary($localize `:@@AUTH_LOGIN_EMAIL_REQUIRED:Email is required`);
       return;
     }
     this.isLoading.set(true);
@@ -166,7 +166,7 @@ export class LoginComponent {
       },
       error: (err) => {
         this.isLoading.set(false);
-        this.toastService.showError(err.message);
+        this.toastService.error(err.message);
       }
     });
   }
