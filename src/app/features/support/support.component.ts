@@ -15,7 +15,7 @@ export class SupportComponent {
   private readonly supportService = inject(SupportService);
   private readonly route = inject(ActivatedRoute);
   private readonly fb = inject(FormBuilder);
-  private readonly pageSize = 2;
+  private readonly pageSize = 10;
   
   protected readonly issues = signal<Issue[]>([]);
   protected readonly currentPage = signal(1);
