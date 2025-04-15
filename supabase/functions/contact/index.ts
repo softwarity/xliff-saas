@@ -36,11 +36,9 @@ Deno.serve(async (req) => {
       await client.send({
         from: MAIL_USER,
         to: SUPPORT_EMAIL,
-        subject: `Contact Form: ${subject}`,
+        subject: `${email}`,
         content: `
-        From: ${email}
-        
-        ${message}
+        From: ${email}\n\nSubject: ${subject}\n\n${message}
         `,
       })
       
