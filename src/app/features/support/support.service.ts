@@ -1,5 +1,5 @@
 import { Injectable, inject } from '@angular/core';
-import { Observable, from, map, catchError, throwError } from 'rxjs';
+import { Observable, from, map } from 'rxjs';
 import { SupabaseClientService } from '../../core/services/supabase-client.service';
 import { ToastService } from '../../core/services/toast.service';
 
@@ -9,16 +9,17 @@ export class SupportService {
   private readonly toastService = inject(ToastService);
 
   /**
-   * Récupère la liste des issues
-   * @param params - Paramètres de filtrage
+   * Get the list of issues
    */
-  getIssues(page: number, perPage: number): Observable<{data: Issue[], count: number}> {
-    return from(this.supabaseClientService.functions.invoke<{data: Issue[], count: number}>(`issue?page=${page}&per_page=${perPage}`, { method: 'GET' })).pipe(
+  getIssues(page: number, perPage: number, filters: {search?: string, state?: string, type?: string}): Observable<{data: Issue[], pagination: {totalCount: number, totalPages: number, currentPage: number, hasNextPage: boolean, hasPreviousPage: boolean}}> {
+    const body = { page, perPage, filters };
+    return from(this.supabaseClientService.functions.invoke('issue', { method: 'PUT',body })).pipe(
       map(response => {
         if (response.error) {
           this.toastService.error($localize`:@@FAILED_TO_GET_ISSUES:Failed to get issues. Please try again later.`);
+          throw new Error('Failed to get issues');
         }
-        return response.data || {data: [], count: 0};
+        return response.data;
       })
     );
   }

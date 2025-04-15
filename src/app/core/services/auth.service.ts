@@ -22,9 +22,7 @@ export class AuthService {
   isAuthenticated$ = this.isAuthenticatedSubject.asObservable();
 
   constructor() {
-    console.log('AuthService: Initializing...');
     this.initializeUser();
-
     // Surveiller les événements d'authentification
     this.supabase.auth.onAuthStateChange((event, session) => {
       this.updateAuthState(session?.user || null);
@@ -121,7 +119,6 @@ export class AuthService {
       options: { redirectTo }
     })).pipe(
       map(response => {
-        console.log('OAuth response:', response);
         if (response.error) throw response.error;
         return void 0;
       }),
@@ -226,11 +223,7 @@ export class AuthService {
   }
 
   private initializeUser(): void {
-    console.log('Initializing user...');
     this.supabase.auth.getSession().then(({ data: { session } }) => {
-      console.log('Initial session:', JSON.stringify(session, null, 2));
-      console.log('Initial user:', session?.user);
-      console.log('Initial access token:', session?.access_token);
       this.updateAuthState(session?.user ?? null);
     }).catch(error => {
       console.error('Error getting initial session:', error);

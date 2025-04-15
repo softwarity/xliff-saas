@@ -16,31 +16,31 @@ class GithubError extends Error {
 }
  
  Deno.serve(async (req: Request) => {
-     if (req.method === 'OPTIONS') {
-         return new Response('ok', {headers: CORS_HEADERS});
-     }
-     try {
-        const supabaseClient: SupabaseClient = getSupabaseClient();
-        const userService = new UserService(supabaseClient);
-        const user = await userService.getUser(req);
-        const userId = user.id;
+    if (req.method === 'OPTIONS') {
+        return new Response('ok', {headers: CORS_HEADERS});
+    }
+    try {
+    const supabaseClient: SupabaseClient = getSupabaseClient();
+    const userService = new UserService(supabaseClient);
+    const user = await userService.getUser(req);
+    const userId = user.id;
 
-        const payload = await getPayload(req, userId);
-        return new Response(JSON.stringify(payload), {
+    const payload = await getPayload(req, userId);
+    return new Response(JSON.stringify(payload), {
+        headers: { 
+            ...CORS_HEADERS,
+            'Content-Type': 'application/json',
+        } ,status: 200
+        });
+    } catch(error: any) {
+        console.error(error);
+        return new Response(JSON.stringify({error: error.message}), {
             headers: { 
                 ...CORS_HEADERS,
                 'Content-Type': 'application/json',
-            } ,status: 200
-         });
-     } catch(error: any) {
-         console.error(error);
-         return new Response(JSON.stringify({error: error.message}), {
-             headers: { 
-                 ...CORS_HEADERS,
-                 'Content-Type': 'application/json',
-             } ,status: 401
-         });
-     }
+            } ,status: 401
+        });
+    }
  });
 
  async function getPayload(req: Request, userId: string): Promise<any> {
@@ -57,44 +57,42 @@ class GithubError extends Error {
         case 'GET':
             if (issueNumber) {
                 if (!subcommand) {
-                    return getIssue(token, issueNumber)
+                    return getIssue(token, issueNumber);
                 } else {
-                    return getComments(token, issueNumber)
+                    return getComments(token, issueNumber);
                 }
             } else {
-                const { searchParams } = url;
-                const page = searchParams.get('page') || '1';
-                const per_page = searchParams.get('per_page') || '10';
-                return getIssues(token, userId, page, per_page)
+                throw new Error('Bad Request');
             }
-        case 'POST':
+            case 'POST':
             if (!subcommand) {
                 const { title, body, type } = await req.json();
-                return createIssue(token, userId, title, body, type)
+                return createIssue(token, userId, title, body, type);
             } else {
                 const { text } = await req.json();
-                return addComment(token, userId, issueNumber, text)
+                return addComment(token, userId, issueNumber, text);
             }
-        case 'PUT':
+            case 'PUT':
             if (issueNumber) {
                 if (!subcommand) {
                     const { title, body, type, state } = await req.json();
-                    return updateIssue(token, issueNumber, {title, body, type, state})
+                    return updateIssue(token, issueNumber, {title, body, type, state});
                 } else {
                     const { text } = await req.json();
-                    return updateComment(token, userId, commentId, text)
+                    return updateComment(token, userId, commentId, text);
                 }
             } else {
-                throw new Error('Bad Request')
+                const { page, perPage, filters: {state, type, search }} = await req.json();
+                return searchIssues(token, userId, {state, type, search}, page, perPage);
             }
         case 'DELETE':
             if (subcommand === 'comment' && commentId) {
-                return deleteComment(token, commentId)
+                return deleteComment(token, commentId);
             } else {
-                throw new Error('Bad Request')
+                throw new Error('Bad Request');
             }
         default:
-            throw new Error('Method Not Allowed')
+            throw new Error('Method Not Allowed');
     }
  }
 
@@ -227,7 +225,57 @@ async function getIssue(token: string, issueNumber: string): Promise<Issue> {
     return issue;
 }
 
-async function getIssues(token: string, userId: string, page: string, per_page: string): Promise<{data: Issue[], count: number}> {
+async function searchIssues(token: string, userId: string, query: {state: string, type: string, search: string}, page: number, perPage: number) {
+    const headers = {
+      'Authorization': `token ${token}`,
+      'Accept': 'application/vnd.github.v3+json'
+    };
+    // Build the search query
+    const search = [];
+    if (query.search) {
+      search.push(`*${query.search}*`);
+    }
+    search.push(`repo:softwarity/xliff-saas`);
+    search.push(`type:issue`);
+    search.push(`label:user-${userId}`);
+    if (query.state) {
+      search.push(`state:${query.state}`);
+    }
+    if (query.type === 'Bug' || query.type === 'Feature') {
+      search.push(`type:${query.type.toLowerCase()}`);
+    }
+    const searchQuery = search.join('+');
+    // Launch the search
+    const url = `https://api.github.com/search/issues?q=${searchQuery}&per_page=${perPage}&page=${page}&advanced_search=true`;
+    const response = await fetch(url, { headers });
+    
+    if (!response.ok) {
+      throw new GithubError(response, `GitHub API error`);
+    }
+    
+    const data = await response.json();
+    
+    // Determine the pagination
+    const totalCount = data.total_count;
+    const totalPages = Math.ceil(totalCount / perPage);
+    const hasNextPage = page < totalPages;
+    const hasPreviousPage = page > 1;
+    return {
+      data: data.items.map((issue: any) => {
+        const {id, number, title, body, state, created_at, updated_at, closed_at, comments, type: {name: type}} = issue;
+        return {id, number, title, body, state, created_at, updated_at, closed_at, comments, type};
+      }),
+      pagination: {
+        totalCount,
+        totalPages,
+        currentPage: page,
+        hasNextPage,
+        hasPreviousPage
+      }
+    };
+  }
+
+async function getIssues(token: string, userId: string, page: string, per_page: string): Promise<{data: Issue[], hasNextPage: boolean, hasPreviousPage: boolean, currentPage: number}> {
     const headers = {
         'Accept': 'application/vnd.github.v3+json',
         'Authorization': `token ${token}`
@@ -239,12 +287,14 @@ async function getIssues(token: string, userId: string, page: string, per_page: 
     if (!response.ok) {
         throw new GithubError(response, 'Failed to list issues');
     }
-    const count = parseInt(response.headers.get('X-Total-Count') || '0');
+    const hasPreviousPage: boolean = parseInt(page) > 1;
+    const linkHeader: string = response.headers.get('Link') || '';
+    const hasNextPage: boolean = linkHeader.includes('rel="next"');
     const issues = await response.json();
     return {data: issues.map((issue: any) => {
         const {id, number, title, body, state, created_at, updated_at, closed_at, comments, type: {name: type}} = issue;
         return {id, number, title, body, state, created_at, updated_at, closed_at, comments, type};
-    }), count};
+    }), hasNextPage, hasPreviousPage, currentPage: parseInt(page)};
 }
   
  async function createIssue(token: string, userId: string, title: string, body: string, type: string): Promise<Issue> {
