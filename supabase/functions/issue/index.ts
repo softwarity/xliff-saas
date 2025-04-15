@@ -5,6 +5,8 @@ import { getSupabaseClient } from '../lib/supabase-client.ts';
 import { UserService } from '../lib/user-service.ts';
 import { Issue, Comment } from '../models/issue.ts';
 
+const SUPPORT_REPO = 'softwarity/xliff-support';
+
 class GithubError extends Error {
   constructor(response: Response, message: string) {
     super();
@@ -20,18 +22,18 @@ class GithubError extends Error {
         return new Response('ok', {headers: CORS_HEADERS});
     }
     try {
-    const supabaseClient: SupabaseClient = getSupabaseClient();
-    const userService = new UserService(supabaseClient);
-    const user = await userService.getUser(req);
-    const userId = user.id;
+        const supabaseClient: SupabaseClient = getSupabaseClient();
+        const userService = new UserService(supabaseClient);
+        const user = await userService.getUser(req);
+        const userId = user.id;
 
-    const payload = await getPayload(req, userId);
-    return new Response(JSON.stringify(payload), {
-        headers: { 
-            ...CORS_HEADERS,
-            'Content-Type': 'application/json',
-        } ,status: 200
-        });
+        const payload = await getPayload(req, userId);
+        return new Response(JSON.stringify(payload), {
+            headers: { 
+                ...CORS_HEADERS,
+                'Content-Type': 'application/json',
+            } ,status: 200
+            });
     } catch(error: any) {
         console.error(error);
         return new Response(JSON.stringify({error: error.message}), {
@@ -46,11 +48,7 @@ class GithubError extends Error {
  async function getPayload(req: Request, userId: string): Promise<any> {
     const url: URL = new URL(req.url)
     const method: string = req.method
-    console.log('pathname', url.pathname);
     const [, , issueNumber, subcommand, commentId] = url.pathname.split('/')
-    console.log('issueNumber', issueNumber);
-    console.log('subcommand', subcommand);
-    console.log('commentId', commentId);
     
     const token: string = Deno.env.get('GITHUB_TOKEN')!;
     switch (method) {
@@ -113,7 +111,7 @@ class GithubError extends Error {
       'Authorization': `token ${token}`
     }
     
-    const response = await fetch(`https://api.github.com/repos/softwarity/xliff-saas/issues/comments/${commentId}`, { 
+    const response = await fetch(`https://api.github.com/repos/${SUPPORT_REPO}/issues/comments/${commentId}`, { 
       method: 'DELETE',
       headers
     });
@@ -132,7 +130,7 @@ class GithubError extends Error {
       'Content-Type': 'application/json'
     }
     const body = `<!-- user_id: ${userId} -->\n${text}`;
-    const response = await fetch(`https://api.github.com/repos/softwarity/xliff-saas/issues/comments/${commentId}`, { 
+    const response = await fetch(`https://api.github.com/repos/${SUPPORT_REPO}/issues/comments/${commentId}`, { 
       method: 'PATCH',
       headers,
       body: JSON.stringify({ body })
@@ -157,7 +155,7 @@ class GithubError extends Error {
       'Content-Type': 'application/json'
     }
     const body = `<!-- user_id: ${userId} -->\n${text}`;
-    const response = await fetch(`https://api.github.com/repos/softwarity/xliff-saas/issues/${issueNumber}/comments`, { 
+    const response = await fetch(`https://api.github.com/repos/${SUPPORT_REPO}/issues/${issueNumber}/comments`, { 
       method: 'POST',
       headers,
       body: JSON.stringify({ body })
@@ -182,7 +180,7 @@ class GithubError extends Error {
       'Content-Type': 'application/json'
     }
     
-    const response = await fetch(`https://api.github.com/repos/softwarity/xliff-saas/issues/${issueNumber}/comments`, { 
+    const response = await fetch(`https://api.github.com/repos/${SUPPORT_REPO}/issues/${issueNumber}/comments`, { 
       method: 'GET',
       headers
     });
@@ -208,7 +206,7 @@ class GithubError extends Error {
         'Accept': 'application/vnd.github.v3+json',
         'Authorization': `token ${token}`
     }
-    const response = await fetch(`https://api.github.com/repos/softwarity/xliff-saas/issues/${issueNumber}`, {
+    const response = await fetch(`https://api.github.com/repos/${SUPPORT_REPO}/issues/${issueNumber}`, {
         method: 'PATCH',
         headers,
         body: JSON.stringify({state})
@@ -225,7 +223,7 @@ async function updateIssue(token: string, issueNumber: string, {title, body, typ
         'Accept': 'application/vnd.github.v3+json',
         'Authorization': `token ${token}`
     }
-    const response = await fetch(`https://api.github.com/repos/softwarity/xliff-saas/issues/${issueNumber}`, {
+    const response = await fetch(`https://api.github.com/repos/${SUPPORT_REPO}/issues/${issueNumber}`, {
         method: 'PATCH',
         headers,
         body: JSON.stringify({title, body, type, state})
@@ -242,7 +240,7 @@ async function getIssue(token: string, issueNumber: string): Promise<Issue> {
         'Accept': 'application/vnd.github.v3+json',
         'Authorization': `token ${token}`
     }
-    const response = await fetch(`https://api.github.com/repos/softwarity/xliff-saas/issues/${issueNumber}`, {
+    const response = await fetch(`https://api.github.com/repos/${SUPPORT_REPO}/issues/${issueNumber}`, {
         method: 'GET',
         headers
     });
@@ -263,7 +261,7 @@ async function searchIssues(token: string, userId: string, query: {state: string
     if (query.search) {
       search.push(`*${query.search}*`);
     }
-    search.push(`repo:softwarity/xliff-saas`);
+    search.push(`repo:${SUPPORT_REPO}`);
     search.push(`type:issue`);
     search.push(`label:user-${userId}`);
     if (query.state) {
@@ -309,7 +307,7 @@ async function createIssue(token: string, userId: string, title: string, body: s
         'Authorization': `token ${token}`,
         'Content-Type': 'application/json'
     }
-    const response = await fetch(`https://api.github.com/repos/softwarity/xliff-saas/issues`, { 
+    const response = await fetch(`https://api.github.com/repos/${SUPPORT_REPO}/issues`, { 
         method: 'POST',
         headers,
         body: JSON.stringify({title, body, labels: [`user-${userId}`], type})
