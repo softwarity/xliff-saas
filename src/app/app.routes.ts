@@ -79,6 +79,10 @@ export const routes: Routes = [
     loadComponent: () => import('./pages/privacy.component').then(m => m.PrivacyComponent)
   },
   {
+    path: 'contact',
+    loadComponent: () => import('./features/support/contact.component').then(c => c.ContactComponent)
+  },
+  {
     path: 'support/:id',
     loadComponent: () => import('./features/support/issue-detail.component').then(c => c.IssueDetailComponent),
     canActivate: [authGuard],

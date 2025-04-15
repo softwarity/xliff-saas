@@ -25,7 +25,7 @@ import { ToastComponent } from './shared/components/toast/toast.component';
           <a routerLink="/terms" i18n="@@FOOTER_TERMS">Terms of Service</a>
           <a routerLink="/privacy" i18n="@@FOOTER_PRIVACY">Privacy Policy</a>
           <a routerLink="/documentation" i18n="@@FOOTER_DOCS">Docs</a>
-          <a href="#" i18n="@@FOOTER_CONTACT">Contact</a>
+          <a routerLink="/contact" i18n="@@FOOTER_CONTACT">Contact</a>
           <a href="#" i18n="@@FOOTER_COOKIES">Manage cookies</a>
         </div>
       </div>

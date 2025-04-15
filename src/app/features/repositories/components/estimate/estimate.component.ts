@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, effect, inject, input, OnDestroy, signal } from '@angular/core';
-import { Observer, Subscription, switchMap, tap } from 'rxjs';
+import { Observable, Observer, of, Subscription, switchMap, tap } from 'rxjs';
 import { JobService } from '../../../../core/services/job.service';
 import { Job } from '../../../../shared/models/job.model';
 import { Repository } from '../../../../shared/models/repository.model';
@@ -38,7 +38,7 @@ import { CancelConfirmComponent } from '../../../../shared/components/cancel-con
       <span class="text-sm text-red-500 dark:text-red-400" i18n="@@NO_ESTIMATION_AVAILABLE">No estimation available...</span>
     }
     @if(estimation()?.status === 'pending' || estimation()?.status === 'estimating') {
-      <app-cancel-confirm (confirm)="onCancel()" />
+      <app-cancel-confirm [confirmCallback]="onCancel.bind(this)" />
     } @else {
       <button (click)="isModalOpen.set(true)" class="flat-primary" i18n="@@ESTIMATE">Estimate</button>
     }
@@ -97,10 +97,20 @@ export class EstimateComponent implements OnDestroy {
     }
   };
 
-  onCancel() {
+  // onCancel() {
+  //   const id = this.estimation()?.id;
+  //   if (!!id) {
+  //     this.jobService.cancelJob(id).subscribe();
+  //   }
+  // }
+
+  onCancel(): Observable<void> {
     const id = this.estimation()?.id;
-    if (!!id) {
-      this.jobService.cancelJob(id).subscribe();
+    console.log('on confirm Cancel');
+    if (!!id) { 
+      this.estimation.update((job: Job | null | undefined) => job ? ({ ...job, status: 'cancelling' }) : null);
+      return this.jobService.cancelJob(id);
     }
+    return of(void 0);
   }
 }

@@ -1,5 +1,6 @@
 import { animate, style, transition, trigger } from '@angular/animations';
-import { Component, ElementRef, OnInit, output, signal } from '@angular/core';
+import { Component, ElementRef, input, OnInit, signal } from '@angular/core';
+import { Observable, of } from 'rxjs';
 
 @Component({
   selector: 'app-cancel-confirm',
@@ -7,9 +8,10 @@ import { Component, ElementRef, OnInit, output, signal } from '@angular/core';
   imports: [],
   template: `
     <div class="relative text-sm font-medium">
-      <button (click)="onClick()" 
+      <button type="button" (click)="onClick()" 
               class="w-full rounded-md relative overflow-hidden border border-warning rounded-md py-2 px-0 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed transition-colors h-[36px]" 
-              [class]="isConfirming() ? 'btn-confirm' : 'btn-cancel'">
+              [class]="isConfirming() ? 'btn-confirm' : 'btn-cancel'"
+              [disabled]="disabled()">
         @if (isConfirming()) {
           <div class="absolute inset-0 bg-warning" [@emptyEffect]="'emptying'"></div>
           <span class="relative">
@@ -52,11 +54,12 @@ import { Component, ElementRef, OnInit, output, signal } from '@angular/core';
     `]
 })
 export class CancelConfirmComponent implements OnInit {
-  confirm = output<void>();
+  confirmCallback = input<() => Observable<void>>(() => of(void 0));
   t?: NodeJS.Timeout;
   isConfirming = signal(false);
   minWidth = signal(0);
   confirmText = signal('');
+  disabled = signal(false);
 
   constructor(private el: ElementRef) {
   }
@@ -95,7 +98,18 @@ export class CancelConfirmComponent implements OnInit {
         this.isConfirming.set(false);
       }, 3000);
     } else {
-      this.confirm.emit();
+      console.log('onClick');
+      this.disabled.set(true);
+      this.confirmCallback()().subscribe({
+        next: () => {
+          console.log('next');
+          this.disabled.set(false);
+        },
+        error: () => {
+          console.log('error');
+          this.disabled.set(false);
+        }
+      });
     }
   }
 } 

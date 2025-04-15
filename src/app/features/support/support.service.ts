@@ -1,5 +1,5 @@
 import { Injectable, inject } from '@angular/core';
-import { Observable, from, map } from 'rxjs';
+import { Observable, catchError, from, map, of } from 'rxjs';
 import { SupabaseClientService } from '../../core/services/supabase-client.service';
 import { ToastService } from '../../core/services/toast.service';
 
@@ -166,4 +166,29 @@ export class SupportService {
       })
     );
   }
+
+  sendContactForm(email: string, subject: string, message: string): Observable<boolean> {
+    const contactData = {
+      email,
+      subject,
+      message
+    };
+    
+    return from(this.supabaseClientService.functions.invoke('contact', {
+      method: 'POST',
+      body: contactData
+    })).pipe(
+      map(response => {
+        if (response.error) {
+          this.toastService.error($localize`:@@FAILED_TO_SEND_CONTACT:Failed to send message. Please try again later.`);
+          return false;
+        }
+        return true;
+      }),
+      catchError(() => {
+        this.toastService.error($localize`:@@FAILED_TO_SEND_CONTACT:Failed to send message. Please try again later.`);
+        return of(false);
+      })
+    );
+  } 
 } 

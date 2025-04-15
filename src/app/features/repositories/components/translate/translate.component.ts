@@ -46,7 +46,7 @@ import { TranslateModalComponent } from './translate-modal/translate-modal.compo
       <button  class="flat-secondary" i18n="@@PURCHASE_CREDITS_BUTTON">Purchase credits</button>
     } @else {
       @if(translation()?.status === 'pending' || translation()?.status === 'estimating' || translation()?.status === 'translating') {
-        <app-cancel-confirm [confirmCallback]="onCancel" />
+        <app-cancel-confirm [confirmCallback]="onCancel.bind(this)" />
       } @else {
         <button (click)="isModalOpen.set(true)" class="flat-primary" i18n="@@TRANSLATE" [disabled]="disabled() || translation()?.status === 'cancelling'">Translate</button>
       }

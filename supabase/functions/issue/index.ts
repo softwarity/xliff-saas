@@ -25,9 +25,8 @@ class GithubError extends Error {
         const supabaseClient: SupabaseClient = getSupabaseClient();
         const userService = new UserService(supabaseClient);
         const user = await userService.getUser(req);
-        const userId = user.id;
 
-        const payload = await getPayload(req, userId);
+        const payload = await getPayload(req, user.email || user.id );
         return new Response(JSON.stringify(payload), {
             headers: { 
                 ...CORS_HEADERS,
@@ -45,7 +44,7 @@ class GithubError extends Error {
     }
  });
 
- async function getPayload(req: Request, userId: string): Promise<any> {
+ async function getPayload(req: Request, email: string): Promise<any> {
     const url: URL = new URL(req.url)
     const method: string = req.method
     const [, , issueNumber, subcommand, commentId] = url.pathname.split('/')
@@ -65,10 +64,10 @@ class GithubError extends Error {
             case 'POST':
             if (!subcommand) {
                 const { title, body, type } = await req.json();
-                return createIssue(token, userId, title, body, type);
+                return createIssue(token, email, title, body, type);
             } else {
                 const { comment } = await req.json();
-                return addComment(token, userId, issueNumber, comment);
+                return addComment(token, issueNumber, comment);
             }
             case 'PATCH':
                 if (issueNumber) {
@@ -88,11 +87,11 @@ class GithubError extends Error {
                     return updateIssue(token, issueNumber, {title, body, type, state});
                 } else {
                     const { text } = await req.json();
-                    return updateComment(token, userId, commentId, text);
+                    return updateComment(token, commentId, text);
                 }
             } else {
                 const { page, perPage, filters: {state, type, search }} = await req.json();
-                return searchIssues(token, userId, {state, type, search}, page, perPage);
+                return searchIssues(token, email, {state, type, search}, page, perPage);
             }
         case 'DELETE':
             if (subcommand === 'comment' && commentId) {
@@ -123,13 +122,13 @@ class GithubError extends Error {
     return true;
   }
 
- async function updateComment(token: string, userId: string, commentId: string, text: string): Promise<Comment> {
+ async function updateComment(token: string, commentId: string, text: string): Promise<Comment> {
     const headers = {
       'Accept': 'application/vnd.github.v3+json',
       'Authorization': `token ${token}`,
       'Content-Type': 'application/json'
     }
-    const body = `<!-- user_id: ${userId} -->\n${text}`;
+    const body = `<!-- You -->\n${text}`;
     const response = await fetch(`https://api.github.com/repos/${SUPPORT_REPO}/issues/comments/${commentId}`, { 
       method: 'PATCH',
       headers,
@@ -148,13 +147,13 @@ class GithubError extends Error {
     };
   }
 
- async function addComment(token: string, userId: string, issueNumber: string, text: string): Promise<Comment> {
+ async function addComment(token: string, issueNumber: string, text: string): Promise<Comment> {
     const headers = {
       'Accept': 'application/vnd.github.v3+json',
       'Authorization': `token ${token}`,
       'Content-Type': 'application/json'
     }
-    const body = `<!-- user_id: ${userId} -->\n${text}`;
+    const body = `<!-- You -->\n${text}`;
     const response = await fetch(`https://api.github.com/repos/${SUPPORT_REPO}/issues/${issueNumber}/comments`, { 
       method: 'POST',
       headers,
@@ -193,7 +192,7 @@ class GithubError extends Error {
     
     // Transformer les commentaires pour avoir un format cohérent
     return comments.map((comment: any) => {
-        const metadataRegex = /<!-- user_id: (.*?) -->/;
+        const metadataRegex = /<!-- You -->\n/;
         const match = comment.body.match(metadataRegex);
         const {id, body, created_at, updated_at} = comment;
         const text = match ? body.replace(metadataRegex, '') : body;
@@ -251,7 +250,7 @@ async function getIssue(token: string, issueNumber: string): Promise<Issue> {
     return { id, number, title, body, state, created_at, updated_at, closed_at, comments, type };
 }
 
-async function searchIssues(token: string, userId: string, query: {state: string, type: string, search: string}, page: number, perPage: number) {
+async function searchIssues(token: string, email: string, query: {state: string, type: string, search: string}, page: number, perPage: number) {
     const headers = {
       'Authorization': `token ${token}`,
       'Accept': 'application/vnd.github.v3+json'
@@ -263,7 +262,7 @@ async function searchIssues(token: string, userId: string, query: {state: string
     }
     search.push(`repo:${SUPPORT_REPO}`);
     search.push(`type:issue`);
-    search.push(`label:user-${userId}`);
+    search.push(`label:user-${email}`);
     if (query.state) {
       search.push(`state:${query.state}`);
     }
@@ -301,7 +300,7 @@ async function searchIssues(token: string, userId: string, query: {state: string
     };
   }
 
-async function createIssue(token: string, userId: string, title: string, body: string, type: string): Promise<Issue> {
+async function createIssue(token: string, email: string, title: string, body: string, type: string): Promise<Issue> {
     const headers = {
         'Accept': 'application/vnd.github.v3+json',
         'Authorization': `token ${token}`,
@@ -310,7 +309,7 @@ async function createIssue(token: string, userId: string, title: string, body: s
     const response = await fetch(`https://api.github.com/repos/${SUPPORT_REPO}/issues`, { 
         method: 'POST',
         headers,
-        body: JSON.stringify({title, body, labels: [`user-${userId}`], type})
+        body: JSON.stringify({title, body, labels: [`user-${email}`], type})
     });
     if (!response.ok) {
         throw new GithubError(response, 'Failed to create issue');
