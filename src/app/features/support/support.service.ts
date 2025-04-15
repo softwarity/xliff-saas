@@ -1,5 +1,5 @@
 import { Injectable, inject } from '@angular/core';
-import { Observable, from, map } from 'rxjs';
+import { Observable, from, map, catchError, throwError } from 'rxjs';
 import { SupabaseClientService } from '../../core/services/supabase-client.service';
 import { ToastService } from '../../core/services/toast.service';
 
@@ -13,7 +13,7 @@ export class SupportService {
    * @param params - Paramètres de filtrage
    */
   getIssues(page: number, perPage: number): Observable<{data: Issue[], count: number}> {
-    return from(this.supabaseClientService.functions.invoke<{data: Issue[], count: number}>(`issue-list?page=${page}&per_page=${perPage}`, { method: 'GET' })).pipe(
+    return from(this.supabaseClientService.functions.invoke<{data: Issue[], count: number}>(`issue?page=${page}&per_page=${perPage}`, { method: 'GET' })).pipe(
       map(response => {
         if (response.error) {
           this.toastService.error($localize`:@@FAILED_TO_GET_ISSUES:Failed to get issues. Please try again later.`);
@@ -28,7 +28,7 @@ export class SupportService {
    * @param issue - Issue data
    */
   createIssue(issue: CreateIssue): Observable<Issue | null> {
-    return from(this.supabaseClientService.functions.invoke<Issue>('issue-create', {method: 'POST', body: issue})).pipe(
+    return from(this.supabaseClientService.functions.invoke<Issue>('issue', {method: 'POST', body: issue})).pipe(
       map(response => {
         if (response.error) {
           this.toastService.error($localize`:@@FAILED_TO_CREATE_ISSUE:Failed to create issue. Please try again later.`);
@@ -44,7 +44,7 @@ export class SupportService {
    * @param issue - Issue data
    */
   updateIssue(id: number, issue: UpdateIssue): Observable<Issue | null> {
-    return from(this.supabaseClientService.functions.invoke<Issue>(`issue-update/${id}`, { method: 'PATCH', body: issue })).pipe(
+    return from(this.supabaseClientService.functions.invoke<Issue>(`issue/${id}`, { method: 'PUT', body: issue })).pipe(
       map(response => {
         if (response.error) {
           this.toastService.error($localize`:@@FAILED_TO_UPDATE_ISSUE:Failed to update issue. Please try again later.`);
@@ -64,34 +64,104 @@ export class SupportService {
   }
 
   /**
-   * Get a specific issue
-   * @param id - Issue ID
+   * Récupère une issue spécifique par son ID
    */
-  getIssue(id: number): Observable<Issue | null> {
+  getIssue(id: number): Observable<Issue> {
     return from(this.supabaseClientService.functions.invoke<Issue>(`issue/${id}`, { method: 'GET' })).pipe(
       map(response => {
         if (response.error) {
           this.toastService.error($localize`:@@FAILED_TO_GET_ISSUE:Failed to get issue. Please try again later.`);
+          throw new Error('Failed to fetch issue');
         }
+        return response.data as Issue;
+      })
+    );
+  }
+
+  /**
+   * Ajoute un commentaire à une issue
+   */
+  addComment(issueId: number, comment: string): Observable<any> {
+    return from(this.supabaseClientService.functions.invoke<any>(`issue/${issueId}/comment`, { 
+      method: 'POST', 
+      body: { body: comment } 
+    })).pipe(
+      map(response => {
+        if (response.error) {
+          this.toastService.error($localize`:@@FAILED_TO_ADD_COMMENT:Failed to add comment. Please try again later.`);
+          throw new Error('Failed to add comment');
+        }
+        this.toastService.success($localize`:@@COMMENT_ADDED_SUCCESSFULLY:Comment added successfully.`);
         return response.data;
       })
     );
   }
 
   /**
-   * Delete an issue
-   * @param number - Issue number (not ID)
+   * Récupère les commentaires d'une issue
    */
-  deleteIssue(number: number): Observable<boolean> {
-    return from(this.supabaseClientService.functions.invoke<{success: boolean}>(`issue-delete/${number}`, { method: 'DELETE' })).pipe(
+  getComments(issueId: number): Observable<any[]> {
+    return from(this.supabaseClientService.functions.invoke<any[]>(`issue/${issueId}/comment`, { method: 'GET' })).pipe(
+      map(response => {
+        if (response.error) {
+          this.toastService.error($localize`:@@FAILED_TO_GET_COMMENTS:Failed to get comments. Please try again later.`);
+          throw new Error('Failed to fetch comments');
+        }
+        return response.data as any[];
+      })
+    );
+  }
+
+  /**
+   * Ferme une issue
+   */
+  closeIssue(issueId: number): Observable<Issue> {
+    return from(this.supabaseClientService.functions.invoke<Issue>(`issue/${issueId}`, { 
+      method: 'PATCH', 
+      body: { state: 'closed' } 
+    })).pipe(
+      map(response => {
+        if (response.error) {
+          this.toastService.error($localize`:@@FAILED_TO_CLOSE_ISSUE:Failed to close issue. Please try again later.`);
+          throw new Error('Failed to close issue');
+        }
+        this.toastService.success($localize`:@@ISSUE_CLOSED_SUCCESSFULLY:Issue closed successfully.`);
+        return response.data as Issue;
+      })
+    );
+  }
+
+  /**
+   * Rouvre une issue
+   */
+  reopenIssue(issueId: number): Observable<Issue> {
+    return from(this.supabaseClientService.functions.invoke<Issue>(`issue/${issueId}`, { 
+      method: 'PATCH', 
+      body: { state: 'open' } 
+    })).pipe(
+      map(response => {
+        if (response.error) {
+          this.toastService.error($localize`:@@FAILED_TO_REOPEN_ISSUE:Failed to reopen issue. Please try again later.`);
+          throw new Error('Failed to reopen issue');
+        }
+        this.toastService.success($localize`:@@ISSUE_REOPENED_SUCCESSFULLY:Issue reopened successfully.`);
+        return response.data as Issue;
+      })
+    );
+  }
+
+  /**
+   * Supprime une issue (si elle est fermée)
+   */
+  deleteIssue(issueId: number): Observable<boolean> {
+    return from(this.supabaseClientService.functions.invoke<any>(`issue/${issueId}`, { method: 'DELETE' })).pipe(
       map(response => {
         if (response.error) {
           this.toastService.error($localize`:@@FAILED_TO_DELETE_ISSUE:Failed to delete issue. Please try again later.`);
           return false;
-        } else {
-          this.toastService.success($localize`:@@ISSUE_DELETED_SUCCESSFULLY:Issue deleted successfully.`);
-          return true;
         }
+        this.toastService.success($localize`:@@ISSUE_DELETED_SUCCESSFULLY:Issue deleted successfully.`);
+        return true;
       })
     );
   }

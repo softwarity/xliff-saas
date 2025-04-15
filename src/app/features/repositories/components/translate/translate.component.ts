@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, effect, inject, input, OnDestroy, signal } from '@angular/core';
-import { Observer, Subscription, switchMap, tap } from 'rxjs';
+import { Observable, Observer, of, Subscription, switchMap, tap } from 'rxjs';
 import { JobService } from '../../../../core/services/job.service';
 import { CancelConfirmComponent } from '../../../../shared/components/cancel-confirm.component';
 import { Job } from '../../../../shared/models/job.model';
@@ -46,9 +46,9 @@ import { TranslateModalComponent } from './translate-modal/translate-modal.compo
       <button  class="flat-secondary" i18n="@@PURCHASE_CREDITS_BUTTON">Purchase credits</button>
     } @else {
       @if(translation()?.status === 'pending' || translation()?.status === 'estimating' || translation()?.status === 'translating') {
-        <app-cancel-confirm (confirm)="onCancel()" />
+        <app-cancel-confirm [confirmCallback]="onCancel" />
       } @else {
-        <button (click)="isModalOpen.set(true)" class="flat-primary" i18n="@@TRANSLATE" [disabled]="translation()?.status === 'cancelling'">Translate</button>
+        <button (click)="isModalOpen.set(true)" class="flat-primary" i18n="@@TRANSLATE" [disabled]="disabled() || translation()?.status === 'cancelling'">Translate</button>
       }
     }
   </div>
@@ -66,6 +66,7 @@ export class TranslateComponent implements OnDestroy {
   translation = signal<Job | null | undefined>(null);
   private jobService = inject(JobService);
   private subscription?: Subscription;
+  disabled = signal(false);
 
   constructor() {
     effect(() => {
@@ -80,6 +81,7 @@ export class TranslateComponent implements OnDestroy {
 
   onCloseModal($event: {branch: string, ext: string, transUnitState: string, procedeedTransUnitState: string} | null ) {
     this.isModalOpen.set(false);
+    this.disabled.set(true);
     if (!$event) {
       return;
     }
@@ -94,6 +96,7 @@ export class TranslateComponent implements OnDestroy {
 
   observerJobChanges: Partial<Observer<Job | null>> = {
     next: (job: Job | null) => {
+      this.disabled.set(false);
       if(!job) {
         this.translation.set(null);
       } else {
@@ -101,16 +104,19 @@ export class TranslateComponent implements OnDestroy {
       }
     },
     error: (error) => {
+      this.disabled.set(false);
       this.translation.set(null);
       console.error('Error subscribing to job changes:', error);
     }
   };
 
-  onCancel() {
+  onCancel(): Observable<void> {
     const id = this.translation()?.id;
     console.log('on confirm Cancel');
-    if (!!id) {
-      this.jobService.cancelJob(id).subscribe();
+    if (!!id) { 
+      this.translation.update((job: Job | null | undefined) => job ? ({ ...job, status: 'cancelling' }) : null);
+      return this.jobService.cancelJob(id);
     }
+    return of(void 0);
   }
 }

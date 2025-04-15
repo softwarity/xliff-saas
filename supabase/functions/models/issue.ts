@@ -20,9 +20,6 @@ export interface Issue  {
   user: any;
 }
 
-export interface AddLabels {
-  labels: string[];
-}
 
 export interface ListIssuesParams {
   milestone?: string;
@@ -55,4 +52,12 @@ export interface UpdateIssue {
   milestone?: number | null;
   labels?: string[];
   assignees?: string[];
+}
+
+export interface Comment {
+  id: number;
+  body: string;
+  created_at: string;
+  updated_at: string;
+  support: boolean;
 }

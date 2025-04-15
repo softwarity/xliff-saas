@@ -79,6 +79,12 @@ export const routes: Routes = [
     loadComponent: () => import('./pages/privacy.component').then(m => m.PrivacyComponent)
   },
   {
+    path: 'support/:id',
+    loadComponent: () => import('./features/support/issue-detail.component').then(c => c.IssueDetailComponent),
+    canActivate: [authGuard],
+    data: { title: $localize`:@@ISSUE_DETAILS:Issue Details` }
+  },
+  {
     path: '**',
     loadComponent: () => import('./pages/not-found.component').then(m => m.NotFoundComponent)
   }
