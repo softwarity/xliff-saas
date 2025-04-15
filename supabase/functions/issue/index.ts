@@ -69,9 +69,20 @@ class GithubError extends Error {
                 const { title, body, type } = await req.json();
                 return createIssue(token, userId, title, body, type);
             } else {
-                const { text } = await req.json();
-                return addComment(token, userId, issueNumber, text);
+                const { comment } = await req.json();
+                return addComment(token, userId, issueNumber, comment);
             }
+            case 'PATCH':
+                if (issueNumber) {
+                    if (!subcommand) {
+                        const { state } = await req.json();
+                        return updateStateIssue(token, issueNumber, state);
+                    } else {
+                        throw new Error('Bad Request');
+                    }
+                } else {
+                    throw new Error('Bad Request');
+                }
             case 'PUT':
             if (issueNumber) {
                 if (!subcommand) {
@@ -114,7 +125,7 @@ class GithubError extends Error {
     return true;
   }
 
- async function updateComment(token: string, userId: string, commentId: string, text: string): Promise<any> {
+ async function updateComment(token: string, userId: string, commentId: string, text: string): Promise<Comment> {
     const headers = {
       'Accept': 'application/vnd.github.v3+json',
       'Authorization': `token ${token}`,
@@ -192,7 +203,24 @@ class GithubError extends Error {
     });
   }
 
- async function updateIssue(token: string, issueNumber: string, {title, body, type, state}: {title: string, body: string, type: string, state: string}): Promise<Issue> {
+ async function updateStateIssue(token: string, issueNumber: string, state: 'open' | 'closed'): Promise<Issue> {
+    const headers = {
+        'Accept': 'application/vnd.github.v3+json',
+        'Authorization': `token ${token}`
+    }
+    const response = await fetch(`https://api.github.com/repos/softwarity/xliff-saas/issues/${issueNumber}`, {
+        method: 'PATCH',
+        headers,
+        body: JSON.stringify({state})
+    });
+    if (!response.ok) {
+        throw new GithubError(response, 'Failed to update issue');
+    }
+    const issue = await response.json();
+    return issue;
+}
+
+async function updateIssue(token: string, issueNumber: string, {title, body, type, state}: {title: string, body: string, type: string, state: string}): Promise<Issue> {
     const headers = {
         'Accept': 'application/vnd.github.v3+json',
         'Authorization': `token ${token}`
@@ -221,8 +249,8 @@ async function getIssue(token: string, issueNumber: string): Promise<Issue> {
     if (!response.ok) {
         throw new GithubError(response, 'Failed to get issue');
     }
-    const issue = await response.json();
-    return issue;
+    const {id, number, title, body, state, created_at, updated_at, closed_at, comments, type: {name: type}} = await response.json();
+    return { id, number, title, body, state, created_at, updated_at, closed_at, comments, type };
 }
 
 async function searchIssues(token: string, userId: string, query: {state: string, type: string, search: string}, page: number, perPage: number) {
@@ -275,29 +303,7 @@ async function searchIssues(token: string, userId: string, query: {state: string
     };
   }
 
-async function getIssues(token: string, userId: string, page: string, per_page: string): Promise<{data: Issue[], hasNextPage: boolean, hasPreviousPage: boolean, currentPage: number}> {
-    const headers = {
-        'Accept': 'application/vnd.github.v3+json',
-        'Authorization': `token ${token}`
-    }
-    const response = await fetch(`https://api.github.com/repos/softwarity/xliff-saas/issues?labels=user-${userId}&state=all&page=${page}&per_page=${per_page}`, {
-        method: 'GET',
-        headers
-    });
-    if (!response.ok) {
-        throw new GithubError(response, 'Failed to list issues');
-    }
-    const hasPreviousPage: boolean = parseInt(page) > 1;
-    const linkHeader: string = response.headers.get('Link') || '';
-    const hasNextPage: boolean = linkHeader.includes('rel="next"');
-    const issues = await response.json();
-    return {data: issues.map((issue: any) => {
-        const {id, number, title, body, state, created_at, updated_at, closed_at, comments, type: {name: type}} = issue;
-        return {id, number, title, body, state, created_at, updated_at, closed_at, comments, type};
-    }), hasNextPage, hasPreviousPage, currentPage: parseInt(page)};
-}
-  
- async function createIssue(token: string, userId: string, title: string, body: string, type: string): Promise<Issue> {
+async function createIssue(token: string, userId: string, title: string, body: string, type: string): Promise<Issue> {
     const headers = {
         'Accept': 'application/vnd.github.v3+json',
         'Authorization': `token ${token}`,

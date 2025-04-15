@@ -1,3 +1,0 @@
-interface AddLabels {
-  labels: string[];
-}

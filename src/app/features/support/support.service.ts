@@ -85,7 +85,7 @@ export class SupportService {
   addComment(issueId: number, comment: string): Observable<any> {
     return from(this.supabaseClientService.functions.invoke<any>(`issue/${issueId}/comment`, { 
       method: 'POST', 
-      body: { body: comment } 
+      body: { comment } 
     })).pipe(
       map(response => {
         if (response.error) {
