@@ -73,7 +73,7 @@ export abstract class RepositoriesComponent implements OnInit, OnDestroy {
       }
     } catch (err) {
       console.error('Error loading repositories:', err);
-      this.error.set($localize`:@@FAILED_TO_LOAD_REPOSITORIES:Failed to load repositories. Please check your token permissions and try again.`);
+      this.error.set($localize`:@@FAILED_TO_LOAD_REPOSITORIES_TRY_AGAIN:Failed to load repositories. Please check your token permissions and try again.`);
     } finally {
       this.loading.set(false);
     }

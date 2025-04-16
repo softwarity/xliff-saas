@@ -47,7 +47,7 @@ export class GitlabService {
         return this.http.get<GitlabRepository[]>('https://gitlab.com/api/v4/projects?owned=true&per_page=100&order_by=updated_at', { headers }).pipe(
           map((repos: GitlabRepository[]) => this.transformGitlabRepos(repos)),
           catchError((error: Error) => {
-            this.toastService.error($localize`:@@FAILED_TO_LOAD_REPOSITORIES:Failed to load repositories. Please check your token permissions.`);
+            this.toastService.error($localize`:@@FAILED_TO_LOAD_REPOSITORIES_TRY_AGAIN:Failed to load repositories. Please check your token permissions and try again.`);
             return of([]);
           })
         )

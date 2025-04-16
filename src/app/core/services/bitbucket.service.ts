@@ -64,7 +64,7 @@ export class BitbucketService {
             return forkJoin(workspaceRequests).pipe(
               map((results: Repository[][]) => results.flat()),
               catchError((error: Error) => {
-                this.toastService.error($localize`:@@FAILED_TO_LOAD_REPOSITORIES:Failed to load repositories. Please check your token permissions.`);
+                this.toastService.error($localize`:@@FAILED_TO_LOAD_REPOSITORIES_TRY_AGAIN:Failed to load repositories. Please check your token permissions and try again.`);
                 return of([]);
               })
             );
