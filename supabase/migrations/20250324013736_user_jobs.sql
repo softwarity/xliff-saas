@@ -35,7 +35,7 @@ alter publication supabase_realtime add table user_jobs;
 
 -- 
 DROP VIEW IF EXISTS latest_user_jobs;
-CREATE VIEW latest_user_jobs AS
+CREATE VIEW latest_user_jobs WITH (security_invoker=true) AS
 SELECT *
 FROM (
     SELECT *, ROW_NUMBER() OVER (PARTITION BY request, provider, namespace, repository ORDER BY "createdAt" DESC) AS row_num
