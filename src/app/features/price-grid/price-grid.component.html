@@ -1,0 +1,195 @@
+<!-- Pricing Section -->
+<section class="py-20 bg-light-background dark:bg-dark-900">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center mb-12 text-light-text-primary dark:text-white" i18n="@@PRICING_TITLE">Simple Pricing</h2>
+    <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+      <!-- Bronze Plan (Free) -->
+      <div class="relative p-8 rounded-lg bg-light-surface dark:bg-dark-700 shadow-lg border border-light-border dark:border-dark-600 hover:shadow-xl transition-shadow">
+        <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-primary text-white px-4 py-1 rounded-full text-sm" i18n="@@FREE_PLAN_TITLE">Free</div>
+        <div class="flex items-center justify-center mb-4">
+          <img src="assets/membership/bronze.svg" alt="Bronze membership badge" class="h-12 w-12">
+        </div>
+        <h3 class="text-xl font-semibold mb-2 text-primary dark:text-blue-400" i18n="@@BRONZE_MEMBERSHIP_LEVEL">Bronze</h3>
+        <h4 class="text-sm mb-2 text-primary dark:text-blue-400" i18n="@@FREE_PLAN_DESCRIPTION">For trying the software</h4>
+        <p class="text-4xl font-bold mb-4 text-light-text-primary dark:text-white">
+          Just register<span class="text-lg text-light-text-secondary dark:text-gray-400"></span>
+        </p>
+        <ul class="space-y-3 mb-8 text-light-text-secondary dark:text-gray-300">
+          <li class="flex items-center">
+            <span i18n="@@FREE_PLAN_TRANSLATION_UNIT_PRICE">$0 per translation unit</span>
+          </li>
+          <li class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+            </svg>
+            <span i18n="@@FREE_PLAN_TRANSLATION_UNITS">100 translation units</span>
+          </li>
+          <li class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+            </svg>
+            <span i18n="@@FREE_PLAN_UNLIMITED_GIT_REPOSITORIES">Unlimited git repositories</span>
+          </li>
+        </ul>
+        <a routerLink="/auth/signup" class="button block flat-primary" i18n="@@REGISTER_NOW" [class.disabled]="isAuthenticated()">Register</a>
+      </div>
+
+      <!-- Silver Plan (Basic) -->
+      <div class="relative p-8 rounded-lg bg-light-surface dark:bg-dark-700 shadow-lg border border-light-border dark:border-dark-600 hover:shadow-xl transition-shadow">
+        <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-primary text-white px-4 py-1 rounded-full text-sm" i18n="@@BASIC_PLAN_TITLE">Basic</div>
+        <div class="flex items-center justify-center mb-4">
+          <img src="assets/membership/silver.svg" alt="Silver membership badge" class="h-12 w-12">
+        </div>
+        <h3 class="text-xl font-semibold mb-2 text-primary dark:text-blue-400" i18n="@@SILVER_MEMBERSHIP_LEVEL">Silver</h3>
+        <h4 class="text-sm mb-2 text-primary dark:text-blue-400" i18n="@@STARTER_PLAN_DESCRIPTION">For a complex application</h4>
+        <p class="text-4xl font-bold mb-4 text-light-text-primary dark:text-white">
+          $10<span class="text-lg text-light-text-secondary dark:text-gray-400"></span>
+        </p>
+        <ul class="space-y-3 mb-8 text-light-text-secondary dark:text-gray-300">
+          <li class="flex items-center">
+            <span i18n="@@STARTER_PLAN_TRANSLATION_UNIT_PRICE">$0,01 per translation unit</span>
+          </li>
+          <li class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+            </svg>
+            <span i18n="@@PROFESSIONAL_PLAN_PREVIOUS_PLAN">The previous plan +</span>
+          </li>
+          <li class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+            </svg>
+            <span i18n="@@STARTER_PLAN_TRANSLATION_UNITS">1,000 translation units</span>
+          </li>
+          <li class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+            </svg>
+            <span i18n="@@STARTER_PLAN_BASIC_SUPPORT">Basic support</span>
+          </li>
+        </ul>
+        <button class="flat-primary w-full px-6 py-3 rounded-lg" i18n="@@BUY_NOW">Buy now</button>
+      </div>
+
+      <!-- Gold Plan (Professional) -->
+      <div class="relative p-8 rounded-lg bg-light-surface dark:bg-dark-700 shadow-xl border-2 border-primary dark:border-blue-500 transform scale-105 hover:shadow-2xl transition-shadow">
+        <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-primary text-white px-4 py-1 rounded-full text-sm" i18n="@@MOST_POPULAR_PLAN_TITLE">Most Popular</div>
+        <div class="flex items-center justify-center mb-4">
+          <img src="assets/membership/gold.svg" alt="Gold membership badge" class="h-12 w-12">
+        </div>
+        <h3 class="text-xl font-semibold mb-2 text-primary dark:text-blue-400" i18n="@@GOLD_MEMBERSHIP_LEVEL">Gold</h3>
+        <h4 class="text-sm mb-2 text-primary dark:text-blue-400" i18n="@@PROFESSIONAL_PLAN_DESCRIPTION">For complex applications</h4>
+        <p class="text-4xl font-bold mb-4 text-light-text-primary dark:text-white">
+          $50<span class="text-lg text-light-text-secondary dark:text-gray-400"></span>
+        </p>
+        <ul class="space-y-3 mb-8 text-light-text-secondary dark:text-gray-300">
+          <li class="flex items-center">
+            <span i18n="@@PROFESSIONAL_PLAN_TRANSLATION_UNIT_PRICE">0,0055 € per translation unit</span>
+          </li>
+          <li class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+            </svg>
+            <span i18n="@@PROFESSIONAL_PLAN_PREVIOUS_PLAN">The previous plan +</span>
+          </li>
+          <li class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+            </svg>
+            <span i18n="@@PROFESSIONAL_PLAN_TRANSLATION_UNITS">8,000 translation units</span>
+          </li>
+          <li class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+            </svg>
+            <span i18n="@@PROFESSIONAL_PLAN_PRIORITY_SUPPORT">Priority support</span>
+          </li>
+        </ul>
+        <button class="flat-primary w-full px-6 py-3 rounded-lg" i18n="@@BUY_NOW">Buy now</button>
+      </div>
+
+      <!-- Diamond Plan (Enterprise) -->
+      <div class="relative p-8 rounded-lg bg-light-surface dark:bg-dark-700 shadow-lg border border-light-border dark:border-dark-600 hover:shadow-xl transition-shadow">
+        <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-primary text-white px-4 py-1 rounded-full text-sm" i18n="@@ENTERPRISE_PLAN_TITLE">Enterprise</div>
+        <div class="flex items-center justify-center mb-4">
+          <img src="assets/membership/diamond.svg" alt="Diamond membership badge" class="h-12 w-12">
+        </div>
+        <h3 class="text-xl font-semibold mb-2 text-primary dark:text-blue-400" i18n="@@DIAMOND_MEMBERSHIP_LEVEL">Diamond</h3>
+        <h4 class="text-sm mb-2 text-primary dark:text-blue-400" i18n="@@ENTERPRISE_PLAN_DESCRIPTION">For complex applications with different contexts</h4>
+        <p class="text-4xl font-bold mb-4 text-light-text-primary dark:text-white">
+          $100<span class="text-lg text-light-text-secondary dark:text-gray-400"></span>
+        </p>
+        <ul class="space-y-3 mb-8 text-light-text-secondary dark:text-gray-300">
+          <li class="flex items-center">
+            <span i18n="@@ENTERPRISE_PLAN_TRANSLATION_UNIT_PRICE">0,0035 € per translation unit</span>
+          </li>
+          <li class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+            </svg>
+            <span i18n="@@ENTERPRISE_PLAN_PREVIOUS_PLAN">The previous plan +</span>
+          </li>
+          <li class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+            </svg>
+            <span i18n="@@ENTERPRISE_PLAN_TRANSLATION_UNITS">20 000 translation units</span>
+          </li>
+          <li class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+            </svg>
+            <span i18n="@@ENTERPRISE_PLAN_CUSTOM_AI_INSTRUCTIONS">Custom AI instructions by repositories</span>
+          </li>
+        </ul>
+        <button class="flat-primary w-full px-6 py-3 rounded-lg" i18n="@@BUY_NOW">Buy now</button>
+      </div>
+
+      <!-- Custom Plan -->
+      <div class="relative p-8 rounded-lg bg-light-surface dark:bg-dark-700 shadow-lg border border-light-border dark:border-dark-600 hover:shadow-xl transition-shadow">
+        <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-primary text-white px-4 py-1 rounded-full text-sm" i18n="@@CUSTOM_PLAN_TITLE">Custom</div>
+        <div class="flex items-center justify-center mb-4">
+          <img src="assets/membership/diamond.svg" alt="Diamond membership badge" class="h-12 w-12 mx-1">
+          <img src="assets/membership/diamond.svg" alt="Diamond membership badge" class="h-12 w-12 mx-1">
+          <img src="assets/membership/diamond.svg" alt="Diamond membership badge" class="h-12 w-12 mx-1">
+        </div>
+        <h3 class="text-xl font-semibold mb-2 text-primary dark:text-blue-400" i18n="@@CUSTOM_PLAN_TITLE">Custom</h3>
+        <h4 class="text-sm mb-2 text-primary dark:text-blue-400" i18n="@@CUSTOM_PLAN_DESCRIPTION">Tailored to your infrastructure and requirements</h4>
+        <p class="text-4xl font-bold mb-4 text-light-text-primary dark:text-white" i18n="@@CUSTOM_PLAN_TITLE">Custom</p>
+        <ul class="space-y-3 mb-8 text-light-text-secondary dark:text-gray-300">
+          <li class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+            </svg>
+            <span i18n="@@CUSTOM_PLAN_ON_PREMISE_DEPLOYMENT">On-premise deployment</span>
+          </li>
+          <li class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+            </svg>
+            <span i18n="@@CUSTOM_PLAN_USE_YOUR_OWN_AI">Use your own AI</span>
+          </li>
+          <li class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+            </svg>
+            <span i18n="@@CUSTOM_PLAN_UNLIMITED_TRANSLATION_UNITS">Unlimited translation units</span>
+          </li>
+          <li class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+            </svg>
+            <span i18n="@@CUSTOM_PLAN_UNLOCK_ALL_FEATURES">Unlock all features</span>
+          </li>
+          <li class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+            </svg>
+            <span i18n="@@CUSTOM_PLAN_PRIORITY_SUPPORT">Priority support</span>
+          </li>
+        </ul>
+        <a routerLink="/contact" class="button block w-full flat-primary" i18n="@@CONTACT_US">Contact Us</a>
+      </div>
+    </div>
+  </div>
+</section> 
