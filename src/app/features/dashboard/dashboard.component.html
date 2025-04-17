@@ -11,12 +11,13 @@
       <div class="space-y-6">
         <div>
           <p class="text-gray-600 dark:text-gray-400" i18n="@@REMAINING_TRANSLATIONS_LABEL">Remaining Translations</p>
-          <p class="text-2xl font-bold text-gray-900 dark:text-white">1,000</p>
+          <p class="text-2xl font-bold text-gray-900 dark:text-white">{{ credits() || 0 }}</p>
         </div>
         <div>
           <p class="text-gray-600 dark:text-gray-400" i18n="@@TRANSLATIONS_THIS_MONTH_LABEL">Translations This Month</p>
-          <p class="text-2xl font-bold text-gray-900 dark:text-white">250</p>
+          <p class="text-2xl font-bold text-gray-900 dark:text-white">{{ translationsThisMonth() }}</p>
         </div>
+        <a routerLink="/purchase" class="button flat-primary block w-full text-center" i18n="@@BUY_CREDITS">Buy Credits</a>
       </div>
     </div>
 
@@ -24,19 +25,55 @@
     <div class="bg-white dark:bg-dark-700 rounded-lg shadow-lg p-8 border border-gray-200 dark:border-gray-700">
       <h2 class="text-xl font-semibold mb-6 text-gray-900 dark:text-white" i18n="@@ACTIVE_PROCESSES_TITLE">Active Processes</h2>
       <div class="space-y-6">
-        <p class="text-gray-600 dark:text-gray-400" i18n="@@NO_ACTIVE_PROCESSES">No active translation processes</p>
+        @if (activeJobs().length > 0) {
+          @for (job of activeJobs(); track job.id) {
+            <div class="p-4 bg-light-background dark:bg-dark-600 rounded-md">
+              <div class="flex justify-between items-center">
+                <div>
+                  <p class="font-medium text-gray-900 dark:text-white">{{ job.repository }}</p>
+                  <p class="text-sm text-gray-600 dark:text-gray-400">
+                    {{ job.status }}
+                    @if (job.transUnitDone && job.transUnitFound) {
+                      ({{ job.transUnitDone }}/{{ job.transUnitFound }})
+                    }
+                  </p>
+                </div>
+                <div>
+                  <button (click)="cancelJob(job.id)" class="px-3 py-1 text-sm text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/20 rounded-md">
+                    <span i18n="@@CANCEL_BUTTON">Cancel</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          }
+        } @else {
+          <p class="text-gray-600 dark:text-gray-400" i18n="@@NO_ACTIVE_PROCESSES">No active translation processes</p>
+        }
       </div>
     </div>
 
     <!-- Subscription Info -->
     <div class="bg-white dark:bg-dark-700 rounded-lg shadow-lg p-8 border border-gray-200 dark:border-gray-700">
-      <h2 class="text-xl font-semibold mb-6 text-gray-900 dark:text-white" i18n="@@SUBSCRIPTION_TITLE">Subscription</h2>
+      <h2 class="text-xl font-semibold mb-6 text-gray-900 dark:text-white" i18n="@@SUBSCRIPTION_TITLE">Membership</h2>
       <div class="space-y-6">
-        <div>
-          <p class="text-gray-600 dark:text-gray-400" i18n="@@CURRENT_PLAN_LABEL">Current Plan</p>
-          <p class="text-2xl font-bold text-gray-900 dark:text-white" i18n="@@PROFESSIONAL_PLAN">Professional</p>
+        <div class="flex items-center gap-3">
+          <div class="flex-shrink-0">
+            @if (membershipLevel() === 'DIAMOND') {
+              <img src="assets/membership/diamond.svg" alt="Diamond membership badge" class="h-10 w-10">
+            } @else if (membershipLevel() === 'GOLD') {
+              <img src="assets/membership/gold.svg" alt="Gold membership badge" class="h-10 w-10">
+            } @else if (membershipLevel() === 'SILVER') {
+              <img src="assets/membership/silver.svg" alt="Silver membership badge" class="h-10 w-10">
+            } @else {
+              <img src="assets/membership/bronze.svg" alt="Bronze membership badge" class="h-10 w-10">
+            }
+          </div>
+          <div>
+            <p class="text-gray-600 dark:text-gray-400" i18n="@@CURRENT_LEVEL_LABEL">Current Level</p>
+            <p class="text-2xl font-bold text-gray-900 dark:text-white capitalize">{{ membershipLevel().toLowerCase() }}</p>
+          </div>
         </div>
-        <button class="flat-primary" i18n="@@MANAGE_SUBSCRIPTION">Manage Subscription</button>
+        <p class="text-sm text-gray-600 dark:text-gray-400" i18n="@@MEMBERSHIP_LEVEL_EXPLANATION">Your membership level is based on your total spending. Once you reach a level, you keep it permanently!</p>
       </div>
     </div>
   </div>

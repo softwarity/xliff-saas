@@ -49,10 +49,6 @@ import { AvatarService } from '../../services/avatar.service';
         <a routerLink="/support" class="w-full gap-2 px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-dark-600 inline-flex cursor-pointer">
           <span i18n="@@SUPPORT">Support</span>
         </a>
-        <!-- Lien temporaire pour le test Stripe -->
-        <a routerLink="/stripe-test" class="w-full gap-2 px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-dark-600 inline-flex cursor-pointer">
-          <span i18n="@@STRIPE_TEST">Stripe Test</span>
-        </a>
         <span class="flex border-b border-gray-200 dark:border-gray-600"></span>
         <button (click)="signOut()" class="w-full gap-2 px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-dark-600 inline-flex">
           <span i18n="@@PROFILE_MENU_LOGOUT">Logout</span>
