@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, computed, inject, signal } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AuthService } from '../../core/services/auth.service';
 import { JobService } from '../../core/services/job.service';
 import { Job } from '../../shared/models/job.model';
@@ -12,15 +11,7 @@ import { JobCardComponent } from './job-card.component';
   standalone: true,
   imports: [
     CommonModule,
-    ReactiveFormsModule,
     JobCardComponent
-  ],
-  styles: [
-    `
-    textarea {
-      min-height: 150px;
-    }
-    `
   ],
   templateUrl: './dashboard.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -28,7 +19,6 @@ import { JobCardComponent } from './job-card.component';
 export class DashboardComponent {
   private auth = inject(AuthService);
   private jobService = inject(JobService);
-  private fb = inject(FormBuilder);
   user = toSignal(this.auth.user$);
 
   jobs = signal<Job[]>([]);
@@ -36,15 +26,10 @@ export class DashboardComponent {
   currentPage = signal<number>(1);
   totalPages = computed(() => Math.ceil(this.totalJobs() / this.pageSize));
   pageSize = 10;
-  instructionForm: FormGroup;
   protected Math = Math;
   isRefreshing = false;
 
   constructor() {
-    this.instructionForm = this.fb.group({
-      instructions: ['', Validators.required]
-    });
-
     this.loadJobs();
   }
 
@@ -66,11 +51,5 @@ export class DashboardComponent {
   onPageChange(page: number) {
     this.currentPage.set(page);
     this.loadJobs();
-  }
-
-  onSubmit() {
-    if (this.instructionForm.valid) {
-      console.log('AI Instructions:', this.instructionForm.value);
-    }
   }
 }

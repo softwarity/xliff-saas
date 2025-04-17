@@ -3,22 +3,6 @@
     Dashboard
   </h1>
 
-  <!-- AI Instructions Form -->
-  <div class="bg-white dark:bg-dark-700 rounded-lg shadow-lg p-8 border border-gray-200 dark:border-gray-700 mb-8">
-    <h2 class="text-2xl font-semibold mb-6 text-blue-600 dark:text-blue-400" i18n="@@AI_INSTRUCTIONS_TITLE">AI Instructions</h2>
-    <form [formGroup]="instructionForm" (ngSubmit)="onSubmit()" class="space-y-4">
-      <div>
-        <label for="instructions" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2" i18n="@@GLOBAL_AI_INSTRUCTIONS_LABEL">Global AI Instructions</label>
-        <textarea id="instructions" formControlName="instructions"
-          class="w-full border rounded-lg px-4 py-2 bg-white border-gray-300 dark:bg-dark-800 dark:border-gray-600 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary min-h-[150px]"
-          i18n-placeholder="@@AI_INSTRUCTIONS_PLACEHOLDER" placeholder="Enter your instructions for the AI..."></textarea>
-      </div>
-      <div class="flex justify-end">
-        <button type="submit"  [disabled]="!instructionForm.valid" class="flat-primary disabled:opacity-50 disabled:cursor-not-allowed" i18n="@@SAVE_INSTRUCTIONS">Save Instructions</button>
-      </div>
-    </form>
-  </div>
-
   <!-- Stats Grid -->
   <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
     <!-- Translation Stats -->
