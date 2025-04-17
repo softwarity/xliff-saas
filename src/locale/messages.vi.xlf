@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-  <file source-language="en" target-language="vi" datatype="plaintext" original="ng2.template">
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 https://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
+  <file source-language="en" datatype="plaintext" original="ng2.template" target-language="vi">
     <body>
       <trans-unit id="NAVIGATION_HOW_IT_WORKS" datatype="html">
         <source>How It Works</source>
@@ -164,7 +164,7 @@
       </trans-unit>
       <trans-unit id="SUBSCRIPTION_TITLE" datatype="html">
         <source>Membership</source>
-        <target state="new">Đăng ký</target>
+        <target state="translated">Membership</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/dashboard/dashboard.component.html</context>
           <context context-type="linenumber">57</context>
@@ -300,7 +300,7 @@
       </trans-unit>
       <trans-unit id="DOCUMENTATION_TITLE" datatype="html">
         <source>Documentation</source>
-        <target state="new">Hướng dẫn cài đặt i18n của Angular</target>
+        <target state="translated">Documentation</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/documentation.component.ts</context>
           <context context-type="linenumber">11</context>
@@ -315,7 +315,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="INITIAL_SETUP_DESCRIPTION" datatype="html">
-        <source>Start by adding Angular&apos;s localization package to your project:</source>
+        <source>Start by adding Angular's localization package to your project:</source>
         <target state="translated">Bắt đầu bằng cách thêm gói định vị Angular vào dự án của bạn:</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/setup.component.ts</context>
@@ -339,8 +339,8 @@
         </context-group>
       </trans-unit>
       <trans-unit id="INITIAL_SETUP_CHANGE_2" datatype="html">
-        <source>Add &quot;@angular/localize/init&quot; to the polyfills array in angular.json</source>
-        <target state="translated">Thêm &quot;@angular/localize/init&quot; vào mảng polyfills trong angular.json</target>
+        <source>Add "@angular/localize/init" to the polyfills array in angular.json</source>
+        <target state="translated">Thêm "@angular/localize/init" vào mảng polyfills trong angular.json</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/setup.component.ts</context>
           <context context-type="linenumber">19</context>
@@ -363,7 +363,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="INITIAL_SETUP_NOTE" datatype="html">
-        <source>Note: We&apos;ll modify the outputPath later in the configuration to match our workflow.</source>
+        <source>Note: We'll modify the outputPath later in the configuration to match our workflow.</source>
         <target state="translated">Lưu ý: Chúng tôi sẽ điều chỉnh outputPath sau trong cấu hình để phù hợp với quy trình làm việc của chúng tôi.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/setup.component.ts</context>
@@ -791,7 +791,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="CONTEXT_AWARE_AI_DESCRIPTION" datatype="html">
-        <source>Intelligent translations based on your application&apos;s context and business domain</source>
+        <source>Intelligent translations based on your application's context and business domain</source>
         <target state="translated">Dịch thuật thông minh dựa trên ngữ cảnh của ứng dụng và lĩnh vực kinh doanh của bạn</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/home.component.html</context>
@@ -1103,7 +1103,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="AUTOMATED_WORKFLOW_ABSTRACT" datatype="html">
-        <source>Simply connect your Git repository, start the translation, and we&apos;ll handle the rest. Our AI-powered platform takes care of everything automatically.</source>
+        <source>Simply connect your Git repository, start the translation, and we'll handle the rest. Our AI-powered platform takes care of everything automatically.</source>
         <target state="translated">Đơn giản chỉ cần kết nối kho mã Git của bạn, bắt đầu dịch và chúng tôi sẽ lo liệu phần còn lại. Nền tảng của chúng tôi được hỗ trợ bởi AI sẽ tự động xử lý mọi thứ.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/how-it-works/how-it-works.component.html</context>
@@ -1167,7 +1167,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="TRANSUNIT_SOURCE_DESCRIPTION" datatype="html">
-        <source>The original text in your application&apos;s source language</source>
+        <source>The original text in your application's source language</source>
         <target state="translated">Văn bản gốc trong ngôn ngữ nguồn của ứng dụng của bạn</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/how-it-works/how-it-works.component.html</context>
@@ -1231,7 +1231,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="SUPPORTED_FORMATS_DESCRIPTION" datatype="html">
-        <source>Our platform supports the following XLIFF formats for maximum compatibility with Angular&apos;s internationalization system:</source>
+        <source>Our platform supports the following XLIFF formats for maximum compatibility with Angular's internationalization system:</source>
         <target state="translated">Nền tảng của chúng tôi hỗ trợ các định dạng XLIFF sau đây để tối đa hóa khả năng tương thích với hệ thống quốc tế hóa của Angular:</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/how-it-works/how-it-works.component.html</context>
@@ -1247,7 +1247,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="CONTEXT_AWARE_DESCRIPTION" datatype="html">
-        <source>Our AI-powered translation engine understands your application&apos;s context, ensuring accurate and meaningful translations that maintain the original intent of your content.</source>
+        <source>Our AI-powered translation engine understands your application's context, ensuring accurate and meaningful translations that maintain the original intent of your content.</source>
         <target state="translated">Công nghệ dịch thuật được trang bị trí tuệ nhân tạo của chúng tôi hiểu ngữ cảnh của ứng dụng của bạn, đảm bảo các bản dịch chính xác và có ý nghĩa, mà vẫn giữ nguyên ý định gốc của nội dung bạn.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/how-it-works/how-it-works.component.html</context>
@@ -1684,7 +1684,7 @@
       </trans-unit>
       <trans-unit id="FAILED_TO_LOAD_REPOSITORIES_TRY_AGAIN" datatype="html">
         <source>Failed to load repositories. Please check your token permissions and try again.</source>
-        <target state="new">Không tải được kho lưu trữ. Vui lòng kiểm tra quyền truy cập của bạn và thử lại.</target>
+        <target state="translated">Failed to load repositories. Please check your token permissions and try again.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/services/bitbucket.service.ts</context>
           <context context-type="linenumber">67</context>
@@ -1759,7 +1759,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="OOPS_PAGE_NOT_FOUND" datatype="html">
-        <source>Oops! The page you&apos;re looking for seems to have vanished into the void...</source>
+        <source>Oops! The page you're looking for seems to have vanished into the void...</source>
         <target state="translated">Ôi không! Trang bạn đang tìm kiếm dường như đã biến mất vào khoảng không...</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/not-found.component.ts</context>
@@ -1776,7 +1776,7 @@
       </trans-unit>
       <trans-unit id="PROFILE_MEMBER_SINCE" datatype="html">
         <source>Member since <x id="INTERPOLATION" equiv-text="{{ user()?.created_at | date }}"/></source>
-        <target state="new">Thành viên từ <x id="INTERPOLATION" equiv-text="{{ (user$ | async)?.created_at | date }}"/></target>
+        <target state="translated">Member since <x id="INTERPOLATION" equiv-text="{{ user()?.created_at | date }}"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/profile/profile.component.ts</context>
           <context context-type="linenumber">73</context>
@@ -1987,7 +1987,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="AUTH_LOGIN_NO_ACCOUNT" datatype="html">
-        <source>Don&apos;t have an account?</source>
+        <source>Don't have an account?</source>
         <target state="translated">Bạn chưa có tài khoản?</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/login.component.ts</context>
@@ -2067,7 +2067,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="AUTH_SIGNUP_PASSWORDS_DONT_MATCH" datatype="html">
-        <source>Passwords don&apos;t match</source>
+        <source>Passwords don't match</source>
         <target state="translated">Mật khẩu không khớp</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/signup.component.ts</context>
@@ -2124,7 +2124,7 @@
       </trans-unit>
       <trans-unit id="FOOTER_TERMS" datatype="html">
         <source>Terms of Service</source>
-        <target state="new">Điều khoản</target>
+        <target state="translated">Terms of Service</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/app.component.ts</context>
           <context context-type="linenumber">25</context>
@@ -2132,7 +2132,7 @@
       </trans-unit>
       <trans-unit id="FOOTER_PRIVACY" datatype="html">
         <source>Privacy Policy</source>
-        <target state="new">Quyền riêng tư</target>
+        <target state="translated">Privacy Policy</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/app.component.ts</context>
           <context context-type="linenumber">26</context>
@@ -2260,7 +2260,7 @@
       </trans-unit>
       <trans-unit id="VERIFY_EMAIL_TITLE" datatype="html">
         <source>Email successfully verified!</source>
-        <target state="new">Email successfully verified!</target>
+        <target state="translated">Email successfully verified!</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/verify-email.component.ts</context>
           <context context-type="linenumber">14</context>
@@ -2299,7 +2299,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="EXTRACT_TOOL_DESCRIPTION" datatype="html">
-        <source>For managing translation files, we&apos;ll use ng-extract-i18n-merge which simplifies the process of extracting and merging translations:</source>
+        <source>For managing translation files, we'll use ng-extract-i18n-merge which simplifies the process of extracting and merging translations:</source>
         <target state="translated">Để quản lý các tệp dịch, chúng tôi sẽ sử dụng ng-extract-i18n-merge, công cụ này đơn giản hóa quá trình trích xuất và gộp các bản dịch:</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/setup.component.ts</context>
@@ -2371,40 +2371,40 @@
         </context-group>
       </trans-unit>
       <trans-unit id="EXTRACT_I18N_OPTION_1" datatype="html">
-        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>buildTarget<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: Your application&apos;s build target name</source>
-        <target state="translated"><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>tên mục tiêu xây dựng<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: Tên mục tiêu xây dựng của ứng dụng của bạn</target>
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>buildTarget<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: Your application's build target name</source>
+        <target state="translated"><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>tên mục tiêu xây dựng<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: Tên mục tiêu xây dựng của ứng dụng của bạn</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/setup.component.ts</context>
           <context context-type="linenumber">112</context>
         </context-group>
       </trans-unit>
       <trans-unit id="EXTRACT_I18N_OPTION_2" datatype="html">
-        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>outputPath<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: Directory where translation files will be stored</source>
-        <target state="translated"><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>đường dẫn xuất<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: Thư mục nơi các tệp bản dịch sẽ được lưu trữ</target>
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>outputPath<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: Directory where translation files will be stored</source>
+        <target state="translated"><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>đường dẫn xuất<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: Thư mục nơi các tệp bản dịch sẽ được lưu trữ</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/setup.component.ts</context>
           <context context-type="linenumber">113</context>
         </context-group>
       </trans-unit>
       <trans-unit id="EXTRACT_I18N_OPTION_3" datatype="html">
-        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>includeContext<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: Includes source file information in the XLIFF files</source>
-        <target state="translated"><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>bao gồm ngữ cảnh<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: Bao gồm thông tin tệp nguồn trong các tệp XLIFF</target>
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>includeContext<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: Includes source file information in the XLIFF files</source>
+        <target state="translated"><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>bao gồm ngữ cảnh<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: Bao gồm thông tin tệp nguồn trong các tệp XLIFF</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/setup.component.ts</context>
           <context context-type="linenumber">114</context>
         </context-group>
       </trans-unit>
       <trans-unit id="EXTRACT_I18N_OPTION_4" datatype="html">
-        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>resetTranslationState<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: Marks all translations as needing review on changes</source>
-        <target state="translated"><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Đặt lại trạng thái dịch<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: Đánh dấu tất cả các bản dịch cần được xem xét khi có thay đổi</target>
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>resetTranslationState<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: Marks all translations as needing review on changes</source>
+        <target state="translated"><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>Đặt lại trạng thái dịch<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: Đánh dấu tất cả các bản dịch cần được xem xét khi có thay đổi</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/setup.component.ts</context>
           <context context-type="linenumber">115</context>
         </context-group>
       </trans-unit>
       <trans-unit id="EXTRACT_I18N_OPTION_5" datatype="html">
-        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>targetFiles<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: List of translation files to generate/update</source>
-        <target state="translated"><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>tệp tin mục tiêu<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: Danh sách các tệp tin dịch để tạo/cập nhật</target>
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>targetFiles<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: List of translation files to generate/update</source>
+        <target state="translated"><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>tệp tin mục tiêu<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: Danh sách các tệp tin dịch để tạo/cập nhật</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/setup.component.ts</context>
           <context context-type="linenumber">116</context>
@@ -2443,24 +2443,24 @@
         </context-group>
       </trans-unit>
       <trans-unit id="CONNECT_STEP_1" datatype="html">
-        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Select a provider<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: Choose from GitHub, GitLab, or Bitbucket</source>
-        <target state="translated"><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Chọn một nhà cung cấp<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: Chọn từ GitHub, GitLab hoặc Bitbucket</target>
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>Select a provider<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: Choose from GitHub, GitLab, or Bitbucket</source>
+        <target state="translated"><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>Chọn một nhà cung cấp<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: Chọn từ GitHub, GitLab hoặc Bitbucket</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">60</context>
         </context-group>
       </trans-unit>
       <trans-unit id="CONNECT_STEP_2" datatype="html">
-        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Configure access<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: Create and provide the appropriate tokens</source>
-        <target state="translated"><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Cấu hình quyền truy cập<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: Tạo và cung cấp các mã thông báo phù hợp</target>
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>Configure access<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: Create and provide the appropriate tokens</source>
+        <target state="translated"><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>Cấu hình quyền truy cập<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: Tạo và cung cấp các mã thông báo phù hợp</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">61</context>
         </context-group>
       </trans-unit>
       <trans-unit id="CONNECT_STEP_3" datatype="html">
-        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Save your configuration<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: Enter your token and save the connection</source>
-        <target state="translated"><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Lưu cấu hình của bạn<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: Nhập mã thông báo của bạn và lưu kết nối</target>
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>Save your configuration<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: Enter your token and save the connection</source>
+        <target state="translated"><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>Lưu cấu hình của bạn<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: Nhập mã thông báo của bạn và lưu kết nối</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">62</context>
@@ -2499,7 +2499,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="REPOSITORY_STEP_1" datatype="html">
-        <source>Navigate to the provider&apos;s page where your repositories are listed</source>
+        <source>Navigate to the provider's page where your repositories are listed</source>
         <target state="translated">Đi tới trang của nhà cung cấp nơi danh sách các kho chứa của bạn được liệt kê</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
@@ -2524,7 +2524,7 @@
       </trans-unit>
       <trans-unit id="REVIEW_FINALIZE_TITLE" datatype="html">
         <source>Reviewing and Finalizing</source>
-        <target state="new">Reviewing and Finalizing</target>
+        <target state="translated">Reviewing and Finalizing</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">198</context>
@@ -2532,7 +2532,7 @@
       </trans-unit>
       <trans-unit id="REVIEW_PR_TITLE" datatype="html">
         <source>Pull Request Review</source>
-        <target state="new">Pull Request Review</target>
+        <target state="translated">Pull Request Review</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">201</context>
@@ -2540,7 +2540,7 @@
       </trans-unit>
       <trans-unit id="REVIEW_PR_DESCRIPTION" datatype="html">
         <source>After the translation process completes:</source>
-        <target state="new">After the translation process completes:</target>
+        <target state="translated">After the translation process completes:</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">202</context>
@@ -2548,7 +2548,7 @@
       </trans-unit>
       <trans-unit id="REVIEW_STEP_1" datatype="html">
         <source>Review the created pull request in your Git provider</source>
-        <target state="new">Review the created pull request in your Git provider</target>
+        <target state="translated">Review the created pull request in your Git provider</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">205</context>
@@ -2556,7 +2556,7 @@
       </trans-unit>
       <trans-unit id="REVIEW_STEP_2" datatype="html">
         <source>Check the translated content for accuracy</source>
-        <target state="new">Check the translated content for accuracy</target>
+        <target state="translated">Check the translated content for accuracy</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">206</context>
@@ -2564,7 +2564,7 @@
       </trans-unit>
       <trans-unit id="REVIEW_STEP_3" datatype="html">
         <source>Make any necessary adjustments directly in the XLIFF files</source>
-        <target state="new">Make any necessary adjustments directly in the XLIFF files</target>
+        <target state="translated">Make any necessary adjustments directly in the XLIFF files</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">207</context>
@@ -2572,7 +2572,7 @@
       </trans-unit>
       <trans-unit id="REVIEW_STEP_4" datatype="html">
         <source>Merge the pull request to update your main codebase with the translations</source>
-        <target state="new">Merge the pull request to update your main codebase with the translations</target>
+        <target state="translated">Merge the pull request to update your main codebase with the translations</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">208</context>
@@ -2580,7 +2580,7 @@
       </trans-unit>
       <trans-unit id="REVIEW_BENEFITS" datatype="html">
         <source>This workflow allows you to keep translations in your version control system and follow standard code review practices for translation updates.</source>
-        <target state="new">This workflow allows you to keep translations in your version control system and follow standard code review practices for translation updates.</target>
+        <target state="translated">This workflow allows you to keep translations in your version control system and follow standard code review practices for translation updates.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">211</context>
@@ -2588,7 +2588,7 @@
       </trans-unit>
       <trans-unit id="TIPS_TITLE" datatype="html">
         <source>Tips for Effective Translation</source>
-        <target state="new">Tips for Effective Translation</target>
+        <target state="translated">Tips for Effective Translation</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">217</context>
@@ -2596,7 +2596,7 @@
       </trans-unit>
       <trans-unit id="TIP_REGULAR" datatype="html">
         <source>Run translations regularly as you develop to avoid large batches of untranslated content</source>
-        <target state="new">Run translations regularly as you develop to avoid large batches of untranslated content</target>
+        <target state="translated">Run translations regularly as you develop to avoid large batches of untranslated content</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">220</context>
@@ -2604,7 +2604,7 @@
       </trans-unit>
       <trans-unit id="TIP_BRANCH" datatype="html">
         <source>Create a dedicated branch for translations to keep them separate from feature development</source>
-        <target state="new">Create a dedicated branch for translations to keep them separate from feature development</target>
+        <target state="translated">Create a dedicated branch for translations to keep them separate from feature development</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">221</context>
@@ -2612,7 +2612,7 @@
       </trans-unit>
       <trans-unit id="TIP_CONTEXT" datatype="html">
         <source>Ensure your source code has clear context for translation units to improve AI translation quality</source>
-        <target state="new">Ensure your source code has clear context for translation units to improve AI translation quality</target>
+        <target state="translated">Ensure your source code has clear context for translation units to improve AI translation quality</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">222</context>
@@ -2620,7 +2620,7 @@
       </trans-unit>
       <trans-unit id="TIP_REVIEW" datatype="html">
         <source>Always review AI-generated translations, especially for critical user-facing content</source>
-        <target state="new">Always review AI-generated translations, especially for critical user-facing content</target>
+        <target state="translated">Always review AI-generated translations, especially for critical user-facing content</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">223</context>
@@ -2628,7 +2628,7 @@
       </trans-unit>
       <trans-unit id="TIP_PATTERN" datatype="html">
         <source>Use specific file patterns to target translations for one language at a time</source>
-        <target state="new">Use specific file patterns to target translations for one language at a time</target>
+        <target state="translated">Use specific file patterns to target translations for one language at a time</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">224</context>
@@ -2636,7 +2636,7 @@
       </trans-unit>
       <trans-unit id="RESOURCES_TITLE" datatype="html">
         <source>Additional Resources</source>
-        <target state="new">Additional Resources</target>
+        <target state="translated">Additional Resources</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">230</context>
@@ -2644,7 +2644,7 @@
       </trans-unit>
       <trans-unit id="RESOURCE_ANGULAR_DOCS" datatype="html">
         <source>Angular i18n Documentation</source>
-        <target state="new">Angular i18n Documentation</target>
+        <target state="translated">Angular i18n Documentation</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">241</context>
@@ -2652,7 +2652,7 @@
       </trans-unit>
       <trans-unit id="RESOURCE_ANGULAR_DOCS_DESC" datatype="html">
         <source>Official Angular documentation for internationalization.</source>
-        <target state="new">Official Angular documentation for internationalization.</target>
+        <target state="translated">Official Angular documentation for internationalization.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">242</context>
@@ -2660,7 +2660,7 @@
       </trans-unit>
       <trans-unit id="RESOURCE_NG_EXTRACT_I18N_MERGE" datatype="html">
         <source>ng-extract-i18n-merge</source>
-        <target state="new">ng-extract-i18n-merge</target>
+        <target state="translated">ng-extract-i18n-merge</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">255</context>
@@ -2668,7 +2668,7 @@
       </trans-unit>
       <trans-unit id="RESOURCE_NG_EXTRACT_I18N_MERGE_DESC" datatype="html">
         <source>Official tool for extracting and merging i18n translations in a single step.</source>
-        <target state="new">Official tool for extracting and merging i18n translations in a single step.</target>
+        <target state="translated">Official tool for extracting and merging i18n translations in a single step.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">256</context>
@@ -2676,7 +2676,7 @@
       </trans-unit>
       <trans-unit id="RESOURCE_MARKED_TEXT" datatype="html">
         <source>Working with Marked Text</source>
-        <target state="new">Working with Marked Text</target>
+        <target state="translated">Working with Marked Text</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">269</context>
@@ -2684,7 +2684,7 @@
       </trans-unit>
       <trans-unit id="RESOURCE_MARKED_TEXT_DESC" datatype="html">
         <source>Learn about advanced i18n features like pluralization and selection.</source>
-        <target state="new">Learn about advanced i18n features like pluralization and selection.</target>
+        <target state="translated">Learn about advanced i18n features like pluralization and selection.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">270</context>
@@ -2692,7 +2692,7 @@
       </trans-unit>
       <trans-unit id="ESTIMATE_TITLE" datatype="html">
         <source>Estimation</source>
-        <target state="new">Estimation</target>
+        <target state="translated">Estimation</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">287</context>
@@ -2700,7 +2700,7 @@
       </trans-unit>
       <trans-unit id="ESTIMATE_DESCRIPTION" datatype="html">
         <source>Before running a translation, you can estimate the scope and complexity of the task:</source>
-        <target state="new">Before running a translation, you can estimate the scope and complexity of the task:</target>
+        <target state="translated">Before running a translation, you can estimate the scope and complexity of the task:</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">289</context>
@@ -2708,23 +2708,23 @@
       </trans-unit>
       <trans-unit id="ESTIMATE_STEP_1" datatype="html">
         <source>Select the repository you want to work with</source>
-        <target state="new">Select the repository you want to work with</target>
+        <target state="translated">Select the repository you want to work with</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">292</context>
         </context-group>
       </trans-unit>
       <trans-unit id="ESTIMATE_STEP_2" datatype="html">
-        <source>Click on &quot;Estimate&quot; to analyze your XLIFF files</source>
-        <target state="new">Click on &quot;Estimate&quot; to analyze your XLIFF files</target>
+        <source>Click on "Estimate" to analyze your XLIFF files</source>
+        <target state="translated">Click on "Estimate" to analyze your XLIFF files</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">293</context>
         </context-group>
       </trans-unit>
       <trans-unit id="ESTIMATE_STEP_3" datatype="html">
-        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Configure the estimate options:<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/><x id="START_UNORDERED_LIST" ctype="x-ul" equiv-text="&lt;ul class=&quot;list-disc list-inside ml-6 mt-2 space-y-1&quot;&gt;"/><x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li&gt;"/><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Branch<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: Select the branch containing your XLIFF files<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li&gt;"/><x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li&gt;"/><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>File Pattern<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: By default &quot;xlf&quot; to search all XLIFF files. Use specific patterns like &quot;ru.xlf&quot; to target only Russian files<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li&gt;"/><x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li&gt;"/><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Translation State<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: Choose which translation units to include (default is &quot;new&quot; to focus on untranslated content)<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li&gt;"/><x id="CLOSE_UNORDERED_LIST" ctype="x-ul" equiv-text="&lt;/ul&gt;"/></source>
-        <target state="new"><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Configure the estimate options:<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/><x id="START_UNORDERED_LIST" ctype="x-ul" equiv-text="&lt;ul class=&quot;list-disc list-inside ml-6 mt-2 space-y-1&quot;&gt;"/><x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li&gt;"/><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Branch<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: Select the branch containing your XLIFF files<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li&gt;"/><x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li&gt;"/><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>File Pattern<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: By default &quot;xlf&quot; to search all XLIFF files. Use specific patterns like &quot;ru.xlf&quot; to target only Russian files<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li&gt;"/><x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li&gt;"/><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Translation State<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: Choose which translation units to include (default is &quot;new&quot; to focus on untranslated content)<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li&gt;"/><x id="CLOSE_UNORDERED_LIST" ctype="x-ul" equiv-text="&lt;/ul&gt;"/></target>
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>Configure the estimate options:<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/><x id="START_UNORDERED_LIST" ctype="x-ul" equiv-text="&lt;ul class=&quot;list-disc list-inside ml-6 mt-2 space-y-1&quot;>"/><x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>Branch<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: Select the branch containing your XLIFF files<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li>"/><x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>File Pattern<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: By default "xlf" to search all XLIFF files. Use specific patterns like "ru.xlf" to target only Russian files<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li>"/><x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>Translation State<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: Choose which translation units to include (default is "new" to focus on untranslated content)<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li>"/><x id="CLOSE_UNORDERED_LIST" ctype="x-ul" equiv-text="&lt;/ul>"/></source>
+        <target state="translated"><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>Configure the estimate options:<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/><x id="START_UNORDERED_LIST" ctype="x-ul" equiv-text="&lt;ul class=&quot;list-disc list-inside ml-6 mt-2 space-y-1&quot;>"/><x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>Branch<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: Select the branch containing your XLIFF files<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li>"/><x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>File Pattern<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: By default "xlf" to search all XLIFF files. Use specific patterns like "ru.xlf" to target only Russian files<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li>"/><x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>Translation State<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: Choose which translation units to include (default is "new" to focus on untranslated content)<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li>"/><x id="CLOSE_UNORDERED_LIST" ctype="x-ul" equiv-text="&lt;/ul>"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">295</context>
@@ -2732,7 +2732,7 @@
       </trans-unit>
       <trans-unit id="ESTIMATE_STEP_4" datatype="html">
         <source>Review the estimate results showing the number of translation units to process</source>
-        <target state="new">Review the estimate results showing the number of translation units to process</target>
+        <target state="translated">Review the estimate results showing the number of translation units to process</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">302</context>
@@ -2740,7 +2740,7 @@
       </trans-unit>
       <trans-unit id="ESTIMATE_PURPOSE_TITLE" datatype="html">
         <source>Why Estimate?</source>
-        <target state="new">Why Estimate?</target>
+        <target state="translated">Why Estimate?</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">306</context>
@@ -2748,7 +2748,7 @@
       </trans-unit>
       <trans-unit id="ESTIMATE_PURPOSE_DESCRIPTION" datatype="html">
         <source>The estimation process helps you understand:</source>
-        <target state="new">The estimation process helps you understand:</target>
+        <target state="translated">The estimation process helps you understand:</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">307</context>
@@ -2756,7 +2756,7 @@
       </trans-unit>
       <trans-unit id="ESTIMATE_PURPOSE_1" datatype="html">
         <source>The exact number of translation units that need processing</source>
-        <target state="new">The exact number of translation units that need processing</target>
+        <target state="translated">The exact number of translation units that need processing</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">309</context>
@@ -2764,7 +2764,7 @@
       </trans-unit>
       <trans-unit id="ESTIMATE_PURPOSE_2" datatype="html">
         <source>How many credits will be required (1 translation unit = 1 credit)</source>
-        <target state="new">How many credits will be required (1 translation unit = 1 credit)</target>
+        <target state="translated">How many credits will be required (1 translation unit = 1 credit)</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">310</context>
@@ -2772,7 +2772,7 @@
       </trans-unit>
       <trans-unit id="ESTIMATE_PURPOSE_3" datatype="html">
         <source>Approximate time required (each translation unit takes 10-20 seconds to process)</source>
-        <target state="new">Approximate time required (each translation unit takes 10-20 seconds to process)</target>
+        <target state="translated">Approximate time required (each translation unit takes 10-20 seconds to process)</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">311</context>
@@ -2780,7 +2780,7 @@
       </trans-unit>
       <trans-unit id="ESTIMATE_PURPOSE_CREDIT_NOTE" datatype="html">
         <source>Important: Large translation projects with hundreds of translation units can take significant time. Plan accordingly.</source>
-        <target state="new">Important: Large translation projects with hundreds of translation units can take significant time. Plan accordingly.</target>
+        <target state="translated">Important: Large translation projects with hundreds of translation units can take significant time. Plan accordingly.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">313</context>
@@ -2788,7 +2788,7 @@
       </trans-unit>
       <trans-unit id="TRANSLATE_TITLE" datatype="html">
         <source>Translation</source>
-        <target state="new">Translation</target>
+        <target state="translated">Translation</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">322</context>
@@ -2796,7 +2796,7 @@
       </trans-unit>
       <trans-unit id="TRANSLATE_DESCRIPTION" datatype="html">
         <source>Running an AI-powered translation is a separate process from estimation:</source>
-        <target state="new">Running an AI-powered translation is a separate process from estimation:</target>
+        <target state="translated">Running an AI-powered translation is a separate process from estimation:</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">324</context>
@@ -2804,15 +2804,15 @@
       </trans-unit>
       <trans-unit id="TRANSLATE_STEP_1" datatype="html">
         <source>Select the repository containing your XLIFF files</source>
-        <target state="new">Select the repository containing your XLIFF files</target>
+        <target state="translated">Select the repository containing your XLIFF files</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">327</context>
         </context-group>
       </trans-unit>
       <trans-unit id="TRANSLATE_STEP_2" datatype="html">
-        <source>Click on &quot;Translate&quot; to begin the process</source>
-        <target state="new">Click on &quot;Translate&quot; to begin the process</target>
+        <source>Click on "Translate" to begin the process</source>
+        <target state="translated">Click on "Translate" to begin the process</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">328</context>
@@ -2820,7 +2820,7 @@
       </trans-unit>
       <trans-unit id="TRANSLATE_STEP_3" datatype="html">
         <source>Configure the translation options:</source>
-        <target state="new">Configure the translation options:</target>
+        <target state="translated">Configure the translation options:</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">330</context>
@@ -2828,7 +2828,7 @@
       </trans-unit>
       <trans-unit id="TRANSLATE_STEP_4" datatype="html">
         <source>Start the translation process</source>
-        <target state="new">Start the translation process</target>
+        <target state="translated">Start the translation process</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">338</context>
@@ -2836,7 +2836,7 @@
       </trans-unit>
       <trans-unit id="TRANSLATION_PROCESS_TITLE" datatype="html">
         <source>Translation Process</source>
-        <target state="new">Translation Process</target>
+        <target state="translated">Translation Process</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">346</context>
@@ -2844,7 +2844,7 @@
       </trans-unit>
       <trans-unit id="TRANSLATION_PROCESS_DESCRIPTION" datatype="html">
         <source>During the translation process, XLIFF Translator:</source>
-        <target state="new">During the translation process, XLIFF Translator:</target>
+        <target state="translated">During the translation process, XLIFF Translator:</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">347</context>
@@ -2852,7 +2852,7 @@
       </trans-unit>
       <trans-unit id="PROCESS_STEP_1" datatype="html">
         <source>Clones your project repository</source>
-        <target state="new">Clones your project repository</target>
+        <target state="translated">Clones your project repository</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">349</context>
@@ -2860,7 +2860,7 @@
       </trans-unit>
       <trans-unit id="PROCESS_STEP_2" datatype="html">
         <source>Identifies XLIFF files matching your pattern</source>
-        <target state="new">Identifies XLIFF files matching your pattern</target>
+        <target state="translated">Identifies XLIFF files matching your pattern</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">350</context>
@@ -2868,7 +2868,7 @@
       </trans-unit>
       <trans-unit id="PROCESS_STEP_3" datatype="html">
         <source>Analyzes each translation unit and its context in the source code</source>
-        <target state="new">Analyzes each translation unit and its context in the source code</target>
+        <target state="translated">Analyzes each translation unit and its context in the source code</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">351</context>
@@ -2876,7 +2876,7 @@
       </trans-unit>
       <trans-unit id="PROCESS_STEP_4" datatype="html">
         <source>Sends translation instructions to the AI engine with relevant context</source>
-        <target state="new">Sends translation instructions to the AI engine with relevant context</target>
+        <target state="translated">Sends translation instructions to the AI engine with relevant context</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">352</context>
@@ -2884,7 +2884,7 @@
       </trans-unit>
       <trans-unit id="PROCESS_STEP_5" datatype="html">
         <source>Updates the XLIFF files with the translations</source>
-        <target state="new">Updates the XLIFF files with the translations</target>
+        <target state="translated">Updates the XLIFF files with the translations</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">353</context>
@@ -2892,7 +2892,7 @@
       </trans-unit>
       <trans-unit id="PROCESS_STEP_6" datatype="html">
         <source>Creates a pull request with the changes (if configured)</source>
-        <target state="new">Creates a pull request with the changes (if configured)</target>
+        <target state="translated">Creates a pull request with the changes (if configured)</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">354</context>
@@ -2900,7 +2900,7 @@
       </trans-unit>
       <trans-unit id="SETUP_REMINDER_TITLE" datatype="html">
         <source>Initial Setup Required</source>
-        <target state="new">Initial Setup Required</target>
+        <target state="translated">Initial Setup Required</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">14</context>
@@ -2908,7 +2908,7 @@
       </trans-unit>
       <trans-unit id="SETUP_REMINDER_DESCRIPTION" datatype="html">
         <source>Before using XLIFF Translator, you need to configure your Angular application for internationalization.</source>
-        <target state="new">Before using XLIFF Translator, you need to configure your Angular application for internationalization.</target>
+        <target state="translated">Before using XLIFF Translator, you need to configure your Angular application for internationalization.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">16</context>
@@ -2916,7 +2916,7 @@
       </trans-unit>
       <trans-unit id="GO_TO_SETUP" datatype="html">
         <source>Go to Setup</source>
-        <target state="new">Go to Setup</target>
+        <target state="translated">Go to Setup</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">19</context>
@@ -2924,7 +2924,7 @@
       </trans-unit>
       <trans-unit id="NOT_CONNECTED_STATUS" datatype="html">
         <source>Not Connected</source>
-        <target state="new">Not Connected</target>
+        <target state="translated">Not Connected</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">41</context>
@@ -2932,7 +2932,7 @@
       </trans-unit>
       <trans-unit id="GITHUB_TOKEN_INSTRUCTION" datatype="html">
         <source>To connect, generate a Personal Access Token with the following scopes:</source>
-        <target state="new">To connect, generate a Personal Access Token with the following scopes:</target>
+        <target state="translated">To connect, generate a Personal Access Token with the following scopes:</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">43</context>
@@ -2940,7 +2940,7 @@
       </trans-unit>
       <trans-unit id="GITHUB_SCOPE_REPO" datatype="html">
         <source>repo</source>
-        <target state="new">repo</target>
+        <target state="translated">repo</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">45</context>
@@ -2948,15 +2948,15 @@
       </trans-unit>
       <trans-unit id="GITHUB_SCOPE_READ_ORG" datatype="html">
         <source>read:org</source>
-        <target state="new">read:org</target>
+        <target state="translated">read:org</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">46</context>
         </context-group>
       </trans-unit>
       <trans-unit id="GITHUB_TOKEN_LOCATION" datatype="html">
-        <source>Get your token here: Settings &gt; Developer settings &gt; Personal access tokens &gt; Tokens (classic) &gt; Generate new token</source>
-        <target state="new">Get your token here: Settings &gt; Developer settings &gt; Personal access tokens &gt; Tokens (classic) &gt; Generate new token</target>
+        <source>Get your token here: Settings > Developer settings > Personal access tokens > Tokens (classic) > Generate new token</source>
+        <target state="translated">Get your token here: Settings > Developer settings > Personal access tokens > Tokens (classic) > Generate new token</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">48</context>
@@ -2964,7 +2964,7 @@
       </trans-unit>
       <trans-unit id="TOKEN_LABEL" datatype="html">
         <source>Token</source>
-        <target state="new">Token</target>
+        <target state="translated">Token</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">49</context>
@@ -2972,7 +2972,7 @@
       </trans-unit>
       <trans-unit id="TOKEN_PLACEHOLDER" datatype="html">
         <source>Enter your access token</source>
-        <target state="new">Enter your access token</target>
+        <target state="translated">Enter your access token</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">51</context>
@@ -2980,7 +2980,7 @@
       </trans-unit>
       <trans-unit id="GITHUB_WIDGET_CAPTION" datatype="html">
         <source>GitHub provider configuration form</source>
-        <target state="new">GitHub provider configuration form</target>
+        <target state="translated">GitHub provider configuration form</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">55</context>
@@ -2988,15 +2988,15 @@
       </trans-unit>
       <trans-unit id="GITLAB_TITLE" datatype="html">
         <source>GitLab</source>
-        <target state="new">GitLab</target>
+        <target state="translated">GitLab</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">73</context>
         </context-group>
       </trans-unit>
       <trans-unit id="GITLAB_DESC" datatype="html">
-        <source>Create a Personal Access Token with <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code&gt;"/>api<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code&gt;"/>, <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code&gt;"/>read_repository<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code&gt;"/>, and <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code&gt;"/>write_repository<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code&gt;"/> scopes.</source>
-        <target state="new">Create a Personal Access Token with <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code&gt;"/>api<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code&gt;"/>, <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code&gt;"/>read_repository<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code&gt;"/>, and <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code&gt;"/>write_repository<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code&gt;"/> scopes.</target>
+        <source>Create a Personal Access Token with <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code>"/>api<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code>"/>, <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code>"/>read_repository<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code>"/>, and <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code>"/>write_repository<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code>"/> scopes.</source>
+        <target state="translated">Create a Personal Access Token with <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code>"/>api<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code>"/>, <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code>"/>read_repository<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code>"/>, and <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code>"/>write_repository<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code>"/> scopes.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">74</context>
@@ -3004,15 +3004,15 @@
       </trans-unit>
       <trans-unit id="BITBUCKET_TITLE" datatype="html">
         <source>Bitbucket</source>
-        <target state="new">Bitbucket</target>
+        <target state="translated">Bitbucket</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">85</context>
         </context-group>
       </trans-unit>
       <trans-unit id="BITBUCKET_DESC" datatype="html">
-        <source>Create an App Password with <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code&gt;"/>repository:read<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code&gt;"/> and <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code&gt;"/>repository:write<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code&gt;"/> permissions.</source>
-        <target state="new">Create an App Password with <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code&gt;"/>repository:read<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code&gt;"/> and <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code&gt;"/>repository:write<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code&gt;"/> permissions.</target>
+        <source>Create an App Password with <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code>"/>repository:read<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code>"/> and <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code>"/>repository:write<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code>"/> permissions.</source>
+        <target state="translated">Create an App Password with <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code>"/>repository:read<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code>"/> and <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code>"/>repository:write<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code>"/> permissions.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">86</context>
@@ -3020,7 +3020,7 @@
       </trans-unit>
       <trans-unit id="SOFTWARITY_LABEL" datatype="html">
         <source>softwarity</source>
-        <target state="new">softwarity</target>
+        <target state="translated">softwarity</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">112</context>
@@ -3028,7 +3028,7 @@
       </trans-unit>
       <trans-unit id="XLIFF_SAAS_LABEL" datatype="html">
         <source>xliff-saas</source>
-        <target state="new">xliff-saas</target>
+        <target state="translated">xliff-saas</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">113</context>
@@ -3036,7 +3036,7 @@
       </trans-unit>
       <trans-unit id="UPDATED_DATE" datatype="html">
         <source>Updated Apr 8, 2025</source>
-        <target state="new">Updated Apr 8, 2025</target>
+        <target state="translated">Updated Apr 8, 2025</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">116</context>
@@ -3044,7 +3044,7 @@
       </trans-unit>
       <trans-unit id="UNITS_DETECTED" datatype="html">
         <source>90 translation units detected</source>
-        <target state="new">90 translation units detected</target>
+        <target state="translated">90 translation units detected</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">119</context>
@@ -3052,7 +3052,7 @@
       </trans-unit>
       <trans-unit id="NO_TRANSLATION" datatype="html">
         <source>No translation available...</source>
-        <target state="new">No translation available...</target>
+        <target state="translated">No translation available...</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">125</context>
@@ -3060,7 +3060,7 @@
       </trans-unit>
       <trans-unit id="TRANSLATION_WIDGET_CAPTION" datatype="html">
         <source>Repository selection with translation options</source>
-        <target state="new">Repository selection with translation options</target>
+        <target state="translated">Repository selection with translation options</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">130</context>
@@ -3068,7 +3068,7 @@
       </trans-unit>
       <trans-unit id="TRANSLATION_OPTIONS_TITLE" datatype="html">
         <source>Translation Options</source>
-        <target state="new">Translation Options</target>
+        <target state="translated">Translation Options</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">145</context>
@@ -3076,7 +3076,7 @@
       </trans-unit>
       <trans-unit id="MAIN_BRANCH" datatype="html">
         <source>main</source>
-        <target state="new">main</target>
+        <target state="translated">main</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">150</context>
@@ -3084,7 +3084,7 @@
       </trans-unit>
       <trans-unit id="XLF_EXTENSION" datatype="html">
         <source>xlf</source>
-        <target state="new">xlf</target>
+        <target state="translated">xlf</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">159</context>
@@ -3092,7 +3092,7 @@
       </trans-unit>
       <trans-unit id="NEW_STATE" datatype="html">
         <source>new</source>
-        <target state="new">new</target>
+        <target state="translated">new</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">168</context>
@@ -3100,7 +3100,7 @@
       </trans-unit>
       <trans-unit id="PROCEEDED_STATE_LABEL" datatype="html">
         <source>Proceeded TransUnit State</source>
-        <target state="new">Proceeded TransUnit State</target>
+        <target state="translated">Proceeded TransUnit State</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">175</context>
@@ -3108,7 +3108,7 @@
       </trans-unit>
       <trans-unit id="TRANSLATED_STATE" datatype="html">
         <source>translated</source>
-        <target state="new">translated</target>
+        <target state="translated">translated</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">177</context>
@@ -3116,7 +3116,7 @@
       </trans-unit>
       <trans-unit id="TRANSLATE_CONFIRM_BUTTON" datatype="html">
         <source>Translate</source>
-        <target state="new">Translate</target>
+        <target state="translated">Translate</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">185</context>
@@ -3124,15 +3124,15 @@
       </trans-unit>
       <trans-unit id="TRANSLATION_OPTIONS_CAPTION" datatype="html">
         <source>Translation options configuration modal</source>
-        <target state="new">Translation options configuration modal</target>
+        <target state="translated">Translation options configuration modal</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">189</context>
         </context-group>
       </trans-unit>
       <trans-unit id="TRANSLATION_OPTIONS_REF" datatype="html">
-        <source>You&apos;ll be prompted with the translation options modal as shown earlier in the &quot;Selecting Repositories&quot; section.</source>
-        <target state="new">You&apos;ll be prompted with the translation options modal as shown earlier in the &quot;Selecting Repositories&quot; section.</target>
+        <source>You'll be prompted with the translation options modal as shown earlier in the "Selecting Repositories" section.</source>
+        <target state="translated">You'll be prompted with the translation options modal as shown earlier in the "Selecting Repositories" section.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">342</context>
@@ -3140,7 +3140,7 @@
       </trans-unit>
       <trans-unit id="TRANSLATE_STEP_3_BRANCH" datatype="html">
         <source>Select the source branch</source>
-        <target state="new">Select the source branch</target>
+        <target state="translated">Select the source branch</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">332</context>
@@ -3148,23 +3148,23 @@
       </trans-unit>
       <trans-unit id="TRANSLATE_STEP_3_FILE_PATTERN" datatype="html">
         <source>Specify which XLIFF files to translate</source>
-        <target state="new">Specify which XLIFF files to translate</target>
+        <target state="translated">Specify which XLIFF files to translate</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">333</context>
         </context-group>
       </trans-unit>
       <trans-unit id="TRANSLATE_STEP_3_TRANSLATION_STATE" datatype="html">
-        <source>Select which translation units to process (e.g., &quot;new&quot;, &quot;needs-translation&quot;)</source>
-        <target state="new">Select which translation units to process (e.g., &quot;new&quot;, &quot;needs-translation&quot;)</target>
+        <source>Select which translation units to process (e.g., "new", "needs-translation")</source>
+        <target state="translated">Select which translation units to process (e.g., "new", "needs-translation")</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">334</context>
         </context-group>
       </trans-unit>
       <trans-unit id="TRANSLATE_STEP_3_TARGET_STATE" datatype="html">
-        <source>Define the state to set for translated units (e.g., &quot;translated&quot;, &quot;final&quot;)</source>
-        <target state="new">Define the state to set for translated units (e.g., &quot;translated&quot;, &quot;final&quot;)</target>
+        <source>Define the state to set for translated units (e.g., "translated", "final")</source>
+        <target state="translated">Define the state to set for translated units (e.g., "translated", "final")</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">335</context>
@@ -3172,7 +3172,7 @@
       </trans-unit>
       <trans-unit id="AUTH_SERVICE_EMAIL_EXISTS" datatype="html">
         <source>This email is already in use</source>
-        <target state="new">This email is already in use</target>
+        <target state="translated">This email is already in use</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/services/auth.service.ts</context>
           <context context-type="linenumber">104</context>
@@ -3180,7 +3180,7 @@
       </trans-unit>
       <trans-unit id="AUTH_SERVICE_PASSWORD_REQUIREMENTS" datatype="html">
         <source>Password does not meet security requirements</source>
-        <target state="new">Password does not meet security requirements</target>
+        <target state="translated">Password does not meet security requirements</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/services/auth.service.ts</context>
           <context context-type="linenumber">106</context>
@@ -3188,7 +3188,7 @@
       </trans-unit>
       <trans-unit id="AUTH_SERVICE_GENERAL_ERROR" datatype="html">
         <source>An error occurred during account creation: <x id="PH" equiv-text="error.message"/></source>
-        <target state="new">An error occurred during account creation: <x id="PH" equiv-text="error.message"/></target>
+        <target state="translated">An error occurred during account creation: <x id="PH" equiv-text="error.message"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/services/auth.service.ts</context>
           <context context-type="linenumber">108</context>
@@ -3196,7 +3196,7 @@
       </trans-unit>
       <trans-unit id="PROFILE_DELETE_ACCOUNT_WARNING" datatype="html">
         <source>This action cannot be undone. All account data and credits will be permanently deleted.</source>
-        <target state="new">This action cannot be undone. All account data and credits will be permanently deleted.</target>
+        <target state="translated">This action cannot be undone. All account data and credits will be permanently deleted.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/profile/profile.component.ts</context>
           <context context-type="linenumber">118</context>
@@ -3204,7 +3204,7 @@
       </trans-unit>
       <trans-unit id="PROFILE_DELETE_ACCOUNT_INSTRUCTIONS" datatype="html">
         <source>Please enter your email address to confirm deletion.</source>
-        <target state="new">Please enter your email address to confirm deletion.</target>
+        <target state="translated">Please enter your email address to confirm deletion.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/profile/profile.component.ts</context>
           <context context-type="linenumber">119</context>
@@ -3212,7 +3212,7 @@
       </trans-unit>
       <trans-unit id="ISSUE_DETAILS" datatype="html">
         <source>Issue Details</source>
-        <target state="new">Issue Details</target>
+        <target state="translated">Issue Details</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/app.routes.ts</context>
           <context context-type="linenumber">93</context>
@@ -3220,7 +3220,7 @@
       </trans-unit>
       <trans-unit id="SUPPORT" datatype="html">
         <source>Support</source>
-        <target state="new">Support</target>
+        <target state="translated">Support</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/header/logged-button.component.ts</context>
           <context context-type="linenumber">50</context>
@@ -3228,7 +3228,7 @@
       </trans-unit>
       <trans-unit id="AUTH_SERVICE_INVALID_CREDENTIALS" datatype="html">
         <source>Invalid email or password</source>
-        <target state="new">Invalid email or password</target>
+        <target state="translated">Invalid email or password</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/services/auth.service.ts</context>
           <context context-type="linenumber">79</context>
@@ -3236,7 +3236,7 @@
       </trans-unit>
       <trans-unit id="AUTH_SERVICE_SIGN_IN_ERROR" datatype="html">
         <source>Error signing in</source>
-        <target state="new">Error signing in</target>
+        <target state="translated">Error signing in</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/services/auth.service.ts</context>
           <context context-type="linenumber">81</context>
@@ -3244,7 +3244,7 @@
       </trans-unit>
       <trans-unit id="AUTH_SERVICE_GOOGLE_SIGN_IN_ERROR" datatype="html">
         <source>Error signing in with Google</source>
-        <target state="new">Error signing in with Google</target>
+        <target state="translated">Error signing in with Google</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/services/auth.service.ts</context>
           <context context-type="linenumber">127</context>
@@ -3252,7 +3252,7 @@
       </trans-unit>
       <trans-unit id="AUTH_SERVICE_SIGN_OUT_ERROR" datatype="html">
         <source>Error signing out</source>
-        <target state="new">Error signing out</target>
+        <target state="translated">Error signing out</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/services/auth.service.ts</context>
           <context context-type="linenumber">141</context>
@@ -3260,7 +3260,7 @@
       </trans-unit>
       <trans-unit id="AUTH_SERVICE_RESEND_CONFIRMATION_ERROR" datatype="html">
         <source>Error resending confirmation email</source>
-        <target state="new">Error resending confirmation email</target>
+        <target state="translated">Error resending confirmation email</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/services/auth.service.ts</context>
           <context context-type="linenumber">162</context>
@@ -3273,6 +3273,7 @@
           <context context-type="sourcefile">src/app/core/services/auth.service.ts</context>
           <context context-type="linenumber">175</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit AUTH_SERVICE_VERIFY_EMAIL_ERROR. -->
       </trans-unit>
       <trans-unit id="AUTH_SERVICE_RESET_PASSWORD_ERROR" datatype="html">
         <source>Error resetting password</source>
@@ -3281,6 +3282,7 @@
           <context context-type="sourcefile">src/app/core/services/auth.service.ts</context>
           <context context-type="linenumber">192</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit AUTH_SERVICE_RESET_PASSWORD_ERROR. -->
       </trans-unit>
       <trans-unit id="AUTH_SERVICE_DELETE_ACCOUNT_ERROR" datatype="html">
         <source>Error deleting account</source>
@@ -3289,6 +3291,7 @@
           <context context-type="sourcefile">src/app/core/services/auth.service.ts</context>
           <context context-type="linenumber">205</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit AUTH_SERVICE_DELETE_ACCOUNT_ERROR. -->
       </trans-unit>
       <trans-unit id="AUTH_SERVICE_UPDATE_PASSWORD_ERROR" datatype="html">
         <source>Error updating password</source>
@@ -3297,6 +3300,7 @@
           <context context-type="sourcefile">src/app/core/services/auth.service.ts</context>
           <context context-type="linenumber">219</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit AUTH_SERVICE_UPDATE_PASSWORD_ERROR. -->
       </trans-unit>
       <trans-unit id="AUTH_SERVICE_INITIALIZATION_ERROR" datatype="html">
         <source>Error initializing user session</source>
@@ -3305,6 +3309,7 @@
           <context context-type="sourcefile">src/app/core/services/auth.service.ts</context>
           <context context-type="linenumber">230</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit AUTH_SERVICE_INITIALIZATION_ERROR. -->
       </trans-unit>
       <trans-unit id="AVATAR_SERVICE_ERROR_GETTING_AVATAR" datatype="html">
         <source>Error getting avatar</source>
@@ -3313,6 +3318,7 @@
           <context context-type="sourcefile">src/app/core/services/avatar.service.ts</context>
           <context context-type="linenumber">29</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit AVATAR_SERVICE_ERROR_GETTING_AVATAR. -->
       </trans-unit>
       <trans-unit id="AVATAR_SERVICE_ERROR_UPLOADING" datatype="html">
         <source>Error uploading avatar</source>
@@ -3321,6 +3327,7 @@
           <context context-type="sourcefile">src/app/core/services/avatar.service.ts</context>
           <context context-type="linenumber">44</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit AVATAR_SERVICE_ERROR_UPLOADING. -->
       </trans-unit>
       <trans-unit id="AVATAR_SERVICE_ERROR_UPDATING_METADATA" datatype="html">
         <source>Error updating user metadata</source>
@@ -3329,6 +3336,7 @@
           <context context-type="sourcefile">src/app/core/services/avatar.service.ts</context>
           <context context-type="linenumber">52</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit AVATAR_SERVICE_ERROR_UPDATING_METADATA. -->
       </trans-unit>
       <trans-unit id="BALANCE_SERVICE_ERROR_FETCHING_CREDITS" datatype="html">
         <source>Error fetching credits</source>
@@ -3341,6 +3349,7 @@
           <context context-type="sourcefile">src/app/core/services/balance.service.ts</context>
           <context context-type="linenumber">33</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit BALANCE_SERVICE_ERROR_FETCHING_CREDITS. -->
       </trans-unit>
       <trans-unit id="BITBUCKET_TOKEN_NOT_FOUND" datatype="html">
         <source>Bitbucket token not found. Please connect your Bitbucket account.</source>
@@ -3353,6 +3362,7 @@
           <context context-type="sourcefile">src/app/core/services/bitbucket.service.ts</context>
           <context context-type="linenumber">44</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit BITBUCKET_TOKEN_NOT_FOUND. -->
       </trans-unit>
       <trans-unit id="FAILED_TO_LOAD_BRANCHES" datatype="html">
         <source>Failed to load branches. Please check your token permissions.</source>
@@ -3369,6 +3379,7 @@
           <context context-type="sourcefile">src/app/core/services/gitlab.service.ts</context>
           <context context-type="linenumber">29</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit FAILED_TO_LOAD_BRANCHES. -->
       </trans-unit>
       <trans-unit id="FAILED_TO_LOAD_WORKSPACE_REPOS" datatype="html">
         <source>Failed to load repositories for workspace <x id="PH" equiv-text="workspaceSlug"/>. Please check your token permissions.</source>
@@ -3377,6 +3388,7 @@
           <context context-type="sourcefile">src/app/core/services/bitbucket.service.ts</context>
           <context context-type="linenumber">59</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit FAILED_TO_LOAD_WORKSPACE_REPOS. -->
       </trans-unit>
       <trans-unit id="FAILED_TO_LOAD_WORKSPACES" datatype="html">
         <source>Failed to load Bitbucket workspaces. Please check your token permissions.</source>
@@ -3385,6 +3397,7 @@
           <context context-type="sourcefile">src/app/core/services/bitbucket.service.ts</context>
           <context context-type="linenumber">73</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit FAILED_TO_LOAD_WORKSPACES. -->
       </trans-unit>
       <trans-unit id="FAILED_TO_LOAD_PROVIDER_STATUS" datatype="html">
         <source>Failed to load <x id="PH" equiv-text="provider.name"/> status. Please try again.</source>
@@ -3393,6 +3406,7 @@
           <context context-type="sourcefile">src/app/core/services/git-provider.service.ts</context>
           <context context-type="linenumber">100</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit FAILED_TO_LOAD_PROVIDER_STATUS. -->
       </trans-unit>
       <trans-unit id="PROVIDER_CONNECTED_SUCCESS" datatype="html">
         <source>Successfully connected to <x id="PH" equiv-text="provider.name"/></source>
@@ -3401,6 +3415,7 @@
           <context context-type="sourcefile">src/app/core/services/git-provider.service.ts</context>
           <context context-type="linenumber">124</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit PROVIDER_CONNECTED_SUCCESS. -->
       </trans-unit>
       <trans-unit id="FAILED_TO_CONNECT_PROVIDER" datatype="html">
         <source>Failed to connect to <x id="PH" equiv-text="provider.name"/>. <x id="PH_1" equiv-text="error.message"/></source>
@@ -3409,6 +3424,7 @@
           <context context-type="sourcefile">src/app/core/services/git-provider.service.ts</context>
           <context context-type="linenumber">132</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit FAILED_TO_CONNECT_PROVIDER. -->
       </trans-unit>
       <trans-unit id="PROVIDER_DISCONNECTED_SUCCESS" datatype="html">
         <source>Successfully disconnected from <x id="PH" equiv-text="type"/></source>
@@ -3417,6 +3433,7 @@
           <context context-type="sourcefile">src/app/core/services/git-provider.service.ts</context>
           <context context-type="linenumber">204</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit PROVIDER_DISCONNECTED_SUCCESS. -->
       </trans-unit>
       <trans-unit id="FAILED_TO_DISCONNECT_PROVIDER" datatype="html">
         <source>Failed to disconnect from <x id="PH" equiv-text="type"/>. Please try again.</source>
@@ -3425,6 +3442,7 @@
           <context context-type="sourcefile">src/app/core/services/git-provider.service.ts</context>
           <context context-type="linenumber">208</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit FAILED_TO_DISCONNECT_PROVIDER. -->
       </trans-unit>
       <trans-unit id="GITHUB_TOKEN_NOT_FOUND" datatype="html">
         <source>GitHub token not found. Please connect your GitHub account.</source>
@@ -3437,6 +3455,7 @@
           <context context-type="sourcefile">src/app/core/services/github.service.ts</context>
           <context context-type="linenumber">42</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit GITHUB_TOKEN_NOT_FOUND. -->
       </trans-unit>
       <trans-unit id="FAILED_TO_LOAD_USER_REPOS" datatype="html">
         <source>Failed to load user repositories. Please check your token permissions.</source>
@@ -3445,6 +3464,7 @@
           <context context-type="sourcefile">src/app/core/services/github.service.ts</context>
           <context context-type="linenumber">52</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit FAILED_TO_LOAD_USER_REPOS. -->
       </trans-unit>
       <trans-unit id="FAILED_TO_LOAD_ORG_REPOS" datatype="html">
         <source>Failed to load repositories for organization <x id="PH" equiv-text="org.login"/>. Please check your token permissions.</source>
@@ -3453,6 +3473,7 @@
           <context context-type="sourcefile">src/app/core/services/github.service.ts</context>
           <context context-type="linenumber">62</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit FAILED_TO_LOAD_ORG_REPOS. -->
       </trans-unit>
       <trans-unit id="FAILED_TO_LOAD_ORGS" datatype="html">
         <source>Failed to load organizations. Please check your token permissions.</source>
@@ -3461,6 +3482,7 @@
           <context context-type="sourcefile">src/app/core/services/github.service.ts</context>
           <context context-type="linenumber">74</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit FAILED_TO_LOAD_ORGS. -->
       </trans-unit>
       <trans-unit id="GITLAB_TOKEN_NOT_FOUND" datatype="html">
         <source>GitLab token not found. Please connect your GitLab account.</source>
@@ -3473,6 +3495,7 @@
           <context context-type="sourcefile">src/app/core/services/gitlab.service.ts</context>
           <context context-type="linenumber">41</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit GITLAB_TOKEN_NOT_FOUND. -->
       </trans-unit>
       <trans-unit id="FAILED_TO_FETCH_JOBS" datatype="html">
         <source>Failed to fetch jobs. Please try again later.</source>
@@ -3485,6 +3508,7 @@
           <context context-type="sourcefile">src/app/core/services/job.service.ts</context>
           <context context-type="linenumber">114</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit FAILED_TO_FETCH_JOBS. -->
       </trans-unit>
       <trans-unit id="FAILED_TO_CANCEL_JOB" datatype="html">
         <source>Failed to cancel job. Please try again later.</source>
@@ -3493,6 +3517,7 @@
           <context context-type="sourcefile">src/app/core/services/job.service.ts</context>
           <context context-type="linenumber">131</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit FAILED_TO_CANCEL_JOB. -->
       </trans-unit>
       <trans-unit id="FAILED_TO_ESTIMATE_REPOSITORY" datatype="html">
         <source>Failed to estimate repository. Please try again later.</source>
@@ -3505,6 +3530,7 @@
           <context context-type="sourcefile">src/app/core/services/repository.service.ts</context>
           <context context-type="linenumber">30</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit FAILED_TO_ESTIMATE_REPOSITORY. -->
       </trans-unit>
       <trans-unit id="FAILED_TO_TRANSLATE_REPOSITORY" datatype="html">
         <source>Failed to translate repository. Please try again later.</source>
@@ -3517,6 +3543,7 @@
           <context context-type="sourcefile">src/app/core/services/repository.service.ts</context>
           <context context-type="linenumber">51</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit FAILED_TO_TRANSLATE_REPOSITORY. -->
       </trans-unit>
       <trans-unit id="FAILED_TO_CREATE_CHECKOUT_SESSION" datatype="html">
         <source>Failed to create checkout session. Please try again later.</source>
@@ -3529,6 +3556,7 @@
           <context context-type="sourcefile">src/app/core/services/stripe.service.ts</context>
           <context context-type="linenumber">45</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit FAILED_TO_CREATE_CHECKOUT_SESSION. -->
       </trans-unit>
       <trans-unit id="NO_SESSION_ID_RETURNED" datatype="html">
         <source>No session ID returned. Please try again later.</source>
@@ -3537,6 +3565,7 @@
           <context context-type="sourcefile">src/app/core/services/stripe.service.ts</context>
           <context context-type="linenumber">40</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit NO_SESSION_ID_RETURNED. -->
       </trans-unit>
       <trans-unit id="STRIPE_NOT_LOADED" datatype="html">
         <source>Stripe not loaded. Please try again later.</source>
@@ -3545,6 +3574,7 @@
           <context context-type="sourcefile">src/app/core/services/stripe.service.ts</context>
           <context context-type="linenumber">54</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit STRIPE_NOT_LOADED. -->
       </trans-unit>
       <trans-unit id="FAILED_TO_REDIRECT_TO_CHECKOUT" datatype="html">
         <source>Failed to redirect to checkout. Please try again later.</source>
@@ -3557,6 +3587,7 @@
           <context context-type="sourcefile">src/app/core/services/stripe.service.ts</context>
           <context context-type="linenumber">64</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit FAILED_TO_REDIRECT_TO_CHECKOUT. -->
       </trans-unit>
       <trans-unit id="FAILED_TO_CREATE_PORTAL_SESSION" datatype="html">
         <source>Failed to create portal session. Please try again later.</source>
@@ -3569,6 +3600,7 @@
           <context context-type="sourcefile">src/app/core/services/stripe.service.ts</context>
           <context context-type="linenumber">83</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit FAILED_TO_CREATE_PORTAL_SESSION. -->
       </trans-unit>
       <trans-unit id="NO_PORTAL_URL_RETURNED" datatype="html">
         <source>No portal URL returned. Please try again later.</source>
@@ -3577,6 +3609,7 @@
           <context context-type="sourcefile">src/app/core/services/stripe.service.ts</context>
           <context context-type="linenumber">78</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit NO_PORTAL_URL_RETURNED. -->
       </trans-unit>
       <trans-unit id="FAILED_TO_CHECK_QUOTA" datatype="html">
         <source>Failed to check quota. Please try again later.</source>
@@ -3589,6 +3622,7 @@
           <context context-type="sourcefile">src/app/core/services/stripe.service.ts</context>
           <context context-type="linenumber">97</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit FAILED_TO_CHECK_QUOTA. -->
       </trans-unit>
       <trans-unit id="FAILED_TO_INCREMENT_USAGE" datatype="html">
         <source>Failed to increment usage. Please try again later.</source>
@@ -3601,6 +3635,7 @@
           <context context-type="sourcefile">src/app/core/services/stripe.service.ts</context>
           <context context-type="linenumber">111</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit FAILED_TO_INCREMENT_USAGE. -->
       </trans-unit>
       <trans-unit id="TOAST_ACTION_CLOSE" datatype="html">
         <source>Close</source>
@@ -3609,6 +3644,7 @@
           <context context-type="sourcefile">src/app/core/services/toast.service.ts</context>
           <context context-type="linenumber">15</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit TOAST_ACTION_CLOSE. -->
       </trans-unit>
       <trans-unit id="TOAST_ACTION_DISMISS" datatype="html">
         <source>Dismiss</source>
@@ -3617,6 +3653,7 @@
           <context context-type="sourcefile">src/app/core/services/toast.service.ts</context>
           <context context-type="linenumber">16</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit TOAST_ACTION_DISMISS. -->
       </trans-unit>
       <trans-unit id="TOAST_ACTION_CONFIRM" datatype="html">
         <source>Confirm</source>
@@ -3625,6 +3662,7 @@
           <context context-type="sourcefile">src/app/core/services/toast.service.ts</context>
           <context context-type="linenumber">17</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit TOAST_ACTION_CONFIRM. -->
       </trans-unit>
       <trans-unit id="TOAST_ACTION_CANCEL" datatype="html">
         <source>Cancel</source>
@@ -3633,6 +3671,7 @@
           <context context-type="sourcefile">src/app/core/services/toast.service.ts</context>
           <context context-type="linenumber">18</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit TOAST_ACTION_CANCEL. -->
       </trans-unit>
       <trans-unit id="TOAST_ACTION_YES" datatype="html">
         <source>Yes</source>
@@ -3641,6 +3680,7 @@
           <context context-type="sourcefile">src/app/core/services/toast.service.ts</context>
           <context context-type="linenumber">19</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit TOAST_ACTION_YES. -->
       </trans-unit>
       <trans-unit id="TOAST_ACTION_NO" datatype="html">
         <source>No</source>
@@ -3649,6 +3689,7 @@
           <context context-type="sourcefile">src/app/core/services/toast.service.ts</context>
           <context context-type="linenumber">20</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit TOAST_ACTION_NO. -->
       </trans-unit>
       <trans-unit id="TOAST_ACTION_OK" datatype="html">
         <source>OK</source>
@@ -3657,6 +3698,7 @@
           <context context-type="sourcefile">src/app/core/services/toast.service.ts</context>
           <context context-type="linenumber">21</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit TOAST_ACTION_OK. -->
       </trans-unit>
       <trans-unit id="FAILED_TO_STORE_TOKEN" datatype="html">
         <source>Failed to store <x id="PH" equiv-text="provider"/> token. Please try again later.</source>
@@ -3665,6 +3707,7 @@
           <context context-type="sourcefile">src/app/core/services/token.service.ts</context>
           <context context-type="linenumber">20</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit FAILED_TO_STORE_TOKEN. -->
       </trans-unit>
       <trans-unit id="FAILED_TO_GET_TOKEN" datatype="html">
         <source>Failed to get <x id="PH" equiv-text="provider"/> token. Please try again later.</source>
@@ -3673,6 +3716,7 @@
           <context context-type="sourcefile">src/app/core/services/token.service.ts</context>
           <context context-type="linenumber">32</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit FAILED_TO_GET_TOKEN. -->
       </trans-unit>
       <trans-unit id="FAILED_TO_REMOVE_TOKEN" datatype="html">
         <source>Failed to remove <x id="PH" equiv-text="provider"/> token. Please try again later.</source>
@@ -3681,6 +3725,7 @@
           <context context-type="sourcefile">src/app/core/services/token.service.ts</context>
           <context context-type="linenumber">42</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit FAILED_TO_REMOVE_TOKEN. -->
       </trans-unit>
       <trans-unit id="AUTH_EMAIL_CONFIRMATION_CODE_LABEL" datatype="html">
         <source>Verification Code</source>
@@ -3689,6 +3734,7 @@
           <context context-type="sourcefile">src/app/features/auth/email-confirmation.component.ts</context>
           <context context-type="linenumber">36</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit AUTH_EMAIL_CONFIRMATION_CODE_LABEL. -->
       </trans-unit>
       <trans-unit id="AUTH_EMAIL_CONFIRMATION_CODE_PLACEHOLDER" datatype="html">
         <source>Enter the code from your email</source>
@@ -3697,6 +3743,7 @@
           <context context-type="sourcefile">src/app/features/auth/email-confirmation.component.ts</context>
           <context context-type="linenumber">39</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit AUTH_EMAIL_CONFIRMATION_CODE_PLACEHOLDER. -->
       </trans-unit>
       <trans-unit id="AUTH_EMAIL_CONFIRMATION_CODE_REQUIRED" datatype="html">
         <source>Verification code is required</source>
@@ -3705,6 +3752,7 @@
           <context context-type="sourcefile">src/app/features/auth/email-confirmation.component.ts</context>
           <context context-type="linenumber">41</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit AUTH_EMAIL_CONFIRMATION_CODE_REQUIRED. -->
       </trans-unit>
       <trans-unit id="AUTH_EMAIL_CONFIRMATION_VERIFYING" datatype="html">
         <source>Verifying...</source>
@@ -3713,6 +3761,7 @@
           <context context-type="sourcefile">src/app/features/auth/email-confirmation.component.ts</context>
           <context context-type="linenumber">47</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit AUTH_EMAIL_CONFIRMATION_VERIFYING. -->
       </trans-unit>
       <trans-unit id="AUTH_EMAIL_CONFIRMATION_VERIFY" datatype="html">
         <source>Verify Email</source>
@@ -3721,6 +3770,7 @@
           <context context-type="sourcefile">src/app/features/auth/email-confirmation.component.ts</context>
           <context context-type="linenumber">49</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit AUTH_EMAIL_CONFIRMATION_VERIFY. -->
       </trans-unit>
       <trans-unit id="AUTH_EMAIL_CONFIRMATION_FAILED_TO_VERIFY_EMAIL" datatype="html">
         <source>Failed to verify email</source>
@@ -3729,6 +3779,7 @@
           <context context-type="sourcefile">src/app/features/auth/email-confirmation.component.ts</context>
           <context context-type="linenumber">107</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit AUTH_EMAIL_CONFIRMATION_FAILED_TO_VERIFY_EMAIL. -->
       </trans-unit>
       <trans-unit id="AUTH_EMAIL_CONFIRMATION_NO_EMAIL_AVAILABLE_FOR_RESENDING_CONFIRMATION" datatype="html">
         <source>No email available for resending confirmation</source>
@@ -3737,6 +3788,7 @@
           <context context-type="sourcefile">src/app/features/auth/email-confirmation.component.ts</context>
           <context context-type="linenumber">116</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit AUTH_EMAIL_CONFIRMATION_NO_EMAIL_AVAILABLE_FOR_RESENDING_CONFIRMATION. -->
       </trans-unit>
       <trans-unit id="AUTH_EMAIL_CONFIRMATION_FAILED_TO_SEND_CONFIRMATION_EMAIL" datatype="html">
         <source>Failed to send confirmation email</source>
@@ -3745,6 +3797,7 @@
           <context context-type="sourcefile">src/app/features/auth/email-confirmation.component.ts</context>
           <context context-type="linenumber">126</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit AUTH_EMAIL_CONFIRMATION_FAILED_TO_SEND_CONFIRMATION_EMAIL. -->
       </trans-unit>
       <trans-unit id="AUTH_EMAIL_SENT_TITLE" datatype="html">
         <source>Email Sent</source>
@@ -3753,14 +3806,16 @@
           <context context-type="sourcefile">src/app/features/auth/email-sent.component.ts</context>
           <context context-type="linenumber">10</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit AUTH_EMAIL_SENT_TITLE. -->
       </trans-unit>
       <trans-unit id="AUTH_EMAIL_SENT_MESSAGE" datatype="html">
-        <source>We&apos;ve sent you an email with instructions. Please check your inbox and follow the instructions provided.</source>
-        <target state="new">We&apos;ve sent you an email with instructions. Please check your inbox and follow the instructions provided.</target>
+        <source>We've sent you an email with instructions. Please check your inbox and follow the instructions provided.</source>
+        <target state="new">We've sent you an email with instructions. Please check your inbox and follow the instructions provided.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/email-sent.component.ts</context>
           <context context-type="linenumber">14</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit AUTH_EMAIL_SENT_MESSAGE. -->
       </trans-unit>
       <trans-unit id="AUTH_EMAIL_SENT_BACK_TO_LOGIN" datatype="html">
         <source>Back to Login</source>
@@ -3769,6 +3824,7 @@
           <context context-type="sourcefile">src/app/features/auth/email-sent.component.ts</context>
           <context context-type="linenumber">18</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit AUTH_EMAIL_SENT_BACK_TO_LOGIN. -->
       </trans-unit>
       <trans-unit id="AUTH_LOGIN_FORGOT_PASSWORD" datatype="html">
         <source>Forgot password?</source>
@@ -3777,6 +3833,7 @@
           <context context-type="sourcefile">src/app/features/auth/login.component.ts</context>
           <context context-type="linenumber">49</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit AUTH_LOGIN_FORGOT_PASSWORD. -->
       </trans-unit>
       <trans-unit id="AUTH_UPDATE_PASSWORD_TITLE" datatype="html">
         <source>Update Password</source>
@@ -3785,6 +3842,7 @@
           <context context-type="sourcefile">src/app/features/auth/update-password.component.ts</context>
           <context context-type="linenumber">12</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit AUTH_UPDATE_PASSWORD_TITLE. -->
       </trans-unit>
       <trans-unit id="AUTH_UPDATE_PASSWORD_NEW_PASSWORD" datatype="html">
         <source>New Password</source>
@@ -3793,6 +3851,7 @@
           <context context-type="sourcefile">src/app/features/auth/update-password.component.ts</context>
           <context context-type="linenumber">16</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit AUTH_UPDATE_PASSWORD_NEW_PASSWORD. -->
       </trans-unit>
       <trans-unit id="AUTH_UPDATE_PASSWORD_PASSWORD_REQUIRED" datatype="html">
         <source>Password is required</source>
@@ -3801,6 +3860,7 @@
           <context context-type="sourcefile">src/app/features/auth/update-password.component.ts</context>
           <context context-type="linenumber">21</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit AUTH_UPDATE_PASSWORD_PASSWORD_REQUIRED. -->
       </trans-unit>
       <trans-unit id="AUTH_UPDATE_PASSWORD_PASSWORD_MIN_LENGTH" datatype="html">
         <source>Password must be at least 6 characters</source>
@@ -3809,6 +3869,7 @@
           <context context-type="sourcefile">src/app/features/auth/update-password.component.ts</context>
           <context context-type="linenumber">24</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit AUTH_UPDATE_PASSWORD_PASSWORD_MIN_LENGTH. -->
       </trans-unit>
       <trans-unit id="AUTH_UPDATE_PASSWORD_CONFIRM_PASSWORD" datatype="html">
         <source>Confirm Password</source>
@@ -3817,6 +3878,7 @@
           <context context-type="sourcefile">src/app/features/auth/update-password.component.ts</context>
           <context context-type="linenumber">31</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit AUTH_UPDATE_PASSWORD_CONFIRM_PASSWORD. -->
       </trans-unit>
       <trans-unit id="AUTH_UPDATE_PASSWORD_CONFIRM_PASSWORD_REQUIRED" datatype="html">
         <source>Please confirm your password</source>
@@ -3825,14 +3887,16 @@
           <context context-type="sourcefile">src/app/features/auth/update-password.component.ts</context>
           <context context-type="linenumber">36</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit AUTH_UPDATE_PASSWORD_CONFIRM_PASSWORD_REQUIRED. -->
       </trans-unit>
       <trans-unit id="AUTH_UPDATE_PASSWORD_PASSWORDS_DONT_MATCH" datatype="html">
-        <source>Passwords don&apos;t match</source>
-        <target state="new">Passwords don&apos;t match</target>
+        <source>Passwords don't match</source>
+        <target state="new">Passwords don't match</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/update-password.component.ts</context>
           <context context-type="linenumber">39</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit AUTH_UPDATE_PASSWORD_PASSWORDS_DONT_MATCH. -->
       </trans-unit>
       <trans-unit id="AUTH_UPDATE_PASSWORD_UPDATE" datatype="html">
         <source>Update Password</source>
@@ -3841,6 +3905,7 @@
           <context context-type="sourcefile">src/app/features/auth/update-password.component.ts</context>
           <context context-type="linenumber">53</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit AUTH_UPDATE_PASSWORD_UPDATE. -->
       </trans-unit>
       <trans-unit id="AUTH_UPDATE_PASSWORD_UPDATING" datatype="html">
         <source>Updating password...</source>
@@ -3849,6 +3914,7 @@
           <context context-type="sourcefile">src/app/features/auth/update-password.component.ts</context>
           <context context-type="linenumber">55</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit AUTH_UPDATE_PASSWORD_UPDATING. -->
       </trans-unit>
       <trans-unit id="AUTH_SERVICE_ERROR_GETTING_SESSION" datatype="html">
         <source>Error getting user session</source>
@@ -3857,6 +3923,7 @@
           <context context-type="sourcefile">src/app/features/profile/profile.component.ts</context>
           <context context-type="linenumber">145</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit AUTH_SERVICE_ERROR_GETTING_SESSION. -->
       </trans-unit>
       <trans-unit id="PROFILE_ERROR_INVALID_FILE_TYPE" datatype="html">
         <source>File must be an image</source>
@@ -3865,6 +3932,7 @@
           <context context-type="sourcefile">src/app/features/profile/profile.component.ts</context>
           <context context-type="linenumber">171</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit PROFILE_ERROR_INVALID_FILE_TYPE. -->
       </trans-unit>
       <trans-unit id="PROFILE_ERROR_FILE_TOO_LARGE" datatype="html">
         <source>File size must be less than 2MB</source>
@@ -3873,6 +3941,7 @@
           <context context-type="sourcefile">src/app/features/profile/profile.component.ts</context>
           <context context-type="linenumber">177</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit PROFILE_ERROR_FILE_TOO_LARGE. -->
       </trans-unit>
       <trans-unit id="CONTACT_US_TITLE" datatype="html">
         <source>Contact Us</source>
@@ -3881,22 +3950,25 @@
           <context context-type="sourcefile">src/app/features/support/contact.component.ts</context>
           <context context-type="linenumber">17</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit CONTACT_US_TITLE. -->
       </trans-unit>
       <trans-unit id="CONTACT_US_DESCRIPTION" datatype="html">
-        <source>Have a question? Send us a message and we&apos;ll get back to you as soon as possible.</source>
-        <target state="new">Have a question? Send us a message and we&apos;ll get back to you as soon as possible.</target>
+        <source>Have a question? Send us a message and we'll get back to you as soon as possible.</source>
+        <target state="new">Have a question? Send us a message and we'll get back to you as soon as possible.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/support/contact.component.ts</context>
           <context context-type="linenumber">21</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit CONTACT_US_DESCRIPTION. -->
       </trans-unit>
       <trans-unit id="CONTACT_US_SUPPORT_LINK" datatype="html">
-        <source>If you have an account, you can also <x id="START_LINK" ctype="x-a" equiv-text="&lt;a [routerLink]=&quot;[&apos;/support&apos;]&quot; class=&quot;text-primary hover:underline&quot;&gt;"/>access our support ticket system<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/> for faster assistance.</source>
-        <target state="new">If you have an account, you can also <x id="START_LINK" ctype="x-a" equiv-text="&lt;a [routerLink]=&quot;[&apos;/support&apos;]&quot; class=&quot;text-primary hover:underline&quot;&gt;"/>access our support ticket system<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/> for faster assistance.</target>
+        <source>If you have an account, you can also <x id="START_LINK" ctype="x-a" equiv-text="&lt;a [routerLink]=&quot;['/support']&quot; class=&quot;text-primary hover:underline&quot;>"/>access our support ticket system<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/> for faster assistance.</source>
+        <target state="new">If you have an account, you can also <x id="START_LINK" ctype="x-a" equiv-text="&lt;a [routerLink]=&quot;['/support']&quot; class=&quot;text-primary hover:underline&quot;>"/>access our support ticket system<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/> for faster assistance.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/support/contact.component.ts</context>
           <context context-type="linenumber">24</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit CONTACT_US_SUPPORT_LINK. -->
       </trans-unit>
       <trans-unit id="EMAIL_LABEL" datatype="html">
         <source>Email</source>
@@ -3905,6 +3977,7 @@
           <context context-type="sourcefile">src/app/features/support/contact.component.ts</context>
           <context context-type="linenumber">32</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit EMAIL_LABEL. -->
       </trans-unit>
       <trans-unit id="EMAIL_PLACEHOLDER" datatype="html">
         <source>your.email@example.com</source>
@@ -3913,6 +3986,7 @@
           <context context-type="sourcefile">src/app/features/support/contact.component.ts</context>
           <context context-type="linenumber">33</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit EMAIL_PLACEHOLDER. -->
       </trans-unit>
       <trans-unit id="EMAIL_REQUIRED" datatype="html">
         <source>Email is required</source>
@@ -3921,6 +3995,7 @@
           <context context-type="sourcefile">src/app/features/support/contact.component.ts</context>
           <context context-type="linenumber">37</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit EMAIL_REQUIRED. -->
       </trans-unit>
       <trans-unit id="EMAIL_INVALID" datatype="html">
         <source>Please enter a valid email address</source>
@@ -3929,6 +4004,7 @@
           <context context-type="sourcefile">src/app/features/support/contact.component.ts</context>
           <context context-type="linenumber">39</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit EMAIL_INVALID. -->
       </trans-unit>
       <trans-unit id="SUBJECT_LABEL" datatype="html">
         <source>Subject</source>
@@ -3937,6 +4013,7 @@
           <context context-type="sourcefile">src/app/features/support/contact.component.ts</context>
           <context context-type="linenumber">46</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit SUBJECT_LABEL. -->
       </trans-unit>
       <trans-unit id="SUBJECT_PLACEHOLDER" datatype="html">
         <source>How can we help you?</source>
@@ -3945,6 +4022,7 @@
           <context context-type="sourcefile">src/app/features/support/contact.component.ts</context>
           <context context-type="linenumber">47</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit SUBJECT_PLACEHOLDER. -->
       </trans-unit>
       <trans-unit id="SUBJECT_REQUIRED" datatype="html">
         <source>Subject is required</source>
@@ -3953,6 +4031,7 @@
           <context context-type="sourcefile">src/app/features/support/contact.component.ts</context>
           <context context-type="linenumber">50</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit SUBJECT_REQUIRED. -->
       </trans-unit>
       <trans-unit id="MESSAGE_LABEL" datatype="html">
         <source>Message</source>
@@ -3961,6 +4040,7 @@
           <context context-type="sourcefile">src/app/features/support/contact.component.ts</context>
           <context context-type="linenumber">56</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit MESSAGE_LABEL. -->
       </trans-unit>
       <trans-unit id="MESSAGE_PLACEHOLDER" datatype="html">
         <source>Please describe your question or issue in detail...</source>
@@ -3969,6 +4049,7 @@
           <context context-type="sourcefile">src/app/features/support/contact.component.ts</context>
           <context context-type="linenumber">57</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit MESSAGE_PLACEHOLDER. -->
       </trans-unit>
       <trans-unit id="MESSAGE_REQUIRED" datatype="html">
         <source>Message is required</source>
@@ -3977,6 +4058,7 @@
           <context context-type="sourcefile">src/app/features/support/contact.component.ts</context>
           <context context-type="linenumber">60</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit MESSAGE_REQUIRED. -->
       </trans-unit>
       <trans-unit id="SEND_MESSAGE" datatype="html">
         <source>Send Message</source>
@@ -3985,6 +4067,7 @@
           <context context-type="sourcefile">src/app/features/support/contact.component.ts</context>
           <context context-type="linenumber">68</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit SEND_MESSAGE. -->
       </trans-unit>
       <trans-unit id="SENDING" datatype="html">
         <source>Sending...</source>
@@ -3993,6 +4076,7 @@
           <context context-type="sourcefile">src/app/features/support/contact.component.ts</context>
           <context context-type="linenumber">75</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit SENDING. -->
       </trans-unit>
       <trans-unit id="CONTACT_FORM_SUCCESS" datatype="html">
         <source>Your message has been sent successfully!</source>
@@ -4001,6 +4085,7 @@
           <context context-type="sourcefile">src/app/features/support/contact.component.ts</context>
           <context context-type="linenumber">129</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit CONTACT_FORM_SUCCESS. -->
       </trans-unit>
       <trans-unit id="CONTACT_FORM_ERROR" datatype="html">
         <source>Failed to send your message. Please try again later.</source>
@@ -4013,6 +4098,7 @@
           <context context-type="sourcefile">src/app/features/support/contact.component.ts</context>
           <context context-type="linenumber">137</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit CONTACT_FORM_ERROR. -->
       </trans-unit>
       <trans-unit id="CREATE_TICKET_TITLE" datatype="html">
         <source>Create Support Ticket</source>
@@ -4021,6 +4107,7 @@
           <context context-type="sourcefile">src/app/features/support/create-issue.component.ts</context>
           <context context-type="linenumber">18</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit CREATE_TICKET_TITLE. -->
       </trans-unit>
       <trans-unit id="TICKET_TITLE_LABEL" datatype="html">
         <source>Title</source>
@@ -4029,6 +4116,7 @@
           <context context-type="sourcefile">src/app/features/support/create-issue.component.ts</context>
           <context context-type="linenumber">26</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit TICKET_TITLE_LABEL. -->
       </trans-unit>
       <trans-unit id="TICKET_TITLE_PLACEHOLDER" datatype="html">
         <source>Enter a descriptive title</source>
@@ -4037,6 +4125,7 @@
           <context context-type="sourcefile">src/app/features/support/create-issue.component.ts</context>
           <context context-type="linenumber">28</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit TICKET_TITLE_PLACEHOLDER. -->
       </trans-unit>
       <trans-unit id="TITLE_REQUIRED" datatype="html">
         <source>Title is required</source>
@@ -4045,6 +4134,7 @@
           <context context-type="sourcefile">src/app/features/support/create-issue.component.ts</context>
           <context context-type="linenumber">31</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit TITLE_REQUIRED. -->
       </trans-unit>
       <trans-unit id="TICKET_BODY_LABEL" datatype="html">
         <source>Description (Markdown supported)</source>
@@ -4053,6 +4143,7 @@
           <context context-type="sourcefile">src/app/features/support/create-issue.component.ts</context>
           <context context-type="linenumber">38</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit TICKET_BODY_LABEL. -->
       </trans-unit>
       <trans-unit id="TICKET_BODY_PLACEHOLDER" datatype="html">
         <source>Describe your issue in detail. You can use Markdown for formatting.</source>
@@ -4061,6 +4152,7 @@
           <context context-type="sourcefile">src/app/features/support/create-issue.component.ts</context>
           <context context-type="linenumber">40</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit TICKET_BODY_PLACEHOLDER. -->
       </trans-unit>
       <trans-unit id="BODY_REQUIRED" datatype="html">
         <source>Description is required</source>
@@ -4069,6 +4161,7 @@
           <context context-type="sourcefile">src/app/features/support/create-issue.component.ts</context>
           <context context-type="linenumber">43</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit BODY_REQUIRED. -->
       </trans-unit>
       <trans-unit id="MARKDOWN_GUIDE_TITLE" datatype="html">
         <source>Markdown Guide</source>
@@ -4077,6 +4170,7 @@
           <context context-type="sourcefile">src/app/features/support/create-issue.component.ts</context>
           <context context-type="linenumber">50</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit MARKDOWN_GUIDE_TITLE. -->
       </trans-unit>
       <trans-unit id="MARKDOWN_BASICS" datatype="html">
         <source>Basics</source>
@@ -4085,6 +4179,7 @@
           <context context-type="sourcefile">src/app/features/support/create-issue.component.ts</context>
           <context context-type="linenumber">54</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit MARKDOWN_BASICS. -->
       </trans-unit>
       <trans-unit id="MARKDOWN_BOLD" datatype="html">
         <source>Bold text</source>
@@ -4093,6 +4188,7 @@
           <context context-type="sourcefile">src/app/features/support/create-issue.component.ts</context>
           <context context-type="linenumber">56</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit MARKDOWN_BOLD. -->
       </trans-unit>
       <trans-unit id="MARKDOWN_ITALIC" datatype="html">
         <source>Italic text</source>
@@ -4101,6 +4197,7 @@
           <context context-type="sourcefile">src/app/features/support/create-issue.component.ts</context>
           <context context-type="linenumber">57</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit MARKDOWN_ITALIC. -->
       </trans-unit>
       <trans-unit id="MARKDOWN_LINK" datatype="html">
         <source>Link</source>
@@ -4109,6 +4206,7 @@
           <context context-type="sourcefile">src/app/features/support/create-issue.component.ts</context>
           <context context-type="linenumber">58</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit MARKDOWN_LINK. -->
       </trans-unit>
       <trans-unit id="MARKDOWN_LISTS" datatype="html">
         <source>Lists</source>
@@ -4117,6 +4215,7 @@
           <context context-type="sourcefile">src/app/features/support/create-issue.component.ts</context>
           <context context-type="linenumber">62</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit MARKDOWN_LISTS. -->
       </trans-unit>
       <trans-unit id="MARKDOWN_BULLETS" datatype="html">
         <source>Bullet points</source>
@@ -4125,6 +4224,7 @@
           <context context-type="sourcefile">src/app/features/support/create-issue.component.ts</context>
           <context context-type="linenumber">64</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit MARKDOWN_BULLETS. -->
       </trans-unit>
       <trans-unit id="MARKDOWN_NUMBERS" datatype="html">
         <source>Numbered lists</source>
@@ -4133,6 +4233,7 @@
           <context context-type="sourcefile">src/app/features/support/create-issue.component.ts</context>
           <context context-type="linenumber">65</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit MARKDOWN_NUMBERS. -->
       </trans-unit>
       <trans-unit id="BACK_TO_SUPPORT" datatype="html">
         <source>Back to Support</source>
@@ -4145,6 +4246,7 @@
           <context context-type="sourcefile">src/app/features/support/issue-detail.component.ts</context>
           <context context-type="linenumber">50</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit BACK_TO_SUPPORT. -->
       </trans-unit>
       <trans-unit id="CLOSE_ISSUE" datatype="html">
         <source>Close Issue</source>
@@ -4153,6 +4255,7 @@
           <context context-type="sourcefile">src/app/features/support/issue-detail.component.ts</context>
           <context context-type="linenumber">25</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit CLOSE_ISSUE. -->
       </trans-unit>
       <trans-unit id="REOPEN_ISSUE" datatype="html">
         <source>Reopen Issue</source>
@@ -4161,6 +4264,7 @@
           <context context-type="sourcefile">src/app/features/support/issue-detail.component.ts</context>
           <context context-type="linenumber">29</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit REOPEN_ISSUE. -->
       </trans-unit>
       <trans-unit id="ISSUE_NOT_FOUND" datatype="html">
         <source>Issue Not Found</source>
@@ -4169,14 +4273,16 @@
           <context context-type="sourcefile">src/app/features/support/issue-detail.component.ts</context>
           <context context-type="linenumber">48</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit ISSUE_NOT_FOUND. -->
       </trans-unit>
       <trans-unit id="ISSUE_NOT_FOUND_DESC" datatype="html">
-        <source>The issue you&apos;re looking for doesn&apos;t exist or you don&apos;t have permission to view it.</source>
-        <target state="new">The issue you&apos;re looking for doesn&apos;t exist or you don&apos;t have permission to view it.</target>
+        <source>The issue you're looking for doesn't exist or you don't have permission to view it.</source>
+        <target state="new">The issue you're looking for doesn't exist or you don't have permission to view it.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/support/issue-detail.component.ts</context>
           <context context-type="linenumber">49</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit ISSUE_NOT_FOUND_DESC. -->
       </trans-unit>
       <trans-unit id="ISSUE_STATE_OPEN" datatype="html">
         <source>Open</source>
@@ -4185,6 +4291,7 @@
           <context context-type="sourcefile">src/app/features/support/issue-detail.component.ts</context>
           <context context-type="linenumber">57</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit ISSUE_STATE_OPEN. -->
       </trans-unit>
       <trans-unit id="ISSUE_STATE_CLOSED" datatype="html">
         <source>Closed</source>
@@ -4193,6 +4300,7 @@
           <context context-type="sourcefile">src/app/features/support/issue-detail.component.ts</context>
           <context context-type="linenumber">59</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit ISSUE_STATE_CLOSED. -->
       </trans-unit>
       <trans-unit id="TICKET_TYPE_BUG_LABEL" datatype="html">
         <source>Bug</source>
@@ -4205,6 +4313,7 @@
           <context context-type="sourcefile">src/app/features/support/support.component.html</context>
           <context context-type="linenumber">114</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit TICKET_TYPE_BUG_LABEL. -->
       </trans-unit>
       <trans-unit id="TICKET_TYPE_FEATURE_LABEL" datatype="html">
         <source>Feature</source>
@@ -4217,14 +4326,16 @@
           <context context-type="sourcefile">src/app/features/support/support.component.html</context>
           <context context-type="linenumber">116</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit TICKET_TYPE_FEATURE_LABEL. -->
       </trans-unit>
       <trans-unit id="CREATED_AT" datatype="html">
-        <source>Created: <x id="INTERPOLATION" equiv-text="{{ issue()!.created_at | date:&apos;medium&apos; }}"/></source>
-        <target state="new">Created: <x id="INTERPOLATION" equiv-text="{{ issue()!.created_at | date:&apos;medium&apos; }}"/></target>
+        <source>Created: <x id="INTERPOLATION" equiv-text="{{ issue()!.created_at | date:'medium' }}"/></source>
+        <target state="new">Created: <x id="INTERPOLATION" equiv-text="{{ issue()!.created_at | date:'medium' }}"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/support/issue-detail.component.ts</context>
           <context context-type="linenumber">76</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit CREATED_AT. -->
       </trans-unit>
       <trans-unit id="COMMENTS" datatype="html">
         <source>Comments (<x id="INTERPOLATION" equiv-text="{{ comments().length }}"/>)</source>
@@ -4233,6 +4344,7 @@
           <context context-type="sourcefile">src/app/features/support/issue-detail.component.ts</context>
           <context context-type="linenumber">83</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit COMMENTS. -->
       </trans-unit>
       <trans-unit id="NO_COMMENTS" datatype="html">
         <source>No comments yet.</source>
@@ -4241,6 +4353,7 @@
           <context context-type="sourcefile">src/app/features/support/issue-detail.component.ts</context>
           <context context-type="linenumber">89</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit NO_COMMENTS. -->
       </trans-unit>
       <trans-unit id="SUPPORT_TEAM" datatype="html">
         <source>Support Team</source>
@@ -4249,6 +4362,7 @@
           <context context-type="sourcefile">src/app/features/support/issue-detail.component.ts</context>
           <context context-type="linenumber">98</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit SUPPORT_TEAM. -->
       </trans-unit>
       <trans-unit id="YOU" datatype="html">
         <source>You</source>
@@ -4257,6 +4371,7 @@
           <context context-type="sourcefile">src/app/features/support/issue-detail.component.ts</context>
           <context context-type="linenumber">100</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit YOU. -->
       </trans-unit>
       <trans-unit id="ADD_COMMENT" datatype="html">
         <source>Add a Comment</source>
@@ -4265,6 +4380,7 @@
           <context context-type="sourcefile">src/app/features/support/issue-detail.component.ts</context>
           <context context-type="linenumber">118</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit ADD_COMMENT. -->
       </trans-unit>
       <trans-unit id="COMMENT_PLACEHOLDER" datatype="html">
         <source>Write your reply here...</source>
@@ -4273,6 +4389,7 @@
           <context context-type="sourcefile">src/app/features/support/issue-detail.component.ts</context>
           <context context-type="linenumber">126</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit COMMENT_PLACEHOLDER. -->
       </trans-unit>
       <trans-unit id="COMMENT_REQUIRED" datatype="html">
         <source>Comment is required</source>
@@ -4281,6 +4398,7 @@
           <context context-type="sourcefile">src/app/features/support/issue-detail.component.ts</context>
           <context context-type="linenumber">132</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit COMMENT_REQUIRED. -->
       </trans-unit>
       <trans-unit id="SUBMIT_COMMENT" datatype="html">
         <source>Submit Comment</source>
@@ -4289,6 +4407,7 @@
           <context context-type="sourcefile">src/app/features/support/issue-detail.component.ts</context>
           <context context-type="linenumber">144</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit SUBMIT_COMMENT. -->
       </trans-unit>
       <trans-unit id="SUBMITTING" datatype="html">
         <source>Submitting...</source>
@@ -4297,6 +4416,7 @@
           <context context-type="sourcefile">src/app/features/support/issue-detail.component.ts</context>
           <context context-type="linenumber">151</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit SUBMITTING. -->
       </trans-unit>
       <trans-unit id="SUPPORT_TITLE" datatype="html">
         <source>Support Tickets</source>
@@ -4305,6 +4425,7 @@
           <context context-type="sourcefile">src/app/features/support/support.component.html</context>
           <context context-type="linenumber">5</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit SUPPORT_TITLE. -->
       </trans-unit>
       <trans-unit id="NEW_TICKET" datatype="html">
         <source>New Ticket</source>
@@ -4313,6 +4434,7 @@
           <context context-type="sourcefile">src/app/features/support/support.component.html</context>
           <context context-type="linenumber">14</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit NEW_TICKET. -->
       </trans-unit>
       <trans-unit id="FILTER_TICKETS" datatype="html">
         <source>Filter Tickets</source>
@@ -4321,6 +4443,7 @@
           <context context-type="sourcefile">src/app/features/support/support.component.html</context>
           <context context-type="linenumber">24</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit FILTER_TICKETS. -->
       </trans-unit>
       <trans-unit id="SEARCH_TICKETS_PLACEHOLDER" datatype="html">
         <source>Search tickets by title or description...</source>
@@ -4329,6 +4452,7 @@
           <context context-type="sourcefile">src/app/features/support/support.component.html</context>
           <context context-type="linenumber">32</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit SEARCH_TICKETS_PLACEHOLDER. -->
       </trans-unit>
       <trans-unit id="FILTER_TYPE" datatype="html">
         <source>Type:</source>
@@ -4337,6 +4461,7 @@
           <context context-type="sourcefile">src/app/features/support/support.component.html</context>
           <context context-type="linenumber">39</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit FILTER_TYPE. -->
       </trans-unit>
       <trans-unit id="FILTER_TYPE_BUG" datatype="html">
         <source>Bug</source>
@@ -4345,6 +4470,7 @@
           <context context-type="sourcefile">src/app/features/support/support.component.html</context>
           <context context-type="linenumber">41</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit FILTER_TYPE_BUG. -->
       </trans-unit>
       <trans-unit id="FILTER_TYPE_FEATURE" datatype="html">
         <source>Feature</source>
@@ -4353,6 +4479,7 @@
           <context context-type="sourcefile">src/app/features/support/support.component.html</context>
           <context context-type="linenumber">42</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit FILTER_TYPE_FEATURE. -->
       </trans-unit>
       <trans-unit id="FILTER_STATUS" datatype="html">
         <source>Status:</source>
@@ -4361,6 +4488,7 @@
           <context context-type="sourcefile">src/app/features/support/support.component.html</context>
           <context context-type="linenumber">48</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit FILTER_STATUS. -->
       </trans-unit>
       <trans-unit id="FILTER_OPEN_STATE" datatype="html">
         <source>Open</source>
@@ -4369,6 +4497,7 @@
           <context context-type="sourcefile">src/app/features/support/support.component.html</context>
           <context context-type="linenumber">51</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit FILTER_OPEN_STATE. -->
       </trans-unit>
       <trans-unit id="FILTER_CLOSED_STATE" datatype="html">
         <source>Closed</source>
@@ -4377,6 +4506,7 @@
           <context context-type="sourcefile">src/app/features/support/support.component.html</context>
           <context context-type="linenumber">55</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit FILTER_CLOSED_STATE. -->
       </trans-unit>
       <trans-unit id="TICKET_STATE" datatype="html">
         <source>State</source>
@@ -4385,6 +4515,7 @@
           <context context-type="sourcefile">src/app/features/support/support.component.html</context>
           <context context-type="linenumber">77</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit TICKET_STATE. -->
       </trans-unit>
       <trans-unit id="TICKET_TITLE" datatype="html">
         <source>Title</source>
@@ -4393,6 +4524,7 @@
           <context context-type="sourcefile">src/app/features/support/support.component.html</context>
           <context context-type="linenumber">78</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit TICKET_TITLE. -->
       </trans-unit>
       <trans-unit id="TICKET_TYPE" datatype="html">
         <source>Type</source>
@@ -4401,6 +4533,7 @@
           <context context-type="sourcefile">src/app/features/support/support.component.html</context>
           <context context-type="linenumber">79</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit TICKET_TYPE. -->
       </trans-unit>
       <trans-unit id="TICKET_COMMENTS" datatype="html">
         <source>Comments</source>
@@ -4409,6 +4542,7 @@
           <context context-type="sourcefile">src/app/features/support/support.component.html</context>
           <context context-type="linenumber">80</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit TICKET_COMMENTS. -->
       </trans-unit>
       <trans-unit id="TICKET_ACTIONS" datatype="html">
         <source>Actions</source>
@@ -4417,6 +4551,7 @@
           <context context-type="sourcefile">src/app/features/support/support.component.html</context>
           <context context-type="linenumber">82</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit TICKET_ACTIONS. -->
       </trans-unit>
       <trans-unit id="TICKET_STATE_OPEN" datatype="html">
         <source>Open</source>
@@ -4425,6 +4560,7 @@
           <context context-type="sourcefile">src/app/features/support/support.component.html</context>
           <context context-type="linenumber">97</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit TICKET_STATE_OPEN. -->
       </trans-unit>
       <trans-unit id="TICKET_STATE_CLOSED" datatype="html">
         <source>Closed</source>
@@ -4433,6 +4569,7 @@
           <context context-type="sourcefile">src/app/features/support/support.component.html</context>
           <context context-type="linenumber">104</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit TICKET_STATE_CLOSED. -->
       </trans-unit>
       <trans-unit id="VIEW_TICKET" datatype="html">
         <source>View</source>
@@ -4441,6 +4578,7 @@
           <context context-type="sourcefile">src/app/features/support/support.component.html</context>
           <context context-type="linenumber">129</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit VIEW_TICKET. -->
       </trans-unit>
       <trans-unit id="NO_TICKETS_FOUND" datatype="html">
         <source>No tickets found</source>
@@ -4449,6 +4587,7 @@
           <context context-type="sourcefile">src/app/features/support/support.component.html</context>
           <context context-type="linenumber">143</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit NO_TICKETS_FOUND. -->
       </trans-unit>
       <trans-unit id="ADJUST_SEARCH_CRITERIA" datatype="html">
         <source>Try adjusting your search or filter criteria</source>
@@ -4457,6 +4596,7 @@
           <context context-type="sourcefile">src/app/features/support/support.component.html</context>
           <context context-type="linenumber">144</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit ADJUST_SEARCH_CRITERIA. -->
       </trans-unit>
       <trans-unit id="PREVIOUS_PAGE_SR" datatype="html">
         <source>Previous</source>
@@ -4465,6 +4605,7 @@
           <context context-type="sourcefile">src/app/features/support/support.component.html</context>
           <context context-type="linenumber">171</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit PREVIOUS_PAGE_SR. -->
       </trans-unit>
       <trans-unit id="NEXT_PAGE_SR" datatype="html">
         <source>Next</source>
@@ -4473,6 +4614,7 @@
           <context context-type="sourcefile">src/app/features/support/support.component.html</context>
           <context context-type="linenumber">191</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit NEXT_PAGE_SR. -->
       </trans-unit>
       <trans-unit id="SUPPORT_INFO_TITLE" datatype="html">
         <source>Need Help?</source>
@@ -4481,6 +4623,7 @@
           <context context-type="sourcefile">src/app/features/support/support.component.html</context>
           <context context-type="linenumber">212</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit SUPPORT_INFO_TITLE. -->
       </trans-unit>
       <trans-unit id="SUPPORT_INFO_DESCRIPTION" datatype="html">
         <source>Create a new support ticket if you have questions or need assistance with the XLIFF Translator. Our team will respond as soon as possible.</source>
@@ -4489,6 +4632,7 @@
           <context context-type="sourcefile">src/app/features/support/support.component.html</context>
           <context context-type="linenumber">214</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit SUPPORT_INFO_DESCRIPTION. -->
       </trans-unit>
       <trans-unit id="FAILED_TO_GET_ISSUES" datatype="html">
         <source>Failed to get issues. Please try again later.</source>
@@ -4497,6 +4641,7 @@
           <context context-type="sourcefile">src/app/features/support/support.service.ts</context>
           <context context-type="linenumber">19</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit FAILED_TO_GET_ISSUES. -->
       </trans-unit>
       <trans-unit id="FAILED_TO_CREATE_ISSUE" datatype="html">
         <source>Failed to create issue. Please try again later.</source>
@@ -4505,6 +4650,7 @@
           <context context-type="sourcefile">src/app/features/support/support.service.ts</context>
           <context context-type="linenumber">35</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit FAILED_TO_CREATE_ISSUE. -->
       </trans-unit>
       <trans-unit id="FAILED_TO_UPDATE_ISSUE" datatype="html">
         <source>Failed to update issue. Please try again later.</source>
@@ -4513,6 +4659,7 @@
           <context context-type="sourcefile">src/app/features/support/support.service.ts</context>
           <context context-type="linenumber">51</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit FAILED_TO_UPDATE_ISSUE. -->
       </trans-unit>
       <trans-unit id="ISSUE_CLOSED_SUCCESSFULLY" datatype="html">
         <source>Issue closed successfully.</source>
@@ -4525,6 +4672,7 @@
           <context context-type="sourcefile">src/app/features/support/support.service.ts</context>
           <context context-type="linenumber">129</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit ISSUE_CLOSED_SUCCESSFULLY. -->
       </trans-unit>
       <trans-unit id="ISSUE_REOPENED_SUCCESSFULLY" datatype="html">
         <source>Issue reopened successfully.</source>
@@ -4537,6 +4685,7 @@
           <context context-type="sourcefile">src/app/features/support/support.service.ts</context>
           <context context-type="linenumber">148</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit ISSUE_REOPENED_SUCCESSFULLY. -->
       </trans-unit>
       <trans-unit id="ISSUE_UPDATED_SUCCESSFULLY" datatype="html">
         <source>Issue updated successfully.</source>
@@ -4545,6 +4694,7 @@
           <context context-type="sourcefile">src/app/features/support/support.service.ts</context>
           <context context-type="linenumber">59</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit ISSUE_UPDATED_SUCCESSFULLY. -->
       </trans-unit>
       <trans-unit id="FAILED_TO_GET_ISSUE" datatype="html">
         <source>Failed to get issue. Please try again later.</source>
@@ -4553,6 +4703,7 @@
           <context context-type="sourcefile">src/app/features/support/support.service.ts</context>
           <context context-type="linenumber">74</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit FAILED_TO_GET_ISSUE. -->
       </trans-unit>
       <trans-unit id="FAILED_TO_ADD_COMMENT" datatype="html">
         <source>Failed to add comment. Please try again later.</source>
@@ -4561,6 +4712,7 @@
           <context context-type="sourcefile">src/app/features/support/support.service.ts</context>
           <context context-type="linenumber">92</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit FAILED_TO_ADD_COMMENT. -->
       </trans-unit>
       <trans-unit id="COMMENT_ADDED_SUCCESSFULLY" datatype="html">
         <source>Comment added successfully.</source>
@@ -4569,6 +4721,7 @@
           <context context-type="sourcefile">src/app/features/support/support.service.ts</context>
           <context context-type="linenumber">95</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit COMMENT_ADDED_SUCCESSFULLY. -->
       </trans-unit>
       <trans-unit id="FAILED_TO_GET_COMMENTS" datatype="html">
         <source>Failed to get comments. Please try again later.</source>
@@ -4577,6 +4730,7 @@
           <context context-type="sourcefile">src/app/features/support/support.service.ts</context>
           <context context-type="linenumber">108</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit FAILED_TO_GET_COMMENTS. -->
       </trans-unit>
       <trans-unit id="FAILED_TO_CLOSE_ISSUE" datatype="html">
         <source>Failed to close issue. Please try again later.</source>
@@ -4585,6 +4739,7 @@
           <context context-type="sourcefile">src/app/features/support/support.service.ts</context>
           <context context-type="linenumber">126</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit FAILED_TO_CLOSE_ISSUE. -->
       </trans-unit>
       <trans-unit id="FAILED_TO_REOPEN_ISSUE" datatype="html">
         <source>Failed to reopen issue. Please try again later.</source>
@@ -4593,6 +4748,7 @@
           <context context-type="sourcefile">src/app/features/support/support.service.ts</context>
           <context context-type="linenumber">145</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit FAILED_TO_REOPEN_ISSUE. -->
       </trans-unit>
       <trans-unit id="FAILED_TO_DELETE_ISSUE" datatype="html">
         <source>Failed to delete issue. Please try again later.</source>
@@ -4601,6 +4757,7 @@
           <context context-type="sourcefile">src/app/features/support/support.service.ts</context>
           <context context-type="linenumber">161</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit FAILED_TO_DELETE_ISSUE. -->
       </trans-unit>
       <trans-unit id="ISSUE_DELETED_SUCCESSFULLY" datatype="html">
         <source>Issue deleted successfully.</source>
@@ -4609,6 +4766,7 @@
           <context context-type="sourcefile">src/app/features/support/support.service.ts</context>
           <context context-type="linenumber">164</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit ISSUE_DELETED_SUCCESSFULLY. -->
       </trans-unit>
       <trans-unit id="FAILED_TO_SEND_CONTACT" datatype="html">
         <source>Failed to send message. Please try again later.</source>
@@ -4621,6 +4779,7 @@
           <context context-type="sourcefile">src/app/features/support/support.service.ts</context>
           <context context-type="linenumber">189</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit FAILED_TO_SEND_CONTACT. -->
       </trans-unit>
       <trans-unit id="CUSTOM_INSTRUCTIONS_TITLE" datatype="html">
         <source>Custom AI Translation Instructions</source>
@@ -4629,6 +4788,7 @@
           <context context-type="sourcefile">src/app/pages/documentation/custom.component.ts</context>
           <context context-type="linenumber">30</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit CUSTOM_INSTRUCTIONS_TITLE. -->
       </trans-unit>
       <trans-unit id="CUSTOM_INSTRUCTIONS_FILENAME" datatype="html">
         <source>Configuration File</source>
@@ -4637,14 +4797,16 @@
           <context context-type="sourcefile">src/app/pages/documentation/custom.component.ts</context>
           <context context-type="linenumber">35</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit CUSTOM_INSTRUCTIONS_FILENAME. -->
       </trans-unit>
       <trans-unit id="CUSTOM_INSTRUCTIONS_FILENAME_DESC" datatype="html">
-        <source>Create a file named <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code class=&quot;bg-blue-100 dark:bg-blue-900/50 px-2 py-1 rounded text-blue-900 dark:text-blue-100&quot;&gt;"/>xliff-instructions.md<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code&gt;"/> at the root of your Git repository to provide custom translation instructions.</source>
-        <target state="new">Create a file named <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code class=&quot;bg-blue-100 dark:bg-blue-900/50 px-2 py-1 rounded text-blue-900 dark:text-blue-100&quot;&gt;"/>xliff-instructions.md<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code&gt;"/> at the root of your Git repository to provide custom translation instructions.</target>
+        <source>Create a file named <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code class=&quot;bg-blue-100 dark:bg-blue-900/50 px-2 py-1 rounded text-blue-900 dark:text-blue-100&quot;>"/>xliff-instructions.md<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code>"/> at the root of your Git repository to provide custom translation instructions.</source>
+        <target state="new">Create a file named <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code class=&quot;bg-blue-100 dark:bg-blue-900/50 px-2 py-1 rounded text-blue-900 dark:text-blue-100&quot;>"/>xliff-instructions.md<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code>"/> at the root of your Git repository to provide custom translation instructions.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/custom.component.ts</context>
           <context context-type="linenumber">36</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit CUSTOM_INSTRUCTIONS_FILENAME_DESC. -->
       </trans-unit>
       <trans-unit id="CUSTOM_INSTRUCTIONS_SUBTITLE" datatype="html">
         <source>Enhancing Translation Context</source>
@@ -4653,6 +4815,7 @@
           <context context-type="sourcefile">src/app/pages/documentation/custom.component.ts</context>
           <context context-type="linenumber">39</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit CUSTOM_INSTRUCTIONS_SUBTITLE. -->
       </trans-unit>
       <trans-unit id="CUSTOM_INSTRUCTIONS_DESCRIPTION" datatype="html">
         <source>Our AI translation system can leverage detailed context about your application to produce more accurate and consistent translations. By providing custom instructions, you can help the AI understand industry-specific terminology, maintain brand voice, and respect language-specific requirements.</source>
@@ -4661,6 +4824,7 @@
           <context context-type="sourcefile">src/app/pages/documentation/custom.component.ts</context>
           <context context-type="linenumber">41</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit CUSTOM_INSTRUCTIONS_DESCRIPTION. -->
       </trans-unit>
       <trans-unit id="CUSTOM_INSTRUCTIONS_EXAMPLE_TITLE" datatype="html">
         <source>Example: Financial Application</source>
@@ -4669,6 +4833,7 @@
           <context context-type="sourcefile">src/app/pages/documentation/custom.component.ts</context>
           <context context-type="linenumber">45</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit CUSTOM_INSTRUCTIONS_EXAMPLE_TITLE. -->
       </trans-unit>
       <trans-unit id="CUSTOM_INSTRUCTIONS_EXAMPLE_DESCRIPTION" datatype="html">
         <source>Below is an example of custom instructions for a financial application that help ensure accurate translation of domain-specific terms:</source>
@@ -4677,6 +4842,7 @@
           <context context-type="sourcefile">src/app/pages/documentation/custom.component.ts</context>
           <context context-type="linenumber">46</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit CUSTOM_INSTRUCTIONS_EXAMPLE_DESCRIPTION. -->
       </trans-unit>
       <trans-unit id="CUSTOM_INSTRUCTIONS_GUIDELINES_TITLE" datatype="html">
         <source>Best Practices</source>
@@ -4685,6 +4851,7 @@
           <context context-type="sourcefile">src/app/pages/documentation/custom.component.ts</context>
           <context context-type="linenumber">85</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit CUSTOM_INSTRUCTIONS_GUIDELINES_TITLE. -->
       </trans-unit>
       <trans-unit id="CUSTOM_INSTRUCTIONS_GUIDELINE_1" datatype="html">
         <source>Focus on application-specific terminology and provide clear context for ambiguous terms</source>
@@ -4693,6 +4860,7 @@
           <context context-type="sourcefile">src/app/pages/documentation/custom.component.ts</context>
           <context context-type="linenumber">87</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit CUSTOM_INSTRUCTIONS_GUIDELINE_1. -->
       </trans-unit>
       <trans-unit id="CUSTOM_INSTRUCTIONS_GUIDELINE_2" datatype="html">
         <source>Specify terms that should remain untranslated (technical terms, brand names, acronyms)</source>
@@ -4701,6 +4869,7 @@
           <context context-type="sourcefile">src/app/pages/documentation/custom.component.ts</context>
           <context context-type="linenumber">88</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit CUSTOM_INSTRUCTIONS_GUIDELINE_2. -->
       </trans-unit>
       <trans-unit id="CUSTOM_INSTRUCTIONS_GUIDELINE_3" datatype="html">
         <source>Provide preferred translations for key terms to maintain consistency</source>
@@ -4709,6 +4878,7 @@
           <context context-type="sourcefile">src/app/pages/documentation/custom.component.ts</context>
           <context context-type="linenumber">89</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit CUSTOM_INSTRUCTIONS_GUIDELINE_3. -->
       </trans-unit>
       <trans-unit id="CUSTOM_INSTRUCTIONS_GUIDELINE_4" datatype="html">
         <source>Include domain-specific rules, conventions, and tone requirements</source>
@@ -4717,6 +4887,7 @@
           <context context-type="sourcefile">src/app/pages/documentation/custom.component.ts</context>
           <context context-type="linenumber">90</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit CUSTOM_INSTRUCTIONS_GUIDELINE_4. -->
       </trans-unit>
       <trans-unit id="CUSTOM_INSTRUCTIONS_GUIDELINE_5" datatype="html">
         <source>Instructions can be written in any language, though English is recommended for maximum compatibility</source>
@@ -4725,6 +4896,7 @@
           <context context-type="sourcefile">src/app/pages/documentation/custom.component.ts</context>
           <context context-type="linenumber">91</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit CUSTOM_INSTRUCTIONS_GUIDELINE_5. -->
       </trans-unit>
       <trans-unit id="CUSTOM_TAB" datatype="html">
         <source>Custom</source>
@@ -4733,6 +4905,7 @@
           <context context-type="sourcefile">src/app/pages/documentation/documentation.component.ts</context>
           <context context-type="linenumber">21</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit CUSTOM_TAB. -->
       </trans-unit>
       <trans-unit id="PRIVACY_TITLE" datatype="html">
         <source>Privacy Policy</source>
@@ -4741,6 +4914,7 @@
           <context context-type="sourcefile">src/app/pages/privacy.component.ts</context>
           <context context-type="linenumber">12</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit PRIVACY_TITLE. -->
       </trans-unit>
       <trans-unit id="PRIVACY_LAST_UPDATED" datatype="html">
         <source>Last updated: April 16, 2024</source>
@@ -4749,6 +4923,7 @@
           <context context-type="sourcefile">src/app/pages/privacy.component.ts</context>
           <context context-type="linenumber">13</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit PRIVACY_LAST_UPDATED. -->
       </trans-unit>
       <trans-unit id="PRIVACY_INTRODUCTION" datatype="html">
         <source>Introduction</source>
@@ -4757,6 +4932,7 @@
           <context context-type="sourcefile">src/app/pages/privacy.component.ts</context>
           <context context-type="linenumber">18</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit PRIVACY_INTRODUCTION. -->
       </trans-unit>
       <trans-unit id="PRIVACY_INTRO_TEXT" datatype="html">
         <source>We are committed to protecting your privacy. This policy explains how we collect, use, and protect your personal information.</source>
@@ -4765,6 +4941,7 @@
           <context context-type="sourcefile">src/app/pages/privacy.component.ts</context>
           <context context-type="linenumber">19</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit PRIVACY_INTRO_TEXT. -->
       </trans-unit>
       <trans-unit id="PRIVACY_COLLECTION" datatype="html">
         <source>Information We Collect</source>
@@ -4773,6 +4950,7 @@
           <context context-type="sourcefile">src/app/pages/privacy.component.ts</context>
           <context context-type="linenumber">23</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit PRIVACY_COLLECTION. -->
       </trans-unit>
       <trans-unit id="PRIVACY_COLLECTION_1" datatype="html">
         <source>Account information (email, name)</source>
@@ -4781,6 +4959,7 @@
           <context context-type="sourcefile">src/app/pages/privacy.component.ts</context>
           <context context-type="linenumber">25</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit PRIVACY_COLLECTION_1. -->
       </trans-unit>
       <trans-unit id="PRIVACY_COLLECTION_2" datatype="html">
         <source>Usage data and analytics</source>
@@ -4789,6 +4968,7 @@
           <context context-type="sourcefile">src/app/pages/privacy.component.ts</context>
           <context context-type="linenumber">26</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit PRIVACY_COLLECTION_2. -->
       </trans-unit>
       <trans-unit id="PRIVACY_COLLECTION_3" datatype="html">
         <source>Payment information (processed securely)</source>
@@ -4797,6 +4977,7 @@
           <context context-type="sourcefile">src/app/pages/privacy.component.ts</context>
           <context context-type="linenumber">27</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit PRIVACY_COLLECTION_3. -->
       </trans-unit>
       <trans-unit id="PRIVACY_USE" datatype="html">
         <source>How We Use Your Information</source>
@@ -4805,6 +4986,7 @@
           <context context-type="sourcefile">src/app/pages/privacy.component.ts</context>
           <context context-type="linenumber">32</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit PRIVACY_USE. -->
       </trans-unit>
       <trans-unit id="PRIVACY_USE_TEXT" datatype="html">
         <source>We use your information to provide and improve our service, process payments, and communicate with you about your account.</source>
@@ -4813,6 +4995,7 @@
           <context context-type="sourcefile">src/app/pages/privacy.component.ts</context>
           <context context-type="linenumber">33</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit PRIVACY_USE_TEXT. -->
       </trans-unit>
       <trans-unit id="PRIVACY_PROTECTION" datatype="html">
         <source>Data Protection</source>
@@ -4821,6 +5004,7 @@
           <context context-type="sourcefile">src/app/pages/privacy.component.ts</context>
           <context context-type="linenumber">37</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit PRIVACY_PROTECTION. -->
       </trans-unit>
       <trans-unit id="PRIVACY_PROTECTION_TEXT" datatype="html">
         <source>We implement appropriate security measures to protect your personal information from unauthorized access, alteration, or disclosure.</source>
@@ -4829,6 +5013,7 @@
           <context context-type="sourcefile">src/app/pages/privacy.component.ts</context>
           <context context-type="linenumber">38</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit PRIVACY_PROTECTION_TEXT. -->
       </trans-unit>
       <trans-unit id="PRIVACY_GO_HOME" datatype="html">
         <source>Go to home page</source>
@@ -4837,6 +5022,7 @@
           <context context-type="sourcefile">src/app/pages/privacy.component.ts</context>
           <context context-type="linenumber">43</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit PRIVACY_GO_HOME. -->
       </trans-unit>
       <trans-unit id="TERMS_TITLE" datatype="html">
         <source>Terms of Service</source>
@@ -4845,6 +5031,7 @@
           <context context-type="sourcefile">src/app/pages/terms.component.ts</context>
           <context context-type="linenumber">12</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit TERMS_TITLE. -->
       </trans-unit>
       <trans-unit id="TERMS_LAST_UPDATED" datatype="html">
         <source>Last updated: April 16, 2024</source>
@@ -4853,6 +5040,7 @@
           <context context-type="sourcefile">src/app/pages/terms.component.ts</context>
           <context context-type="linenumber">13</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit TERMS_LAST_UPDATED. -->
       </trans-unit>
       <trans-unit id="TERMS_INTRODUCTION" datatype="html">
         <source>Introduction</source>
@@ -4861,6 +5049,7 @@
           <context context-type="sourcefile">src/app/pages/terms.component.ts</context>
           <context context-type="linenumber">18</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit TERMS_INTRODUCTION. -->
       </trans-unit>
       <trans-unit id="TERMS_INTRO_TEXT" datatype="html">
         <source>Welcome to our translation service. By using our service, you agree to these terms. Please read them carefully.</source>
@@ -4869,6 +5058,7 @@
           <context context-type="sourcefile">src/app/pages/terms.component.ts</context>
           <context context-type="linenumber">19</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit TERMS_INTRO_TEXT. -->
       </trans-unit>
       <trans-unit id="TERMS_ACCOUNT" datatype="html">
         <source>Account Terms</source>
@@ -4877,6 +5067,7 @@
           <context context-type="sourcefile">src/app/pages/terms.component.ts</context>
           <context context-type="linenumber">23</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit TERMS_ACCOUNT. -->
       </trans-unit>
       <trans-unit id="TERMS_ACCOUNT_1" datatype="html">
         <source>You must be 18 years or older to use this service</source>
@@ -4885,6 +5076,7 @@
           <context context-type="sourcefile">src/app/pages/terms.component.ts</context>
           <context context-type="linenumber">25</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit TERMS_ACCOUNT_1. -->
       </trans-unit>
       <trans-unit id="TERMS_ACCOUNT_2" datatype="html">
         <source>You must provide accurate information when creating an account</source>
@@ -4893,6 +5085,7 @@
           <context context-type="sourcefile">src/app/pages/terms.component.ts</context>
           <context context-type="linenumber">26</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit TERMS_ACCOUNT_2. -->
       </trans-unit>
       <trans-unit id="TERMS_ACCOUNT_3" datatype="html">
         <source>You are responsible for maintaining the security of your account</source>
@@ -4901,6 +5094,7 @@
           <context context-type="sourcefile">src/app/pages/terms.component.ts</context>
           <context context-type="linenumber">27</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit TERMS_ACCOUNT_3. -->
       </trans-unit>
       <trans-unit id="TERMS_SERVICE" datatype="html">
         <source>Service Usage</source>
@@ -4909,14 +5103,16 @@
           <context context-type="sourcefile">src/app/pages/terms.component.ts</context>
           <context context-type="linenumber">32</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit TERMS_SERVICE. -->
       </trans-unit>
       <trans-unit id="TERMS_SERVICE_TEXT" datatype="html">
-        <source>Our service is provided &quot;as is&quot; and we make no warranties about its reliability or availability. We reserve the right to modify or discontinue the service at any time.</source>
-        <target state="new">Our service is provided &quot;as is&quot; and we make no warranties about its reliability or availability. We reserve the right to modify or discontinue the service at any time.</target>
+        <source>Our service is provided "as is" and we make no warranties about its reliability or availability. We reserve the right to modify or discontinue the service at any time.</source>
+        <target state="new">Our service is provided "as is" and we make no warranties about its reliability or availability. We reserve the right to modify or discontinue the service at any time.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/terms.component.ts</context>
           <context context-type="linenumber">33</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit TERMS_SERVICE_TEXT. -->
       </trans-unit>
       <trans-unit id="TERMS_PAYMENT" datatype="html">
         <source>Payment Terms</source>
@@ -4925,6 +5121,7 @@
           <context context-type="sourcefile">src/app/pages/terms.component.ts</context>
           <context context-type="linenumber">37</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit TERMS_PAYMENT. -->
       </trans-unit>
       <trans-unit id="TERMS_PAYMENT_TEXT" datatype="html">
         <source>All payments are processed securely through our payment provider. Refunds are handled according to our refund policy.</source>
@@ -4933,6 +5130,7 @@
           <context context-type="sourcefile">src/app/pages/terms.component.ts</context>
           <context context-type="linenumber">38</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit TERMS_PAYMENT_TEXT. -->
       </trans-unit>
       <trans-unit id="TERMS_GO_HOME" datatype="html">
         <source>Go to home page</source>
@@ -4941,6 +5139,7 @@
           <context context-type="sourcefile">src/app/pages/terms.component.ts</context>
           <context context-type="linenumber">43</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit TERMS_GO_HOME. -->
       </trans-unit>
       <trans-unit id="VERIFY_EMAIL_GO_HOME" datatype="html">
         <source>Go to home page</source>
@@ -4949,6 +5148,7 @@
           <context context-type="sourcefile">src/app/pages/verify-email.component.ts</context>
           <context context-type="linenumber">19</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit VERIFY_EMAIL_GO_HOME. -->
       </trans-unit>
       <trans-unit id="SUBMIT_BUG_BUTTON" datatype="html">
         <source>Submit Bug</source>
@@ -4957,6 +5157,7 @@
           <context context-type="sourcefile">src/app/features/support/create-issue.component.ts</context>
           <context context-type="linenumber">80</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit SUBMIT_BUG_BUTTON. -->
       </trans-unit>
       <trans-unit id="SUBMIT_FEATURE_BUTTON" datatype="html">
         <source>Submit Feature</source>
@@ -4965,6 +5166,7 @@
           <context context-type="sourcefile">src/app/features/support/create-issue.component.ts</context>
           <context context-type="linenumber">89</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit SUBMIT_FEATURE_BUTTON. -->
       </trans-unit>
       <trans-unit id="FAILED_TO_FETCH_MONTHLY_TRANSLATIONS" datatype="html">
         <source>Failed to fetch monthly translations. Please try again later.</source>
@@ -4973,6 +5175,7 @@
           <context context-type="sourcefile">src/app/core/services/job.service.ts</context>
           <context context-type="linenumber">95</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit FAILED_TO_FETCH_MONTHLY_TRANSLATIONS. -->
       </trans-unit>
       <trans-unit id="CURRENT_LEVEL_LABEL" datatype="html">
         <source>Current Level</source>
@@ -4981,6 +5184,7 @@
           <context context-type="sourcefile">src/app/features/dashboard/dashboard.component.html</context>
           <context context-type="linenumber">72</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit CURRENT_LEVEL_LABEL. -->
       </trans-unit>
       <trans-unit id="MEMBERSHIP_LEVEL_EXPLANATION" datatype="html">
         <source>Your membership level is based on your total spending. Once you reach a level, you keep it permanently!</source>
@@ -4989,6 +5193,7 @@
           <context context-type="sourcefile">src/app/features/dashboard/dashboard.component.html</context>
           <context context-type="linenumber">76</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit MEMBERSHIP_LEVEL_EXPLANATION. -->
       </trans-unit>
       <trans-unit id="BRONZE_MEMBERSHIP_LEVEL" datatype="html">
         <source>Bronze</source>
@@ -4997,6 +5202,7 @@
           <context context-type="sourcefile">src/app/features/price-grid/price-grid.component.html</context>
           <context context-type="linenumber">12</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit BRONZE_MEMBERSHIP_LEVEL. -->
       </trans-unit>
       <trans-unit id="SILVER_MEMBERSHIP_LEVEL" datatype="html">
         <source>Silver</source>
@@ -5005,6 +5211,7 @@
           <context context-type="sourcefile">src/app/features/price-grid/price-grid.component.html</context>
           <context context-type="linenumber">43</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit SILVER_MEMBERSHIP_LEVEL. -->
       </trans-unit>
       <trans-unit id="GOLD_MEMBERSHIP_LEVEL" datatype="html">
         <source>Gold</source>
@@ -5013,6 +5220,7 @@
           <context context-type="sourcefile">src/app/features/price-grid/price-grid.component.html</context>
           <context context-type="linenumber">80</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit GOLD_MEMBERSHIP_LEVEL. -->
       </trans-unit>
       <trans-unit id="DIAMOND_MEMBERSHIP_LEVEL" datatype="html">
         <source>Diamond</source>
@@ -5021,6 +5229,7 @@
           <context context-type="sourcefile">src/app/features/price-grid/price-grid.component.html</context>
           <context context-type="linenumber">117</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit DIAMOND_MEMBERSHIP_LEVEL. -->
       </trans-unit>
       <trans-unit id="CUSTOM_PLAN_DESCRIPTION" datatype="html">
         <source>Tailored to your infrastructure and requirements</source>
@@ -5029,6 +5238,7 @@
           <context context-type="sourcefile">src/app/features/price-grid/price-grid.component.html</context>
           <context context-type="linenumber">157</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit CUSTOM_PLAN_DESCRIPTION. -->
       </trans-unit>
       <trans-unit id="PROFILE_MEMBERSHIP_LEVEL" datatype="html">
         <source>Membership</source>
@@ -5037,6 +5247,7 @@
           <context context-type="sourcefile">src/app/features/profile/profile.component.ts</context>
           <context context-type="linenumber">63</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit PROFILE_MEMBERSHIP_LEVEL. -->
       </trans-unit>
       <trans-unit id="DIAMOND_EXCLUSIVE_FEATURE" datatype="html">
         <source>Diamond Exclusive Feature</source>
@@ -5045,6 +5256,7 @@
           <context context-type="sourcefile">src/app/pages/documentation/custom.component.ts</context>
           <context context-type="linenumber">17</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit DIAMOND_EXCLUSIVE_FEATURE. -->
       </trans-unit>
       <trans-unit id="DIAMOND_EXCLUSIVE_DESCRIPTION" datatype="html">
         <source>Custom AI instructions are a premium feature exclusive to Diamond membership subscribers. Enhance translation quality by providing specific domain context, terminology requirements, and language preferences.</source>
@@ -5053,6 +5265,7 @@
           <context context-type="sourcefile">src/app/pages/documentation/custom.component.ts</context>
           <context context-type="linenumber">19</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit DIAMOND_EXCLUSIVE_DESCRIPTION. -->
       </trans-unit>
       <trans-unit id="UPGRADE_TO_DIAMOND_BUTTON" datatype="html">
         <source>Upgrade to Diamond</source>
@@ -5061,6 +5274,7 @@
           <context context-type="sourcefile">src/app/pages/documentation/custom.component.ts</context>
           <context context-type="linenumber">22</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit UPGRADE_TO_DIAMOND_BUTTON. -->
       </trans-unit>
       <trans-unit id="CUSTOM_INSTRUCTIONS_GUIDELINE_6" datatype="html">
         <source>Update your instructions file as your application terminology evolves</source>
@@ -5069,14 +5283,16 @@
           <context context-type="sourcefile">src/app/pages/documentation/custom.component.ts</context>
           <context context-type="linenumber">92</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit CUSTOM_INSTRUCTIONS_GUIDELINE_6. -->
       </trans-unit>
       <trans-unit id="CUSTOM_INSTRUCTIONS_TIP" datatype="html">
-        <source><x id="START_TAG__SVG_SVG" ctype="x-_svg_svg" equiv-text="&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; class=&quot;h-5 w-5 mr-2 flex-shrink-0&quot; fill=&quot;none&quot; viewBox=&quot;0 0 24 24&quot; stroke=&quot;currentColor&quot;&gt;"/><x id="START_TAG__SVG_PATH" ctype="x-_svg_path" equiv-text="&lt;path stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; stroke-width=&quot;2&quot; d=&quot;M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z&quot; /&gt;"/><x id="CLOSE_TAG__SVG_PATH" ctype="x-_svg_path" equiv-text="&lt;path stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; stroke-width=&quot;2&quot; d=&quot;M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z&quot; /&gt;"/><x id="CLOSE_TAG__SVG_SVG" ctype="x-_svg_svg" equiv-text="&lt;/svg&gt;"/><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>For the best results, keep your instructions focused and relevant. Overly lengthy instructions may dilute the impact of the most important context.<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></source>
-        <target state="new"><x id="START_TAG__SVG_SVG" ctype="x-_svg_svg" equiv-text="&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; class=&quot;h-5 w-5 mr-2 flex-shrink-0&quot; fill=&quot;none&quot; viewBox=&quot;0 0 24 24&quot; stroke=&quot;currentColor&quot;&gt;"/><x id="START_TAG__SVG_PATH" ctype="x-_svg_path" equiv-text="&lt;path stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; stroke-width=&quot;2&quot; d=&quot;M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z&quot; /&gt;"/><x id="CLOSE_TAG__SVG_PATH" ctype="x-_svg_path" equiv-text="&lt;path stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; stroke-width=&quot;2&quot; d=&quot;M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z&quot; /&gt;"/><x id="CLOSE_TAG__SVG_SVG" ctype="x-_svg_svg" equiv-text="&lt;/svg&gt;"/><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>For the best results, keep your instructions focused and relevant. Overly lengthy instructions may dilute the impact of the most important context.<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></target>
+        <source><x id="START_TAG__SVG_SVG" ctype="x-_svg_svg" equiv-text="&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; class=&quot;h-5 w-5 mr-2 flex-shrink-0&quot; fill=&quot;none&quot; viewBox=&quot;0 0 24 24&quot; stroke=&quot;currentColor&quot;>"/><x id="START_TAG__SVG_PATH" ctype="x-_svg_path" equiv-text="&lt;path stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; stroke-width=&quot;2&quot; d=&quot;M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z&quot; />"/><x id="CLOSE_TAG__SVG_PATH" ctype="x-_svg_path" equiv-text="&lt;path stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; stroke-width=&quot;2&quot; d=&quot;M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z&quot; />"/><x id="CLOSE_TAG__SVG_SVG" ctype="x-_svg_svg" equiv-text="&lt;/svg>"/><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span>"/>For the best results, keep your instructions focused and relevant. Overly lengthy instructions may dilute the impact of the most important context.<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span>"/></source>
+        <target state="new"><x id="START_TAG__SVG_SVG" ctype="x-_svg_svg" equiv-text="&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; class=&quot;h-5 w-5 mr-2 flex-shrink-0&quot; fill=&quot;none&quot; viewBox=&quot;0 0 24 24&quot; stroke=&quot;currentColor&quot;>"/><x id="START_TAG__SVG_PATH" ctype="x-_svg_path" equiv-text="&lt;path stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; stroke-width=&quot;2&quot; d=&quot;M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z&quot; />"/><x id="CLOSE_TAG__SVG_PATH" ctype="x-_svg_path" equiv-text="&lt;path stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; stroke-width=&quot;2&quot; d=&quot;M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z&quot; />"/><x id="CLOSE_TAG__SVG_SVG" ctype="x-_svg_svg" equiv-text="&lt;/svg>"/><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span>"/>For the best results, keep your instructions focused and relevant. Overly lengthy instructions may dilute the impact of the most important context.<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span>"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/custom.component.ts</context>
           <context context-type="linenumber">98</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit CUSTOM_INSTRUCTIONS_TIP. -->
       </trans-unit>
       <trans-unit id="PRICING_PAGE_TITLE" datatype="html">
         <source>Translation Credits</source>
@@ -5085,6 +5301,7 @@
           <context context-type="sourcefile">src/app/pages/pricing.component.ts</context>
           <context context-type="linenumber">12</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit PRICING_PAGE_TITLE. -->
       </trans-unit>
       <trans-unit id="PRICING_PAGE_SUBTITLE" datatype="html">
         <source>Purchase credits to translate your applications with AI power and unlock exclusive features</source>
@@ -5093,6 +5310,7 @@
           <context context-type="sourcefile">src/app/pages/pricing.component.ts</context>
           <context context-type="linenumber">14</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit PRICING_PAGE_SUBTITLE. -->
       </trans-unit>
       <trans-unit id="PRICING_FAQ_TITLE" datatype="html">
         <source>Frequently Asked Questions</source>
@@ -5101,6 +5319,7 @@
           <context context-type="sourcefile">src/app/pages/pricing.component.ts</context>
           <context context-type="linenumber">21</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit PRICING_FAQ_TITLE. -->
       </trans-unit>
       <trans-unit id="PRICING_FAQ_WHAT_IS_UNIT" datatype="html">
         <source>What is a translation unit?</source>
@@ -5109,6 +5328,7 @@
           <context context-type="sourcefile">src/app/pages/pricing.component.ts</context>
           <context context-type="linenumber">25</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit PRICING_FAQ_WHAT_IS_UNIT. -->
       </trans-unit>
       <trans-unit id="PRICING_FAQ_WHAT_IS_UNIT_ANSWER" datatype="html">
         <source>A translation unit corresponds to an element to be translated in your XLIFF file. Typically, this represents a sentence, label, or paragraph in your application interface.</source>
@@ -5117,6 +5337,7 @@
           <context context-type="sourcefile">src/app/pages/pricing.component.ts</context>
           <context context-type="linenumber">27</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit PRICING_FAQ_WHAT_IS_UNIT_ANSWER. -->
       </trans-unit>
       <trans-unit id="PRICING_FAQ_UNUSED_CREDITS" datatype="html">
         <source>What happens to unused translation credits?</source>
@@ -5125,6 +5346,7 @@
           <context context-type="sourcefile">src/app/pages/pricing.component.ts</context>
           <context context-type="linenumber">32</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit PRICING_FAQ_UNUSED_CREDITS. -->
       </trans-unit>
       <trans-unit id="PRICING_FAQ_UNUSED_CREDITS_ANSWER" datatype="html">
         <source>Your translation credits never expire. You can use them at any time for future translations.</source>
@@ -5133,6 +5355,7 @@
           <context context-type="sourcefile">src/app/pages/pricing.component.ts</context>
           <context context-type="linenumber">34</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit PRICING_FAQ_UNUSED_CREDITS_ANSWER. -->
       </trans-unit>
       <trans-unit id="PRICING_FAQ_MEMBERSHIP_LEVELS" datatype="html">
         <source>What are membership levels?</source>
@@ -5141,14 +5364,16 @@
           <context context-type="sourcefile">src/app/pages/pricing.component.ts</context>
           <context context-type="linenumber">39</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit PRICING_FAQ_MEMBERSHIP_LEVELS. -->
       </trans-unit>
       <trans-unit id="PRICING_FAQ_MEMBERSHIP_LEVELS_ANSWER" datatype="html">
-        <source>As you purchase credits, you&apos;ll unlock membership levels (Bronze, Silver, Gold, Diamond) that provide additional features and better rates for translations. Once you reach a level, you keep it permanently.</source>
-        <target state="new">As you purchase credits, you&apos;ll unlock membership levels (Bronze, Silver, Gold, Diamond) that provide additional features and better rates for translations. Once you reach a level, you keep it permanently.</target>
+        <source>As you purchase credits, you'll unlock membership levels (Bronze, Silver, Gold, Diamond) that provide additional features and better rates for translations. Once you reach a level, you keep it permanently.</source>
+        <target state="new">As you purchase credits, you'll unlock membership levels (Bronze, Silver, Gold, Diamond) that provide additional features and better rates for translations. Once you reach a level, you keep it permanently.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/pricing.component.ts</context>
           <context context-type="linenumber">41</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit PRICING_FAQ_MEMBERSHIP_LEVELS_ANSWER. -->
       </trans-unit>
       <trans-unit id="PRICING_FAQ_SPECIAL_NEEDS" datatype="html">
         <source>What if I have special requirements?</source>
@@ -5157,14 +5382,16 @@
           <context context-type="sourcefile">src/app/pages/pricing.component.ts</context>
           <context context-type="linenumber">46</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit PRICING_FAQ_SPECIAL_NEEDS. -->
       </trans-unit>
       <trans-unit id="PRICING_FAQ_SPECIAL_NEEDS_ANSWER" datatype="html">
-        <source>If you have specific needs or require a custom solution, please contact our sales team. We&apos;ll be happy to create a tailored credit package for your organization.</source>
-        <target state="new">If you have specific needs or require a custom solution, please contact our sales team. We&apos;ll be happy to create a tailored credit package for your organization.</target>
+        <source>If you have specific needs or require a custom solution, please contact our sales team. We'll be happy to create a tailored credit package for your organization.</source>
+        <target state="new">If you have specific needs or require a custom solution, please contact our sales team. We'll be happy to create a tailored credit package for your organization.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/pricing.component.ts</context>
           <context context-type="linenumber">48</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit PRICING_FAQ_SPECIAL_NEEDS_ANSWER. -->
       </trans-unit>
       <trans-unit id="CONTACT_SALES" datatype="html">
         <source>Contact Sales</source>
@@ -5173,6 +5400,7 @@
           <context context-type="sourcefile">src/app/pages/pricing.component.ts</context>
           <context context-type="linenumber">54</context>
         </context-group>
+        <!-- Not enough credits to translate the trans-unit CONTACT_SALES. -->
       </trans-unit>
     </body>
   </file>
