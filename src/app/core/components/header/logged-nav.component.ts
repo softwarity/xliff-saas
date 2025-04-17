@@ -57,7 +57,7 @@ import { PurchaseCreditsButtonComponent } from '../../../shared/components/purch
       @if (balance() === 0) {
         <app-purchase-credits-button buttonClass="flat-secondary"></app-purchase-credits-button>
       } @else {
-        <button class="button flat-primary" i18n="@@BALANCE_BUTTON">{{ balance() }} credits</button>
+        <a routerLink="/pricing" class="block button flat-primary" i18n="@@BALANCE_BUTTON">{{ balance() }} credits</a>
       }
       <app-logged-button></app-logged-button>
     </div>
