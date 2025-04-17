@@ -81,29 +81,7 @@ export class DashboardComponent {
   }
   
   loadTranslationsThisMonth() {
-    const today = new Date();
-    const firstDayOfMonth = new Date(today.getFullYear(), today.getMonth(), 1);
-    
-    // Get all completed jobs from this month
-    this.jobService.getJobs(['completed'], 1, 100).pipe(
-      map(response => {
-        // Filter jobs from this month and count translation units
-        const thisMonthJobs = response.data.filter(job => {
-          const jobDate = new Date(job.createdAt || '');
-          return jobDate >= firstDayOfMonth;
-        });
-        
-        // Calculate total translation units
-        let totalUnits = 0;
-        thisMonthJobs.forEach(job => {
-          if (job.transUnitDone) {
-            totalUnits += job.transUnitDone;
-          }
-        });
-        
-        return totalUnits;
-      })
-    ).subscribe({
+    this.jobService.getLastTranslationsInLastMonth().subscribe({
       next: (totalUnits: number) => {
         this.translationsThisMonth.set(totalUnits);
       },

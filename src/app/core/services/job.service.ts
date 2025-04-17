@@ -84,6 +84,23 @@ export class JobService {
     this.channel?.unsubscribe();
   }
 
+  getLastTranslationsInLastMonth(): Observable<number> {
+    const today = new Date();
+    const firstDayOfMonth = new Date(today.getFullYear(), today.getMonth(), 1).toISOString();
+    const lastDayOfMonth = new Date(today.getFullYear(), today.getMonth() + 1, 0).toISOString();
+    let query = this.supabaseClientService.from('user_jobs').select('transUnitDone').in('status', ['completed']).lte('createdAt', lastDayOfMonth).gte('createdAt', firstDayOfMonth);
+    return from(query).pipe(
+      map(({data, error}: PostgrestResponse<{transUnitDone: number}>) => {
+        if (error) {
+          this.toastService.error($localize`:@@FAILED_TO_FETCH_MONTHLY_TRANSLATIONS:Failed to fetch monthly translations. Please try again later.`);
+          return 0;
+        }
+        const totalUnits = data.reduce((acc, job) => acc + job.transUnitDone, 0);
+        return totalUnits;
+      })
+    );
+  }
+  
   getJobs(status?: string[], page: number = 1, pageSize: number = 10): Observable<Paginated<Job>> {
     let query = this.supabaseClientService.from('user_jobs').select('*', { count: 'exact', head: false });
     
