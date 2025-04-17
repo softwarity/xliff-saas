@@ -5,7 +5,7 @@ import { launchEstimateRunner } from '../lib/git-service.ts';
 import { JobDao } from '../lib/job-dao.ts';
 import { getSupabaseClient } from '../lib/supabase-client.ts';
 import { UserService } from '../lib/user-service.ts';
-import { GhEstimateInputs } from '../models/gh-action-inputs.ts';
+import { GhInputs } from '../models/gh-action-inputs.ts';
 
 Deno.serve(async (req) => {
     if (req.method === 'OPTIONS') {
@@ -39,15 +39,21 @@ Deno.serve(async (req) => {
         const toInsert: Omit<Job, 'id'> = { request: 'estimation', userId, provider, namespace, repository: name, ...payload };
         const job = await jobDao.insert(toInsert);
         jobId = job.id;
-        const TOKEN = user.user_metadata[provider];
+        const GIT_TOKEN = user.user_metadata[provider];
         const WEBHOOK_URL = `${Deno.env.get('HOST_WEBHOOK')}/functions/v1/estimate-webhook/${job.id}`;
         const WEBHOOK_JWT = Deno.env.get('SUPABASE_ANON_KEY')!;
-        const REPOSITORY_INFO = `${namespace}/${name}@${branch}`;
-        const inputs: GhEstimateInputs = { 
-            TOKEN, REPOSITORY_INFO, 
-            GIT_PROVIDER: provider, EXT_XLIFF, 
-            STATE, 
-            WEBHOOK_URL, WEBHOOK_JWT 
+        const OPTIONS = JSON.stringify({
+            GIT_TOKEN, 
+            NAMESPACE: namespace,
+            REPOSITORY: name,
+            BRANCH: branch,
+            EXT_XLIFF, 
+            STATE
+        });
+        const inputs: GhInputs = { 
+            GIT_PROVIDER: provider, 
+            WEBHOOK_URL, WEBHOOK_JWT,
+            OPTIONS
         };
         console.log('Estimation launching for ', `${namespace}/${name}@${branch} by ${user.email}. JobId: ${job.id}`);
         await launchEstimateRunner(inputs);

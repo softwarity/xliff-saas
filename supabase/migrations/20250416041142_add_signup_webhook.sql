@@ -22,6 +22,15 @@ BEGIN
     WHERE "emailHash" = emailHash 
   ) INTO similarAccount;
 
+  -- Set default membership level to BRONZE in app_metadata
+  UPDATE auth.users
+  SET raw_app_metadata = 
+    CASE 
+      WHEN raw_app_metadata IS NULL THEN '{"membershipLevel": "BRONZE"}'::jsonb
+      ELSE raw_app_metadata || '{"membershipLevel": "BRONZE"}'::jsonb
+    END
+  WHERE id = new.id;
+
   -- Insert initial credits transaction only if the email is not in the account_created table
   IF NOT similarAccount THEN
     -- Insert initial credits transaction
@@ -36,10 +45,6 @@ BEGIN
     INSERT INTO public.user_transactions ("userId", credits, message, status) 
     VALUES (new.id, 0, 'No signup bonus - similar account detected', 'completed');
   END IF;
-  
-  -- Create user metadata entry
-  INSERT INTO public.user_roles ("userId", "roles") 
-  VALUES (new.id, '{}'::text[]);
   
   RETURN new;
 END;

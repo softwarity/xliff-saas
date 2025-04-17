@@ -42,8 +42,8 @@ Deno.serve(async (req) => {
             } catch(e: any) {
                 console.log('Error cancelling run', e);
             }
-            await jobDao.updateById(jobId, { status: 'cancelled' });
         }
+        await jobDao.updateById(jobId, { status: 'cancelled' });
         console.log('Job cancelled for ', `${provider}/${namespace}/${repository}@${branch}. JobId: ${jobId} by ${user.email}`);
         return new Response(JSON.stringify({ message: 'Job cancelled successfully!', job }), { headers: {
             ...CORS_HEADERS,

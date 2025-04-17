@@ -1,10 +1,10 @@
-import { GhEstimateInputs, GhTranslateInputs } from "../models/gh-action-inputs.ts";
+import { GhInputs } from "../models/gh-action-inputs.ts";
 
-export function launchEstimateRunner(inputs: GhEstimateInputs): Promise<void> {
+export function launchEstimateRunner(inputs: GhInputs): Promise<void> {
   return launchXliffRunner('estimate.yml', inputs);
 }
 
-export function launchTranslateRunner(inputs: GhTranslateInputs): Promise<void> {
+export function launchTranslateRunner(inputs: GhInputs): Promise<void> {
   return launchXliffRunner('translate.yml', inputs);
 }
 
@@ -24,7 +24,7 @@ export async function cancelRun(runId: string): Promise<void> {
   return Promise.resolve();
 }
 
-export async function launchXliffRunner(workflowId: string, inputs: GhTranslateInputs | GhEstimateInputs): Promise<void> {
+export async function launchXliffRunner(workflowId: string, inputs: GhInputs): Promise<void> {
   const response = await fetch(`https://api.github.com/repos/softwarity/xliff-runner/actions/workflows/${workflowId}/dispatches`, {
     method: 'POST',
     headers: {
