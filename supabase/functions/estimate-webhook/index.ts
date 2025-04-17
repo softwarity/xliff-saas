@@ -27,6 +27,7 @@ Deno.serve(async (req: Request) => {
       return new Response(null, {status: 200});
     }
     if (status === 'failed') {
+      await jobDao.updateById(jobId, {status: 'failed', details: {error: body.message}});
       return new Response(null, {status: 200});
     }
     const {type} = body;
