@@ -5,7 +5,6 @@ import { RouterModule } from '@angular/router';
 @Component({
   standalone: true,
   imports: [CommonModule, RouterModule],
-  // templateUrl: './documentation.component.html',
   template: `
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <div class="bg-white dark:bg-dark-700 rounded-lg shadow-lg p-8 border border-gray-700">
@@ -15,21 +14,15 @@ import { RouterModule } from '@angular/router';
             <a routerLink="usage" 
               routerLinkActive="text-blue-600 dark:text-blue-400 border-b-2 border-blue-400" 
               class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 py-4 px-10 border-b-2 border-transparent"
-              i18n="@@USAGE_TAB">
-              Usage
-            </a>
+              i18n="@@USAGE_TAB">Usage</a>
             <a routerLink="custom" 
               routerLinkActive="text-blue-600 dark:text-blue-400 border-b-2 border-blue-400" 
               class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 py-4 px-10 border-b-2 border-transparent"
-              i18n="@@CUSTOM_TAB">
-              Custom
-            </a>
+              i18n="@@CUSTOM_TAB">Custom</a>
             <a routerLink="setup" 
               routerLinkActive="text-blue-600 dark:text-blue-400 border-b-2 border-blue-400" 
               class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 py-4 px-10 border-b-2 border-transparent"
-              i18n="@@SETUP_TAB">
-              Setup
-            </a>
+              i18n="@@SETUP_TAB">Setup</a>
           </div>
         </nav>
 
