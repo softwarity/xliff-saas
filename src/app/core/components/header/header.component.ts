@@ -7,12 +7,14 @@ import { LanguageToggleComponent } from '../language-toggle/language-toggle.comp
 import { LoggedNavComponent } from './logged-nav.component';
 import { NgClass } from '@angular/common';
 import { environment } from '../../../../environments/environment';
+import { PurchaseCreditsButtonComponent } from '../../../shared/components/purchase-credits-button.component';
 @Component({
   selector: 'app-header',
   standalone: true,
   imports: [
     RouterLink,
     RouterLinkActive,
+    PurchaseCreditsButtonComponent,
     LanguageToggleComponent,
     LoggedNavComponent,
     NgClass
@@ -44,11 +46,11 @@ import { environment } from '../../../../environments/environment';
           </svg>
           <span class="hidden xl:inline" i18n="@@NAVIGATION_DOCUMENTATION">Documentation</span>
         </a>
-
         @if (isAuthenticated()) {
           <app-logged-nav class="flex-1"></app-logged-nav>
         } @else {
           <div class="flex-1"></div>
+          <app-purchase-credits-button buttonClass="flat-secondary"></app-purchase-credits-button>
           <a class="button flat-primary" routerLink="/auth/login" i18n="@@AUTH_SIGN_IN_BUTTON">Sign In</a>
         }
         <app-language-toggle></app-language-toggle>

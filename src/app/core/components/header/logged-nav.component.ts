@@ -8,6 +8,8 @@ import { AuthService } from '../../services/auth.service';
 import { BalanceService } from '../../services/balance.service';
 import { GitProviderService } from '../../services/git-provider.service';
 import { LoggedButtonComponent } from './logged-button.component';
+import { PurchaseCreditsButtonComponent } from '../../../shared/components/purchase-credits-button.component';
+
 @Component({
   selector: 'app-logged-nav',
   standalone: true,
@@ -16,7 +18,8 @@ import { LoggedButtonComponent } from './logged-button.component';
     RouterLinkActive,
     ReactiveFormsModule,
     CommonModule,
-    LoggedButtonComponent
+    LoggedButtonComponent,
+    PurchaseCreditsButtonComponent
   ],
   template: `
     <div class="flex items-center space-x-2 md:space-x-4">
@@ -52,9 +55,9 @@ import { LoggedButtonComponent } from './logged-button.component';
       }
       <div class="flex-1"></div>
       @if (balance() === 0) {
-        <button  class="flat-secondary" i18n="@@PURCHASE_CREDITS_BUTTON">Purchase credits</button>
+        <app-purchase-credits-button buttonClass="flat-secondary"></app-purchase-credits-button>
       } @else {
-        <button class="flat-primary" i18n="@@BALANCE_BUTTON">{{ balance() }} credits</button>
+        <button class="button flat-primary" i18n="@@BALANCE_BUTTON">{{ balance() }} credits</button>
       }
       <app-logged-button></app-logged-button>
     </div>

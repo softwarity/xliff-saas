@@ -7,6 +7,7 @@ import { JobService } from '../../core/services/job.service';
 import { BalanceService } from '../../core/services/balance.service';
 import { Job } from '../../shared/models/job.model';
 import { JobCardComponent } from './job-card.component';
+import { PurchaseCreditsButtonComponent } from '../../shared/components/purchase-credits-button.component';
 import { map } from 'rxjs';
 
 @Component({
@@ -15,7 +16,8 @@ import { map } from 'rxjs';
   imports: [
     CommonModule,
     RouterModule,
-    JobCardComponent
+    JobCardComponent,
+    PurchaseCreditsButtonComponent
   ],
   templateUrl: './dashboard.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush

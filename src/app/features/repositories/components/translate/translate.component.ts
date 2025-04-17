@@ -3,6 +3,7 @@ import { ChangeDetectionStrategy, Component, effect, inject, input, OnDestroy, s
 import { Observable, Observer, of, Subscription, switchMap, tap } from 'rxjs';
 import { JobService } from '../../../../core/services/job.service';
 import { CancelConfirmComponent } from '../../../../shared/components/cancel-confirm.component';
+import { PurchaseCreditsButtonComponent } from '../../../../shared/components/purchase-credits-button.component';
 import { Job } from '../../../../shared/models/job.model';
 import { Repository } from '../../../../shared/models/repository.model';
 import { RepositoryService } from '../../../../core/services/repository.service';
@@ -15,6 +16,7 @@ import { TranslateModalComponent } from './translate-modal/translate-modal.compo
     CommonModule, 
     TranslateModalComponent,
     CancelConfirmComponent,
+    PurchaseCreditsButtonComponent
   ],
   template: `
 <div class="flex items-center justify-between gap-2">
@@ -43,12 +45,12 @@ import { TranslateModalComponent } from './translate-modal/translate-modal.compo
       <span class="text-sm text-red-500 dark:text-red-400" i18n="@@NO_TRANSLATION_AVAILABLE">No translation available...</span>
     }
     @if (balance() <= 0) {
-      <button  class="flat-secondary" i18n="@@PURCHASE_CREDITS_BUTTON">Purchase credits</button>
+      <app-purchase-credits-button buttonClass="flat-secondary"></app-purchase-credits-button>
     } @else {
       @if(translation()?.status === 'pending' || translation()?.status === 'estimating' || translation()?.status === 'translating') {
         <app-cancel-confirm [confirmCallback]="onCancel.bind(this)" />
       } @else {
-        <button (click)="isModalOpen.set(true)" class="flat-primary" i18n="@@TRANSLATE" [disabled]="disabled() || translation()?.status === 'cancelling'">Translate</button>
+        <button (click)="isModalOpen.set(true)" class="button flat-primary" i18n="@@TRANSLATE" [disabled]="disabled() || translation()?.status === 'cancelling'">Translate</button>
       }
     }
   </div>

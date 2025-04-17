@@ -22,6 +22,10 @@ export const routes: Routes = [
     loadChildren: () => import('./pages/documentation/documentation.routes').then(m => DOCUMENTATION_ROUTES)
   },
   {
+    path: 'pricing',
+    loadComponent: () => import('./pages/pricing.component').then(m => m.PricingComponent)
+  },
+  {
     path: 'dashboard',
     canActivate: [authGuard, emailConfirmedGuard],
     loadComponent: () => import('./features/dashboard/dashboard.component').then(m => m.DashboardComponent)
