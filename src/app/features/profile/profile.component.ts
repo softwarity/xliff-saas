@@ -44,56 +44,19 @@ import { ToastService } from '../../core/services/toast.service';
                 <div class="h-10 w-10 flex items-center justify-center mr-2">
                   <!-- DIAMOND membership badge -->
                   @if (membershipLevel() === 'DIAMOND') {
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-8 w-8">
-                      <!-- Main outline with 40/60 proportion -->
-                      <path d="M8 6L4 11L12 19L20 11L16 6L8 6Z" fill="#a0d2e7" stroke="#48a3c6" stroke-width="0.5" />
-                      
-                      <!-- Top table (flat surface) -->
-                      <path d="M8 6L16 6L16 6L8 6Z" fill="#d8faff" stroke="#48a3c6" stroke-width="0.3" />
-                      
-                      <!-- Left crown facet -->
-                      <path d="M8 6L4 11L8 11L8 6Z" fill="#9eeaf9" stroke="#48a3c6" stroke-width="0.3" />
-                      
-                      <!-- Right crown facet -->
-                      <path d="M16 6L20 11L16 11L16 6Z" fill="#9eeaf9" stroke="#48a3c6" stroke-width="0.3" />
-                      
-                      <!-- Left pavilion facet -->
-                      <path d="M4 11L8 11L12 19L4 11Z" fill="#77c2e0" stroke="#48a3c6" stroke-width="0.3" />
-                      
-                      <!-- Right pavilion facet -->
-                      <path d="M20 11L16 11L12 19L20 11Z" fill="#77c2e0" stroke="#48a3c6" stroke-width="0.3" />
-                      
-                      <!-- Center girdle facet -->
-                      <path d="M8 11L16 11L12 13L8 11Z" fill="#b6e3f4" stroke="#48a3c6" stroke-width="0.3" />
-                      
-                      <!-- Table reflection highlight -->
-                      <path d="M9 6.5L15 6.5L14 7.5L10 7.5Z" fill="white" opacity="0.7" />
-                      
-                      <!-- Sparkle highlights -->
-                      <circle cx="10" cy="8" r="0.4" fill="white" />
-                      <circle cx="14" cy="9" r="0.3" fill="white" />
-                    </svg>
+                    <img src="assets/membership/diamond.svg" alt="Diamond membership badge" class="h-8 w-8">
                   }
                   <!-- GOLD membership badge -->
                   @else if (membershipLevel() === 'GOLD') {
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-8 w-8">
-                      <circle cx="12" cy="12" r="10" fill="#ffd700" stroke="#b8860b" stroke-width="1" />
-                      <path d="M12 6a6 6 0 100 12 6 6 0 000-12z" fill="#ffeb99" stroke="#b8860b" stroke-width="0.5" />
-                    </svg>
+                    <img src="assets/membership/gold.svg" alt="Gold membership badge" class="h-8 w-8">
                   }
                   <!-- SILVER membership badge -->
                   @else if (membershipLevel() === 'SILVER') {
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-8 w-8">
-                      <circle cx="12" cy="12" r="10" fill="#c0c0c0" stroke="#a9a9a9" stroke-width="1" />
-                      <path d="M12 6a6 6 0 100 12 6 6 0 000-12z" fill="#e6e6e6" stroke="#a9a9a9" stroke-width="0.5" />
-                    </svg>
+                    <img src="assets/membership/silver.svg" alt="Silver membership badge" class="h-8 w-8">
                   }
                   <!-- BRONZE membership badge (default) -->
                   @else {
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-8 w-8">
-                      <circle cx="12" cy="12" r="10" fill="#cd7f32" stroke="#8b4513" stroke-width="1" />
-                      <path d="M12 6a6 6 0 100 12 6 6 0 000-12z" fill="#dea681" stroke="#8b4513" stroke-width="0.5" />
-                    </svg>
+                    <img src="assets/membership/bronze.svg" alt="Bronze membership badge" class="h-8 w-8">
                   }
                 </div>
                 <div>
@@ -170,7 +133,7 @@ export class ProfileComponent {
   isLoading = signal(false);
   protected avatarUrl = toSignal(this.avatarService.avatar$);
   protected showDefaultAvatar = signal(false);
-  protected membershipLevel = signal<'DIAMOND' | 'GOLD' | 'SILVER' | 'BRONZE'>('DIAMOND');
+  protected membershipLevel = signal<'DIAMOND' | 'GOLD' | 'SILVER' | 'BRONZE'>('BRONZE');
   showDeleteModal = false;
 
   constructor(
