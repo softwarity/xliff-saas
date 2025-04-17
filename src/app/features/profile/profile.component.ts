@@ -1,10 +1,10 @@
-import { DatePipe } from '@angular/common';
+import { DatePipe, NgClass } from '@angular/common';
 import { Component, effect, inject, signal } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { Router, RouterLink } from '@angular/router';
 import { User } from '@supabase/supabase-js';
 import { from, of } from 'rxjs';
-import { catchError, concatMap } from 'rxjs/operators';
+import { catchError, concatMap, map } from 'rxjs/operators';
 import { AuthService } from '../../core/services/auth.service';
 import { AvatarService } from '../../core/services/avatar.service';
 import { PromptModalComponent } from '../../shared/components/prompt-modal.component';
@@ -12,7 +12,7 @@ import { ToastService } from '../../core/services/toast.service';
 
 @Component({
   standalone: true,
-  imports: [DatePipe,PromptModalComponent, RouterLink],
+  imports: [DatePipe, NgClass, PromptModalComponent, RouterLink],
   template: `
     <div class="container mx-auto px-4 py-8">
       <div class="max-w-2xl mx-auto bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
@@ -37,8 +37,76 @@ import { ToastService } from '../../core/services/toast.service';
               </svg>
             </div>
           </div>
-          <div>
-            <h1 class="text-2xl font-bold text-gray-900 dark:text-white">{{ user()?.email }}</h1>
+          <div class="flex-1">
+            <div class="flex items-center justify-between">
+              <h1 class="text-2xl font-bold text-gray-900 dark:text-white">{{ user()?.email }}</h1>
+              <div class="flex items-center">
+                <div class="h-10 w-10 flex items-center justify-center mr-2">
+                  <!-- DIAMOND membership badge -->
+                  @if (membershipLevel() === 'DIAMOND') {
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-8 w-8">
+                      <!-- Main outline with 40/60 proportion -->
+                      <path d="M8 6L4 11L12 19L20 11L16 6L8 6Z" fill="#a0d2e7" stroke="#48a3c6" stroke-width="0.5" />
+                      
+                      <!-- Top table (flat surface) -->
+                      <path d="M8 6L16 6L16 6L8 6Z" fill="#d8faff" stroke="#48a3c6" stroke-width="0.3" />
+                      
+                      <!-- Left crown facet -->
+                      <path d="M8 6L4 11L8 11L8 6Z" fill="#9eeaf9" stroke="#48a3c6" stroke-width="0.3" />
+                      
+                      <!-- Right crown facet -->
+                      <path d="M16 6L20 11L16 11L16 6Z" fill="#9eeaf9" stroke="#48a3c6" stroke-width="0.3" />
+                      
+                      <!-- Left pavilion facet -->
+                      <path d="M4 11L8 11L12 19L4 11Z" fill="#77c2e0" stroke="#48a3c6" stroke-width="0.3" />
+                      
+                      <!-- Right pavilion facet -->
+                      <path d="M20 11L16 11L12 19L20 11Z" fill="#77c2e0" stroke="#48a3c6" stroke-width="0.3" />
+                      
+                      <!-- Center girdle facet -->
+                      <path d="M8 11L16 11L12 13L8 11Z" fill="#b6e3f4" stroke="#48a3c6" stroke-width="0.3" />
+                      
+                      <!-- Table reflection highlight -->
+                      <path d="M9 6.5L15 6.5L14 7.5L10 7.5Z" fill="white" opacity="0.7" />
+                      
+                      <!-- Sparkle highlights -->
+                      <circle cx="10" cy="8" r="0.4" fill="white" />
+                      <circle cx="14" cy="9" r="0.3" fill="white" />
+                    </svg>
+                  }
+                  <!-- GOLD membership badge -->
+                  @else if (membershipLevel() === 'GOLD') {
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-8 w-8">
+                      <circle cx="12" cy="12" r="10" fill="#ffd700" stroke="#b8860b" stroke-width="1" />
+                      <path d="M12 6a6 6 0 100 12 6 6 0 000-12z" fill="#ffeb99" stroke="#b8860b" stroke-width="0.5" />
+                    </svg>
+                  }
+                  <!-- SILVER membership badge -->
+                  @else if (membershipLevel() === 'SILVER') {
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-8 w-8">
+                      <circle cx="12" cy="12" r="10" fill="#c0c0c0" stroke="#a9a9a9" stroke-width="1" />
+                      <path d="M12 6a6 6 0 100 12 6 6 0 000-12z" fill="#e6e6e6" stroke="#a9a9a9" stroke-width="0.5" />
+                    </svg>
+                  }
+                  <!-- BRONZE membership badge (default) -->
+                  @else {
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-8 w-8">
+                      <circle cx="12" cy="12" r="10" fill="#cd7f32" stroke="#8b4513" stroke-width="1" />
+                      <path d="M12 6a6 6 0 100 12 6 6 0 000-12z" fill="#dea681" stroke="#8b4513" stroke-width="0.5" />
+                    </svg>
+                  }
+                </div>
+                <div>
+                  <span class="font-semibold text-sm" i18n="@@PROFILE_MEMBERSHIP_LEVEL">Membership</span>
+                  <p class="text-sm" [ngClass]="{
+                    'text-blue-500': membershipLevel() === 'DIAMOND',
+                    'text-yellow-500': membershipLevel() === 'GOLD',
+                    'text-gray-500': membershipLevel() === 'SILVER',
+                    'text-amber-700': membershipLevel() === 'BRONZE'
+                  }">{{ membershipLevel() }}</p>
+                </div>
+              </div>
+            </div>
             <p class="text-gray-500 dark:text-gray-400" i18n="@@PROFILE_MEMBER_SINCE">Member since {{ user()?.created_at | date }}</p>
           </div>
         </div>
@@ -102,6 +170,7 @@ export class ProfileComponent {
   isLoading = signal(false);
   protected avatarUrl = toSignal(this.avatarService.avatar$);
   protected showDefaultAvatar = signal(false);
+  protected membershipLevel = signal<'DIAMOND' | 'GOLD' | 'SILVER' | 'BRONZE'>('DIAMOND');
   showDeleteModal = false;
 
   constructor(
@@ -116,6 +185,10 @@ export class ProfileComponent {
     ).subscribe(user => {
       if (user) {
         this.user.set(user);
+        // Set membership level from app_metadata
+        if (user.app_metadata && user.app_metadata['membershipLevel']) {
+          this.membershipLevel.set(user.app_metadata['membershipLevel']);
+        }
       }
     });
 
