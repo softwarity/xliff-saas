@@ -6,14 +6,14 @@ export const environment = {
   },
   stripe: {
     publicKey: 'pk_test_51R0h2VLJCrbo8n9zhGPY9DIVhwKrlLFzUQA8AhavloPHtavV2cVfoTbk1qRRD0R7SwYV5wyfE3jyCKhT9WyUAuLy00ax47FDgu',
-    silverPriceId: 'price_1RFBiJLJCrbo8n9z67PMhxsk',
-    goldPriceId: 'price_1RFBiWLJCrbo8n9zyOOLbe9N',
-    diamondPriceId: 'price_1RFBioLJCrbo8n9zR96wfMdY'
+    silverPriceId: 'price_1RF87TLJCrbo8n9z2Vgs4x4l',
+    goldPriceId: 'price_1RF87lLJCrbo8n9zeqgvvQKy',
+    diamondPriceId: 'price_1RF881LJCrbo8n9zaar5Bcvg'
   },
 };
 const prod = {
   publicKey: 'pk_live_51R0h2VLJCrbo8n9zlLDzmtJPvWeW9sRq4NExsNCW0Zzuhe25npbQNv5DfEtX4uoi2gVUQf6gKFFjJ9xdmwd7UwHe00eA06BK0e',
-  silverPriceId: 'price_1RF87TLJCrbo8n9z2Vgs4x4l',
-  goldPriceId: 'price_1RF87lLJCrbo8n9zeqgvvQKy',
-  diamondPriceId: 'price_1RF881LJCrbo8n9zaar5Bcvg'
+  silverPriceId: 'price_1RFBiJLJCrbo8n9z67PMhxsk',
+  goldPriceId: 'price_1RFBiWLJCrbo8n9zyOOLbe9N',
+  diamondPriceId: 'price_1RFBioLJCrbo8n9zR96wfMdY'
 }
