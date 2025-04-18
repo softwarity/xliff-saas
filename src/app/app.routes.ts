@@ -26,6 +26,11 @@ export const routes: Routes = [
     loadComponent: () => import('./pages/pricing.component').then(m => m.PricingComponent)
   },
   {
+    path: 'purchase-success',
+    // canActivate: [authGuard],
+    loadComponent: () => import('./pages/purchase-success.component').then(m => m.PurchaseSuccessComponent)
+  },
+  {
     path: 'dashboard',
     canActivate: [authGuard, emailConfirmedGuard],
     loadComponent: () => import('./features/dashboard/dashboard.component').then(m => m.DashboardComponent)
@@ -64,11 +69,6 @@ export const routes: Routes = [
     path: 'repositories/bitbucket',
     canActivate: [authGuard],
     loadComponent: () => import('./features/repositories/bitbucket-repositories.component').then(m => m.BitbucketRepositoriesComponent)
-  },
-  {
-    path: 'stripe-test',
-    canActivate: [authGuard],
-    loadComponent: () => import('./features/stripe-test/stripe-test.component').then(m => m.StripeTestComponent)
   },
   {
     path: 'verify-email',

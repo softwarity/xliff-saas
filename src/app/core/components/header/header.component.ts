@@ -46,6 +46,7 @@ import { PurchaseCreditsButtonComponent } from '../../../shared/components/purch
           </svg>
           <span class="hidden xl:inline" i18n="@@NAVIGATION_DOCUMENTATION">Documentation</span>
         </a>
+        <a routerLink="/purchase-success" [queryParams]="{session_id: 'cs_test_a1n6GAUQwTuHHsjJEX8ttA1haHfMpGFTpgz4uXMnML3fM4krWD7GX3XQMS'}" routerLinkActive="!text-primary dark:!text-blue-400" class="flex items-center text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-blue-400 transition-colors p-2">Test Success</a>
         @if (isAuthenticated()) {
           <app-logged-nav class="flex-1"></app-logged-nav>
         } @else {

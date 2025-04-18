@@ -68,7 +68,11 @@
             <span i18n="@@STARTER_PLAN_BASIC_SUPPORT">Basic support</span>
           </li>
         </ul>
-        <button class="flat-primary w-full px-6 py-3 rounded-lg" i18n="@@BUY_NOW">Buy now</button>
+        @if (loading()) {
+          <button  class="flat-primary w-full px-6 py-3 rounded-lg" disabled i18n="@@PROCESSING">Processing...</button>
+        } @else {
+          <button class="flat-primary w-full px-6 py-3 rounded-lg" (click)="buyCredits(silverPriceId)" i18n="@@BUY_NOW">Buy now</button>
+        }
       </div>
 
       <!-- Gold Plan (Professional) -->
@@ -105,7 +109,11 @@
             <span i18n="@@PROFESSIONAL_PLAN_PRIORITY_SUPPORT">Priority support</span>
           </li>
         </ul>
-        <button class="flat-primary w-full px-6 py-3 rounded-lg" i18n="@@BUY_NOW">Buy now</button>
+        @if (loading()) {
+          <button  class="flat-primary w-full px-6 py-3 rounded-lg" disabled i18n="@@PROCESSING">Processing...</button>
+        } @else {
+          <button class="flat-primary w-full px-6 py-3 rounded-lg" (click)="buyCredits(goldPriceId)" i18n="@@BUY_NOW">Buy now</button>
+        }
       </div>
 
       <!-- Diamond Plan (Enterprise) -->
@@ -142,7 +150,11 @@
             <span i18n="@@ENTERPRISE_PLAN_CUSTOM_AI_INSTRUCTIONS">Custom AI instructions by repositories</span>
           </li>
         </ul>
-        <button class="flat-primary w-full px-6 py-3 rounded-lg" i18n="@@BUY_NOW">Buy now</button>
+        @if (loading()) {
+          <button  class="flat-primary w-full px-6 py-3 rounded-lg" disabled i18n="@@PROCESSING">Processing...</button>
+        } @else {
+          <button class="flat-primary w-full px-6 py-3 rounded-lg" (click)="buyCredits(diamondPriceId)" i18n="@@BUY_NOW">Buy now</button>
+        }
       </div>
 
       <!-- Custom Plan -->
