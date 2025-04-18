@@ -1,4 +1,4 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, OnInit, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { StripeService } from '../core/services/stripe.service';
@@ -31,8 +31,8 @@ import { ToastService } from '../core/services/toast.service';
           </div>
           
           <div class="flex justify-between text-light-text-secondary dark:text-gray-300">
-            <span i18n="@@TRANSACTION_DATE">Date:</span>
-            <span>{{ formatDate() }}</span>
+            <span i18n="@@TRANSACTION_DATE">Date:</span>&nbsp;
+            <span>{{ date() | date:'medium' }}</span>
           </div>
         </div>
         
@@ -49,11 +49,7 @@ export class PurchaseSuccessComponent implements OnInit {
   private router = inject(Router);
   private stripeService = inject(StripeService);
   private toastService = inject(ToastService);
-  
-  formatDate(): string {
-    const date = new Date();
-    return date.toLocaleString();
-  }
+  protected date = signal(new Date());
   
   ngOnInit(): void {
     const sessionId = this.route.snapshot.queryParamMap.get('session_id');
