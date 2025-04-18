@@ -3,19 +3,13 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "install:global": "npm install -g localtunnel",
     "ng": "ng",
     "start": "ng serve --host 0.0.0.0 --port 4200 --serve-path /en/",
     "dev": "ng serve --help",
     "extract-i18n": "ng extract-i18n",
     "start:fr": "ng serve --configuration=fr",
     "build:fr": "ng build --configuration=fr",
-    "build": "ng build --localize",
-    "supabase": "npm run postinstall --prefix node_modules/supabase && npm link && supabase",
-    "wh:tunnel": "lt --port 54321 --print-requests"
-  },
-  "bin": {
-    "supabase": "node_modules/supabase/bin/supabase"
+    "build": "ng build --localize"
   },
   "dependencies": {
     "@angular/animations": "^19.2.4",
@@ -40,7 +34,6 @@
     "autoprefixer": "^10.4.21",
     "ng-extract-i18n-merge": "^2.14.3",
     "postcss": "^8.5.3",
-    "supabase": "^2.20.5",
     "tailwindcss": "^3.4.1",
     "typescript": "~5.8.2"
   }
