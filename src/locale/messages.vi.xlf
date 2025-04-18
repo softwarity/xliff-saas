@@ -879,15 +879,15 @@
         <target state="translated">Mua ngay</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/price-grid/price-grid.component.html</context>
-          <context context-type="linenumber">71</context>
+          <context context-type="linenumber">74</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/price-grid/price-grid.component.html</context>
-          <context context-type="linenumber">108</context>
+          <context context-type="linenumber">115</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/price-grid/price-grid.component.html</context>
-          <context context-type="linenumber">145</context>
+          <context context-type="linenumber">156</context>
         </context-group>
       </trans-unit>
       <trans-unit id="MOST_POPULAR_PLAN_TITLE" datatype="html">
@@ -895,7 +895,7 @@
         <target state="translated">Phổ biến nhất</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/price-grid/price-grid.component.html</context>
-          <context context-type="linenumber">76</context>
+          <context context-type="linenumber">80</context>
         </context-group>
       </trans-unit>
       <trans-unit id="PROFESSIONAL_PLAN_DESCRIPTION" datatype="html">
@@ -903,7 +903,7 @@
         <target state="translated">Đối với các ứng dụng phức tạp</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/price-grid/price-grid.component.html</context>
-          <context context-type="linenumber">81</context>
+          <context context-type="linenumber">85</context>
         </context-group>
       </trans-unit>
       <trans-unit id="PROFESSIONAL_PLAN_TRANSLATION_UNIT_PRICE" datatype="html">
@@ -911,7 +911,7 @@
         <target state="translated">0,0055 € mỗi đơn vị dịch</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/price-grid/price-grid.component.html</context>
-          <context context-type="linenumber">87</context>
+          <context context-type="linenumber">91</context>
         </context-group>
       </trans-unit>
       <trans-unit id="PROFESSIONAL_PLAN_PREVIOUS_PLAN" datatype="html">
@@ -923,7 +923,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/price-grid/price-grid.component.html</context>
-          <context context-type="linenumber">93</context>
+          <context context-type="linenumber">97</context>
         </context-group>
       </trans-unit>
       <trans-unit id="PROFESSIONAL_PLAN_TRANSLATION_UNITS" datatype="html">
@@ -931,7 +931,7 @@
         <target state="translated">8.000 đơn vị dịch thuật</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/price-grid/price-grid.component.html</context>
-          <context context-type="linenumber">99</context>
+          <context context-type="linenumber">103</context>
         </context-group>
       </trans-unit>
       <trans-unit id="PROFESSIONAL_PLAN_PRIORITY_SUPPORT" datatype="html">
@@ -939,7 +939,7 @@
         <target state="translated">Hỗ trợ ưu tiên</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/price-grid/price-grid.component.html</context>
-          <context context-type="linenumber">105</context>
+          <context context-type="linenumber">109</context>
         </context-group>
       </trans-unit>
       <trans-unit id="ENTERPRISE_PLAN_TITLE" datatype="html">
@@ -947,7 +947,7 @@
         <target state="translated">Doanh nghiệp</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/price-grid/price-grid.component.html</context>
-          <context context-type="linenumber">113</context>
+          <context context-type="linenumber">121</context>
         </context-group>
       </trans-unit>
       <trans-unit id="ENTERPRISE_PLAN_DESCRIPTION" datatype="html">
@@ -955,7 +955,7 @@
         <target state="translated">Đối với các ứng dụng phức tạp với các ngữ cảnh khác nhau</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/price-grid/price-grid.component.html</context>
-          <context context-type="linenumber">118</context>
+          <context context-type="linenumber">126</context>
         </context-group>
       </trans-unit>
       <trans-unit id="ENTERPRISE_PLAN_TRANSLATION_UNIT_PRICE" datatype="html">
@@ -963,7 +963,7 @@
         <target state="translated">0,0035 € mỗi đơn vị dịch</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/price-grid/price-grid.component.html</context>
-          <context context-type="linenumber">124</context>
+          <context context-type="linenumber">132</context>
         </context-group>
       </trans-unit>
       <trans-unit id="ENTERPRISE_PLAN_PREVIOUS_PLAN" datatype="html">
@@ -971,7 +971,7 @@
         <target state="translated">Kế hoạch trước đó +</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/price-grid/price-grid.component.html</context>
-          <context context-type="linenumber">130</context>
+          <context context-type="linenumber">138</context>
         </context-group>
       </trans-unit>
       <trans-unit id="ENTERPRISE_PLAN_TRANSLATION_UNITS" datatype="html">
@@ -979,7 +979,7 @@
         <target state="translated">20 000 đơn vị dịch</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/price-grid/price-grid.component.html</context>
-          <context context-type="linenumber">136</context>
+          <context context-type="linenumber">144</context>
         </context-group>
       </trans-unit>
       <trans-unit id="ENTERPRISE_PLAN_CUSTOM_AI_INSTRUCTIONS" datatype="html">
@@ -987,7 +987,7 @@
         <target state="translated">Hướng dẫn AI tùy chỉnh từ các kho lưu trữ</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/price-grid/price-grid.component.html</context>
-          <context context-type="linenumber">142</context>
+          <context context-type="linenumber">150</context>
         </context-group>
       </trans-unit>
       <trans-unit id="CUSTOM_PLAN_TITLE" datatype="html">
@@ -995,15 +995,15 @@
         <target state="translated">Tùy chỉnh</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/price-grid/price-grid.component.html</context>
-          <context context-type="linenumber">150</context>
+          <context context-type="linenumber">162</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/price-grid/price-grid.component.html</context>
-          <context context-type="linenumber">156</context>
+          <context context-type="linenumber">168</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/price-grid/price-grid.component.html</context>
-          <context context-type="linenumber">158</context>
+          <context context-type="linenumber">170</context>
         </context-group>
       </trans-unit>
       <trans-unit id="CUSTOM_PLAN_ON_PREMISE_DEPLOYMENT" datatype="html">
@@ -1011,7 +1011,7 @@
         <target state="translated">Triển khai tại chỗ</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/price-grid/price-grid.component.html</context>
-          <context context-type="linenumber">164</context>
+          <context context-type="linenumber">176</context>
         </context-group>
       </trans-unit>
       <trans-unit id="CUSTOM_PLAN_USE_YOUR_OWN_AI" datatype="html">
@@ -1019,7 +1019,7 @@
         <target state="translated">Sử dụng AI của riêng bạn</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/price-grid/price-grid.component.html</context>
-          <context context-type="linenumber">170</context>
+          <context context-type="linenumber">182</context>
         </context-group>
       </trans-unit>
       <trans-unit id="CUSTOM_PLAN_UNLIMITED_TRANSLATION_UNITS" datatype="html">
@@ -1027,7 +1027,7 @@
         <target state="translated">Các đơn vị dịch không giới hạn</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/price-grid/price-grid.component.html</context>
-          <context context-type="linenumber">176</context>
+          <context context-type="linenumber">188</context>
         </context-group>
       </trans-unit>
       <trans-unit id="CUSTOM_PLAN_UNLOCK_ALL_FEATURES" datatype="html">
@@ -1035,7 +1035,7 @@
         <target state="translated">Mở khóa tất cả các tính năng</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/price-grid/price-grid.component.html</context>
-          <context context-type="linenumber">182</context>
+          <context context-type="linenumber">194</context>
         </context-group>
       </trans-unit>
       <trans-unit id="CUSTOM_PLAN_PRIORITY_SUPPORT" datatype="html">
@@ -1043,7 +1043,7 @@
         <target state="translated">Hỗ trợ ưu tiên</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/price-grid/price-grid.component.html</context>
-          <context context-type="linenumber">188</context>
+          <context context-type="linenumber">200</context>
         </context-group>
       </trans-unit>
       <trans-unit id="CONTACT_US" datatype="html">
@@ -1051,7 +1051,7 @@
         <target state="translated">Liên hệ với chúng tôi</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/price-grid/price-grid.component.html</context>
-          <context context-type="linenumber">191</context>
+          <context context-type="linenumber">203</context>
         </context-group>
       </trans-unit>
       <trans-unit id="TESTIMONIALS_TITLE" datatype="html">
@@ -3523,11 +3523,7 @@
         <target state="new">Failed to create checkout session. Please try again later.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/services/stripe.service.ts</context>
-          <context context-type="linenumber">36</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/services/stripe.service.ts</context>
-          <context context-type="linenumber">45</context>
+          <context context-type="linenumber">28</context>
         </context-group>
       </trans-unit>
       <trans-unit id="NO_SESSION_ID_RETURNED" datatype="html">
@@ -3535,7 +3531,7 @@
         <target state="new">No session ID returned. Please try again later.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/services/stripe.service.ts</context>
-          <context context-type="linenumber">40</context>
+          <context context-type="linenumber">31</context>
         </context-group>
       </trans-unit>
       <trans-unit id="STRIPE_NOT_LOADED" datatype="html">
@@ -3543,7 +3539,7 @@
         <target state="new">Stripe not loaded. Please try again later.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/services/stripe.service.ts</context>
-          <context context-type="linenumber">54</context>
+          <context context-type="linenumber">45</context>
         </context-group>
       </trans-unit>
       <trans-unit id="FAILED_TO_REDIRECT_TO_CHECKOUT" datatype="html">
@@ -3551,55 +3547,11 @@
         <target state="new">Failed to redirect to checkout. Please try again later.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/services/stripe.service.ts</context>
-          <context context-type="linenumber">60</context>
+          <context context-type="linenumber">51</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/services/stripe.service.ts</context>
-          <context context-type="linenumber">64</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="FAILED_TO_CREATE_PORTAL_SESSION" datatype="html">
-        <source>Failed to create portal session. Please try again later.</source>
-        <target state="new">Failed to create portal session. Please try again later.</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/services/stripe.service.ts</context>
-          <context context-type="linenumber">74</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/services/stripe.service.ts</context>
-          <context context-type="linenumber">83</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="NO_PORTAL_URL_RETURNED" datatype="html">
-        <source>No portal URL returned. Please try again later.</source>
-        <target state="new">No portal URL returned. Please try again later.</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/services/stripe.service.ts</context>
-          <context context-type="linenumber">78</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="FAILED_TO_CHECK_QUOTA" datatype="html">
-        <source>Failed to check quota. Please try again later.</source>
-        <target state="new">Failed to check quota. Please try again later.</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/services/stripe.service.ts</context>
-          <context context-type="linenumber">92</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/services/stripe.service.ts</context>
-          <context context-type="linenumber">97</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="FAILED_TO_INCREMENT_USAGE" datatype="html">
-        <source>Failed to increment usage. Please try again later.</source>
-        <target state="new">Failed to increment usage. Please try again later.</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/services/stripe.service.ts</context>
-          <context context-type="linenumber">106</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/services/stripe.service.ts</context>
-          <context context-type="linenumber">111</context>
+          <context context-type="linenumber">55</context>
         </context-group>
       </trans-unit>
       <trans-unit id="TOAST_ACTION_CLOSE" datatype="html">
@@ -5011,7 +4963,7 @@
         <target state="new">Gold</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/price-grid/price-grid.component.html</context>
-          <context context-type="linenumber">80</context>
+          <context context-type="linenumber">84</context>
         </context-group>
       </trans-unit>
       <trans-unit id="DIAMOND_MEMBERSHIP_LEVEL" datatype="html">
@@ -5019,7 +4971,7 @@
         <target state="new">Diamond</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/price-grid/price-grid.component.html</context>
-          <context context-type="linenumber">117</context>
+          <context context-type="linenumber">125</context>
         </context-group>
       </trans-unit>
       <trans-unit id="CUSTOM_PLAN_DESCRIPTION" datatype="html">
@@ -5027,7 +4979,7 @@
         <target state="new">Tailored to your infrastructure and requirements</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/price-grid/price-grid.component.html</context>
-          <context context-type="linenumber">157</context>
+          <context context-type="linenumber">169</context>
         </context-group>
       </trans-unit>
       <trans-unit id="PROFILE_MEMBERSHIP_LEVEL" datatype="html">
@@ -5172,6 +5124,110 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/pricing.component.ts</context>
           <context context-type="linenumber">54</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="CHECKOUT_ERROR" datatype="html">
+        <source>An error occurred during checkout. Please try again.</source>
+        <target state="new">An error occurred during checkout. Please try again.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/services/stripe.service.ts</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="PROCESSING" datatype="html">
+        <source>Processing...</source>
+        <target state="new">Processing...</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/price-grid/price-grid.component.html</context>
+          <context context-type="linenumber">72</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/price-grid/price-grid.component.html</context>
+          <context context-type="linenumber">113</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/price-grid/price-grid.component.html</context>
+          <context context-type="linenumber">154</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="PLEASE_LOGIN_TO_PURCHASE" datatype="html">
+        <source>Please login to purchase credits.</source>
+        <target state="new">Please login to purchase credits.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/price-grid/price-grid.component.ts</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="INVALID_PRICE_OPTION" datatype="html">
+        <source>Invalid price option.</source>
+        <target state="new">Invalid price option.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/price-grid/price-grid.component.ts</context>
+          <context context-type="linenumber">40</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="PURCHASE_SUCCESS_TITLE" datatype="html">
+        <source>Payment Successful!</source>
+        <target state="new">Payment Successful!</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/purchase-success.component.ts</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="PURCHASE_SUCCESS_MESSAGE" datatype="html">
+        <source>Thank you for your purchase. Your payment has been processed successfully, and your credits have been added to your account.</source>
+        <target state="new">Thank you for your purchase. Your payment has been processed successfully, and your credits have been added to your account.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/purchase-success.component.ts</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="TRANSACTION_SUMMARY" datatype="html">
+        <source>Transaction Summary</source>
+        <target state="new">Transaction Summary</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/purchase-success.component.ts</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="TRANSACTION_STATUS" datatype="html">
+        <source>Status:</source>
+        <target state="new">Status:</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/purchase-success.component.ts</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="TRANSACTION_DATE" datatype="html">
+        <source>Date:</source>
+        <target state="new">Date:</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/purchase-success.component.ts</context>
+          <context context-type="linenumber">34</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="GO_TO_DASHBOARD" datatype="html">
+        <source>Go to Dashboard</source>
+        <target state="new">Go to Dashboard</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/purchase-success.component.ts</context>
+          <context context-type="linenumber">40</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="VIEW_PLANS" datatype="html">
+        <source>View Plans</source>
+        <target state="new">View Plans</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/purchase-success.component.ts</context>
+          <context context-type="linenumber">41</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="CREDITS_ADDED_SUCCESSFULLY" datatype="html">
+        <source>Credits have been added to your account successfully.</source>
+        <target state="new">Credits have been added to your account successfully.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/purchase-success.component.ts</context>
+          <context context-type="linenumber">64</context>
         </context-group>
       </trans-unit>
     </body>
