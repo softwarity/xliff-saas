@@ -27,9 +27,29 @@
             "translation": "src/locale/messages.fr.xlf",
             "baseHref": "/fr/"
           },
+          "ru": {
+            "translation": "src/locale/messages.ru.xlf",
+            "baseHref": "/ru/"
+          },
+          "es": {
+            "translation": "src/locale/messages.es.xlf",
+            "baseHref": "/es/"
+          },
+          "zh": {
+            "translation": "src/locale/messages.zh.xlf",
+            "baseHref": "/zh/"
+          },
           "vi": {
             "translation": "src/locale/messages.vi.xlf",
             "baseHref": "/vi/"
+          },
+          "de": {
+            "translation": "src/locale/messages.de.xlf",
+            "baseHref": "/de/"
+          },
+          "he": {
+            "translation": "src/locale/messages.he.xlf",
+            "baseHref": "/he/"
           }
         }
       },
@@ -57,7 +77,12 @@
           "configurations": {
             "en": {"localize": ["en"]},
             "fr": {"localize": ["fr"], "deleteOutputPath": false},
+            "de": {"localize": ["de"], "deleteOutputPath": false},
+            "zh": {"localize": ["zh"], "deleteOutputPath": false},
+            "es": {"localize": ["es"], "deleteOutputPath": false},
             "vi": {"localize": ["vi"], "deleteOutputPath": false},
+            "he": {"localize": ["he"], "deleteOutputPath": false},
+            "ru": {"localize": ["ru"], "deleteOutputPath": false},
             "production": {
               "budgets": [
                 {
@@ -115,7 +140,12 @@
             "trim": true,
             "targetFiles": [
               "messages.fr.xlf",
-              "messages.vi.xlf"
+              "messages.vi.xlf",
+              "messages.de.xlf",
+              "messages.he.xlf",
+              "messages.ru.xlf",
+              "messages.es.xlf",
+              "messages.zh.xlf"
             ]
           }
         }
