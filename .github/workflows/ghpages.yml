@@ -33,6 +33,7 @@ jobs:
           node-version: '20'
       - run: npm install
       - run: npm run build
+      - run: npm run generate-languages
       - run: chmod +x create-index-n-locales.sh
       - run: ./create-index-n-locales.sh
       - name: Upload artifact

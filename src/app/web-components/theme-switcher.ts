@@ -190,6 +190,7 @@
       });
     }
   }
-  
-  customElements.define('theme-switcher', ThemeSwitcher);
+  if (typeof window !== 'undefined' && window.customElements) {
+    customElements.define('theme-switcher', ThemeSwitcher);
+  }
 })();

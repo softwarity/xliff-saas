@@ -12,26 +12,16 @@ if [ ! -d "$BROWSER_DIR" ]; then
 fi
 
 # Récupérer la liste des répertoires (locales) et les mettre en format string
-LOCALES=$(ls -d "$BROWSER_DIR"/*/ 2>/dev/null | xargs -n 1 basename)
+FOLDERS=$(ls -d "$BROWSER_DIR"/*/ 2>/dev/null | xargs -n 1 basename)
 # Initialiser le tableau de fichiers
-FILES="src/assets/locales.json"
-for locale in $LOCALES; do
-    FILES="$FILES dist/xliff-translator/browser/$locale/assets/locales.json"
-done
-# Créer le contenu de locales.json avec les codes et noms des langues
-for file in $FILES; do
-    echo "[" > "$file"
-    for locale in $LOCALES; do
-        echo "  {\"code\": \"$locale\"}," >> "$file"
-    done
-    # Supprimer la dernière virgule et fermer le tableau
-    sed -i '$ s/,$//' "$file"
-    echo "]" >> "$file"
-    echo "locales.json créé avec succès dans: $file"
+JSON_FILE="src/assets/locales.json"
+for folder in $FOLDERS; do
+    echo "cp $JSON_FILE $BROWSER_DIR/$folder/assets/locales.json"
+    cp "$JSON_FILE" "$BROWSER_DIR/$folder/assets/locales.json"
 done
 
 cat > "$BROWSER_DIR/preferred-language.js" << EOF
-const supportedLocales = [$(for locale in $LOCALES; do echo -n "'$locale',"; done | sed 's/,$//')];
+const supportedLocales = [$(cat $JSON_FILE)];
 function getPreferredLanguage() {
     // 1. Check localStorage
     const storedLang = localStorage.getItem('preferredLanguage')?.toLowerCase();

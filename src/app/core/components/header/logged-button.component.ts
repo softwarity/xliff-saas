@@ -1,5 +1,5 @@
-import { AsyncPipe } from '@angular/common';
-import { Component, effect, inject, signal } from '@angular/core';
+import { AsyncPipe, isPlatformBrowser } from '@angular/common';
+import { Component, effect, inject, PLATFORM_ID, signal } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { RouterLink } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
@@ -61,6 +61,7 @@ export class LoggedButtonComponent {
   private avatarService = inject(AvatarService);
   private auth = inject(AuthService);
   private boundCloseMenu: (() => void) | null = null;
+  private platformId: Object = inject(PLATFORM_ID);
 
   protected user$ = this.auth.user$;
   protected isMenuOpen = false;
@@ -80,7 +81,9 @@ export class LoggedButtonComponent {
       this.isMenuOpen = true;
       this.boundCloseMenu = this.closeMenu.bind(this);
       setTimeout((obj: any) => {
-        document.body.addEventListener('click', obj.boundCloseMenu);
+        if (isPlatformBrowser(this.platformId)) {
+          document.body.addEventListener('click', obj.boundCloseMenu);
+        }
       }, 100, this);
     } else {
       this.closeMenu();

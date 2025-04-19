@@ -1,10 +1,11 @@
-import { Injectable, inject } from '@angular/core';
+import { Injectable, PLATFORM_ID, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from '@supabase/supabase-js';
 import { BehaviorSubject, Observable, catchError, from, map, of, throwError, switchMap } from 'rxjs';
 import { BASE_URL } from '../tokens/base-url.token';
 import { SupabaseClientService } from './supabase-client.service';
 import { ToastService } from './toast.service';
+import { isPlatformBrowser } from '@angular/common';
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +15,7 @@ export class AuthService {
   private router = inject(Router);
   private baseUrl = inject(BASE_URL);
   private toastService = inject(ToastService);
+  private platformId = inject(PLATFORM_ID);
   
   private userSubject = new BehaviorSubject<User | null>(null);
   private isAuthenticatedSubject = new BehaviorSubject<boolean>(false);
@@ -86,7 +88,7 @@ export class AuthService {
   }
 
   signUp(email: string, password: string): Observable<void> {
-    const emailRedirectTo: string = `${window.location.origin}${this.baseUrl}verify-email`;
+    const emailRedirectTo: string = `${this.getOrigin()}verify-email`;
     return from(this.supabase.auth.signUp({  email, password, options: { emailRedirectTo } })).pipe(
       map(response => {
         if (response.error) {
@@ -113,10 +115,9 @@ export class AuthService {
   }
 
   signInWithGoogle(): Observable<void> {
-    const redirectTo = `${window.location.origin}${this.baseUrl}`;
     return from(this.supabase.auth.signInWithOAuth({ 
       provider: 'google',
-      options: { redirectTo }
+      options: { redirectTo: this.getOrigin() }
     })).pipe(
       map(response => {
         if (response.error) throw response.error;
@@ -149,7 +150,7 @@ export class AuthService {
       return throwError(() => new Error($localize `:@@AUTH_SERVICE_NO_EMAIL:No email address provided`));
     }
     console.log('Resending confirmation email to:', email);
-    const emailRedirectTo: string = `${window.location.origin}${this.baseUrl}verify-email`;
+    const emailRedirectTo: string = `${this.getOrigin()}verify-email`;
     return from(this.supabase.auth.resend({ type: 'signup', email, options: { emailRedirectTo  } })).pipe(
       map(response => {
         if (response.error) {
@@ -182,7 +183,7 @@ export class AuthService {
     if (!email) {
       return throwError(() => new Error($localize `:@@AUTH_SERVICE_NO_EMAIL:No email address provided`));
     }
-    const emailRedirectTo: string = `${window.location.origin}${this.baseUrl}auth/update-password`;
+    const emailRedirectTo: string = `${this.getOrigin()}auth/update-password`;
     return from(this.supabase.auth.resetPasswordForEmail(email, { redirectTo: emailRedirectTo })).pipe(
       map(response => {
         if (response.error) throw response.error;
@@ -193,6 +194,13 @@ export class AuthService {
         return throwError(() => error);
       })
     );
+  }
+
+  getOrigin(): string {
+    if (isPlatformBrowser(this.platformId)) {
+      return `${window.location.origin}${this.baseUrl}`;
+    }
+    return '';
   }
 
   deleteAccount(): Observable<void> {

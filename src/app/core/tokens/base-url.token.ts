@@ -1,5 +1,5 @@
-import { DOCUMENT } from '@angular/common';
-import { InjectionToken, inject } from '@angular/core';
+import { DOCUMENT, isPlatformBrowser } from '@angular/common';
+import { InjectionToken, PLATFORM_ID, inject } from '@angular/core';
 
 /**
  * Function to determine the base URL of the application,
@@ -7,10 +7,14 @@ import { InjectionToken, inject } from '@angular/core';
  * Normalized to always end with a slash.
  */
 export function baseUrlFactory(): string {
-  const document = inject(DOCUMENT);
-  const baseElement = document.querySelector('base') || document.querySelector('#base');
-  const baseUrl = baseElement?.getAttribute('href') || window.location.origin;
-  return baseUrl.endsWith('/') ? baseUrl : `${baseUrl}/`;
+  const platformId: Object = inject(PLATFORM_ID);
+  if (isPlatformBrowser(platformId)) {
+    const document = inject(DOCUMENT);
+    const baseElement = document.querySelector('base') || document.querySelector('#base');
+    const baseUrl = baseElement?.getAttribute('href') || window.location.origin;
+    return baseUrl.endsWith('/') ? baseUrl : `${baseUrl}/`;
+  }
+  return '';
 }
 
 /**

@@ -1,21 +1,10 @@
 /// <reference types="@angular/localize" />
 
-import { provideHttpClient } from '@angular/common/http';
-import { provideExperimentalZonelessChangeDetection } from '@angular/core';
 import { bootstrapApplication } from '@angular/platform-browser';
-import { provideAnimations } from '@angular/platform-browser/animations';
-import { provideRouter, withViewTransitions } from '@angular/router';
 import { AppComponent } from './app/app.component';
-import { routes } from './app/app.routes';
+import { appConfig } from './app/app.config';
 
-bootstrapApplication(AppComponent, {
-  providers: [
-    provideRouter(routes, withViewTransitions()),
-    provideHttpClient(),
-    provideAnimations(),
-    provideExperimentalZonelessChangeDetection()
-  ]
-}).catch(err => {
+bootstrapApplication(AppComponent, appConfig).catch(err => {
     console.error('Detailed bootstrap error:', err);
     // Log the full error stack
     if (err.stack) {

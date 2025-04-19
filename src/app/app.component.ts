@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { Router, RouterLink, RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './core/components/header/header.component';
 import { ToastComponent } from './shared/components/toast/toast.component';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -35,14 +36,17 @@ import { ToastComponent } from './shared/components/toast/toast.component';
   `
 })
 export class AppComponent implements OnInit {
-  constructor(private router: Router) {}
+  private router = inject(Router);
+  private platformId = inject(PLATFORM_ID);
 
   ngOnInit() {
-    // Gérer les query parameters
-    const urlParams = new URLSearchParams(window.location.search);
-    const page = urlParams.get('page');
-    if (page) {
-      this.router.navigateByUrl(`/${page}`);
+    if (isPlatformBrowser(this.platformId)) {
+      // Gérer les query parameters
+      const urlParams = new URLSearchParams(window.location.search);
+      const page = urlParams.get('page');
+      if (page) {
+        this.router.navigateByUrl(`/${page}`);
+      }
     }
   }
 }

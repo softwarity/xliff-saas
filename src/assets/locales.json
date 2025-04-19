@@ -1,5 +1,26 @@
 [
-  {"code": "en"},
-  {"code": "fr"},
-  {"code": "vi"}
+  {
+    "code": "en"
+  },
+  {
+    "code": "fr"
+  },
+  {
+    "code": "ru"
+  },
+  {
+    "code": "es"
+  },
+  {
+    "code": "zh"
+  },
+  {
+    "code": "vi"
+  },
+  {
+    "code": "de"
+  },
+  {
+    "code": "he"
+  }
 ]

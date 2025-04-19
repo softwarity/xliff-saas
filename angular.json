@@ -21,35 +21,35 @@
       "sourceRoot": "src",
       "prefix": "app",
       "i18n": {
-        "sourceLocale": {"code": "en", "baseHref": "/en/"},
+        "sourceLocale": {"code": "en", "subPath": "en"},
         "locales": {
           "fr": {
             "translation": "src/locale/messages.fr.xlf",
-            "baseHref": "/fr/"
+            "subPath": "fr"
           },
           "ru": {
             "translation": "src/locale/messages.ru.xlf",
-            "baseHref": "/ru/"
+            "subPath": "ru"
           },
           "es": {
             "translation": "src/locale/messages.es.xlf",
-            "baseHref": "/es/"
+            "subPath": "es"
           },
           "zh": {
             "translation": "src/locale/messages.zh.xlf",
-            "baseHref": "/zh/"
+            "subPath": "zh"
           },
           "vi": {
             "translation": "src/locale/messages.vi.xlf",
-            "baseHref": "/vi/"
+            "subPath": "vi"
           },
           "de": {
             "translation": "src/locale/messages.de.xlf",
-            "baseHref": "/de/"
+            "subPath": "de"
           },
           "he": {
             "translation": "src/locale/messages.he.xlf",
-            "baseHref": "/he/"
+            "subPath": "he"
           }
         }
       },
@@ -57,7 +57,12 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
+            "prerender": {
+              "routesFile": "routes.txt",
+              "discoverRoutes": false
+            },
             "allowedCommonJsDependencies": [
+              "whatwg-url",
               "@supabase/supabase-js"
             ],
             "outputPath": "dist/xliff-translator",
@@ -71,8 +76,14 @@
               "src/favicon.ico",
               "src/assets"
             ],
-            "styles": ["src/global_styles.css"],
-            "scripts": []
+            "styles": [
+              "src/global_styles.css"
+            ],
+            "scripts": [],
+            "server": "src/main.server.ts",
+            "ssr": {
+              "entry": "src/server.ts"
+            }
           },
           "configurations": {
             "en": {"localize": ["en"]},

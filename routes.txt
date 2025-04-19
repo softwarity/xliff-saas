@@ -1,0 +1,8 @@
+/how-it-works
+/documentation
+/documentation/usage
+/documentation/custom
+/documentation/setup
+/terms
+/privacy
+/pricing

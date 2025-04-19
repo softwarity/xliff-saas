@@ -1,11 +1,11 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA, inject } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, inject, PLATFORM_ID } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import '../../../web-components/theme-switcher';
 import { AuthService } from '../../services/auth.service';
 import { LanguageToggleComponent } from '../language-toggle/language-toggle.component';
 import { LoggedNavComponent } from './logged-nav.component';
-import { NgClass } from '@angular/common';
+import { isPlatformBrowser, NgClass } from '@angular/common';
 import { environment } from '../../../../environments/environment';
 import { PurchaseCreditsButtonComponent } from '../../../shared/components/purchase-credits-button.component';
 @Component({
@@ -54,11 +54,13 @@ import { PurchaseCreditsButtonComponent } from '../../../shared/components/purch
           <a class="button flat-primary" routerLink="/auth/login" i18n="@@AUTH_SIGN_IN_BUTTON">Sign In</a>
         }
         <app-language-toggle></app-language-toggle>
-        <theme-switcher attribute="class"
-          title-dark="Dark mode" i18n-title-dark="@@THEME_TOGGLE_TO_DARK"
-          title-light="Light mode" i18n-title-light="@@THEME_TOGGLE_TO_LIGHT"
-          title-system="System preference" i18n-title-system="@@THEME_TOGGLE_TO_SYSTEM"
-        ></theme-switcher>
+        @if (isBrowser) {
+          <theme-switcher attribute="class"
+            title-dark="Dark mode" i18n-title-dark="@@THEME_TOGGLE_TO_DARK"
+            title-light="Light mode" i18n-title-light="@@THEME_TOGGLE_TO_LIGHT"
+            title-system="System preference" i18n-title-system="@@THEME_TOGGLE_TO_SYSTEM"
+          ></theme-switcher>
+        }
       </div>
     </nav>
   </div>
@@ -66,8 +68,11 @@ import { PurchaseCreditsButtonComponent } from '../../../shared/components/purch
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class HeaderComponent {
+  private platformId: Object = inject(PLATFORM_ID);
   dev = !environment.production;
   private auth = inject(AuthService);
   protected isAuthenticated = toSignal(this.auth.isAuthenticated$, { initialValue: false });
   protected user = toSignal(this.auth.user$);
+  protected isBrowser = isPlatformBrowser(this.platformId);
+
 }

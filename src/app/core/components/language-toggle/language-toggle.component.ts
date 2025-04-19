@@ -1,5 +1,6 @@
+import { isPlatformBrowser } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { Component, effect, signal } from '@angular/core';
+import { Component, inject, PLATFORM_ID, signal } from '@angular/core';
 
 interface Language {
   code: string;
@@ -17,6 +18,7 @@ interface Language {
   `]
 })
 export class LanguageToggleComponent {
+  private platformId = inject(PLATFORM_ID);
   languages = signal<Language[]>([]);
   currentLang = signal<string>('en');
   isOpen = signal(false);
@@ -24,15 +26,17 @@ export class LanguageToggleComponent {
   private boundCloseMenu: (() => void) | null = null;
 
   constructor(private http: HttpClient) {
-    this.http.get<Language[]>('assets/locales.json').subscribe(data => {
-      this.languages.set(data.map(lang => ({
-        code: lang.code,
-        name: new Intl.DisplayNames([lang.code], { type: 'language' }).of(lang.code) || lang.code
-      })));
-    });
-    const fragments = this.getFragments();
-    const lg = fragments.pop() || 'en';
-    this.currentLang.set(lg);
+    if (isPlatformBrowser(this.platformId)) {
+      this.http.get<Language[]>('assets/locales.json').subscribe(data => {
+        this.languages.set(data.map(lang => ({
+          code: lang.code,
+          name: new Intl.DisplayNames([lang.code], { type: 'language' }).of(lang.code) || lang.code
+        })));
+      });
+      const fragments = this.getFragments();
+      const lg = fragments.pop() || 'en';
+      this.currentLang.set(lg);
+    }
   }
   
 
@@ -42,7 +46,9 @@ export class LanguageToggleComponent {
       this.isOpen.set(true);
       this.boundCloseMenu = this.closeDropdown.bind(this);
       setTimeout((obj: any) => {
-        document.body.addEventListener('click', obj.boundCloseMenu);
+        if (isPlatformBrowser(this.platformId)) {
+          document.body.addEventListener('click', obj.boundCloseMenu);
+        }
       }, 100, this);
     } else {
       this.closeDropdown();
@@ -58,19 +64,24 @@ export class LanguageToggleComponent {
   }
 
   getFragments() {
-    const baseObj = document.querySelector('base') || document.querySelector('#base');
-    const base =  (baseObj?.href || '').replace(document.location.origin, '');
-    return base.split('/').filter(Boolean);
+    if (isPlatformBrowser(this.platformId)) {
+      const baseObj = document.querySelector('base') || document.querySelector('#base');
+      const base =  (baseObj?.href || '').replace(document.location.origin, '');
+      return base.split('/').filter(Boolean);
+    }
+    return [];
   }
 
   changeLanguage(lang: string) {
-    localStorage.setItem('preferredLanguage', lang);
-    const fragments = this.getFragments();
-    fragments.pop();
-    if (fragments.length > 0) {
-      window.location.href = '/' + fragments.join('/') + '/' + lang + '/';
-    } else {
-      window.location.href = '/' + lang + '/';
+    if (isPlatformBrowser(this.platformId)) {
+      localStorage.setItem('preferredLanguage', lang);
+      const fragments = this.getFragments();
+      fragments.pop();
+      if (fragments.length > 0) {
+        window.location.href = '/' + fragments.join('/') + '/' + lang + '/';
+      } else {
+        window.location.href = '/' + lang + '/';
+      }
     }
   }
 }
