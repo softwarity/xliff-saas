@@ -58,17 +58,14 @@ create_index_page() {
     while IFS= read -r line; do
       # Check if the line contains </head>
       if [[ "$line" == *"</head>"* ]]; then
-        break
+        echo "$insert_content" >> "$destination_file"
       fi
-      echo "$line"
+      if [[ "$line" != *"app-root></app-root"* ]]; then
+        echo "$line"
+      fi
     done < "$source_file"
 
-    # Add the content passed as an argument
-    echo "$insert_content" >> "$destination_file"
 
-    # Close the </head> tag
-    echo "  </head>" >> "$destination_file"
-    echo "</html>" >> "$destination_file"
 
   } > "$destination_file"
 }
