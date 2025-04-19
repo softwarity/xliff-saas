@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /private/  # Empêche l'exploration du dossier /private/
+Allow: /              # Autorise l'exploration de toutes les autres pages
+Sitemap: https://xliff.softwarity.io/sitemap.xml  # Indique l'emplacement du sitemap
