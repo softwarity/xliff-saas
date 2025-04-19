@@ -87,7 +87,7 @@
         <target state="translated">Mode sombre</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/header/header.component.ts</context>
-          <context context-type="linenumber">58</context>
+          <context context-type="linenumber">59</context>
         </context-group>
       </trans-unit>
       <trans-unit id="THEME_TOGGLE_TO_LIGHT" datatype="html">
@@ -95,7 +95,7 @@
         <target state="translated">Mode clair</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/header/header.component.ts</context>
-          <context context-type="linenumber">59</context>
+          <context context-type="linenumber">60</context>
         </context-group>
       </trans-unit>
       <trans-unit id="THEME_TOGGLE_TO_SYSTEM" datatype="html">
@@ -103,7 +103,7 @@
         <target state="translated">Préférence système</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/header/header.component.ts</context>
-          <context context-type="linenumber">60</context>
+          <context context-type="linenumber">61</context>
         </context-group>
       </trans-unit>
       <trans-unit id="CHANGE_LANGUAGE" datatype="html">
@@ -2119,7 +2119,7 @@
         <target state="translated">© 2025 Softwarity, Inc.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/app.component.ts</context>
-          <context context-type="linenumber">24</context>
+          <context context-type="linenumber">25</context>
         </context-group>
       </trans-unit>
       <trans-unit id="FOOTER_TERMS" datatype="html">
@@ -2127,7 +2127,7 @@
         <target state="translated">Conditions d&apos;utilisation</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/app.component.ts</context>
-          <context context-type="linenumber">25</context>
+          <context context-type="linenumber">26</context>
         </context-group>
       </trans-unit>
       <trans-unit id="FOOTER_PRIVACY" datatype="html">
@@ -2135,7 +2135,7 @@
         <target state="translated">Politique de confidentialité</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/app.component.ts</context>
-          <context context-type="linenumber">26</context>
+          <context context-type="linenumber">27</context>
         </context-group>
       </trans-unit>
       <trans-unit id="FOOTER_DOCS" datatype="html">
@@ -2143,7 +2143,7 @@
         <target state="translated">Docs</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/app.component.ts</context>
-          <context context-type="linenumber">28</context>
+          <context context-type="linenumber">29</context>
         </context-group>
       </trans-unit>
       <trans-unit id="FOOTER_CONTACT" datatype="html">
@@ -2151,7 +2151,7 @@
         <target state="translated">Contact</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/app.component.ts</context>
-          <context context-type="linenumber">28</context>
+          <context context-type="linenumber">29</context>
         </context-group>
       </trans-unit>
       <trans-unit id="FOOTER_COOKIES" datatype="html">
@@ -2159,7 +2159,7 @@
         <target state="translated">Gérer les cookies</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/app.component.ts</context>
-          <context context-type="linenumber">29</context>
+          <context context-type="linenumber">30</context>
         </context-group>
       </trans-unit>
       <trans-unit id="AUTH_SERVICE_NO_EMAIL" datatype="html">
@@ -2167,11 +2167,11 @@
         <target state="translated">Aucune adresse e-mail fournie</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/services/auth.service.ts</context>
-          <context context-type="linenumber">149</context>
+          <context context-type="linenumber">150</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/services/auth.service.ts</context>
-          <context context-type="linenumber">183</context>
+          <context context-type="linenumber">184</context>
         </context-group>
       </trans-unit>
       <trans-unit id="AUTH_EMAIL_CONFIRMATION_TITLE" datatype="html">
@@ -3175,7 +3175,7 @@
         <target state="translated">Cet email est déjà utilisé</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/services/auth.service.ts</context>
-          <context context-type="linenumber">104</context>
+          <context context-type="linenumber">106</context>
         </context-group>
       </trans-unit>
       <trans-unit id="AUTH_SERVICE_PASSWORD_REQUIREMENTS" datatype="html">
@@ -3183,7 +3183,7 @@
         <target state="translated">Le mot de passe ne respecte pas les exigences de sécurité</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/services/auth.service.ts</context>
-          <context context-type="linenumber">106</context>
+          <context context-type="linenumber">108</context>
         </context-group>
       </trans-unit>
       <trans-unit id="AUTH_SERVICE_GENERAL_ERROR" datatype="html">
@@ -3191,7 +3191,7 @@
         <target state="translated">Une erreur s&apos;est produite lors de la création du compte : <x id="PH" equiv-text="error.message"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/services/auth.service.ts</context>
-          <context context-type="linenumber">108</context>
+          <context context-type="linenumber">110</context>
         </context-group>
       </trans-unit>
       <trans-unit id="PROFILE_DELETE_ACCOUNT_WARNING" datatype="html">
@@ -3231,7 +3231,7 @@
         <target state="translated">Identifiant ou mot de passe invalide</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/services/auth.service.ts</context>
-          <context context-type="linenumber">79</context>
+          <context context-type="linenumber">81</context>
         </context-group>
       </trans-unit>
       <trans-unit id="AUTH_SERVICE_SIGN_IN_ERROR" datatype="html">
@@ -3239,7 +3239,7 @@
         <target state="translated">Erreur de connexion</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/services/auth.service.ts</context>
-          <context context-type="linenumber">81</context>
+          <context context-type="linenumber">83</context>
         </context-group>
       </trans-unit>
       <trans-unit id="AUTH_SERVICE_GOOGLE_SIGN_IN_ERROR" datatype="html">
@@ -3247,7 +3247,7 @@
         <target state="translated">Erreur de connexion avec Google</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/services/auth.service.ts</context>
-          <context context-type="linenumber">127</context>
+          <context context-type="linenumber">128</context>
         </context-group>
       </trans-unit>
       <trans-unit id="AUTH_SERVICE_SIGN_OUT_ERROR" datatype="html">
@@ -3255,7 +3255,7 @@
         <target state="translated">Erreur de déconnexion</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/services/auth.service.ts</context>
-          <context context-type="linenumber">141</context>
+          <context context-type="linenumber">142</context>
         </context-group>
       </trans-unit>
       <trans-unit id="AUTH_SERVICE_RESEND_CONFIRMATION_ERROR" datatype="html">
@@ -3263,7 +3263,7 @@
         <target state="translated">Erreur lors de l&apos;envoi de l&apos;email de confirmation</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/services/auth.service.ts</context>
-          <context context-type="linenumber">162</context>
+          <context context-type="linenumber">163</context>
         </context-group>
       </trans-unit>
       <trans-unit id="AUTH_SERVICE_VERIFY_EMAIL_ERROR" datatype="html">
@@ -3271,7 +3271,7 @@
         <target state="translated">Erreur de vérification de l&apos;email</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/services/auth.service.ts</context>
-          <context context-type="linenumber">175</context>
+          <context context-type="linenumber">176</context>
         </context-group>
       </trans-unit>
       <trans-unit id="AUTH_SERVICE_RESET_PASSWORD_ERROR" datatype="html">
@@ -3279,7 +3279,7 @@
         <target state="translated">Erreur de réinitialisation du mot de passe</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/services/auth.service.ts</context>
-          <context context-type="linenumber">192</context>
+          <context context-type="linenumber">193</context>
         </context-group>
       </trans-unit>
       <trans-unit id="AUTH_SERVICE_DELETE_ACCOUNT_ERROR" datatype="html">
@@ -3287,7 +3287,7 @@
         <target state="translated">Erreur lors de la suppression du compte</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/services/auth.service.ts</context>
-          <context context-type="linenumber">205</context>
+          <context context-type="linenumber">213</context>
         </context-group>
       </trans-unit>
       <trans-unit id="AUTH_SERVICE_UPDATE_PASSWORD_ERROR" datatype="html">
@@ -3295,7 +3295,7 @@
         <target state="translated">Erreur de mise à jour du mot de passe</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/services/auth.service.ts</context>
-          <context context-type="linenumber">219</context>
+          <context context-type="linenumber">227</context>
         </context-group>
       </trans-unit>
       <trans-unit id="AUTH_SERVICE_INITIALIZATION_ERROR" datatype="html">
@@ -3303,7 +3303,7 @@
         <target state="translated">Erreur lors de l&apos;initialisation de la session utilisateur</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/services/auth.service.ts</context>
-          <context context-type="linenumber">230</context>
+          <context context-type="linenumber">238</context>
         </context-group>
       </trans-unit>
       <trans-unit id="AVATAR_SERVICE_ERROR_GETTING_AVATAR" datatype="html">
