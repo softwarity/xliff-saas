@@ -1,19 +1,19 @@
 #!/bin/bash
 
-# Chemin vers le répertoire browser
+# Path to the browser directory
 BROWSER_DIR="dist/xliff-translator/browser"
 
 cp src/favicon.ico "$BROWSER_DIR"
 
-# Vérifier si le répertoire existe
+# Check if the directory exists
 if [ ! -d "$BROWSER_DIR" ]; then
-    echo "Le répertoire browser n'existe pas: $BROWSER_DIR"
+    echo "The browser directory does not exist: $BROWSER_DIR"
     exit 1
 fi
 
-# Récupérer la liste des répertoires (locales) et les mettre en format string
+# Get the list of directories (locales) and put them in a string
 FOLDERS=$(ls -d "$BROWSER_DIR"/*/ 2>/dev/null | xargs -n 1 basename)
-# Initialiser le tableau de fichiers
+# Initialize the array of files
 JSON_FILE="src/assets/locales.json"
 for folder in $FOLDERS; do
     echo "cp $JSON_FILE $BROWSER_DIR/$folder/assets/locales.json"
@@ -47,38 +47,62 @@ function getPreferredLanguage() {
 }
 EOF
 
+create_index_page() {
+  local source_file="src/index.html"
+  local destination_file="$1"
+  local insert_content="$2"
 
-# Créer le contenu de index.html avec la liste des locales
-cat > "$BROWSER_DIR/index.html" << EOF
-<!DOCTYPE html>
-<html><head>
-<script src="/preferred-language.js"></script>
-<script>
-window.location.href = \`/\${getPreferredLanguage()}/\`;
-</script>
-</head></html>
-EOF
+  # Read the content of the source file
+  {
+    # Read until the </head> tag
+    while IFS= read -r line; do
+      # Check if the line contains </head>
+      if [[ "$line" == *"</head>"* ]]; then
+        break
+      fi
+      echo "$line"
+    done < "$source_file"
 
-echo "index.html créé avec succès dans: $BROWSER_DIR"
+    # Add the content passed as an argument
+    echo "$insert_content" >> "$destination_file"
 
-# Créer le contenu de 404.html avec redirection vers index.html
-cat > "$BROWSER_DIR/404.html" << EOF
-<!DOCTYPE html>
-<html><head>
-<script src="/preferred-language.js"></script>
-<script>
-let page = window.location.pathname;
-if (page.startsWith(\`/\${getPreferredLanguage()}/\`)) {
-    page = page.replace(\`/\${getPreferredLanguage()}/\`, '');
+    # Close the </head> tag
+    echo "  </head>" >> "$destination_file"
+    echo "</html>" >> "$destination_file"
+
+  } > "$destination_file"
 }
-window.location.href = \`/\${getPreferredLanguage()}/index.html?page=\${page}\`;
-</script>
-</head></html>
-EOF
 
-echo "404.html créé avec succès dans: $BROWSER_DIR"
+INSERT_CONTENT_INDEX='    <script src="/preferred-language.js"></script>
+    <script>
+        window.location.href = `/${getPreferredLanguage()}/`;
+    </script>'
 
-# Créer CNAME
+# Contenu pour le deuxième cas
+INSERT_CONTENT_404='    <script src="/preferred-language.js"></script>
+    <script>
+      let page = window.location.pathname;
+      if (page.startsWith(`/${getPreferredLanguage()}/`)) {
+        page = page.replace(`/${getPreferredLanguage()}/`, '');
+      }
+      window.location.href = `/${getPreferredLanguage()}/index.html?page=${page}`;
+    </script>'
+
+create_index_page "$BROWSER_DIR/index.html" "$INSERT_CONTENT_INDEX"
+echo "index.html created successfully in: $BROWSER_DIR"
+create_index_page "$BROWSER_DIR/404.html" "$INSERT_CONTENT_404"
+echo "404.html created successfully in: $BROWSER_DIR"
+
+# Create CNAME
 echo "xliff.softwarity.io" > "$BROWSER_DIR/CNAME"
 
-echo "CNAME créé avec succès dans: $BROWSER_DIR"
+echo "CNAME created successfully in: $BROWSER_DIR"
+
+# Copy sitemap.xml
+cp sitemap.xml "$BROWSER_DIR"
+echo "sitemap.xml copied successfully to: $BROWSER_DIR"
+
+# Copy robots.txt
+cp robots.txt "$BROWSER_DIR"
+echo "robots.txt copied successfully to: $BROWSER_DIR"
+
