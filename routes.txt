@@ -1,3 +1,4 @@
+/
 /how-it-works
 /documentation
 /documentation/usage
