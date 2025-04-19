@@ -2276,7 +2276,7 @@
       </trans-unit>
       <trans-unit id="SETUP_TAB" datatype="html">
         <source>Setup</source>
-        <target state="translated">Configuration de l&apos;onglet</target>
+        <target state="translated">Configuration</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/documentation.component.ts</context>
           <context context-type="linenumber">25</context>
@@ -4678,14 +4678,6 @@
           <context context-type="linenumber">91</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="CUSTOM_TAB" datatype="html">
-        <source>Custom</source>
-        <target state="translated">Personnalisé</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/documentation/documentation.component.ts</context>
-          <context context-type="linenumber">21</context>
-        </context-group>
-      </trans-unit>
       <trans-unit id="PRIVACY_TITLE" datatype="html">
         <source>Privacy Policy</source>
         <target state="translated">Politique de confidentialité</target>
@@ -5228,6 +5220,14 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/purchase-success.component.ts</context>
           <context context-type="linenumber">64</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="CUSTOM_INSTRUCTIONS_TAB" datatype="html">
+        <source>Custom Instructions</source>
+        <target state="new">Custom Instructions</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/documentation/documentation.component.ts</context>
+          <context context-type="linenumber">21</context>
         </context-group>
       </trans-unit>
     </body>

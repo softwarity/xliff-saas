@@ -18,7 +18,7 @@ import { RouterModule } from '@angular/router';
             <a routerLink="custom" 
               routerLinkActive="text-blue-600 dark:text-blue-400 !border-b-2 !border-blue-600 dark:!border-blue-400" 
               class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 py-4 px-10 border-b-2 border-transparent relative -mb-[2px]"
-              i18n="@@CUSTOM_TAB">Custom</a>
+              i18n="@@CUSTOM_INSTRUCTIONS_TAB">Custom Instructions</a>
             <a routerLink="setup" 
               routerLinkActive="text-blue-600 dark:text-blue-400 !border-b-2 !border-blue-600 dark:!border-blue-400" 
               class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 py-4 px-10 border-b-2 border-transparent relative -mb-[2px]"

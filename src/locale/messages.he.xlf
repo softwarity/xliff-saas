@@ -3286,14 +3286,6 @@
           <context context-type="linenumber">17</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="CUSTOM_TAB" datatype="html">
-        <source>Custom</source>
-        <target state="translated">מותאם</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/documentation/documentation.component.ts</context>
-          <context context-type="linenumber">21</context>
-        </context-group>
-      </trans-unit>
       <trans-unit id="SETUP_TAB" datatype="html">
         <source>Setup</source>
         <target state="translated">הגדרה</target>
@@ -5228,6 +5220,14 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/components/purchase-credits-button.component.ts</context>
           <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="CUSTOM_INSTRUCTIONS_TAB" datatype="html">
+        <source>Custom Instructions</source>
+        <target state="new">Custom Instructions</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/documentation/documentation.component.ts</context>
+          <context context-type="linenumber">21</context>
         </context-group>
       </trans-unit>
     </body>
