@@ -94,11 +94,11 @@ This application is a comprehensive banking platform that manages:
             </div>
             
             <div class="mt-6 p-4 bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800 rounded-lg">
-              <p class="text-yellow-800 dark:text-yellow-300 flex items-center" i18n="@@CUSTOM_INSTRUCTIONS_TIP">
+              <p class="text-yellow-800 dark:text-yellow-300 flex items-center">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
-                <span>For the best results, keep your instructions focused and relevant. Overly lengthy instructions may dilute the impact of the most important context.</span>
+                <span i18n="@@CUSTOM_INSTRUCTIONS_TIP">For the best results, keep your instructions focused and relevant. Overly lengthy instructions may dilute the impact of the most important context.</span>
               </p>
             </div>
           </div>

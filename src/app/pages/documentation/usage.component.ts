@@ -291,12 +291,12 @@ import { RouterLink } from '@angular/router';
         <ol class="list-decimal list-inside text-gray-700 dark:text-gray-300 ml-4 space-y-2">
           <li i18n="@@ESTIMATE_STEP_1">Select the repository you want to work with</li>
           <li i18n="@@ESTIMATE_STEP_2">Click on "Estimate" to analyze your XLIFF files</li>
-          <li i18n="@@ESTIMATE_STEP_3">
-            <strong>Configure the estimate options:</strong>
+          <li>
+            <strong i18n="@@ESTIMATE_STEP_3">Configure the estimate options:</strong>
             <ul class="list-disc list-inside ml-6 mt-2 space-y-1">
-              <li><strong>Branch</strong>: Select the branch containing your XLIFF files</li>
-              <li><strong>File Pattern</strong>: By default "xlf" to search all XLIFF files. Use specific patterns like "ru.xlf" to target only Russian files</li>
-              <li><strong>Translation State</strong>: Choose which translation units to include (default is "new" to focus on untranslated content)</li>
+              <li i18n="@@ESTIMATE_STEP_31"><strong>Branch</strong>: Select the branch containing your XLIFF files</li>
+              <li i18n="@@ESTIMATE_STEP_32"><strong>File Pattern</strong>: By default "xlf" to search all XLIFF files. Use specific patterns like "ru.xlf" to target only Russian files</li>
+              <li i18n="@@ESTIMATE_STEP_33"><strong>Translation State</strong>: Choose which translation units to include (default is "new" to focus on untranslated content)</li>
             </ul>
           </li>
           <li i18n="@@ESTIMATE_STEP_4">Review the estimate results showing the number of translation units to process</li>
