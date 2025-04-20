@@ -1256,7 +1256,7 @@
       </trans-unit>
       <trans-unit id="PAGE_INFO" datatype="html">
         <source>Page <x id="INTERPOLATION" equiv-text="{{ currentPage() }}"/> of <x id="INTERPOLATION_1" equiv-text="{{ totalPages() }}"/></source>
-        <target state="translated">Страница <x id="INTERPOLATION" equiv-text="{{ currentPage() }}"/> из <x id="INTERPOLATION_1" equiv-text="{{ totalPages() }}/></target>
+        <target state="translated">Страница <x id="INTERPOLATION" equiv-text="{{ currentPage() }}"/> из <x id="INTERPOLATION_1" equiv-text="{{ totalPages() }}"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/dashboard/dashboard.component.html</context>
           <context context-type="linenumber">110</context>
@@ -2236,7 +2236,7 @@
       </trans-unit>
       <trans-unit id="TRANSLATING_PROGRESS" datatype="html">
         <source>Translation: <x id="INTERPOLATION" equiv-text="{{ translation.transUnitDone }}"/>/<x id="INTERPOLATION_1" equiv-text="{{ translation.transUnitFound }}"/></source>
-        <target state="translated">Перевод: <x id="INTERPOLATION" equiv-text="{{ translation.transUnitDone }}"/>/<x id="INTERPOLATION_1" equiv-text="{{ translation.transUnitFound }}/></target>
+        <target state="translated">Перевод: <x id="INTERPOLATION" equiv-text="{{ translation.transUnitDone }}"/>/<x id="INTERPOLATION_1" equiv-text="{{ translation.transUnitFound }}"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/repositories/components/translate/translate.component.ts</context>
           <context context-type="linenumber">32</context>
@@ -2244,7 +2244,7 @@
       </trans-unit>
       <trans-unit id="TRANSLATION_COMPLETED" datatype="html">
         <source>Translation: <x id="INTERPOLATION" equiv-text="{{ translation.transUnitDone }}"/>/<x id="INTERPOLATION_1" equiv-text="{{ translation.transUnitFound }}"/></source>
-        <target state="translated">Перевод: <x id="INTERPOLATION" equiv-text="{{ translation.transUnitDone }}"/>/<x id="INTERPOLATION_1" equiv-text="{{ translation.transUnitFound }}/></target>
+        <target state="translated">Перевод: <x id="INTERPOLATION" equiv-text="{{ translation.transUnitDone }}"/>/<x id="INTERPOLATION_1" equiv-text="{{ translation.transUnitFound }}"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/repositories/components/translate/translate.component.ts</context>
           <context context-type="linenumber">35</context>
@@ -3441,7 +3441,7 @@
       </trans-unit>
       <trans-unit id="EXTRACT_I18N_OPTION_1" datatype="html">
         <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>buildTarget<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: Your application's build target name</source>
-        <target state="translated"><strong>buildTarget</strong>: Название целевой сборки вашего приложения</target>
+        <target state="translated"><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>buildTarget<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: Название целевой сборки вашего приложения</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/setup.component.ts</context>
           <context context-type="linenumber">112</context>
@@ -5233,7 +5233,7 @@
       </trans-unit>
       <trans-unit id="ESTIMATE_STEP_31" datatype="html">
         <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>Branch<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: Select the branch containing your XLIFF files</source>
-        <target state="translated"><strong>Ветка</strong>: Выберите ветку, содержащую ваши XLIFF файлы</target>
+        <target state="translated"><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>Ветка<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: Выберите ветку, содержащую ваши XLIFF файлы</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">297</context>
