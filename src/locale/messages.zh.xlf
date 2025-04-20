@@ -1248,7 +1248,7 @@
       </trans-unit>
       <trans-unit id="PAGE_INFO" datatype="html">
         <source>Page <x id="INTERPOLATION" equiv-text="{{ currentPage() }}"/> of <x id="INTERPOLATION_1" equiv-text="{{ totalPages() }}"/></source>
-        <target state="translated">页面 <x id="INTERPOLATION" equiv-text="{{ currentPage() }}/> 的 <x id="INTERPOLATION_1" equiv-text="{{ totalPages() }}/></target>
+        <target state="translated">页面 <x id="INTERPOLATION" equiv-text="{{ currentPage() }}"/> 的 <x id="INTERPOLATION_1" equiv-text="{{ totalPages() }}"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/dashboard/dashboard.component.html</context>
           <context context-type="linenumber">110</context>
@@ -3433,7 +3433,7 @@
       </trans-unit>
       <trans-unit id="EXTRACT_I18N_OPTION_1" datatype="html">
         <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>buildTarget<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: Your application's build target name</source>
-        <target state="translated"><strong>构建目标</strong>: 您的应用程序的构建目标名称</target>
+        <target state="translated"><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>构建目标<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: 您的应用程序的构建目标名称</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/setup.component.ts</context>
           <context context-type="linenumber">112</context>
@@ -5241,7 +5241,7 @@
       </trans-unit>
       <trans-unit id="ESTIMATE_STEP_33" datatype="html">
         <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>Translation State<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: Choose which translation units to include (default is "new" to focus on untranslated content)</source>
-        <target state="translated"><strong>翻译状态</strong>: 选择要包含的翻译单元（默认是“新”以专注于未翻译的内容）</target>
+        <target state="translated"><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>翻译状态<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: 选择要包含的翻译单元（默认是“新”以专注于未翻译的内容）</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">299</context>
