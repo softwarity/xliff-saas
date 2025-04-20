@@ -22,7 +22,7 @@ import { isPlatformBrowser } from '@angular/common';
     <footer class="border-t border-gray-200 dark:border-gray-800 py-6">
       <div class="container mx-auto px-4">
         <div class="flex flex-wrap justify-center gap-x-6 gap-y-2">
-          <a href="https://softwarity.io" target="_blank"  i18n="@@FOOTER_COPYRIGHT">© 2025 Softwarity, Inc.</a>
+          <a href="https://softwarity.io" target="_blank">© 2025 Softwarity, Inc.</a>
           <a routerLink="/terms" i18n="@@FOOTER_TERMS">Terms of Service</a>
           <a routerLink="/privacy" i18n="@@FOOTER_PRIVACY">Privacy Policy</a>
           <a routerLink="/documentation" i18n="@@FOOTER_DOCS">Docs</a>
