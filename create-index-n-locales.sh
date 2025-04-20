@@ -80,7 +80,7 @@ INSERT_CONTENT_404='    <script src="/preferred-language.js"></script>
     <script>
       let page = window.location.pathname;
       if (page.startsWith(`/${getPreferredLanguage()}/`)) {
-        page = page.replace(`/${getPreferredLanguage()}/`, '');
+        page = page.replace(`/${getPreferredLanguage()}/`, ``);
       }
       window.location.href = `/${getPreferredLanguage()}/index.html?page=${page}`;
     </script>'
