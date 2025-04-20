@@ -1248,7 +1248,7 @@
       </trans-unit>
       <trans-unit id="PAGE_INFO" datatype="html">
         <source>Page <x id="INTERPOLATION" equiv-text="{{ currentPage() }}"/> of <x id="INTERPOLATION_1" equiv-text="{{ totalPages() }}"/></source>
-        <target state="translated">Seite <x id="INTERPOLATION" equiv-text="{{ currentPage() }}"/> von <x id="INTERPOLATION_1" equiv-text="{{ totalPages() }}/></target>
+        <target state="translated">Seite <x id="INTERPOLATION" equiv-text="{{ currentPage() }}"/> von <x id="INTERPOLATION_1" equiv-text="{{ totalPages() }}"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/dashboard/dashboard.component.html</context>
           <context context-type="linenumber">110</context>
@@ -2228,7 +2228,7 @@
       </trans-unit>
       <trans-unit id="TRANSLATING_PROGRESS" datatype="html">
         <source>Translation: <x id="INTERPOLATION" equiv-text="{{ translation.transUnitDone }}"/>/<x id="INTERPOLATION_1" equiv-text="{{ translation.transUnitFound }}"/></source>
-        <target state="translated">Übersetzung: <x id="INTERPOLATION" equiv-text="{{ translation.transUnitDone }}"/>/<x id="INTERPOLATION_1" equiv-text="{{ translation.transUnitFound }}/"></target>
+        <target state="translated">Übersetzung: <x id="INTERPOLATION" equiv-text="{{ translation.transUnitDone }}"/>/<x id="INTERPOLATION_1" equiv-text="{{ translation.transUnitFound }}"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/repositories/components/translate/translate.component.ts</context>
           <context context-type="linenumber">32</context>
@@ -2236,7 +2236,7 @@
       </trans-unit>
       <trans-unit id="TRANSLATION_COMPLETED" datatype="html">
         <source>Translation: <x id="INTERPOLATION" equiv-text="{{ translation.transUnitDone }}"/>/<x id="INTERPOLATION_1" equiv-text="{{ translation.transUnitFound }}"/></source>
-        <target state="translated">Übersetzung: <x id="INTERPOLATION" equiv-text="{{ translation.transUnitDone }}"/>/<x id="INTERPOLATION_1" equiv-text="{{ translation.transUnitFound }}/></target>
+        <target state="translated">Übersetzung: <x id="INTERPOLATION" equiv-text="{{ translation.transUnitDone }}"/>/<x id="INTERPOLATION_1" equiv-text="{{ translation.transUnitFound }}"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/repositories/components/translate/translate.component.ts</context>
           <context context-type="linenumber">35</context>

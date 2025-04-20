@@ -5224,7 +5224,7 @@
       </trans-unit>
       <trans-unit id="ESTIMATE_STEP_31" datatype="html">
         <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>Branch<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: Select the branch containing your XLIFF files</source>
-        <target state="translated"><strong />Branche: Sélectionnez la branche contenant vos fichiers XLIFF</target>
+        <target state="translated"><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>Branche<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: Sélectionnez la branche contenant vos fichiers XLIFF</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">297</context>
