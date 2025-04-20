@@ -6,13 +6,14 @@ import { User } from '@supabase/supabase-js';
 import { from, of } from 'rxjs';
 import { catchError, concatMap, map } from 'rxjs/operators';
 import { AuthService } from '../../core/services/auth.service';
-import { AvatarService } from '../../core/services/avatar.service';
+import { AvatarService } from './avatar.service';
 import { PromptModalComponent } from '../../shared/components/prompt-modal.component';
 import { ToastService } from '../../core/services/toast.service';
 
 @Component({
   standalone: true,
   imports: [DatePipe, NgClass, PromptModalComponent, RouterLink],
+  providers: [AvatarService],
   template: `
     <div class="container mx-auto px-4 py-8">
       <div class="max-w-2xl mx-auto bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
@@ -39,7 +40,7 @@ import { ToastService } from '../../core/services/toast.service';
           </div>
           <div class="flex-1">
             <div class="flex items-center justify-between">
-              <h1 class="text-2xl font-bold text-gray-900 dark:text-white">{{ user()?.email }}</h1>
+              <h1 class="text-2xl font-bold text-gray-900 dark:text-white truncate max-w-xs">{{ user()?.email }}</h1>
               <div class="flex items-center">
                 <div class="h-10 w-10 flex items-center justify-center mr-2">
                   <!-- DIAMOND membership badge -->
@@ -131,7 +132,7 @@ export class ProfileComponent {
   
   user = signal<User | null>(null);
   isLoading = signal(false);
-  protected avatarUrl = toSignal(this.avatarService.avatar$);
+  protected avatarUrl = toSignal(this.auth.avatar$);
   protected showDefaultAvatar = signal(false);
   protected membershipLevel = signal<'DIAMOND' | 'GOLD' | 'SILVER' | 'BRONZE'>('BRONZE');
   showDeleteModal = false;

@@ -1,17 +1,17 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject, input, signal } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
-import { GitProvider, GitProviderService } from '../../core/services/git-provider.service';
-
+import { BitbucketService, GitProvider } from './bitbucket.service';
 @Component({
-  selector: 'app-github-card',
+  selector: 'app-bitbucket-card',
   standalone: true,
   imports: [ReactiveFormsModule, CommonModule],
+  providers: [BitbucketService],
   template: `<div class="bg-white dark:bg-dark-700 rounded-lg shadow p-6">
   <div class="flex items-center justify-between mb-4">
     <div class="flex items-center space-x-3">
       <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-600" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+        <path d="M.778 1.213a.768.768 0 00-.768.892l3.263 19.81c.084.5.515.868 1.022.873H19.95a.772.772 0 00.77-.646l3.27-20.03a.768.768 0 00-.768-.891L.778 1.213zM14.52 15.53H9.522L8.17 8.466h7.561l-1.211 7.064z"/>
       </svg>
       <h2 class="text-xl font-semibold dark:text-white">{{ provider().name }}</h2>
     </div>
@@ -105,10 +105,10 @@ import { GitProvider, GitProviderService } from '../../core/services/git-provide
 </div>
 `
 })
-export class GithubCardComponent {
+export class BitbucketCardComponent {
   provider = input.required<GitProvider>();
 
-  private gitProviderService = inject(GitProviderService);
+  private bitbucketService = inject(BitbucketService);
   private fb = inject(FormBuilder);
 
   protected showTokenInput = signal<boolean>(false);
@@ -116,22 +116,27 @@ export class GithubCardComponent {
   protected error = signal<string | null>(null);
 
   protected form = this.fb.nonNullable.group({
-    token: ['', [Validators.required]],
+    username: ['', [Validators.required]],
+    appPassword: ['', [Validators.required]]
   });
 
   protected isFormValid(): boolean {
-    return !!this.form.controls.token.value;
+    const username = this.form.controls.username.value;
+    const appPassword = this.form.controls.appPassword.value;
+    return !!username && !!appPassword;
   }
 
   protected onSubmit(): void {
     if (!this.isFormValid()) return;
 
-    const token: string = this.form.controls.token.value;
+    const username = this.form.controls.username.value;
+    const appPassword = this.form.controls.appPassword.value;
+    const token = `${username}:${appPassword}`;
 
     this.loading.set(true);
     this.error.set(null);
     
-    this.gitProviderService.validateAndStoreToken(this.provider(), token).subscribe({
+    this.bitbucketService.validateAndStoreToken(this.provider(), token).subscribe({
       next: () => {
         this.form.reset();
         this.updateShowTokenInput(false);
@@ -156,7 +161,7 @@ export class GithubCardComponent {
     this.loading.set(true);
     this.error.set(null);
     
-    this.gitProviderService.disconnectProvider(this.provider().type);
+    this.bitbucketService.disconnectProvider(this.provider().type);
     
     setTimeout(() => {
       this.loading.set(false);

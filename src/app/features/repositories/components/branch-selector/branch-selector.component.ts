@@ -2,11 +2,11 @@ import { CommonModule } from '@angular/common';
 import { Component, effect, forwardRef, inject, input } from '@angular/core';
 import { FormControl, NG_VALUE_ACCESSOR, ReactiveFormsModule } from '@angular/forms';
 import { map, Observable, of, tap } from 'rxjs';
-import { BitbucketService } from '../../../../core/services/bitbucket.service';
-import { GithubService } from '../../../../core/services/github.service';
-import { GitlabService } from '../../../../core/services/gitlab.service';
 import { Repository } from '../../../../shared/models/repository.model';
 import { TypedControlValueAccessor } from '../../../../shared/typed-value-control-accessor';
+import { BitbucketService } from './bitbucket.service';
+import { GithubService } from './github.service';
+import { GitlabService } from './gitlab.service';
 
 @Component({
   selector: 'app-branch-selector',
@@ -30,7 +30,10 @@ import { TypedControlValueAccessor } from '../../../../shared/typed-value-contro
   </div>
   `,
   providers: [
-    { provide: NG_VALUE_ACCESSOR, useExisting: forwardRef(() => BranchSelectorComponent), multi: true }
+    { provide: NG_VALUE_ACCESSOR, useExisting: forwardRef(() => BranchSelectorComponent), multi: true },
+    BitbucketService,
+    GithubService,
+    GitlabService
   ]
 })
 export class BranchSelectorComponent implements TypedControlValueAccessor<string | null> {

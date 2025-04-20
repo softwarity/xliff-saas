@@ -58,17 +58,17 @@ export const routes: Routes = [
   {
     path: 'repositories/github',
     canActivate: [authGuard],
-    loadComponent: () => import('./features/repositories/github-repositories.component').then(m => m.GithubRepositoriesComponent)
+    loadComponent: () => import('./features/repositories/github/github-repositories.component').then(m => m.GithubRepositoriesComponent)
   },
   {
     path: 'repositories/gitlab',
     canActivate: [authGuard],
-    loadComponent: () => import('./features/repositories/gitlab-repositories.component').then(m => m.GitlabRepositoriesComponent)
+    loadComponent: () => import('./features/repositories/gitlab/gitlab-repositories.component').then(m => m.GitlabRepositoriesComponent)
   },
   {
     path: 'repositories/bitbucket',
     canActivate: [authGuard],
-    loadComponent: () => import('./features/repositories/bitbucket-repositories.component').then(m => m.BitbucketRepositoriesComponent)
+    loadComponent: () => import('./features/repositories/bitbucket/bitbucket-repositories.component').then(m => m.BitbucketRepositoriesComponent)
   },
   {
     path: 'verify-email',

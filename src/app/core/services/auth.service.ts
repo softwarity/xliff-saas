@@ -19,6 +19,8 @@ export class AuthService {
   
   private userSubject = new BehaviorSubject<User | null>(null);
   private isAuthenticatedSubject = new BehaviorSubject<boolean>(false);
+  private avatarSubject: BehaviorSubject<string | null> = new BehaviorSubject<string | null>(null);
+  public avatar$ = this.avatarSubject.asObservable();
 
   user$ = this.userSubject.asObservable();
   isAuthenticated$ = this.isAuthenticatedSubject.asObservable();
@@ -42,6 +44,9 @@ export class AuthService {
   private updateAuthState(user: User | null): void {
     this.userSubject.next(user);
     this.isAuthenticatedSubject.next(!!user);
+    const avatar_url = user?.user_metadata['avatar_url'] || null;
+    this.avatarSubject.next(avatar_url);
+
   }
 
   isEmailConfirmed(): boolean {
@@ -237,5 +242,9 @@ export class AuthService {
       console.error('Error getting initial session:', error);
       this.toastService.error($localize `:@@AUTH_SERVICE_INITIALIZATION_ERROR:Error initializing user session`);
     });
+  }
+
+  public updateAvatar(avatar_url: string): void {
+    this.avatarSubject.next(avatar_url);
   }
 }

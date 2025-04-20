@@ -1,12 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject, input, signal } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
-import { GitProvider, GitProviderService } from '../../core/services/git-provider.service';
+import { GitlabService, GitProvider } from './gitlab.service';
 
 @Component({
   selector: 'app-gitlab-card',
   standalone: true,
   imports: [ReactiveFormsModule, CommonModule],
+  providers: [GitlabService],
   template: `<div class="bg-white dark:bg-dark-700 rounded-lg shadow p-6">
   <div class="flex items-center justify-between mb-4">
     <div class="flex items-center space-x-3">
@@ -108,7 +109,7 @@ import { GitProvider, GitProviderService } from '../../core/services/git-provide
 export class GitlabCardComponent {
   provider = input.required<GitProvider>();
 
-  private gitProviderService = inject(GitProviderService);
+  private gitlabService = inject(GitlabService);
   private fb = inject(FormBuilder);
 
   protected showTokenInput = signal<boolean>(false);
@@ -131,7 +132,7 @@ export class GitlabCardComponent {
     this.loading.set(true);
     this.error.set(null);
     
-    this.gitProviderService.validateAndStoreToken(this.provider(), token).subscribe({
+    this.gitlabService.validateAndStoreToken(this.provider(), token).subscribe({
       next: () => {
         this.form.reset();
         this.updateShowTokenInput(false);
@@ -156,7 +157,7 @@ export class GitlabCardComponent {
     this.loading.set(true);
     this.error.set(null);
     
-    this.gitProviderService.disconnectProvider(this.provider().type);
+    this.gitlabService.disconnectProvider(this.provider().type);
     
     setTimeout(() => {
       this.loading.set(false);

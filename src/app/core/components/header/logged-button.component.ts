@@ -3,7 +3,6 @@ import { Component, effect, inject, PLATFORM_ID, signal } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { RouterLink } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
-import { AvatarService } from '../../services/avatar.service';
 
 @Component({
   selector: 'app-logged-button',
@@ -58,14 +57,13 @@ import { AvatarService } from '../../services/avatar.service';
   `
 })
 export class LoggedButtonComponent {
-  private avatarService = inject(AvatarService);
   private auth = inject(AuthService);
   private boundCloseMenu: (() => void) | null = null;
   private platformId: Object = inject(PLATFORM_ID);
 
   protected user$ = this.auth.user$;
   protected isMenuOpen = false;
-  protected avatar = toSignal(this.avatarService.avatar$);
+  protected avatar = toSignal(this.auth.avatar$);
   protected showDefaultAvatar = signal(false);
 
   constructor() {

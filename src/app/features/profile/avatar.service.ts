@@ -1,36 +1,15 @@
 import { inject, Injectable } from '@angular/core';
 import { StorageError } from '@supabase/storage-js';
-import { BehaviorSubject, catchError, filter, from, map, mergeMap, Observable, throwError } from 'rxjs';
-import { AuthService } from './auth.service';
-import { SupabaseClientService } from './supabase-client.service';
-import { ToastService } from './toast.service';
+import { catchError, filter, from, map, mergeMap, Observable, throwError } from 'rxjs';
+import { AuthService } from '../../core/services/auth.service';
+import { SupabaseClientService } from '../../core/services/supabase-client.service';
+import { ToastService } from '../../core/services/toast.service';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class AvatarService {
   private auth = inject(AuthService);
   private supabase = inject(SupabaseClientService);
   private toastService = inject(ToastService);
-  private avatarSubject: BehaviorSubject<string | null> = new BehaviorSubject<string | null>(null);
-  avatar$ = this.avatarSubject.asObservable();
-
-  constructor() {
-    this.auth.getUser().pipe(
-      filter(user => !!user),
-      map((user) => {
-        const avatar_url = user.user_metadata['avatar_url'];
-        if (!avatar_url) return null;
-        this.avatarSubject.next(avatar_url);
-        return avatar_url;
-      }),
-      catchError(error => {
-        console.error('Error getting avatar:', error);
-        this.toastService.error($localize `:@@AVATAR_SERVICE_ERROR_GETTING_AVATAR:Error getting avatar`);
-        return throwError(() => error);
-      })
-    ).subscribe();
-  }
 
   updateAvatar(file: File): Observable<string> {
     return this.auth.getUser().pipe(
@@ -57,7 +36,7 @@ export class AvatarService {
         );
       }),
       map((avatar_url: string) => {
-        this.avatarSubject.next(avatar_url);
+        this.auth.updateAvatar(avatar_url);
         return avatar_url;
       })
     );

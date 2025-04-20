@@ -1,7 +1,6 @@
-import { Component, OnInit, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Component, OnInit, inject, signal } from '@angular/core';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
-import { StripeService } from '../core/services/stripe.service';
 import { ToastService } from '../core/services/toast.service';
 
 @Component({
@@ -47,7 +46,6 @@ import { ToastService } from '../core/services/toast.service';
 export class PurchaseSuccessComponent implements OnInit {
   private route = inject(ActivatedRoute);
   private router = inject(Router);
-  private stripeService = inject(StripeService);
   private toastService = inject(ToastService);
   protected date = signal(new Date());
   
@@ -58,9 +56,6 @@ export class PurchaseSuccessComponent implements OnInit {
       this.router.navigate(['/pricing']);
       return;
     }
-    
-    // Vous pourriez ajouter une vérification supplémentaire du statut de la session ici
-    // en appelant une fonction du service Stripe si nécessaire
     this.toastService.success($localize`:@@CREDITS_ADDED_SUCCESSFULLY:Credits have been added to your account successfully.`);
   }
 } 

@@ -3,7 +3,7 @@ import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/cor
 import { RouterModule } from '@angular/router';
 import { AuthService } from '../../core/services/auth.service';
 import { toSignal } from '@angular/core/rxjs-interop';
-import { StripeService } from '../../core/services/stripe.service';
+import { StripeService } from './stripe.service';
 import { ToastService } from '../../core/services/toast.service';
 import { environment } from '../../../environments/environment';
 
@@ -14,6 +14,7 @@ import { environment } from '../../../environments/environment';
     CommonModule,
     RouterModule
   ],
+  providers: [StripeService],
   templateUrl: './price-grid.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush
 })

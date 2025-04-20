@@ -1,9 +1,9 @@
 import { Component, inject } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { GitProviderService } from '../../core/services/git-provider.service';
-import { BitbucketCardComponent } from './bitbucket-card.component';
-import { GithubCardComponent } from './github-card.component';
-import { GitlabCardComponent } from './gitlab-card.component';
+import { BitbucketCardComponent } from './bitbucket/bitbucket-card.component';
+import { GithubCardComponent } from './github/github-card.component';
+import { GitlabCardComponent } from './gitlab/gitlab-card.component';
 
 @Component({
   selector: 'app-git-providers',

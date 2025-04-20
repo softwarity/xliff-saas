@@ -1,10 +1,10 @@
 import { Injectable, inject, signal } from '@angular/core';
 import { toObservable } from '@angular/core/rxjs-interop';
-import { Observable, from, map, switchMap, catchError, throwError } from 'rxjs';
+import { catchError, map, Observable, throwError } from 'rxjs';
 import { ProviderType } from '../../shared/models/provider-type';
 import { AuthService } from './auth.service';
-import { TokenService } from './token.service';
 import { ToastService } from './toast.service';
+import { TokenService } from './token.service';
 
 export interface GitProvider {
   name: string;
@@ -103,30 +103,26 @@ export class GitProviderService {
     });
   }
 
-  validateAndStoreToken(provider: GitProvider, token: string): Observable<void> {
-    let testToken$: Observable<void>;
-    if (provider.type === 'github') {
-       testToken$ = this.testGithubToken(provider, token);
-    } else if (provider.type === 'gitlab') {
-      testToken$ = this.testGitlabToken(provider, token);
-    } else {
-      testToken$ = this.testBitbucketToken(provider, token);
-    }
-    return testToken$.pipe(
-      switchMap(() => {
-        return this.tokenService.storeToken(provider.type, token).pipe(
-          map(success => {
-            if (success) {
-              this.providersSignal.update(providers => 
-                providers.map(p => p.type === provider.type ? { ...p, connected: true } : p)
-              );
-              this.updateConfiguredStatus();
-              this.toastService.success($localize`:@@PROVIDER_CONNECTED_SUCCESS:Successfully connected to ${provider.name}`);
-              return void 0;
-            }
-            throw new Error('Failed to store token');
-          })
-        );
+  updateProvider(providerType: ProviderType, connected: boolean) {
+    this.providersSignal.update(providers => 
+      providers.map(p => p.type === providerType ? { ...p, connected: connected } : p)
+    );
+    this.updateConfiguredStatus();
+  }
+
+  getToken(provider: ProviderType): Observable<string | null> {
+    return this.tokenService.getToken(provider);
+  }
+
+  storeTokenValidated(provider: GitProvider, token: string): Observable<void> {
+    return this.tokenService.storeToken(provider.type, token).pipe(
+      map(success => {
+        if (success) {
+          this.updateProvider(provider.type, true);
+          this.toastService.success($localize`:@@PROVIDER_CONNECTED_SUCCESS:Successfully connected to ${provider.name}`);
+          return void 0;
+        }
+        throw new Error('Failed to store token');
       }),
       catchError((error: Error) => {
         this.toastService.error($localize`:@@FAILED_TO_CONNECT_PROVIDER:Failed to connect to ${provider.name}. ${error.message}`);
@@ -135,72 +131,11 @@ export class GitProviderService {
     );
   }
 
-  private testGithubToken(provider: GitProvider, token: string): Observable<void> {
-    const github = { 
-      url: 'https://api.github.com/user',
-      headers: {'Authorization': `token ${token}`, }
-    };
-    return from(fetch(github.url, { headers: github.headers })).pipe(
-      map((response: Response) => {
-        const scopes = response.headers.get('x-oauth-scopes')?.split(', ') || [];
-        if (response.ok && provider.scopes.every(scope => scopes.includes(scope))) {
-          return void 0;
-        }
-        throw new Error('Invalid scopes. need at least: [' + provider.scopes.join(', ') + ']');
-      })
-    );
-  }
-
-  private testGitlabToken(provider: GitProvider, token: string): Observable<void> {
-    const gitlab = {
-      url: 'https://gitlab.com/api/v4/user',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`
-       }
-    };
-    return from(fetch(gitlab.url, { headers: gitlab.headers})).pipe(
-      map((response: Response) => {
-        if (response.ok) {
-          return void 0;
-        }
-        throw new Error('Invalid scopes. need at least: [' + provider.scopes.join(', ') + ']');
-      })
-    );
-  }
-
-  private testBitbucketToken(provider: GitProvider, token: string): Observable<void> {
-      let bitbucket = {
-      url: `https://api.bitbucket.org/2.0/user`,
-      headers: {
-        'Authorization': `Basic ${btoa(token)}`,
-        'Accept': 'application/json'
-      }
-    };
-
-    return from(fetch(bitbucket.url, { headers: bitbucket.headers })).pipe(
-      map((response: Response) => {
-        if (response.ok) {
-          return void 0;
-        }
-        throw new Error('Invalid scopes. need at least: [' + provider.scopes.join(', ') + ']');
-      })
-    );
-  }
-
-  getToken(provider: ProviderType): Observable<string | null> {
-    return this.tokenService.getToken(provider);
-  }
-
   disconnectProvider(type: ProviderType): void {
     this.tokenService.removeToken(type).subscribe({
       next: (success) => {
         if (success) {
-          this.providersSignal.update(providers => 
-            providers.map(p => p.type === type ? { ...p, connected: false } : p)
-          );
-          this.updateConfiguredStatus();
+          this.updateProvider(type, false);
           this.toastService.success($localize`:@@PROVIDER_DISCONNECTED_SUCCESS:Successfully disconnected from ${type}`);
         }
       },
@@ -209,6 +144,7 @@ export class GitProviderService {
       }
     });
   }
+
 
   private updateConfiguredStatus(): void {
     const hasConnected = this.providersSignal().some(p => p.connected);

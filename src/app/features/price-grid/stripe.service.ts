@@ -1,13 +1,11 @@
 import { Injectable, inject } from '@angular/core';
 import { loadStripe, Stripe } from '@stripe/stripe-js';
 import { environment } from '../../../environments/environment';
-import { ToastService } from './toast.service';
-import { SupabaseClientService } from './supabase-client.service';
-import { BASE_URL } from '../tokens/base-url.token';
+import { ToastService } from '../../core/services/toast.service';
+import { SupabaseClientService } from '../../core/services/supabase-client.service';
+import { BASE_URL } from '../../core/tokens/base-url.token';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class StripeService {
   private stripePromise: Promise<Stripe | null>;
   private toastService = inject(ToastService);
