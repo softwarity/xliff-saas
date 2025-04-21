@@ -4,6 +4,7 @@
     <loc>https://xliff.softwarity.io/index.html</loc>
     <lastmod>2025-04-19</lastmod>
   </url>
+  <!-- English -->
   <url>
     <loc>https://xliff.softwarity.io/en/index.html</loc>
     <lastmod>2025-04-19</lastmod>
@@ -40,6 +41,7 @@
     <loc>https://xliff.softwarity.io/en/terms/index.html</loc>
     <lastmod>2025-04-19</lastmod>
   </url>
+  <!-- French -->
   <url>
     <loc>https://xliff.softwarity.io/fr/index.html</loc>
     <lastmod>2025-04-19</lastmod>
@@ -76,6 +78,7 @@
     <loc>https://xliff.softwarity.io/fr/terms/index.html</loc>
     <lastmod>2025-04-19</lastmod>
   </url>
+  <!-- German -->
   <url>
     <loc>https://xliff.softwarity.io/de/index.html</loc>
     <lastmod>2025-04-19</lastmod>
@@ -112,6 +115,7 @@
     <loc>https://xliff.softwarity.io/de/terms/index.html</loc>
     <lastmod>2025-04-19</lastmod>
   </url>
+  <!-- Spanish -->
   <url>
     <loc>https://xliff.softwarity.io/es/index.html</loc>
     <lastmod>2025-04-19</lastmod>
@@ -148,6 +152,7 @@
     <loc>https://xliff.softwarity.io/es/terms/index.html</loc>
     <lastmod>2025-04-19</lastmod>
   </url>
+  <!-- Vietnamese -->
   <url>
     <loc>https://xliff.softwarity.io/vi/index.html</loc>
     <lastmod>2025-04-19</lastmod>
@@ -184,78 +189,7 @@
     <loc>https://xliff.softwarity.io/vi/terms/index.html</loc>
     <lastmod>2025-04-19</lastmod>
   </url>
-  <url>
-    <loc>https://xliff.softwarity.io/vi/index.html</loc>
-    <lastmod>2025-04-19</lastmod>
-  </url>
-  <url>
-    <loc>https://xliff.softwarity.io/vi/documentation/index.html</loc>
-    <lastmod>2025-04-19</lastmod>
-  </url>
-  <url>
-    <loc>https://xliff.softwarity.io/vi/documentation/usage/index.html</loc>
-    <lastmod>2025-04-19</lastmod>
-  </url>
-  <url>
-    <loc>https://xliff.softwarity.io/vi/documentation/custom/index.html</loc>
-    <lastmod>2025-04-19</lastmod>
-  </url>
-  <url>
-    <loc>https://xliff.softwarity.io/vi/documentation/setup/index.html</loc>
-    <lastmod>2025-04-19</lastmod>
-  </url>
-  <url>
-    <loc>https://xliff.softwarity.io/vi/how-it-works/index.html</loc>
-    <lastmod>2025-04-19</lastmod>
-  </url>
-  <url>
-    <loc>https://xliff.softwarity.io/vi/pricing/index.html</loc>
-    <lastmod>2025-04-19</lastmod>
-  </url>
-  <url>
-    <loc>https://xliff.softwarity.io/vi/privacy/index.html</loc>
-    <lastmod>2025-04-19</lastmod>
-  </url>
-  <url>
-    <loc>https://xliff.softwarity.io/vi/terms/index.html</loc>
-    <lastmod>2025-04-19</lastmod>
-  </url>
-  <url>
-    <loc>https://xliff.softwarity.io/vi/index.html</loc>
-    <lastmod>2025-04-19</lastmod>
-  </url>
-  <url>
-    <loc>https://xliff.softwarity.io/vi/documentation/index.html</loc>
-    <lastmod>2025-04-19</lastmod>
-  </url>
-  <url>
-    <loc>https://xliff.softwarity.io/vi/documentation/usage/index.html</loc>
-    <lastmod>2025-04-19</lastmod>
-  </url>
-  <url>
-    <loc>https://xliff.softwarity.io/vi/documentation/custom/index.html</loc>
-    <lastmod>2025-04-19</lastmod>
-  </url>
-  <url>
-    <loc>https://xliff.softwarity.io/vi/documentation/setup/index.html</loc>
-    <lastmod>2025-04-19</lastmod>
-  </url>
-  <url>
-    <loc>https://xliff.softwarity.io/vi/how-it-works/index.html</loc>
-    <lastmod>2025-04-19</lastmod>
-  </url>
-  <url>
-    <loc>https://xliff.softwarity.io/vi/pricing/index.html</loc>
-    <lastmod>2025-04-19</lastmod>
-  </url>
-  <url>
-    <loc>https://xliff.softwarity.io/vi/privacy/index.html</loc>
-    <lastmod>2025-04-19</lastmod>
-  </url>
-  <url>
-    <loc>https://xliff.softwarity.io/vi/terms/index.html</loc>
-    <lastmod>2025-04-19</lastmod>
-  </url>
+  <!-- Chinese -->
   <url>
     <loc>https://xliff.softwarity.io/zh/index.html</loc>
     <lastmod>2025-04-19</lastmod>
@@ -291,5 +225,42 @@
   <url>
     <loc>https://xliff.softwarity.io/zh/terms/index.html</loc>
     <lastmod>2025-04-19</lastmod>
+  </url>
+  <!-- Hindi -->
+  <url>
+    <loc>https://xliff.softwarity.io/hi/index.html</loc>
+    <lastmod>2025-04-21</lastmod>
+  </url>
+  <url>
+    <loc>https://xliff.softwarity.io/hi/documentation/index.html</loc>
+    <lastmod>2025-04-21</lastmod>
+  </url>
+  <url>
+    <loc>https://xliff.softwarity.io/hi/documentation/usage/index.html</loc>
+    <lastmod>2025-04-21</lastmod>
+  </url>
+  <url>
+    <loc>https://xliff.softwarity.io/hi/documentation/custom/index.html</loc>
+    <lastmod>2025-04-21</lastmod>
+  </url>
+  <url>
+    <loc>https://xliff.softwarity.io/hi/documentation/setup/index.html</loc>
+    <lastmod>2025-04-21</lastmod>
+  </url>
+  <url>
+    <loc>https://xliff.softwarity.io/hi/how-it-works/index.html</loc>
+    <lastmod>2025-04-21</lastmod>
+  </url>
+  <url>
+    <loc>https://xliff.softwarity.io/hi/pricing/index.html</loc>
+    <lastmod>2025-04-21</lastmod>
+  </url>
+  <url>
+    <loc>https://xliff.softwarity.io/hi/privacy/index.html</loc>
+    <lastmod>2025-04-21</lastmod>
+  </url>
+  <url>
+    <loc>https://xliff.softwarity.io/hi/terms/index.html</loc>
+    <lastmod>2025-04-21</lastmod>
   </url>
 </urlset>

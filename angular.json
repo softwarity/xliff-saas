@@ -50,6 +50,10 @@
           "he": {
             "translation": "src/locale/messages.he.xlf",
             "subPath": "he"
+          },
+          "hi": {
+            "translation": "src/locale/messages.hi.xlf",
+            "subPath": "hi"
           }
         }
       },
@@ -94,6 +98,7 @@
             "vi": {"localize": ["vi"], "deleteOutputPath": false},
             "he": {"localize": ["he"], "deleteOutputPath": false},
             "ru": {"localize": ["ru"], "deleteOutputPath": false},
+            "hi": {"localize": ["hi"], "deleteOutputPath": false},
             "production": {
               "budgets": [
                 {
@@ -156,7 +161,8 @@
               "messages.he.xlf",
               "messages.ru.xlf",
               "messages.es.xlf",
-              "messages.zh.xlf"
+              "messages.zh.xlf",
+              "messages.hi.xlf"
             ]
           }
         }
