@@ -2076,7 +2076,7 @@
       </trans-unit>
       <trans-unit id="XLIFF_EXTENSION_LABEL" datatype="html">
         <source>Xliff Extension</source>
-        <target state="new">Xliff Extension</target>
+        <target state="translated">XLIFF扩展</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/repositories/components/estimate/estimate-modal/estimate-modal.component.html</context>
           <context context-type="linenumber">46</context>
@@ -2089,7 +2089,6 @@
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">157</context>
         </context-group>
-        <!-- Premature close -->
       </trans-unit>
       <trans-unit id="TRANSUNIT_STATE_LABEL" datatype="html">
         <source>TransUnit State</source>
