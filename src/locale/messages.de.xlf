@@ -3309,7 +3309,7 @@ Status:</target>
       </trans-unit>
       <trans-unit id="INITIAL_SETUP_CHANGE_1" datatype="html">
         <source>Add the @angular/localize package to your dependencies</source>
-        <target state="translated">Fügen Sie das Paket &#64;angular/localize zu Ihren Abhängigkeiten hinzu</target>
+        <target state="translated">Fügen Sie das Paket @angular/localize zu Ihren Abhängigkeiten hinzu</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/setup.component.ts</context>
           <context context-type="linenumber">18</context>
@@ -3413,12 +3413,11 @@ Status:</target>
       </trans-unit>
       <trans-unit id="ANGULAR_JSON_DESCRIPTION" datatype="html">
         <source>Update the i18n configuration in angular.json:</source>
-        <target state="new">Update the i18n configuration in angular.json:</target>
+        <target state="translated">Aktualisieren Sie die i18n-Konfiguration in angular.json:</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/setup.component.ts</context>
           <context context-type="linenumber">78</context>
         </context-group>
-        <!-- The server had an error processing your request. Sorry about that! You can retry your request, or contact us through our help center at help.openai.com if you keep seeing this error. (Please include the request ID req_e5b71e01591c215bd1a7255a1189bbf6 in your email.) -->
       </trans-unit>
       <trans-unit id="EXTRACT_I18N_CONFIG_TITLE" datatype="html">
         <source>Then replace the standard extract-i18n configuration with ng-extract-i18n-merge:</source>
