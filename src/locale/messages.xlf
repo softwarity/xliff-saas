@@ -2677,13 +2677,6 @@
           <context context-type="linenumber">14</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="SOFTWARITY_LABEL" datatype="html">
-        <source>softwarity</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
-          <context context-type="linenumber">112</context>
-        </context-group>
-      </trans-unit>
       <trans-unit id="TOKEN_LABEL" datatype="html">
         <source>Token</source>
         <context-group purpose="location">
@@ -2747,25 +2740,11 @@
           <context context-type="linenumber">119</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="UPDATED_DATE" datatype="html">
-        <source>Updated Apr 8, 2025</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
-          <context context-type="linenumber">116</context>
-        </context-group>
-      </trans-unit>
       <trans-unit id="XLF_EXTENSION" datatype="html">
         <source>xlf</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">159</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="XLIFF_SAAS_LABEL" datatype="html">
-        <source>xliff-saas</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
-          <context context-type="linenumber">113</context>
         </context-group>
       </trans-unit>
       <trans-unit id="TRANSLATE_STEP_3_BRANCH" datatype="html">

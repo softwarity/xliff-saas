@@ -109,11 +109,11 @@ import { RouterLink } from '@angular/router';
                   <path d="M7 10C7 8.34315 8.34315 7 10 7H14C15.6569 7 17 8.34315 17 10V14C17 15.6569 15.6569 17 14 17H10C8.34315 17 7 15.6569 7 14V10Z" fill="white"/>
                 </svg>
                 <div>
-                  <div class="text-sm text-gray-400" i18n="@@SOFTWARITY_LABEL">softwarity</div>
-                  <div class="font-semibold" i18n="@@XLIFF_SAAS_LABEL">xliff-saas</div>
+                  <div class="text-sm text-gray-400">softwarity</div>
+                  <div class="font-semibold">xliff-saas</div>
                 </div>
               </div>
-              <div class="text-sm text-gray-400" i18n="@@UPDATED_DATE">Updated Apr 8, 2025</div>
+              <div class="text-sm text-gray-400">Updated Apr 8, 2025</div>
               <div class="mt-5 py-3 border-t border-gray-700">
                 <div class="flex justify-between items-center mb-3">
                   <div class="text-green-400" i18n="@@UNITS_DETECTED">90 translation units detected</div>
