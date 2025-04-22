@@ -18,7 +18,7 @@ import { LoggedNavComponent } from './logged-nav.component';
     NgClass
   ],
   template: `
-  <div class="w-full bg-white dark:bg-gray-800 shadow-sm" [ngClass]="{'!bg-tertiary': !dev}">
+  <div class="w-full bg-white dark:bg-gray-800 shadow-sm" [ngClass]="{'!bg-tertiary': dev}">
     <nav class="w-full px-4 py-4">
       <div class="flex items-center space-x-4">
         <a routerLink="/" class="text-primary dark:text-blue-400 shrink-0 flex items-center">
