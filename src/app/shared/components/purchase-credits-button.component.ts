@@ -6,12 +6,7 @@ import { RouterLink } from '@angular/router';
   standalone: true,
   imports: [RouterLink],
   template: `
-    <a 
-      routerLink="/pricing"
-      class="button {{buttonClass}}"
-      i18n="@@PURCHASE_CREDITS_BUTTON">
-      Purchase credits
-    </a>
+    <a routerLink="/pricing" class="button {{buttonClass}}" i18n="@@PURCHASE_CREDITS_BUTTON">Purchase credits</a>
   `
 })
 export class PurchaseCreditsButtonComponent {

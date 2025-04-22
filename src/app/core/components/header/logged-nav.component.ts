@@ -24,8 +24,8 @@ import { PurchaseCreditsButtonComponent } from '../../../shared/components/purch
   template: `
     <div class="flex items-center space-x-2 md:space-x-4">
       <a routerLink="/dashboard" routerLinkActive="!text-primary dark:!text-blue-400" class="flex items-center text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-blue-400 transition-colors p-2">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 xl:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 xl:hidden" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor">
+          <path d="M146-814h268v268H146v-268Zm28 28v212-212Zm372-28h268v268H546v-268Zm28 28v212-212ZM146-414h268v268H146v-268Zm28 28v212-212Zm492-28h28v120h120v28H694v120h-28v-120H546v-28h120v-120Zm-92-372v212h212v-212H574Zm-400 0v212h212v-212H174Zm0 400v212h212v-212H174Z"/>
         </svg>
         <span class="hidden xl:inline" i18n="@@NAVIGATION_DASHBOARD">Dashboard</span>
       </a>
