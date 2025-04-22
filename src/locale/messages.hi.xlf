@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-  <file source-language="en" target-language="hi" datatype="plaintext" original="ng2.template">
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 https://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
+  <file source-language="en" datatype="plaintext" original="ng2.template" target-language="hi">
     <body>
       <trans-unit id="FOOTER_TERMS" datatype="html">
         <source>Terms of Service</source>
@@ -603,7 +603,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="AUTH_EMAIL_SENT_MESSAGE" datatype="html">
-        <source>We&apos;ve sent you an email with instructions. Please check your inbox and follow the instructions provided.</source>
+        <source>We've sent you an email with instructions. Please check your inbox and follow the instructions provided.</source>
         <target state="translated">हमने आपको निर्देशों के साथ एक ईमेल भेजा है। कृपया अपने इनबॉक्स की जांच करें और दिए गए निर्देशों का पालन करें।</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/email-sent.component.ts</context>
@@ -719,7 +719,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="AUTH_LOGIN_NO_ACCOUNT" datatype="html">
-        <source>Don&apos;t have an account?</source>
+        <source>Don't have an account?</source>
         <target state="translated">आपका खाता नहीं है?</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/login.component.ts</context>
@@ -728,7 +728,7 @@
       </trans-unit>
       <trans-unit id="AUTH_LOGIN_SIGN_UP" datatype="html">
         <source>Sign Up</source>
-        <target state="new">Sign Up</target>
+        <target state="translated">साइन अप</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/login.component.ts</context>
           <context context-type="linenumber">77</context>
@@ -807,7 +807,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="AUTH_SIGNUP_PASSWORDS_DONT_MATCH" datatype="html">
-        <source>Passwords don&apos;t match</source>
+        <source>Passwords don't match</source>
         <target state="translated">पासवर्ड मेल नहीं खाते</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/signup.component.ts</context>
@@ -903,7 +903,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="AUTH_UPDATE_PASSWORD_PASSWORDS_DONT_MATCH" datatype="html">
-        <source>Passwords don&apos;t match</source>
+        <source>Passwords don't match</source>
         <target state="translated">पासवर्ड मेल नहीं खाते</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/update-password.component.ts</context>
@@ -2347,7 +2347,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="CONTACT_US_DESCRIPTION" datatype="html">
-        <source>Have a question? Send us a message and we&apos;ll get back to you as soon as possible.</source>
+        <source>Have a question? Send us a message and we'll get back to you as soon as possible.</source>
         <target state="translated">क्या आपके पास कोई प्रश्न है? हमें एक संदेश भेजें और हम जल्द से जल्द आपसे संपर्क करेंगे।</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/support/contact.component.ts</context>
@@ -2355,8 +2355,8 @@
         </context-group>
       </trans-unit>
       <trans-unit id="CONTACT_US_SUPPORT_LINK" datatype="html">
-        <source>If you have an account, you can also <x id="START_LINK" ctype="x-a" equiv-text="&lt;a [routerLink]=&quot;[&apos;/support&apos;]&quot; class=&quot;text-primary hover:underline&quot;&gt;"/>access our support ticket system<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/> for faster assistance.</source>
-        <target state="translated">अगर आपका खाता है, तो आप भी <x id="START_LINK" ctype="x-a" equiv-text="&lt;a [routerLink]=&quot;[&apos;/support&apos;]&quot; class=&quot;text-primary hover:underline&quot;/&gt;"/>हमारी सहायता टिकट प्रणाली<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/> का उपयोग करके तेज सहायता प्राप्त कर सकते हैं।</target>
+        <source>If you have an account, you can also <x id="START_LINK" ctype="x-a" equiv-text="&lt;a [routerLink]=&quot;['/support']&quot; class=&quot;text-primary hover:underline&quot;>"/>access our support ticket system<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/> for faster assistance.</source>
+        <target state="translated">अगर आपका खाता है, तो आप भी <x id="START_LINK" ctype="x-a" equiv-text="&lt;a [routerLink]=&quot;['/support']&quot; class=&quot;text-primary hover:underline&quot;/>"/>हमारी सहायता टिकट प्रणाली<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/> का उपयोग करके तेज सहायता प्राप्त कर सकते हैं।</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/support/contact.component.ts</context>
           <context context-type="linenumber">24</context>
@@ -2651,7 +2651,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="ISSUE_NOT_FOUND_DESC" datatype="html">
-        <source>The issue you&apos;re looking for doesn&apos;t exist or you don&apos;t have permission to view it.</source>
+        <source>The issue you're looking for doesn't exist or you don't have permission to view it.</source>
         <target state="translated">आप जिस समस्या की तलाश कर रहे हैं, वह मौजूद नहीं है या आपको इसे देखने की अनुमति नहीं है।</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/support/issue-detail.component.ts</context>
@@ -2699,8 +2699,8 @@
         </context-group>
       </trans-unit>
       <trans-unit id="CREATED_AT" datatype="html">
-        <source>Created: <x id="INTERPOLATION" equiv-text="{{ issue()!.created_at | date:&apos;medium&apos; }}"/></source>
-        <target state="translated">बनाया गया: <x id="INTERPOLATION" equiv-text="{{ issue()!.created_at | date:&apos;medium&apos; }}"/></target>
+        <source>Created: <x id="INTERPOLATION" equiv-text="{{ issue()!.created_at | date:'medium' }}"/></source>
+        <target state="translated">बनाया गया: <x id="INTERPOLATION" equiv-text="{{ issue()!.created_at | date:'medium' }}"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/support/issue-detail.component.ts</context>
           <context context-type="linenumber">76</context>
@@ -3151,8 +3151,8 @@
         </context-group>
       </trans-unit>
       <trans-unit id="CUSTOM_INSTRUCTIONS_FILENAME_DESC" datatype="html">
-        <source>Create a file named <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code class=&quot;bg-blue-100 dark:bg-blue-900/50 px-2 py-1 rounded text-blue-900 dark:text-blue-100&quot;&gt;"/>xliff-instructions.md<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code&gt;"/> at the root of your Git repository to provide custom translation instructions.</source>
-        <target state="translated">आपके Git रिपॉजिटरी की जड़ में कस्टम अनुवाद निर्देश देने के लिए एक फ़ाइल बनाएं जिसका नाम <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code class=&quot;bg-blue-100 dark:bg-blue-900/50 px-2 py-1 rounded text-blue-900 dark:text-blue-100&quot;&gt;"/>xliff-instructions.md<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code&gt;"/> हो।</target>
+        <source>Create a file named <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code class=&quot;bg-blue-100 dark:bg-blue-900/50 px-2 py-1 rounded text-blue-900 dark:text-blue-100&quot;>"/>xliff-instructions.md<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code>"/> at the root of your Git repository to provide custom translation instructions.</source>
+        <target state="translated">आपके Git रिपॉजिटरी की जड़ में कस्टम अनुवाद निर्देश देने के लिए एक फ़ाइल बनाएं जिसका नाम <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code class=&quot;bg-blue-100 dark:bg-blue-900/50 px-2 py-1 rounded text-blue-900 dark:text-blue-100&quot;>"/>xliff-instructions.md<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code>"/> हो।</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/custom.component.ts</context>
           <context context-type="linenumber">36</context>
@@ -3295,7 +3295,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="INITIAL_SETUP_DESCRIPTION" datatype="html">
-        <source>Start by adding Angular&apos;s localization package to your project:</source>
+        <source>Start by adding Angular's localization package to your project:</source>
         <target state="translated">अपने प्रोजेक्ट में Angular का स्थानीयकरण पैकेज जोड़ने से शुरू करें:</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/setup.component.ts</context>
@@ -3319,8 +3319,8 @@
         </context-group>
       </trans-unit>
       <trans-unit id="INITIAL_SETUP_CHANGE_2" datatype="html">
-        <source>Add &quot;@angular/localize/init&quot; to the polyfills array in angular.json</source>
-        <target state="translated">angular.json में polyfills array में &quot;@angular/localize/init&quot; जोड़ें</target>
+        <source>Add "@angular/localize/init" to the polyfills array in angular.json</source>
+        <target state="translated">angular.json में polyfills array में "@angular/localize/init" जोड़ें</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/setup.component.ts</context>
           <context context-type="linenumber">19</context>
@@ -3343,7 +3343,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="INITIAL_SETUP_NOTE" datatype="html">
-        <source>Note: We&apos;ll modify the outputPath later in the configuration to match our workflow.</source>
+        <source>Note: We'll modify the outputPath later in the configuration to match our workflow.</source>
         <target state="translated">नोट: हम बाद में अपनी वर्कफ़्लो के अनुसार कॉन्फ़िगरेशन में outputPath को संशोधित करेंगे।</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/setup.component.ts</context>
@@ -3359,7 +3359,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="EXTRACT_TOOL_DESCRIPTION" datatype="html">
-        <source>For managing translation files, we&apos;ll use ng-extract-i18n-merge which simplifies the process of extracting and merging translations:</source>
+        <source>For managing translation files, we'll use ng-extract-i18n-merge which simplifies the process of extracting and merging translations:</source>
         <target state="translated">अनुवाद फ़ाइलों का प्रबंधन करने के लिए, हम ng-extract-i18n-merge का उपयोग करेंगे, जो अनुवादों को निकालने और मर्ज करने की प्रक्रिया को सरल बनाता है:</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/setup.component.ts</context>
@@ -3439,40 +3439,40 @@
         </context-group>
       </trans-unit>
       <trans-unit id="EXTRACT_I18N_OPTION_1" datatype="html">
-        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>buildTarget<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: Your application&apos;s build target name</source>
-        <target state="translated"><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>बिल्डटारगेट<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: आपके अनुप्रयोग का निर्माण लक्ष्य नाम</target>
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>buildTarget<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: Your application's build target name</source>
+        <target state="translated"><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>बिल्डटारगेट<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: आपके अनुप्रयोग का निर्माण लक्ष्य नाम</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/setup.component.ts</context>
           <context context-type="linenumber">112</context>
         </context-group>
       </trans-unit>
       <trans-unit id="EXTRACT_I18N_OPTION_2" datatype="html">
-        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>outputPath<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: Directory where translation files will be stored</source>
-        <target state="translated"><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>आउटपुट पथ<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: अनुवाद फाइलों को स्टोर करने के लिए निर्देशिका</target>
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>outputPath<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: Directory where translation files will be stored</source>
+        <target state="translated"><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>आउटपुट पथ<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: अनुवाद फाइलों को स्टोर करने के लिए निर्देशिका</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/setup.component.ts</context>
           <context context-type="linenumber">113</context>
         </context-group>
       </trans-unit>
       <trans-unit id="EXTRACT_I18N_OPTION_3" datatype="html">
-        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>includeContext<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: Includes source file information in the XLIFF files</source>
-        <target state="translated"><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>includeContext<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: XLIFF फ़ाइलों में स्रोत फ़ाइल जानकारी शामिल करता है</target>
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>includeContext<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: Includes source file information in the XLIFF files</source>
+        <target state="translated"><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>includeContext<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: XLIFF फ़ाइलों में स्रोत फ़ाइल जानकारी शामिल करता है</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/setup.component.ts</context>
           <context context-type="linenumber">114</context>
         </context-group>
       </trans-unit>
       <trans-unit id="EXTRACT_I18N_OPTION_4" datatype="html">
-        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>resetTranslationState<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: Marks all translations as needing review on changes</source>
-        <target state="translated"><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>पुनःअनुवाद स्थिति<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: परिवर्तनों पर सभी अनुवादों को समीक्षा की आवश्यकता के रूप में चिह्नित करें</target>
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>resetTranslationState<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: Marks all translations as needing review on changes</source>
+        <target state="translated"><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>पुनःअनुवाद स्थिति<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: परिवर्तनों पर सभी अनुवादों को समीक्षा की आवश्यकता के रूप में चिह्नित करें</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/setup.component.ts</context>
           <context context-type="linenumber">115</context>
         </context-group>
       </trans-unit>
       <trans-unit id="EXTRACT_I18N_OPTION_5" datatype="html">
-        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>targetFiles<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: List of translation files to generate/update</source>
-        <target state="translated"><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>लक्ष्य फ़ाइलें<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: उत्पन्न करने/अपडेट करने के लिए अनुवाद फ़ाइलों की सूची</target>
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>targetFiles<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: List of translation files to generate/update</source>
+        <target state="translated"><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>लक्ष्य फ़ाइलें<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: उत्पन्न करने/अपडेट करने के लिए अनुवाद फ़ाइलों की सूची</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/setup.component.ts</context>
           <context context-type="linenumber">116</context>
@@ -3727,8 +3727,8 @@
         </context-group>
       </trans-unit>
       <trans-unit id="GITHUB_TOKEN_LOCATION" datatype="html">
-        <source>Get your token here: Settings &gt; Developer settings &gt; Personal access tokens &gt; Tokens (classic) &gt; Generate new token</source>
-        <target state="translated">अपने टोकन प्राप्त करें: सेटिंग्स &gt; डेवलपर सेटिंग्स &gt; व्यक्तिगत एक्सेस टोकन &gt; टोकन (क्लासिक) &gt; नया टोकन जनरेट करें</target>
+        <source>Get your token here: Settings > Developer settings > Personal access tokens > Tokens (classic) > Generate new token</source>
+        <target state="translated">अपने टोकन प्राप्त करें: सेटिंग्स > डेवलपर सेटिंग्स > व्यक्तिगत एक्सेस टोकन > टोकन (क्लासिक) > नया टोकन जनरेट करें</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">48</context>
@@ -3759,24 +3759,24 @@
         </context-group>
       </trans-unit>
       <trans-unit id="CONNECT_STEP_1" datatype="html">
-        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Select a provider<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: Choose from GitHub, GitLab, or Bitbucket</source>
-        <target state="translated"><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>एक प्रदाता चुनें<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: GitHub, GitLab, या Bitbucket में से चुनें</target>
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>Select a provider<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: Choose from GitHub, GitLab, or Bitbucket</source>
+        <target state="translated"><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>एक प्रदाता चुनें<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: GitHub, GitLab, या Bitbucket में से चुनें</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">60</context>
         </context-group>
       </trans-unit>
       <trans-unit id="CONNECT_STEP_2" datatype="html">
-        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Configure access<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: Create and provide the appropriate tokens</source>
-        <target state="translated"><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>ऐक्सेस कॉन्फ़िगर करें<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: उचित टोकन बनाएं और प्रदान करें</target>
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>Configure access<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: Create and provide the appropriate tokens</source>
+        <target state="translated"><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>ऐक्सेस कॉन्फ़िगर करें<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: उचित टोकन बनाएं और प्रदान करें</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">61</context>
         </context-group>
       </trans-unit>
       <trans-unit id="CONNECT_STEP_3" datatype="html">
-        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Save your configuration<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: Enter your token and save the connection</source>
-        <target state="translated"><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>अपनी कॉन्फ़िगरेशन <x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>सेव करें: अपना टोकन डालें और कनेक्शन को सहेजें</target>
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>Save your configuration<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: Enter your token and save the connection</source>
+        <target state="translated"><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>अपनी कॉन्फ़िगरेशन <x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>सेव करें: अपना टोकन डालें और कनेक्शन को सहेजें</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">62</context>
@@ -3791,8 +3791,8 @@
         </context-group>
       </trans-unit>
       <trans-unit id="GITLAB_DESC" datatype="html">
-        <source>Create a Personal Access Token with <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code&gt;"/>api<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code&gt;"/>, <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code&gt;"/>read_repository<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code&gt;"/>, and <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code&gt;"/>write_repository<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code&gt;"/> scopes.</source>
-        <target state="translated">एक व्यक्तिगत एक्सेस टोकन बनाएं जिसमें <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code&gt;"/>api<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code&gt;"/>, <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code&gt;"/>read_repository<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code&gt;"/>, और <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code&gt;"/>write_repository<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code&gt;"/> स्कोप शामिल हैं।</target>
+        <source>Create a Personal Access Token with <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code>"/>api<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code>"/>, <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code>"/>read_repository<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code>"/>, and <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code>"/>write_repository<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code>"/> scopes.</source>
+        <target state="translated">एक व्यक्तिगत एक्सेस टोकन बनाएं जिसमें <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code>"/>api<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code>"/>, <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code>"/>read_repository<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code>"/>, और <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code>"/>write_repository<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code>"/> स्कोप शामिल हैं।</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">74</context>
@@ -3807,8 +3807,8 @@
         </context-group>
       </trans-unit>
       <trans-unit id="BITBUCKET_DESC" datatype="html">
-        <source>Create an App Password with <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code&gt;"/>repository:read<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code&gt;"/> and <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code&gt;"/>repository:write<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code&gt;"/> permissions.</source>
-        <target state="translated">एक ऐप पासवर्ड बनाएं जिसमें <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code&gt;"/>repository:read<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code&gt;"/> और <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code&gt;"/>repository:write<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code&gt;"/> अनुमतियां हों।</target>
+        <source>Create an App Password with <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code>"/>repository:read<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code>"/> and <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code>"/>repository:write<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code>"/> permissions.</source>
+        <target state="translated">एक ऐप पासवर्ड बनाएं जिसमें <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code>"/>repository:read<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code>"/> और <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code>"/>repository:write<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code>"/> अनुमतियां हों।</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">86</context>
@@ -3847,7 +3847,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="REPOSITORY_STEP_1" datatype="html">
-        <source>Navigate to the provider&apos;s page where your repositories are listed</source>
+        <source>Navigate to the provider's page where your repositories are listed</source>
         <target state="translated">संप Anbieter के पृष्ठ पर जाएँ जहाँ आपके रिपॉजिटरी सूचीबद्ध हैं</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
@@ -4135,8 +4135,8 @@
         </context-group>
       </trans-unit>
       <trans-unit id="ESTIMATE_STEP_2" datatype="html">
-        <source>Click on &quot;Estimate&quot; to analyze your XLIFF files</source>
-        <target state="translated">&quot;अनुमान&quot; पर क्लिक करें ताकि आप अपनी XLIFF फाइलों का विश्लेषण कर सकें</target>
+        <source>Click on "Estimate" to analyze your XLIFF files</source>
+        <target state="translated">"अनुमान" पर क्लिक करें ताकि आप अपनी XLIFF फाइलों का विश्लेषण कर सकें</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">293</context>
@@ -4151,24 +4151,24 @@
         </context-group>
       </trans-unit>
       <trans-unit id="ESTIMATE_STEP_31" datatype="html">
-        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Branch<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: Select the branch containing your XLIFF files</source>
-        <target state="translated"><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>शाखा<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: अपने XLIFF फ़ाइलों को समर्पित शाखा चुनें</target>
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>Branch<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: Select the branch containing your XLIFF files</source>
+        <target state="translated"><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>शाखा<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: अपने XLIFF फ़ाइलों को समर्पित शाखा चुनें</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">297</context>
         </context-group>
       </trans-unit>
       <trans-unit id="ESTIMATE_STEP_32" datatype="html">
-        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>File Pattern<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: By default &quot;xlf&quot; to search all XLIFF files. Use specific patterns like &quot;ru.xlf&quot; to target only Russian files</source>
-        <target state="translated">फाइल पैटर्न: डिफ़ॉल्ट रूप से &quot;xlf&quot; सभी XLIFF फ़ाइलों को खोजने के लिए होता है। केवल रूसी फ़ाइलों को लक्षित करने के लिए विशेष पैटर्न का उपयोग करें जैसे &quot;ru.xlf&quot;</target>
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>File Pattern<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: By default "xlf" to search all XLIFF files. Use specific patterns like "ru.xlf" to target only Russian files</source>
+        <target state="translated">फाइल पैटर्न: डिफ़ॉल्ट रूप से "xlf" सभी XLIFF फ़ाइलों को खोजने के लिए होता है। केवल रूसी फ़ाइलों को लक्षित करने के लिए विशेष पैटर्न का उपयोग करें जैसे "ru.xlf"</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">298</context>
         </context-group>
       </trans-unit>
       <trans-unit id="ESTIMATE_STEP_33" datatype="html">
-        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Translation State<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: Choose which translation units to include (default is &quot;new&quot; to focus on untranslated content)</source>
-        <target state="translated"><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>अनुवाद स्थिति<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: उन अनुवादित इकाइयों का चयन करें जिन्हें शामिल करना है (डिफ़ॉल्ट &quot;नए&quot; पर ध्यान केंद्रित करने के लिए है)</target>
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>Translation State<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: Choose which translation units to include (default is "new" to focus on untranslated content)</source>
+        <target state="translated"><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>अनुवाद स्थिति<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: उन अनुवादित इकाइयों का चयन करें जिन्हें शामिल करना है (डिफ़ॉल्ट "नए" पर ध्यान केंद्रित करने के लिए है)</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">299</context>
@@ -4255,8 +4255,8 @@
         </context-group>
       </trans-unit>
       <trans-unit id="TRANSLATE_STEP_2" datatype="html">
-        <source>Click on &quot;Translate&quot; to begin the process</source>
-        <target state="translated">क्लिक करें &quot;Translate&quot; प्रक्रिया शुरू करने के लिए</target>
+        <source>Click on "Translate" to begin the process</source>
+        <target state="translated">क्लिक करें "Translate" प्रक्रिया शुरू करने के लिए</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">328</context>
@@ -4287,16 +4287,16 @@
         </context-group>
       </trans-unit>
       <trans-unit id="TRANSLATE_STEP_3_TRANSLATION_STATE" datatype="html">
-        <source>Select which translation units to process (e.g., &quot;new&quot;, &quot;needs-translation&quot;)</source>
-        <target state="translated">जो अनुवाद इकाइयों को संसाधित करना है उसे चुनें (जैसे, &quot;नया&quot;, &quot;अनुवाद की आवश्यकता&quot;)</target>
+        <source>Select which translation units to process (e.g., "new", "needs-translation")</source>
+        <target state="translated">जो अनुवाद इकाइयों को संसाधित करना है उसे चुनें (जैसे, "नया", "अनुवाद की आवश्यकता")</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">334</context>
         </context-group>
       </trans-unit>
       <trans-unit id="TRANSLATE_STEP_3_TARGET_STATE" datatype="html">
-        <source>Define the state to set for translated units (e.g., &quot;translated&quot;, &quot;final&quot;)</source>
-        <target state="translated">अनुवादित इकाइयों के लिए सेट करने के लिए स्थिति को परिभाषित करें (जैसे, &quot;अनुवादित&quot;, &quot;अंतिम&quot;)</target>
+        <source>Define the state to set for translated units (e.g., "translated", "final")</source>
+        <target state="translated">अनुवादित इकाइयों के लिए सेट करने के लिए स्थिति को परिभाषित करें (जैसे, "अनुवादित", "अंतिम")</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">335</context>
@@ -4311,8 +4311,8 @@
         </context-group>
       </trans-unit>
       <trans-unit id="TRANSLATION_OPTIONS_REF" datatype="html">
-        <source>You&apos;ll be prompted with the translation options modal as shown earlier in the &quot;Selecting Repositories&quot; section.</source>
-        <target state="translated">आपको &quot;गिटहब&quot;, &quot;गिटलैब&quot; या &quot;बिटबकेट&quot; में से किसी एक प्रदाता का चयन करने के लिए कहा जाएगा। फिर, आपको अपने एक्सएलआईएफ़ फ़ाइलों के साथ काम करने के लिए शाखा की पहचान करना होगा। अब आप &quot;अनुवाद&quot; पर क्लिक करके प्रक्रिया प्रारंभ कर सकते हैं।</target>
+        <source>You'll be prompted with the translation options modal as shown earlier in the "Selecting Repositories" section.</source>
+        <target state="translated">आपको "गिटहब", "गिटलैब" या "बिटबकेट" में से किसी एक प्रदाता का चयन करने के लिए कहा जाएगा। फिर, आपको अपने एक्सएलआईएफ़ फ़ाइलों के साथ काम करने के लिए शाखा की पहचान करना होगा। अब आप "अनुवाद" पर क्लिक करके प्रक्रिया प्रारंभ कर सकते हैं।</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">342</context>
@@ -4447,7 +4447,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="CONTEXT_AWARE_AI_DESCRIPTION" datatype="html">
-        <source>Intelligent translations based on your application&apos;s context and business domain</source>
+        <source>Intelligent translations based on your application's context and business domain</source>
         <target state="translated">आपकी एप्लिकेशन के संदर्भ और व्यावसायिक डोमेन के आधार पर बुद्धिमान अनुवाद</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/home.component.html</context>
@@ -4523,7 +4523,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="AUTOMATED_WORKFLOW_ABSTRACT" datatype="html">
-        <source>Simply connect your Git repository, start the translation, and we&apos;ll handle the rest. Our AI-powered platform takes care of everything automatically.</source>
+        <source>Simply connect your Git repository, start the translation, and we'll handle the rest. Our AI-powered platform takes care of everything automatically.</source>
         <target state="translated">बस अपने Git रिपॉजिटरी को कनेक्ट करें, अनुवाद शुरू करें, और बाकी काम हमें सौंप दें। हमारा AI-शक्ति से संचालित प्लेटफॉर्म सब कुछ स्वचालित रूप से संभालता है।</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/how-it-works/how-it-works.component.html</context>
@@ -4587,7 +4587,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="TRANSUNIT_SOURCE_DESCRIPTION" datatype="html">
-        <source>The original text in your application&apos;s source language</source>
+        <source>The original text in your application's source language</source>
         <target state="translated">आपके आवेदन की स्रोत भाषा में मूल पाठ</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/how-it-works/how-it-works.component.html</context>
@@ -4651,7 +4651,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="SUPPORTED_FORMATS_DESCRIPTION" datatype="html">
-        <source>Our platform supports the following XLIFF formats for maximum compatibility with Angular&apos;s internationalization system:</source>
+        <source>Our platform supports the following XLIFF formats for maximum compatibility with Angular's internationalization system:</source>
         <target state="translated">हमारा मंच अधिकतम संगतता के लिए निम्नलिखित XLIFF प्रारूपों का समर्थन करता है जो Angular के अंतरराष्ट्रीयकरण प्रणाली के साथ है:</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/how-it-works/how-it-works.component.html</context>
@@ -4667,7 +4667,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="CONTEXT_AWARE_DESCRIPTION" datatype="html">
-        <source>Our AI-powered translation engine understands your application&apos;s context, ensuring accurate and meaningful translations that maintain the original intent of your content.</source>
+        <source>Our AI-powered translation engine understands your application's context, ensuring accurate and meaningful translations that maintain the original intent of your content.</source>
         <target state="translated">हमारा AI-समर्थित अनुवाद इंजन आपके अनुप्रयोग के संदर्भ को समझता है, सटीक और सार्थक अनुवाद सुनिश्चित करता है जो आपके सामग्री के मूल इरादे को बनाए रखता है।</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/how-it-works/how-it-works.component.html</context>
@@ -4755,7 +4755,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="OOPS_PAGE_NOT_FOUND" datatype="html">
-        <source>Oops! The page you&apos;re looking for seems to have vanished into the void...</source>
+        <source>Oops! The page you're looking for seems to have vanished into the void...</source>
         <target state="translated">अरे! जिस पृष्ठ की आप तलाश कर रहे हैं, वह जैसे अदृश्य हो गया है...</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/not-found.component.ts</context>
@@ -4835,7 +4835,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="PRICING_FAQ_MEMBERSHIP_LEVELS_ANSWER" datatype="html">
-        <source>As you purchase credits, you&apos;ll unlock membership levels (Bronze, Silver, Gold, Diamond) that provide additional features and better rates for translations. Once you reach a level, you keep it permanently.</source>
+        <source>As you purchase credits, you'll unlock membership levels (Bronze, Silver, Gold, Diamond) that provide additional features and better rates for translations. Once you reach a level, you keep it permanently.</source>
         <target state="translated">क्रेडिट खरीदने के साथ, आप सदस्यता स्तर (कांस्य, चांदी, सोना, हीरा) अनलॉक करेंगे जो अतिरिक्त सुविधाएँ और अनुवाद के लिए बेहतर दरें प्रदान करते हैं। एक बार जब आप एक स्तर तक पहुंचते हैं, तो आप इसे स्थायी रूप से रख लेते हैं।</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/pricing.component.ts</context>
@@ -4851,7 +4851,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="PRICING_FAQ_SPECIAL_NEEDS_ANSWER" datatype="html">
-        <source>If you have specific needs or require a custom solution, please contact our sales team. We&apos;ll be happy to create a tailored credit package for your organization.</source>
+        <source>If you have specific needs or require a custom solution, please contact our sales team. We'll be happy to create a tailored credit package for your organization.</source>
         <target state="translated">यदि आपके पास विशेष आवश्यकताएँ हैं या आप एक कस्टम समाधान की आवश्यकता है, तो कृपया हमारी बिक्री टीम से संपर्क करें। हमें आपके संगठन के लिए एक अनुकूल क्रेडिट पैकेज बनाने में खुशी होगी।</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/pricing.component.ts</context>
@@ -5107,8 +5107,8 @@
         </context-group>
       </trans-unit>
       <trans-unit id="TERMS_SERVICE_TEXT" datatype="html">
-        <source>Our service is provided &quot;as is&quot; and we make no warranties about its reliability or availability. We reserve the right to modify or discontinue the service at any time.</source>
-        <target state="translated">हमारी सेवा &quot;जैसी है&quot; प्रदान की जाती है और हम इसकी विश्वसनीयता या उपलब्धता के बारे में कोई वारंटी नहीं देते हैं। हम किसी भी समय सेवा को संशोधित या समाप्त करने का अधिकार सुरक्षित रखते हैं।</target>
+        <source>Our service is provided "as is" and we make no warranties about its reliability or availability. We reserve the right to modify or discontinue the service at any time.</source>
+        <target state="translated">हमारी सेवा "जैसी है" प्रदान की जाती है और हम इसकी विश्वसनीयता या उपलब्धता के बारे में कोई वारंटी नहीं देते हैं। हम किसी भी समय सेवा को संशोधित या समाप्त करने का अधिकार सुरक्षित रखते हैं।</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/terms.component.ts</context>
           <context context-type="linenumber">33</context>
@@ -5216,7 +5216,7 @@
       </trans-unit>
       <trans-unit id="PRICING_BUTTON" datatype="html">
         <source>Pricing</source>
-        <target state="new">Pricing</target>
+        <target state="translated">कीमतें</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/header/header.component.ts</context>
           <context context-type="linenumber">51</context>
@@ -5224,7 +5224,7 @@
       </trans-unit>
       <trans-unit id="FAQ_TITLE" datatype="html">
         <source>Frequently Asked Questions</source>
-        <target state="new">Frequently Asked Questions</target>
+        <target state="translated">सामान्य प्रश्न</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/faq.component.ts</context>
           <context context-type="linenumber">11</context>
@@ -5232,15 +5232,15 @@
       </trans-unit>
       <trans-unit id="HOW_CAN_XLIFF_TRANSLATOR_HELP_MY_BUSINESS" datatype="html">
         <source>How can XLIFF Translator help my business?</source>
-        <target state="new">How can XLIFF Translator help my business?</target>
+        <target state="translated">XLIFF Translator आपके व्यवसाय की मदद कैसे कर सकता है?</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
           <context context-type="linenumber">23</context>
         </context-group>
       </trans-unit>
       <trans-unit id="HOW_CAN_XLIFF_TRANSLATOR_HELP_MY_BUSINESS_ANSWER" datatype="html">
-        <source>XLIFF Translator simplifies the management of your application&apos;s translations by using AI to automatically generate accurate translations. This saves you time and money while improving the quality of your translations.</source>
-        <target state="new">XLIFF Translator simplifies the management of your application&apos;s translations by using AI to automatically generate accurate translations. This saves you time and money while improving the quality of your translations.</target>
+        <source>XLIFF Translator simplifies the management of your application's translations by using AI to automatically generate accurate translations. This saves you time and money while improving the quality of your translations.</source>
+        <target state="translated">XLIFF Translator आपके एप्लिकेशन के अनुवादों के प्रबंधन को सरल बनाता है, AI का उपयोग करके स्वचालित रूप से सटीक अनुवाद उत्पन्न करता है। यह आपके समय और धन की बचत करता है जबकि आपके अनुवाद की गुणवत्ता को सुधारता है।</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
           <context context-type="linenumber">24</context>
@@ -5248,7 +5248,7 @@
       </trans-unit>
       <trans-unit id="CAN_I_TRY_XLIFF_TRANSLATOR_BEFORE_SIGNING_UP" datatype="html">
         <source>Can I try XLIFF Translator before signing up?</source>
-        <target state="new">Can I try XLIFF Translator before signing up?</target>
+        <target state="translated">क्या मैं साइन अप करने से पहले XLIFF अनुवादक का उपयोग कर सकता हूँ?</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
           <context context-type="linenumber">27</context>
@@ -5256,7 +5256,7 @@
       </trans-unit>
       <trans-unit id="CAN_I_TRY_XLIFF_TRANSLATOR_BEFORE_SIGNING_UP_ANSWER" datatype="html">
         <source>Yes, we offer welcome credits upon registration that allow you to test the features of our platform without any commitment. You can see for yourself how our solution can improve your translation process.</source>
-        <target state="new">Yes, we offer welcome credits upon registration that allow you to test the features of our platform without any commitment. You can see for yourself how our solution can improve your translation process.</target>
+        <target state="translated">हाँ, हम पंजीकरण पर स्वागत क्रेडिट प्रदान करते हैं जो आपको हमारी प्लेटफ़ॉर्म की सुविधाओं का परीक्षण करने की अनुमति देता है बिना किसी प्रतिबद्धता के। आप स्वयं देख सकते हैं कि हमारा समाधान आपके अनुवाद प्रक्रिया को कैसे सुधार सकता है।</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
           <context context-type="linenumber">28</context>
@@ -5264,7 +5264,7 @@
       </trans-unit>
       <trans-unit id="WHAT_LANGUAGES_ARE_SUPPORTED" datatype="html">
         <source>What languages are supported?</source>
-        <target state="new">What languages are supported?</target>
+        <target state="translated">सपोर्ट किए गए भाषाएँ कौन सी हैं?</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
           <context context-type="linenumber">31</context>
@@ -5272,7 +5272,7 @@
       </trans-unit>
       <trans-unit id="WHAT_LANGUAGES_ARE_SUPPORTED_ANSWER" datatype="html">
         <source>XLIFF Translator supports all commonly used languages worldwide. You can even attempt to translate non-human languages like Klingon or Elvish, but the results may not be optimal.</source>
-        <target state="new">XLIFF Translator supports all commonly used languages worldwide. You can even attempt to translate non-human languages like Klingon or Elvish, but the results may not be optimal.</target>
+        <target state="translated">XLIFF Translator सभी सामान्य रूप से प्रयुक्त भाषाओं का समर्थन करता है। आप गैर-मानव भाषाओं जैसे कि क्लिंगन या एल्विश का अनुवाद करने का प्रयास भी कर सकते हैं, लेकिन परिणाम उत्तम नहीं हो सकते।</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
           <context context-type="linenumber">32</context>
@@ -5280,7 +5280,7 @@
       </trans-unit>
       <trans-unit id="HOW_DOES_XLIFF_TRANSLATOR_COMPARE_TO_OTHER_TRANSLATION_TOOLS" datatype="html">
         <source>How does XLIFF Translator compare to other translation tools?</source>
-        <target state="new">How does XLIFF Translator compare to other translation tools?</target>
+        <target state="translated">XLIFF ट्रांसलेटर अन्य अनुवाद उपकरणों की तुलना में कैसे है?</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
           <context context-type="linenumber">35</context>
@@ -5288,7 +5288,7 @@
       </trans-unit>
       <trans-unit id="HOW_DOES_XLIFF_TRANSLATOR_COMPARE_TO_OTHER_TRANSLATION_TOOLS_ANSWER" datatype="html">
         <source>Unlike generic translation tools, XLIFF Translator is specifically designed for XLIFF files used in Angular application development. Our AI technology understands the technical context and preserves tags and interpolations, ensuring accurate and functional translations.</source>
-        <target state="new">Unlike generic translation tools, XLIFF Translator is specifically designed for XLIFF files used in Angular application development. Our AI technology understands the technical context and preserves tags and interpolations, ensuring accurate and functional translations.</target>
+        <target state="translated">अन्य सामान्य अनुवाद उपकरणों की तुलना में, XLIFF अनुवादक विशेष रूप से Angular एप्लिकेशन विकास में उपयोग के लिए XLIFF फ़ाइलों के लिए डिज़ाइन किया गया है। हमारी AI तकनीक तकनीकी संदर्भ को समझती है और टैग और इंटरपोलेशन को संरक्षित करती है, यह सुनिश्चित करते हुए कि अनुवाद सटीक और कार्यात्मक हैं।</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
           <context context-type="linenumber">36</context>
@@ -5296,7 +5296,7 @@
       </trans-unit>
       <trans-unit id="CAN_I_INTEGRATE_XLIFF_TRANSLATOR_INTO_MY_EXISTING_DEVELOPMENT_PROCESS" datatype="html">
         <source>Can I integrate XLIFF Translator into my existing development process?</source>
-        <target state="new">Can I integrate XLIFF Translator into my existing development process?</target>
+        <target state="translated">क्या मैं XLIFF ट्रांसलेटर को अपने मौजूदा विकास प्रक्रिया में एकीकृत कर सकता हूँ?</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
           <context context-type="linenumber">39</context>
@@ -5304,7 +5304,7 @@
       </trans-unit>
       <trans-unit id="CAN_I_INTEGRATE_XLIFF_TRANSLATOR_INTO_MY_EXISTING_DEVELOPMENT_PROCESS_ANSWER" datatype="html">
         <source>Absolutely! XLIFF Translator easily integrates into your existing workflows. When your application needs to be translated, you just need to initiate the translation through our interface and wait for the Pull Request on your Git repository.</source>
-        <target state="new">Absolutely! XLIFF Translator easily integrates into your existing workflows. When your application needs to be translated, you just need to initiate the translation through our interface and wait for the Pull Request on your Git repository.</target>
+        <target state="translated">बिल्कुल! XLIFF Translator आसानी से आपके मौजूदा वर्कफ्लो के साथ एकीकृत हो जाता है। जब आपके ऐप्लिकेशन को अनुवादित करने की आवश्यकता होती है, तो आपको बस हमारी इंटरफ़ेस के माध्यम से अनुवाद प्रारंभ करना होता है और अपनेGit रेपो में पुल अनुरोध के लिए प्रतीक्षा करनी होती है।</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
           <context context-type="linenumber">40</context>
@@ -5312,7 +5312,7 @@
       </trans-unit>
       <trans-unit id="HOW_LONG_DOES_IT_TAKE_TO_TRANSLATE_AN_APPLICATION" datatype="html">
         <source>How long does it take to translate an application?</source>
-        <target state="new">How long does it take to translate an application?</target>
+        <target state="translated">एक एप्लिकेशन का अनुवाद करने में कितना समय लगता है?</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
           <context context-type="linenumber">43</context>
@@ -5320,7 +5320,7 @@
       </trans-unit>
       <trans-unit id="HOW_LONG_DOES_IT_TAKE_TO_TRANSLATE_AN_APPLICATION_ANSWER" datatype="html">
         <source>It depends on the size and complexity of the application. On average, a TransUnit (XLIFF Translation Unit) is translated in about twelve seconds. An application or website with 1000 TransUnits is already substantial. You then multiply by the number of languages to be translated. 1000 * 12 = 12,000 seconds, which is 3 hours and 20 minutes.</source>
-        <target state="new">It depends on the size and complexity of the application. On average, a TransUnit (XLIFF Translation Unit) is translated in about twelve seconds. An application or website with 1000 TransUnits is already substantial. You then multiply by the number of languages to be translated. 1000 * 12 = 12,000 seconds, which is 3 hours and 20 minutes.</target>
+        <target state="translated">यह आवेदन के आकार और जटिलता पर निर्भर करता है। औसतन, एक TransUnit (XLIFF अनुवाद यूनिट) लगभग बारह सेकंड में अनुवादित किया जाता है। एक आवेदन या वेबसाइट जिसमें 1000 TransUnits होते हैं, वह पहले से ही महत्वपूर्ण होती है। फिर आप अनुवाद करने के लिए आवश्यक भाषाओं की संख्या से गुणा करते हैं। 1000 * 12 = 12,000 सेकंड, जो कि 3 घंटे और 20 मिनट है।</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
           <context context-type="linenumber">44</context>
@@ -5328,7 +5328,7 @@
       </trans-unit>
       <trans-unit id="WHAT_IS_THE_PRICE_OF_XLIFF_TRANSLATOR" datatype="html">
         <source>What is the price of XLIFF Translator?</source>
-        <target state="new">What is the price of XLIFF Translator?</target>
+        <target state="translated">XLIFF Translator की कीमत क्या है?</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
           <context context-type="linenumber">47</context>
@@ -5336,7 +5336,7 @@
       </trans-unit>
       <trans-unit id="WHAT_IS_THE_PRICE_OF_XLIFF_TRANSLATOR_ANSWER" datatype="html">
         <source>XLIFF Translator is a service that uses AI to translate your XLIFF files. This, of course, comes at a cost, as well as the operational processes. Registration is free with welcome credits. You can then purchase additional credits based on your needs.</source>
-        <target state="new">XLIFF Translator is a service that uses AI to translate your XLIFF files. This, of course, comes at a cost, as well as the operational processes. Registration is free with welcome credits. You can then purchase additional credits based on your needs.</target>
+        <target state="translated">XLIFF Translator एक सेवा है जो आपके XLIFF फ़ाइलों का अनुवाद करने के लिए AI का उपयोग करती है। यह, निश्चित रूप से, एक लागत के साथ आता है, साथ ही परिचालन प्रक्रियाएँ। पंजीकरण नि:शुल्क है जिसमें स्वागत क्रेडिट शामिल हैं। आप फिर अपनी आवश्यकताओं के आधार पर अतिरिक्त क्रेडिट खरीद सकते हैं।</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
           <context context-type="linenumber">48</context>
