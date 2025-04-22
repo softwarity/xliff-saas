@@ -18,17 +18,15 @@ import { LoggedNavComponent } from './logged-nav.component';
     NgClass
   ],
   template: `
-  <div class="w-full bg-white dark:bg-gray-800 shadow-sm" [ngClass]="{'!bg-tertiary': dev}">
+  <div class="w-full bg-white dark:bg-gray-800 shadow-sm" [ngClass]="{'!bg-tertiary': !dev}">
     <nav class="w-full px-4 py-4">
       <div class="flex items-center space-x-4">
-        <a routerLink="/" class="text-primary dark:text-blue-400 shrink-0">
+        <a routerLink="/" class="text-primary dark:text-blue-400 shrink-0 flex items-center">
+          <img src="assets/softwarity.png" alt="Softwarity Logo" class="h-10 w-10 mr-4 logo-filter" />
           <span class="hidden md:flex md:flex-col">
             <span class="text-2xl font-bold">XLIFF</span>
             <span class="text-lg -mt-1">Translator</span>
           </span>
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 md:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-          </svg>
         </a>
 
         <a routerLink="/how-it-works" routerLinkActive="!text-primary dark:!text-blue-400" class="flex items-center text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-blue-400 transition-colors p-2">
@@ -68,6 +66,11 @@ import { LoggedNavComponent } from './logged-nav.component';
     </nav>
   </div>
   `,
+  styles: [`
+    :host-context(.dark) .logo-filter {
+      filter: invert(0.5)  brightness(1.3);
+    }
+  `],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class HeaderComponent {
