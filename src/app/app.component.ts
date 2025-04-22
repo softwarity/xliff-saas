@@ -3,11 +3,14 @@ import { Router, RouterLink, RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './core/components/header/header.component';
 import { ToastComponent } from './shared/components/toast/toast.component';
 import { isPlatformBrowser } from '@angular/common';
+import { ProgressBarComponent } from './core/components/header/progress-bar.component';
+import { RequestService } from './core/services/request.service';
+import { toSignal } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, RouterLink, HeaderComponent, ToastComponent],
+  imports: [RouterOutlet, RouterLink, HeaderComponent, ToastComponent, ProgressBarComponent],
   styles: [`
     a {
       @apply text-sm text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary;
@@ -15,6 +18,7 @@ import { isPlatformBrowser } from '@angular/common';
   `],
   template: `
   <div class="min-h-screen bg-white dark:bg-dark-900 flex flex-col">
+    <app-progress-bar [active]="isBusy()" />
     <app-header />
     <main class="flex-1">
       <router-outlet />
@@ -38,7 +42,8 @@ import { isPlatformBrowser } from '@angular/common';
 export class AppComponent implements OnInit {
   private router = inject(Router);
   private platformId = inject(PLATFORM_ID);
-
+  protected requestService = inject(RequestService);
+  protected isBusy = toSignal(this.requestService.isBusy$, { initialValue: false });
   ngOnInit() {
     if (isPlatformBrowser(this.platformId)) {
       // Gérer les query parameters

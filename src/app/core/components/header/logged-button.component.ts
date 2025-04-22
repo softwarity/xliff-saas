@@ -15,7 +15,7 @@ import { AuthService } from '../../services/auth.service';
     }
   `],
   template: `
-    <button (click)="toggleMenu($event)" class="p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+    <button (click)="toggleDropdown($event)" class="p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
       <div class="w-8 h-8 rounded-full overflow-hidden">
         @if (!showDefaultAvatar() && avatar()) {
           <img [src]="avatar()"  class="w-full h-full object-cover" alt="User avatar" (error)="showDefaultAvatar.set(true)">
@@ -28,7 +28,7 @@ import { AuthService } from '../../services/auth.service';
         }
       </div>
     </button>
-    @if (isMenuOpen) {
+    @if (isOpen()) {
       <div class="absolute right-0 mt-1 min-w-[12rem] bg-white dark:bg-dark-700 rounded-lg shadow-xl z-50 border border-gray-200 dark:border-gray-600">
         <div class="w-full gap-2 px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-dark-600 inline-flex">
           {{ (user$ | async)?.email }}
@@ -58,11 +58,11 @@ import { AuthService } from '../../services/auth.service';
 })
 export class LoggedButtonComponent {
   private auth = inject(AuthService);
-  private boundCloseMenu: (() => void) | null = null;
+  private boundCloseMenu: (() => void) = this.closeMenu.bind(this);
   private platformId: Object = inject(PLATFORM_ID);
 
   protected user$ = this.auth.user$;
-  protected isMenuOpen = false;
+  isOpen = signal(false);
   protected avatar = toSignal(this.auth.avatar$);
   protected showDefaultAvatar = signal(false);
 
@@ -74,10 +74,9 @@ export class LoggedButtonComponent {
     });
   }
 
-  toggleMenu(event: Event): void {
-    if (!this.isMenuOpen) {
-      this.isMenuOpen = true;
-      this.boundCloseMenu = this.closeMenu.bind(this);
+  protected toggleDropdown(event: Event): void {
+    if (!this.isOpen()) {
+      this.isOpen.set(true);
       setTimeout((obj: any) => {
         if (isPlatformBrowser(this.platformId)) {
           document.body.addEventListener('click', obj.boundCloseMenu);
@@ -89,11 +88,8 @@ export class LoggedButtonComponent {
   }
 
   closeMenu(): void {
-    this.isMenuOpen = false;
-    if (this.boundCloseMenu) {
-      document.body.removeEventListener('click', this.boundCloseMenu);
-      this.boundCloseMenu = null;
-    }
+    this.isOpen.set(false);
+    document.body.removeEventListener('click', this.boundCloseMenu);
   }
 
   signOut() {

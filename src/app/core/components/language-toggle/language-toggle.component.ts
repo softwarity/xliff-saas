@@ -23,7 +23,7 @@ export class LanguageToggleComponent {
   currentLang = signal<string>('en');
   isOpen = signal(false);
   baseUrl = signal<string>('');
-  private boundCloseMenu: (() => void) | null = null;
+  private boundCloseMenu: (() => void) = this.closeDropdown.bind(this);
 
   constructor(private http: HttpClient) {
     if (isPlatformBrowser(this.platformId)) {
@@ -44,7 +44,6 @@ export class LanguageToggleComponent {
     // event.stopPropagation();
     if (!this.isOpen()) {
       this.isOpen.set(true);
-      this.boundCloseMenu = this.closeDropdown.bind(this);
       setTimeout((obj: any) => {
         if (isPlatformBrowser(this.platformId)) {
           document.body.addEventListener('click', obj.boundCloseMenu);
@@ -57,10 +56,7 @@ export class LanguageToggleComponent {
 
   closeDropdown(): void {
     this.isOpen.set(false);
-    if (this.boundCloseMenu) {
-      document.body.removeEventListener('click', this.boundCloseMenu);
-      this.boundCloseMenu = null;
-    }
+    document.body.removeEventListener('click', this.boundCloseMenu);
   }
 
   getFragments() {

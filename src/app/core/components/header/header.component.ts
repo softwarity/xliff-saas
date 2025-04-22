@@ -5,7 +5,7 @@ import '../../../web-components/theme-switcher';
 import { AuthService } from '../../services/auth.service';
 import { LanguageToggleComponent } from '../language-toggle/language-toggle.component';
 import { LoggedNavComponent } from './logged-nav.component';
-import { isPlatformBrowser, NgClass } from '@angular/common';
+import { CommonModule, isPlatformBrowser, NgClass } from '@angular/common';
 import { environment } from '../../../../environments/environment';
 import { PurchaseCreditsButtonComponent } from '../../../shared/components/purchase-credits-button.component';
 @Component({
