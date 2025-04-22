@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-  <file source-language="en" target-language="ru" datatype="plaintext" original="ng2.template">
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 https://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
+  <file source-language="en" datatype="plaintext" original="ng2.template" target-language="ru">
     <body>
       <trans-unit id="FOOTER_TERMS" datatype="html">
         <source>Terms of Service</source>
@@ -771,7 +771,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="AUTH_EMAIL_SENT_MESSAGE" datatype="html">
-        <source>We&apos;ve sent you an email with instructions. Please check your inbox and follow the instructions provided.</source>
+        <source>We've sent you an email with instructions. Please check your inbox and follow the instructions provided.</source>
         <target state="translated">Мы отправили вам электронное письмо с инструкциями. Пожалуйста, проверьте ваш почтовый ящик и следуйте указаниям.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/email-sent.component.ts</context>
@@ -887,7 +887,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="AUTH_LOGIN_NO_ACCOUNT" datatype="html">
-        <source>Don&apos;t have an account?</source>
+        <source>Don't have an account?</source>
         <target state="translated">У вас нет учетной записи?</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/login.component.ts</context>
@@ -975,7 +975,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="AUTH_SIGNUP_PASSWORDS_DONT_MATCH" datatype="html">
-        <source>Passwords don&apos;t match</source>
+        <source>Passwords don't match</source>
         <target state="translated">Пароли не совпадают</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/signup.component.ts</context>
@@ -1071,7 +1071,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="AUTH_UPDATE_PASSWORD_PASSWORDS_DONT_MATCH" datatype="html">
-        <source>Passwords don&apos;t match</source>
+        <source>Passwords don't match</source>
         <target state="translated">Пароли не совпадают</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/update-password.component.ts</context>
@@ -2347,7 +2347,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="CONTACT_US_DESCRIPTION" datatype="html">
-        <source>Have a question? Send us a message and we&apos;ll get back to you as soon as possible.</source>
+        <source>Have a question? Send us a message and we'll get back to you as soon as possible.</source>
         <target state="translated">У вас есть вопрос? Отправьте нам сообщение, и мы ответим вам как можно скорее.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/support/contact.component.ts</context>
@@ -2355,8 +2355,8 @@
         </context-group>
       </trans-unit>
       <trans-unit id="CONTACT_US_SUPPORT_LINK" datatype="html">
-        <source>If you have an account, you can also <x id="START_LINK" ctype="x-a" equiv-text="&lt;a [routerLink]=&quot;[&apos;/support&apos;]&quot; class=&quot;text-primary hover:underline&quot;&gt;"/>access our support ticket system<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/> for faster assistance.</source>
-        <target state="translated">Если у вас есть учетная запись, вы также можете <x id="START_LINK" ctype="x-a" equiv-text="&lt;a [routerLink]=&quot;[&apos;/support&apos;]&quot; class=&quot;text-primary hover:underline&quot;&gt;"/>доступ к нашей системе поддержки тикетов<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/> для более быстрого получения помощи.</target>
+        <source>If you have an account, you can also <x id="START_LINK" ctype="x-a" equiv-text="&lt;a [routerLink]=&quot;['/support']&quot; class=&quot;text-primary hover:underline&quot;>"/>access our support ticket system<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/> for faster assistance.</source>
+        <target state="translated">Если у вас есть учетная запись, вы также можете <x id="START_LINK" ctype="x-a" equiv-text="&lt;a [routerLink]=&quot;['/support']&quot; class=&quot;text-primary hover:underline&quot;>"/>доступ к нашей системе поддержки тикетов<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/> для более быстрого получения помощи.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/support/contact.component.ts</context>
           <context context-type="linenumber">24</context>
@@ -2651,7 +2651,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="ISSUE_NOT_FOUND_DESC" datatype="html">
-        <source>The issue you&apos;re looking for doesn&apos;t exist or you don&apos;t have permission to view it.</source>
+        <source>The issue you're looking for doesn't exist or you don't have permission to view it.</source>
         <target state="translated">Искомый вами вопрос не существует или у вас нет разрешения на его просмотр.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/support/issue-detail.component.ts</context>
@@ -2699,8 +2699,8 @@
         </context-group>
       </trans-unit>
       <trans-unit id="CREATED_AT" datatype="html">
-        <source>Created: <x id="INTERPOLATION" equiv-text="{{ issue()!.created_at | date:&apos;medium&apos; }}"/></source>
-        <target state="translated">Создано: <x id="INTERPOLATION" equiv-text="{{ issue()!.created_at | date:&apos;medium&apos; }}"/></target>
+        <source>Created: <x id="INTERPOLATION" equiv-text="{{ issue()!.created_at | date:'medium' }}"/></source>
+        <target state="translated">Создано: <x id="INTERPOLATION" equiv-text="{{ issue()!.created_at | date:'medium' }}"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/support/issue-detail.component.ts</context>
           <context context-type="linenumber">76</context>
@@ -3151,8 +3151,8 @@
         </context-group>
       </trans-unit>
       <trans-unit id="CUSTOM_INSTRUCTIONS_FILENAME_DESC" datatype="html">
-        <source>Create a file named <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code class=&quot;bg-blue-100 dark:bg-blue-900/50 px-2 py-1 rounded text-blue-900 dark:text-blue-100&quot;&gt;"/>xliff-instructions.md<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code&gt;"/> at the root of your Git repository to provide custom translation instructions.</source>
-        <target state="translated">Создайте файл с именем <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code class=&quot;bg-blue-100 dark:bg-blue-900/50 px-2 py-1 rounded text-blue-900 dark:text-blue-100&quot;&gt;"/>xliff-instructions.md<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code&gt;"/> в корне вашего репозитория Git, чтобы предоставить собственные инструкции по переводу.</target>
+        <source>Create a file named <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code class=&quot;bg-blue-100 dark:bg-blue-900/50 px-2 py-1 rounded text-blue-900 dark:text-blue-100&quot;>"/>xliff-instructions.md<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code>"/> at the root of your Git repository to provide custom translation instructions.</source>
+        <target state="translated">Создайте файл с именем <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code class=&quot;bg-blue-100 dark:bg-blue-900/50 px-2 py-1 rounded text-blue-900 dark:text-blue-100&quot;>"/>xliff-instructions.md<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code>"/> в корне вашего репозитория Git, чтобы предоставить собственные инструкции по переводу.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/custom.component.ts</context>
           <context context-type="linenumber">36</context>
@@ -3279,7 +3279,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="INITIAL_SETUP_DESCRIPTION" datatype="html">
-        <source>Start by adding Angular&apos;s localization package to your project:</source>
+        <source>Start by adding Angular's localization package to your project:</source>
         <target state="translated">Начните с добавления пакета локализации Angular в ваш проект:</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/setup.component.ts</context>
@@ -3303,8 +3303,8 @@
         </context-group>
       </trans-unit>
       <trans-unit id="INITIAL_SETUP_CHANGE_2" datatype="html">
-        <source>Add &quot;@angular/localize/init&quot; to the polyfills array in angular.json</source>
-        <target state="translated">Добавьте &quot;@angular/localize/init&quot; в массив полифиллов в angular.json</target>
+        <source>Add "@angular/localize/init" to the polyfills array in angular.json</source>
+        <target state="translated">Добавьте "@angular/localize/init" в массив полифиллов в angular.json</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/setup.component.ts</context>
           <context context-type="linenumber">19</context>
@@ -3327,7 +3327,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="INITIAL_SETUP_NOTE" datatype="html">
-        <source>Note: We&apos;ll modify the outputPath later in the configuration to match our workflow.</source>
+        <source>Note: We'll modify the outputPath later in the configuration to match our workflow.</source>
         <target state="translated">Примечание: Мы изменим путь вывода позже в конфигурации, чтобы он соответствовал нашему рабочему процессу.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/setup.component.ts</context>
@@ -3343,7 +3343,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="EXTRACT_TOOL_DESCRIPTION" datatype="html">
-        <source>For managing translation files, we&apos;ll use ng-extract-i18n-merge which simplifies the process of extracting and merging translations:</source>
+        <source>For managing translation files, we'll use ng-extract-i18n-merge which simplifies the process of extracting and merging translations:</source>
         <target state="translated">Для управления файлами перевода мы будем использовать ng-extract-i18n-merge, который упрощает процесс извлечения и объединения переводов:</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/setup.component.ts</context>
@@ -3423,40 +3423,40 @@
         </context-group>
       </trans-unit>
       <trans-unit id="EXTRACT_I18N_OPTION_1" datatype="html">
-        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>buildTarget<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: Your application&apos;s build target name</source>
-        <target state="translated"><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>buildTarget<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: Название целевой сборки вашего приложения</target>
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>buildTarget<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: Your application's build target name</source>
+        <target state="translated"><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>buildTarget<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: Название целевой сборки вашего приложения</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/setup.component.ts</context>
           <context context-type="linenumber">112</context>
         </context-group>
       </trans-unit>
       <trans-unit id="EXTRACT_I18N_OPTION_2" datatype="html">
-        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>outputPath<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: Directory where translation files will be stored</source>
-        <target state="translated"><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>outputPath<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: Директория, где будут храниться файлы перевода</target>
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>outputPath<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: Directory where translation files will be stored</source>
+        <target state="translated"><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>outputPath<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: Директория, где будут храниться файлы перевода</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/setup.component.ts</context>
           <context context-type="linenumber">113</context>
         </context-group>
       </trans-unit>
       <trans-unit id="EXTRACT_I18N_OPTION_3" datatype="html">
-        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>includeContext<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: Includes source file information in the XLIFF files</source>
-        <target state="translated"><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>включитьКонтекст<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: Включает информацию о исходном файле в файлы XLIFF</target>
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>includeContext<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: Includes source file information in the XLIFF files</source>
+        <target state="translated"><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>включитьКонтекст<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: Включает информацию о исходном файле в файлы XLIFF</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/setup.component.ts</context>
           <context context-type="linenumber">114</context>
         </context-group>
       </trans-unit>
       <trans-unit id="EXTRACT_I18N_OPTION_4" datatype="html">
-        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>resetTranslationState<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: Marks all translations as needing review on changes</source>
-        <target state="translated"><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>сброситьСостояниеПеревода<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: Помечает все переводы, нуждающиеся в проверке при изменениям</target>
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>resetTranslationState<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: Marks all translations as needing review on changes</source>
+        <target state="translated"><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>сброситьСостояниеПеревода<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: Помечает все переводы, нуждающиеся в проверке при изменениям</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/setup.component.ts</context>
           <context context-type="linenumber">115</context>
         </context-group>
       </trans-unit>
       <trans-unit id="EXTRACT_I18N_OPTION_5" datatype="html">
-        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>targetFiles<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: List of translation files to generate/update</source>
-        <target state="translated"><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>файлы для перевода<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: Список файлов перевода для генерации/обновления</target>
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>targetFiles<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: List of translation files to generate/update</source>
+        <target state="translated"><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>файлы для перевода<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: Список файлов перевода для генерации/обновления</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/setup.component.ts</context>
           <context context-type="linenumber">116</context>
@@ -3711,8 +3711,8 @@
         </context-group>
       </trans-unit>
       <trans-unit id="GITHUB_TOKEN_LOCATION" datatype="html">
-        <source>Get your token here: Settings &gt; Developer settings &gt; Personal access tokens &gt; Tokens (classic) &gt; Generate new token</source>
-        <target state="translated">Получите токен здесь: Настройки &gt; Настройки разработчика &gt; Личные токены доступа &gt; Токены (классические) &gt; Сгенерировать новый токен</target>
+        <source>Get your token here: Settings > Developer settings > Personal access tokens > Tokens (classic) > Generate new token</source>
+        <target state="translated">Получите токен здесь: Настройки > Настройки разработчика > Личные токены доступа > Токены (классические) > Сгенерировать новый токен</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">48</context>
@@ -3743,24 +3743,24 @@
         </context-group>
       </trans-unit>
       <trans-unit id="CONNECT_STEP_1" datatype="html">
-        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Select a provider<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: Choose from GitHub, GitLab, or Bitbucket</source>
-        <target state="translated"><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Выберите поставщика<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: Выберите из GitHub, GitLab или Bitbucket</target>
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>Select a provider<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: Choose from GitHub, GitLab, or Bitbucket</source>
+        <target state="translated"><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>Выберите поставщика<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: Выберите из GitHub, GitLab или Bitbucket</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">60</context>
         </context-group>
       </trans-unit>
       <trans-unit id="CONNECT_STEP_2" datatype="html">
-        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Configure access<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: Create and provide the appropriate tokens</source>
-        <target state="translated"><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Настройте доступ<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: создайте и предоставьте соответствующие токены</target>
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>Configure access<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: Create and provide the appropriate tokens</source>
+        <target state="translated"><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>Настройте доступ<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: создайте и предоставьте соответствующие токены</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">61</context>
         </context-group>
       </trans-unit>
       <trans-unit id="CONNECT_STEP_3" datatype="html">
-        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Save your configuration<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: Enter your token and save the connection</source>
-        <target state="translated"><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Сохраните вашу конфигурацию<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: Введите ваш токен и сохраните соединение</target>
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>Save your configuration<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: Enter your token and save the connection</source>
+        <target state="translated"><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>Сохраните вашу конфигурацию<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: Введите ваш токен и сохраните соединение</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">62</context>
@@ -3775,8 +3775,8 @@
         </context-group>
       </trans-unit>
       <trans-unit id="GITLAB_DESC" datatype="html">
-        <source>Create a Personal Access Token with <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code&gt;"/>api<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code&gt;"/>, <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code&gt;"/>read_repository<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code&gt;"/>, and <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code&gt;"/>write_repository<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code&gt;"/> scopes.</source>
-        <target state="translated">Создайте персональный токен доступа с <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code&gt;"/>api<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code&gt;"/>, <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code&gt;"/>read_repository<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code&gt;"/>, и <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code&gt;"/>write_repository<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code&gt;"/> областями.</target>
+        <source>Create a Personal Access Token with <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code>"/>api<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code>"/>, <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code>"/>read_repository<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code>"/>, and <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code>"/>write_repository<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code>"/> scopes.</source>
+        <target state="translated">Создайте персональный токен доступа с <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code>"/>api<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code>"/>, <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code>"/>read_repository<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code>"/>, и <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code>"/>write_repository<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code>"/> областями.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">74</context>
@@ -3791,8 +3791,8 @@
         </context-group>
       </trans-unit>
       <trans-unit id="BITBUCKET_DESC" datatype="html">
-        <source>Create an App Password with <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code&gt;"/>repository:read<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code&gt;"/> and <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code&gt;"/>repository:write<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code&gt;"/> permissions.</source>
-        <target state="translated">Создайте пароль приложения с <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code&gt;"/>repository:read<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code&gt;"/> и <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code&gt;"/>repository:write<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code&gt;"/> разрешениями.</target>
+        <source>Create an App Password with <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code>"/>repository:read<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code>"/> and <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code>"/>repository:write<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code>"/> permissions.</source>
+        <target state="translated">Создайте пароль приложения с <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code>"/>repository:read<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code>"/> и <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code>"/>repository:write<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code>"/> разрешениями.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">86</context>
@@ -3831,7 +3831,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="REPOSITORY_STEP_1" datatype="html">
-        <source>Navigate to the provider&apos;s page where your repositories are listed</source>
+        <source>Navigate to the provider's page where your repositories are listed</source>
         <target state="translated">Перейдите на страницу провайдера, где перечислены ваши репозитории</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
@@ -4119,7 +4119,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="ESTIMATE_STEP_2" datatype="html">
-        <source>Click on &quot;Estimate&quot; to analyze your XLIFF files</source>
+        <source>Click on "Estimate" to analyze your XLIFF files</source>
         <target state="translated">Нажмите «Оценить», чтобы проанализировать ваши файлы XLIFF</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
@@ -4207,8 +4207,8 @@
         </context-group>
       </trans-unit>
       <trans-unit id="TRANSLATE_STEP_2" datatype="html">
-        <source>Click on &quot;Translate&quot; to begin the process</source>
-        <target state="translated">Нажмите &quot;Перевести&quot;, чтобы начать процесс</target>
+        <source>Click on "Translate" to begin the process</source>
+        <target state="translated">Нажмите "Перевести", чтобы начать процесс</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">328</context>
@@ -4239,16 +4239,16 @@
         </context-group>
       </trans-unit>
       <trans-unit id="TRANSLATE_STEP_3_TRANSLATION_STATE" datatype="html">
-        <source>Select which translation units to process (e.g., &quot;new&quot;, &quot;needs-translation&quot;)</source>
-        <target state="translated">Выберите, какие единицы перевода следует обрабатывать (например, &quot;новые&quot;, &quot;нуждаются в переводе&quot;)</target>
+        <source>Select which translation units to process (e.g., "new", "needs-translation")</source>
+        <target state="translated">Выберите, какие единицы перевода следует обрабатывать (например, "новые", "нуждаются в переводе")</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">334</context>
         </context-group>
       </trans-unit>
       <trans-unit id="TRANSLATE_STEP_3_TARGET_STATE" datatype="html">
-        <source>Define the state to set for translated units (e.g., &quot;translated&quot;, &quot;final&quot;)</source>
-        <target state="translated">Определите состояние, которое необходимо задать для переведённых единиц (например, &quot;переведено&quot;, &quot;окончательное&quot;)</target>
+        <source>Define the state to set for translated units (e.g., "translated", "final")</source>
+        <target state="translated">Определите состояние, которое необходимо задать для переведённых единиц (например, "переведено", "окончательное")</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">335</context>
@@ -4263,7 +4263,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="TRANSLATION_OPTIONS_REF" datatype="html">
-        <source>You&apos;ll be prompted with the translation options modal as shown earlier in the &quot;Selecting Repositories&quot; section.</source>
+        <source>You'll be prompted with the translation options modal as shown earlier in the "Selecting Repositories" section.</source>
         <target state="translated">Вам будет предложено окно модальных параметров перевода, как показано ранее в разделе «Выбор репозиториев».</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
@@ -4399,7 +4399,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="CONTEXT_AWARE_AI_DESCRIPTION" datatype="html">
-        <source>Intelligent translations based on your application&apos;s context and business domain</source>
+        <source>Intelligent translations based on your application's context and business domain</source>
         <target state="translated">Интеллектуальные переводы, основанные на контексте вашего приложения и бизнес-домене</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/home.component.html</context>
@@ -4475,7 +4475,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="AUTOMATED_WORKFLOW_ABSTRACT" datatype="html">
-        <source>Simply connect your Git repository, start the translation, and we&apos;ll handle the rest. Our AI-powered platform takes care of everything automatically.</source>
+        <source>Simply connect your Git repository, start the translation, and we'll handle the rest. Our AI-powered platform takes care of everything automatically.</source>
         <target state="translated">Просто подключите ваш репозиторий Git, начните перевод, и мы позаботимся об остальном. Наша платформа на основе ИИ автоматически выполняет все задачи.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/how-it-works/how-it-works.component.html</context>
@@ -4539,7 +4539,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="TRANSUNIT_SOURCE_DESCRIPTION" datatype="html">
-        <source>The original text in your application&apos;s source language</source>
+        <source>The original text in your application's source language</source>
         <target state="translated">Оригинальный текст на языке источника вашего приложения</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/how-it-works/how-it-works.component.html</context>
@@ -4603,7 +4603,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="SUPPORTED_FORMATS_DESCRIPTION" datatype="html">
-        <source>Our platform supports the following XLIFF formats for maximum compatibility with Angular&apos;s internationalization system:</source>
+        <source>Our platform supports the following XLIFF formats for maximum compatibility with Angular's internationalization system:</source>
         <target state="translated">Наша платформа поддерживает следующие форматы XLIFF для максимально совместимости с системой интернационализации Angular:</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/how-it-works/how-it-works.component.html</context>
@@ -4619,7 +4619,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="CONTEXT_AWARE_DESCRIPTION" datatype="html">
-        <source>Our AI-powered translation engine understands your application&apos;s context, ensuring accurate and meaningful translations that maintain the original intent of your content.</source>
+        <source>Our AI-powered translation engine understands your application's context, ensuring accurate and meaningful translations that maintain the original intent of your content.</source>
         <target state="translated">Наш движок перевода на основе ИИ понимает контекст вашего приложения, обеспечивая точные и значимые переводы, которые сохраняют оригинальный замысел вашего контента.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/how-it-works/how-it-works.component.html</context>
@@ -4707,7 +4707,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="OOPS_PAGE_NOT_FOUND" datatype="html">
-        <source>Oops! The page you&apos;re looking for seems to have vanished into the void...</source>
+        <source>Oops! The page you're looking for seems to have vanished into the void...</source>
         <target state="translated">Упс! Страница, которую вы ищете, похоже, исчезла в пустоте...</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/not-found.component.ts</context>
@@ -4787,7 +4787,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="PRICING_FAQ_MEMBERSHIP_LEVELS_ANSWER" datatype="html">
-        <source>As you purchase credits, you&apos;ll unlock membership levels (Bronze, Silver, Gold, Diamond) that provide additional features and better rates for translations. Once you reach a level, you keep it permanently.</source>
+        <source>As you purchase credits, you'll unlock membership levels (Bronze, Silver, Gold, Diamond) that provide additional features and better rates for translations. Once you reach a level, you keep it permanently.</source>
         <target state="translated">При покупке кредитов вы разблокируете уровни членства (Бронзовый, Серебряный, Золотой, Алмазный), которые предоставляют дополнительные функции и лучшие расценки на переводы. Как только вы достигнете уровня, вы сохраняете его навсегда.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/pricing.component.ts</context>
@@ -4803,7 +4803,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="PRICING_FAQ_SPECIAL_NEEDS_ANSWER" datatype="html">
-        <source>If you have specific needs or require a custom solution, please contact our sales team. We&apos;ll be happy to create a tailored credit package for your organization.</source>
+        <source>If you have specific needs or require a custom solution, please contact our sales team. We'll be happy to create a tailored credit package for your organization.</source>
         <target state="translated">Если у вас есть специфические потребности или требуется индивидуальное решение, пожалуйста, свяжитесь с нашей продажной командой. Мы будем рады создать специальный кредитный пакет для вашей организации.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/pricing.component.ts</context>
@@ -5059,8 +5059,8 @@
         </context-group>
       </trans-unit>
       <trans-unit id="TERMS_SERVICE_TEXT" datatype="html">
-        <source>Our service is provided &quot;as is&quot; and we make no warranties about its reliability or availability. We reserve the right to modify or discontinue the service at any time.</source>
-        <target state="translated">Наш сервис предоставляется &quot;как есть&quot;, и мы не даем никаких гарантий относительно его надежности или доступности. Мы оставляем за собой право в любое время модифицировать или прекращать предоставление услуг.</target>
+        <source>Our service is provided "as is" and we make no warranties about its reliability or availability. We reserve the right to modify or discontinue the service at any time.</source>
+        <target state="translated">Наш сервис предоставляется "как есть", и мы не даем никаких гарантий относительно его надежности или доступности. Мы оставляем за собой право в любое время модифицировать или прекращать предоставление услуг.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/terms.component.ts</context>
           <context context-type="linenumber">33</context>
@@ -5191,24 +5191,24 @@
         </context-group>
       </trans-unit>
       <trans-unit id="ESTIMATE_STEP_31" datatype="html">
-        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Branch<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: Select the branch containing your XLIFF files</source>
-        <target state="translated"><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Ветка<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: Выберите ветку, содержащую ваши XLIFF файлы</target>
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>Branch<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: Select the branch containing your XLIFF files</source>
+        <target state="translated"><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>Ветка<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: Выберите ветку, содержащую ваши XLIFF файлы</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">297</context>
         </context-group>
       </trans-unit>
       <trans-unit id="ESTIMATE_STEP_32" datatype="html">
-        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>File Pattern<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: By default &quot;xlf&quot; to search all XLIFF files. Use specific patterns like &quot;ru.xlf&quot; to target only Russian files</source>
-        <target state="translated"><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Шаблон файла<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: По умолчанию &quot;xlf&quot; для поиска всех файлов XLIFF. Используйте специфические шаблоны, такие как &quot;ru.xlf&quot;, чтобы нацелиться только на русские файлы.</target>
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>File Pattern<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: By default "xlf" to search all XLIFF files. Use specific patterns like "ru.xlf" to target only Russian files</source>
+        <target state="translated"><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>Шаблон файла<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: По умолчанию "xlf" для поиска всех файлов XLIFF. Используйте специфические шаблоны, такие как "ru.xlf", чтобы нацелиться только на русские файлы.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">298</context>
         </context-group>
       </trans-unit>
       <trans-unit id="ESTIMATE_STEP_33" datatype="html">
-        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Translation State<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: Choose which translation units to include (default is &quot;new&quot; to focus on untranslated content)</source>
-        <target state="translated"><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Состояние перевода<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: Выберите, какие единицы переводов включить (по умолчанию &quot;новые&quot;, чтобы сосредоточиться на непереведенном контенте)</target>
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>Translation State<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: Choose which translation units to include (default is "new" to focus on untranslated content)</source>
+        <target state="translated"><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>Состояние перевода<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: Выберите, какие единицы переводов включить (по умолчанию "новые", чтобы сосредоточиться на непереведенном контенте)</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">299</context>
@@ -5216,7 +5216,7 @@
       </trans-unit>
       <trans-unit id="PRICING_BUTTON" datatype="html">
         <source>Pricing</source>
-        <target state="new">Pricing</target>
+        <target state="translated">Цены</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/header/header.component.ts</context>
           <context context-type="linenumber">51</context>
@@ -5224,7 +5224,7 @@
       </trans-unit>
       <trans-unit id="FAQ_TITLE" datatype="html">
         <source>Frequently Asked Questions</source>
-        <target state="new">Frequently Asked Questions</target>
+        <target state="translated">Часто задаваемые вопросы</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/faq.component.ts</context>
           <context context-type="linenumber">11</context>
@@ -5232,15 +5232,15 @@
       </trans-unit>
       <trans-unit id="HOW_CAN_XLIFF_TRANSLATOR_HELP_MY_BUSINESS" datatype="html">
         <source>How can XLIFF Translator help my business?</source>
-        <target state="new">How can XLIFF Translator help my business?</target>
+        <target state="translated">Как XLIFF Translator может помочь моему бизнесу?</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
           <context context-type="linenumber">23</context>
         </context-group>
       </trans-unit>
       <trans-unit id="HOW_CAN_XLIFF_TRANSLATOR_HELP_MY_BUSINESS_ANSWER" datatype="html">
-        <source>XLIFF Translator simplifies the management of your application&apos;s translations by using AI to automatically generate accurate translations. This saves you time and money while improving the quality of your translations.</source>
-        <target state="new">XLIFF Translator simplifies the management of your application&apos;s translations by using AI to automatically generate accurate translations. This saves you time and money while improving the quality of your translations.</target>
+        <source>XLIFF Translator simplifies the management of your application's translations by using AI to automatically generate accurate translations. This saves you time and money while improving the quality of your translations.</source>
+        <target state="translated">Переводчик XLIFF упрощает управление переводами вашего приложения, используя ИИ для автоматической генерации точных переводов. Это экономит ваше время и деньги, улучшая качество ваших переводов.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
           <context context-type="linenumber">24</context>
@@ -5248,7 +5248,7 @@
       </trans-unit>
       <trans-unit id="CAN_I_TRY_XLIFF_TRANSLATOR_BEFORE_SIGNING_UP" datatype="html">
         <source>Can I try XLIFF Translator before signing up?</source>
-        <target state="new">Can I try XLIFF Translator before signing up?</target>
+        <target state="translated">Можно попробовать XLIFF Translator перед регистрацией?</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
           <context context-type="linenumber">27</context>
@@ -5256,7 +5256,7 @@
       </trans-unit>
       <trans-unit id="CAN_I_TRY_XLIFF_TRANSLATOR_BEFORE_SIGNING_UP_ANSWER" datatype="html">
         <source>Yes, we offer welcome credits upon registration that allow you to test the features of our platform without any commitment. You can see for yourself how our solution can improve your translation process.</source>
-        <target state="new">Yes, we offer welcome credits upon registration that allow you to test the features of our platform without any commitment. You can see for yourself how our solution can improve your translation process.</target>
+        <target state="translated">Да, мы предлагаем приветственные кредиты при регистрации, которые позволяют вам протестировать функции нашей платформы без каких-либо обязательств. Вы сможете сами убедиться, как наше решение может улучшить ваш процесс перевода.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
           <context context-type="linenumber">28</context>
@@ -5264,7 +5264,7 @@
       </trans-unit>
       <trans-unit id="WHAT_LANGUAGES_ARE_SUPPORTED" datatype="html">
         <source>What languages are supported?</source>
-        <target state="new">What languages are supported?</target>
+        <target state="translated">Какие языки поддерживаются?</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
           <context context-type="linenumber">31</context>
@@ -5272,7 +5272,7 @@
       </trans-unit>
       <trans-unit id="WHAT_LANGUAGES_ARE_SUPPORTED_ANSWER" datatype="html">
         <source>XLIFF Translator supports all commonly used languages worldwide. You can even attempt to translate non-human languages like Klingon or Elvish, but the results may not be optimal.</source>
-        <target state="new">XLIFF Translator supports all commonly used languages worldwide. You can even attempt to translate non-human languages like Klingon or Elvish, but the results may not be optimal.</target>
+        <target state="translated">XLIFF Translator поддерживает все распространенные языки по всему миру. Вы даже можете попытаться перевести не человеческие языки, такие как клингонский или эльфийский, но результаты могут быть не оптимальными.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
           <context context-type="linenumber">32</context>
@@ -5280,7 +5280,7 @@
       </trans-unit>
       <trans-unit id="HOW_DOES_XLIFF_TRANSLATOR_COMPARE_TO_OTHER_TRANSLATION_TOOLS" datatype="html">
         <source>How does XLIFF Translator compare to other translation tools?</source>
-        <target state="new">How does XLIFF Translator compare to other translation tools?</target>
+        <target state="translated">Как XLIFF Translator соотносится с другими инструментами перевода?</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
           <context context-type="linenumber">35</context>
@@ -5288,7 +5288,7 @@
       </trans-unit>
       <trans-unit id="HOW_DOES_XLIFF_TRANSLATOR_COMPARE_TO_OTHER_TRANSLATION_TOOLS_ANSWER" datatype="html">
         <source>Unlike generic translation tools, XLIFF Translator is specifically designed for XLIFF files used in Angular application development. Our AI technology understands the technical context and preserves tags and interpolations, ensuring accurate and functional translations.</source>
-        <target state="new">Unlike generic translation tools, XLIFF Translator is specifically designed for XLIFF files used in Angular application development. Our AI technology understands the technical context and preserves tags and interpolations, ensuring accurate and functional translations.</target>
+        <target state="translated">В отличие от универсальных инструментов перевода, XLIFF Translator специально разработан для файлов XLIFF, используемых в разработке приложений Angular. Наша ИИ-технология понимает технический контекст и сохраняет теги и интерполяции, обеспечивая точный и функциональный перевод.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
           <context context-type="linenumber">36</context>
@@ -5296,7 +5296,7 @@
       </trans-unit>
       <trans-unit id="CAN_I_INTEGRATE_XLIFF_TRANSLATOR_INTO_MY_EXISTING_DEVELOPMENT_PROCESS" datatype="html">
         <source>Can I integrate XLIFF Translator into my existing development process?</source>
-        <target state="new">Can I integrate XLIFF Translator into my existing development process?</target>
+        <target state="translated">Можно ли интегрировать XLIFF Translator в мой существующий процесс разработки?</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
           <context context-type="linenumber">39</context>
@@ -5304,7 +5304,7 @@
       </trans-unit>
       <trans-unit id="CAN_I_INTEGRATE_XLIFF_TRANSLATOR_INTO_MY_EXISTING_DEVELOPMENT_PROCESS_ANSWER" datatype="html">
         <source>Absolutely! XLIFF Translator easily integrates into your existing workflows. When your application needs to be translated, you just need to initiate the translation through our interface and wait for the Pull Request on your Git repository.</source>
-        <target state="new">Absolutely! XLIFF Translator easily integrates into your existing workflows. When your application needs to be translated, you just need to initiate the translation through our interface and wait for the Pull Request on your Git repository.</target>
+        <target state="translated">Абсолютно! XLIFF Translator легко интегрируется в ваши существующие рабочие процессы. Когда ваше приложение нужно перевести, вам просто нужно начать перевод через наш интерфейс и ждать Pull Request в вашем репозитории Git.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
           <context context-type="linenumber">40</context>
@@ -5312,7 +5312,7 @@
       </trans-unit>
       <trans-unit id="HOW_LONG_DOES_IT_TAKE_TO_TRANSLATE_AN_APPLICATION" datatype="html">
         <source>How long does it take to translate an application?</source>
-        <target state="new">How long does it take to translate an application?</target>
+        <target state="translated">Сколько времени занимает перевод приложения?</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
           <context context-type="linenumber">43</context>
@@ -5320,7 +5320,7 @@
       </trans-unit>
       <trans-unit id="HOW_LONG_DOES_IT_TAKE_TO_TRANSLATE_AN_APPLICATION_ANSWER" datatype="html">
         <source>It depends on the size and complexity of the application. On average, a TransUnit (XLIFF Translation Unit) is translated in about twelve seconds. An application or website with 1000 TransUnits is already substantial. You then multiply by the number of languages to be translated. 1000 * 12 = 12,000 seconds, which is 3 hours and 20 minutes.</source>
-        <target state="new">It depends on the size and complexity of the application. On average, a TransUnit (XLIFF Translation Unit) is translated in about twelve seconds. An application or website with 1000 TransUnits is already substantial. You then multiply by the number of languages to be translated. 1000 * 12 = 12,000 seconds, which is 3 hours and 20 minutes.</target>
+        <target state="translated">Это зависит от размера и сложности приложения. В среднем, один TransUnit (единица перевода XLIFF) переводится за примерно двенадцать секунд. Приложение или сайт с 1000 TransUnits уже достаточно объемны. Затем вы умножаете на количество языков, которые нужно перевести. 1000 * 12 = 12 000 секунд, что составляет 3 часа 20 минут.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
           <context context-type="linenumber">44</context>
@@ -5328,7 +5328,7 @@
       </trans-unit>
       <trans-unit id="WHAT_IS_THE_PRICE_OF_XLIFF_TRANSLATOR" datatype="html">
         <source>What is the price of XLIFF Translator?</source>
-        <target state="new">What is the price of XLIFF Translator?</target>
+        <target state="translated">Какова цена XLIFF Translator?</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
           <context context-type="linenumber">47</context>
@@ -5336,7 +5336,7 @@
       </trans-unit>
       <trans-unit id="WHAT_IS_THE_PRICE_OF_XLIFF_TRANSLATOR_ANSWER" datatype="html">
         <source>XLIFF Translator is a service that uses AI to translate your XLIFF files. This, of course, comes at a cost, as well as the operational processes. Registration is free with welcome credits. You can then purchase additional credits based on your needs.</source>
-        <target state="new">XLIFF Translator is a service that uses AI to translate your XLIFF files. This, of course, comes at a cost, as well as the operational processes. Registration is free with welcome credits. You can then purchase additional credits based on your needs.</target>
+        <target state="translated">XLIFF Translator — это сервис, использующий ИИ для перевода ваших файлов XLIFF. Это, конечно, связано с затратами, а также с операционными процессами. Регистрация бесплатна и сопровождается приветственными кредитами. Вы можете затем приобрести дополнительные кредиты в зависимости от ваших потребностей.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
           <context context-type="linenumber">48</context>
