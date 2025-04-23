@@ -51,6 +51,10 @@
             "translation": "src/locale/messages.he.xlf",
             "subPath": "he"
           },
+          "ja": {
+            "translation": "src/locale/messages.ja.xlf",
+            "subPath": "ja"
+          },
           "hi": {
             "translation": "src/locale/messages.hi.xlf",
             "subPath": "hi"
@@ -99,6 +103,7 @@
             "he": {"localize": ["he"], "deleteOutputPath": false},
             "ru": {"localize": ["ru"], "deleteOutputPath": false},
             "hi": {"localize": ["hi"], "deleteOutputPath": false},
+            "ja": {"localize": ["ja"], "deleteOutputPath": false},
             "production": {
               "budgets": [
                 {
@@ -162,7 +167,8 @@
               "messages.ru.xlf",
               "messages.es.xlf",
               "messages.zh.xlf",
-              "messages.hi.xlf"
+              "messages.hi.xlf",
+              "messages.ja.xlf"
             ]
           }
         }
