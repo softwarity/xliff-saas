@@ -7,7 +7,7 @@
         <target state="translated">Nutzungsbedingungen</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/app.component.ts</context>
-          <context context-type="linenumber">30</context>
+          <context context-type="linenumber">27</context>
         </context-group>
       </trans-unit>
       <trans-unit id="FOOTER_PRIVACY" datatype="html">
@@ -15,7 +15,7 @@
         <target state="translated">Datenschutzbestimmungen</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/app.component.ts</context>
-          <context context-type="linenumber">31</context>
+          <context context-type="linenumber">28</context>
         </context-group>
       </trans-unit>
       <trans-unit id="FOOTER_DOCS" datatype="html">
@@ -23,7 +23,7 @@
         <target state="translated">Docs</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/app.component.ts</context>
-          <context context-type="linenumber">33</context>
+          <context context-type="linenumber">30</context>
         </context-group>
       </trans-unit>
       <trans-unit id="FOOTER_CONTACT" datatype="html">
@@ -31,15 +31,7 @@
         <target state="translated">Kontakt</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/app.component.ts</context>
-          <context context-type="linenumber">33</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="FOOTER_COOKIES" datatype="html">
-        <source>Manage cookies</source>
-        <target state="translated">Cookies verwalten</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/app.component.ts</context>
-          <context context-type="linenumber">34</context>
+          <context context-type="linenumber">30</context>
         </context-group>
       </trans-unit>
       <trans-unit id="ISSUE_DETAILS" datatype="html">
@@ -4338,80 +4330,80 @@
         <source>Automated XLIFF Translation for Angular Applications</source>
         <target state="translated">Automatisierte XLIFF-Übersetzung für Angular-Anwendungen</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/home/home.component.html</context>
-          <context context-type="linenumber">5</context>
+          <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
+          <context context-type="linenumber">25</context>
         </context-group>
       </trans-unit>
       <trans-unit id="HOME_DESCRIPTION" datatype="html">
         <source>Translate your Angular applications with AI-powered context-aware translations</source>
         <target state="translated">Übersetzen Sie Ihre Angular-Anwendungen mit KI-gestützten kontextabhängigen Übersetzungen</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/home/home.component.html</context>
-          <context context-type="linenumber">6</context>
+          <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
+          <context context-type="linenumber">26</context>
         </context-group>
       </trans-unit>
       <trans-unit id="GET_STARTED" datatype="html">
         <source>Get Started</source>
         <target state="translated">Loslegen</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/home/home.component.html</context>
-          <context context-type="linenumber">8</context>
+          <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
+          <context context-type="linenumber">28</context>
         </context-group>
       </trans-unit>
       <trans-unit id="LEARN_MORE" datatype="html">
         <source>Learn More</source>
         <target state="translated">Mehr erfahren</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/home/home.component.html</context>
-          <context context-type="linenumber">9</context>
+          <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
+          <context context-type="linenumber">29</context>
         </context-group>
       </trans-unit>
       <trans-unit id="FEATURES_TITLE" datatype="html">
         <source>Key Features</source>
         <target state="translated">Hauptmerkmale</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/home/home.component.html</context>
-          <context context-type="linenumber">18</context>
+          <context context-type="sourcefile">src/app/pages/home/features.component.ts</context>
+          <context context-type="linenumber">9</context>
         </context-group>
       </trans-unit>
       <trans-unit id="GIT_INTEGRATION_TITLE" datatype="html">
         <source>Git Integration</source>
         <target state="translated">Git-Integration</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/home/home.component.html</context>
-          <context context-type="linenumber">21</context>
+          <context context-type="sourcefile">src/app/pages/home/features.component.ts</context>
+          <context context-type="linenumber">12</context>
         </context-group>
       </trans-unit>
       <trans-unit id="GIT_INTEGRATION_DESCRIPTION" datatype="html">
         <source>Connect with GitHub, GitLab, and Bitbucket repositories seamlessly</source>
         <target state="translated">Nahtlos mit GitHub-, GitLab- und Bitbucket-Repositorys verbinden</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/home/home.component.html</context>
-          <context context-type="linenumber">26</context>
+          <context context-type="sourcefile">src/app/pages/home/features.component.ts</context>
+          <context context-type="linenumber">17</context>
         </context-group>
       </trans-unit>
       <trans-unit id="CONTEXT_AWARE_AI_TITLE" datatype="html">
         <source>Context-Aware AI</source>
         <target state="translated">Kontextbewusste KI</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/home/home.component.html</context>
-          <context context-type="linenumber">30</context>
+          <context context-type="sourcefile">src/app/pages/home/features.component.ts</context>
+          <context context-type="linenumber">21</context>
         </context-group>
       </trans-unit>
       <trans-unit id="CONTEXT_AWARE_AI_DESCRIPTION" datatype="html">
         <source>Intelligent translations based on your application&apos;s context and business domain</source>
         <target state="translated">Intelligente Übersetzungen basierend auf dem Kontext und dem Geschäftsfeld Ihrer Anwendung</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/home/home.component.html</context>
-          <context context-type="linenumber">35</context>
+          <context context-type="sourcefile">src/app/pages/home/features.component.ts</context>
+          <context context-type="linenumber">26</context>
         </context-group>
       </trans-unit>
       <trans-unit id="AUTOMATED_WORKFLOW_TITLE" datatype="html">
         <source>Automated Workflow</source>
         <target state="translated">Automatisierter Workflow</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/home/home.component.html</context>
-          <context context-type="linenumber">39</context>
+          <context context-type="sourcefile">src/app/pages/home/features.component.ts</context>
+          <context context-type="linenumber">30</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/how-it-works/how-it-works.component.html</context>
@@ -4422,48 +4414,8 @@
         <source>Automatic branch creation and pull requests for your translations</source>
         <target state="translated">Automatische Erstellung von Branches und Pull-Requests für Ihre Übersetzungen</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/home/home.component.html</context>
-          <context context-type="linenumber">44</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="TESTIMONIALS_TITLE" datatype="html">
-        <source>What Our Clients Say</source>
-        <target state="translated">Was unsere Kunden sagen</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/home/home.component.html</context>
-          <context context-type="linenumber">65</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="TESTIMONIAL_1" datatype="html">
-        <source>XLIFF Translator has revolutionized our localization workflow. The context-aware translations are incredibly accurate.</source>
-        <target state="translated">Der XLIFF-Übersetzer hat unseren Lokalisierungsworkflow revolutioniert. Die kontextsensitiven Übersetzungen sind unglaublich genau.</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/home/home.component.html</context>
-          <context context-type="linenumber">68</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="TESTIMONIAL_1_AUTHOR" datatype="html">
-        <source>John Doe - Tech Lead at GlobalTech</source>
-        <target state="translated">John Doe - Technischer Leiter bei GlobalTech</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/home/home.component.html</context>
-          <context context-type="linenumber">69</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="TESTIMONIAL_2" datatype="html">
-        <source>The automated Git integration saved us countless hours of manual work. Highly recommended!</source>
-        <target state="translated">Die automatisierte Git-Integration hat uns unzählige Stunden manueller Arbeit erspart. Sehr empfehlenswert!</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/home/home.component.html</context>
-          <context context-type="linenumber">72</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="TESTIMONIAL_2_AUTHOR" datatype="html">
-        <source>Jane Smith - CTO at WebScale</source>
-        <target state="translated">Jane Smith - CTO bei WebScale</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/home/home.component.html</context>
-          <context context-type="linenumber">73</context>
+          <context context-type="sourcefile">src/app/pages/home/features.component.ts</context>
+          <context context-type="linenumber">35</context>
         </context-group>
       </trans-unit>
       <trans-unit id="HOW_IT_WORKS_TITLE" datatype="html">
@@ -5235,7 +5187,7 @@
         <target state="translated">Wie kann XLIFF Translator meinem Unternehmen helfen?</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
-          <context context-type="linenumber">23</context>
+          <context context-type="linenumber">67</context>
         </context-group>
       </trans-unit>
       <trans-unit id="HOW_CAN_XLIFF_TRANSLATOR_HELP_MY_BUSINESS_ANSWER" datatype="html">
@@ -5243,7 +5195,7 @@
         <target state="translated">XLIFF Translator vereinfacht das Management der Übersetzungen Ihrer Anwendung, indem es KI verwendet, um automatisch genaue Übersetzungen zu generieren. Dies spart Ihnen Zeit und Geld und verbessert die Qualität Ihrer Übersetzungen.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
-          <context context-type="linenumber">24</context>
+          <context context-type="linenumber">68</context>
         </context-group>
       </trans-unit>
       <trans-unit id="CAN_I_TRY_XLIFF_TRANSLATOR_BEFORE_SIGNING_UP" datatype="html">
@@ -5251,7 +5203,7 @@
         <target state="translated">Kann ich den XLIFF Translator ausprobieren, bevor ich mich anmelde?</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
-          <context context-type="linenumber">27</context>
+          <context context-type="linenumber">71</context>
         </context-group>
       </trans-unit>
       <trans-unit id="CAN_I_TRY_XLIFF_TRANSLATOR_BEFORE_SIGNING_UP_ANSWER" datatype="html">
@@ -5259,7 +5211,7 @@
         <target state="translated">Ja, wir bieten Willkommensgutschriften bei der Registrierung an, mit denen Sie die Funktionen unserer Plattform ohne Verpflichtungen testen können. Sie können selbst sehen, wie unsere Lösung Ihren Übersetzungsprozess verbessern kann.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
-          <context context-type="linenumber">28</context>
+          <context context-type="linenumber">72</context>
         </context-group>
       </trans-unit>
       <trans-unit id="WHAT_LANGUAGES_ARE_SUPPORTED" datatype="html">
@@ -5267,7 +5219,7 @@
         <target state="translated">Welche Sprachen werden unterstützt?</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
-          <context context-type="linenumber">31</context>
+          <context context-type="linenumber">75</context>
         </context-group>
       </trans-unit>
       <trans-unit id="WHAT_LANGUAGES_ARE_SUPPORTED_ANSWER" datatype="html">
@@ -5275,7 +5227,7 @@
         <target state="translated">XLIFF Translator unterstützt alle gängigen Sprachen weltweit. Sie können sogar versuchen, nicht-menschliche Sprachen wie Klingonisch oder Elbisch zu übersetzen, aber die Ergebnisse sind möglicherweise nicht optimal.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
-          <context context-type="linenumber">32</context>
+          <context context-type="linenumber">76</context>
         </context-group>
       </trans-unit>
       <trans-unit id="HOW_DOES_XLIFF_TRANSLATOR_COMPARE_TO_OTHER_TRANSLATION_TOOLS" datatype="html">
@@ -5283,7 +5235,7 @@
         <target state="translated">Wie schneidet XLIFF Translator im Vergleich zu anderen Übersetzungswerkzeugen ab?</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
-          <context context-type="linenumber">35</context>
+          <context context-type="linenumber">79</context>
         </context-group>
       </trans-unit>
       <trans-unit id="HOW_DOES_XLIFF_TRANSLATOR_COMPARE_TO_OTHER_TRANSLATION_TOOLS_ANSWER" datatype="html">
@@ -5291,7 +5243,7 @@
         <target state="translated">Im Gegensatz zu allgemeinen Übersetzungstools ist der XLIFF Translator speziell für XLIFF-Dateien entwickelt, die in der Entwicklung von Angular-Anwendungen verwendet werden. Unsere KI-Technologie versteht den technischen Kontext und bewahrt Tags und Interpolationen, um genaue und funktionale Übersetzungen sicherzustellen.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
-          <context context-type="linenumber">36</context>
+          <context context-type="linenumber">80</context>
         </context-group>
       </trans-unit>
       <trans-unit id="CAN_I_INTEGRATE_XLIFF_TRANSLATOR_INTO_MY_EXISTING_DEVELOPMENT_PROCESS" datatype="html">
@@ -5299,7 +5251,7 @@
         <target state="translated">Kann ich den XLIFF Translator in meinen bestehenden Entwicklungsprozess integrieren?</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
-          <context context-type="linenumber">39</context>
+          <context context-type="linenumber">83</context>
         </context-group>
       </trans-unit>
       <trans-unit id="CAN_I_INTEGRATE_XLIFF_TRANSLATOR_INTO_MY_EXISTING_DEVELOPMENT_PROCESS_ANSWER" datatype="html">
@@ -5307,7 +5259,7 @@
         <target state="translated">Absolut! Der XLIFF Translator lässt sich leicht in Ihre bestehenden Arbeitsabläufe integrieren. Wenn Ihre Anwendung übersetzt werden muss, müssen Sie einfach die Übersetzung über unsere Schnittstelle initiieren und auf den Pull Request in Ihrem Git-Repository warten.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
-          <context context-type="linenumber">40</context>
+          <context context-type="linenumber">84</context>
         </context-group>
       </trans-unit>
       <trans-unit id="HOW_LONG_DOES_IT_TAKE_TO_TRANSLATE_AN_APPLICATION" datatype="html">
@@ -5315,7 +5267,7 @@
         <target state="translated">Es dauert, um eine Anwendung zu übersetzen?</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
-          <context context-type="linenumber">43</context>
+          <context context-type="linenumber">87</context>
         </context-group>
       </trans-unit>
       <trans-unit id="HOW_LONG_DOES_IT_TAKE_TO_TRANSLATE_AN_APPLICATION_ANSWER" datatype="html">
@@ -5323,7 +5275,7 @@
         <target state="translated">Es hängt von der Größe und Komplexität der Anwendung ab. Im Durchschnitt wird ein TransUnit (XLIFF-Übersetzungseinheit) in etwa zwölf Sekunden übersetzt. Eine Anwendung oder Website mit 1000 TransUnits ist bereits erheblich. Sie multiplizieren dann mit der Anzahl der Sprachen, die übersetzt werden sollen. 1000 * 12 = 12.000 Sekunden, was 3 Stunden und 20 Minuten entspricht.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
-          <context context-type="linenumber">44</context>
+          <context context-type="linenumber">88</context>
         </context-group>
       </trans-unit>
       <trans-unit id="WHAT_IS_THE_PRICE_OF_XLIFF_TRANSLATOR" datatype="html">
@@ -5331,7 +5283,7 @@
         <target state="translated">Was kostet der XLIFF Translator?</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
-          <context context-type="linenumber">47</context>
+          <context context-type="linenumber">91</context>
         </context-group>
       </trans-unit>
       <trans-unit id="WHAT_IS_THE_PRICE_OF_XLIFF_TRANSLATOR_ANSWER" datatype="html">
@@ -5339,7 +5291,7 @@
         <target state="translated">XLIFF Translator ist ein Dienst, der KI verwendet, um Ihre XLIFF-Dateien zu übersetzen. Dies hat natürlich seinen Preis, ebenso wie die operativen Prozesse. Die Registrierung ist kostenlos mit Willkommensgutschriften. Sie können dann zusätzliche Gutschriften je nach Bedarf erwerben.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
-          <context context-type="linenumber">48</context>
+          <context context-type="linenumber">92</context>
         </context-group>
       </trans-unit>
     </body>
