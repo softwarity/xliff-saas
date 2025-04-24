@@ -94,7 +94,7 @@
             }
           },
           "configurations": {
-            "en": {"localize": ["en"]},
+            "en": {"localize": ["en"], "deleteOutputPath": false},
             "fr": {"localize": ["fr"], "deleteOutputPath": false},
             "de": {"localize": ["de"], "deleteOutputPath": false},
             "zh": {"localize": ["zh"], "deleteOutputPath": false},
