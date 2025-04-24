@@ -19,13 +19,13 @@ import { LoggedNavComponent } from './logged-nav.component';
   ],
   template: `
   <div class="w-full bg-white dark:bg-gray-800 shadow-sm" [ngClass]="{'!bg-tertiary': dev}">
-    <nav class="w-full px-4 py-4">
+    <nav class="w-full px-4 py-2">
       <div class="flex items-center space-x-4">
         <a routerLink="/" class="text-primary dark:text-blue-400 shrink-0 flex items-center">
           <img src="assets/softwarity.png" alt="Softwarity Logo" class="h-10 w-10 mr-4 logo-filter" />
           <span class="hidden md:flex md:flex-col">
-            <span class="text-2xl font-bold">XLIFF</span>
-            <span class="text-lg -mt-1">Translator</span>
+            <span class="text-2xl font-bold line-h-1px">XLIFF</span>
+            <span class="text-lg line-h-1px">Translator</span>
           </span>
         </a>
 
@@ -69,6 +69,9 @@ import { LoggedNavComponent } from './logged-nav.component';
   styles: [`
     :host-context(.dark) .logo-filter {
       filter: invert(0.5)  brightness(1.3);
+    }
+    .line-h-1px {
+      line-height: 1rem !important;
     }
   `],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]

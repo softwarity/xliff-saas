@@ -4,6 +4,8 @@ import { toSignal } from '@angular/core/rxjs-interop';
 import { RouterModule } from '@angular/router';
 import { AuthService } from '../../core/services/auth.service';
 import { FaqComponent } from './faq.component';
+import { FeaturesComponent } from './features.component';
+import { TeamComponent } from './team.component';
 
 @Component({
   selector: 'app-home',
@@ -11,9 +13,51 @@ import { FaqComponent } from './faq.component';
   imports: [
     CommonModule,
     RouterModule,
-    FaqComponent
+    FaqComponent,
+    FeaturesComponent,
+    // TeamComponent
   ],
-  templateUrl: './home.component.html'
+  template: `
+  <div class="min-h-screen bg-gradient-to-b from-blue-50 to-white dark:from-dark-900 dark:to-dark-800">
+    <!-- Hero Section -->
+    <section class="container mx-auto px-4 py-20">
+      <div class="text-center">
+        <h1 class="text-5xl font-bold text-gray-900 dark:text-white mb-6" i18n="@@HOME_TITLE">Automated XLIFF Translation for Angular Applications</h1>
+        <p class="text-xl text-gray-600 dark:text-gray-300 mb-8" i18n="@@HOME_DESCRIPTION">Translate your Angular applications with AI-powered context-aware translations</p>
+        <div class="space-x-4">
+          <a routerLink="/documentation" class="button flat-primary !px-8 !py-3 rounded-lg font-medium" i18n="@@GET_STARTED">Get Started</a>
+          <a routerLink="/how-it-works" class="button stroke-primary !px-8 !py-3 rounded-lg font-medium" i18n="@@LEARN_MORE">Learn More</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Section Separator -->
+    <div class="h-px bg-gradient-to-r from-transparent via-light-border dark:via-dark-600 to-transparent"></div>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-light-background dark:bg-dark-800">
+      <app-features></app-features>
+    </section>
+
+    <!-- Section Separator -->
+    <div class="h-px bg-gradient-to-r from-transparent via-light-border dark:via-dark-600 to-transparent"></div>
+
+    <!-- FAQ Section -->
+    <section class="my-16">
+      <app-faq [faqs]="faqList"></app-faq>
+    </section>
+
+    <!-- Section Separator -->
+    <div class="h-px bg-gradient-to-r from-transparent via-light-border dark:via-dark-600 to-transparent"></div>
+
+    <!-- Testimonials Section -->
+    <section class="bg-white dark:bg-dark-800">
+      <!-- TODO: Add Team presentation -->
+      <!-- <app-team></app-team> -->
+    </section>
+  </div>
+  `
 })
 export class HomeComponent {
   private auth = inject(AuthService);
