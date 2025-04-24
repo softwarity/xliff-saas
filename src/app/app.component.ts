@@ -28,7 +28,6 @@ import { toSignal } from '@angular/core/rxjs-interop';
           <a class="text-sm text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary" routerLink="/privacy" i18n="@@FOOTER_PRIVACY">Privacy Policy</a>
           <a class="text-sm text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary" routerLink="/documentation" i18n="@@FOOTER_DOCS">Docs</a>
           <a class="text-sm text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary" routerLink="/contact" i18n="@@FOOTER_CONTACT">Contact</a>
-          <a class="text-sm text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary" href="#" i18n="@@FOOTER_COOKIES">Manage cookies</a>
         </div>
       </div>
     </footer>
