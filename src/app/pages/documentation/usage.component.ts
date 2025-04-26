@@ -42,10 +42,10 @@ import { RouterLink } from '@angular/router';
                 </div>
                 <p class="mb-4" i18n="@@GITHUB_TOKEN_INSTRUCTION">To connect, generate a Personal Access Token with the following scopes:</p>
                 <ul class="list-disc list-inside mb-4 ml-2">
-                  <li i18n="@@GITHUB_SCOPE_REPO">repo</li>
-                  <li i18n="@@GITHUB_SCOPE_READ_ORG">read:org</li>
+                  <li>repo</li>
+                  <li>read:org</li>
                 </ul>
-                <p class="mb-4" i18n="@@GITHUB_TOKEN_LOCATION">Get your token here: Settings > Developer settings > Personal access tokens > Tokens (classic) > Generate new token</p>
+                <p class="mb-4"><span i18n="@@GET_YOUR_TOKEN_HERE">Get your token here</span>: Settings > Developer settings > Personal access tokens > Tokens (classic) > Generate new token</p>
                 <div class="mb-2" i18n="@@TOKEN_LABEL">Token</div>
                 <div class="mb-4">
                   <div class="bg-gray-800 border border-gray-700 rounded p-2 mb-4" i18n="@@TOKEN_PLACEHOLDER">Enter your access token</div>

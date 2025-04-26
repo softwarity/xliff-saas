@@ -3702,30 +3702,6 @@
           <context context-type="linenumber">43</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="GITHUB_SCOPE_REPO" datatype="html">
-        <source>repo</source>
-        <target state="translated">repo</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
-          <context context-type="linenumber">45</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="GITHUB_SCOPE_READ_ORG" datatype="html">
-        <source>read:org</source>
-        <target state="translated">read:org</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
-          <context context-type="linenumber">46</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="GITHUB_TOKEN_LOCATION" datatype="html">
-        <source>Get your token here: Settings &gt; Developer settings &gt; Personal access tokens &gt; Tokens (classic) &gt; Generate new token</source>
-        <target state="translated">अपने टोकन प्राप्त करें: सेटिंग्स &gt; डेवलपर सेटिंग्स &gt; व्यक्तिगत एक्सेस टोकन &gt; टोकन (क्लासिक) &gt; नया टोकन जनरेट करें</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
-          <context context-type="linenumber">48</context>
-        </context-group>
-      </trans-unit>
       <trans-unit id="TOKEN_LABEL" datatype="html">
         <source>Token</source>
         <target state="translated">Token</target>
@@ -5292,6 +5268,46 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
           <context context-type="linenumber">92</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="GET_YOUR_TOKEN_HERE" datatype="html">
+        <source>Get your token here</source>
+        <target state="new">Get your token here</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
+          <context context-type="linenumber">48</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="SUPPORTED_FORMATS_XLIFF_1_2_TITLE" datatype="html">
+        <source>XLIFF 1.2</source>
+        <target state="new">XLIFF 1.2</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/how-it-works/how-it-works.component.html</context>
+          <context context-type="linenumber">95</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="SUPPORTED_FORMATS_XLIFF_1_2_DESCRIPTION" datatype="html">
+        <source>Full support for XLIFF 1.2 format, including all Angular i18n features and metadata</source>
+        <target state="new">Full support for XLIFF 1.2 format, including all Angular i18n features and metadata</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/how-it-works/how-it-works.component.html</context>
+          <context context-type="linenumber">96</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="SUPPORTED_FORMATS_XLIFF_2_0_TITLE" datatype="html">
+        <source>XLIFF 2.0</source>
+        <target state="new">XLIFF 2.0</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/how-it-works/how-it-works.component.html</context>
+          <context context-type="linenumber">99</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="SOON_SUPPORTED_FORMATS_XLIFF_2_0_DESCRIPTION" datatype="html">
+        <source>(Soon) Complete support for the latest XLIFF 2.0 specification with enhanced features</source>
+        <target state="new">(Soon) Complete support for the latest XLIFF 2.0 specification with enhanced features</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/how-it-works/how-it-works.component.html</context>
+          <context context-type="linenumber">100</context>
         </context-group>
       </trans-unit>
     </body>

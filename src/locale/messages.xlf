@@ -2530,32 +2530,11 @@
           <context context-type="linenumber">85</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="GITHUB_SCOPE_READ_ORG" datatype="html">
-        <source>read:org</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
-          <context context-type="linenumber">46</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="GITHUB_SCOPE_REPO" datatype="html">
-        <source>repo</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
-          <context context-type="linenumber">45</context>
-        </context-group>
-      </trans-unit>
       <trans-unit id="GITHUB_TOKEN_INSTRUCTION" datatype="html">
         <source>To connect, generate a Personal Access Token with the following scopes:</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">43</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="GITHUB_TOKEN_LOCATION" datatype="html">
-        <source>Get your token here: Settings &gt; Developer settings &gt; Personal access tokens &gt; Tokens (classic) &gt; Generate new token</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
-          <context context-type="linenumber">48</context>
         </context-group>
       </trans-unit>
       <trans-unit id="GITHUB_WIDGET_CAPTION" datatype="html">
@@ -4676,6 +4655,41 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
           <context context-type="linenumber">76</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="GET_YOUR_TOKEN_HERE" datatype="html">
+        <source>Get your token here</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
+          <context context-type="linenumber">48</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="SOON_SUPPORTED_FORMATS_XLIFF_2_0_DESCRIPTION" datatype="html">
+        <source>(Soon) Complete support for the latest XLIFF 2.0 specification with enhanced features</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/how-it-works/how-it-works.component.html</context>
+          <context context-type="linenumber">100</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="SUPPORTED_FORMATS_XLIFF_1_2_DESCRIPTION" datatype="html">
+        <source>Full support for XLIFF 1.2 format, including all Angular i18n features and metadata</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/how-it-works/how-it-works.component.html</context>
+          <context context-type="linenumber">96</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="SUPPORTED_FORMATS_XLIFF_1_2_TITLE" datatype="html">
+        <source>XLIFF 1.2</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/how-it-works/how-it-works.component.html</context>
+          <context context-type="linenumber">95</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="SUPPORTED_FORMATS_XLIFF_2_0_TITLE" datatype="html">
+        <source>XLIFF 2.0</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/how-it-works/how-it-works.component.html</context>
+          <context context-type="linenumber">99</context>
         </context-group>
       </trans-unit>
     </body>
