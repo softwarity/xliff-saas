@@ -1,27 +1,30 @@
 import { Injectable, inject } from '@angular/core';
-import { Observable, from, map, switchMap } from 'rxjs';
+import { Observable, from, map, switchMap, tap } from 'rxjs';
 import { GitProviderService } from '../../../core/services/git-provider.service';
-import { ProviderType } from '../../../shared/models/provider-type';
+import { ToastService } from '../../../core/services/toast.service';
 
-export interface GitProvider {
-  name: string;
-  type: ProviderType;
-  connected: boolean;
-  tokenHint?: string;
-  scopes: string[];
-}
+export const SCOPES: string[] = ['repo', 'read:org'];
 
 @Injectable()
 export class GithubService {
+  private toastService = inject(ToastService);
   private gitProviderService = inject(GitProviderService);
 
-  validateAndStoreToken(provider: GitProvider, token: string): Observable<void> {
-    return this.testGithubToken(provider, token).pipe(
-      switchMap(() => this.gitProviderService.storeTokenValidated(provider, token))
+  validateAndStoreToken(token: string): Observable<void> {
+    return this.testGithubToken(token).pipe(
+      switchMap(() => this.gitProviderService.storeTokenValidated('github', token)),
+      tap({
+        next: () => {
+          this.toastService.success($localize`:@@GITHUB_CONNECTED_SUCCESS:Successfully connected to Github`);
+        },
+        error: (err) => {
+          this.toastService.error($localize`:@@FAILED_TO_CONNECT_GITHUB:Failed to connect to Github. ${err.message}`);  
+        }
+      })
     );
   }
 
-  private testGithubToken(provider: GitProvider, token: string): Observable<void> {
+  private testGithubToken(token: string): Observable<void> {
     const github = { 
       url: 'https://api.github.com/user',
       headers: {'Authorization': `token ${token}`, }
@@ -29,15 +32,15 @@ export class GithubService {
     return from(fetch(github.url, { headers: github.headers })).pipe(
       map((response: Response) => {
         const scopes = response.headers.get('x-oauth-scopes')?.split(', ') || [];
-        if (response.ok && provider.scopes.every(scope => scopes.includes(scope))) {
+        if (response.ok && SCOPES.every(scope => scopes.includes(scope))) {
           return void 0;
         }
-        throw new Error('Invalid scopes. need at least: [' + provider.scopes.join(', ') + ']');
+        throw new Error('Invalid scopes. need at least: [' + SCOPES.join(', ') + ']');
       })
     );
   }
 
-  disconnectProvider(type: ProviderType): void {
-    this.gitProviderService.disconnectProvider(type);
+  disconnectProvider(): void {
+    this.gitProviderService.disconnectProvider('github');
   }
 }

@@ -57,9 +57,9 @@ import { RouterLink } from '@angular/router';
           </div>
           
           <ol class="list-decimal list-inside text-gray-700 dark:text-gray-300 ml-4 space-y-4">
-            <li i18n="@@CONNECT_STEP_1"><strong>Select a provider</strong>: Choose from GitHub, GitLab, or Bitbucket</li>
-            <li i18n="@@CONNECT_STEP_2"><strong>Configure access</strong>: Create and provide the appropriate tokens</li>
-            <li i18n="@@CONNECT_STEP_3"><strong>Save your configuration</strong>: Enter your token and save the connection</li>
+            <li><strong i18n="@@CONNECT_STEP_1_TITLE">Select a provider</strong>: <span i18n="@@CONNECT_STEP_1_DESCRIPTION">Choose from GitHub, GitLab, or Bitbucket</span></li>
+            <li><strong i18n="@@CONNECT_STEP_2_TITLE">Configure access</strong>: <span i18n="@@CONNECT_STEP_2_DESCRIPTION">Create and provide the appropriate tokens</span></li>
+            <li><strong i18n="@@CONNECT_STEP_3_TITLE">Save your configuration</strong>: <span i18n="@@CONNECT_STEP_3_DESCRIPTION">Enter your token and save the connection</span></li>
           </ol>
           
           <div class="mt-4 space-y-4">
@@ -70,8 +70,20 @@ import { RouterLink } from '@angular/router';
                 </svg>
               </div>
               <div>
-                <h4 class="font-semibold text-gray-900 dark:text-white" i18n="@@GITLAB_TITLE">GitLab</h4>
-                <p class="text-gray-700 dark:text-gray-300 text-sm" i18n="@@GITLAB_DESC">Create a Personal Access Token with <code>api</code>, <code>read_repository</code>, and <code>write_repository</code> scopes.</p>
+                <h4 class="font-semibold text-gray-900 dark:text-white">Github</h4>
+                <p class="text-gray-700 dark:text-gray-300 text-sm" i18n="@@GITHUB_DESC">Create a Personal Access Token with <b>repo</b>, and <b>repo:org</b> scopes.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start p-3 hover:bg-white dark:hover:bg-gray-700 rounded-lg transition-colors border border-gray-200 dark:border-gray-700">
+              <div class="mr-4 text-blue-600 dark:text-blue-400">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-900 dark:text-white">GitLab</h4>
+                <p class="text-gray-700 dark:text-gray-300 text-sm" i18n="@@GITLAB_DESC">Create a Personal Access Token with <b>api</b>, <b>read_repository</b>, and <b>write_repository</b> scopes.</p>
               </div>
             </div>
             
@@ -82,8 +94,8 @@ import { RouterLink } from '@angular/router';
                 </svg>
               </div>
               <div>
-                <h4 class="font-semibold text-gray-900 dark:text-white" i18n="@@BITBUCKET_TITLE">Bitbucket</h4>
-                <p class="text-gray-700 dark:text-gray-300 text-sm" i18n="@@BITBUCKET_DESC">Create an App Password with <code>repository:read</code> and <code>repository:write</code> permissions.</p>
+                <h4 class="font-semibold text-gray-900 dark:text-white">Bitbucket</h4>
+                <p class="text-gray-700 dark:text-gray-300 text-sm" i18n="@@BITBUCKET_DESC">Create an App Password with <b>repository:read</b> and <b>repository:write</b> permissions.</p>
               </div>
             </div>
           </div>
@@ -109,8 +121,8 @@ import { RouterLink } from '@angular/router';
                   <path d="M7 10C7 8.34315 8.34315 7 10 7H14C15.6569 7 17 8.34315 17 10V14C17 15.6569 15.6569 17 14 17H10C8.34315 17 7 15.6569 7 14V10Z" fill="white"/>
                 </svg>
                 <div>
-                  <div class="text-sm text-gray-400">softwarity</div>
-                  <div class="font-semibold">xliff-saas</div>
+                  <div class="text-sm text-gray-400">Organization</div>
+                  <div class="font-semibold">Repository</div>
                 </div>
               </div>
               <div class="text-sm text-gray-400">Updated Apr 8, 2025</div>

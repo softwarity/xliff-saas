@@ -13,14 +13,6 @@
         <source>Enter your app password</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/git-providers/bitbucket/bitbucket-card.component.ts</context>
-          <context context-type="linenumber">52</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/features/git-providers/github/github-card.component.ts</context>
-          <context context-type="linenumber">53</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/features/git-providers/gitlab/gitlab-card.component.ts</context>
           <context context-type="linenumber">53</context>
         </context-group>
       </trans-unit>
@@ -81,7 +73,7 @@
         <source><x id="INTERPOLATION" equiv-text="{{ balance() }}"/> credits</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/header/logged-nav.component.ts</context>
-          <context context-type="linenumber">60</context>
+          <context context-type="linenumber">63</context>
         </context-group>
       </trans-unit>
       <trans-unit id="BASIC_PLAN_TITLE" datatype="html">
@@ -165,7 +157,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
-          <context context-type="linenumber">184</context>
+          <context context-type="linenumber">196</context>
         </context-group>
       </trans-unit>
       <trans-unit id="CANCELING" datatype="html">
@@ -229,15 +221,15 @@
         <source>Connect</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/git-providers/bitbucket/bitbucket-card.component.ts</context>
-          <context context-type="linenumber">82</context>
+          <context context-type="linenumber">77</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/git-providers/github/github-card.component.ts</context>
-          <context context-type="linenumber">83</context>
+          <context context-type="linenumber">71</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/git-providers/gitlab/gitlab-card.component.ts</context>
-          <context context-type="linenumber">83</context>
+          <context context-type="linenumber">69</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
@@ -255,15 +247,15 @@
         <source>Connecting...</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/git-providers/bitbucket/bitbucket-card.component.ts</context>
-          <context context-type="linenumber">79</context>
+          <context context-type="linenumber">74</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/git-providers/github/github-card.component.ts</context>
-          <context context-type="linenumber">80</context>
+          <context context-type="linenumber">68</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/git-providers/gitlab/gitlab-card.component.ts</context>
-          <context context-type="linenumber">80</context>
+          <context context-type="linenumber">66</context>
         </context-group>
       </trans-unit>
       <trans-unit id="CONTACT_US" datatype="html">
@@ -376,30 +368,30 @@
         <source>Disconnect</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/git-providers/bitbucket/bitbucket-card.component.ts</context>
-          <context context-type="linenumber">99</context>
+          <context context-type="linenumber">94</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/git-providers/github/github-card.component.ts</context>
-          <context context-type="linenumber">100</context>
+          <context context-type="linenumber">88</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/git-providers/gitlab/gitlab-card.component.ts</context>
-          <context context-type="linenumber">100</context>
+          <context context-type="linenumber">86</context>
         </context-group>
       </trans-unit>
       <trans-unit id="DISCONNECTING" datatype="html">
         <source>Disconnecting...</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/git-providers/bitbucket/bitbucket-card.component.ts</context>
-          <context context-type="linenumber">96</context>
+          <context context-type="linenumber">91</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/git-providers/github/github-card.component.ts</context>
-          <context context-type="linenumber">97</context>
+          <context context-type="linenumber">85</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/git-providers/gitlab/gitlab-card.component.ts</context>
-          <context context-type="linenumber">97</context>
+          <context context-type="linenumber">83</context>
         </context-group>
       </trans-unit>
       <trans-unit id="DOCUMENTATION_TITLE" datatype="html">
@@ -466,7 +458,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
-          <context context-type="linenumber">120</context>
+          <context context-type="linenumber">132</context>
         </context-group>
       </trans-unit>
       <trans-unit id="ESTIMATING" datatype="html">
@@ -576,15 +568,15 @@
         <source>Get your token here:</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/git-providers/bitbucket/bitbucket-card.component.ts</context>
-          <context context-type="linenumber">36</context>
+          <context context-type="linenumber">38</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/git-providers/github/github-card.component.ts</context>
-          <context context-type="linenumber">37</context>
+          <context context-type="linenumber">40</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/git-providers/gitlab/gitlab-card.component.ts</context>
-          <context context-type="linenumber">37</context>
+          <context context-type="linenumber">38</context>
         </context-group>
       </trans-unit>
       <trans-unit id="GIT_INTEGRATION_DESCRIPTION" datatype="html">
@@ -766,7 +758,7 @@
         <source>Dashboard</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/header/logged-nav.component.ts</context>
-          <context context-type="linenumber">30</context>
+          <context context-type="linenumber">29</context>
         </context-group>
       </trans-unit>
       <trans-unit id="NAVIGATION_DOCUMENTATION" datatype="html">
@@ -780,7 +772,7 @@
         <source>Git Providers</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/header/logged-nav.component.ts</context>
-          <context context-type="linenumber">36</context>
+          <context context-type="linenumber">35</context>
         </context-group>
       </trans-unit>
       <trans-unit id="NAVIGATION_HOW_IT_WORKS" datatype="html">
@@ -992,22 +984,22 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/git-providers/gitlab/gitlab-card.component.ts</context>
-          <context context-type="linenumber">21</context>
+          <context context-type="linenumber">20</context>
         </context-group>
       </trans-unit>
       <trans-unit id="PROVIDER_NOT_CONNECTED" datatype="html">
         <source>Not Connected</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/git-providers/bitbucket/bitbucket-card.component.ts</context>
-          <context context-type="linenumber">22</context>
+          <context context-type="linenumber">24</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/git-providers/github/github-card.component.ts</context>
-          <context context-type="linenumber">23</context>
+          <context context-type="linenumber">25</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/git-providers/gitlab/gitlab-card.component.ts</context>
-          <context context-type="linenumber">23</context>
+          <context context-type="linenumber">24</context>
         </context-group>
       </trans-unit>
       <trans-unit id="PUBLIC_REPOSITORY" datatype="html">
@@ -1098,7 +1090,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
-          <context context-type="linenumber">148</context>
+          <context context-type="linenumber">160</context>
         </context-group>
       </trans-unit>
       <trans-unit id="SHOWING_REPOSITORIES" datatype="html">
@@ -1245,31 +1237,27 @@
       <trans-unit id="TOKEN_INPUT_PLACEHOLDER" datatype="html">
         <source>Enter your access token</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/features/git-providers/bitbucket/bitbucket-card.component.ts</context>
-          <context context-type="linenumber">59</context>
-        </context-group>
-        <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/git-providers/github/github-card.component.ts</context>
-          <context context-type="linenumber">60</context>
+          <context context-type="linenumber">49</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/git-providers/gitlab/gitlab-card.component.ts</context>
-          <context context-type="linenumber">60</context>
+          <context context-type="linenumber">47</context>
         </context-group>
       </trans-unit>
       <trans-unit id="TOKEN_SCOPES_INTRO" datatype="html">
         <source>To connect, generate a Personal Access Token with the following scopes:</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/git-providers/bitbucket/bitbucket-card.component.ts</context>
-          <context context-type="linenumber">29</context>
+          <context context-type="linenumber">31</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/git-providers/github/github-card.component.ts</context>
-          <context context-type="linenumber">30</context>
+          <context context-type="linenumber">32</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/git-providers/gitlab/gitlab-card.component.ts</context>
-          <context context-type="linenumber">30</context>
+          <context context-type="linenumber">31</context>
         </context-group>
       </trans-unit>
       <trans-unit id="TOTAL_REPOSITORIES" datatype="html">
@@ -1302,7 +1290,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
-          <context context-type="linenumber">126</context>
+          <context context-type="linenumber">138</context>
         </context-group>
       </trans-unit>
       <trans-unit id="TRANSLATING" datatype="html">
@@ -1355,7 +1343,7 @@
         <source>Translation Workflow</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
-          <context context-type="linenumber">279</context>
+          <context context-type="linenumber">291</context>
         </context-group>
       </trans-unit>
       <trans-unit id="TRANSLATIONS_THIS_MONTH_LABEL" datatype="html">
@@ -1426,7 +1414,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
-          <context context-type="linenumber">166</context>
+          <context context-type="linenumber">178</context>
         </context-group>
       </trans-unit>
       <trans-unit id="TRANSUNIT_TARGET" datatype="html">
@@ -1454,15 +1442,15 @@
         <source>Update Token</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/git-providers/bitbucket/bitbucket-card.component.ts</context>
-          <context context-type="linenumber">88</context>
+          <context context-type="linenumber">83</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/git-providers/github/github-card.component.ts</context>
-          <context context-type="linenumber">89</context>
+          <context context-type="linenumber">77</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/git-providers/gitlab/gitlab-card.component.ts</context>
-          <context context-type="linenumber">89</context>
+          <context context-type="linenumber">75</context>
         </context-group>
       </trans-unit>
       <trans-unit id="UPDATED_AT" datatype="html">
@@ -1476,14 +1464,6 @@
         <source>Enter your Bitbucket username</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/git-providers/bitbucket/bitbucket-card.component.ts</context>
-          <context context-type="linenumber">47</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/features/git-providers/github/github-card.component.ts</context>
-          <context context-type="linenumber">48</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/features/git-providers/gitlab/gitlab-card.component.ts</context>
           <context context-type="linenumber">48</context>
         </context-group>
       </trans-unit>
@@ -1499,7 +1479,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
-          <context context-type="linenumber">157</context>
+          <context context-type="linenumber">169</context>
         </context-group>
       </trans-unit>
       <trans-unit id="FREE_PLAN_DESCRIPTION" datatype="html">
@@ -1990,102 +1970,81 @@
           <context context-type="linenumber">123</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="CONNECT_STEP_1" datatype="html">
-        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Select a provider<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: Choose from GitHub, GitLab, or Bitbucket</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
-          <context context-type="linenumber">60</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="CONNECT_STEP_2" datatype="html">
-        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Configure access<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: Create and provide the appropriate tokens</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
-          <context context-type="linenumber">61</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="CONNECT_STEP_3" datatype="html">
-        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Save your configuration<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: Enter your token and save the connection</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
-          <context context-type="linenumber">62</context>
-        </context-group>
-      </trans-unit>
       <trans-unit id="ESTIMATE_DESCRIPTION" datatype="html">
         <source>Before running a translation, you can estimate the scope and complexity of the task:</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
-          <context context-type="linenumber">289</context>
+          <context context-type="linenumber">301</context>
         </context-group>
       </trans-unit>
       <trans-unit id="ESTIMATE_PURPOSE_1" datatype="html">
         <source>The exact number of translation units that need processing</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
-          <context context-type="linenumber">309</context>
+          <context context-type="linenumber">321</context>
         </context-group>
       </trans-unit>
       <trans-unit id="ESTIMATE_PURPOSE_2" datatype="html">
         <source>How many credits will be required (1 translation unit = 1 credit)</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
-          <context context-type="linenumber">310</context>
+          <context context-type="linenumber">322</context>
         </context-group>
       </trans-unit>
       <trans-unit id="ESTIMATE_PURPOSE_3" datatype="html">
         <source>Approximate time required (each translation unit takes 10-20 seconds to process)</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
-          <context context-type="linenumber">311</context>
+          <context context-type="linenumber">323</context>
         </context-group>
       </trans-unit>
       <trans-unit id="ESTIMATE_PURPOSE_CREDIT_NOTE" datatype="html">
         <source>Important: Large translation projects with hundreds of translation units can take significant time. Plan accordingly.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
-          <context context-type="linenumber">313</context>
+          <context context-type="linenumber">325</context>
         </context-group>
       </trans-unit>
       <trans-unit id="ESTIMATE_PURPOSE_DESCRIPTION" datatype="html">
         <source>The estimation process helps you understand:</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
-          <context context-type="linenumber">307</context>
+          <context context-type="linenumber">319</context>
         </context-group>
       </trans-unit>
       <trans-unit id="ESTIMATE_PURPOSE_TITLE" datatype="html">
         <source>Why Estimate?</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
-          <context context-type="linenumber">306</context>
+          <context context-type="linenumber">318</context>
         </context-group>
       </trans-unit>
       <trans-unit id="ESTIMATE_STEP_1" datatype="html">
         <source>Select the repository you want to work with</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
-          <context context-type="linenumber">292</context>
+          <context context-type="linenumber">304</context>
         </context-group>
       </trans-unit>
       <trans-unit id="ESTIMATE_STEP_2" datatype="html">
         <source>Click on &quot;Estimate&quot; to analyze your XLIFF files</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
-          <context context-type="linenumber">293</context>
+          <context context-type="linenumber">305</context>
         </context-group>
       </trans-unit>
       <trans-unit id="ESTIMATE_STEP_4" datatype="html">
         <source>Review the estimate results showing the number of translation units to process</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
-          <context context-type="linenumber">302</context>
+          <context context-type="linenumber">314</context>
         </context-group>
       </trans-unit>
       <trans-unit id="ESTIMATE_TITLE" datatype="html">
         <source>Estimation</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
-          <context context-type="linenumber">287</context>
+          <context context-type="linenumber">299</context>
         </context-group>
       </trans-unit>
       <trans-unit id="EXTRACT_I18N_CONFIG_TITLE" datatype="html">
@@ -2197,49 +2156,49 @@
         <source>Clones your project repository</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
-          <context context-type="linenumber">349</context>
+          <context context-type="linenumber">361</context>
         </context-group>
       </trans-unit>
       <trans-unit id="PROCESS_STEP_2" datatype="html">
         <source>Identifies XLIFF files matching your pattern</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
-          <context context-type="linenumber">350</context>
+          <context context-type="linenumber">362</context>
         </context-group>
       </trans-unit>
       <trans-unit id="PROCESS_STEP_3" datatype="html">
         <source>Analyzes each translation unit and its context in the source code</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
-          <context context-type="linenumber">351</context>
+          <context context-type="linenumber">363</context>
         </context-group>
       </trans-unit>
       <trans-unit id="PROCESS_STEP_4" datatype="html">
         <source>Sends translation instructions to the AI engine with relevant context</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
-          <context context-type="linenumber">352</context>
+          <context context-type="linenumber">364</context>
         </context-group>
       </trans-unit>
       <trans-unit id="PROCESS_STEP_5" datatype="html">
         <source>Updates the XLIFF files with the translations</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
-          <context context-type="linenumber">353</context>
+          <context context-type="linenumber">365</context>
         </context-group>
       </trans-unit>
       <trans-unit id="PROCESS_STEP_6" datatype="html">
         <source>Creates a pull request with the changes (if configured)</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
-          <context context-type="linenumber">354</context>
+          <context context-type="linenumber">366</context>
         </context-group>
       </trans-unit>
       <trans-unit id="REPOSITORY_MANAGEMENT_TITLE" datatype="html">
         <source>Repository Management</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
-          <context context-type="linenumber">96</context>
+          <context context-type="linenumber">108</context>
         </context-group>
       </trans-unit>
       <trans-unit id="REPOSITORY_SELECTION_DESCRIPTION" datatype="html">
@@ -2250,7 +2209,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
-          <context context-type="linenumber">100</context>
+          <context context-type="linenumber">112</context>
         </context-group>
       </trans-unit>
       <trans-unit id="REPOSITORY_SELECTION_TITLE" datatype="html">
@@ -2261,133 +2220,133 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
-          <context context-type="linenumber">99</context>
+          <context context-type="linenumber">111</context>
         </context-group>
       </trans-unit>
       <trans-unit id="REPOSITORY_STEP_1" datatype="html">
         <source>Navigate to the provider&apos;s page where your repositories are listed</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
-          <context context-type="linenumber">135</context>
+          <context context-type="linenumber">147</context>
         </context-group>
       </trans-unit>
       <trans-unit id="REPOSITORY_STEP_2" datatype="html">
         <source>Browse and select the repository containing your Angular project with XLIFF files</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
-          <context context-type="linenumber">136</context>
+          <context context-type="linenumber">148</context>
         </context-group>
       </trans-unit>
       <trans-unit id="REPOSITORY_STEP_3" datatype="html">
         <source>Specify the branch to work with (default is usually the main branch)</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
-          <context context-type="linenumber">137</context>
+          <context context-type="linenumber">149</context>
         </context-group>
       </trans-unit>
       <trans-unit id="RESOURCE_ANGULAR_DOCS" datatype="html">
         <source>Angular i18n Documentation</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
-          <context context-type="linenumber">241</context>
+          <context context-type="linenumber">253</context>
         </context-group>
       </trans-unit>
       <trans-unit id="RESOURCE_ANGULAR_DOCS_DESC" datatype="html">
         <source>Official Angular documentation for internationalization.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
-          <context context-type="linenumber">242</context>
+          <context context-type="linenumber">254</context>
         </context-group>
       </trans-unit>
       <trans-unit id="RESOURCE_MARKED_TEXT" datatype="html">
         <source>Working with Marked Text</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
-          <context context-type="linenumber">269</context>
+          <context context-type="linenumber">281</context>
         </context-group>
       </trans-unit>
       <trans-unit id="RESOURCE_MARKED_TEXT_DESC" datatype="html">
         <source>Learn about advanced i18n features like pluralization and selection.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
-          <context context-type="linenumber">270</context>
+          <context context-type="linenumber">282</context>
         </context-group>
       </trans-unit>
       <trans-unit id="RESOURCE_NG_EXTRACT_I18N_MERGE" datatype="html">
         <source>ng-extract-i18n-merge</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
-          <context context-type="linenumber">255</context>
+          <context context-type="linenumber">267</context>
         </context-group>
       </trans-unit>
       <trans-unit id="RESOURCE_NG_EXTRACT_I18N_MERGE_DESC" datatype="html">
         <source>Official tool for extracting and merging i18n translations in a single step.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
-          <context context-type="linenumber">256</context>
+          <context context-type="linenumber">268</context>
         </context-group>
       </trans-unit>
       <trans-unit id="RESOURCES_TITLE" datatype="html">
         <source>Additional Resources</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
-          <context context-type="linenumber">230</context>
+          <context context-type="linenumber">242</context>
         </context-group>
       </trans-unit>
       <trans-unit id="REVIEW_BENEFITS" datatype="html">
         <source>This workflow allows you to keep translations in your version control system and follow standard code review practices for translation updates.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
-          <context context-type="linenumber">211</context>
+          <context context-type="linenumber">223</context>
         </context-group>
       </trans-unit>
       <trans-unit id="REVIEW_FINALIZE_TITLE" datatype="html">
         <source>Reviewing and Finalizing</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
-          <context context-type="linenumber">198</context>
+          <context context-type="linenumber">210</context>
         </context-group>
       </trans-unit>
       <trans-unit id="REVIEW_PR_DESCRIPTION" datatype="html">
         <source>After the translation process completes:</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
-          <context context-type="linenumber">202</context>
+          <context context-type="linenumber">214</context>
         </context-group>
       </trans-unit>
       <trans-unit id="REVIEW_PR_TITLE" datatype="html">
         <source>Pull Request Review</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
-          <context context-type="linenumber">201</context>
+          <context context-type="linenumber">213</context>
         </context-group>
       </trans-unit>
       <trans-unit id="REVIEW_STEP_1" datatype="html">
         <source>Review the created pull request in your Git provider</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
-          <context context-type="linenumber">205</context>
+          <context context-type="linenumber">217</context>
         </context-group>
       </trans-unit>
       <trans-unit id="REVIEW_STEP_2" datatype="html">
         <source>Check the translated content for accuracy</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
-          <context context-type="linenumber">206</context>
+          <context context-type="linenumber">218</context>
         </context-group>
       </trans-unit>
       <trans-unit id="REVIEW_STEP_3" datatype="html">
         <source>Make any necessary adjustments directly in the XLIFF files</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
-          <context context-type="linenumber">207</context>
+          <context context-type="linenumber">219</context>
         </context-group>
       </trans-unit>
       <trans-unit id="REVIEW_STEP_4" datatype="html">
         <source>Merge the pull request to update your main codebase with the translations</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
-          <context context-type="linenumber">208</context>
+          <context context-type="linenumber">220</context>
         </context-group>
       </trans-unit>
       <trans-unit id="SEE_MORE_DOCUMENTATION_DESC" datatype="html">
@@ -2415,98 +2374,98 @@
         <source>Create a dedicated branch for translations to keep them separate from feature development</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
-          <context context-type="linenumber">221</context>
+          <context context-type="linenumber">233</context>
         </context-group>
       </trans-unit>
       <trans-unit id="TIP_CONTEXT" datatype="html">
         <source>Ensure your source code has clear context for translation units to improve AI translation quality</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
-          <context context-type="linenumber">222</context>
+          <context context-type="linenumber">234</context>
         </context-group>
       </trans-unit>
       <trans-unit id="TIP_PATTERN" datatype="html">
         <source>Use specific file patterns to target translations for one language at a time</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
-          <context context-type="linenumber">224</context>
+          <context context-type="linenumber">236</context>
         </context-group>
       </trans-unit>
       <trans-unit id="TIP_REGULAR" datatype="html">
         <source>Run translations regularly as you develop to avoid large batches of untranslated content</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
-          <context context-type="linenumber">220</context>
+          <context context-type="linenumber">232</context>
         </context-group>
       </trans-unit>
       <trans-unit id="TIP_REVIEW" datatype="html">
         <source>Always review AI-generated translations, especially for critical user-facing content</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
-          <context context-type="linenumber">223</context>
+          <context context-type="linenumber">235</context>
         </context-group>
       </trans-unit>
       <trans-unit id="TIPS_TITLE" datatype="html">
         <source>Tips for Effective Translation</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
-          <context context-type="linenumber">217</context>
+          <context context-type="linenumber">229</context>
         </context-group>
       </trans-unit>
       <trans-unit id="TRANSLATE_DESCRIPTION" datatype="html">
         <source>Running an AI-powered translation is a separate process from estimation:</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
-          <context context-type="linenumber">324</context>
+          <context context-type="linenumber">336</context>
         </context-group>
       </trans-unit>
       <trans-unit id="TRANSLATE_STEP_1" datatype="html">
         <source>Select the repository containing your XLIFF files</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
-          <context context-type="linenumber">327</context>
+          <context context-type="linenumber">339</context>
         </context-group>
       </trans-unit>
       <trans-unit id="TRANSLATE_STEP_2" datatype="html">
         <source>Click on &quot;Translate&quot; to begin the process</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
-          <context context-type="linenumber">328</context>
+          <context context-type="linenumber">340</context>
         </context-group>
       </trans-unit>
       <trans-unit id="TRANSLATE_STEP_3" datatype="html">
         <source>Configure the translation options:</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
-          <context context-type="linenumber">330</context>
+          <context context-type="linenumber">342</context>
         </context-group>
       </trans-unit>
       <trans-unit id="TRANSLATE_STEP_4" datatype="html">
         <source>Start the translation process</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
-          <context context-type="linenumber">338</context>
+          <context context-type="linenumber">350</context>
         </context-group>
       </trans-unit>
       <trans-unit id="TRANSLATE_TITLE" datatype="html">
         <source>Translation</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
-          <context context-type="linenumber">322</context>
+          <context context-type="linenumber">334</context>
         </context-group>
       </trans-unit>
       <trans-unit id="TRANSLATION_PROCESS_DESCRIPTION" datatype="html">
         <source>During the translation process, XLIFF Translator:</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
-          <context context-type="linenumber">347</context>
+          <context context-type="linenumber">359</context>
         </context-group>
       </trans-unit>
       <trans-unit id="TRANSLATION_PROCESS_TITLE" datatype="html">
         <source>Translation Process</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
-          <context context-type="linenumber">346</context>
+          <context context-type="linenumber">358</context>
         </context-group>
       </trans-unit>
       <trans-unit id="WORKFLOW_BENEFITS" datatype="html">
@@ -2517,17 +2476,10 @@
         </context-group>
       </trans-unit>
       <trans-unit id="BITBUCKET_DESC" datatype="html">
-        <source>Create an App Password with <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code&gt;"/>repository:read<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code&gt;"/> and <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code&gt;"/>repository:write<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code&gt;"/> permissions.</source>
+        <source>Create an App Password with <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>repository:read<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/> and <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>repository:write<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/> permissions.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
-          <context context-type="linenumber">86</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="BITBUCKET_TITLE" datatype="html">
-        <source>Bitbucket</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
-          <context context-type="linenumber">85</context>
+          <context context-type="linenumber">98</context>
         </context-group>
       </trans-unit>
       <trans-unit id="GITHUB_TOKEN_INSTRUCTION" datatype="html">
@@ -2545,17 +2497,10 @@
         </context-group>
       </trans-unit>
       <trans-unit id="GITLAB_DESC" datatype="html">
-        <source>Create a Personal Access Token with <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code&gt;"/>api<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code&gt;"/>, <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code&gt;"/>read_repository<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code&gt;"/>, and <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code&gt;"/>write_repository<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code&gt;"/> scopes.</source>
+        <source>Create a Personal Access Token with <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>api<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/>, <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>read_repository<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/>, and <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>write_repository<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/> scopes.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
-          <context context-type="linenumber">74</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="GITLAB_TITLE" datatype="html">
-        <source>GitLab</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
-          <context context-type="linenumber">73</context>
+          <context context-type="linenumber">86</context>
         </context-group>
       </trans-unit>
       <trans-unit id="GO_TO_SETUP" datatype="html">
@@ -2569,21 +2514,21 @@
         <source>main</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
-          <context context-type="linenumber">150</context>
+          <context context-type="linenumber">162</context>
         </context-group>
       </trans-unit>
       <trans-unit id="NEW_STATE" datatype="html">
         <source>new</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
-          <context context-type="linenumber">168</context>
+          <context context-type="linenumber">180</context>
         </context-group>
       </trans-unit>
       <trans-unit id="NO_TRANSLATION" datatype="html">
         <source>No translation available...</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
-          <context context-type="linenumber">125</context>
+          <context context-type="linenumber">137</context>
         </context-group>
       </trans-unit>
       <trans-unit id="NOT_CONNECTED_STATUS" datatype="html">
@@ -2597,7 +2542,7 @@
         <source>Proceeded TransUnit State</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
-          <context context-type="linenumber">175</context>
+          <context context-type="linenumber">187</context>
         </context-group>
       </trans-unit>
       <trans-unit id="SETUP_REMINDER_DESCRIPTION" datatype="html">
@@ -2632,84 +2577,84 @@
         <source>Translate</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
-          <context context-type="linenumber">185</context>
+          <context context-type="linenumber">197</context>
         </context-group>
       </trans-unit>
       <trans-unit id="TRANSLATED_STATE" datatype="html">
         <source>translated</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
-          <context context-type="linenumber">177</context>
+          <context context-type="linenumber">189</context>
         </context-group>
       </trans-unit>
       <trans-unit id="TRANSLATION_OPTIONS_CAPTION" datatype="html">
         <source>Translation options configuration modal</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
-          <context context-type="linenumber">189</context>
+          <context context-type="linenumber">201</context>
         </context-group>
       </trans-unit>
       <trans-unit id="TRANSLATION_OPTIONS_REF" datatype="html">
         <source>You&apos;ll be prompted with the translation options modal as shown earlier in the &quot;Selecting Repositories&quot; section.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
-          <context context-type="linenumber">342</context>
+          <context context-type="linenumber">354</context>
         </context-group>
       </trans-unit>
       <trans-unit id="TRANSLATION_OPTIONS_TITLE" datatype="html">
         <source>Translation Options</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
-          <context context-type="linenumber">145</context>
+          <context context-type="linenumber">157</context>
         </context-group>
       </trans-unit>
       <trans-unit id="TRANSLATION_WIDGET_CAPTION" datatype="html">
         <source>Repository selection with translation options</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
-          <context context-type="linenumber">130</context>
+          <context context-type="linenumber">142</context>
         </context-group>
       </trans-unit>
       <trans-unit id="UNITS_DETECTED" datatype="html">
         <source>90 translation units detected</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
-          <context context-type="linenumber">119</context>
+          <context context-type="linenumber">131</context>
         </context-group>
       </trans-unit>
       <trans-unit id="XLF_EXTENSION" datatype="html">
         <source>xlf</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
-          <context context-type="linenumber">159</context>
+          <context context-type="linenumber">171</context>
         </context-group>
       </trans-unit>
       <trans-unit id="TRANSLATE_STEP_3_BRANCH" datatype="html">
         <source>Select the source branch</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
-          <context context-type="linenumber">332</context>
+          <context context-type="linenumber">344</context>
         </context-group>
       </trans-unit>
       <trans-unit id="TRANSLATE_STEP_3_FILE_PATTERN" datatype="html">
         <source>Specify which XLIFF files to translate</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
-          <context context-type="linenumber">333</context>
+          <context context-type="linenumber">345</context>
         </context-group>
       </trans-unit>
       <trans-unit id="TRANSLATE_STEP_3_TARGET_STATE" datatype="html">
         <source>Define the state to set for translated units (e.g., &quot;translated&quot;, &quot;final&quot;)</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
-          <context context-type="linenumber">335</context>
+          <context context-type="linenumber">347</context>
         </context-group>
       </trans-unit>
       <trans-unit id="TRANSLATE_STEP_3_TRANSLATION_STATE" datatype="html">
         <source>Select which translation units to process (e.g., &quot;new&quot;, &quot;needs-translation&quot;)</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
-          <context context-type="linenumber">334</context>
+          <context context-type="linenumber">346</context>
         </context-group>
       </trans-unit>
       <trans-unit id="AUTH_SERVICE_EMAIL_EXISTS" datatype="html">
@@ -3267,13 +3212,6 @@
           <context context-type="linenumber">126</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="FAILED_TO_CONNECT_PROVIDER" datatype="html">
-        <source>Failed to connect to <x id="PH" equiv-text="provider.name"/>. <x id="PH_1" equiv-text="error.message"/></source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/services/git-provider.service.ts</context>
-          <context context-type="linenumber">128</context>
-        </context-group>
-      </trans-unit>
       <trans-unit id="FAILED_TO_CREATE_CHECKOUT_SESSION" datatype="html">
         <source>Failed to create checkout session. Please try again later.</source>
         <context-group purpose="location">
@@ -3299,7 +3237,7 @@
         <source>Failed to disconnect from <x id="PH" equiv-text="type"/>. Please try again.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/services/git-provider.service.ts</context>
-          <context context-type="linenumber">143</context>
+          <context context-type="linenumber">74</context>
         </context-group>
       </trans-unit>
       <trans-unit id="FAILED_TO_ESTIMATE_REPOSITORY" datatype="html">
@@ -3349,7 +3287,7 @@
         <source>Failed to get <x id="PH" equiv-text="provider"/> token. Please try again later.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/services/token.service.ts</context>
-          <context context-type="linenumber">32</context>
+          <context context-type="linenumber">62</context>
         </context-group>
       </trans-unit>
       <trans-unit id="FAILED_TO_LOAD_BRANCHES" datatype="html">
@@ -3379,13 +3317,6 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/repositories/github/github.service.ts</context>
           <context context-type="linenumber">50</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="FAILED_TO_LOAD_PROVIDER_STATUS" datatype="html">
-        <source>Failed to load <x id="PH" equiv-text="provider.name"/> status. Please try again.</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/services/git-provider.service.ts</context>
-          <context context-type="linenumber">100</context>
         </context-group>
       </trans-unit>
       <trans-unit id="FAILED_TO_LOAD_USER_REPOS" datatype="html">
@@ -3424,7 +3355,7 @@
         <source>Failed to remove <x id="PH" equiv-text="provider"/> token. Please try again later.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/services/token.service.ts</context>
-          <context context-type="linenumber">42</context>
+          <context context-type="linenumber">72</context>
         </context-group>
       </trans-unit>
       <trans-unit id="FAILED_TO_REOPEN_ISSUE" datatype="html">
@@ -3449,7 +3380,7 @@
         <source>Failed to store <x id="PH" equiv-text="provider"/> token. Please try again later.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/services/token.service.ts</context>
-          <context context-type="linenumber">20</context>
+          <context context-type="linenumber">21</context>
         </context-group>
       </trans-unit>
       <trans-unit id="FAILED_TO_TRANSLATE_REPOSITORY" datatype="html">
@@ -3836,18 +3767,11 @@
           <context context-type="linenumber">172</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="PROVIDER_CONNECTED_SUCCESS" datatype="html">
-        <source>Successfully connected to <x id="PH" equiv-text="provider.name"/></source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/services/git-provider.service.ts</context>
-          <context context-type="linenumber">122</context>
-        </context-group>
-      </trans-unit>
       <trans-unit id="PROVIDER_DISCONNECTED_SUCCESS" datatype="html">
         <source>Successfully disconnected from <x id="PH" equiv-text="type"/></source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/services/git-provider.service.ts</context>
-          <context context-type="linenumber">139</context>
+          <context context-type="linenumber">70</context>
         </context-group>
       </trans-unit>
       <trans-unit id="REOPEN_ISSUE" datatype="html">
@@ -4521,28 +4445,28 @@
         <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Branch<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: Select the branch containing your XLIFF files</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
-          <context context-type="linenumber">297</context>
+          <context context-type="linenumber">309</context>
         </context-group>
       </trans-unit>
       <trans-unit id="ESTIMATE_STEP_32" datatype="html">
         <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>File Pattern<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: By default &quot;xlf&quot; to search all XLIFF files. Use specific patterns like &quot;ru.xlf&quot; to target only Russian files</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
-          <context context-type="linenumber">298</context>
+          <context context-type="linenumber">310</context>
         </context-group>
       </trans-unit>
       <trans-unit id="ESTIMATE_STEP_33" datatype="html">
         <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Translation State<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: Choose which translation units to include (default is &quot;new&quot; to focus on untranslated content)</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
-          <context context-type="linenumber">299</context>
+          <context context-type="linenumber">311</context>
         </context-group>
       </trans-unit>
       <trans-unit id="ESTIMATE_STEP_3" datatype="html">
         <source>Configure the estimate options:</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
-          <context context-type="linenumber">295</context>
+          <context context-type="linenumber">307</context>
         </context-group>
       </trans-unit>
       <trans-unit id="CAN_I_INTEGRATE_XLIFF_TRANSLATOR_INTO_MY_EXISTING_DEVELOPMENT_PROCESS" datatype="html">
@@ -4678,18 +4602,95 @@
           <context context-type="linenumber">96</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="SUPPORTED_FORMATS_XLIFF_1_2_TITLE" datatype="html">
-        <source>XLIFF 1.2</source>
+      <trans-unit id="GITHUB_DESC" datatype="html">
+        <source>Create a Personal Access Token with <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>repo<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/>, and <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>repo:org<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/> scopes.</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/how-it-works/how-it-works.component.html</context>
-          <context context-type="linenumber">95</context>
+          <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
+          <context context-type="linenumber">74</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="SUPPORTED_FORMATS_XLIFF_2_0_TITLE" datatype="html">
-        <source>XLIFF 2.0</source>
+      <trans-unit id="CONNECT_STEP_1_DESCRIPTION" datatype="html">
+        <source>Choose from GitHub, GitLab, or Bitbucket</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/how-it-works/how-it-works.component.html</context>
-          <context context-type="linenumber">99</context>
+          <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
+          <context context-type="linenumber">60</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="CONNECT_STEP_1_TITLE" datatype="html">
+        <source>Select a provider</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
+          <context context-type="linenumber">60</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="CONNECT_STEP_2_DESCRIPTION" datatype="html">
+        <source>Create and provide the appropriate tokens</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
+          <context context-type="linenumber">61</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="CONNECT_STEP_2_TITLE" datatype="html">
+        <source>Configure access</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
+          <context context-type="linenumber">61</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="CONNECT_STEP_3_DESCRIPTION" datatype="html">
+        <source>Enter your token and save the connection</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
+          <context context-type="linenumber">62</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="CONNECT_STEP_3_TITLE" datatype="html">
+        <source>Save your configuration</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
+          <context context-type="linenumber">62</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="BITBUCKET_CONNECTED_SUCCESS" datatype="html">
+        <source>Successfully connected to Bitbucket</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/git-providers/bitbucket/bitbucket.service.ts</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="FAILED_TO_CONNECT_BITBUCKET" datatype="html">
+        <source>Failed to connect to Bitbucket. <x id="PH" equiv-text="err.message"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/git-providers/bitbucket/bitbucket.service.ts</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="FAILED_TO_CONNECT_GITHUB" datatype="html">
+        <source>Failed to connect to Github. <x id="PH" equiv-text="err.message"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/git-providers/github/github.service.ts</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="FAILED_TO_CONNECT_GITLAB" datatype="html">
+        <source>Failed to connect to GitLab. <x id="PH" equiv-text="err.message"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/git-providers/gitlab/gitlab.service.ts</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="GITHUB_CONNECTED_SUCCESS" datatype="html">
+        <source>Successfully connected to Github</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/git-providers/github/github.service.ts</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="GITLAB_CONNECTED_SUCCESS" datatype="html">
+        <source>Successfully connected to GitLab</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/git-providers/gitlab/gitlab.service.ts</context>
+          <context context-type="linenumber">18</context>
         </context-group>
       </trans-unit>
     </body>

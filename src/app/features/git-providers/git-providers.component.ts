@@ -22,11 +22,11 @@ import { GitlabCardComponent } from './gitlab/gitlab-card.component';
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
       @for (provider of providers(); track provider.type) {
         @if (provider.type === 'github') {
-          <app-github-card [provider]="provider"></app-github-card>
+          <app-github-card [connected]="provider.connected"></app-github-card>
         } @else if (provider.type === 'gitlab') {
-          <app-gitlab-card [provider]="provider"></app-gitlab-card>
+          <app-gitlab-card [connected]="provider.connected"></app-gitlab-card>
         } @else if (provider.type === 'bitbucket') {
-          <app-bitbucket-card [provider]="provider"></app-bitbucket-card>
+          <app-bitbucket-card [connected]="provider.connected"></app-bitbucket-card>
         }
       }
     </div>

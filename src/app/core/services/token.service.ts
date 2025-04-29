@@ -4,6 +4,7 @@ import { ProviderType } from '../../shared/models/provider-type';
 import { AuthService } from './auth.service';
 import { SupabaseClientService } from './supabase-client.service';
 import { ToastService } from './toast.service';
+import { GitProvider } from './git-provider.service';
 
 @Injectable({
   providedIn: 'root'
@@ -23,6 +24,35 @@ export class TokenService {
     );
   }
 
+  getStatusProviders(): Observable<GitProvider[]> {
+    const providers: GitProvider[] = [
+      { 
+        type: 'github',
+        connected: false
+      },
+      { 
+        type: 'gitlab',
+        connected: false
+      },
+      { 
+        type: 'bitbucket',
+        connected: false
+      }
+    ];
+    return from(this.auth.getUser()).pipe(
+      map((user) => {
+        if (!user) throw new Error('User not found');
+        for (const provider of providers) {
+          provider.connected = !!user.user_metadata[provider.type] || false;
+        }
+        return [...providers];
+      }),
+      catchError((error) => {
+        return of([...providers]);
+      })
+    );
+  }
+  
   getToken(provider: ProviderType): Observable<string | null> {
     return from(this.auth.getUser()).pipe(
       map((user) => {
@@ -36,7 +66,7 @@ export class TokenService {
   }
 
   removeToken(provider: ProviderType): Observable<boolean> {
-    return from(this.supabase.auth.updateUser({data: { [provider]: undefined }})).pipe(
+    return from(this.supabase.auth.updateUser({data: { [provider]: null }})).pipe(
       map(() => true),
       catchError((error) => {
         this.toastService.error($localize`:@@FAILED_TO_REMOVE_TOKEN:Failed to remove ${provider} token. Please try again later.`);

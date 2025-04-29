@@ -1,27 +1,31 @@
 import { Injectable, inject } from '@angular/core';
-import { Observable, from, map, switchMap } from 'rxjs';
+import { Observable, from, map, switchMap, tap } from 'rxjs';
 import { GitProviderService } from '../../../core/services/git-provider.service';
-import { ProviderType } from '../../../shared/models/provider-type';
+import { ToastService } from '../../../core/services/toast.service';
 
-export interface GitProvider {
-  name: string;
-  type: ProviderType;
-  connected: boolean;
-  tokenHint?: string;
-  scopes: string[];
-}
+export const SCOPES: string[] = ['repository', 'repository:write', 'pullrequest', 'pullrequest:write', 'account'];
 
 @Injectable()
 export class BitbucketService {
+  private toastService = inject(ToastService);
+
   private gitProviderService = inject(GitProviderService);
 
-  validateAndStoreToken(provider: GitProvider, token: string): Observable<void> {
-    return this.testBitbucketToken(provider, token).pipe(
-      switchMap(() => this.gitProviderService.storeTokenValidated(provider, token))
+  validateAndStoreToken(token: string): Observable<void> {
+    return this.testBitbucketToken(token).pipe(
+      switchMap(() => this.gitProviderService.storeTokenValidated('bitbucket', token)),
+      tap({
+        next: () => {
+          this.toastService.success($localize`:@@BITBUCKET_CONNECTED_SUCCESS:Successfully connected to Bitbucket`);
+        },
+        error: (err) => {
+          this.toastService.error($localize`:@@FAILED_TO_CONNECT_BITBUCKET:Failed to connect to Bitbucket. ${err.message}`);  
+        }
+      })
     );
   }
 
-  private testBitbucketToken(provider: GitProvider, token: string): Observable<void> {
+  private testBitbucketToken(token: string): Observable<void> {
       let bitbucket = {
       url: `https://api.bitbucket.org/2.0/user`,
       headers: {
@@ -35,12 +39,12 @@ export class BitbucketService {
         if (response.ok) {
           return void 0;
         }
-        throw new Error('Invalid scopes. need at least: [' + provider.scopes.join(', ') + ']');
+        throw new Error('Invalid scopes. need at least: [' + SCOPES.join(', ') + ']');
       })
     );
   }
 
-  disconnectProvider(type: ProviderType): void {
-    this.gitProviderService.disconnectProvider(type);
+  disconnectProvider(): void {
+    this.gitProviderService.disconnectProvider('bitbucket');
   }
 }
