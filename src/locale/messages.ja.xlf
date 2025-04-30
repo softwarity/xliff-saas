@@ -2103,7 +2103,7 @@
         <target state="translated"><x id="INTERPOLATION" equiv-text="{{ estimation()?.transUnitFound }}"/> 翻訳ユニットが検出されました</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/repositories/components/estimate/estimate.component.ts</context>
-          <context context-type="linenumber">33</context>
+          <context context-type="linenumber">34</context>
         </context-group>
       </trans-unit>
       <trans-unit id="NO_ESTIMATION_AVAILABLE" datatype="html">
@@ -2111,7 +2111,7 @@
         <target state="translated">見積もりが利用できません...</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/repositories/components/estimate/estimate.component.ts</context>
-          <context context-type="linenumber">38</context>
+          <context context-type="linenumber">48</context>
         </context-group>
       </trans-unit>
       <trans-unit id="ESTIMATE" datatype="html">
@@ -2119,7 +2119,7 @@
         <target state="translated">見積もり</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/repositories/components/estimate/estimate.component.ts</context>
-          <context context-type="linenumber">43</context>
+          <context context-type="linenumber">53</context>
         </context-group>
       </trans-unit>
       <trans-unit id="UPDATED_AT" datatype="html">
@@ -5312,6 +5312,14 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/git-providers/gitlab/gitlab.service.ts</context>
           <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ESTIMATED_TIME" datatype="html">
+        <source>Estimated time: <x id="PH" equiv-text="minutes"/> minutes</source>
+        <target state="new">Estimated time: <x id="PH" equiv-text="minutes"/> minutes</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/repositories/components/estimate/estimate.component.ts</context>
+          <context context-type="linenumber">89</context>
         </context-group>
       </trans-unit>
     </body>

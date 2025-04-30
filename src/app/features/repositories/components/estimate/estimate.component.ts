@@ -30,7 +30,17 @@ import { CancelConfirmComponent } from '../../../../shared/components/cancel-con
       } @else if (estimation()?.status === 'cancelled') {
         <span class="text-sm text-red-500 dark:text-red-400" i18n="@@CANCELLED">Cancelled</span>
       } @else if (estimation()?.status === 'completed') {
-        <span class="text-sm text-green-500 dark:text-green-400" i18n="@@TRANSLATION_UNITS_DETECTED">{{ estimation()?.transUnitFound }} translation units detected</span>
+        <div class="flex items-center gap-2">
+          <span class="text-sm text-green-500 dark:text-green-400" i18n="@@TRANSLATION_UNITS_DETECTED">{{ estimation()?.transUnitFound }} translation units detected</span>
+          <div class="relative group">
+            <svg class="w-5 h-5 text-gray-500 dark:text-gray-400 cursor-help" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor">
+              <path d="M360-840v-80h240v80H360Zm80 440h80v-240h-80v240Zm40 320q-74 0-139.5-28.5T226-186q-49-49-77.5-114.5T120-440q0-74 28.5-139.5T226-694q49-49 114.5-77.5T480-800q62 0 119 20t107 58l56-56 56 56-56 56q38 50 58 107t20 119q0 74-28.5 139.5T734-186q-49 49-114.5 77.5T480-80Zm0-80q116 0 198-82t82-198q0-116-82-198t-198-82q-116 0-198 82t-82 198q0 116 82 198t198 82Zm0-280Z"/>
+            </svg>
+            <div class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-gray-800 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+              {{ getEstimatedTime() }}
+            </div>
+          </div>
+        </div>
       } @else {
         <span class="text-sm text-red-500 dark:text-red-400">{{ estimation()?.status }}</span>
       }
@@ -58,7 +68,6 @@ export class EstimateComponent implements OnDestroy {
   private subscription?: Subscription;
 
   constructor() {
-    
     effect(() => {
       const { provider, namespace, name: repository } = this.repository();
       this.subscription = this.jobService.subscribeToJobChanges({ provider, namespace, repository, request: 'estimation' }).subscribe(this.observerJobChanges);
@@ -67,6 +76,17 @@ export class EstimateComponent implements OnDestroy {
   
   ngOnDestroy(): void {
     this.subscription?.unsubscribe();
+  }
+
+  getEstimatedTime(): string {
+    const transUnits = this.estimation()?.transUnitFound || 0;
+    const minTime = transUnits * 12; // 12 secondes par unité
+    const maxTime = transUnits * 15; // 15 secondes par unité
+    
+    const averageTime = Math.round((minTime + maxTime) / 2);
+    const minutes = Math.round(averageTime / 60);
+    
+    return $localize`:@@ESTIMATED_TIME:Estimated time: ${minutes} minutes`;
   }
 
   onCloseModal($event: {branch: string, ext: string, transUnitState: string} | null ) {
@@ -96,13 +116,6 @@ export class EstimateComponent implements OnDestroy {
       console.error('Error subscribing to job changes:', error);
     }
   };
-
-  // onCancel() {
-  //   const id = this.estimation()?.id;
-  //   if (!!id) {
-  //     this.jobService.cancelJob(id).subscribe();
-  //   }
-  // }
 
   onCancel(): Observable<void> {
     const id = this.estimation()?.id;
