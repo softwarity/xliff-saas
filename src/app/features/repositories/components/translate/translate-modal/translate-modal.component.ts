@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import { Component, inject, input, output, signal } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { RepositoryService } from '../../../../../core/services/repository.service';
@@ -12,18 +11,10 @@ import { TransUnitStateSelectorComponent } from '../../trans-unit-state-selector
   templateUrl: './translate-modal.component.html',
   standalone: true,
   imports: [
-    CommonModule,
     ReactiveFormsModule,
     BranchSelectorComponent,
     ExtSelectorComponent,
     TransUnitStateSelectorComponent
-  ],
-  styles: [
-    `
-    label {
-      @apply block text-sm font-medium text-gray-700 dark:text-gray-300;
-    }
-    `
   ]
 })
 export class TranslateModalComponent {

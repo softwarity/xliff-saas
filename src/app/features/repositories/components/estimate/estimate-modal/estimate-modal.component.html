@@ -38,17 +38,17 @@
       <form [formGroup]="actionForm" (ngSubmit)="onSubmit()" class="space-y-4">
         <!-- Branch selector -->
         <div>
-          <label for="branch" i18n="@@SELECT_BRANCH_LABEL">Select Branch</label>
+          <label class="block text-sm font-medium text-gray-700 dark:text-gray-300" for="branch" i18n="@@SELECT_BRANCH_LABEL">Select Branch</label>
           <app-branch-selector [repository]="repository()" formControlName="branch"></app-branch-selector>
         </div>
         <!-- Xliff extension selector -->
         <div>
-          <label for="ext" i18n="@@XLIFF_EXTENSION_LABEL">Xliff Extension</label>
+          <label class="block text-sm font-medium text-gray-700 dark:text-gray-300" for="ext" i18n="@@XLIFF_EXTENSION_LABEL">Xliff Extension</label>
           <app-ext-selector formControlName="ext" class="w-full"></app-ext-selector>
         </div>
         <!-- TransUnit state input -->
         <div>
-          <label for="transUnitState" i18n="@@TRANSUNIT_STATE_LABEL">TransUnit State</label>
+          <label class="block text-sm font-medium text-gray-700 dark:text-gray-300" for="transUnitState" i18n="@@TRANSUNIT_STATE_LABEL">TransUnit State</label>
           <app-trans-unit-state-selector formControlName="transUnitState" class="w-full" [additionalTransUnitStates]="['all']"></app-trans-unit-state-selector>
         </div>
 

@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import { Component, inject, input, output, signal } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Repository } from '../../../../../shared/models/repository.model';
@@ -13,18 +12,10 @@ import { RepositoryService } from '../../../../../core/services/repository.servi
   templateUrl: './estimate-modal.component.html',
   standalone: true,
   imports: [
-    CommonModule,
     ReactiveFormsModule,
     BranchSelectorComponent,
     ExtSelectorComponent,
     TransUnitStateSelectorComponent,
-  ],
-  styles: [
-    `
-    label {
-      @apply block text-sm font-medium text-gray-700 dark:text-gray-300;
-    }
-    `
   ]
 })
 export class EstimateModalComponent {
@@ -38,7 +29,7 @@ export class EstimateModalComponent {
   constructor(private fb: FormBuilder) {
     this.actionForm = this.fb.group({
       branch: ['', Validators.required],
-      transUnitState: ['all', Validators.required],
+      transUnitState: ['new', Validators.required],
       ext: ['xlf', Validators.required]
     });
   }

@@ -51,7 +51,7 @@ export class TransUnitStateSelectorComponent implements TypedControlValueAccesso
 // - `signed-off`: The translation has been approved and signed off by a responsible party or reviewer, indicating it is finalized.
 // - `final`: The translation is complete and ready for use. No further changes are expected.
 
-  transUnitStateSelectFC: FormControl<string | null> = new FormControl<string | null>('all');
+  transUnitStateSelectFC: FormControl<string | null> = new FormControl<string | null>('new');
 
   constructor() {
     effect(() => {
