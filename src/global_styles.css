@@ -223,6 +223,7 @@ a.button.flat-warning,
 a.button.flat-secondary,
 a.button.flat-tertiary,
 a.button.stroke-primary,
+a.button.stroke-ghost,
 button.flat-primary,
 button.flat-warning,
 button.flat-secondary,
@@ -230,10 +231,15 @@ button.flat-tertiary,
 button.stroke-primary,
 button.stroke-secondary,
 button.stroke-tertiary,
-button.stroke-warning {
+button.stroke-warning,
+button.flat-ghost {
   @apply rounded-md px-4 py-2 cursor-pointer text-sm font-medium disabled:opacity-50 disabled:cursor-not-allowed transition-colors;
 }
 
+a.button.flat-ghost,
+button.flat-ghost {
+  @apply hover:bg-gray-200 dark:hover:bg-gray-700;
+}
 a.button.flat-primary,
 button.flat-primary {
   @apply bg-primary text-white hover:bg-primary-hover;
@@ -323,4 +329,46 @@ label[for] {
 /* Testimonial cards */
 .testimonial-card {
   @apply bg-light-surface border border-light-border rounded-lg p-6 shadow-md;
+}
+
+/* Icon buttons */
+button.icon {
+  @apply rounded-full p-2 cursor-pointer text-sm font-medium disabled:opacity-50 disabled:cursor-not-allowed transition-colors;
+}
+
+button.icon.flat-ghost {
+  @apply hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-800 dark:text-gray-200;
+  /* @apply text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 active:bg-gray-200 dark:active:bg-gray-700; */
+}
+
+button.icon.flat-primary {
+  @apply bg-primary text-white hover:bg-primary-hover;
+}
+
+button.icon.flat-warning {
+  @apply bg-warning text-white hover:bg-warning-hover;
+}
+
+button.icon.flat-secondary {
+  @apply bg-secondary text-white hover:bg-secondary-hover;
+}
+
+button.icon.flat-tertiary {
+  @apply bg-tertiary text-white hover:bg-tertiary-hover;
+}
+
+button.icon.stroke-primary {
+  @apply border border-primary text-primary hover:bg-primary hover:text-white;
+}
+
+button.icon.stroke-secondary {
+  @apply border border-secondary text-secondary hover:bg-secondary hover:text-white;
+}
+
+button.icon.stroke-tertiary {
+  @apply border border-tertiary text-tertiary hover:bg-tertiary hover:text-white;
+}
+
+button.icon.stroke-warning {
+  @apply border border-warning text-warning hover:bg-warning hover:text-white;
 }

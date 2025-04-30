@@ -157,6 +157,7 @@
             "format": "xlf",
             "outputPath": "src/locale",
             "includeContext": true,
+            "includeMeaningAndDescription": true,
             "resetTranslationState": true,
             "trim": true,
             "targetFiles": [

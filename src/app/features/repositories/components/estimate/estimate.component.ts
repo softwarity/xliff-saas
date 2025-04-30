@@ -18,18 +18,26 @@ import { CancelConfirmComponent } from '../../../../shared/components/cancel-con
   ],
   template: `
     <div class="flex items-center justify-between gap-2">
-    @if (estimation()) {
-      @if (estimation()?.status === 'pending') {
+    @switch(estimation()?.status) {
+      @case('pending') {
         <span class="text-sm text-gray-500 dark:text-gray-400" i18n="@@PENDING">Pending...</span>
-      } @else if (estimation()?.status === 'estimating') {
+      }
+      @case('estimating') {
         <span class="text-sm text-gray-500 dark:text-gray-400" i18n="@@ESTIMATING">Estimating...</span>
-      } @else if (estimation()?.status === 'translating') {
+      }
+      @case('translating') {
         <span class="text-sm text-gray-500 dark:text-gray-400" i18n="@@TRANSLATING">Translating...</span>
-      } @else if (estimation()?.status === 'cancelling') {
+      }
+      @case('cancelling') {
         <span class="text-sm text-gray-500 dark:text-gray-400" i18n="@@CANCELING">Cancelling...</span>
-      } @else if (estimation()?.status === 'cancelled') {
-        <span class="text-sm text-red-500 dark:text-red-400" i18n="@@CANCELLED">Cancelled</span>
-      } @else if (estimation()?.status === 'completed') {
+      }
+      @case('cancelled') {
+        <span class="text-sm text-red-300 dark:text-red-200" i18n="@@CANCELLED">Cancelled</span>
+      }
+      @case('failed') {
+        <span class="text-sm text-red-500 dark:text-red-400" i18n="@@FAILED">Failed</span>
+      }
+      @case('completed') {
         <div class="flex items-center gap-2">
           <span class="text-sm text-green-500 dark:text-green-400" i18n="@@TRANSLATION_UNITS_DETECTED">{{ estimation()?.transUnitFound }} translation units detected</span>
           <div class="relative group">
@@ -41,11 +49,10 @@ import { CancelConfirmComponent } from '../../../../shared/components/cancel-con
             </div>
           </div>
         </div>
-      } @else {
-        <span class="text-sm text-red-500 dark:text-red-400">{{ estimation()?.status }}</span>
       }
-    } @else {
-      <span class="text-sm text-red-500 dark:text-red-400" i18n="@@NO_ESTIMATION_AVAILABLE">No estimation available...</span>
+      @default {
+        <span class="text-sm text-red-300 dark:text-red-200" i18n="@@NO_ESTIMATION_AVAILABLE">No estimation available...</span>
+      }
     }
     @if(estimation()?.status === 'pending' || estimation()?.status === 'estimating') {
       <app-cancel-confirm [confirmCallback]="onCancel.bind(this)" />
@@ -94,6 +101,7 @@ export class EstimateComponent implements OnDestroy {
     if (!$event) {
       return;
     }
+    this.estimation.set({status: 'pending'} as Job);
     this.subscription?.unsubscribe();
     this.subscription = this.repositoryService.estimateRepository(this.repository(), $event).pipe(
       tap((job) => {
@@ -119,7 +127,6 @@ export class EstimateComponent implements OnDestroy {
 
   onCancel(): Observable<void> {
     const id = this.estimation()?.id;
-    console.log('on confirm Cancel');
     if (!!id) { 
       this.estimation.update((job: Job | null | undefined) => job ? ({ ...job, status: 'cancelling' }) : null);
       return this.jobService.cancelJob(id);

@@ -47,7 +47,7 @@
         <target state="translated">Wie es funktioniert</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/header/header.component.ts</context>
-          <context context-type="linenumber">36</context>
+          <context context-type="linenumber">37</context>
         </context-group>
       </trans-unit>
       <trans-unit id="NAVIGATION_DOCUMENTATION" datatype="html">
@@ -55,7 +55,7 @@
         <target state="translated">Dokumentation</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/header/header.component.ts</context>
-          <context context-type="linenumber">43</context>
+          <context context-type="linenumber">44</context>
         </context-group>
       </trans-unit>
       <trans-unit id="AUTH_SIGN_IN_BUTTON" datatype="html">
@@ -63,31 +63,7 @@
         <target state="translated">Anmelden</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/header/header.component.ts</context>
-          <context context-type="linenumber">55</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="THEME_TOGGLE_TO_DARK" datatype="html">
-        <source>Dark mode</source>
-        <target state="translated">Dunkelmodus</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/components/header/header.component.ts</context>
-          <context context-type="linenumber">60</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="THEME_TOGGLE_TO_LIGHT" datatype="html">
-        <source>Light mode</source>
-        <target state="translated">Lichtmodus</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/components/header/header.component.ts</context>
-          <context context-type="linenumber">61</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="THEME_TOGGLE_TO_SYSTEM" datatype="html">
-        <source>System preference</source>
-        <target state="translated">Systempräferenz</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/components/header/header.component.ts</context>
-          <context context-type="linenumber">62</context>
+          <context context-type="linenumber">56</context>
         </context-group>
       </trans-unit>
       <trans-unit id="YOUR_PROFILE" datatype="html">
@@ -2075,7 +2051,7 @@
         <target state="translated">Schätzung...</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/repositories/components/estimate/estimate.component.ts</context>
-          <context context-type="linenumber">25</context>
+          <context context-type="linenumber">26</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/repositories/components/translate/translate.component.ts</context>
@@ -2087,7 +2063,7 @@
         <target state="translated">Übersetzen...</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/repositories/components/estimate/estimate.component.ts</context>
-          <context context-type="linenumber">27</context>
+          <context context-type="linenumber">29</context>
         </context-group>
       </trans-unit>
       <trans-unit id="CANCELING" datatype="html">
@@ -2095,7 +2071,7 @@
         <target state="translated">Abbrechen...</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/repositories/components/estimate/estimate.component.ts</context>
-          <context context-type="linenumber">29</context>
+          <context context-type="linenumber">32</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/repositories/components/translate/translate.component.ts</context>
@@ -2107,7 +2083,7 @@
         <target state="translated">Abgebrochen</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/repositories/components/estimate/estimate.component.ts</context>
-          <context context-type="linenumber">31</context>
+          <context context-type="linenumber">35</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/repositories/components/translate/translate.component.ts</context>
@@ -2119,7 +2095,7 @@
         <target state="translated"><x id="INTERPOLATION" equiv-text="{{ estimation()?.transUnitFound }}"/> Übersetzungseinheiten erkannt</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/repositories/components/estimate/estimate.component.ts</context>
-          <context context-type="linenumber">34</context>
+          <context context-type="linenumber">42</context>
         </context-group>
       </trans-unit>
       <trans-unit id="NO_ESTIMATION_AVAILABLE" datatype="html">
@@ -2127,7 +2103,7 @@
         <target state="translated">Keine Schätzung verfügbar...</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/repositories/components/estimate/estimate.component.ts</context>
-          <context context-type="linenumber">48</context>
+          <context context-type="linenumber">54</context>
         </context-group>
       </trans-unit>
       <trans-unit id="ESTIMATE" datatype="html">
@@ -2135,7 +2111,7 @@
         <target state="translated">Schätzung</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/repositories/components/estimate/estimate.component.ts</context>
-          <context context-type="linenumber">53</context>
+          <context context-type="linenumber">60</context>
         </context-group>
       </trans-unit>
       <trans-unit id="UPDATED_AT" datatype="html">
@@ -2187,7 +2163,7 @@
         <target state="translated">Keine Übersetzung verfügbar...</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/repositories/components/translate/translate.component.ts</context>
-          <context context-type="linenumber">45</context>
+          <context context-type="linenumber">48</context>
         </context-group>
       </trans-unit>
       <trans-unit id="TRANSLATE" datatype="html">
@@ -2195,7 +2171,7 @@
         <target state="translated">Übersetzen</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/repositories/components/translate/translate.component.ts</context>
-          <context context-type="linenumber">53</context>
+          <context context-type="linenumber">56</context>
         </context-group>
       </trans-unit>
       <trans-unit id="REPOSITORIES_TITLE" datatype="html">
@@ -3668,7 +3644,6 @@
       </trans-unit>
       <trans-unit id="GITLAB_DESC" datatype="html">
         <source>Create a Personal Access Token with <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>api<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/>, <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>read_repository<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/>, and <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>write_repository<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/> scopes.</source>
-        <target state="new">Erstellen Sie ein persönliches Zugriffstoken mit <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code&gt;"/>api<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code&gt;"/>, <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code&gt;"/>read_repository<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code&gt;"/> und <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code&gt;"/>write_repository<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code&gt;"/> Scopes.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">86</context>
@@ -3676,7 +3651,6 @@
       </trans-unit>
       <trans-unit id="BITBUCKET_DESC" datatype="html">
         <source>Create an App Password with <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>repository:read<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/> and <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>repository:write<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/> permissions.</source>
-        <target state="new">Erstellen Sie ein App-Passwort mit <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code&gt;"/>repository:read<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code&gt;"/> und <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code&gt;"/>repository:write<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code&gt;"/> Berechtigungen.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">98</context>
@@ -5063,7 +5037,7 @@
         <target state="translated">Preisgestaltung</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/header/header.component.ts</context>
-          <context context-type="linenumber">49</context>
+          <context context-type="linenumber">50</context>
         </context-group>
       </trans-unit>
       <trans-unit id="FAQ_TITLE" datatype="html">
@@ -5188,7 +5162,6 @@
       </trans-unit>
       <trans-unit id="GET_YOUR_TOKEN_HERE" datatype="html">
         <source>Get your token here</source>
-        <target state="new">Get your token here</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">48</context>
@@ -5196,7 +5169,6 @@
       </trans-unit>
       <trans-unit id="SUPPORTED_FORMATS_XLIFF_1_2_DESCRIPTION" datatype="html">
         <source>Full support for XLIFF 1.2 format, including all Angular i18n features and metadata</source>
-        <target state="new">Full support for XLIFF 1.2 format, including all Angular i18n features and metadata</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/how-it-works/how-it-works.component.html</context>
           <context context-type="linenumber">96</context>
@@ -5204,7 +5176,6 @@
       </trans-unit>
       <trans-unit id="SOON_SUPPORTED_FORMATS_XLIFF_2_0_DESCRIPTION" datatype="html">
         <source>(Soon) Complete support for the latest XLIFF 2.0 specification with enhanced features</source>
-        <target state="new">(Soon) Complete support for the latest XLIFF 2.0 specification with enhanced features</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/how-it-works/how-it-works.component.html</context>
           <context context-type="linenumber">100</context>
@@ -5212,7 +5183,6 @@
       </trans-unit>
       <trans-unit id="GITHUB_DESC" datatype="html">
         <source>Create a Personal Access Token with <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>repo<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/>, and <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>repo:org<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/> scopes.</source>
-        <target state="new">Create a Personal Access Token with <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>repo<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/>, and <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>repo:org<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/> scopes.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">74</context>
@@ -5220,7 +5190,6 @@
       </trans-unit>
       <trans-unit id="CONNECT_STEP_1_TITLE" datatype="html">
         <source>Select a provider</source>
-        <target state="new">Select a provider</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">60</context>
@@ -5228,7 +5197,6 @@
       </trans-unit>
       <trans-unit id="CONNECT_STEP_1_DESCRIPTION" datatype="html">
         <source>Choose from GitHub, GitLab, or Bitbucket</source>
-        <target state="new">Choose from GitHub, GitLab, or Bitbucket</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">60</context>
@@ -5236,7 +5204,6 @@
       </trans-unit>
       <trans-unit id="CONNECT_STEP_2_TITLE" datatype="html">
         <source>Configure access</source>
-        <target state="new">Configure access</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">61</context>
@@ -5244,7 +5211,6 @@
       </trans-unit>
       <trans-unit id="CONNECT_STEP_2_DESCRIPTION" datatype="html">
         <source>Create and provide the appropriate tokens</source>
-        <target state="new">Create and provide the appropriate tokens</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">61</context>
@@ -5252,7 +5218,6 @@
       </trans-unit>
       <trans-unit id="CONNECT_STEP_3_TITLE" datatype="html">
         <source>Save your configuration</source>
-        <target state="new">Save your configuration</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">62</context>
@@ -5260,7 +5225,6 @@
       </trans-unit>
       <trans-unit id="CONNECT_STEP_3_DESCRIPTION" datatype="html">
         <source>Enter your token and save the connection</source>
-        <target state="new">Enter your token and save the connection</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">62</context>
@@ -5268,7 +5232,6 @@
       </trans-unit>
       <trans-unit id="BITBUCKET_CONNECTED_SUCCESS" datatype="html">
         <source>Successfully connected to Bitbucket</source>
-        <target state="new">Successfully connected to Bitbucket</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/git-providers/bitbucket/bitbucket.service.ts</context>
           <context context-type="linenumber">19</context>
@@ -5276,7 +5239,6 @@
       </trans-unit>
       <trans-unit id="FAILED_TO_CONNECT_BITBUCKET" datatype="html">
         <source>Failed to connect to Bitbucket. <x id="PH" equiv-text="err.message"/></source>
-        <target state="new">Failed to connect to Bitbucket. <x id="PH" equiv-text="err.message"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/git-providers/bitbucket/bitbucket.service.ts</context>
           <context context-type="linenumber">22</context>
@@ -5284,7 +5246,6 @@
       </trans-unit>
       <trans-unit id="GITHUB_CONNECTED_SUCCESS" datatype="html">
         <source>Successfully connected to Github</source>
-        <target state="new">Successfully connected to Github</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/git-providers/github/github.service.ts</context>
           <context context-type="linenumber">18</context>
@@ -5292,7 +5253,6 @@
       </trans-unit>
       <trans-unit id="FAILED_TO_CONNECT_GITHUB" datatype="html">
         <source>Failed to connect to Github. <x id="PH" equiv-text="err.message"/></source>
-        <target state="new">Failed to connect to Github. <x id="PH" equiv-text="err.message"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/git-providers/github/github.service.ts</context>
           <context context-type="linenumber">21</context>
@@ -5300,7 +5260,6 @@
       </trans-unit>
       <trans-unit id="GITLAB_CONNECTED_SUCCESS" datatype="html">
         <source>Successfully connected to GitLab</source>
-        <target state="new">Successfully connected to GitLab</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/git-providers/gitlab/gitlab.service.ts</context>
           <context context-type="linenumber">18</context>
@@ -5308,7 +5267,6 @@
       </trans-unit>
       <trans-unit id="FAILED_TO_CONNECT_GITLAB" datatype="html">
         <source>Failed to connect to GitLab. <x id="PH" equiv-text="err.message"/></source>
-        <target state="new">Failed to connect to GitLab. <x id="PH" equiv-text="err.message"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/git-providers/gitlab/gitlab.service.ts</context>
           <context context-type="linenumber">21</context>
@@ -5316,10 +5274,27 @@
       </trans-unit>
       <trans-unit id="ESTIMATED_TIME" datatype="html">
         <source>Estimated time: <x id="PH" equiv-text="minutes"/> minutes</source>
-        <target state="new">Estimated time: <x id="PH" equiv-text="minutes"/> minutes</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/repositories/components/estimate/estimate.component.ts</context>
-          <context context-type="linenumber">89</context>
+          <context context-type="linenumber">96</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="TOGGLE_COLOR_SCHEME" datatype="html">
+        <source>Toggle color scheme</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/components/color-scheme-switcher.ts</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="FAILED" datatype="html">
+        <source>Failed</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/repositories/components/estimate/estimate.component.ts</context>
+          <context context-type="linenumber">38</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/repositories/components/translate/translate.component.ts</context>
+          <context context-type="linenumber">44</context>
         </context-group>
       </trans-unit>
     </body>

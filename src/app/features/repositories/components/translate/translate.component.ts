@@ -38,11 +38,14 @@ import { TranslateModalComponent } from './translate-modal/translate-modal.compo
           <span class="text-sm text-gray-500 dark:text-gray-400" i18n="@@CANCELING">Cancelling...</span>
         }
         @case ('cancelled') {
-          <span class="text-sm text-red-500 dark:text-red-400" i18n="@@CANCELLED">Cancelled</span>
+          <span class="text-sm text-red-300 dark:text-red-200" i18n="@@CANCELLED">Cancelled</span>
+        }
+        @case ('failed') {
+          <span class="text-sm text-red-500 dark:text-red-400" i18n="@@FAILED">Failed</span>
         }
       }
     } @else {
-      <span class="text-sm text-red-500 dark:text-red-400" i18n="@@NO_TRANSLATION_AVAILABLE">No translation available...</span>
+      <span class="text-sm text-red-300 dark:text-red-200" i18n="@@NO_TRANSLATION_AVAILABLE">No translation available...</span>
     }
     @if (balance() <= 0) {
       <app-purchase-credits-button buttonClass="flat-secondary"></app-purchase-credits-button>

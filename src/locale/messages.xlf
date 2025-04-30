@@ -34,7 +34,7 @@
         <source>Sign In</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/header/header.component.ts</context>
-          <context context-type="linenumber">55</context>
+          <context context-type="linenumber">56</context>
         </context-group>
       </trans-unit>
       <trans-unit id="AUTH_LOGIN_SIGN_UP" datatype="html">
@@ -164,7 +164,7 @@
         <source>Cancelling...</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/repositories/components/estimate/estimate.component.ts</context>
-          <context context-type="linenumber">29</context>
+          <context context-type="linenumber">32</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/repositories/components/translate/translate.component.ts</context>
@@ -175,7 +175,7 @@
         <source>Cancelled</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/repositories/components/estimate/estimate.component.ts</context>
-          <context context-type="linenumber">31</context>
+          <context context-type="linenumber">35</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/repositories/components/translate/translate.component.ts</context>
@@ -447,7 +447,7 @@
         <source>Estimate</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/repositories/components/estimate/estimate.component.ts</context>
-          <context context-type="linenumber">53</context>
+          <context context-type="linenumber">60</context>
         </context-group>
       </trans-unit>
       <trans-unit id="ESTIMATE_BUTTON" datatype="html">
@@ -465,7 +465,7 @@
         <source>Estimating...</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/repositories/components/estimate/estimate.component.ts</context>
-          <context context-type="linenumber">25</context>
+          <context context-type="linenumber">26</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/repositories/components/translate/translate.component.ts</context>
@@ -765,7 +765,7 @@
         <source>Documentation</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/header/header.component.ts</context>
-          <context context-type="linenumber">43</context>
+          <context context-type="linenumber">44</context>
         </context-group>
       </trans-unit>
       <trans-unit id="NAVIGATION_GIT_PROVIDERS" datatype="html">
@@ -779,7 +779,7 @@
         <source>How It Works</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/header/header.component.ts</context>
-          <context context-type="linenumber">36</context>
+          <context context-type="linenumber">37</context>
         </context-group>
       </trans-unit>
       <trans-unit id="NEXT_PAGE" datatype="html">
@@ -811,7 +811,7 @@
         <source>No estimation available...</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/repositories/components/estimate/estimate.component.ts</context>
-          <context context-type="linenumber">48</context>
+          <context context-type="linenumber">54</context>
         </context-group>
       </trans-unit>
       <trans-unit id="NO_RECENT_ACTIVITY" datatype="html">
@@ -862,7 +862,7 @@
         <source>No translation available...</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/repositories/components/translate/translate.component.ts</context>
-          <context context-type="linenumber">45</context>
+          <context context-type="linenumber">48</context>
         </context-group>
       </trans-unit>
       <trans-unit id="PAGE_INFO" datatype="html">
@@ -1213,27 +1213,6 @@
           <context context-type="linenumber">163</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="THEME_TOGGLE_TO_DARK" datatype="html">
-        <source>Dark mode</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/components/header/header.component.ts</context>
-          <context context-type="linenumber">60</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="THEME_TOGGLE_TO_LIGHT" datatype="html">
-        <source>Light mode</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/components/header/header.component.ts</context>
-          <context context-type="linenumber">61</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="THEME_TOGGLE_TO_SYSTEM" datatype="html">
-        <source>System preference</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/components/header/header.component.ts</context>
-          <context context-type="linenumber">62</context>
-        </context-group>
-      </trans-unit>
       <trans-unit id="TOKEN_INPUT_PLACEHOLDER" datatype="html">
         <source>Enter your access token</source>
         <context-group purpose="location">
@@ -1279,7 +1258,7 @@
         <source>Translate</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/repositories/components/translate/translate.component.ts</context>
-          <context context-type="linenumber">53</context>
+          <context context-type="linenumber">56</context>
         </context-group>
       </trans-unit>
       <trans-unit id="TRANSLATE_BUTTON" datatype="html">
@@ -1297,7 +1276,7 @@
         <source>Translating...</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/repositories/components/estimate/estimate.component.ts</context>
-          <context context-type="linenumber">27</context>
+          <context context-type="linenumber">29</context>
         </context-group>
       </trans-unit>
       <trans-unit id="TRANSLATING_PROGRESS" datatype="html">
@@ -1336,7 +1315,7 @@
         <source><x id="INTERPOLATION" equiv-text="{{ estimation()?.transUnitFound }}"/> translation units detected</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/repositories/components/estimate/estimate.component.ts</context>
-          <context context-type="linenumber">34</context>
+          <context context-type="linenumber">42</context>
         </context-group>
       </trans-unit>
       <trans-unit id="TRANSLATION_WORKFLOW_APP_TITLE" datatype="html">
@@ -4550,7 +4529,7 @@
         <source>Pricing</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/header/header.component.ts</context>
-          <context context-type="linenumber">49</context>
+          <context context-type="linenumber">50</context>
         </context-group>
       </trans-unit>
       <trans-unit id="WHAT_IS_THE_PRICE_OF_XLIFF_TRANSLATOR" datatype="html">
@@ -4697,7 +4676,25 @@
         <source>Estimated time: <x id="PH" equiv-text="minutes"/> minutes</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/repositories/components/estimate/estimate.component.ts</context>
-          <context context-type="linenumber">89</context>
+          <context context-type="linenumber">96</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="FAILED" datatype="html">
+        <source>Failed</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/repositories/components/estimate/estimate.component.ts</context>
+          <context context-type="linenumber">38</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/repositories/components/translate/translate.component.ts</context>
+          <context context-type="linenumber">44</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="TOGGLE_COLOR_SCHEME" datatype="html">
+        <source>Toggle color scheme</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/components/color-scheme-switcher.ts</context>
+          <context context-type="linenumber">8</context>
         </context-group>
       </trans-unit>
     </body>
