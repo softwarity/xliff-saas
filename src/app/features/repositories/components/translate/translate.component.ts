@@ -90,6 +90,7 @@ export class TranslateComponent implements OnDestroy {
     if (!$event) {
       return;
     }
+    this.translation.set({status: 'pending'} as Job);
     this.subscription?.unsubscribe();
     this.subscription = this.repositoryService.translateRepository(this.repository(), $event).pipe(
       tap((job) => {
