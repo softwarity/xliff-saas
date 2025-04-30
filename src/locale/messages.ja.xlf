@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-  <file source-language="en" target-language="ja" datatype="plaintext" original="ng2.template">
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 https://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
+  <file source-language="en" datatype="plaintext" original="ng2.template" target-language="ja">
     <body>
       <trans-unit id="FOOTER_TERMS" datatype="html">
         <source>Terms of Service</source>
@@ -384,7 +384,7 @@
       </trans-unit>
       <trans-unit id="FAILED_TO_STORE_TOKEN" datatype="html">
         <source>Failed to store <x id="PH" equiv-text="provider"/> token. Please try again later.</source>
-        <target state="translated">&lt;お使いの<x id="PH" equiv-text="provider"/> トークンを保存できませんでした。後でもう一度お試しください。&gt;</target>
+        <target state="translated"><お使いの<x id="PH" equiv-text="provider"/> トークンを保存できませんでした。後でもう一度お試しください。></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/services/token.service.ts</context>
           <context context-type="linenumber">21</context>
@@ -555,7 +555,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="AUTH_EMAIL_SENT_MESSAGE" datatype="html">
-        <source>We&apos;ve sent you an email with instructions. Please check your inbox and follow the instructions provided.</source>
+        <source>We've sent you an email with instructions. Please check your inbox and follow the instructions provided.</source>
         <target state="translated">指示を含むメールをお送りしました。受信ボックスをご確認の上、指示に従ってください。</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/email-sent.component.ts</context>
@@ -671,7 +671,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="AUTH_LOGIN_NO_ACCOUNT" datatype="html">
-        <source>Don&apos;t have an account?</source>
+        <source>Don't have an account?</source>
         <target state="translated">アカウントをお持ちでないですか？</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/login.component.ts</context>
@@ -759,7 +759,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="AUTH_SIGNUP_PASSWORDS_DONT_MATCH" datatype="html">
-        <source>Passwords don&apos;t match</source>
+        <source>Passwords don't match</source>
         <target state="translated">パスワードが一致しません</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/signup.component.ts</context>
@@ -855,7 +855,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="AUTH_UPDATE_PASSWORD_PASSWORDS_DONT_MATCH" datatype="html">
-        <source>Passwords don&apos;t match</source>
+        <source>Passwords don't match</source>
         <target state="translated">パスワードが一致しません</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/update-password.component.ts</context>
@@ -2279,7 +2279,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="CONTACT_US_DESCRIPTION" datatype="html">
-        <source>Have a question? Send us a message and we&apos;ll get back to you as soon as possible.</source>
+        <source>Have a question? Send us a message and we'll get back to you as soon as possible.</source>
         <target state="translated">質問がありますか？メッセージを送信してください。できるだけ早くお返事いたします。</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/support/contact.component.ts</context>
@@ -2287,8 +2287,8 @@
         </context-group>
       </trans-unit>
       <trans-unit id="CONTACT_US_SUPPORT_LINK" datatype="html">
-        <source>If you have an account, you can also <x id="START_LINK" ctype="x-a" equiv-text="&lt;a [routerLink]=&quot;[&apos;/support&apos;]&quot; class=&quot;text-primary hover:underline&quot;&gt;"/>access our support ticket system<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/> for faster assistance.</source>
-        <target state="translated">アカウントをお持ちの場合は、<x id="START_LINK" ctype="x-a" equiv-text="&lt;a [routerLink]=&quot;[&apos;/support&apos;]&quot; class=&quot;text-primary hover:underline&quot;&gt;"/> サポートチケットシステムにアクセス<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/> して、迅速なサポートを受けることもできます。</target>
+        <source>If you have an account, you can also <x id="START_LINK" ctype="x-a" equiv-text="&lt;a [routerLink]=&quot;['/support']&quot; class=&quot;text-primary hover:underline&quot;>"/>access our support ticket system<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/> for faster assistance.</source>
+        <target state="translated">アカウントをお持ちの場合は、<x id="START_LINK" ctype="x-a" equiv-text="&lt;a [routerLink]=&quot;['/support']&quot; class=&quot;text-primary hover:underline&quot;>"/> サポートチケットシステムにアクセス<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/> して、迅速なサポートを受けることもできます。</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/support/contact.component.ts</context>
           <context context-type="linenumber">24</context>
@@ -2583,7 +2583,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="ISSUE_NOT_FOUND_DESC" datatype="html">
-        <source>The issue you&apos;re looking for doesn&apos;t exist or you don&apos;t have permission to view it.</source>
+        <source>The issue you're looking for doesn't exist or you don't have permission to view it.</source>
         <target state="translated">お探しの問題は存在しないか、表示する権限がありません。</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/support/issue-detail.component.ts</context>
@@ -2631,8 +2631,8 @@
         </context-group>
       </trans-unit>
       <trans-unit id="CREATED_AT" datatype="html">
-        <source>Created: <x id="INTERPOLATION" equiv-text="{{ issue()!.created_at | date:&apos;medium&apos; }}"/></source>
-        <target state="translated">作成日: <x id="INTERPOLATION" equiv-text="{{ issue()!.created_at | date:&apos;medium&apos; }}"/></target>
+        <source>Created: <x id="INTERPOLATION" equiv-text="{{ issue()!.created_at | date:'medium' }}"/></source>
+        <target state="translated">作成日: <x id="INTERPOLATION" equiv-text="{{ issue()!.created_at | date:'medium' }}"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/support/issue-detail.component.ts</context>
           <context context-type="linenumber">76</context>
@@ -3083,8 +3083,8 @@
         </context-group>
       </trans-unit>
       <trans-unit id="CUSTOM_INSTRUCTIONS_FILENAME_DESC" datatype="html">
-        <source>Create a file named <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code class=&quot;bg-blue-100 dark:bg-blue-900/50 px-2 py-1 rounded text-blue-900 dark:text-blue-100&quot;&gt;"/>xliff-instructions.md<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code&gt;"/> at the root of your Git repository to provide custom translation instructions.</source>
-        <target state="translated">Git リポジトリのルートに <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code class=&quot;bg-blue-100 dark:bg-blue-900/50 px-2 py-1 rounded text-blue-900 dark:text-blue-100&quot;&gt;"/> xliff-instructions.md<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code&gt;"/> というファイルを作成して、カスタム翻訳指示を提供してください。</target>
+        <source>Create a file named <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code class=&quot;bg-blue-100 dark:bg-blue-900/50 px-2 py-1 rounded text-blue-900 dark:text-blue-100&quot;>"/>xliff-instructions.md<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code>"/> at the root of your Git repository to provide custom translation instructions.</source>
+        <target state="translated">Git リポジトリのルートに <x id="START_TAG_CODE" ctype="x-code" equiv-text="&lt;code class=&quot;bg-blue-100 dark:bg-blue-900/50 px-2 py-1 rounded text-blue-900 dark:text-blue-100&quot;>"/> xliff-instructions.md<x id="CLOSE_TAG_CODE" ctype="x-code" equiv-text="&lt;/code>"/> というファイルを作成して、カスタム翻訳指示を提供してください。</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/custom.component.ts</context>
           <context context-type="linenumber">36</context>
@@ -3227,7 +3227,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="INITIAL_SETUP_DESCRIPTION" datatype="html">
-        <source>Start by adding Angular&apos;s localization package to your project:</source>
+        <source>Start by adding Angular's localization package to your project:</source>
         <target state="translated">プロジェクトにAngularのローカリゼーションパッケージを追加することから始めます：</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/setup.component.ts</context>
@@ -3251,8 +3251,8 @@
         </context-group>
       </trans-unit>
       <trans-unit id="INITIAL_SETUP_CHANGE_2" datatype="html">
-        <source>Add &quot;@angular/localize/init&quot; to the polyfills array in angular.json</source>
-        <target state="translated">angular.jsonのpolyfills配列に「&quot;@angular/localize/init&quot;」を追加してください</target>
+        <source>Add "@angular/localize/init" to the polyfills array in angular.json</source>
+        <target state="translated">angular.jsonのpolyfills配列に「"@angular/localize/init"」を追加してください</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/setup.component.ts</context>
           <context context-type="linenumber">19</context>
@@ -3275,7 +3275,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="INITIAL_SETUP_NOTE" datatype="html">
-        <source>Note: We&apos;ll modify the outputPath later in the configuration to match our workflow.</source>
+        <source>Note: We'll modify the outputPath later in the configuration to match our workflow.</source>
         <target state="translated">注: 後で設定でoutputPathを変更して、ワークフローに合わせます。</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/setup.component.ts</context>
@@ -3291,7 +3291,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="EXTRACT_TOOL_DESCRIPTION" datatype="html">
-        <source>For managing translation files, we&apos;ll use ng-extract-i18n-merge which simplifies the process of extracting and merging translations:</source>
+        <source>For managing translation files, we'll use ng-extract-i18n-merge which simplifies the process of extracting and merging translations:</source>
         <target state="translated">翻訳ファイルを管理するために、ng-extract-i18n-mergeを使用します。これにより、翻訳の抽出とマージのプロセスが簡素化されます：</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/setup.component.ts</context>
@@ -3371,40 +3371,40 @@
         </context-group>
       </trans-unit>
       <trans-unit id="EXTRACT_I18N_OPTION_1" datatype="html">
-        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>buildTarget<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: Your application&apos;s build target name</source>
-        <target state="translated"><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>buildTarget<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: アプリケーションのビルドターゲット名</target>
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>buildTarget<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: Your application's build target name</source>
+        <target state="translated"><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>buildTarget<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: アプリケーションのビルドターゲット名</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/setup.component.ts</context>
           <context context-type="linenumber">112</context>
         </context-group>
       </trans-unit>
       <trans-unit id="EXTRACT_I18N_OPTION_2" datatype="html">
-        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>outputPath<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: Directory where translation files will be stored</source>
-        <target state="translated"><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>出力パス<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: 翻訳ファイルを保存するディレクトリ</target>
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>outputPath<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: Directory where translation files will be stored</source>
+        <target state="translated"><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>出力パス<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: 翻訳ファイルを保存するディレクトリ</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/setup.component.ts</context>
           <context context-type="linenumber">113</context>
         </context-group>
       </trans-unit>
       <trans-unit id="EXTRACT_I18N_OPTION_3" datatype="html">
-        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>includeContext<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: Includes source file information in the XLIFF files</source>
-        <target state="translated"><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>includeContext<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>:XLIFFファイルにソースファイル情報を含めます</target>
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>includeContext<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: Includes source file information in the XLIFF files</source>
+        <target state="translated"><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>includeContext<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>:XLIFFファイルにソースファイル情報を含めます</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/setup.component.ts</context>
           <context context-type="linenumber">114</context>
         </context-group>
       </trans-unit>
       <trans-unit id="EXTRACT_I18N_OPTION_4" datatype="html">
-        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>resetTranslationState<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: Marks all translations as needing review on changes</source>
-        <target state="translated"><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>翻訳状態をリセットする<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: 変更に伴いすべての翻訳をレビューが必要とするマークを付けます</target>
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>resetTranslationState<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: Marks all translations as needing review on changes</source>
+        <target state="translated"><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>翻訳状態をリセットする<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: 変更に伴いすべての翻訳をレビューが必要とするマークを付けます</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/setup.component.ts</context>
           <context context-type="linenumber">115</context>
         </context-group>
       </trans-unit>
       <trans-unit id="EXTRACT_I18N_OPTION_5" datatype="html">
-        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>targetFiles<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: List of translation files to generate/update</source>
-        <target state="translated"><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>ターゲットファイル<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>：生成/更新する翻訳ファイルのリスト</target>
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>targetFiles<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: List of translation files to generate/update</source>
+        <target state="translated"><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>ターゲットファイル<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>：生成/更新する翻訳ファイルのリスト</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/setup.component.ts</context>
           <context context-type="linenumber">116</context>
@@ -3667,14 +3667,16 @@
         </context-group>
       </trans-unit>
       <trans-unit id="GITLAB_DESC" datatype="html">
-        <source>Create a Personal Access Token with <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>api<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/>, <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>read_repository<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/>, and <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>write_repository<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/> scopes.</source>
+        <source>Create a Personal Access Token with <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b>"/>api<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b>"/>, <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b>"/>read_repository<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b>"/>, and <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b>"/>write_repository<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b>"/> scopes.</source>
+        <target state="translated">個人アクセストークンを作成し、<x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b>"/>api<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b>"/>, <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b>"/>read_repository<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b>"/>, と <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b>"/>write_repository<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b>"/>スコープを設定します。</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">86</context>
         </context-group>
       </trans-unit>
       <trans-unit id="BITBUCKET_DESC" datatype="html">
-        <source>Create an App Password with <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>repository:read<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/> and <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>repository:write<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/> permissions.</source>
+        <source>Create an App Password with <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b>"/>repository:read<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b>"/> and <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b>"/>repository:write<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b>"/> permissions.</source>
+        <target state="translated">Appパスワードを作成します <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b>"/>repository:read<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b>"/> と <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b>"/>repository:write<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b>"/> 権限。</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">98</context>
@@ -3713,7 +3715,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="REPOSITORY_STEP_1" datatype="html">
-        <source>Navigate to the provider&apos;s page where your repositories are listed</source>
+        <source>Navigate to the provider's page where your repositories are listed</source>
         <target state="translated">提供者のページに移動し、リポジトリが一覧表示されます</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
@@ -4001,7 +4003,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="ESTIMATE_STEP_2" datatype="html">
-        <source>Click on &quot;Estimate&quot; to analyze your XLIFF files</source>
+        <source>Click on "Estimate" to analyze your XLIFF files</source>
         <target state="translated">「見積もり」をクリックして、XLIFFファイルを分析します</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
@@ -4017,24 +4019,24 @@
         </context-group>
       </trans-unit>
       <trans-unit id="ESTIMATE_STEP_31" datatype="html">
-        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Branch<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: Select the branch containing your XLIFF files</source>
-        <target state="translated"><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>ブランチ<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: XLIFFファイルが含まれているブランチを選択してください</target>
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>Branch<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: Select the branch containing your XLIFF files</source>
+        <target state="translated"><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>ブランチ<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: XLIFFファイルが含まれているブランチを選択してください</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">309</context>
         </context-group>
       </trans-unit>
       <trans-unit id="ESTIMATE_STEP_32" datatype="html">
-        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>File Pattern<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: By default &quot;xlf&quot; to search all XLIFF files. Use specific patterns like &quot;ru.xlf&quot; to target only Russian files</source>
-        <target state="translated"><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>ファイルパターン<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: デフォルトでは「xlf」で、すべてのXLIFFファイルを検索します。「ru.xlf」のような特定のパターンを使用すると、ロシアのファイルのみをターゲットにできます</target>
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>File Pattern<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: By default "xlf" to search all XLIFF files. Use specific patterns like "ru.xlf" to target only Russian files</source>
+        <target state="translated"><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>ファイルパターン<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: デフォルトでは「xlf」で、すべてのXLIFFファイルを検索します。「ru.xlf」のような特定のパターンを使用すると、ロシアのファイルのみをターゲットにできます</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">310</context>
         </context-group>
       </trans-unit>
       <trans-unit id="ESTIMATE_STEP_33" datatype="html">
-        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Translation State<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: Choose which translation units to include (default is &quot;new&quot; to focus on untranslated content)</source>
-        <target state="translated"><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>翻訳状態<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>: 含める翻訳ユニットを選択してください（デフォルトは「新」で、未翻訳のコンテンツに焦点を当てます）</target>
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>Translation State<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: Choose which translation units to include (default is "new" to focus on untranslated content)</source>
+        <target state="translated"><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>翻訳状態<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>: 含める翻訳ユニットを選択してください（デフォルトは「新」で、未翻訳のコンテンツに焦点を当てます）</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">311</context>
@@ -4121,7 +4123,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="TRANSLATE_STEP_2" datatype="html">
-        <source>Click on &quot;Translate&quot; to begin the process</source>
+        <source>Click on "Translate" to begin the process</source>
         <target state="translated">「Translate」をクリックしてプロセスを開始します</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
@@ -4153,16 +4155,16 @@
         </context-group>
       </trans-unit>
       <trans-unit id="TRANSLATE_STEP_3_TRANSLATION_STATE" datatype="html">
-        <source>Select which translation units to process (e.g., &quot;new&quot;, &quot;needs-translation&quot;)</source>
-        <target state="translated">処理する翻訳ユニットを選択します (例: &quot;新規&quot;, &quot;翻訳が必要&quot;)</target>
+        <source>Select which translation units to process (e.g., "new", "needs-translation")</source>
+        <target state="translated">処理する翻訳ユニットを選択します (例: "新規", "翻訳が必要")</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">346</context>
         </context-group>
       </trans-unit>
       <trans-unit id="TRANSLATE_STEP_3_TARGET_STATE" datatype="html">
-        <source>Define the state to set for translated units (e.g., &quot;translated&quot;, &quot;final&quot;)</source>
-        <target state="translated">翻訳されたユニットに設定する状態を定義します（例: &quot;translated&quot;, &quot;final&quot;）</target>
+        <source>Define the state to set for translated units (e.g., "translated", "final")</source>
+        <target state="translated">翻訳されたユニットに設定する状態を定義します（例: "translated", "final"）</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">347</context>
@@ -4177,8 +4179,8 @@
         </context-group>
       </trans-unit>
       <trans-unit id="TRANSLATION_OPTIONS_REF" datatype="html">
-        <source>You&apos;ll be prompted with the translation options modal as shown earlier in the &quot;Selecting Repositories&quot; section.</source>
-        <target state="translated">&quot;翻訳オプションモーダルが表示され、前述の「リポジトリの選択」セクションに示されているようになります。&quot;</target>
+        <source>You'll be prompted with the translation options modal as shown earlier in the "Selecting Repositories" section.</source>
+        <target state="translated">"翻訳オプションモーダルが表示され、前述の「リポジトリの選択」セクションに示されているようになります。"</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">354</context>
@@ -4321,7 +4323,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="CONTEXT_AWARE_AI_DESCRIPTION" datatype="html">
-        <source>Intelligent translations based on your application&apos;s context and business domain</source>
+        <source>Intelligent translations based on your application's context and business domain</source>
         <target state="translated">アプリケーションのコンテキストとビジネスドメインに基づいたインテリジェントな翻訳</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/features.component.ts</context>
@@ -4357,7 +4359,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="HOW_CAN_XLIFF_TRANSLATOR_HELP_MY_BUSINESS_ANSWER" datatype="html">
-        <source>XLIFF Translator simplifies the management of your application&apos;s translations by using AI to automatically generate accurate translations. This saves you time and money while improving the quality of your translations.</source>
+        <source>XLIFF Translator simplifies the management of your application's translations by using AI to automatically generate accurate translations. This saves you time and money while improving the quality of your translations.</source>
         <target state="translated">XLIFF翻訳者はAIを使用してアプリケーションの翻訳管理を簡素化し、正確な翻訳を自動生成します。これにより、時間とコストを節約し、翻訳の質を向上させることができます。</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
@@ -4469,7 +4471,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="AUTOMATED_WORKFLOW_ABSTRACT" datatype="html">
-        <source>Simply connect your Git repository, start the translation, and we&apos;ll handle the rest. Our AI-powered platform takes care of everything automatically.</source>
+        <source>Simply connect your Git repository, start the translation, and we'll handle the rest. Our AI-powered platform takes care of everything automatically.</source>
         <target state="translated">Git リポジトリに接続するだけで、翻訳を開始し、残りは私たちが処理します。私たちの AI 搭載プラットフォームは、すべてを自動的に処理します。</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/how-it-works/how-it-works.component.html</context>
@@ -4533,7 +4535,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="TRANSUNIT_SOURCE_DESCRIPTION" datatype="html">
-        <source>The original text in your application&apos;s source language</source>
+        <source>The original text in your application's source language</source>
         <target state="translated">アプリケーションのソース言語における元のテキスト</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/how-it-works/how-it-works.component.html</context>
@@ -4597,7 +4599,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="SUPPORTED_FORMATS_DESCRIPTION" datatype="html">
-        <source>Our platform supports the following XLIFF formats for maximum compatibility with Angular&apos;s internationalization system:</source>
+        <source>Our platform supports the following XLIFF formats for maximum compatibility with Angular's internationalization system:</source>
         <target state="translated">私たちのプラットフォームは、Angularの国際化システムとの最大互換性を確保するために、次のXLIFF形式をサポートしています：</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/how-it-works/how-it-works.component.html</context>
@@ -4613,7 +4615,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="CONTEXT_AWARE_DESCRIPTION" datatype="html">
-        <source>Our AI-powered translation engine understands your application&apos;s context, ensuring accurate and meaningful translations that maintain the original intent of your content.</source>
+        <source>Our AI-powered translation engine understands your application's context, ensuring accurate and meaningful translations that maintain the original intent of your content.</source>
         <target state="translated">私たちのAI駆動の翻訳エンジンは、あなたのアプリケーションのコンテキストを理解し、元の意図を保持した正確で意味のある翻訳を保証します。</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/how-it-works/how-it-works.component.html</context>
@@ -4701,7 +4703,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="OOPS_PAGE_NOT_FOUND" datatype="html">
-        <source>Oops! The page you&apos;re looking for seems to have vanished into the void...</source>
+        <source>Oops! The page you're looking for seems to have vanished into the void...</source>
         <target state="translated">おっと！探しているページは消えてしまったようです...</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/not-found.component.ts</context>
@@ -4781,7 +4783,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="PRICING_FAQ_MEMBERSHIP_LEVELS_ANSWER" datatype="html">
-        <source>As you purchase credits, you&apos;ll unlock membership levels (Bronze, Silver, Gold, Diamond) that provide additional features and better rates for translations. Once you reach a level, you keep it permanently.</source>
+        <source>As you purchase credits, you'll unlock membership levels (Bronze, Silver, Gold, Diamond) that provide additional features and better rates for translations. Once you reach a level, you keep it permanently.</source>
         <target state="translated">クレジットを購入すると、追加機能や翻訳に対するより良いレートを提供するメンバーシップレベル（ブロンズ、シルバー、ゴールド、ダイヤモンド）をアンロックします。一度レベルに達すると、そのレベルを永久に保持できます。</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/pricing.component.ts</context>
@@ -4797,7 +4799,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="PRICING_FAQ_SPECIAL_NEEDS_ANSWER" datatype="html">
-        <source>If you have specific needs or require a custom solution, please contact our sales team. We&apos;ll be happy to create a tailored credit package for your organization.</source>
+        <source>If you have specific needs or require a custom solution, please contact our sales team. We'll be happy to create a tailored credit package for your organization.</source>
         <target state="translated">特定のニーズがある場合やカスタムソリューションが必要な場合は、営業チームにご連絡ください。お客様の組織に合わせたクレジットパッケージを喜んで作成いたします。</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/pricing.component.ts</context>
@@ -5053,7 +5055,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="TERMS_SERVICE_TEXT" datatype="html">
-        <source>Our service is provided &quot;as is&quot; and we make no warranties about its reliability or availability. We reserve the right to modify or discontinue the service at any time.</source>
+        <source>Our service is provided "as is" and we make no warranties about its reliability or availability. We reserve the right to modify or discontinue the service at any time.</source>
         <target state="translated">私たちのサービスは「現状のまま」提供されており、その信頼性や可用性について保証はいたしません。私たちは、いつでもサービスを変更または中止する権利を留保します。</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/terms.component.ts</context>
@@ -5162,6 +5164,7 @@
       </trans-unit>
       <trans-unit id="GET_YOUR_TOKEN_HERE" datatype="html">
         <source>Get your token here</source>
+        <target state="translated">トークンをここで取得してください</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">48</context>
@@ -5169,6 +5172,7 @@
       </trans-unit>
       <trans-unit id="SUPPORTED_FORMATS_XLIFF_1_2_DESCRIPTION" datatype="html">
         <source>Full support for XLIFF 1.2 format, including all Angular i18n features and metadata</source>
+        <target state="translated">XLIFF 1.2フォーマットの完全サポート、すべてのAngular i18n機能およびメタデータを含む</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/how-it-works/how-it-works.component.html</context>
           <context context-type="linenumber">96</context>
@@ -5176,13 +5180,15 @@
       </trans-unit>
       <trans-unit id="SOON_SUPPORTED_FORMATS_XLIFF_2_0_DESCRIPTION" datatype="html">
         <source>(Soon) Complete support for the latest XLIFF 2.0 specification with enhanced features</source>
+        <target state="translated">（近日）最新のXLIFF 2.0仕様の完全サポートと強化機能</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/how-it-works/how-it-works.component.html</context>
           <context context-type="linenumber">100</context>
         </context-group>
       </trans-unit>
       <trans-unit id="GITHUB_DESC" datatype="html">
-        <source>Create a Personal Access Token with <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>repo<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/>, and <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>repo:org<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/> scopes.</source>
+        <source>Create a Personal Access Token with <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b>"/>repo<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b>"/>, and <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b>"/>repo:org<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b>"/> scopes.</source>
+        <target state="translated">個人用アクセストークンを作成するには、<x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b>"/>repo<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b>"/>および<x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b>"/>repo:org<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b>"/>スコープを選択してください。</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">74</context>
@@ -5190,6 +5196,7 @@
       </trans-unit>
       <trans-unit id="CONNECT_STEP_1_TITLE" datatype="html">
         <source>Select a provider</source>
+        <target state="translated">プロバイダーを選択してください</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">60</context>
@@ -5197,6 +5204,7 @@
       </trans-unit>
       <trans-unit id="CONNECT_STEP_1_DESCRIPTION" datatype="html">
         <source>Choose from GitHub, GitLab, or Bitbucket</source>
+        <target state="translated">GitHub、GitLab、またはBitbucketから選択してください</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">60</context>
@@ -5204,6 +5212,7 @@
       </trans-unit>
       <trans-unit id="CONNECT_STEP_2_TITLE" datatype="html">
         <source>Configure access</source>
+        <target state="translated">アクセスを設定する</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">61</context>
@@ -5211,6 +5220,7 @@
       </trans-unit>
       <trans-unit id="CONNECT_STEP_2_DESCRIPTION" datatype="html">
         <source>Create and provide the appropriate tokens</source>
+        <target state="translated">適切なトークンを作成して提供する</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">61</context>
@@ -5218,6 +5228,7 @@
       </trans-unit>
       <trans-unit id="CONNECT_STEP_3_TITLE" datatype="html">
         <source>Save your configuration</source>
+        <target state="translated">設定を保存する</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">62</context>
@@ -5225,6 +5236,7 @@
       </trans-unit>
       <trans-unit id="CONNECT_STEP_3_DESCRIPTION" datatype="html">
         <source>Enter your token and save the connection</source>
+        <target state="translated">トークンを入力して接続を保存します</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">62</context>
@@ -5232,6 +5244,7 @@
       </trans-unit>
       <trans-unit id="BITBUCKET_CONNECTED_SUCCESS" datatype="html">
         <source>Successfully connected to Bitbucket</source>
+        <target state="translated">Bitbucketに正常に接続されました</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/git-providers/bitbucket/bitbucket.service.ts</context>
           <context context-type="linenumber">19</context>
@@ -5239,6 +5252,7 @@
       </trans-unit>
       <trans-unit id="FAILED_TO_CONNECT_BITBUCKET" datatype="html">
         <source>Failed to connect to Bitbucket. <x id="PH" equiv-text="err.message"/></source>
+        <target state="translated">Bitbucketに接続できませんでした。<x id="PH" equiv-text="err.message"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/git-providers/bitbucket/bitbucket.service.ts</context>
           <context context-type="linenumber">22</context>
@@ -5246,6 +5260,7 @@
       </trans-unit>
       <trans-unit id="GITHUB_CONNECTED_SUCCESS" datatype="html">
         <source>Successfully connected to Github</source>
+        <target state="translated">正常にGithubに接続しました</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/git-providers/github/github.service.ts</context>
           <context context-type="linenumber">18</context>
@@ -5253,6 +5268,7 @@
       </trans-unit>
       <trans-unit id="FAILED_TO_CONNECT_GITHUB" datatype="html">
         <source>Failed to connect to Github. <x id="PH" equiv-text="err.message"/></source>
+        <target state="translated">Githubに接続できませんでした。<x id="PH" equiv-text="err.message"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/git-providers/github/github.service.ts</context>
           <context context-type="linenumber">21</context>
@@ -5260,6 +5276,7 @@
       </trans-unit>
       <trans-unit id="GITLAB_CONNECTED_SUCCESS" datatype="html">
         <source>Successfully connected to GitLab</source>
+        <target state="translated">GitLabに正常に接続しました</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/git-providers/gitlab/gitlab.service.ts</context>
           <context context-type="linenumber">18</context>
@@ -5267,6 +5284,7 @@
       </trans-unit>
       <trans-unit id="FAILED_TO_CONNECT_GITLAB" datatype="html">
         <source>Failed to connect to GitLab. <x id="PH" equiv-text="err.message"/></source>
+        <target state="translated">GitLabに接続できませんでした。<x id="PH" equiv-text="err.message"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/git-providers/gitlab/gitlab.service.ts</context>
           <context context-type="linenumber">21</context>
@@ -5274,6 +5292,7 @@
       </trans-unit>
       <trans-unit id="ESTIMATED_TIME" datatype="html">
         <source>Estimated time: <x id="PH" equiv-text="minutes"/> minutes</source>
+        <target state="translated">推定時間: <x id="PH" equiv-text="分"/> 分</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/repositories/components/estimate/estimate.component.ts</context>
           <context context-type="linenumber">96</context>
@@ -5281,6 +5300,7 @@
       </trans-unit>
       <trans-unit id="TOGGLE_COLOR_SCHEME" datatype="html">
         <source>Toggle color scheme</source>
+        <target state="translated">色のスキームを切り替える</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/color-scheme-switcher.ts</context>
           <context context-type="linenumber">8</context>
@@ -5288,6 +5308,7 @@
       </trans-unit>
       <trans-unit id="FAILED" datatype="html">
         <source>Failed</source>
+        <target state="translated">失敗しました</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/repositories/components/estimate/estimate.component.ts</context>
           <context context-type="linenumber">38</context>
