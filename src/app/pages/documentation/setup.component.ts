@@ -42,6 +42,37 @@ import { CommonModule } from '@angular/common';
       <p class="text-gray-700 dark:text-gray-300 mt-2" i18n="@@INITIAL_SETUP_NOTE">Note: We'll modify the outputPath later in the configuration to match our workflow.</p>
     </div>
 
+    <!-- Angular i18n CLI Tool -->
+    <div class="bg-white dark:bg-dark-700 rounded-lg shadow-lg p-8 border border-gray-200 dark:border-gray-700">
+      <h2 class="text-2xl font-semibold mb-6 text-blue-600 dark:text-blue-400" i18n="@@I18N_CLI_TITLE">Angular i18n CLI Tool</h2>
+      
+      <p class="text-gray-700 dark:text-gray-300 mb-4" i18n="@@I18N_CLI_DESCRIPTION">To simplify the management of Angular i18n configuration, you can use our CLI tool:</p>
+      
+      <pre class="bg-gray-900 rounded-lg p-4 overflow-x-auto border border-gray-700"><code><span class="text-blue-400">npm install</span> <span class="text-yellow-400">--save-dev &#64;softwarity/angular-i18n-cli</span></code></pre>
+
+      <p class="text-gray-700 dark:text-gray-300 mt-4" i18n="@@I18N_CLI_FEATURES">This tool provides several features to streamline your i18n workflow:</p>
+      <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 ml-4 space-y-2">
+        <li i18n="@@I18N_CLI_FEATURE_1">Easy initialization of i18n configuration in your Angular project</li>
+        <li i18n="@@I18N_CLI_FEATURE_2">Simple addition and removal of locales</li>
+        <li i18n="@@I18N_CLI_FEATURE_3">Automatic configuration of build settings for each locale</li>
+        <li i18n="@@I18N_CLI_FEATURE_4">Proper setup of XLIFF file formats</li>
+      </ul>
+
+      <div class="mt-6">
+        <a href="https://github.com/softwarity/angular-i18n-cli" target="_blank" class="flex items-start p-3 hover:bg-white dark:hover:bg-gray-700 rounded-lg transition-colors border border-gray-200 dark:border-gray-700">
+          <div class="mr-4 text-blue-600 dark:text-blue-400">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-semibold text-gray-900 dark:text-white" i18n="@@I18N_CLI_DOCUMENTATION">Angular i18n CLI</h3>
+            <p class="text-gray-700 dark:text-gray-300 text-sm" i18n="@@I18N_CLI_DOCUMENTATION_DESC">CLI tool to simplify Angular i18n configuration and locale management.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+
     <!-- Install ng-extract-i18n-merge -->
     <div class="bg-white dark:bg-dark-700 rounded-lg shadow-lg p-8 border border-gray-200 dark:border-gray-700">
       <h2 class="text-2xl font-semibold mb-6 text-blue-600 dark:text-blue-400" i18n="@@EXTRACT_TOOL_TITLE">Install Translation Tool</h2>

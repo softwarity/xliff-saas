@@ -3924,7 +3924,7 @@
       </trans-unit>
       <trans-unit id="RESOURCE_NG_EXTRACT_I18N_MERGE_DESC" datatype="html">
         <source>Official tool for extracting and merging i18n translations in a single step.</source>
-        <target state="translated">官方工具用于在一步骤中提取和合并i18n翻译。</target>
+        <target state="new">Official tool for extracting and merging i18n translations in a single step.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/documentation/usage.component.ts</context>
           <context context-type="linenumber">268</context>

@@ -265,7 +265,21 @@ import { RouterLink } from '@angular/router';
             </div>
             <div>
               <h3 class="font-semibold text-gray-900 dark:text-white" i18n="@@RESOURCE_NG_EXTRACT_I18N_MERGE">ng-extract-i18n-merge</h3>
-              <p class="text-gray-700 dark:text-gray-300 text-sm" i18n="@@RESOURCE_NG_EXTRACT_I18N_MERGE_DESC">Official tool for extracting and merging i18n translations in a single step.</p>
+              <p class="text-gray-700 dark:text-gray-300 text-sm" i18n="@@RESOURCE_NG_EXTRACT_I18N_MERGE_DESC">Tool for extracting and merging i18n translations in a single step.</p>
+            </div>
+          </a>
+        </li>
+        
+        <li>
+          <a href="https://github.com/softwarity/angular-i18n-cli" class="flex items-start p-3 hover:bg-white dark:hover:bg-gray-700 rounded-lg transition-colors">
+            <div class="mr-4 text-blue-600 dark:text-blue-400">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-gray-900 dark:text-white" i18n="@@RESOURCE_ANGULAR_I18N_CLI">Angular i18n CLI</h3>
+              <p class="text-gray-700 dark:text-gray-300 text-sm" i18n="@@RESOURCE_ANGULAR_I18N_CLI_DESC">CLI tool to simplify Angular i18n configuration and locale management.</p>
             </div>
           </a>
         </li>
