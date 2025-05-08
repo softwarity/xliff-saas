@@ -5,9 +5,9 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 import { environment } from '../../../../environments/environment';
 import { AuthService } from '../../services/auth.service';
 import { ColorSchemeSwitcherComponent } from '../color-scheme-switcher';
-import { LanguageToggleComponent } from '../language-toggle/language-toggle.component';
+import { LanguageToggleComponent } from '../language-toggle.component';
 import { LoggedNavComponent } from './logged-nav.component';
-
+import { OtherProductsComponent } from '../other-products.component';
 @Component({
   selector: 'app-header',
   standalone: true,
@@ -15,6 +15,7 @@ import { LoggedNavComponent } from './logged-nav.component';
     RouterLink,
     RouterLinkActive,
     LanguageToggleComponent,
+    OtherProductsComponent,
     LoggedNavComponent,
     ColorSchemeSwitcherComponent,
     NgClass
@@ -64,6 +65,7 @@ import { LoggedNavComponent } from './logged-nav.component';
             </a>
           </div>
           <div class="flex-1"></div>
+          <app-other-products></app-other-products>
           <a class="button flat-primary" routerLink="/auth/login" i18n="@@AUTH_SIGN_IN_BUTTON">Sign In</a>
         }
     

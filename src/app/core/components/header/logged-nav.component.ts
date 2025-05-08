@@ -8,6 +8,7 @@ import { PurchaseCreditsButtonComponent } from '../../../shared/components/purch
 import { BalanceService } from '../../services/balance.service';
 import { GitProviderService } from '../../services/git-provider.service';
 import { LoggedButtonComponent } from './logged-button.component';
+import { OtherProductsComponent } from '../other-products.component';
 
 @Component({
   selector: 'app-logged-nav',
@@ -18,7 +19,8 @@ import { LoggedButtonComponent } from './logged-button.component';
     ReactiveFormsModule,
     CommonModule,
     LoggedButtonComponent,
-    PurchaseCreditsButtonComponent
+    PurchaseCreditsButtonComponent,
+    OtherProductsComponent
   ],
   template: `
     <div class="flex items-center space-x-2 md:space-x-4">
@@ -57,6 +59,7 @@ import { LoggedButtonComponent } from './logged-button.component';
         }
       }
       <div class="flex-1"></div>
+      <app-other-products></app-other-products>
       @if (balance() === 0) {
         <app-purchase-credits-button buttonClass="hidden lg:flex flat-secondary"></app-purchase-credits-button>
       } @else {

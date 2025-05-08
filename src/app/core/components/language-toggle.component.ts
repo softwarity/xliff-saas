@@ -10,7 +10,28 @@ interface Language {
   selector: 'app-language-toggle',
   standalone: true,
   imports: [],
-  templateUrl: 'language-toggle.component.html',
+  template: `
+  <div class="relative">
+    <button (click)="toggleDropdown($event)" class="flat-ghost !p-2 flex items-center"
+      aria-label="Change language" title="Change language" i18n-title="@@CHANGE_LANGUAGE">
+      <span class="text-gray-800 dark:text-gray-200 text-sm font-medium">{{ currentLang() }}</span>
+      <svg class="w-4 h-4 ml-1 text-gray-800 dark:text-gray-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+      </svg>
+    </button>
+    @if (isOpen()) {
+      <div class="absolute right-0 mt-1 py-2 w-32 bg-white dark:bg-dark-700 rounded-lg shadow-xl z-50 border border-gray-200 dark:border-gray-600" (click)="closeDropdown()">
+        @for (lang of languages(); track lang.code) {
+          <button (click)="changeLanguage(lang.code)"
+            class="w-full text-left px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-dark-600"
+            [class.font-semibold]="lang.code === currentLang()">
+            {{ lang.name }}
+        </button>
+        }
+      </div>
+    }
+  </div>
+  `,
   styles: [`
     :host {
       display: block;
